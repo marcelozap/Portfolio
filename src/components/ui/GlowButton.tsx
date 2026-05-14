@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { forwardRef, type ComponentPropsWithoutRef } from 'react';
-import { cn } from '@/lib/utils';
+import { forwardRef, type ComponentPropsWithoutRef, type MouseEvent } from 'react';
+import { cn, scrollToSection } from '@/lib/utils';
 
 type Variant = 'primary' | 'ghost' | 'outline';
 
@@ -32,9 +32,24 @@ export const GlowButton = forwardRef<HTMLElement, GlowButtonProps>(
     const classes = cn(variantClass[variant], 'group', className);
 
     if ('href' in props && props.href) {
-      const { href, ...rest } = props;
+      const { href, onClick, ...rest } = props;
+      const hrefStr = typeof href === 'string' ? href : '';
+      const isHash = hrefStr.startsWith('#');
+      const onClickWithScroll = (e: MouseEvent<HTMLAnchorElement>) => {
+        if (isHash) {
+          e.preventDefault();
+          scrollToSection(hrefStr.slice(1));
+        }
+        onClick?.(e);
+      };
       return (
-        <Link ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={classes} {...rest}>
+        <Link
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          onClick={onClickWithScroll}
+          className={classes}
+          {...rest}
+        >
           <span className="relative z-10 flex items-center gap-2">{children}</span>
           <span
             aria-hidden

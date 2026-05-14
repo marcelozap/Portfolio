@@ -3,29 +3,16 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Command } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, scrollToSection } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
 
 const NAV_ITEMS = [
-  { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'engineering', label: 'Systems' },
   { id: 'projects', label: 'Projects' },
+  { id: 'engineering', label: 'Systems' },
+  { id: 'about', label: 'About' },
   { id: 'music', label: 'Music' },
 ];
-
-/**
- * Scroll to a section by id with deterministic smooth behavior and a manual
- * offset that matches `scroll-padding-top` so the section header is never
- * occluded by the fixed navbar.
- */
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - 72;
-  window.scrollTo({ top, behavior: 'smooth' });
-  history.replaceState(null, '', `#${id}`);
-}
 
 export function Navbar() {
   const { scrollY } = useScroll();

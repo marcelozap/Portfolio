@@ -24,3 +24,16 @@ export const rand = (min: number, max: number) => min + Math.random() * (max - m
 
 /** Format a number with thousands separators. */
 export const fmt = (n: number) => new Intl.NumberFormat('en-US').format(n);
+
+/**
+ * Smooth-scroll to a section by id with a manual offset so the heading clears
+ * the fixed navbar. Mirrors the value set via `scroll-padding-top` in globals.
+ */
+export function scrollToSection(id: string) {
+  if (typeof window === 'undefined') return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 72;
+  window.scrollTo({ top, behavior: 'smooth' });
+  history.replaceState(null, '', `#${id}`);
+}
