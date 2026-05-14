@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { id: 'engineering', label: 'Systems' },
   { id: 'projects', label: 'Projects' },
   { id: 'music', label: 'Music' },
+  { id: 'mirror', label: 'Mirror' },
 ];
 
 export function Navbar() {

@@ -16,6 +16,7 @@ import {
   Cpu,
   Disc3,
   FolderKanban,
+  Orbit,
   Search,
   Sparkles,
   TerminalSquare,
@@ -122,6 +123,13 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         icon: Disc3,
         group: 'Navigate',
         action: () => scrollTo('music'),
+      },
+      {
+        id: 'goto-mirror',
+        label: 'The Mirror · zero-g scene',
+        icon: Orbit,
+        group: 'Navigate',
+        action: () => scrollTo('mirror'),
       },
     ];
 
