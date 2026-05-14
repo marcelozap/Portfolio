@@ -28,8 +28,8 @@ const WHOAMI = [
   'building tools, experiences, and ideas.',
 ];
 
-const PROJECT_IDS = ['gatekpt', 'money-machine', 'rally'];
-const SECTION_IDS = ['hero', 'about', 'experience', 'engineering', 'projects', 'music', 'mirror'];
+const PROJECT_IDS = ['gatekpt', 'money-machine', 'green-machine', 'rally'];
+const SECTION_IDS = ['hero', 'about', 'experience', 'engineering', 'projects', 'music'];
 
 /**
  * Persistent terminal dock. Toggle with backtick (`) or via command palette.

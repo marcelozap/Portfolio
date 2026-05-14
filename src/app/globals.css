@@ -39,6 +39,12 @@
   border-color: hsl(var(--line));
 }
 
+html {
+  scroll-behavior: smooth;
+  /* offset hash-anchored sections so they don't land beneath the fixed nav */
+  scroll-padding-top: 5rem;
+}
+
 html,
 body {
   background: hsl(var(--bg));

@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Command } from 'lucide-react';
@@ -13,8 +12,20 @@ const NAV_ITEMS = [
   { id: 'engineering', label: 'Systems' },
   { id: 'projects', label: 'Projects' },
   { id: 'music', label: 'Music' },
-  { id: 'mirror', label: 'Mirror' },
 ];
+
+/**
+ * Scroll to a section by id with deterministic smooth behavior and a manual
+ * offset that matches `scroll-padding-top` so the section header is never
+ * occluded by the fixed navbar.
+ */
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 72;
+  window.scrollTo({ top, behavior: 'smooth' });
+  history.replaceState(null, '', `#${id}`);
+}
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -51,7 +62,12 @@ export function Navbar() {
         className="absolute inset-x-0 bottom-0 h-px bg-white"
       />
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link href="#hero" className="group flex items-center gap-3" aria-label="XIV home">
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="group flex items-center gap-3"
+          aria-label="XIV home"
+        >
           <span className="relative flex size-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-mono text-[11px] tracking-widest text-ink shadow-inset">
             <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
             <span className="relative">XIV</span>
@@ -59,13 +75,14 @@ export function Navbar() {
           <span className="hidden font-mono text-[11px] uppercase tracking-[0.32em] text-ink-muted group-hover:text-ink sm:inline">
             XIV_OS
           </span>
-        </Link>
+        </button>
 
         <ul className="hidden items-center gap-1 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
-              <Link
-                href={`#${item.id}`}
+              <button
+                type="button"
+                onClick={() => scrollToSection(item.id)}
                 data-active={active === item.id}
                 className={cn(
                   'nav-link rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-ink',
@@ -73,7 +90,7 @@ export function Navbar() {
                 )}
               >
                 {item.label}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
