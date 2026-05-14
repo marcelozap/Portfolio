@@ -23,7 +23,7 @@ export interface Project {
   /** short one-liner */
   tagline: string;
   /** which system family this belongs to */
-  domain: 'audio' | 'markets' | 'game' | 'systems';
+  domain: 'audio' | 'markets' | 'game' | 'systems' | 'infra';
   /** development status */
   status: ProjectStatus;
   /** main pitch paragraph */
@@ -134,6 +134,52 @@ export const PROJECTS: Project[] = [
       { label: 'Regimes modeled', value: '6' },
     ],
     stack: ['Python', 'Next.js', 'D3', 'DuckDB', 'Polars'],
+  },
+  {
+    id: 'green-machine',
+    name: 'GREEN MACHINE',
+    tagline: 'Distributed SPY options command center with real-time alerts.',
+    domain: 'infra',
+    status: 'in-development',
+    accent: 'green',
+    year: '2024',
+    description:
+      'A distributed trading command center for SPY options analytics. A Mac front-end talks to a Windows trading host over a versioned WebSocket protocol with a strict handshake, surfaces six factors per signal, and always exposes a one-hop kill switch to the operator. Strict separation of concerns: signals on the host, UX on the Mac.',
+    coreIdeas: [
+      'Versioned WebSocket API contract between Mac and trading host',
+      'Operator-first kill switch — one hop from idea to off',
+      'Six factors per signal, surfaced as calm glassy tiles',
+      'Telegram alerting on threshold breaches',
+      'Vite-proxied dev loop so backend + UI boot together',
+    ],
+    features: [
+      {
+        title: 'Mac Control Deck',
+        description:
+          'A focused front-end with kill switch, handshake, and six-factor tiles. The UI is intentionally calm — no flashing red anywhere unless something is actually wrong.',
+      },
+      {
+        title: 'FastAPI bridge',
+        description:
+          'Python backend exposes `/ws/feed` to all connected clients, handles auth, and bridges Telegram for out-of-app alerting.',
+      },
+      {
+        title: 'Strict API contract',
+        description:
+          'Every message is versioned and documented; the handshake gates dangerous actions like notional-trade requests.',
+      },
+      {
+        title: 'Single-command dev loop',
+        description:
+          '`npm run dev:all` boots backend + UI together, with Vite proxying WebSockets so the dev experience matches production.',
+      },
+    ],
+    metrics: [
+      { label: 'Hosts in mesh', value: '2' },
+      { label: 'Factors / signal', value: '6' },
+      { label: 'Kill hops', value: '1' },
+    ],
+    stack: ['React', 'Vite', 'FastAPI', 'WebSockets', 'Telegram API'],
   },
   {
     id: 'rally',

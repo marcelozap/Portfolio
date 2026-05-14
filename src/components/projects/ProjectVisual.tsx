@@ -26,6 +26,8 @@ export function ProjectVisual({ project }: Props) {
       return <MarketsVisual id={project.id} />;
     case 'game':
       return <GameVisual id={project.id} />;
+    case 'infra':
+      return <InfraVisual id={project.id} />;
     default:
       return <SystemsVisual />;
   }
@@ -200,6 +202,137 @@ function GameVisual({ id }: { id: string }) {
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent-warm">
         flow: 7.4 · streak: 12
+      </div>
+    </div>
+  );
+}
+
+function InfraVisual({ id }: { id: string }) {
+  const rng = useMemo(() => seeded(id), [id]);
+  const factors = Array.from({ length: 6 }, () => rng());
+
+  return (
+    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-bg-elevated/80 to-bg-subtle md:h-60">
+      <div className="grid-bg absolute inset-0 opacity-30" />
+
+      {/* mesh diagram */}
+      <svg viewBox="0 0 100 60" className="absolute inset-0 size-full">
+        <defs>
+          <radialGradient id="node-g" r="0.5" cx="0.5" cy="0.5">
+            <stop offset="0" stopColor="hsl(152 78% 52%)" stopOpacity="0.7" />
+            <stop offset="1" stopColor="hsl(152 78% 52%)" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* node halos */}
+        <circle cx="22" cy="30" r="9" fill="url(#node-g)" />
+        <circle cx="78" cy="30" r="9" fill="url(#node-g)" />
+
+        {/* connection line w/ animated dash */}
+        <motion.line
+          x1="26"
+          y1="30"
+          x2="74"
+          y2="30"
+          stroke="hsl(152 78% 52% / 0.7)"
+          strokeWidth="0.45"
+          strokeDasharray="1.6 1.6"
+          animate={{ strokeDashoffset: [0, -6.4] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'linear' }}
+        />
+
+        {/* nodes */}
+        <circle cx="22" cy="30" r="1.6" fill="hsl(152 78% 52%)" />
+        <circle cx="78" cy="30" r="1.6" fill="hsl(152 78% 52%)" />
+
+        {/* handshake pulses */}
+        <motion.circle
+          cx="22"
+          cy="30"
+          r="1.6"
+          fill="none"
+          stroke="hsl(152 78% 52% / 0.7)"
+          strokeWidth="0.3"
+          animate={{ r: [1.6, 5, 1.6], opacity: [0.7, 0, 0.7] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut' }}
+        />
+        <motion.circle
+          cx="78"
+          cy="30"
+          r="1.6"
+          fill="none"
+          stroke="hsl(152 78% 52% / 0.7)"
+          strokeWidth="0.3"
+          animate={{ r: [1.6, 5, 1.6], opacity: [0.7, 0, 0.7] }}
+          transition={{
+            duration: 2.4,
+            repeat: Infinity,
+            ease: 'easeOut',
+            delay: 1.2,
+          }}
+        />
+
+        {/* labels */}
+        <text
+          x="22"
+          y="44"
+          fontFamily="ui-monospace, monospace"
+          fontSize="2.6"
+          textAnchor="middle"
+          fill="hsl(220 12% 70%)"
+          letterSpacing="0.3"
+        >
+          MAC · UI
+        </text>
+        <text
+          x="78"
+          y="44"
+          fontFamily="ui-monospace, monospace"
+          fontSize="2.6"
+          textAnchor="middle"
+          fill="hsl(220 12% 70%)"
+          letterSpacing="0.3"
+        >
+          HOST · SIGNALS
+        </text>
+        <text
+          x="50"
+          y="26"
+          fontFamily="ui-monospace, monospace"
+          fontSize="2.4"
+          textAnchor="middle"
+          fill="hsl(152 78% 52%)"
+          letterSpacing="0.3"
+        >
+          /ws/feed
+        </text>
+      </svg>
+
+      {/* six-factor tiles strip */}
+      <div className="absolute inset-x-6 bottom-3 grid grid-cols-6 gap-1.5">
+        {factors.map((v, i) => (
+          <motion.div
+            key={i}
+            className="h-3 rounded-[3px] border border-white/[0.06]"
+            style={{
+              backgroundColor: `hsl(152 78% ${36 + v * 30}% / ${0.25 + v * 0.5})`,
+            }}
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{
+              duration: 2 + v * 1.5,
+              repeat: Infinity,
+              delay: i * 0.18,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
+        green_machine · mesh
+      </div>
+      <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
+        kill_switch: ARMED
       </div>
     </div>
   );
