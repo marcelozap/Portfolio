@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   XIV_OS  ·  Design Tokens
+   "calm intensity · systems over noise"
+   HSL values (no commas) so Tailwind alpha-modifiers compose correctly.
+   ========================================================================= */
+
+:root {
+  /* canvas */
+  --bg: 222 24% 4%;
+  --bg-subtle: 222 22% 7%;
+  --bg-elevated: 222 20% 10%;
+
+  /* ink */
+  --ink: 210 30% 96%;
+  --ink-muted: 220 12% 70%;
+  --ink-faint: 220 10% 48%;
+
+  /* accents */
+  --accent: 188 95% 62%; /* electric cyan */
+  --accent-glow: 188 100% 62%;
+  --accent-warm: 28 95% 62%; /* late-night amber */
+  --accent-cool: 268 80% 70%; /* violet */
+
+  /* signals */
+  --signal-green: 152 78% 52%;
+  --signal-red: 358 82% 62%;
+  --signal-amber: 38 95% 60%;
+
+  /* structural */
+  --line: 220 18% 16%;
+  --ring: 188 95% 62%;
+}
+
+* {
+  border-color: hsl(var(--line));
+}
+
+html,
+body {
+  background: hsl(var(--bg));
+  color: hsl(var(--ink));
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  /* layered atmosphere: vignette + faint grid + film grain */
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, hsl(var(--accent-glow) / 0.08), transparent 60%),
+    radial-gradient(80% 50% at 100% 100%, hsl(var(--accent-cool) / 0.06), transparent 60%),
+    linear-gradient(180deg, hsl(var(--bg)) 0%, hsl(var(--bg-subtle)) 100%);
+  background-attachment: fixed;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.35);
+  color: hsl(var(--ink));
+}
+
+/* keep the focus ring quiet but always present */
+:focus-visible {
+  outline: 2px solid hsl(var(--accent) / 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* honor user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg-subtle));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--line));
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.5);
+}
+
+/* =========== component utilities ============== */
+@layer components {
+  .glass {
+    @apply relative isolate rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl;
+    background-image: linear-gradient(180deg, hsl(var(--ink) / 0.02) 0%, hsl(var(--ink) / 0) 100%);
+    box-shadow:
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.04),
+      0 30px 80px -30px hsl(0 0% 0% / 0.6);
+  }
+
+  .glass-strong {
+    @apply glass;
+    background-color: hsl(var(--bg-elevated) / 0.7);
+  }
+
+  .hairline {
+    @apply border border-white/[0.06];
+  }
+
+  .mono-tag {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--line) / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--line) / 0.6) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+  }
+
+  .scanline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(transparent 0%, hsl(var(--accent) / 0.04) 50%, transparent 100%);
+    background-size: 100% 6px;
+    mix-blend-mode: screen;
+    opacity: 0.4;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--ink)) 0%,
+      hsl(var(--accent)) 60%,
+      hsl(var(--accent-cool)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ring-glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--accent) / 0.4),
+      0 0 30px -6px hsl(var(--accent-glow) / 0.45);
+  }
+
+  .btn {
+    @apply relative inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-ink transition;
+    @apply hover:border-accent/40 hover:bg-white/[0.06] hover:text-ink hover:shadow-glow;
+  }
+  .btn-primary {
+    @apply btn;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--accent) / 0.18),
+      hsl(var(--accent-cool) / 0.12)
+    );
+    border-color: hsl(var(--accent) / 0.4);
+    box-shadow: 0 0 30px -8px hsl(var(--accent-glow) / 0.45);
+  }
+
+  .section {
+    @apply relative mx-auto w-full max-w-7xl px-6 py-28 md:px-10 lg:py-36;
+  }
+
+  .eyebrow {
+    @apply mono-tag text-accent;
+  }
+}
+
+/* keep the cursor visible (we layer a custom one on top) */
+html,
+body,
+* {
+  cursor: auto;
+}
+
+/* utility: animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: hsl(var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms ease;
+}
+.nav-link:hover::after,
+.nav-link[data-active='true']::after {
+  transform: scaleX(1);
+}
