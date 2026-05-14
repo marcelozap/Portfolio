@@ -174,12 +174,12 @@ export function SpacemanScene() {
    tether cord drifting upward.
    ============================================================================ */
 
-interface SpacemanProps {
+export interface SpacemanProps {
   mirror?: boolean;
   reduce?: boolean;
 }
 
-function Spaceman({ reduce = false }: SpacemanProps) {
+export function Spaceman({ reduce = false }: SpacemanProps) {
   // shared float for the guitar (subtle counter-bob to the body)
   const guitarAnim = reduce ? undefined : { rotate: [-2, 2, -2], y: [-1, 1, -1] };
 

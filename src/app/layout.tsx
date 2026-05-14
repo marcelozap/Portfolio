@@ -4,6 +4,7 @@ import './globals.css';
 import { CustomCursor } from '@/components/interactive/CustomCursor';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
+import { AmbientSpaceman } from '@/components/interactive/AmbientSpaceman';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { TerminalDock } from '@/components/interactive/TerminalDock';
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative antialiased">
         <CommandPaletteProvider>
           <AmbientBackdrop />
+          <AmbientSpaceman />
           <CustomCursor />
           <Navbar />
           <main className="relative z-10">{children}</main>
