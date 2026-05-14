@@ -13,19 +13,19 @@ interface TerminalLine {
 const HELP = [
   'available commands:',
   '  help                 list commands',
-  '  whoami               about XIV',
+  '  whoami               about Marcelo',
   '  ls projects          list projects',
-  '  open <project>       open project (gatekpt | money-machine | rally)',
+  '  open <project>       gatekpt | money-machine | green-machine | rally',
   '  goto <section>       hero · about · experience · engineering · projects · music',
-  '  music                play ambient hint',
+  '  music                scroll to music',
   '  clear                wipe terminal',
   '  exit                 close terminal',
 ];
 
 const WHOAMI = [
-  'XIV — developer · builder · creative technologist',
-  'late-night focus · systems over noise · infinite iterations',
-  'building tools, experiences, and ideas.',
+  'Marcelo Zapata — software engineer (Publix)',
+  'side projects: music (GATEKPT), trading (Green Machine), tennis game (Rally)',
+  'creative moniker: XIV',
 ];
 
 const PROJECT_IDS = ['gatekpt', 'money-machine', 'green-machine', 'rally'];
@@ -38,7 +38,7 @@ const SECTION_IDS = ['hero', 'about', 'experience', 'engineering', 'projects', '
 export function TerminalDock() {
   const [open, setOpen] = useState(false);
   const [lines, setLines] = useState<TerminalLine[]>([
-    { kind: 'sys', text: 'XIV_OS terminal · type "help" to begin.' },
+    { kind: 'sys', text: 'XIV_OS · Marcelo Zapata · type "help"' },
   ]);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([]);
@@ -105,7 +105,7 @@ export function TerminalDock() {
           break;
         }
         case 'music':
-          push({ kind: 'out', text: '~ ambient hum loaded · adjust volume IRL ~' });
+          push({ kind: 'out', text: '~ music section ~' });
           document.getElementById('music')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           break;
         case 'clear':

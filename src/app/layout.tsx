@@ -4,7 +4,9 @@ import './globals.css';
 import { CustomCursor } from '@/components/interactive/CustomCursor';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
+import { AmbientMotifs } from '@/components/layout/AmbientMotifs';
 import { AmbientSpaceman } from '@/components/interactive/AmbientSpaceman';
+import { AmbientAudio } from '@/components/interactive/AmbientAudio';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { TerminalDock } from '@/components/interactive/TerminalDock';
@@ -30,35 +32,33 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://xiv-os.vercel.app'),
   title: {
-    default: 'XIV_OS · Developer · Builder · Creative Technologist',
-    template: '%s · XIV_OS',
+    default: 'Marcelo Zapata — Software Engineer',
+    template: '%s — Marcelo Zapata',
   },
   description:
-    'XIV is a systems-oriented developer and creative technologist building tools, experiences, and ideas. Late nights. Deep focus. Infinite iterations.',
+    'Marcelo Zapata is a software engineer. Projects span internal tooling, trading systems, music software, and game design.',
   keywords: [
+    'Marcelo Zapata',
+    'software engineer',
     'XIV',
-    'XIV_OS',
     'portfolio',
-    'developer',
-    'creative technologist',
-    'systems thinking',
     'GATEKPT',
-    'Money Machine',
+    'Green Machine',
     'Rally',
+    'Publix',
   ],
-  authors: [{ name: 'XIV' }],
-  creator: 'XIV',
+  authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
+  creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'XIV_OS',
-    description:
-      'A cinematic operating system for a developer, builder, creator, and systems thinker.',
+    title: 'Marcelo Zapata — Software Engineer',
+    description: 'Software engineer · projects in engineering, music, markets, and games.',
     type: 'website',
     siteName: 'XIV_OS',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XIV_OS',
-    description: 'Systems over noise.',
+    title: 'Marcelo Zapata',
+    description: 'Software engineer · XIV_OS',
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -82,7 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative antialiased">
         <CommandPaletteProvider>
           <AmbientBackdrop />
+          <AmbientMotifs />
           <AmbientSpaceman />
+          <AmbientAudio />
           <CustomCursor />
           <Navbar />
           <main className="relative z-10">{children}</main>

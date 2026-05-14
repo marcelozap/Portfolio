@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 
 const PHRASES = [
-  'Developer · Builder · Creative Technologist',
-  'Building systems, experiences, and interactive tools.',
-  'Late nights. Deep focus. Infinite iterations.',
-  'Systems over noise.',
+  'Software engineer · Publix',
+  'Projects in music, markets, and games.',
+  'Shipping calm, reliable systems.',
+  'Also known as XIV.',
 ];
 
 /**

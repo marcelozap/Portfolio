@@ -7,11 +7,11 @@ import { cn, scrollToSection } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
 
 const NAV_ITEMS = [
-  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'engineering', label: 'Systems' },
-  { id: 'about', label: 'About' },
   { id: 'music', label: 'Music' },
+  { id: 'about', label: 'About' },
 ];
 
 export function Navbar() {
@@ -53,14 +53,19 @@ export function Navbar() {
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="group flex items-center gap-3"
-          aria-label="XIV home"
+          aria-label="Marcelo Zapata home"
         >
           <span className="relative flex size-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-mono text-[11px] tracking-widest text-ink shadow-inset">
             <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
-            <span className="relative">XIV</span>
+            <span className="relative">MZ</span>
           </span>
-          <span className="hidden font-mono text-[11px] uppercase tracking-[0.32em] text-ink-muted group-hover:text-ink sm:inline">
-            XIV_OS
+          <span className="hidden flex-col items-start sm:flex">
+            <span className="font-display text-[13px] font-medium leading-tight text-ink">
+              Marcelo Zapata
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
+              XIV_OS
+            </span>
           </span>
         </button>
 

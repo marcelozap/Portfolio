@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { scrollToSection } from '@/lib/utils';
 
 const LINKS = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Systems', href: '#engineering' },
-  { label: 'Music', href: '#music' },
-  { label: 'Contact', href: 'mailto:hello@xiv-os.dev' },
+  { label: 'Projects', id: 'projects' as const },
+  { label: 'Experience', id: 'experience' as const },
+  { label: 'Systems', id: 'engineering' as const },
+  { label: 'Music', id: 'music' as const },
 ];
 
 export function Footer() {
@@ -28,25 +29,30 @@ export function Footer() {
   return (
     <footer className="relative z-10 border-t border-white/[0.06]">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
-        <div className="flex items-center gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-ink-faint">
-            XIV_OS · v0.1
-          </span>
-          <span className="hidden h-3 w-px bg-white/10 md:inline-block" />
-          <span className="font-mono text-[11px] text-ink-faint">
-            <span className="mr-2 inline-flex size-1.5 rounded-full bg-signal-green align-middle shadow-[0_0_8px_hsl(var(--signal-green))]" />
-            session active
-          </span>
+        <div>
+          <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
+          <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+            Software Engineer · XIV_OS
+          </div>
         </div>
 
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted">
           {LINKS.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="transition hover:text-accent">
+              <button
+                type="button"
+                onClick={() => scrollToSection(link.id)}
+                className="transition hover:text-accent"
+              >
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
+          <li>
+            <a href="mailto:hello@xiv-os.dev" className="transition hover:text-accent">
+              Contact
+            </a>
+          </li>
         </ul>
 
         <div className="font-mono text-[11px] tracking-widest text-ink-faint">{time}</div>
@@ -54,8 +60,8 @@ export function Footer() {
 
       <div className="border-t border-white/[0.04]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-[11px] text-ink-faint md:px-10">
-          <span>Crafted in the dark hours. Systems over noise.</span>
-          <span className="font-mono">© {new Date().getFullYear()} XIV</span>
+          <span>Portfolio · Marcelo Zapata</span>
+          <span className="font-mono">© {new Date().getFullYear()}</span>
         </div>
       </div>
     </footer>
