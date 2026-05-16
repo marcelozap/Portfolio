@@ -49,9 +49,10 @@ export function About() {
               first, maintainability second, presentation last.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Side work includes Green Machine—a discipline-first stack unifying automated markets research
-              with risk-aware orchestration—as well as audio tooling (GATEKPT) and a tennis game concept
-              (Rally). Music on this site is original composition.
+              Side work includes Green Machine—a personal research kernel for price movement and
+              trade suggestions: opaque non-linear models behind a risk-first shell, closer to a lab
+              instrument than a product pitch—as well as audio tooling (GATEKPT) and a tennis game
+              concept (Rally). Music on this site is original composition.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

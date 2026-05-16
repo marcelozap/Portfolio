@@ -91,46 +91,46 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'green-machine',
-    name: 'GREEN MACHINE',
+    name: 'Green Machine',
     tagline:
-      'Single markets laboratory: probabilistic analytics plus orchestrated agentic research and execution prep—risk-aware automation, never implied returns.',
+      'A research kernel for price movement: opaque, non-linear models behind a disciplined shell—outputs are trade suggestions and telemetry, not promises.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2024',
     description:
-      'Green Machine unifies exploratory analytics dashboards and unattended monitoring into one evolving stack tuned for skepticism-first decisions. Probabilistic context, volatility and regime overlays, reproducible hypotheses, controlled automation, alerting, journaling, handshake-gated actions, explicit kill switches, and auditable telemetry sit under the same codebase so the workspace can iterate without rewriting its spine. Operating capital is discretionary; variance is acknowledged by design—not performance marketing.',
+      'Green Machine is intentionally a black box: the interesting structure lives inside models readers are not meant to fully reverse-engineer from the UI. The surrounding system behaves like a small lab—hypotheses, overlays on movement and liquidity, versioned runs, and hard gates between exploration and anything that could touch a broker. Trade ideas surface as ranked suggestions under explicit risk budgets; nothing here promises returns or peddles “alpha”—only a controlled loop for interrogating markets with grown-up skepticism.',
     coreIdeas: [
-      'Unified surface for probabilistic dashboards, agent-assisted research synthesis, and hands-off supervising loops constrained by mandate',
-      'Automation envelopes escalate to humans when ambiguity outruns policy—people still set intent, limits, and rollback',
-      'Calibrated overlays (liquidity stress, regimes, tails) prioritized over persuasive charting',
-      'Versioned UI-to-host bridges with strict contracts separating operator intent from brokerage/API touchpoints',
-      'Evaluation envelopes and replay so autonomy improves deliberately instead of collapsing into folklore',
+      'Kernel-and-shell split: non-linear / opaque internals emit suggestions and diagnostics; the shell is for supervision, not peering into every weight',
+      'Price movement and microstructure framed first—regimes, stress, tails—before any narrative layer',
+      'Human-in-the-loop by design: mandate, caps, kill switches, and journals so automation never outruns policy',
+      'Strict contracts between research UI, agents, and execution hosts—intent stays separable from API touchpoints',
+      'Replay and post-mortems replace folklore; past behavior is instrumentation, not a forward guarantee',
     ],
     features: [
       {
-        title: 'Research-through-execution loop',
+        title: 'Suggestion plane',
         description:
-          'Agents handle repetitive research passes, consistency checks, and alerting; execution paths stay optional, capped, and reversible where the broker/API allows.',
+          'The stack surfaces candidate trades and context (constraints, dissenting signals) while leaving sizing and go/no-go to the operator—no implied edge, no performance copy.',
       },
       {
-        title: 'Risk-aware command surface',
+        title: 'Research command surface',
         description:
-          'Dashboards emphasize uncertainty and drawdown context—not implied edge—so sizing and halts stay intentional.',
+          'Dashboards foreground uncertainty, drawdown envelopes, and regime markers so decisions stay grounded in risk, not charts that flatter.',
       },
       {
-        title: 'Distributed execution plane',
+        title: 'Distributed host plane',
         description:
-          'FastAPI `/ws/feed`, factor tiles, and strict contracts separate interactive research from the machine that talks to markets.',
+          'FastAPI `/ws/feed`, factor tiles, and hardened bridges keep live research and telemetry distinct from brokerage paths until deliberately handed off.',
       },
       {
         title: 'Evaluation & replay',
         description:
-          'Structured logs and replay snapshots support post-mortems and constraint tuning without pretending past behavior guarantees future results.',
+          'Structured logs and replay snapshots support tuning and incident review without treating backtests as prophecy.',
       },
     ],
     metrics: [
-      { label: 'Operating mode', value: 'Hands-off' },
+      { label: 'Lab posture', value: 'Kernel-first' },
       { label: 'Hosts in mesh', value: '2' },
       { label: 'Factors / signal', value: '6' },
     ],

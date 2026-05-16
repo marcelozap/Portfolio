@@ -37,8 +37,8 @@ const CAPABILITIES = [
   },
   {
     icon: Activity,
-    title: 'Trading systems research',
-    body: 'Probabilistic dashboards, volatility surfaces, macro-aware analytics.',
+    title: 'Green Machine (markets lab)',
+    body: 'Kernel-style stack for movement-focused research: non-linear internals, suggestion outputs, risk budgets—no performance story.',
   },
   {
     icon: Radio,
@@ -141,7 +141,7 @@ function ArchitectureDiagram() {
   const nodes = [
     { id: 'shell', label: 'XIV_OS · shell', x: 50, y: 16 },
     { id: 'gatekpt', label: 'GATEKPT · audio', x: 18, y: 60 },
-    { id: 'green-machine', label: 'GREEN MACHINE · markets', x: 50, y: 70 },
+    { id: 'green-machine', label: 'GREEN MACHINE · kernel', x: 50, y: 70 },
     { id: 'rally', label: 'RALLY · game', x: 82, y: 60 },
   ];
   const edges: [string, string][] = [

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: '%s — Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata — software engineer. Selected work in systems, markets, music, and interactive design. Creative releases may appear as XIV.',
+    'Marcelo Zapata — software engineer. Selected work in systems, markets research (Green Machine kernel), music, and interactive design. Creative releases may appear as XIV.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',

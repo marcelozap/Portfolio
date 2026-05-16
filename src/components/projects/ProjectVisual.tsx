@@ -142,7 +142,7 @@ function MarketsVisual({ id }: { id: string }) {
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
         {id === 'green-machine'
-          ? 'green_machine · research_exec_plane'
+          ? 'green_machine · kernel_suggestions'
           : `${id.replace(/-/g, '_')} · vol_surface`}
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">

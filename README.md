@@ -8,8 +8,8 @@ intersection of engineering, markets, and music.
 
 The site is not a template. It is built as a tiny operating system: a hero
 "boot screen", a command palette, a persistent terminal, an architecture
-diagram, and three deeply-themed project surfaces (GATEKPT · GREEN MACHINE ·
-RALLY).
+diagram, and three deeply-themed project surfaces (GATEKPT · Green Machine
+markets kernel · RALLY).
 
 ---
 

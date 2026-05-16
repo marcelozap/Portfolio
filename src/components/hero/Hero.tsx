@@ -94,7 +94,7 @@ export function Hero() {
           className="flex flex-wrap gap-2 font-mono text-[11px] text-ink-faint"
         >
           <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
-            Green Machine · research & automation
+            Green Machine · markets research kernel
           </span>
           <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
             Tennis · Rally
