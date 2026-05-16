@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     'XIV',
     'portfolio',
     'GATEKPT',
-    'Markets Stack',
+    'Green Machine',
     'Rally',
     'Publix',
   ],
