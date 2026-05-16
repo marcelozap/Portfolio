@@ -15,7 +15,7 @@ const HELP = [
   '  help                 list commands',
   '  whoami               about Marcelo',
   '  ls projects          list projects',
-  '  open <project>       gatekpt | money-machine | green-machine | rally',
+  '  open <project>       gatekpt | green-machine | rally',
   '  goto <section>       hero · about · experience · engineering · projects · music',
   '  music                scroll to music',
   '  clear                wipe terminal',
@@ -24,11 +24,11 @@ const HELP = [
 
 const WHOAMI = [
   'Marcelo Zapata — software engineer (Publix)',
-  'side projects: music (GATEKPT), trading (Green Machine), tennis game (Rally)',
+  'side projects: agentic trading (Green Machine), music (GATEKPT), tennis game (Rally)',
   'creative moniker: XIV',
 ];
 
-const PROJECT_IDS = ['gatekpt', 'money-machine', 'green-machine', 'rally'];
+const PROJECT_IDS = ['gatekpt', 'green-machine', 'rally'];
 const SECTION_IDS = ['hero', 'about', 'experience', 'engineering', 'projects', 'music'];
 
 /**

@@ -49,8 +49,9 @@ export function About() {
               first, maintainability second, presentation last.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Side work includes trading analytics (Green Machine), audio tooling (GATEKPT), and a
-              tennis-oriented game study (Rally). Music on this site is original composition.
+              Side work includes hands-off, agentic trading systems (Green Machine), audio tooling
+              (GATEKPT), and a tennis-oriented game study (Rally). Music on this site is original
+              composition.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

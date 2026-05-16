@@ -141,12 +141,12 @@ function ArchitectureDiagram() {
   const nodes = [
     { id: 'shell', label: 'XIV_OS · shell', x: 50, y: 16 },
     { id: 'gatekpt', label: 'GATEKPT · audio', x: 18, y: 60 },
-    { id: 'mm', label: 'MONEY MACHINE · markets', x: 50, y: 70 },
+    { id: 'gm', label: 'GREEN MACHINE · agentic', x: 50, y: 70 },
     { id: 'rally', label: 'RALLY · game', x: 82, y: 60 },
   ];
   const edges: [string, string][] = [
     ['shell', 'gatekpt'],
-    ['shell', 'mm'],
+    ['shell', 'gm'],
     ['shell', 'rally'],
   ];
   const findNode = (id: string) => nodes.find((n) => n.id === id)!;

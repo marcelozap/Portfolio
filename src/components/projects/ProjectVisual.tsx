@@ -141,7 +141,7 @@ function MarketsVisual({ id }: { id: string }) {
       </div>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        money_machine · vol_surface
+        {id.replace(/-/g, '_')} · vol_surface
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
         regime: risk-on

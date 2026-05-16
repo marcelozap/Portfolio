@@ -90,96 +90,59 @@ export const PROJECTS: Project[] = [
     stack: ['TypeScript', 'Web Audio', 'LLM', 'Tauri', 'React'],
   },
   {
-    id: 'money-machine',
-    name: 'MONEY MACHINE',
-    tagline: 'Probabilistic market analytics for the patient operator.',
+    id: 'green-machine',
+    name: 'GREEN MACHINE',
+    tagline: 'Hands-off, agentic trading stack that compounds its own edge.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2024',
     description:
-      'A disciplined, systems-first market research environment. Not a "trading guru" toolkit — a probability dashboard that respects the math: regime detection, volatility surfaces, options flow context, and macro-event timing rendered in one calm, legible space.',
+      'Green Machine merges disciplined market analytics with a distributed execution mesh: probability-first dashboards, volatility and regime context, and a versioned bridge from research UI to trading host. Agentic layers automate the full loop—signal formation, risk checks, alerting, and execution prep—so the system runs with minimal babysitting while feedback continuously sharpens behavior.',
     coreIdeas: [
-      'Probability-first dashboards over predictions',
-      'Volatility surface and term-structure visualization',
-      'Macro-event timeline with cause/effect overlays',
-      'Options flow contextualized by regime',
-      'Pattern library with backtested base rates',
+      'Agentic control loop: research → risk → action with human-in-the-loop only where policy requires',
+      'Probability surfaces instead of story trading — vol grids, regimes, and base-rate overlays',
+      'Mac control deck ↔ Windows host over a strict, versioned WebSocket contract',
+      'Telegram and in-app alerting on breaches; one-hop kill switch always visible',
+      'Research memory and evaluation hooks so automation gets smarter run over run',
     ],
     features: [
       {
-        title: 'Volatility heatmap',
+        title: 'Autonomous operating loop',
         description:
-          'Animated IV / RV grids per sector and tenor, with regime shading so you see where vol is mispriced before clicking.',
+          'Orchestrated agents monitor markets, reconcile signals with risk policy, and stage trades while logging every decision for replay and tuning.',
       },
       {
-        title: 'Macro timeline',
+        title: 'Probability command deck',
         description:
-          'A horizontal timeline of CPI prints, FOMC, earnings, NFP — overlaid against your watchlist drawdowns.',
+          'Volatility heatmaps, regime shading, and macro timelines rendered in a single calm surface—built for decisions, not noise.',
       },
       {
-        title: 'Pattern engine',
+        title: 'Distributed execution mesh',
         description:
-          'Tag any chart pattern; the engine returns base-rate statistics, expected value, and worst historical realization.',
+          'FastAPI `/ws/feed`, six-factor tiles, and handshake-gated actions keep research UX separated from execution on the host.',
       },
       {
-        title: 'Probability cones',
+        title: 'Pattern intelligence',
         description:
-          'Replace point predictions with distributions. Every trade idea is sized off a probabilistic forecast, not a hunch.',
+          'Pattern tagging with historical base rates and worst-case paths so automated sizing respects distribution, not a single point forecast.',
       },
     ],
     metrics: [
-      { label: 'Series tracked', value: '1,400+' },
-      { label: 'Update cadence', value: '15s' },
-      { label: 'Regimes modeled', value: '6' },
-    ],
-    stack: ['Python', 'Next.js', 'D3', 'DuckDB', 'Polars'],
-  },
-  {
-    id: 'green-machine',
-    name: 'GREEN MACHINE',
-    tagline: 'Distributed SPY options command center with real-time alerts.',
-    domain: 'infra',
-    status: 'in-development',
-    accent: 'green',
-    year: '2024',
-    description:
-      'A distributed trading command center for SPY options analytics. A Mac front-end talks to a Windows trading host over a versioned WebSocket protocol with a strict handshake, surfaces six factors per signal, and always exposes a one-hop kill switch to the operator. Strict separation of concerns: signals on the host, UX on the Mac.',
-    coreIdeas: [
-      'Versioned WebSocket API contract between Mac and trading host',
-      'Operator-first kill switch — one hop from idea to off',
-      'Six factors per signal, surfaced as calm glassy tiles',
-      'Telegram alerting on threshold breaches',
-      'Vite-proxied dev loop so backend + UI boot together',
-    ],
-    features: [
-      {
-        title: 'Mac Control Deck',
-        description:
-          'A focused front-end with kill switch, handshake, and six-factor tiles. The UI is intentionally calm — no flashing red anywhere unless something is actually wrong.',
-      },
-      {
-        title: 'FastAPI bridge',
-        description:
-          'Python backend exposes `/ws/feed` to all connected clients, handles auth, and bridges Telegram for out-of-app alerting.',
-      },
-      {
-        title: 'Strict API contract',
-        description:
-          'Every message is versioned and documented; the handshake gates dangerous actions like notional-trade requests.',
-      },
-      {
-        title: 'Single-command dev loop',
-        description:
-          '`npm run dev:all` boots backend + UI together, with Vite proxying WebSockets so the dev experience matches production.',
-      },
-    ],
-    metrics: [
+      { label: 'Automation depth', value: 'Full loop' },
       { label: 'Hosts in mesh', value: '2' },
       { label: 'Factors / signal', value: '6' },
-      { label: 'Kill hops', value: '1' },
     ],
-    stack: ['React', 'Vite', 'FastAPI', 'WebSockets', 'Telegram API'],
+    stack: [
+      'Python',
+      'FastAPI',
+      'React',
+      'Vite',
+      'WebSockets',
+      'LLM agents',
+      'Telegram API',
+      'Polars',
+    ],
   },
   {
     id: 'rally',
