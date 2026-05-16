@@ -1,16 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Disc3, Guitar, Headphones, Moon } from 'lucide-react';
+import { Disc3, Guitar, Headphones } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
-const TRACKS = [
-  { title: 'Late · Empty Studio', length: '3:21', tape: 'A1' },
-  { title: 'Bass · 2am Drift', length: '4:08', tape: 'A2' },
-  { title: 'Cover · Untitled', length: '2:47', tape: 'B1' },
-  { title: 'Sketch · Headlights', length: '1:54', tape: 'B2' },
-];
+/** Representative catalog line for the site score; durations illustrative. */
+const CREDIT_TRACK = {
+  title: 'XIV Ambiant',
+  subtitle: 'Site score · Logic Pro',
+  note: 'Used as optional ambient audio on this portfolio (Sound control, lower left).',
+};
 
 const BARS = Array.from(
   { length: 64 },
@@ -21,15 +21,15 @@ export function Music() {
   return (
     <section id="music" className="section">
       <SectionHeader
-        eyebrow="Music · creative systems"
+        eyebrow="Music"
         title={
           <>
-            Bedroom records,
+            Original composition,
             <br />
-            <span className="text-gradient">dim-room electricity.</span>
+            <span className="text-gradient">Marcelo Zapata.</span>
           </>
         }
-        description="Multi-instrumentalist with a guitar-first hand and bass-leaning ear. Songs assembled in small rooms, late, with cassette aesthetics and tape noise."
+        description="Music here is written and produced by Marcelo Zapata. It is separate from engineering work; the site uses it only as optional atmosphere."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -38,21 +38,30 @@ export function Music() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="mono-tag">
                 <Disc3 className="size-3" />
-                bedroom covers by XIV
+                original work
               </span>
-              <span className="mono-tag">
-                <Moon className="size-3" />
-                nocturnal mix
+              <span className="mono-tag normal-case tracking-wider">
+                composer & producer · M. Zapata
               </span>
             </div>
 
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 md:p-5">
+              <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+                credit
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
+                Ambient audio on this site — including the piece titled{' '}
+                <span className="text-ink">{CREDIT_TRACK.title}</span> — was{' '}
+                <span className="text-ink">composed, arranged, and recorded by Marcelo Zapata</span>
+                {CREDIT_TRACK.subtitle ? ` (${CREDIT_TRACK.subtitle}).` : '.'} {CREDIT_TRACK.note}
+              </p>
+            </div>
+
             <p className="max-w-xl text-base leading-relaxed text-ink-muted md:text-lg">
-              Atmospheric composition centered on guitar and bass — long sustains, tape saturation,
-              fingers-on-strings reality. The music sits in the same emotional register as the rest
-              of XIV_OS: quiet, intentional, built in the dark hours.
+              Instrumentation is primarily guitar and bass, with occasional synthesizer for texture.
+              Work is tracked in Logic; mixing favors restraint and clarity over spectacle.
             </p>
 
-            {/* waveform */}
             <div className="relative h-28 rounded-xl border border-white/[0.06] bg-bg/40 p-3">
               <div className="grid-bg absolute inset-0 opacity-30" />
               <div className="relative flex h-full items-center justify-between gap-[3px]">
@@ -76,30 +85,23 @@ export function Music() {
                 ))}
               </div>
               <div className="absolute left-3 top-2 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-                tape · A side
+                waveform · illustrative
               </div>
             </div>
 
             <ul className="divide-y divide-white/[0.04] overflow-hidden rounded-xl border border-white/[0.06]">
-              {TRACKS.map((t, i) => (
-                <motion.li
-                  key={t.title}
-                  initial={{ opacity: 0, x: -8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="flex items-center gap-4 px-4 py-3 text-sm transition hover:bg-white/[0.03]"
-                >
-                  <span className="font-mono text-[11px] tabular-nums text-accent-warm">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="flex-1 text-ink">{t.title}</span>
-                  <span className="font-mono text-[10px] text-ink-faint">{t.tape}</span>
-                  <span className="font-mono text-[11px] tabular-nums text-ink-muted">
-                    {t.length}
-                  </span>
-                </motion.li>
-              ))}
+              <motion.li
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.4 }}
+                className="flex items-center gap-4 px-4 py-3 text-sm transition hover:bg-white/[0.03]"
+              >
+                <span className="font-mono text-[11px] tabular-nums text-accent-warm">01</span>
+                <span className="flex-1 text-ink">{CREDIT_TRACK.title}</span>
+                <span className="font-mono text-[10px] text-ink-faint">amb.</span>
+                <span className="font-mono text-[11px] tabular-nums text-ink-muted">—</span>
+              </motion.li>
             </ul>
           </div>
         </GlassCard>
@@ -110,10 +112,10 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-warm/10 text-accent-warm ring-1 ring-accent-warm/30">
                 <Guitar className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Instruments in rotation</h3>
+              <h3 className="text-base font-medium text-ink">Instrumentation</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Electric & acoustic guitar, four-string bass, layered pedals, small synths for
-                texture. The signal chain matters as much as the song.
+                Electric and acoustic guitar, four-string bass, modest pedal work, and synthesizer
+                where a part truly needs it.
               </p>
             </div>
           </GlassCard>
@@ -123,10 +125,10 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent/10 text-accent ring-1 ring-accent/30">
                 <Headphones className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">The bedroom studio</h3>
+              <h3 className="text-base font-medium text-ink">Recording</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Dim lights, headphones, an interface, and time. Recordings are intimate by design —
-                no spectacle, just the actual sound of a quiet room.
+                Private facility, conservative monitoring levels, and edits that preserve
+                performance rather than over-correcting it.
               </p>
             </div>
           </GlassCard>
@@ -134,12 +136,12 @@ export function Music() {
           <GlassCard>
             <div className="space-y-3 p-6">
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-cool/10 text-accent-cool ring-1 ring-accent-cool/30">
-                <Moon className="size-4" />
+                <Disc3 className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Late-night composition</h3>
+              <h3 className="text-base font-medium text-ink">Use of work</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Most ideas land between midnight and 4am, when the world is still enough to hear the
-                small parts of a song.
+                This portfolio does not imply licensing for third-party use. For permission to use a
+                recording, contact Marcelo directly.
               </p>
             </div>
           </GlassCard>

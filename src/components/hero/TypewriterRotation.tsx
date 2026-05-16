@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 const PHRASES = [
   'Software engineer · Publix',
-  'Projects in music, markets, and games.',
-  'Shipping calm, reliable systems.',
-  'Also known as XIV.',
+  'Disciplined delivery. Clear ownership.',
+  'Music composed by Marcelo Zapata.',
+  'Creative alias · XIV',
 ];
 
 /**

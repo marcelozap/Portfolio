@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: '%s — Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata is a software engineer. Projects span internal tooling, trading systems, music software, and game design.',
+    'Marcelo Zapata — software engineer. Selected work in systems, markets, music, and interactive design. Creative releases may appear as XIV.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -51,14 +51,15 @@ export const metadata: Metadata = {
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata — Software Engineer',
-    description: 'Software engineer · projects in engineering, music, markets, and games.',
+    description:
+      'Software engineer at Publix. Portfolio of engineering work, tools, and original music.',
     type: 'website',
     siteName: 'XIV_OS',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer · XIV_OS',
+    description: 'Software engineer · portfolio',
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],

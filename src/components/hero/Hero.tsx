@@ -48,9 +48,8 @@ export function Hero() {
           className="font-display text-[clamp(2.75rem,9vw,7rem)] font-semibold leading-[0.95] tracking-tight"
         >
           <span className="block text-ink">Marcelo Zapata</span>
-          <span className="mt-1 block font-mono text-[clamp(1rem,3.5vw,1.35rem)] font-normal normal-case tracking-[0.12em] text-ink-muted">
-            XIV <span className="text-ink-faint">/</span>{' '}
-            <span className="text-gradient">creative moniker</span>
+          <span className="mt-1 block font-mono text-[clamp(1rem,3.5vw,1.35rem)] font-normal normal-case tracking-[0.08em] text-ink-muted">
+            XIV · alias for independent creative work
           </span>
         </motion.div>
 
@@ -61,8 +60,8 @@ export function Hero() {
           className="max-w-xl space-y-3"
         >
           <p className="text-balance text-lg text-ink-muted md:text-xl">
-            I am a software engineer. Here: selected projects, music, tennis-inspired game work, and
-            trading tooling.
+            Software engineer · Publix. This page summarizes selected engineering work, original
+            music, and related projects.
           </p>
           <TypewriterRotation />
         </motion.div>

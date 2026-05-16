@@ -38,20 +38,19 @@ export function About() {
             <span className="text-gradient">Software engineer.</span>
           </>
         }
-        description="Full-time software engineer at Publix. Independently builds projects across music software, trading tools, and game design — often under the creative moniker XIV."
+        description="Full-time software engineer at Publix. Outside formal role: independent work in software for music, markets, and games. Creative releases are sometimes credited as XIV."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I keep professional work and side projects pointed at the same standard: ships
-              cleanly, scales when it must, and stays understandable to the next person in the file.
+              The same standard applies to internal systems and personal projects: correct behavior
+              first, maintainability second, presentation last.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside day-job delivery, I explore music production tooling (GATEKPT), disciplined
-              market analytics (Green Machine / Money Machine), and a tennis-inspired game concept
-              (Rally).
+              Side work includes trading analytics (Green Machine), audio tooling (GATEKPT), and a
+              tennis-oriented game study (Rally). Music on this site is original composition.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

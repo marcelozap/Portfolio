@@ -207,9 +207,14 @@ export function AmbientAudio() {
     <button
       type="button"
       onClick={() => (on ? stopAll() : void startAudio())}
+      title="Original ambient score by Marcelo Zapata (Logic). Toggle playback."
       className="fixed bottom-5 left-5 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-bg-elevated/85 px-3 py-2 font-mono text-[11px] text-ink-muted shadow-glow backdrop-blur-xl transition hover:border-accent/40 hover:text-ink"
       aria-pressed={on}
-      aria-label={on ? 'Mute ambient audio' : 'Play ambient audio'}
+      aria-label={
+        on
+          ? 'Mute ambient audio (original composition by Marcelo Zapata)'
+          : 'Play ambient audio (original composition by Marcelo Zapata)'
+      }
     >
       {on ? <Volume2 className="size-3.5 text-accent" /> : <VolumeX className="size-3.5" />}
       <span className="hidden sm:inline">{on ? 'Sound on' : 'Sound'}</span>
