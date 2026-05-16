@@ -1,20 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, GitMerge, type LucideIcon } from 'lucide-react';
+import { Briefcase, type LucideIcon } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { cn } from '@/lib/utils';
 
-type Kind = 'role' | 'system';
-type Accent = 'cyan' | 'green';
+type Accent = 'green';
 
 interface Milestone {
   id: string;
   period: string;
   role: string;
   org: string;
-  kind: Kind;
   accent: Accent;
   icon: LucideIcon;
   summary: string;
@@ -23,13 +21,10 @@ interface Milestone {
   metrics: { label: string; value: string }[];
 }
 
-const ACCENT: Record<Accent, { dot: string; text: string; ring: string; tint: string }> = {
-  cyan: {
-    dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent-glow))]',
-    text: 'text-accent',
-    ring: 'ring-accent/30',
-    tint: 'from-accent/10',
-  },
+const ACCENT: Record<
+  Accent,
+  { dot: string; text: string; ring: string; tint: string }
+> = {
   green: {
     dot: 'bg-signal-green shadow-[0_0_10px_hsl(152_78%_52%)]',
     text: 'text-signal-green',
@@ -38,85 +33,63 @@ const ACCENT: Record<Accent, { dot: string; text: string; ring: string; tint: st
   },
 };
 
-const TIMELINE: Milestone[] = [
-  {
-    id: 'publix',
-    period: '2023 — present',
-    role: 'Software Engineer',
-    org: 'Publix',
-    kind: 'role',
-    accent: 'green',
-    icon: Briefcase,
-    summary:
-      'Full-time software engineer delivering warehouse, data, and compliance systems end to end. Same role over time—deeper ownership in QA and platform delivery first, then analytics and low-code integration work, and now modernization of legacy warehouse jobs with spec-kit and AI-assisted engineering, always paired with documentation and mentorship.',
-    highlights: [
-      '2023–2024 — Conveyor modernization (C#): lead QA on a multimillion-dollar conveyor control upgrade. Built a full Playwright automation suite, enabled the team to run it from CI/CD pipelines, integrated Azure Key Vault for secrets, and produced automated PDF test reports with screenshots, timestamps, scenario notes, and pipeline run attribution.',
-      '2024–2025 — Data lake & BI: helped move legacy warehouse data into a modern lake with orchestrated pipelines and validation to catch faulty records; Snowflake, Databricks, and Power BI consumption—including semantic models so reporting stayed trustworthy.',
-      '2024–2025 — Power Platform & logistics integration: Power Apps for sensitive on-site data; in-office consulting on Power Automate and API-driven flows when warehouse logistics exceptions require action, including automated vendor alerting. Led support for controlled-substance file-balance software and monitoring across 40+ warehouses in Florida and beyond.',
-      '2026 — Legacy job modernization: rebuilding original warehouse job logic piece by piece using spec-kit-driven, AI-assisted development—shipping with a big-picture view of how the estate fits together.',
-      'Mentorship: trained teammates with mixed development depth on using AI to build tests, operate pipelines, and write durable documentation—approach grounded in an education background: patient, clear, and never condescending.',
-    ],
-    stack: [
-      'C#',
-      'Playwright',
-      'Azure Key Vault',
-      'Python',
-      'SQL',
-      'Snowflake',
-      'Databricks',
-      'Power BI',
-      'Power Apps',
-      'Power Automate',
-      'CI/CD',
-    ],
-    metrics: [
-      { label: 'Role', value: 'SWE' },
-      { label: 'Scope', value: 'WH + Data' },
-      { label: 'Stack', value: 'Polyglot' },
-    ],
-  },
-  {
-    id: 'practice',
-    period: '2023 — present',
-    role: 'Engineering practice',
-    org: 'Independent · portfolio',
-    kind: 'system',
-    accent: 'cyan',
-    icon: GitMerge,
-    summary:
-      'How side projects and open-source-style rigor stay aligned: reproducible builds, CI on every push, containers when the problem calls for it, and production deploys that are boring on purpose.',
-    highlights: [
-      'GitHub Actions matrices across Node 20 / 22 with lint, typecheck, and build gates.',
-      'Vercel-first shipping for frontends; FastAPI / WebSocket services containerized when needed.',
-      'Husky + lint-staged to keep formatting and static analysis non-debatable at commit time.',
-      'Structured logging, basic SLO thinking, and kill-switches on anything market-facing.',
-    ],
-    stack: ['GitHub Actions', 'Docker', 'Vercel', 'Husky', 'Prettier', 'ESLint'],
-    metrics: [
-      { label: 'CI', value: 'Matrix' },
-      { label: 'Deploy', value: '< 10m' },
-    ],
-  },
-];
-
-const KIND_LABEL: Record<Kind, string> = {
-  role: 'full-time',
-  system: 'practice',
+/** One role, LinkedIn-safe timeline by phase (2023–2026). */
+const PUBLIX: Milestone = {
+  id: 'publix',
+  period: '2023 — present',
+  role: 'Software Engineer',
+  org: 'Publix',
+  accent: 'green',
+  icon: Briefcase,
+  summary:
+    'Enterprise software engineer across warehouse control modernization, deterministic QA automation, analytics platforms, regulated operations, and mentorship—with ownership expanding as foundational programs mature.',
+  highlights: [
+    '2023–2024 · Lead QA for a multimillion-dollar conveyor / warehouse control software modernization delivered on a predominantly C# stack. Produced Playwright coverage the wider team adopted, routed suites through CI/CD, and guarded secrets via Azure Key Vault.',
+    '2023–2024 · Implemented automated PDF test evidence tying screenshots and timestamps to what was exercised, attributable to pipelines and whoever triggered the validation—reducing ambiguity for release stakeholders.',
+    '2025 · Data lake modernization connecting legacy warehouse systems to governed lake pipelines with explicit quality checks against faulty ingestion. Implemented Snowflake and Databricks processing patterns plus Power BI reports built on semantic models for consistent dashboards.',
+    '2025 · Shipped sensitive on-site Power Apps experiences with full lifecycle ownership—integrations eliminated hundreds of hours of manual reconciliation—and consulted in facilities when solution fit depended on firsthand workflow detail.',
+    '2025 · Composed Power Automate flows alongside APIs for logistics file handling so downstream vendors receive deterministic alerts whenever warehouse ingestion or reconciliation defects appear upstream.',
+    '2025 · Lead support engineer for regulated controlled-substances software and file balance / adjustment monitoring spanning 40+ warehouses across Florida and adjacent regions.',
+    'Mentorship · Partnered across varied engineering depths to standardize disciplined AI-assisted development, layered testing strategies, pipelines, and prose documentation—guided by educator-trained habits of respectful knowledge transfer.',
+    '2026 · After stabilization of analytics delivery, prioritized modernization of longstanding warehouse batch jobs—incrementally reconstructing foundational services through AI-assisted specification work (narrow slices, explicit acceptance criteria, regression discipline) while carrying broader accountability for warehouse-facing software.',
+  ],
+  stack: [
+    'C#',
+    'Azure',
+    'Playwright',
+    'Azure Key Vault',
+    'Snowflake',
+    'Databricks',
+    'Power BI',
+    'Power Apps',
+    'Power Automate',
+    'REST APIs',
+    'CI/CD',
+  ],
+  metrics: [
+    { label: 'Warehouses in scope', value: '40+' },
+    { label: 'Regulated workloads', value: 'Yes' },
+    { label: 'Span', value: '2023→' },
+  ],
 };
 
 export function Experience() {
+  const m = PUBLIX;
+  const a = ACCENT[m.accent];
+  const Icon = m.icon;
+
   return (
     <section id="experience" className="section">
       <SectionHeader
         eyebrow="Experience"
         title={
           <>
-            Software engineering
+            Software Engineer,
             <br />
-            <span className="text-gradient">at work and in the lab.</span>
+            <span className="text-gradient">Publix.</span>
           </>
         }
-        description="Full-time software engineer at Publix — one role with multiple delivery threads. Side projects (music, markets, games) live under Projects; this section is the professional spine."
+        description="Selected enterprise outcomes—verification, modernization, analytics, low-code, compliance, mentorship—organized by delivery phase."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">
@@ -125,124 +98,117 @@ export function Experience() {
           className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-accent/40 via-accent-cool/20 to-transparent"
         />
 
-        {TIMELINE.map((m, i) => {
-          const a = ACCENT[m.accent];
-          const Icon = m.icon;
-          return (
-            <motion.li
-              key={m.id}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="relative"
-            >
-              <span className="absolute -left-[39px] top-3 flex size-4 items-center justify-center md:-left-[55px]">
-                <span
-                  className={cn(
-                    'absolute inset-0 animate-pulse-glow rounded-full blur-md',
-                    a.dot,
-                    'opacity-50',
-                  )}
-                />
-                <span className={cn('relative size-2 rounded-full', a.dot)} />
-              </span>
+        <motion.li
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+          className="relative"
+        >
+          <span className="absolute -left-[39px] top-3 flex size-4 items-center justify-center md:-left-[55px]">
+            <span
+              className={cn(
+                'absolute inset-0 animate-pulse-glow rounded-full blur-md',
+                a.dot,
+                'opacity-50',
+              )}
+            />
+            <span className={cn('relative size-2 rounded-full', a.dot)} />
+          </span>
 
-              <GlassCard className="overflow-hidden">
-                <div
-                  className={cn(
-                    'pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r to-transparent',
-                    a.tint,
-                  )}
-                />
-                <div className="space-y-5 p-6 md:p-8">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="flex items-start gap-3">
-                      <span
-                        className={cn(
-                          'flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/[0.03] ring-1',
-                          a.ring,
-                          a.text,
-                        )}
-                      >
-                        <Icon className="size-4" />
-                      </span>
-                      <div>
-                        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
-                          <span>{m.period}</span>
-                          <span>·</span>
-                          <span className={a.text}>{KIND_LABEL[m.kind]}</span>
-                        </div>
-                        <h3 className="mt-1 font-display text-lg leading-tight text-ink md:text-xl">
-                          {m.role}
-                          <span className="mx-2 text-ink-faint">·</span>
-                          <span className={a.text}>{m.org}</span>
-                        </h3>
-                      </div>
+          <GlassCard className="overflow-hidden">
+            <div
+              className={cn(
+                'pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r to-transparent',
+                a.tint,
+              )}
+            />
+            <div className="space-y-5 p-6 md:p-8">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="flex items-start gap-3">
+                  <span
+                    className={cn(
+                      'flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/[0.03] ring-1',
+                      a.ring,
+                      a.text,
+                    )}
+                  >
+                    <Icon className="size-4" />
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
+                      <span>{m.period}</span>
+                      <span>·</span>
+                      <span className={a.text}>full-time</span>
                     </div>
-
-                    <div className="hidden gap-3 md:flex">
-                      {m.metrics.map((mt) => (
-                        <div
-                          key={mt.label}
-                          className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-right"
-                        >
-                          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
-                            {mt.label}
-                          </div>
-                          <div className={cn('font-display text-sm tabular-nums', a.text)}>
-                            {mt.value}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="max-w-3xl text-sm leading-relaxed text-ink-muted md:text-base">
-                    {m.summary}
-                  </p>
-
-                  <ul className="grid gap-2 md:grid-cols-2">
-                    {m.highlights.map((h) => (
-                      <li
-                        key={h}
-                        className="flex gap-3 rounded-lg border border-white/[0.04] bg-white/[0.01] px-3 py-2 text-[13px] leading-relaxed text-ink-muted"
-                      >
-                        <span className={cn('mt-2 size-1.5 shrink-0 rounded-full', a.dot)} />
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-col gap-3 border-t border-white/[0.04] pt-4 md:flex-row md:items-center md:justify-between">
-                    <ul className="flex flex-wrap gap-1.5">
-                      {m.stack.map((s) => (
-                        <li key={s} className="mono-tag normal-case tracking-wider">
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex gap-2 md:hidden">
-                      {m.metrics.map((mt) => (
-                        <div
-                          key={mt.label}
-                          className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-1"
-                        >
-                          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
-                            {mt.label}
-                          </div>
-                          <div className={cn('font-display text-xs tabular-nums', a.text)}>
-                            {mt.value}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <h3 className="mt-1 font-display text-lg leading-tight text-ink md:text-xl">
+                      {m.role}
+                      <span className="mx-2 text-ink-faint">·</span>
+                      <span className={a.text}>{m.org}</span>
+                    </h3>
                   </div>
                 </div>
-              </GlassCard>
-            </motion.li>
-          );
-        })}
+
+                <div className="hidden gap-3 md:flex">
+                  {m.metrics.map((mt) => (
+                    <div
+                      key={mt.label}
+                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-right"
+                    >
+                      <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
+                        {mt.label}
+                      </div>
+                      <div className={cn('font-display text-sm tabular-nums', a.text)}>
+                        {mt.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="max-w-3xl text-sm leading-relaxed text-ink-muted md:text-base">
+                {m.summary}
+              </p>
+
+              <ul className="grid gap-2 md:grid-cols-1">
+                {m.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="flex gap-3 rounded-lg border border-white/[0.04] bg-white/[0.01] px-3 py-2 text-[13px] leading-relaxed text-ink-muted"
+                  >
+                    <span className={cn('mt-2 size-1.5 shrink-0 rounded-full', a.dot)} />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-col gap-3 border-t border-white/[0.04] pt-4 md:flex-row md:items-center md:justify-between">
+                <ul className="flex flex-wrap gap-1.5">
+                  {m.stack.map((s) => (
+                    <li key={s} className="mono-tag normal-case tracking-wider">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex gap-2 md:hidden">
+                  {m.metrics.map((mt) => (
+                    <div
+                      key={mt.label}
+                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-1"
+                    >
+                      <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
+                        {mt.label}
+                      </div>
+                      <div className={cn('font-display text-xs tabular-nums', a.text)}>
+                        {mt.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </GlassCard>
+        </motion.li>
       </ol>
     </section>
   );

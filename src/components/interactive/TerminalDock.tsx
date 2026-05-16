@@ -24,7 +24,7 @@ const HELP = [
 
 const WHOAMI = [
   'Marcelo Zapata — software engineer (Publix)',
-  'side projects: agentic trading (Green Machine), music (GATEKPT), tennis game (Rally)',
+  'side projects: Green Machine (risk-aware automation + markets research), music (GATEKPT), tennis game (Rally)',
   'creative moniker: XIV',
 ];
 

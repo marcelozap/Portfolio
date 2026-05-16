@@ -141,7 +141,9 @@ function MarketsVisual({ id }: { id: string }) {
       </div>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        {id.replace(/-/g, '_')} · vol_surface
+        {id === 'green-machine'
+          ? 'green_machine · research_exec_plane'
+          : `${id.replace(/-/g, '_')} · vol_surface`}
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
         regime: risk-on
@@ -329,7 +331,7 @@ function InfraVisual({ id }: { id: string }) {
       </div>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        green_machine · mesh
+        exec_mesh · ws_plane
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
         kill_switch: ARMED

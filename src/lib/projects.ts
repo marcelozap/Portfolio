@@ -92,44 +92,45 @@ export const PROJECTS: Project[] = [
   {
     id: 'green-machine',
     name: 'GREEN MACHINE',
-    tagline: 'Hands-off, agentic trading stack that compounds its own edge.',
+    tagline:
+      'Single markets laboratory: probabilistic analytics plus orchestrated agentic research and execution prep—risk-aware automation, never implied returns.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2024',
     description:
-      'Green Machine merges disciplined market analytics with a distributed execution mesh: probability-first dashboards, volatility and regime context, and a versioned bridge from research UI to trading host. Agentic layers automate the full loop—signal formation, risk checks, alerting, and execution prep—so the system runs with minimal babysitting while feedback continuously sharpens behavior.',
+      'Green Machine unifies exploratory analytics dashboards and unattended monitoring into one evolving stack tuned for skepticism-first decisions. Probabilistic context, volatility and regime overlays, reproducible hypotheses, controlled automation, alerting, journaling, handshake-gated actions, explicit kill switches, and auditable telemetry sit under the same codebase so the workspace can iterate without rewriting its spine. Operating capital is discretionary; variance is acknowledged by design—not performance marketing.',
     coreIdeas: [
-      'Agentic control loop: research → risk → action with human-in-the-loop only where policy requires',
-      'Probability surfaces instead of story trading — vol grids, regimes, and base-rate overlays',
-      'Mac control deck ↔ Windows host over a strict, versioned WebSocket contract',
-      'Telegram and in-app alerting on breaches; one-hop kill switch always visible',
-      'Research memory and evaluation hooks so automation gets smarter run over run',
+      'Unified surface for probabilistic dashboards, agent-assisted research synthesis, and hands-off supervising loops constrained by mandate',
+      'Automation envelopes escalate to humans when ambiguity outruns policy—people still set intent, limits, and rollback',
+      'Calibrated overlays (liquidity stress, regimes, tails) prioritized over persuasive charting',
+      'Versioned UI-to-host bridges with strict contracts separating operator intent from brokerage/API touchpoints',
+      'Evaluation envelopes and replay so autonomy improves deliberately instead of collapsing into folklore',
     ],
     features: [
       {
-        title: 'Autonomous operating loop',
+        title: 'Research-through-execution loop',
         description:
-          'Orchestrated agents monitor markets, reconcile signals with risk policy, and stage trades while logging every decision for replay and tuning.',
+          'Agents handle repetitive research passes, consistency checks, and alerting; execution paths stay optional, capped, and reversible where the broker/API allows.',
       },
       {
-        title: 'Probability command deck',
+        title: 'Risk-aware command surface',
         description:
-          'Volatility heatmaps, regime shading, and macro timelines rendered in a single calm surface—built for decisions, not noise.',
+          'Dashboards emphasize uncertainty and drawdown context—not implied edge—so sizing and halts stay intentional.',
       },
       {
-        title: 'Distributed execution mesh',
+        title: 'Distributed execution plane',
         description:
-          'FastAPI `/ws/feed`, six-factor tiles, and handshake-gated actions keep research UX separated from execution on the host.',
+          'FastAPI `/ws/feed`, factor tiles, and strict contracts separate interactive research from the machine that talks to markets.',
       },
       {
-        title: 'Pattern intelligence',
+        title: 'Evaluation & replay',
         description:
-          'Pattern tagging with historical base rates and worst-case paths so automated sizing respects distribution, not a single point forecast.',
+          'Structured logs and replay snapshots support post-mortems and constraint tuning without pretending past behavior guarantees future results.',
       },
     ],
     metrics: [
-      { label: 'Automation depth', value: 'Full loop' },
+      { label: 'Operating mode', value: 'Hands-off' },
       { label: 'Hosts in mesh', value: '2' },
       { label: 'Factors / signal', value: '6' },
     ],
