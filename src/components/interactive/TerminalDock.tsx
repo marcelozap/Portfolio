@@ -23,9 +23,9 @@ const HELP = [
 ];
 
 const WHOAMI = [
-  'Marcelo Zapata — software engineer (Publix)',
-  'side projects: Green Machine (risk-aware automation + markets research), music (GATEKPT), tennis game (Rally)',
-  'creative moniker: XIV',
+  'Marcelo Zapata — software engineer focused on systems, automation, analytics, and product builds',
+  'current scope: warehouse operations, regulated software, workflow tooling, and data platforms',
+  'independent work: Rally, GATEKPT, Green Machine · music credits may appear as XIV',
 ];
 
 const PROJECT_IDS = ['gatekpt', 'green-machine', 'rally'];
@@ -38,7 +38,7 @@ const SECTION_IDS = ['hero', 'about', 'experience', 'engineering', 'projects', '
 export function TerminalDock() {
   const [open, setOpen] = useState(false);
   const [lines, setLines] = useState<TerminalLine[]>([
-    { kind: 'sys', text: 'XIV_OS · Marcelo Zapata · type "help"' },
+    { kind: 'sys', text: 'Marcelo Zapata · portfolio terminal · type "help"' },
   ]);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([]);
@@ -54,7 +54,7 @@ export function TerminalDock() {
     (raw: string) => {
       const cmd = raw.trim();
       if (!cmd) return;
-      push({ kind: 'in', text: `xiv@os:~$ ${cmd}` });
+      push({ kind: 'in', text: `mz@portfolio:~$ ${cmd}` });
       setHistory((h) => [...h, cmd]);
       setHistoryIdx(null);
 
@@ -211,14 +211,14 @@ export function TerminalDock() {
             transition={{ duration: 0.2, ease: 'easeOut' }}
             className="glass-strong scanline fixed bottom-20 right-5 z-30 w-[min(520px,calc(100vw-2.5rem))] overflow-hidden shadow-glow-lg"
             role="dialog"
-            aria-label="XIV terminal"
+            aria-label="Portfolio terminal"
           >
             <div className="flex items-center justify-between border-b border-white/[0.06] px-3 py-2">
               <div className="flex items-center gap-2 font-mono text-[11px] text-ink-muted">
                 <span className="size-2 rounded-full bg-signal-red/80" />
                 <span className="size-2 rounded-full bg-signal-amber/80" />
                 <span className="size-2 rounded-full bg-signal-green/80" />
-                <span className="ml-2 tracking-widest">xiv@os · /terminal</span>
+                <span className="ml-2 tracking-widest">mz@portfolio · /terminal</span>
               </div>
               <button
                 aria-label="Close terminal"
@@ -249,7 +249,7 @@ export function TerminalDock() {
             </div>
 
             <div className="flex items-center gap-2 border-t border-white/[0.06] px-3 py-2 font-mono text-[12px]">
-              <span className="text-accent">xiv@os:~$</span>
+              <span className="text-accent">mz@portfolio:~$</span>
               <input
                 ref={inputRef}
                 value={input}

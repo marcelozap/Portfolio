@@ -21,15 +21,15 @@ export function Music() {
   return (
     <section id="music" className="section">
       <SectionHeader
-        eyebrow="Music"
+        eyebrow="Sound"
         title={
           <>
-            Original composition,
+            Original music,
             <br />
-            <span className="text-gradient">Marcelo Zapata.</span>
+            <span className="text-gradient">supporting craft.</span>
           </>
         }
-        description="Music here is written and produced by Marcelo Zapata. It is separate from engineering work; the site uses it only as optional atmosphere."
+        description="Original music and audio work by Marcelo Zapata. It complements the portfolio as supporting creative work and remains separate from the core engineering story."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">

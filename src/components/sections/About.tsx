@@ -8,22 +8,22 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Systems & product',
-    body: 'Reliable internals, clear boundaries, and interfaces people can trust.',
+    title: 'Operational ownership',
+    body: 'I like software that has consequences: compliance, warehouse workflows, file movement, reporting, and tools people rely on every day.',
   },
   {
     icon: Compass,
-    title: 'Craft',
-    body: 'Thoughtful UX on top of solid engineering — especially where tools get heavy use.',
+    title: 'Product sensibility',
+    body: 'I bring the same care to user experience, interaction, and clarity whether the audience is an operator, teammate, or consumer.',
   },
 ];
 
 const TAGS = [
+  'C# · Azure · QA automation',
   'TypeScript · React · Next.js',
-  'Python · data pipelines',
-  'Markets & analytics',
-  'Audio & creative tools',
-  'Game prototypes',
+  'Python · data & automation workflows',
+  'SwiftUI · SpriteKit · iOS product work',
+  'Audio, interaction, and creative tooling',
 ];
 
 export function About() {
@@ -35,23 +35,27 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Software engineer.</span>
+            <span className="text-gradient">Software engineer with range.</span>
           </>
         }
-        description="Full-time software engineer at Publix. Outside formal role: independent work in software for music, markets, and games. Creative releases are sometimes credited as XIV."
+        description="Software engineer based in Miami working across operational systems, analytics, automation, and independent product builds. XIV is a creative alias used for music and selected releases."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              The same standard applies to internal systems and personal projects: correct behavior
-              first, maintainability second, presentation last.
+              I work best in environments where software touches real operations. That can mean
+              legacy warehouse systems, regulated workflows, messy file movement, reporting, or
+              internal tooling that teams depend on every day. I also enjoy helping newer
+              teammates ramp up, documenting clearly, and bringing a calm sense of structure when
+              work gets messy.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Side work includes Green Machine—a discipline-first stack unifying automated markets research
-              with risk-aware orchestration—as well as audio tooling (GATEKPT) and a tennis game concept
-              (Rally). Music on this site is original composition.
+              Outside enterprise delivery, I build products that sharpen a different side of the
+              stack: Rally, a tennis lifestyle app; GATEKPT, an AI-assisted music workflow
+              workspace; and Green Machine, a research and monitoring platform. That mix keeps my
+              systems thinking, UX instincts, and execution speed sharp.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

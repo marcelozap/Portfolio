@@ -32,34 +32,37 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://xiv-os.vercel.app'),
   title: {
-    default: 'Marcelo Zapata — Software Engineer',
+    default: 'Marcelo Zapata — Software Engineer | Systems, Product, Automation',
     template: '%s — Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata — software engineer. Selected work in systems, markets, music, and interactive design. Creative releases may appear as XIV.',
+    'Marcelo Zapata is a software engineer building operational systems, automation, analytics, and product-driven software across enterprise delivery and independent projects.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
-    'XIV',
     'portfolio',
+    'product engineer',
+    'platform engineer',
+    'automation',
+    'analytics',
+    'warehouse systems',
     'GATEKPT',
     'Green Machine',
     'Rally',
-    'Publix',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata — Software Engineer',
     description:
-      'Software engineer at Publix. Portfolio of engineering work, tools, and original music.',
+      'Portfolio of software engineering work across systems, automation, analytics, product design, and creative technology.',
     type: 'website',
-    siteName: 'XIV_OS',
+    siteName: 'Marcelo Zapata Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer · portfolio',
+    description: 'Software engineer · systems, product, automation',
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],

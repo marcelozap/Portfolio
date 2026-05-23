@@ -90,7 +90,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       },
       {
         id: 'goto-about',
-        label: 'About XIV',
+        label: 'About Marcelo',
         icon: User,
         group: 'Navigate',
         action: () => scrollTo('about'),
@@ -104,7 +104,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       },
       {
         id: 'goto-engineering',
-        label: 'Engineering systems',
+        label: 'Capabilities & systems',
         icon: Cpu,
         group: 'Navigate',
         action: () => scrollTo('engineering'),
@@ -118,7 +118,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       },
       {
         id: 'goto-music',
-        label: 'Music & creative systems',
+        label: 'Sound & composition',
         icon: Disc3,
         group: 'Navigate',
         action: () => scrollTo('music'),
@@ -251,7 +251,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onKey}
-                  placeholder="Search systems, projects, sections…"
+                  placeholder="Search work, projects, sections…"
                   className="w-full bg-transparent text-sm text-ink placeholder:text-ink-faint focus:outline-none"
                 />
                 <kbd className="rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 font-mono text-[10px] text-ink-faint">
@@ -300,7 +300,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
 
               <div className="flex items-center justify-between border-t border-white/[0.06] px-4 py-2 font-mono text-[10px] text-ink-faint">
                 <span>↑↓ navigate · ↵ select · ⌘K toggle</span>
-                <span>XIV_OS · palette</span>
+                <span>portfolio · palette</span>
               </div>
             </motion.div>
           </motion.div>

@@ -1,10 +1,11 @@
-# XIV_OS
+# Marcelo Zapata Portfolio (XIV_OS)
 
-> A cinematic operating system for a developer, builder, creator, and systems thinker.
+> Personal portfolio for a software engineer working across operational systems, product design, automation, and creative technology.
 
-XIV_OS is the portfolio + interactive digital identity of **XIV** — a developer
-and creative technologist building tools, experiences, and ideas at the
-intersection of engineering, markets, and music.
+This repo powers the portfolio site for **Marcelo Zapata**. The visual system
+still carries the **XIV_OS** identity, while the content is positioned around
+software engineering work in enterprise operations, analytics, product
+prototyping, and creative tooling.
 
 The site is not a template. It is built as a tiny operating system: a hero
 "boot screen", a command palette, a persistent terminal, an architecture
@@ -156,4 +157,4 @@ as XIV_OS evolves.
 
 MIT — see [`LICENSE`](./LICENSE).
 
-> Crafted in the dark hours. Systems over noise.
+> Built for depth, clarity, and the next bigger challenge.

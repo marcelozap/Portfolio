@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 
 const PHRASES = [
-  'Software engineer · Publix',
-  'Disciplined delivery. Clear ownership.',
-  'Music composed by Marcelo Zapata.',
-  'Creative alias · XIV',
+  'Operational systems. Product instinct.',
+  'Automation, analytics, and platform delivery.',
+  'Building Rally, GATEKPT, and Green Machine.',
+  'Ready for broader engineering ownership.',
 ];
 
 /**

@@ -1,0 +1,55 @@
+# LinkedIn Refresh
+
+Profile reference: [linkedin.com/in/marcelozap](https://www.linkedin.com/in/marcelozap)
+
+## Recommended headline
+
+Software Engineer | Systems, Automation, Analytics, and Product Engineering
+
+## QA-focused headline option
+
+Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tooling
+
+## Shorter headline option
+
+Software Engineer building systems, automation, and product software
+
+## About section
+
+I'm a software engineer with 4 years of experience across warehouse systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I work on software that supports real operations at scale, including modernization efforts, regulated workflows, data pipelines, and internal tools that teams rely on every day.
+
+Before Publix, I taught STEM courses, and that still shapes how I communicate, document, lead, and mentor newer teammates. Outside of enterprise delivery, I build products that keep stretching my range: Rally, a tennis lifestyle app with a daily engagement loop; GATEKPT, an AI-assisted workspace for music production; and Green Machine, a research and monitoring platform. I'm looking for a role with more scope, stronger ownership, and room to keep growing across platform, product, and automation work.
+
+## Publix experience bullets
+
+- Build and support warehouse, pharmacy, analytics, and internal tooling systems across a large operational footprint.
+- Led QA automation for conveyor and warehouse-control modernization using Playwright, CI/CD pipelines, and Azure Key Vault.
+- Help modernize legacy warehouse inventory jobs and integrations through smaller specs, safer rebuilds, and stronger regression discipline.
+- Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations using Snowflake, Databricks, and Power BI.
+- Delivered Power Apps, Power Automate, and API-based workflow tooling that removed significant manual reconciliation work.
+- Served as lead support engineer for controlled-substances software and file balance monitoring across 40+ warehouses.
+- Mentored newer teammates on testing, documentation, CI/CD habits, and practical AI-assisted delivery workflows.
+
+## Featured project blurbs
+
+### Rally
+
+Tennis lifestyle app that combines a high-polish daily game loop with training logs, match history, journaling, avatar customization, and a branded shop experience.
+
+### GATEKPT
+
+AI-assisted production workspace for producers and composers that preserves context, references, and session memory across long creative workflows.
+
+### Green Machine
+
+Research and monitoring platform for decision support and guardrailed automation with a strong emphasis on skepticism, traceability, and replayability.
+
+## Suggested skills to emphasize
+
+C#, TypeScript, React, Next.js, Python, Playwright, Azure, Snowflake, Databricks, Power BI, Power Apps, Power Automate, CI/CD, API integrations, QA automation, workflow tooling
+
+## Suggested cleanup from the current profile
+
+- Reframe the top-line identity from primarily `Data Engineer` to `Software Engineer` unless you are targeting data-only roles.
+- Move older school projects below current product work so Rally, GATEKPT, and Green Machine carry more of the story.
+- Keep the about section focused on scope, ownership, and trajectory rather than services.

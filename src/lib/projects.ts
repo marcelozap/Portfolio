@@ -3,7 +3,7 @@
  * Strongly typed so we get autocomplete and safe refactors.
  */
 
-export type ProjectStatus = 'in-development' | 'concept' | 'research';
+export type ProjectStatus = 'in-development' | 'prototype' | 'research';
 
 export interface ProjectMetric {
   label: string;
@@ -46,46 +46,46 @@ export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
     name: 'GATEKPT',
-    tagline: 'Intelligent audio workflow OS for producers and composers.',
+    tagline: 'AI-assisted production workspace for preserving context across long studio sessions.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
     description:
-      'A creative technology system designed around the actual workflow of making music: long sessions, lost ideas, half-remembered references. GATEKPT acts as the connective tissue between the DAW, the producer, and the long arc of a record — an AI co-pilot that remembers what you were chasing.',
+      'GATEKPT is a desktop-first tool for producers and composers who lose time to context switching, forgotten mix decisions, and scattered references. It combines project memory, threaded discussion, and feedback utilities so a session can pick up exactly where it left off.',
     coreIdeas: [
-      'Multi-threaded chat with persistent project memory',
-      'Plugin-style UI surfaces that dock alongside the DAW',
-      'Audio-reactive interface that responds to playback',
-      'Reference-aware feedback (BPM, key, mix targets)',
-      'Session journaling that survives across days',
+      'Persistent project memory instead of disposable chat sessions',
+      'Threaded critique, arrangement, and mix conversations in one workspace',
+      'Reference-aware analysis for BPM, key, arrangement, and mix targets',
+      'Lightweight sidecar surfaces that live alongside the DAW',
+      'Session journaling so ideas and decisions stay searchable',
     ],
     features: [
       {
-        title: 'Threaded sessions',
+        title: 'Project memory',
         description:
-          'Every project gets its own conversation tree. Branch ideas, archive dead ends, never lose context between studio nights.',
+          'Each track keeps a durable record of notes, decisions, and experiments so progress survives between sessions.',
       },
       {
-        title: 'Callback memory',
+        title: 'Threaded workspaces',
         description:
-          'GATEKPT recalls earlier decisions — "we already tried side-chained sub at -6dB" — so the assistant stops repeating itself.',
+          'Separate lanes for arrangement, sound design, mix notes, and references keep collaboration structured without flattening every idea into one chat.',
       },
       {
-        title: 'Floating plugin windows',
+        title: 'Reference analysis',
         description:
-          'Glass UI panels that snap to the side of the screen, modeled on modern DAW plugin chrome.',
+          'The workspace can reason about tempo, tonal center, and target references so feedback stays grounded in the record being made.',
       },
       {
-        title: 'Audio-reactive shell',
+        title: 'Dockable surfaces',
         description:
-          'The entire UI breathes with the track: waveform overlays, transient flashes, ambient color shifts.',
+          'Panels are designed to sit beside the DAW rather than replace it, making the tool feel like part of the production environment.',
       },
     ],
     metrics: [
-      { label: 'Active threads', value: '∞' },
-      { label: 'Latency target', value: '< 80ms' },
-      { label: 'DAW bridges', value: '3' },
+      { label: 'Workspace modes', value: '4' },
+      { label: 'Primary surface', value: 'Desktop' },
+      { label: 'Memory model', value: 'Persistent' },
     ],
     stack: ['TypeScript', 'Web Audio', 'LLM', 'Tauri', 'React'],
   },
@@ -93,46 +93,46 @@ export const PROJECTS: Project[] = [
     id: 'green-machine',
     name: 'GREEN MACHINE',
     tagline:
-      'Single markets laboratory: probabilistic analytics plus orchestrated agentic research and execution prep—risk-aware automation, never implied returns.',
+      'Research and monitoring platform for decision support and guardrailed automation.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2024',
     description:
-      'Green Machine unifies exploratory analytics dashboards and unattended monitoring into one evolving stack tuned for skepticism-first decisions. Probabilistic context, volatility and regime overlays, reproducible hypotheses, controlled automation, alerting, journaling, handshake-gated actions, explicit kill switches, and auditable telemetry sit under the same codebase so the workspace can iterate without rewriting its spine. Operating capital is discretionary; variance is acknowledged by design—not performance marketing.',
+      'Green Machine is a personal research platform built around skepticism, traceability, and controlled automation. It combines dashboards, monitoring, alerting, replayable logs, and execution prep so ideas can be tested and supervised without turning the system into performance theater.',
     coreIdeas: [
-      'Unified surface for probabilistic dashboards, agent-assisted research synthesis, and hands-off supervising loops constrained by mandate',
-      'Automation envelopes escalate to humans when ambiguity outruns policy—people still set intent, limits, and rollback',
-      'Calibrated overlays (liquidity stress, regimes, tails) prioritized over persuasive charting',
-      'Versioned UI-to-host bridges with strict contracts separating operator intent from brokerage/API touchpoints',
-      'Evaluation envelopes and replay so autonomy improves deliberately instead of collapsing into folklore',
+      'Research, monitoring, and automation share one controlled operating surface',
+      'Human approval stays in the loop when ambiguity or risk exceeds policy',
+      'Risk and regime context appear before conviction or action',
+      'Clear contracts separate analysis UI, agents, and broker-facing systems',
+      'Replayable logs support post-mortems and deliberate system tuning',
     ],
     features: [
       {
-        title: 'Research-through-execution loop',
+        title: 'Research-through-monitoring loop',
         description:
-          'Agents handle repetitive research passes, consistency checks, and alerting; execution paths stay optional, capped, and reversible where the broker/API allows.',
+          'Automated passes handle repetitive research, consistency checks, and alerting while leaving the operator in control of sizing, approval, and escalation.',
       },
       {
-        title: 'Risk-aware command surface',
+        title: 'Risk-first dashboards',
         description:
-          'Dashboards emphasize uncertainty and drawdown context—not implied edge—so sizing and halts stay intentional.',
+          'Dashboards emphasize uncertainty, drawdown context, and regime shifts so action stays grounded in downside awareness.',
       },
       {
-        title: 'Distributed execution plane',
+        title: 'Separation of concerns',
         description:
-          'FastAPI `/ws/feed`, factor tiles, and strict contracts separate interactive research from the machine that talks to markets.',
+          'UI, data services, and broker-facing components are kept behind strict contracts so experimentation does not contaminate execution paths.',
       },
       {
         title: 'Evaluation & replay',
         description:
-          'Structured logs and replay snapshots support post-mortems and constraint tuning without pretending past behavior guarantees future results.',
+          'Structured logs and replay snapshots make it easier to review what the system saw, suggested, and would have done.',
       },
     ],
     metrics: [
-      { label: 'Operating mode', value: 'Hands-off' },
-      { label: 'Hosts in mesh', value: '2' },
-      { label: 'Factors / signal', value: '6' },
+      { label: 'Signal layers', value: '6' },
+      { label: 'Alert channels', value: '2' },
+      { label: 'Execution stance', value: 'Guardrailed' },
     ],
     stack: [
       'Python',
@@ -148,48 +148,48 @@ export const PROJECTS: Project[] = [
   {
     id: 'rally',
     name: 'RALLY',
-    tagline: 'A cinematic tennis-inspired flow-state game concept.',
+    tagline: 'Tennis lifestyle app pairing a fast daily game loop with training, journaling, and style.',
     domain: 'game',
-    status: 'concept',
+    status: 'prototype',
     accent: 'amber',
     year: '2026',
     description:
-      'Rally reimagines tennis as a meditation on movement, focus, and precision timing. Neon courts, motion trails, atmospheric crowd hums. A sports experience built around flow state rather than spectacle — every point is a small mastery loop.',
+      'Rally is a tennis lifestyle product, not just a game. The core hook is a high-polish rhythm-swipe mini-game, but the broader experience wraps that around training logs, match logs, journaling, avatar customization, and a shop surface connected to real brands.',
     coreIdeas: [
-      'Movement-first input model — placement over power',
-      'Flow-state progression: longer rallies unlock visual layers',
-      'Atmospheric environments — night courts, rooftop courts, stadium rain',
-      'Cinematic HUD that fades when you are dialed in',
-      'Mastery loop: each session is a session, not a tournament',
+      'One daily-engagement hook anchored by a short, replayable game loop',
+      'The mini-game is a retention driver, not the entire product',
+      'Local-first iOS architecture with optional account sync',
+      'Avatar, apparel, and shop flows tied to real-world purchase intent',
+      'Audio, haptics, and motion used to make the product feel premium',
     ],
     features: [
       {
-        title: 'Neon court system',
+        title: 'Play tab as the hook',
         description:
-          'Multiple court archetypes — clay-noir, rooftop-glow, stadium-rain — each with its own physics and sound design.',
+          'A rhythm-adjacent tennis mini-game provides the fast, repeatable loop that gives the app daily-open energy.',
       },
       {
-        title: 'Flow HUD',
+        title: 'Logs, journal, and progression',
         description:
-          'The HUD recedes the deeper you go. Hit ten clean rallies and the UI dims to almost nothing.',
+          'Training sessions, matches, and journal entries live in the same product so the app supports a player’s actual tennis routine.',
       },
       {
-        title: 'Precision-timing meter',
+        title: 'Avatar and shop layer',
         description:
-          'A subtle ring around the racquet visualizes timing windows without breaking immersion.',
+          'Users can customize a tennis avatar, browse branded apparel, and move from digital identity to vendor purchase intent.',
       },
       {
-        title: 'Progression of moments',
+        title: 'Local-first sync model',
         description:
-          'Unlock environmental layers (lighting, weather, crowd density) by accumulating high-quality points, not just wins.',
+          'SwiftData drives the on-device experience first, with optional account sync for users who want persistence across sessions.',
       },
     ],
     metrics: [
-      { label: 'Court archetypes', value: '6' },
-      { label: 'Frame target', value: '120fps' },
-      { label: 'Audio layers', value: '14' },
+      { label: 'Core tabs', value: '5' },
+      { label: 'Platform', value: 'iOS' },
+      { label: 'Primary loop', value: 'Daily' },
     ],
-    stack: ['Unity', 'C#', 'Shader Graph', 'Wwise'],
+    stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'AVAudioEngine', 'Node.js'],
   },
 ];
 

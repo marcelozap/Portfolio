@@ -9,8 +9,8 @@ import { useCommandPalette } from '@/components/interactive/CommandPalette';
 const NAV_ITEMS = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'engineering', label: 'Systems' },
-  { id: 'music', label: 'Music' },
+  { id: 'engineering', label: 'Capabilities' },
+  { id: 'music', label: 'Sound' },
   { id: 'about', label: 'About' },
 ];
 
@@ -64,7 +64,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-              XIV_OS
+              systems · product
             </span>
           </span>
         </button>

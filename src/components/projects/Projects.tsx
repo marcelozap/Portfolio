@@ -27,15 +27,15 @@ export function Projects() {
   return (
     <section id="projects" className="section">
       <SectionHeader
-        eyebrow="Projects · the core"
+        eyebrow="Projects"
         title={
           <>
-            Three systems,
+            Products with
             <br />
-            <span className="text-gradient">one operator.</span>
+            <span className="text-gradient">real operating logic.</span>
           </>
         }
-        description="Audio, markets, motion. Each project is a different lens on the same idea of building disciplined, immersive software outside the day job."
+        description="Each project starts from a specific product problem: preserving creative context, turning research into a usable system, or building a tennis product with a strong daily-use loop."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

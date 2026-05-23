@@ -36,22 +36,20 @@ const ACCENT: Record<
 /** One role, LinkedIn-safe timeline by phase (2023–2026). */
 const PUBLIX: Milestone = {
   id: 'publix',
-  period: '2023 — present',
+  period: '2022 — present',
   role: 'Software Engineer',
   org: 'Publix',
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Enterprise software engineer across warehouse control modernization, deterministic QA automation, analytics platforms, regulated operations, and mentorship—with ownership expanding as foundational programs mature.',
+    'Software engineer building and supporting warehouse, pharmacy, analytics, and internal tooling systems across a large operational footprint. Work spans legacy modernization, QA automation, data pipelines, workflow software, incident support, and team enablement.',
   highlights: [
-    '2023–2024 · Lead QA for a multimillion-dollar conveyor / warehouse control software modernization delivered on a predominantly C# stack. Produced Playwright coverage the wider team adopted, routed suites through CI/CD, and guarded secrets via Azure Key Vault.',
-    '2023–2024 · Implemented automated PDF test evidence tying screenshots and timestamps to what was exercised, attributable to pipelines and whoever triggered the validation—reducing ambiguity for release stakeholders.',
-    '2025 · Data lake modernization connecting legacy warehouse systems to governed lake pipelines with explicit quality checks against faulty ingestion. Implemented Snowflake and Databricks processing patterns plus Power BI reports built on semantic models for consistent dashboards.',
-    '2025 · Shipped sensitive on-site Power Apps experiences with full lifecycle ownership—integrations eliminated hundreds of hours of manual reconciliation—and consulted in facilities when solution fit depended on firsthand workflow detail.',
-    '2025 · Composed Power Automate flows alongside APIs for logistics file handling so downstream vendors receive deterministic alerts whenever warehouse ingestion or reconciliation defects appear upstream.',
-    '2025 · Lead support engineer for regulated controlled-substances software and file balance / adjustment monitoring spanning 40+ warehouses across Florida and adjacent regions.',
-    'Mentorship · Partnered across varied engineering depths to standardize disciplined AI-assisted development, layered testing strategies, pipelines, and prose documentation—guided by educator-trained habits of respectful knowledge transfer.',
-    '2026 · After stabilization of analytics delivery, prioritized modernization of longstanding warehouse batch jobs—incrementally reconstructing foundational services through AI-assisted specification work (narrow slices, explicit acceptance criteria, regression discipline) while carrying broader accountability for warehouse-facing software.',
+    'Led QA automation for conveyor and warehouse-control modernization on a C#-heavy stack, building Playwright coverage, pipeline execution, and secure test orchestration with Azure Key Vault.',
+    'Modernizing legacy warehouse inventory batch jobs and system integrations by translating brittle behavior into smaller specs, regression-minded rebuilds, and clearer operational contracts.',
+    'Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations, using Snowflake, Databricks, and Power BI semantic models to improve visibility and decision support.',
+    'Delivered Power Apps, Power Automate, and API-based workflow tooling that removed hundreds of hours of manual reconciliation and improved how warehouse and vendor teams handle file exceptions.',
+    'Served as lead support engineer for controlled-substances software and file balance monitoring across 40+ warehouses, where accuracy, auditability, and calm response under pressure matter.',
+    'Mentored newer teammates on testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns, drawing on earlier experience as a STEM instructor.',
   ],
   stack: [
     'C#',
@@ -67,9 +65,9 @@ const PUBLIX: Milestone = {
     'CI/CD',
   ],
   metrics: [
-    { label: 'Warehouses in scope', value: '40+' },
-    { label: 'Regulated workloads', value: 'Yes' },
-    { label: 'Span', value: '2023→' },
+    { label: 'Warehouses supported', value: '40+' },
+    { label: 'DSCSA locations', value: '12' },
+    { label: 'Delivery lanes', value: 'QA · data · ops' },
   ],
 };
 
@@ -89,7 +87,7 @@ export function Experience() {
             <span className="text-gradient">Publix.</span>
           </>
         }
-        description="Selected enterprise outcomes—verification, modernization, analytics, low-code, compliance, mentorship—organized by delivery phase."
+        description="Warehouse operations, regulated systems, analytics, workflow tooling, and modernization work delivered across a large distribution environment."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

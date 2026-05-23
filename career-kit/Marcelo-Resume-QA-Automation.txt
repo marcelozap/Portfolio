@@ -1,0 +1,40 @@
+Marcelo Zapata
+marcelozapata08@gmail.com | linkedin.com/in/marcelozap | marcelozapata.dev
+
+PROFESSIONAL SUMMARY
+Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and operational software support. Built automated testing for warehouse-control modernization, improved release confidence through repeatable validation, and worked across regulated systems where accuracy, reliability, and production trust matter. Brings growing experience leading and mentoring newer teammates on testing and delivery practices.
+
+EXPERIENCE
+Publix Super Markets
+Software Engineer | 2022 - Present
+- Led QA automation for conveyor and warehouse-control modernization using Playwright, CI/CD pipelines, and Azure Key Vault.
+- Built repeatable validation workflows and secure test orchestration to improve release confidence for operational software.
+- Help modernize legacy warehouse inventory jobs and integrations through stronger regression discipline and safer implementation slices.
+- Supported controlled-substances software and file balance monitoring across 40+ warehouses, where auditability and reliability are critical.
+- Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations, contributing to data quality and operational visibility.
+- Delivered Power Apps, Power Automate, and API-based workflow tooling that reduced manual reconciliation work and improved exception handling.
+- Mentored newer teammates on testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
+
+Florida State University
+S.T.E.M. Course Instructor | 2019 - 2022
+- Taught STEM-focused coursework and supported students through technical concepts, structured problem solving, and hands-on learning.
+- Built strong communication habits that still apply to technical mentoring, documentation, and team support.
+
+PROJECTS
+Rally | 2026 - Present
+Local-first iOS product built with SwiftUI, SpriteKit, and SwiftData.
+- Useful as proof of end-to-end product thinking, feedback loops, and testing mindset across a multi-surface application.
+
+GATEKPT | 2025 - Present
+AI-assisted workflow tool for music production.
+- Demonstrates product thinking, persistent state, and workflow-oriented interface design.
+
+SKILLS
+Automation and Testing: Playwright, regression testing, QA automation, test strategy, release validation
+Platforms and Delivery: CI/CD, Azure Key Vault, workflow tooling, API integrations, Power Apps, Power Automate
+Languages and Development: C#, TypeScript, Python, SQL, Swift
+Data and Reporting: Snowflake, Databricks, Power BI
+
+EDUCATION
+Florida State University
+Bachelor of Science in Computer Science & Business | 2019 - 2022

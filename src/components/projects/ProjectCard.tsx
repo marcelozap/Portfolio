@@ -36,6 +36,20 @@ interface ProjectCardProps {
   index: number;
 }
 
+const DOMAIN_LABEL: Record<Project['domain'], string> = {
+  audio: 'creative tools',
+  markets: 'research systems',
+  game: 'consumer product',
+  systems: 'systems',
+  infra: 'infrastructure',
+};
+
+const STATUS_LABEL: Record<Project['status'], string> = {
+  'in-development': 'active build',
+  prototype: 'working prototype',
+  research: 'research',
+};
+
 /**
  * 3D-tilting project card. Mouse moves rotate the card on its X/Y axes
  * with a spring damper. Hover unlocks the accent glow.
@@ -97,7 +111,7 @@ export function ProjectCard({ project, onOpen, index }: ProjectCardProps) {
         <div className="relative grid gap-5 p-6 md:p-7">
           <div className="flex items-center justify-between">
             <span className="mono-tag tracking-[0.22em]">
-              {project.domain} · {project.status.replace('-', ' ')}
+              {DOMAIN_LABEL[project.domain]} · {STATUS_LABEL[project.status]}
             </span>
             <span className="font-mono text-[10px] text-ink-faint">{project.year}</span>
           </div>

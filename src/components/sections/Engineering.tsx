@@ -16,52 +16,52 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const CAPABILITIES = [
   {
-    icon: GitMerge,
-    title: 'DevOps mindset',
-    body: 'Reproducible environments, scripted setup, CI as a first-class citizen.',
-  },
-  {
     icon: CircuitBoard,
-    title: 'Systems architecture',
-    body: 'Designing for boundaries, contracts, and observability over premature cleverness.',
+    title: 'Operational systems',
+    body: 'Warehouse, integration, and regulated software where correctness and supportability matter.',
   },
   {
-    icon: Workflow,
-    title: 'Automation',
-    body: 'Removing repetitive friction so creative bandwidth survives the week.',
-  },
-  {
-    icon: Cpu,
-    title: 'Modern frontend',
-    body: 'React, Next.js, R3F, motion design — UI built like a product, not a deck.',
+    icon: GitMerge,
+    title: 'Release & QA automation',
+    body: 'Playwright, CI/CD, secrets management, and repeatable validation for high-risk changes.',
   },
   {
     icon: Activity,
-    title: 'Trading systems research',
-    body: 'Probabilistic dashboards, volatility surfaces, macro-aware analytics.',
+    title: 'Data & analytics',
+    body: 'Snowflake, Databricks, and Power BI pipelines that turn operational data into usable decisions.',
   },
   {
-    icon: Radio,
-    title: 'Audio software',
-    body: 'Web Audio + DAW integration experiments around assistant-driven workflows.',
+    icon: Workflow,
+    title: 'Workflow tooling',
+    body: 'Power Apps, Power Automate, and APIs that remove manual reconciliation and shorten the path to action.',
+  },
+  {
+    icon: Cpu,
+    title: 'Product UI engineering',
+    body: 'React, Next.js, motion, and interfaces that feel intentional instead of assembled.',
   },
   {
     icon: Boxes,
-    title: 'Rapid prototyping',
-    body: 'Throwaway versions are the cheapest tool for clarity. Ship one, learn, redo.',
+    title: 'AI-assisted delivery',
+    body: 'Breaking ambiguous legacy work into specs, acceptance criteria, and safer implementation slices.',
   },
   {
+    title: 'Rapid prototyping',
+    body: 'Throwaway versions are the cheapest tool for clarity. Ship one, learn, redo.',
     icon: Rocket,
-    title: 'Product instinct',
-    body: 'I obsess over micro-interactions — the small details are the product.',
+  },
+  {
+    icon: Radio,
+    title: 'Creative technology',
+    body: 'Audio systems, game feel, and interaction design that keep product work from becoming generic.',
   },
 ];
 
 const DASHBOARD = [
-  { label: 'Repositories shipped', value: '12+', tone: 'cyan' },
-  { label: 'Languages in rotation', value: '7', tone: 'violet' },
-  { label: 'Active systems', value: '3', tone: 'green' },
-  { label: 'Build cadence', value: 'nightly', tone: 'amber' },
+  { label: 'Warehouse scope', value: '40+ sites', tone: 'green' },
+  { label: 'DSCSA coverage', value: '12 locations', tone: 'cyan' },
+  { label: 'Build surface', value: 'web · iOS · data', tone: 'violet' },
+  { label: 'Working style', value: 'systems + product', tone: 'amber' },
 ];
 
 const TONE: Record<string, string> = {
@@ -75,18 +75,18 @@ export function Engineering() {
   return (
     <section id="engineering" className="section">
       <SectionHeader
-        eyebrow="Systems · Lab"
+        eyebrow="Capabilities"
         title={
           <>
-            Engineering as
+            Operational depth,
             <br />
-            <span className="text-gradient">a creative practice.</span>
+            <span className="text-gradient">product range.</span>
           </>
         }
-        description="A working summary of the technical surface area I keep sharp. Each card is something I&rsquo;ve shipped, prototyped, or rebuilt from scratch — usually more than once."
+        description="I&rsquo;m strongest where real-world operations and thoughtful software design meet. The same toolkit has to work in enterprise systems, internal platforms, and independent products."
       />
 
-      {/* synthetic dashboard */}
+      {/* profile dashboard */}
       <GlassCard className="mt-14" scanline>
         <div className="grid grid-cols-2 divide-x divide-white/[0.04] md:grid-cols-4">
           {DASHBOARD.map((m) => (
@@ -139,10 +139,10 @@ export function Engineering() {
 
 function ArchitectureDiagram() {
   const nodes = [
-    { id: 'shell', label: 'XIV_OS · shell', x: 50, y: 16 },
+    { id: 'shell', label: 'portfolio · shell', x: 50, y: 16 },
     { id: 'gatekpt', label: 'GATEKPT · audio', x: 18, y: 60 },
-    { id: 'green-machine', label: 'GREEN MACHINE · markets', x: 50, y: 70 },
-    { id: 'rally', label: 'RALLY · game', x: 82, y: 60 },
+    { id: 'green-machine', label: 'GREEN MACHINE · research', x: 50, y: 70 },
+    { id: 'rally', label: 'RALLY · tennis app', x: 82, y: 60 },
   ];
   const edges: [string, string][] = [
     ['shell', 'gatekpt'],
@@ -156,9 +156,9 @@ function ArchitectureDiagram() {
       <div className="space-y-3 p-6">
         <div className="flex items-center justify-between">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-            architecture · projects-as-modules
+            project map · operating range
           </div>
-          <div className="font-mono text-[10px] text-ink-faint">v0.1</div>
+          <div className="font-mono text-[10px] text-ink-faint">2026</div>
         </div>
 
         <div className="relative h-72 overflow-hidden rounded-xl border border-white/[0.04] bg-bg/40">

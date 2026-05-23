@@ -2,8 +2,8 @@
   "name": "xiv-os",
   "version": "0.1.0",
   "private": true,
-  "description": "XIV_OS — a cinematic operating system for a developer, builder, creator, and systems thinker.",
-  "author": "XIV",
+  "description": "Personal portfolio for Marcelo Zapata, a software engineer building operational systems, automation, analytics, and product-driven software.",
+  "author": "Marcelo Zapata",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

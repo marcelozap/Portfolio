@@ -6,8 +6,14 @@ import { scrollToSection } from '@/lib/utils';
 const LINKS = [
   { label: 'Projects', id: 'projects' as const },
   { label: 'Experience', id: 'experience' as const },
-  { label: 'Systems', id: 'engineering' as const },
-  { label: 'Music', id: 'music' as const },
+  { label: 'Capabilities', id: 'engineering' as const },
+  { label: 'Sound', id: 'music' as const },
+];
+
+const EXTERNAL_LINKS = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marcelozap' },
+  { label: 'GitHub', href: 'https://github.com/marcelozap' },
+  { label: 'Contact', href: 'mailto:hello@xiv-os.dev' },
 ];
 
 export function Footer() {
@@ -32,7 +38,7 @@ export function Footer() {
         <div>
           <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-            Software Engineer · XIV_OS
+            Software engineer · systems · product
           </div>
         </div>
 
@@ -48,11 +54,18 @@ export function Footer() {
               </button>
             </li>
           ))}
-          <li>
-            <a href="mailto:hello@xiv-os.dev" className="transition hover:text-accent">
-              Contact
-            </a>
-          </li>
+          {EXTERNAL_LINKS.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="transition hover:text-accent"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <div className="font-mono text-[11px] tracking-widest text-ink-faint">{time}</div>

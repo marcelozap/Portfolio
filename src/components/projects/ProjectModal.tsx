@@ -19,6 +19,20 @@ const ACCENT_TEXT: Record<Project['accent'], string> = {
   green: 'text-signal-green',
 };
 
+const DOMAIN_LABEL: Record<Project['domain'], string> = {
+  audio: 'creative tools',
+  markets: 'research systems',
+  game: 'consumer product',
+  systems: 'systems',
+  infra: 'infrastructure',
+};
+
+const STATUS_LABEL: Record<Project['status'], string> = {
+  'in-development': 'active build',
+  prototype: 'working prototype',
+  research: 'research',
+};
+
 /**
  * Immersive project modal. Locks body scroll, traps escape to close, and
  * renders the project visual at the top with content below.
@@ -77,10 +91,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="mono-tag tracking-[0.22em]">
-                    {project.domain} · {project.status.replace('-', ' ')}
+                    {DOMAIN_LABEL[project.domain]} · {STATUS_LABEL[project.status]}
                   </span>
                   <span className="font-mono text-[10px] text-ink-faint">
-                    /xiv-os/projects/{project.id} · {project.year}
+                    /portfolio/projects/{project.id} · {project.year}
                   </span>
                 </div>
 

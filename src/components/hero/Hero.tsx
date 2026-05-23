@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowRight, Briefcase, FolderKanban, Music } from 'lucide-react';
+import { ArrowDown, ArrowRight, Briefcase, FolderKanban, Github, Linkedin } from 'lucide-react';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { TypewriterRotation } from './TypewriterRotation';
 import { CodeStream } from './CodeStream';
@@ -65,7 +65,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-1 block font-mono text-[clamp(1rem,3.5vw,1.35rem)] font-normal normal-case tracking-[0.08em] text-ink-muted">
-              XIV · alias for independent creative work
+              systems · product · automation
             </span>
           </motion.div>
 
@@ -76,8 +76,12 @@ export function Hero() {
             className="max-w-xl space-y-3"
           >
             <p className="text-balance text-lg text-ink-muted md:text-xl">
-              Software engineer · Publix. This page summarizes selected engineering work, original
-              music, and related projects.
+              Software engineer building operational systems, automation, analytics, and
+              product-driven software across enterprise delivery and independent products.
+            </p>
+            <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-accent/90">
+              Open to software engineering roles with more product scope, platform ownership, and
+              systems responsibility.
             </p>
             <TypewriterRotation />
           </motion.div>
@@ -90,16 +94,30 @@ export function Hero() {
           >
             <GlowButton variant="primary" href="#projects">
               <FolderKanban className="size-4" />
-              Projects
+              View Projects
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />
               Experience
             </GlowButton>
-            <GlowButton variant="ghost" href="#music">
-              <Music className="size-4" />
-              Music
+            <GlowButton
+              variant="ghost"
+              href="https://www.linkedin.com/in/marcelozap"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Linkedin className="size-4" />
+              LinkedIn
+            </GlowButton>
+            <GlowButton
+              variant="ghost"
+              href="https://github.com/marcelozap"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Github className="size-4" />
+              GitHub
             </GlowButton>
           </motion.div>
 
@@ -110,13 +128,16 @@ export function Hero() {
             className="flex flex-wrap gap-2 font-mono text-[11px] text-ink-faint"
           >
             <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
-              Green Machine · research & automation
+              40+ warehouse sites
             </span>
             <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
-              Tennis · Rally
+              regulated software + analytics
             </span>
             <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
-              Audio · GATEKPT
+              Rally · tennis lifestyle app
+            </span>
+            <span className="rounded-full border border-white/[0.08] bg-white/[0.02] px-2.5 py-1">
+              GATEKPT · audio workflow tooling
             </span>
           </motion.div>
         </div>
