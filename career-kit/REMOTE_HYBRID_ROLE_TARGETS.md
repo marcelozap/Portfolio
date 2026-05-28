@@ -52,7 +52,7 @@ Software engineer with 4 years of experience across systems, QA automation, anal
 
 ### QA Automation Summary
 
-Software engineer with strong experience in QA automation, systems validation, CI/CD, and operational software support. Built repeatable validation workflows, improved release confidence through regression discipline, and helped teams document safer implementation paths.
+Software engineer with strong experience in QA automation, systems validation, CI/CD, and supportable software delivery. Built repeatable validation workflows, improved release confidence through regression discipline, and helped teams document safer implementation paths.
 
 ## LinkedIn Headline Options
 
@@ -79,7 +79,7 @@ Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tool
 
 - remote or hybrid only
 - mid-level or experienced individual contributor
-- companies with operational software, logistics, healthcare, SaaS, fintech, or internal platforms
+- companies with internal platforms, logistics, healthcare, SaaS, fintech, or workflow-heavy software
 - roles mentioning automation, CI/CD, testing, workflows, analytics, or systems integration
 
 ## What To Avoid

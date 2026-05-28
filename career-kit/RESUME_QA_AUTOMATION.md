@@ -7,7 +7,7 @@ marcelozapata08@gmail.com | [linkedin.com/in/marcelozap](https://linkedin.com/in
 
 ## Professional Summary
 
-Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and operational software support. Strongest in modernization contexts where tests, documentation, and release discipline make production systems safer to change. Brings practical experience with Playwright, regression testing, API-driven workflows, and cross-functional delivery.
+Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and supportable software delivery. Strongest in modernization contexts where tests, documentation, and release discipline make production systems safer to change. Brings practical experience with Playwright, regression testing, API-driven workflows, and cross-functional delivery.
 
 ## Experience
 
@@ -16,7 +16,7 @@ Software engineer with 4 years of experience in QA automation, systems validatio
 Software Engineer | 2022 - Present
 
 - Led QA automation efforts for modernization work on a C#-heavy enterprise stack, including Playwright coverage, CI/CD execution, and secure test configuration.
-- Built repeatable validation workflows and regression checks to improve release confidence for operational software.
+- Built repeatable validation workflows and regression checks to improve release confidence for important software changes.
 - Helped translate legacy jobs and integrations into smaller specs, safer implementation slices, and clearer acceptance criteria.
 - Contributed to data, reporting, and workflow-tooling projects using Snowflake, Databricks, Power BI, Power Platform, and APIs.
 - Documented workflows and acceptance criteria with attention to accuracy, auditability, and release confidence.

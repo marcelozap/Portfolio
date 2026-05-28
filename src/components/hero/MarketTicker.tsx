@@ -19,8 +19,8 @@ const SEED: Tick[] = [
 ];
 
 /**
- * Faux market ticker — purely decorative, but it sells the systems-thinking
- * vibe. Drifts slowly with deterministic-ish noise.
+ * Decorative market ticker for the portfolio hero.
+ * Drifts slowly with deterministic-ish noise.
  */
 export function MarketTicker() {
   const [ticks, setTicks] = useState<Tick[]>(SEED);
