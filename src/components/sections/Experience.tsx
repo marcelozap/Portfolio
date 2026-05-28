@@ -16,7 +16,7 @@ interface Milestone {
   accent: Accent;
   icon: LucideIcon;
   summary: string;
-  highlights: string[];
+  focus: string[];
   stack: string[];
   metrics: { label: string; value: string }[];
 }
@@ -39,13 +39,11 @@ const PUBLIX: Milestone = {
   icon: Briefcase,
   summary:
     'Software engineer contributing to enterprise operations, analytics, internal tooling, QA automation, and modernization work. The common thread is practical software for systems where reliability, traceability, and supportability matter.',
-  highlights: [
-    'Contributed to QA automation and modernization work on a C#-heavy enterprise stack, including Playwright coverage, pipeline execution, and secure test configuration.',
-    'Helped translate legacy batch jobs and system integrations into smaller specs, regression-minded rebuilds, and clearer operational contracts.',
-    'Worked on governed data and reporting workflows using Snowflake, Databricks, and Power BI to improve operational visibility and decision support.',
-    'Built internal workflow tools with Power Platform and API-based integrations to reduce manual reconciliation and improve exception handling.',
-    'Supported production-facing operational systems where accuracy, auditability, and calm incident response matter.',
-    'Helped teammates with testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.',
+  focus: [
+    'QA automation and modernization',
+    'Operational data and reporting',
+    'Internal workflow tooling',
+    'Production support and documentation',
   ],
   stack: [
     'C#',
@@ -163,17 +161,19 @@ export function Experience() {
                 {m.summary}
               </p>
 
-              <ul className="grid gap-2 md:grid-cols-1">
-                {m.highlights.map((h) => (
-                  <li
-                    key={h}
-                    className="flex gap-3 rounded-lg border border-white/[0.04] bg-white/[0.01] px-3 py-2 text-[13px] leading-relaxed text-ink-muted"
+              <div className="grid gap-3 md:grid-cols-2">
+                {m.focus.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-lg border border-white/[0.04] bg-white/[0.01] px-4 py-3"
                   >
-                    <span className={cn('mt-2 size-1.5 shrink-0 rounded-full', a.dot)} />
-                    <span>{h}</span>
-                  </li>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
+                      Focus
+                    </div>
+                    <div className="mt-1 text-sm text-ink-muted">{item}</div>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
               <div className="flex flex-col gap-3 border-t border-white/[0.04] pt-4 md:flex-row md:items-center md:justify-between">
                 <ul className="flex flex-wrap gap-1.5">
