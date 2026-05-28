@@ -78,7 +78,7 @@ export function Engineering() {
         eyebrow="Capabilities"
         title={
           <>
-            Operational depth,
+            Systems depth,
             <br />
             <span className="text-gradient">product range.</span>
           </>
@@ -156,7 +156,7 @@ function ArchitectureDiagram() {
       <div className="space-y-3 p-6">
         <div className="flex items-center justify-between">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-            project map / operating range
+            project map / build range
           </div>
           <div className="font-mono text-[10px] text-ink-faint">2026</div>
         </div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s — Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata is a software engineer building operational systems, automation, analytics, and product-driven software across enterprise delivery and independent projects.',
+    'Marcelo Zapata is a software engineer building reliable tools, automation, analytics, and product-driven software across professional delivery and independent projects.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     'platform engineer',
     'automation',
     'analytics',
-    'operational systems',
+    'software systems',
     'GATEKPT',
     'Green Machine',
     'Rally',

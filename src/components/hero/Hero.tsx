@@ -48,7 +48,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer for operational systems and product-grade automation.
+              Software engineer for reliable tools, product systems, and automation.
             </span>
           </motion.div>
 
@@ -59,9 +59,8 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build practical software where reliability, workflow clarity, and business context
-              matter: operational systems, analytics tools, internal platforms, and independent
-              products.
+              I build practical software where reliability, workflow clarity, and product judgment
+              matter: analytics tools, internal platforms, automation, and independent products.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
               Open to software engineering roles with deeper product scope, platform ownership, and
@@ -110,7 +109,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.52 }}
             className="grid w-full max-w-2xl grid-cols-1 gap-2 pt-1 text-sm text-ink-muted sm:grid-cols-3"
           >
-            {['Operational systems', 'Internal tooling', 'Product systems'].map((item) => (
+            {['Reliable tools', 'Internal platforms', 'Product systems'].map((item) => (
               <span
                 key={item}
                 className="inline-flex items-center gap-2 border-l border-accent/40 bg-white/[0.015] px-3 py-2"
@@ -131,14 +130,14 @@ export function Hero() {
         >
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(0_0%_0%/0.9)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              <span>Operating Profile</span>
+              <span>Engineering Profile</span>
               <span className="text-signal-green">Available</span>
             </div>
             <div className="space-y-4">
               {[
-                ['Systems', 'APIs, data flows, operational tooling, and reliability work.'],
+                ['Systems', 'APIs, data flows, tooling, and reliability work.'],
                 ['Product', 'User-centered interfaces for repeated workflows and decisions.'],
-                ['Automation', 'Manual process reduction with measurable business value.'],
+                ['Automation', 'Repeatable workflows with clear validation and ownership.'],
                 ['Analytics', 'Dashboards, reporting, and evidence-driven review loops.'],
               ].map(([label, body]) => (
                 <div key={label} className="grid grid-cols-[7rem_1fr] gap-4">
@@ -151,7 +150,7 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['Ops', 'Systems'],
+                ['Tools', 'Systems'],
                 ['3', 'Products'],
                 ['Data', 'Tools'],
               ].map(([value, label]) => (
