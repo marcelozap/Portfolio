@@ -30,3 +30,24 @@ yarn-error.log*
 # misc
 *.tsbuildinfo
 next-env.d.ts
+
+# local career docs (canonical shared copies live in career-kit/)
+/APPLICATION_TRACKER.csv
+/APPLICATION_WORKFLOW.md
+/COMMON_APPLICATION_ANSWERS.md
+/GITHUB_PROFILE_COPY.md
+/INTERVIEW_PREP.md
+/JOB_SEARCH_PACKAGE.md
+/LINKEDIN_EXACT_UPDATE.md
+/LINKEDIN_REFRESH.md
+/Marcelo-LinkedIn-Paste-Ready.txt
+/Marcelo-Resume-Master.txt
+/Marcelo-Resume-QA-Automation.txt
+/Marcelo-Resume-Software-Engineer.txt
+/Marcelo-Target-Roles.txt
+/RECRUITER_MESSAGES.md
+/REMOTE_HYBRID_ROLE_TARGETS.md
+/RESUME_MASTER.md
+/RESUME_QA_AUTOMATION.md
+/RESUME_SOFTWARE_ENGINEER.md
+/SEARCH_STRINGS.md

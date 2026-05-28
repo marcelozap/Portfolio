@@ -7,6 +7,9 @@ still carries the **XIV_OS** identity, while the content is positioned around
 software engineering work in enterprise operations, analytics, product
 prototyping, and creative tooling.
 
+For the recruiter-facing job search materials bundled with this site, see
+[`career-kit/`](./career-kit).
+
 The site is not a template. It is built as a tiny operating system: a hero
 "boot screen", a command palette, a persistent terminal, an architecture
 diagram, and three deeply-themed project surfaces (GATEKPT · GREEN MACHINE ·
@@ -31,6 +34,7 @@ RALLY).
 ## Project structure
 
 ```
+career-kit/                     # resumes, LinkedIn copy, search docs, tracker
 src/
 ├── app/
 │   ├── globals.css            # design tokens + utilities (glass, glow, etc.)
