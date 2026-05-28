@@ -9,7 +9,7 @@ const FOCUS = [
   {
     icon: Layers,
     title: 'Operational ownership',
-    body: 'I like software that has consequences: compliance, warehouse workflows, file movement, reporting, and tools people rely on every day.',
+    body: 'I like software that has consequences: operations, file movement, reporting, internal workflows, and tools people rely on every day.',
   },
   {
     icon: Compass,
@@ -46,10 +46,9 @@ export function About() {
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               I work best in environments where software touches real operations. That can mean
-              legacy warehouse systems, regulated workflows, messy file movement, reporting, or
-              internal tooling that teams depend on every day. I also enjoy helping newer
-              teammates ramp up, documenting clearly, and bringing a calm sense of structure when
-              work gets messy.
+              operational systems, internal workflows, messy file movement, reporting, or internal
+              tooling that teams depend on every day. I also enjoy helping newer teammates ramp up,
+              documenting clearly, and bringing a calm sense of structure when work gets messy.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               Outside enterprise delivery, I build products that sharpen a different side of the

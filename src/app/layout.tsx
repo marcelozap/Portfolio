@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     'platform engineer',
     'automation',
     'analytics',
-    'warehouse systems',
+    'operational systems',
     'GATEKPT',
     'Green Machine',
     'Rally',

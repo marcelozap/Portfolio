@@ -21,10 +21,7 @@ interface Milestone {
   metrics: { label: string; value: string }[];
 }
 
-const ACCENT: Record<
-  Accent,
-  { dot: string; text: string; ring: string; tint: string }
-> = {
+const ACCENT: Record<Accent, { dot: string; text: string; ring: string; tint: string }> = {
   green: {
     dot: 'bg-signal-green shadow-[0_0_10px_hsl(152_78%_52%)]',
     text: 'text-signal-green',
@@ -33,29 +30,27 @@ const ACCENT: Record<
   },
 };
 
-/** One role, LinkedIn-safe timeline by phase (2023–2026). */
 const PUBLIX: Milestone = {
   id: 'publix',
-  period: '2022 — present',
+  period: '2022 - present',
   role: 'Software Engineer',
   org: 'Publix',
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer building and supporting warehouse, pharmacy, analytics, and internal tooling systems across a large operational footprint. Work spans legacy modernization, QA automation, data pipelines, workflow software, incident support, and team enablement.',
+    'Software engineer contributing to enterprise operations, analytics, internal tooling, QA automation, and modernization work. The common thread is practical software for systems where reliability, traceability, and supportability matter.',
   highlights: [
-    'Led QA automation for conveyor and warehouse-control modernization on a C#-heavy stack, building Playwright coverage, pipeline execution, and secure test orchestration with Azure Key Vault.',
-    'Modernizing legacy warehouse inventory batch jobs and system integrations by translating brittle behavior into smaller specs, regression-minded rebuilds, and clearer operational contracts.',
-    'Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations, using Snowflake, Databricks, and Power BI semantic models to improve visibility and decision support.',
-    'Delivered Power Apps, Power Automate, and API-based workflow tooling that removed hundreds of hours of manual reconciliation and improved how warehouse and vendor teams handle file exceptions.',
-    'Served as lead support engineer for controlled-substances software and file balance monitoring across 40+ warehouses, where accuracy, auditability, and calm response under pressure matter.',
-    'Mentored newer teammates on testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns, drawing on earlier experience as a STEM instructor.',
+    'Contributed to QA automation and modernization work on a C#-heavy enterprise stack, including Playwright coverage, pipeline execution, and secure test configuration.',
+    'Helped translate legacy batch jobs and system integrations into smaller specs, regression-minded rebuilds, and clearer operational contracts.',
+    'Worked on governed data and reporting workflows using Snowflake, Databricks, and Power BI to improve operational visibility and decision support.',
+    'Built internal workflow tools with Power Platform and API-based integrations to reduce manual reconciliation and improve exception handling.',
+    'Supported production-facing operational systems where accuracy, auditability, and calm incident response matter.',
+    'Helped teammates with testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.',
   ],
   stack: [
     'C#',
     'Azure',
     'Playwright',
-    'Azure Key Vault',
     'Snowflake',
     'Databricks',
     'Power BI',
@@ -65,9 +60,9 @@ const PUBLIX: Milestone = {
     'CI/CD',
   ],
   metrics: [
-    { label: 'Warehouses supported', value: '40+' },
-    { label: 'DSCSA locations', value: '12' },
-    { label: 'Delivery lanes', value: 'QA · data · ops' },
+    { label: 'Focus', value: 'Ops' },
+    { label: 'Systems', value: 'Internal' },
+    { label: 'Delivery', value: 'QA / data / tools' },
   ],
 };
 
@@ -84,10 +79,10 @@ export function Experience() {
           <>
             Software Engineer,
             <br />
-            <span className="text-gradient">Publix.</span>
+            <span className="text-gradient">enterprise systems.</span>
           </>
         }
-        description="Warehouse operations, regulated systems, analytics, workflow tooling, and modernization work delivered across a large distribution environment."
+        description="Operational software, analytics, workflow tooling, QA automation, and modernization work in a large enterprise environment."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">
@@ -136,12 +131,12 @@ export function Experience() {
                   <div>
                     <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
                       <span>{m.period}</span>
-                      <span>·</span>
+                      <span>/</span>
                       <span className={a.text}>full-time</span>
                     </div>
                     <h3 className="mt-1 font-display text-lg leading-tight text-ink md:text-xl">
                       {m.role}
-                      <span className="mx-2 text-ink-faint">·</span>
+                      <span className="mx-2 text-ink-faint">/</span>
                       <span className={a.text}>{m.org}</span>
                     </h3>
                   </div>

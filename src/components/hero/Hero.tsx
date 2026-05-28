@@ -60,7 +60,7 @@ export function Hero() {
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
               I build practical software where reliability, workflow clarity, and business context
-              matter: warehouse systems, analytics tools, internal platforms, and independent
+              matter: operational systems, analytics tools, internal platforms, and independent
               products.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
@@ -110,7 +110,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.52 }}
             className="grid w-full max-w-2xl grid-cols-1 gap-2 pt-1 text-sm text-ink-muted sm:grid-cols-3"
           >
-            {['40+ warehouse sites', 'Regulated delivery', 'Product systems'].map((item) => (
+            {['Operational systems', 'Internal tooling', 'Product systems'].map((item) => (
               <span
                 key={item}
                 className="inline-flex items-center gap-2 border-l border-accent/40 bg-white/[0.015] px-3 py-2"
@@ -151,9 +151,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['40+', 'Sites'],
+                ['Ops', 'Systems'],
                 ['3', 'Products'],
-                ['1', 'Operator'],
+                ['Data', 'Tools'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>

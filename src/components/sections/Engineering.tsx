@@ -18,7 +18,7 @@ const CAPABILITIES = [
   {
     icon: CircuitBoard,
     title: 'Operational systems',
-    body: 'Warehouse, integration, and regulated software where correctness and supportability matter.',
+    body: 'Enterprise integrations and operational software where correctness and supportability matter.',
   },
   {
     icon: GitMerge,
@@ -28,12 +28,12 @@ const CAPABILITIES = [
   {
     icon: Activity,
     title: 'Data & analytics',
-    body: 'Snowflake, Databricks, and Power BI pipelines that turn operational data into usable decisions.',
+    body: 'Data and reporting workflows that turn operational information into usable decisions.',
   },
   {
     icon: Workflow,
     title: 'Workflow tooling',
-    body: 'Power Apps, Power Automate, and APIs that remove manual reconciliation and shorten the path to action.',
+    body: 'Power Platform and API-based tools that reduce repetitive work and shorten the path to action.',
   },
   {
     icon: Cpu,
@@ -58,9 +58,9 @@ const CAPABILITIES = [
 ];
 
 const DASHBOARD = [
-  { label: 'Warehouse scope', value: '40+ sites', tone: 'green' },
-  { label: 'DSCSA coverage', value: '12 locations', tone: 'cyan' },
-  { label: 'Build surface', value: 'web · iOS · data', tone: 'violet' },
+  { label: 'Enterprise work', value: 'Ops', tone: 'green' },
+  { label: 'Data work', value: 'Analytics', tone: 'cyan' },
+  { label: 'Build surface', value: 'web / iOS / data', tone: 'violet' },
   { label: 'Working style', value: 'systems + product', tone: 'amber' },
 ];
 
@@ -139,10 +139,10 @@ export function Engineering() {
 
 function ArchitectureDiagram() {
   const nodes = [
-    { id: 'shell', label: 'portfolio · shell', x: 50, y: 16 },
-    { id: 'gatekpt', label: 'GATEKPT · audio', x: 18, y: 60 },
-    { id: 'green-machine', label: 'GREEN MACHINE · research', x: 50, y: 70 },
-    { id: 'rally', label: 'RALLY · tennis app', x: 82, y: 60 },
+    { id: 'shell', label: 'portfolio / shell', x: 50, y: 16 },
+    { id: 'gatekpt', label: 'GATEKPT / audio', x: 18, y: 60 },
+    { id: 'green-machine', label: 'GREEN MACHINE / research', x: 50, y: 70 },
+    { id: 'rally', label: 'RALLY / tennis app', x: 82, y: 60 },
   ];
   const edges: [string, string][] = [
     ['shell', 'gatekpt'],
@@ -156,7 +156,7 @@ function ArchitectureDiagram() {
       <div className="space-y-3 p-6">
         <div className="flex items-center justify-between">
           <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-            project map · operating range
+            project map / operating range
           </div>
           <div className="font-mono text-[10px] text-ink-faint">2026</div>
         </div>
