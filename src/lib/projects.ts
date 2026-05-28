@@ -45,110 +45,112 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
-    name: 'GATEKPT',
-    tagline: 'AI-assisted production workspace for preserving context across long studio sessions.',
+    name: 'GATEKPT MusicOS',
+    tagline:
+      'Creative operating system for live-loop artists, project memory, and audio-reactive visual artwork.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
     description:
-      'GATEKPT is a desktop-first tool for producers and composers who lose time to context switching, forgotten mix decisions, and scattered references. It combines project memory, threaded discussion, and feedback utilities so a session can pick up exactly where it left off.',
+      'GateKPT MusicOS is a C#/.NET desktop creative operating system for artists who build music through live performance. It connects section-based song planning, RC-505 cue management, lyric and caption memory, stem capture, hardware routing notes, and audio-reactive visual artwork into one focused artist cockpit.',
     coreIdeas: [
-      'Persistent project memory instead of disposable chat sessions',
-      'Threaded critique, arrangement, and mix conversations in one workspace',
-      'Reference-aware analysis for BPM, key, arrangement, and mix targets',
-      'Lightweight sidecar surfaces that live alongside the DAW',
-      'Session journaling so ideas and decisions stay searchable',
+      'Live-loop performance workflow built around sections, layer order, and cue cards',
+      'Local project memory for lyrics, takes, routing notes, stems, visuals, and export tasks',
+      'Audio-reactive visual artwork driven by live Focusrite or RC-505 input',
+      'Video-first production pipeline for captions, aspect ratios, loudness, and platform exports',
+      'Hardware-aware music workflow that sits above the creative rig without replacing it',
     ],
     features: [
       {
+        title: 'Live loop workflow',
+        description:
+          'Guides RC-505-based song building through section cards, layer order, cue notes, and performance memory.',
+      },
+      {
         title: 'Project memory',
         description:
-          'Each track keeps a durable record of notes, decisions, and experiments so progress survives between sessions.',
+          'Preserves lyrics, captures, takes, captions, routing notes, stems, visual presets, and export tasks in a unified local project file.',
       },
       {
-        title: 'Threaded workspaces',
+        title: 'Audio-reactive visuals',
         description:
-          'Separate lanes for arrangement, sound design, mix notes, and references keep collaboration structured without flattening every idea into one chat.',
+          'Uses live audio input to generate visual paintings for performance backdrops, video material, and stage visuals.',
       },
       {
-        title: 'Reference analysis',
+        title: 'Video-first production',
         description:
-          'The workspace can reason about tempo, tonal center, and target references so feedback stays grounded in the record being made.',
-      },
-      {
-        title: 'Dockable surfaces',
-        description:
-          'Panels are designed to sit beside the DAW rather than replace it, making the tool feel like part of the production environment.',
+          'Supports lyric captions, lip-sync review, export planning, aspect ratios, loudness targets, and platform-ready video workflows.',
       },
     ],
     metrics: [
-      { label: 'Workspace modes', value: '4' },
-      { label: 'Primary surface', value: 'Desktop' },
-      { label: 'Memory model', value: 'Persistent' },
+      { label: 'Runtime', value: '.NET' },
+      { label: 'Primary rig', value: 'RC-505' },
+      { label: 'Memory model', value: 'Local' },
     ],
-    stack: ['TypeScript', 'Web Audio', 'LLM', 'Tauri', 'React'],
+    stack: ['C#', '.NET', 'Avalonia', 'NAudio', 'MIDI', 'FFmpeg'],
   },
   {
     id: 'green-machine',
     name: 'GREEN MACHINE',
     tagline:
-      'Research and monitoring platform for decision support and guardrailed automation.',
+      'Python/FastAPI quantitative research platform with Schwab data, backtesting, paper execution, and risk controls.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2024',
     description:
-      'Green Machine is a personal research platform built around skepticism, traceability, and controlled automation. It combines dashboards, monitoring, alerting, replayable logs, and execution prep so ideas can be tested and supervised without turning the system into performance theater.',
+      'Green Machine Quant OS is a Python/FastAPI quantitative research and paper-execution platform that connects OAuth-secured Schwab market and account data to local research workflows. It supports quotes, historical candles, options chains, account previews, reproducible backtests, risk metrics, paper trading, and AI-assisted research review.',
     coreIdeas: [
-      'Research, monitoring, and automation share one controlled operating surface',
-      'Human approval stays in the loop when ambiguity or risk exceeds policy',
-      'Risk and regime context appear before conviction or action',
-      'Clear contracts separate analysis UI, agents, and broker-facing systems',
-      'Replayable logs support post-mortems and deliberate system tuning',
+      'OAuth-secured broker API integration for live data access and account previews',
+      'Local-first data spine for historical candles, research outputs, and reproducible experiments',
+      'Strategy research loop spanning momentum, regime overlays, risk budgeting, and walk-forward validation',
+      'Paper execution engine with order intents, execution reports, position snapshots, and futures multipliers',
+      'Live broker execution isolated behind explicit safety gates and review boundaries',
     ],
     features: [
       {
-        title: 'Research-through-monitoring loop',
+        title: 'Schwab integration',
         description:
-          'Automated passes handle repetitive research, consistency checks, and alerting while leaving the operator in control of sizing, approval, and escalation.',
+          'Implements OAuth 2 authorization-code flow, live quotes, price history, options chains, and account/position preview routes.',
       },
       {
-        title: 'Risk-first dashboards',
+        title: 'Reproducible research',
         description:
-          'Dashboards emphasize uncertainty, drawdown context, and regime shifts so action stays grounded in downside awareness.',
+          'Backtests strategies with transaction costs, drawdown analysis, documented research memos, and walk-forward validation.',
       },
       {
-        title: 'Separation of concerns',
+        title: 'Paper execution',
         description:
-          'UI, data services, and broker-facing components are kept behind strict contracts so experimentation does not contaminate execution paths.',
+          'Uses a PaperBroker abstraction for order intents, execution reports, realized/unrealized P&L, and live quote marking.',
       },
       {
-        title: 'Evaluation & replay',
+        title: 'Risk controls',
         description:
-          'Structured logs and replay snapshots make it easier to review what the system saw, suggested, and would have done.',
+          'Keeps broker execution separated from research and paper trading behind max-loss requirements, drawdown guards, and explicit review gates.',
       },
     ],
     metrics: [
-      { label: 'Signal layers', value: '6' },
-      { label: 'Alert channels', value: '2' },
-      { label: 'Execution stance', value: 'Guardrailed' },
+      { label: 'Broker API', value: 'Schwab' },
+      { label: 'Execution', value: 'Paper' },
+      { label: 'Safety', value: 'Gated' },
     ],
     stack: [
       'Python',
       'FastAPI',
-      'React',
-      'Vite',
-      'WebSockets',
-      'LLM agents',
-      'Telegram API',
-      'Polars',
+      'SQLite',
+      'pandas',
+      'pytest',
+      'Schwab API',
+      'OAuth 2.0',
+      'LLM review',
     ],
   },
   {
     id: 'rally',
     name: 'RALLY',
-    tagline: 'Tennis lifestyle app pairing a fast daily game loop with training, journaling, and style.',
+    tagline:
+      'Tennis lifestyle app pairing a fast daily game loop with training, journaling, and style.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
