@@ -1,60 +1,75 @@
-# Marcelo Zapata Resume Variant — QA Automation / SDET
+# Marcelo Zapata Resume Variant - QA Automation / SDET
 
 ## Header
 
 Marcelo Zapata  
-marcelozapata08@gmail.com · [linkedin.com/in/marcelozap](https://linkedin.com/in/marcelozap) · marcelozapata.dev
+marcelozapata08@gmail.com | [linkedin.com/in/marcelozap](https://linkedin.com/in/marcelozap) | marcelozapata.dev
 
 ## Professional Summary
 
-Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and operational software support. Built automated testing for warehouse-control modernization, improved release confidence through repeatable validation, and worked across regulated systems where accuracy, reliability, and production trust matter. Brings growing experience leading and mentoring newer teammates on testing and delivery practices.
+Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and operational software support. Strongest in modernization contexts where tests, documentation, and release discipline make production systems safer to change. Brings practical experience with Playwright, regression testing, API-driven workflows, and cross-functional delivery.
 
 ## Experience
 
 ### Publix Super Markets
-Software Engineer | 2022 – Present
 
-- Led QA automation for conveyor and warehouse-control modernization using Playwright, CI/CD pipelines, and Azure Key Vault.
-- Built repeatable validation workflows and secure test orchestration to improve release confidence for operational software.
-- Help modernize legacy warehouse inventory jobs and integrations through stronger regression discipline and safer implementation slices.
-- Supported controlled-substances software and file balance monitoring across 40+ warehouses, where auditability and reliability are critical.
-- Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations, contributing to data quality and operational visibility.
-- Delivered Power Apps, Power Automate, and API-based workflow tooling that reduced manual reconciliation work and improved exception handling.
-- Mentored newer teammates on testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
+Software Engineer | 2022 - Present
+
+- Led QA automation efforts for modernization work on a C#-heavy enterprise stack, including Playwright coverage, CI/CD execution, and secure test configuration.
+- Built repeatable validation workflows and regression checks to improve release confidence for operational software.
+- Helped translate legacy jobs and integrations into smaller specs, safer implementation slices, and clearer acceptance criteria.
+- Contributed to data, reporting, and workflow-tooling projects using Snowflake, Databricks, Power BI, Power Platform, and APIs.
+- Documented workflows and acceptance criteria with attention to accuracy, auditability, and release confidence.
+- Help teammates improve testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
 
 ### Florida State University
-S.T.E.M. Course Instructor | 2019 – 2022
+
+S.T.E.M. Course Instructor | 2019 - 2022
 
 - Taught STEM-focused coursework and supported students through technical concepts, structured problem solving, and hands-on learning.
-- Built strong communication habits that still apply to technical mentoring, documentation, and team support.
+- Developed a practical mentorship style grounded in clarity, patience, and repeatable learning systems.
 
 ## Projects
 
-### Rally | 2026 – Present
-Local-first iOS product built with SwiftUI, SpriteKit, and SwiftData.
+### Rally | 2026 - Present
 
-- Useful as proof of end-to-end product thinking, feedback loops, and testing mindset across a multi-surface application.
+Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
 
-### GATEKPT | 2025 – Present
-AI-assisted workflow tool for music production.
+- Built as a local-first iOS product using SwiftUI, SpriteKit, SwiftData, and AVAudioEngine.
+- Designed product surfaces around daily interaction, local persistence, and mobile-first user flow.
 
-- Demonstrates product thinking, persistent state, and workflow-oriented interface design.
+### GateKPT MusicOS | 2025 - Present
+
+C#/.NET Avalonia creative operating system for live-loop artists, combining RC-505 performance planning, local project memory, lyric/caption workflows, stem capture, hardware routing, and audio-reactive visual artwork.
+
+- Structured around local project files, section-based planning, and hardware-aware creative workflows.
+
+### Green Machine Quant OS | 2024 - Present
+
+Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with local backtesting, risk analytics, paper trading, and AI-assisted research review.
+
+- Uses shared execution and risk abstractions for reproducible backtesting, paper execution, and safer research review.
 
 ## Skills
 
-### Automation and Testing
-Playwright, regression testing, QA automation, test strategy, release validation
+### Testing and Automation
 
-### Platforms and Delivery
-CI/CD, Azure Key Vault, workflow tooling, API integrations, Power Apps, Power Automate
+Playwright, regression testing, test planning, CI/CD validation, QA automation, acceptance criteria
 
-### Languages and Development
+### Languages
+
 C#, TypeScript, Python, SQL, Swift
 
-### Data and Reporting
-Snowflake, Databricks, Power BI
+### Frameworks and Platforms
+
+React, Next.js, FastAPI, SwiftUI, SpriteKit, Avalonia, Power Platform
+
+### Data and Delivery
+
+Azure, CI/CD, Snowflake, Databricks, Power BI, API integrations, workflow tooling
 
 ## Education
 
 ### Florida State University
-Bachelor of Science in Computer Science & Business | 2019 – 2022
+
+Bachelor of Science in Computer Science & Business | 2019 - 2022

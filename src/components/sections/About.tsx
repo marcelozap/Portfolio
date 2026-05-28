@@ -8,8 +8,8 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Operational ownership',
-    body: 'I like software that has consequences: operations, file movement, reporting, internal workflows, and tools people rely on every day.',
+    title: 'Practical ownership',
+    body: 'I like software that has to be clear, reliable, documented, and usable by people doing real work.',
   },
   {
     icon: Compass,
@@ -38,17 +38,17 @@ export function About() {
             <span className="text-gradient">Software engineer with range.</span>
           </>
         }
-        description="Software engineer based in Miami working across operational systems, analytics, automation, and independent product builds. XIV is a creative alias used for music and selected releases."
+        description="Software engineer based in Miami working across systems, analytics, automation, and independent product builds. XIV is a creative alias used for music and selected releases."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I work best in environments where software touches real operations. That can mean
-              operational systems, internal workflows, messy file movement, reporting, or internal
-              tooling that teams depend on every day. I also enjoy helping newer teammates ramp up,
-              documenting clearly, and bringing a calm sense of structure when work gets messy.
+              I work best on software that has to be dependable in practice. That can mean internal
+              workflows, reporting, automation, validation, or tools that help teams make fewer
+              mistakes. I also enjoy helping newer teammates ramp up, documenting clearly, and
+              bringing a calm sense of structure when work gets messy.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               Outside enterprise delivery, I build products that sharpen a different side of the

@@ -4,8 +4,10 @@ This folder contains the recruiter-facing materials paired with the portfolio.
 
 ## Start here
 
-- [`Marcelo-Zapata-Software-Engineer-Resume.pdf`](./Marcelo-Zapata-Software-Engineer-Resume.pdf)
-- [`Marcelo-Zapata-QA-Automation-Resume.pdf`](./Marcelo-Zapata-QA-Automation-Resume.pdf)
+- [`RESUME_SOFTWARE_ENGINEER.md`](./RESUME_SOFTWARE_ENGINEER.md)
+- [`Marcelo-Resume-Software-Engineer.txt`](./Marcelo-Resume-Software-Engineer.txt)
+- [`RESUME_QA_AUTOMATION.md`](./RESUME_QA_AUTOMATION.md)
+- [`Marcelo-Resume-QA-Automation.txt`](./Marcelo-Resume-QA-Automation.txt)
 - [`LINKEDIN_EXACT_UPDATE.md`](./LINKEDIN_EXACT_UPDATE.md)
 - [`RECRUITER_MESSAGES.md`](./RECRUITER_MESSAGES.md)
 - [`SEARCH_STRINGS.md`](./SEARCH_STRINGS.md)
@@ -24,4 +26,5 @@ This folder contains the recruiter-facing materials paired with the portfolio.
 
 - The software engineer resume is the default version for most applications.
 - The QA Automation / SDET resume is the secondary lane.
+- PDF resumes were removed until they can be regenerated from the cleaned copy.
 - The materials in this folder are stored in the public `Portfolio` repository, so avoid adding private notes or sensitive personal data to the tracker before sharing the repo.

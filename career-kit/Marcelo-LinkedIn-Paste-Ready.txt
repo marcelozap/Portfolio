@@ -7,31 +7,29 @@ QA-Focused Headline Option
 Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tooling
 
 Short Headline Option
-Software Engineer building systems, automation, and product software
+Software Engineer building reliable systems, automation, and product software
 
 About
-I'm a software engineer with 4 years of experience across warehouse systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I work on software that supports real operations at scale, including modernization efforts, regulated workflows, data pipelines, and internal tools that teams rely on every day.
+I'm a software engineer with 4 years of experience across systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I contribute to software and internal tools that support real operational work, with an emphasis on reliability, documentation, release confidence, and practical delivery.
 
-Before Publix, I taught STEM courses, and that still shapes how I communicate, document, lead, and mentor newer teammates. Outside of enterprise delivery, I build products that keep stretching my range: Rally, a tennis lifestyle app with a daily engagement loop; GATEKPT, an AI-assisted workspace for music production; and Green Machine, a research and monitoring platform. I'm looking for a role with more scope, stronger ownership, and room to keep growing across platform, product, and automation work.
+Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build products that keep stretching my range: Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform. I'm looking for a role with more scope, stronger ownership, and room to keep growing across systems, product, automation, and platform work.
 
 Publix Experience Bullets
-- Build and support warehouse, pharmacy, analytics, and internal tooling systems across a large operational footprint.
-- Led QA automation for conveyor and warehouse-control modernization using Playwright, CI/CD pipelines, and Azure Key Vault.
-- Help modernize legacy warehouse inventory jobs and integrations through smaller specs, safer rebuilds, and stronger regression discipline.
-- Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations using Snowflake, Databricks, and Power BI.
-- Delivered Power Apps, Power Automate, and API-based workflow tooling that removed significant manual reconciliation work.
-- Served as lead support engineer for controlled-substances software and file balance monitoring across 40+ warehouses.
-- Mentored newer teammates on testing, documentation, CI/CD habits, and practical AI-assisted delivery workflows.
+- Contribute to enterprise software work across QA automation, analytics, internal workflow tooling, and modernization.
+- Led QA automation efforts for modernization work on a C#-heavy stack, including Playwright coverage, CI/CD execution, and secure test configuration.
+- Contributed to data, reporting, and workflow-tooling projects using Snowflake, Databricks, Power BI, Power Platform, and API integrations.
+- Document workflows and acceptance criteria with attention to accuracy, auditability, and release confidence.
+- Help teammates improve testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
 
 Featured Projects
 Rally
-Tennis lifestyle app that combines a high-polish daily game loop with training logs, match history, journaling, avatar customization, and a branded shop experience.
+Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
 
-GATEKPT
-AI-assisted production workspace for producers and composers that preserves context, references, and session memory across long creative workflows.
+GateKPT MusicOS
+C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
 
-Green Machine
-Research and monitoring platform for decision support and guardrailed automation with a strong emphasis on skepticism, traceability, and replayability.
+Green Machine Quant OS
+Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.
 
 Skills to Emphasize
-C#, TypeScript, React, Next.js, Python, Playwright, Azure, Snowflake, Databricks, Power BI, Power Apps, Power Automate, CI/CD, API integrations, QA automation, workflow tooling
+C#, TypeScript, React, Next.js, Python, Swift, Playwright, Azure, Snowflake, Databricks, Power BI, CI/CD, API integrations, QA automation, workflow tooling

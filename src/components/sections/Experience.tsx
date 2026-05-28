@@ -38,12 +38,12 @@ const PUBLIX: Milestone = {
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer contributing to enterprise operations, analytics, internal tooling, QA automation, and modernization work. The common thread is practical software for systems where reliability, traceability, and supportability matter.',
+    'Software engineer working across QA automation, analytics, internal tooling, and modernization work. The emphasis is practical engineering: clearer specs, safer releases, reliable workflows, and documentation that helps teams move with confidence.',
   focus: [
-    'QA automation and modernization',
-    'Operational data and reporting',
-    'Internal workflow tooling',
-    'Production support and documentation',
+    'QA automation',
+    'Data and reporting workflows',
+    'Internal tools',
+    'Documentation and release confidence',
   ],
   stack: [
     'C#',
@@ -52,15 +52,14 @@ const PUBLIX: Milestone = {
     'Snowflake',
     'Databricks',
     'Power BI',
-    'Power Apps',
-    'Power Automate',
+    'Workflow tools',
     'REST APIs',
     'CI/CD',
   ],
   metrics: [
-    { label: 'Focus', value: 'Ops' },
-    { label: 'Systems', value: 'Internal' },
-    { label: 'Delivery', value: 'QA / data / tools' },
+    { label: 'Focus', value: 'Reliability' },
+    { label: 'Mode', value: 'Internal tools' },
+    { label: 'Delivery', value: 'QA / data' },
   ],
 };
 
@@ -77,10 +76,10 @@ export function Experience() {
           <>
             Software Engineer,
             <br />
-            <span className="text-gradient">enterprise systems.</span>
+            <span className="text-gradient">reliable delivery.</span>
           </>
         }
-        description="Operational software, analytics, workflow tooling, QA automation, and modernization work in a large enterprise environment."
+        description="QA automation, analytics, workflow tooling, and modernization work with a focus on clarity, reliability, and supportable systems."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

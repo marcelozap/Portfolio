@@ -17,23 +17,23 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const CAPABILITIES = [
   {
     icon: CircuitBoard,
-    title: 'Operational systems',
-    body: 'Enterprise integrations and operational software where correctness and supportability matter.',
+    title: 'Systems work',
+    body: 'Practical software for workflows where correctness, traceability, and supportability matter.',
   },
   {
     icon: GitMerge,
     title: 'Release & QA automation',
-    body: 'Playwright, CI/CD, secrets management, and repeatable validation for high-risk changes.',
+    body: 'Playwright, CI/CD habits, and repeatable validation for changes that need confidence.',
   },
   {
     icon: Activity,
     title: 'Data & analytics',
-    body: 'Data and reporting workflows that turn operational information into usable decisions.',
+    body: 'Reporting workflows that turn messy source information into clearer decisions.',
   },
   {
     icon: Workflow,
     title: 'Workflow tooling',
-    body: 'Power Platform and API-based tools that reduce repetitive work and shorten the path to action.',
+    body: 'Internal tools and API-based workflows that reduce repetitive work.',
   },
   {
     icon: Cpu,
@@ -43,7 +43,7 @@ const CAPABILITIES = [
   {
     icon: Boxes,
     title: 'AI-assisted delivery',
-    body: 'Breaking ambiguous legacy work into specs, acceptance criteria, and safer implementation slices.',
+    body: 'Using AI as a drafting and review aid for specs, tests, docs, and implementation planning.',
   },
   {
     title: 'Rapid prototyping',
@@ -58,7 +58,7 @@ const CAPABILITIES = [
 ];
 
 const DASHBOARD = [
-  { label: 'Enterprise work', value: 'Ops', tone: 'green' },
+  { label: 'Engineering work', value: 'Systems', tone: 'green' },
   { label: 'Data work', value: 'Analytics', tone: 'cyan' },
   { label: 'Build surface', value: 'web / iOS / data', tone: 'violet' },
   { label: 'Working style', value: 'systems + product', tone: 'amber' },
@@ -83,7 +83,7 @@ export function Engineering() {
             <span className="text-gradient">product range.</span>
           </>
         }
-        description="I&rsquo;m strongest where real-world operations and thoughtful software design meet. The same toolkit has to work in enterprise systems, internal platforms, and independent products."
+        description="I&rsquo;m strongest where practical software design meets real workflows. The same toolkit has to work across internal platforms, product interfaces, and independent builds."
       />
 
       {/* profile dashboard */}

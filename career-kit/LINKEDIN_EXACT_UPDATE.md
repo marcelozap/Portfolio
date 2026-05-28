@@ -1,106 +1,40 @@
 # LinkedIn Exact Update
 
-Use this as the exact version to paste into LinkedIn.
-
-## 1. Headline
+## Headline
 
 Software Engineer | Systems, Automation, Analytics, and Product Engineering
 
-### QA-heavy alternative
+## About
 
-Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tooling
+I'm a software engineer with 4 years of experience across systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I contribute to software and internal tools that support real operational work, with an emphasis on reliability, documentation, release confidence, and practical delivery.
 
-## 2. About
+Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build products that keep stretching my range: Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform.
 
-I'm a software engineer with 4 years of experience across warehouse systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I work on software that supports real operations at scale, including modernization efforts, regulated workflows, data pipelines, and internal tools that teams rely on every day.
+I'm looking for a role with more scope, stronger ownership, and room to keep growing across systems, product, automation, and platform work.
 
-Before Publix, I taught STEM courses, and that still shapes how I communicate, document, lead, and mentor newer teammates. Outside of enterprise delivery, I build products that keep stretching my range: Rally, a tennis lifestyle app with a daily engagement loop; GATEKPT, an AI-assisted workspace for music production; and Green Machine, a research and monitoring platform.
-
-I'm looking for a remote or hybrid role with more scope, stronger ownership, and room to keep growing across software engineering, systems, automation, and product-oriented work.
-
-## 3. Experience
+## Experience
 
 ### Publix Super Markets
 
-Title:
+Software Engineer  
+2022 - Present
 
-Software Engineer
+- Contribute to enterprise software work across QA automation, analytics, internal workflow tooling, and modernization.
+- Led QA automation efforts for modernization work on a C#-heavy stack, including Playwright coverage, CI/CD execution, and secure test configuration.
+- Contributed to data, reporting, and workflow-tooling projects using Snowflake, Databricks, Power BI, Power Platform, and API integrations.
+- Document workflows and acceptance criteria with attention to accuracy, auditability, and release confidence.
+- Help teammates improve testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
 
-Description:
+## Featured Projects
 
-- Build and support warehouse, pharmacy, analytics, and internal tooling systems across a large operational footprint.
-- Led QA automation for warehouse-control modernization using Playwright, CI/CD pipelines, and Azure Key Vault.
-- Help modernize legacy warehouse inventory jobs and integrations through smaller specs, safer rebuilds, and stronger regression discipline.
-- Built governed data lake and reporting workflows for DSCSA pharmacy tracing across 12 warehouse locations using Snowflake, Databricks, and Power BI semantic models.
-- Delivered Power Apps, Power Automate, and API-based workflow tooling that removed significant manual reconciliation work and improved file-exception handling.
-- Served as lead support engineer for controlled-substances software and file balance monitoring across 40+ warehouses.
-- Mentored newer teammates on testing discipline, documentation, CI/CD habits, and practical AI-assisted delivery patterns.
+### Rally
 
-### Florida State University
+Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
 
-Title:
+### GateKPT MusicOS
 
-S.T.E.M. Course Instructor
+C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
 
-Description:
+### Green Machine Quant OS
 
-- Taught STEM-focused coursework and supported students through technical concepts, structured problem solving, and hands-on learning.
-- Built communication habits that still carry into engineering work: clearer documentation, patient collaboration, and practical mentorship.
-
-## 4. Featured Section
-
-Add these in this order:
-
-1. Portfolio
-2. Rally
-3. GitHub profile
-
-If you want one more:
-
-4. strongest project repo or project write-up
-
-## 5. Skills to Pin
-
-Top 3 pinned:
-
-1. Software Engineering
-2. QA Automation
-3. CI/CD
-
-Add these next:
-
-- C#
-- TypeScript
-- Python
-- React
-- Playwright
-- Azure
-- Snowflake
-- Databricks
-- Power BI
-- Workflow Automation
-- API Integrations
-- Internal Tools
-- Systems Integration
-
-## 6. Open To Work
-
-If you turn it on, set it to recruiter-only and target:
-
-- Software Engineer
-- QA Automation Engineer
-- Software Development Engineer in Test
-- Internal Tools Engineer
-- Platform Engineer
-
-Location preference:
-
-- Remote
-- Hybrid
-
-## 7. What to Remove or Avoid
-
-- wording that makes you sound like only a data engineer
-- wording that makes you sound like only manual QA
-- vague buzzwords without concrete work behind them
-- overexplaining side projects before your real experience
+Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.

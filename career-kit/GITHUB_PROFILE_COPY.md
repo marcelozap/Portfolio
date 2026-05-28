@@ -1,51 +1,58 @@
 # GitHub Profile Copy
 
-## Profile bio options
+## Profile Bio Options
 
-### Bio option 1
+### Bio Option 1
+
 Software engineer building systems, automation, analytics, and product software.
 
-### Bio option 2
-Building operational systems, product tools, and independent software across web and iOS.
+### Bio Option 2
 
-### Bio option 3
-Software engineer focused on platform ownership, workflow tooling, and product execution.
+Building reliable internal tools, product interfaces, and independent software across web and iOS.
 
-## GitHub profile README intro
+### Bio Option 3
 
-Hi, I'm Marcelo Zapata. I'm a software engineer working across operational systems, automation, analytics, and independent product builds. My background includes warehouse software, regulated workflows, QA automation, data tooling, and user-facing product work.
+Software engineer focused on workflow tooling, QA automation, data systems, and product execution.
 
-Outside of enterprise delivery, I build products like Rally, a tennis lifestyle app; GATEKPT, an AI-assisted workspace for music production; and Green Machine, a research and monitoring platform. I'm especially interested in roles where I can take on more ownership across systems, product, platform, and internal tools.
+## GitHub Profile README Intro
 
-## Pinned repo descriptions
+Hi, I'm Marcelo Zapata. I'm a software engineer working across systems, automation, analytics, workflow tooling, and independent product builds. My background spans QA automation, data/reporting workflows, internal tools, documentation, and user-facing product work.
+
+Outside enterprise delivery, I build products like Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform. I'm especially interested in roles where I can take on more ownership across systems, product, platform, automation, and internal tools.
+
+## Pinned Repo Descriptions
 
 ### Portfolio
+
 Personal portfolio built with Next.js and React to present experience across systems, automation, analytics, and product engineering.
 
 ### Rally
-Local-first iOS tennis lifestyle app combining a daily game loop with training logs, journaling, progression, and optional sync.
 
-### GATEKPT
-AI-assisted production workspace designed to preserve context, memory, and references across long creative sessions.
+Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
 
-### Green Machine
-Research and monitoring platform for decision support, alerts, replayability, and guardrailed automation.
+### GateKPT MusicOS
 
-## Short repo one-liners
+C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
+
+### Green Machine Quant OS
+
+Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.
+
+## Short Repo One-Liners
 
 - Portfolio: Recruiter-facing portfolio for software engineering, product, and systems work.
-- Rally: Tennis lifestyle app built with SwiftUI, SpriteKit, and SwiftData.
-- GATEKPT: Music production workflow tool with persistent project memory.
-- Green Machine: Research and monitoring system with controlled automation.
+- Rally: Premium tennis lifestyle product built with SwiftUI, SpriteKit, and SwiftData.
+- GateKPT MusicOS: Creative operating system for live-loop performance workflow and project memory.
+- Green Machine Quant OS: Quantitative research platform with broker API integration, backtesting, paper execution, and risk gates.
 
-## GitHub About section links
+## GitHub About Section Links
 
 - Website: `marcelozapata.dev`
 - LinkedIn: `linkedin.com/in/marcelozap`
 
-## Suggested pinned repo order
+## Suggested Pinned Repo Order
 
 1. Portfolio
 2. Rally
-3. GATEKPT
-4. Green Machine
+3. GateKPT MusicOS
+4. Green Machine Quant OS

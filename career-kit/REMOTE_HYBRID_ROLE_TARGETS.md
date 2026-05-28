@@ -4,9 +4,9 @@ Primary target: remote or hybrid roles in software engineering or QA automation.
 
 Secondary lane: AI automation / workflow roles only when the posting is clearly application and orchestration focused, not research or model-training focused.
 
-## Best-fit titles
+## Best-Fit Titles
 
-### Software engineering
+### Software Engineering
 
 - Software Engineer
 - Product Engineer
@@ -14,7 +14,7 @@ Secondary lane: AI automation / workflow roles only when the posting is clearly 
 - Internal Tools Engineer
 - Full Stack Engineer
 
-### QA / automation
+### QA / Automation
 
 - QA Automation Engineer
 - Software Development Engineer in Test
@@ -22,39 +22,39 @@ Secondary lane: AI automation / workflow roles only when the posting is clearly 
 - Quality Engineer
 - Software Engineer in Test
 
-## Best version of your story
+## Best Version Of Your Story
 
-### If the role is Software Engineer
-
-Lead with:
-
-- warehouse systems and regulated operations
-- modernization of legacy jobs and integrations
-- data pipelines and analytics
-- Power Apps, workflow tooling, and internal systems
-- Rally / GATEKPT / Green Machine as proof of product range
-
-### If the role is QA / Automation
+### If The Role Is Software Engineer
 
 Lead with:
 
-- Playwright and CI/CD pipeline work
-- QA automation for warehouse-control modernization
-- Azure Key Vault and secure test orchestration
-- regression discipline and repeatable validation
-- supportability, reliability, and operational calm under pressure
+- systems, automation, analytics, and workflow tooling
+- modernization and supportable delivery habits
+- data/reporting workflows
+- internal tools and API integrations
+- Rally / GateKPT MusicOS / Green Machine Quant OS as proof of product range
 
-## Resume summary options
+### If The Role Is QA / Automation
 
-### Software Engineer summary
+Lead with:
 
-Software engineer with 4 years of experience across warehouse systems, QA automation, analytics, workflow tooling, and independent product builds. Strongest in environments where software supports real operations, from regulated workflows and data pipelines to internal tools and modernization work, with growing experience leading and mentoring newer teammates.
+- Playwright and CI/CD workflow experience
+- QA automation for modernization work
+- repeatable validation and regression discipline
+- clear acceptance criteria and release confidence
+- supportability, reliability, and calm delivery habits
 
-### QA Automation summary
+## Resume Summary Options
 
-Software engineer with strong experience in QA automation, systems validation, CI/CD, and operational software support. Built automated testing for warehouse-control modernization, improved release confidence through repeatable validation, and worked across regulated systems where accuracy and reliability matter, while mentoring newer teammates and helping standardize delivery practices.
+### Software Engineer Summary
 
-## LinkedIn headline options
+Software engineer with 4 years of experience across systems, QA automation, analytics, workflow tooling, and independent product builds. Strongest where software supports real operational work: internal tools, data and reporting workflows, modernization, and systems that need reliability, traceability, and supportability.
+
+### QA Automation Summary
+
+Software engineer with strong experience in QA automation, systems validation, CI/CD, and operational software support. Built repeatable validation workflows, improved release confidence through regression discipline, and helped teams document safer implementation paths.
+
+## LinkedIn Headline Options
 
 ### Software Engineer
 
@@ -64,7 +64,7 @@ Software Engineer | Systems, Automation, Analytics, and Product Engineering
 
 Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tooling
 
-## Search terms to use
+## Search Terms To Use
 
 - "software engineer" remote
 - "software engineer" hybrid
@@ -75,14 +75,14 @@ Software Engineer | QA Automation, Systems Reliability, CI/CD, and Workflow Tool
 - "platform engineer" hybrid
 - "internal tools engineer" remote
 
-## Filters to prioritize
+## Filters To Prioritize
 
 - remote or hybrid only
 - mid-level or experienced individual contributor
 - companies with operational software, logistics, healthcare, SaaS, fintech, or internal platforms
 - roles mentioning automation, CI/CD, testing, workflows, analytics, or systems integration
 
-## What to avoid
+## What To Avoid
 
 - roles that are mostly manual QA with little automation
 - titles that are really customer support disguised as engineering
