@@ -52,9 +52,9 @@ export function About() {
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               Outside enterprise delivery, I build products that sharpen a different side of the
-              stack: Rally, a tennis lifestyle app; GATEKPT, an AI-assisted music workflow
-              workspace; and Green Machine, a research and monitoring platform. That mix keeps my
-              systems thinking, UX instincts, and execution speed sharp.
+              stack: Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative
+              operating system for live-loop artists; and Green Machine, a quantitative research
+              platform. That mix keeps my systems thinking, UX instincts, and execution speed sharp.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

@@ -142,7 +142,7 @@ function ArchitectureDiagram() {
     { id: 'shell', label: 'portfolio / shell', x: 50, y: 16 },
     { id: 'gatekpt', label: 'GATEKPT / audio', x: 18, y: 60 },
     { id: 'green-machine', label: 'GREEN MACHINE / research', x: 50, y: 70 },
-    { id: 'rally', label: 'RALLY / tennis app', x: 82, y: 60 },
+    { id: 'rally', label: 'RALLY / tennis product', x: 82, y: 60 },
   ];
   const edges: [string, string][] = [
     ['shell', 'gatekpt'],
