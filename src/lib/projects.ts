@@ -150,13 +150,13 @@ export const PROJECTS: Project[] = [
     id: 'rally',
     name: 'RALLY',
     tagline:
-      'Tennis lifestyle app pairing a fast daily game loop with training, journaling, and style.',
+      'Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
     year: '2026',
     description:
-      'Rally is a tennis lifestyle product, not just a game. The core hook is a high-polish rhythm-swipe mini-game, but the broader experience wraps that around training logs, match logs, journaling, avatar customization, and a shop surface connected to real brands.',
+      'Rally is a premium tennis lifestyle product built around a fast daily rally engine. The broader experience connects training logs, match history, journaling, global court discovery, avatar identity, and real-world fashion and gear into one tennis-native product surface.',
     coreIdeas: [
       'One daily-engagement hook anchored by a short, replayable game loop',
       'The mini-game is a retention driver, not the entire product',
