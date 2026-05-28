@@ -158,27 +158,27 @@ export const PROJECTS: Project[] = [
     description:
       'Rally is a premium tennis lifestyle product built around a fast daily rally engine. The broader experience connects training logs, match history, journaling, global court discovery, avatar identity, and real-world fashion and gear into one tennis-native product surface.',
     coreIdeas: [
-      'One daily-engagement hook anchored by a short, replayable game loop',
-      'The mini-game is a retention driver, not the entire product',
+      'Fast daily rally engine as the repeatable engagement hook',
+      'Lifestyle product surface beyond gameplay alone',
       'Local-first iOS architecture with optional account sync',
-      'Avatar, apparel, and shop flows tied to real-world purchase intent',
-      'Audio, haptics, and motion used to make the product feel premium',
+      'Training, journaling, match history, and global court discovery in one product',
+      'Fashion and gear flows tied to real-world tennis identity',
     ],
     features: [
       {
-        title: 'Play tab as the hook',
+        title: 'Daily rally engine',
         description:
-          'A rhythm-adjacent tennis mini-game provides the fast, repeatable loop that gives the app daily-open energy.',
+          'A fast rally mechanic gives the product a short, repeatable daily-open loop without making the entire experience feel like a casual game.',
       },
       {
-        title: 'Logs, journal, and progression',
+        title: 'Training and journal layer',
         description:
           'Training sessions, matches, and journal entries live in the same product so the app supports a player’s actual tennis routine.',
       },
       {
-        title: 'Avatar and shop layer',
+        title: 'Courts, fashion, and gear',
         description:
-          'Users can customize a tennis avatar, browse branded apparel, and move from digital identity to vendor purchase intent.',
+          'Global court discovery, avatar identity, fashion, and gear make Rally feel like a complete tennis lifestyle product surface.',
       },
       {
         title: 'Local-first sync model',

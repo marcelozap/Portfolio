@@ -35,7 +35,7 @@ export function Projects() {
             <span className="text-gradient">real operating logic.</span>
           </>
         }
-        description="Each project starts from a specific product problem: preserving creative context, turning research into a usable system, or building a tennis product with a strong daily-use loop."
+        description="Each project starts from a specific product problem: preserving creative context, turning research into a usable system, or building a premium tennis lifestyle product around a daily rally engine."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
