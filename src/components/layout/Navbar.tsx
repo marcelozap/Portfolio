@@ -55,8 +55,8 @@ export function Navbar() {
           className="group flex items-center gap-3"
           aria-label="Marcelo Zapata home"
         >
-          <span className="relative flex size-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] font-mono text-[11px] tracking-widest text-ink shadow-inset">
-            <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
+          <span className="relative flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] font-mono text-[11px] tracking-widest text-ink shadow-inset">
+            <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
             <span className="relative">MZ</span>
           </span>
           <span className="hidden flex-col items-start sm:flex">
@@ -64,7 +64,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-              systems · product
+              systems / product
             </span>
           </span>
         </button>
@@ -77,7 +77,7 @@ export function Navbar() {
                 onClick={() => scrollToSection(item.id)}
                 data-active={active === item.id}
                 className={cn(
-                  'nav-link rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-ink',
+                  'nav-link rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink',
                   active === item.id && 'text-ink',
                 )}
               >
@@ -89,13 +89,13 @@ export function Navbar() {
 
         <button
           onClick={openPalette}
-          className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-ink-muted transition hover:border-accent/40 hover:text-ink"
+          className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-ink-muted transition hover:border-accent/40 hover:text-ink"
           aria-label="Open command palette"
         >
           <Command className="size-3.5" />
           <span className="hidden sm:inline">Command</span>
           <kbd className="hidden rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 font-mono text-[10px] sm:inline">
-            ⌘K
+            Ctrl K
           </kbd>
         </button>
       </nav>

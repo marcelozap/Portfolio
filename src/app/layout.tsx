@@ -1,15 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
-import { CustomCursor } from '@/components/interactive/CustomCursor';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
-import { AmbientMotifs } from '@/components/layout/AmbientMotifs';
-import { AmbientSpaceman } from '@/components/interactive/AmbientSpaceman';
-import { AmbientAudio } from '@/components/interactive/AmbientAudio';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { TerminalDock } from '@/components/interactive/TerminalDock';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -86,14 +81,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative antialiased">
         <CommandPaletteProvider>
           <AmbientBackdrop />
-          <AmbientMotifs />
-          <AmbientSpaceman />
-          <AmbientAudio />
-          <CustomCursor />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />
-          <TerminalDock />
         </CommandPaletteProvider>
       </body>
     </html>

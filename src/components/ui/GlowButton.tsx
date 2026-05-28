@@ -53,10 +53,9 @@ export const GlowButton = forwardRef<HTMLElement, GlowButtonProps>(
           <span className="relative z-10 flex items-center gap-2">{children}</span>
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition group-hover:opacity-100"
             style={{
-              background:
-                'radial-gradient(circle at 30% 50%, hsl(var(--accent-glow) / 0.18), transparent 60%)',
+              background: 'linear-gradient(90deg, hsl(var(--accent-glow) / 0.12), transparent 70%)',
             }}
           />
         </Link>
@@ -69,10 +68,9 @@ export const GlowButton = forwardRef<HTMLElement, GlowButtonProps>(
         <span className="relative z-10 flex items-center gap-2">{children}</span>
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition group-hover:opacity-100"
           style={{
-            background:
-              'radial-gradient(circle at 30% 50%, hsl(var(--accent-glow) / 0.18), transparent 60%)',
+            background: 'linear-gradient(90deg, hsl(var(--accent-glow) / 0.12), transparent 70%)',
           }}
         />
       </button>
