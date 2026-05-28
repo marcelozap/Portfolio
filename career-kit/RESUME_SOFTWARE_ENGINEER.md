@@ -30,7 +30,7 @@ S.T.E.M. Course Instructor | 2019 - 2022
 
 ## Projects
 
-### Rally | 2026 - Present
+### Rally | 2025 - Present
 
 Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
 
@@ -43,7 +43,7 @@ C#/.NET Avalonia creative operating system for live-loop artists, combining RC-5
 
 - Designed as an artist cockpit that sits above the creative rig without replacing musicianship, hardware, or DAW workflows.
 
-### Green Machine Quant OS | 2024 - Present
+### Green Machine Quant OS | Fall 2021 - Present
 
 Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with local backtesting, risk analytics, paper trading, and AI-assisted research review.
 

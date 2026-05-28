@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
-    year: '2024',
+    year: 'Fall 2021',
     description:
       'Green Machine Quant OS is a Python/FastAPI quantitative research and paper-execution platform that connects OAuth-secured Schwab market and account data to local research workflows. It supports quotes, historical candles, options chains, account previews, reproducible backtests, risk metrics, paper trading, and AI-assisted research review.',
     coreIdeas: [
@@ -154,7 +154,7 @@ export const PROJECTS: Project[] = [
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
-    year: '2026',
+    year: '2025',
     description:
       'Rally is a premium tennis lifestyle product built around a fast daily rally engine. The broader experience connects training logs, match history, journaling, global court discovery, avatar identity, and real-world fashion and gear into one tennis-native product surface.',
     coreIdeas: [
