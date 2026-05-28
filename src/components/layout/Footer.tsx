@@ -13,7 +13,7 @@ const LINKS = [
 const EXTERNAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marcelozap' },
   { label: 'GitHub', href: 'https://github.com/marcelozap' },
-  { label: 'Contact', href: 'mailto:hello@xiv-os.dev' },
+  { label: 'Contact', href: 'mailto:marcelozapata08@gmail.com' },
 ];
 
 export function Footer() {
@@ -38,7 +38,7 @@ export function Footer() {
         <div>
           <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-            Software engineer · systems · product
+            Software engineer - systems - product
           </div>
         </div>
 
@@ -73,8 +73,8 @@ export function Footer() {
 
       <div className="border-t border-white/[0.04]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-[11px] text-ink-faint md:px-10">
-          <span>Portfolio · Marcelo Zapata</span>
-          <span className="font-mono">© {new Date().getFullYear()}</span>
+          <span>Portfolio - Marcelo Zapata</span>
+          <span className="font-mono">(c) {new Date().getFullYear()}</span>
         </div>
       </div>
     </footer>

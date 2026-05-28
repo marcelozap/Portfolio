@@ -44,7 +44,7 @@ SKILLS
 
 Languages: C#, TypeScript, Python, SQL, Swift
 Frameworks and Platforms: React, Next.js, SwiftUI, SpriteKit, FastAPI, Avalonia, Power Platform
-Cloud, Data, and DevOps: Azure, CI/CD, Snowflake, Databricks, Power BI, SQLite
+Cloud, Data, and Delivery: Azure, CI/CD, Snowflake, Databricks, Power BI, SQLite
 Testing and Automation: Playwright, regression testing, QA automation, workflow tooling, API integrations
 
 EDUCATION

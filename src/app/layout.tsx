@@ -25,10 +25,10 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://xiv-os.vercel.app'),
+  metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata — Software Engineer | Systems, Product, Automation',
-    template: '%s — Marcelo Zapata',
+    default: 'Marcelo Zapata - Software Engineer | Systems, Product, Automation',
+    template: '%s - Marcelo Zapata',
   },
   description:
     'Marcelo Zapata is a software engineer building reliable tools, automation, analytics, and product-driven software across professional delivery and independent projects.',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata — Software Engineer',
+    title: 'Marcelo Zapata - Software Engineer',
     description:
       'Portfolio of software engineering work across systems, automation, analytics, product design, and creative technology.',
     type: 'website',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer · systems, product, automation',
+    description: 'Software engineer - systems, product, automation',
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],

@@ -1,164 +1,100 @@
-# Marcelo Zapata Portfolio (XIV_OS)
+# Marcelo Zapata Portfolio
 
-> Personal portfolio for a software engineer working across operational systems, product design, automation, and creative technology.
+Personal portfolio for Marcelo Zapata, a software engineer working across reliable tools, automation, analytics, product systems, and independent builds.
 
-This repo powers the portfolio site for **Marcelo Zapata**. The visual system
-still carries the **XIV_OS** identity, while the content is positioned around
-software engineering work in enterprise operations, analytics, product
-prototyping, and creative tooling.
-
-For the recruiter-facing job search materials bundled with this site, see
-[`career-kit/`](./career-kit).
-
-The site is not a template. It is built as a tiny operating system: a hero
-"boot screen", a command palette, a persistent terminal, an architecture
-diagram, and three deeply-themed project surfaces (GATEKPT · GREEN MACHINE ·
-RALLY).
-
----
+This repository powers the public portfolio site and the recruiter-facing materials in [`career-kit/`](./career-kit). The current site is intentionally restrained: project-forward, professional, and focused on engineering range without exposing sensitive employer details.
 
 ## Stack
 
-| Layer            | Tech                                                          |
-| ---------------- | ------------------------------------------------------------- |
-| Framework        | [Next.js 14 (App Router)](https://nextjs.org) · React 18 · TS |
-| Styling          | Tailwind CSS · CSS variables · glassmorphism system           |
-| Motion           | Framer Motion · GSAP                                          |
-| 3D / Interactive | React Three Fiber · Three.js · GLSL shaders                   |
-| Tooling          | ESLint · Prettier (+Tailwind plugin) · Husky + lint-staged    |
-| CI               | GitHub Actions (Node 20 · 22)                                 |
-| Deploy           | Vercel                                                        |
+| Layer     | Tech                                                |
+| --------- | --------------------------------------------------- |
+| Framework | Next.js 14 App Router, React 18, TypeScript         |
+| Styling   | Tailwind CSS, CSS variables, reusable UI primitives |
+| Motion    | Framer Motion                                       |
+| Visuals   | SVG and React-rendered project visuals              |
+| Tooling   | ESLint, Prettier, Husky, lint-staged                |
+| CI        | GitHub Actions on Node 20 and Node 22               |
+| Deploy    | Vercel                                              |
 
----
+## Project Structure
 
-## Project structure
-
-```
-career-kit/                     # resumes, LinkedIn copy, search docs, tracker
+```text
+career-kit/              # resumes, LinkedIn copy, recruiter messages, interview prep
 src/
-├── app/
-│   ├── globals.css            # design tokens + utilities (glass, glow, etc.)
-│   ├── layout.tsx             # root layout: fonts, providers, persistent shells
-│   └── page.tsx               # section composition
-├── components/
-│   ├── layout/                # AmbientBackdrop, Navbar, Footer
-│   ├── interactive/           # CustomCursor, CommandPalette, TerminalDock
-│   ├── hero/                  # Hero, ParticleField (R3F), Typewriter, etc.
-│   ├── sections/              # About, Experience, Engineering, Music
-│   ├── projects/              # ProjectCard, ProjectModal, ProjectVisual
-│   └── ui/                    # GlassCard, GlowButton, SectionHeader
-└── lib/
-    ├── projects.ts            # typed project catalog
-    └── utils.ts               # cn(), clamp(), lerp(), …
+  app/                   # root layout, metadata, global styles, page composition
+  components/
+    hero/                # homepage hero and market ticker
+    layout/              # navigation, footer, ambient backdrop
+    interactive/         # command palette
+    projects/            # project cards, modals, and visuals
+    sections/            # Experience, Engineering, About, Music
+    ui/                  # shared UI primitives
+  lib/
+    projects.ts          # typed project catalog
+    utils.ts             # shared helpers
 ```
 
----
-
-## Run it locally
+## Run Locally
 
 ```bash
-nvm use            # picks up .nvmrc → node 22
 npm install
-npm run dev        # http://localhost:3000
+npm run dev
 ```
 
-Useful scripts:
+Useful checks:
 
 ```bash
-npm run lint           # next lint
-npm run typecheck      # tsc --noEmit
-npm run format         # prettier --write
-npm run format:check   # CI gate
-npm run build          # production build
-npm run start          # serve build
+npm run lint
+npm run typecheck
+npm run format:check
+npm run build
 ```
 
----
+## Public Positioning
 
-## Interactive features
+The site highlights:
 
-| Surface         | Trigger                                                                          |
-| --------------- | -------------------------------------------------------------------------------- |
-| Command palette | `⌘K` / `Ctrl K` — fuzzy search nav, projects, actions                            |
-| Terminal dock   | backtick \`\` ` \`\` or the dock pill — try `help`, `open gatekpt`, `goto music` |
-| Project modals  | click any project card · or `open <id>` in the terminal                          |
-| Custom cursor   | two-layer cursor with hover-aware scaling, fine-pointer only                     |
-| Reactive hero   | R3F particle field with parallax-to-cursor + drifting code fragments             |
+- Rally: premium tennis lifestyle product, started in 2025
+- GateKPT MusicOS: creative operating system for live-loop artists
+- Green Machine Quant OS: quantitative research platform, started in Fall 2021
+- Professional experience framed around QA automation, analytics, internal tools, documentation, and reliable delivery
 
-All interactions respect `prefers-reduced-motion`.
+Avoid adding private employer details, internal counts, regulated-work specifics, or unsupported claims to public copy.
 
----
+## Career Kit
 
-## Design system
+The [`career-kit/`](./career-kit) folder contains the current safe public versions of:
 
-CSS variables in `globals.css` define the whole palette:
+- Software engineer resume
+- QA automation resume
+- LinkedIn copy
+- GitHub profile copy
+- Recruiter messages
+- Interview prep
 
-```css
---bg: 222 24% 4% --ink: 210 30% 96% --accent: 188 95% 62% /* electric cyan */ --accent-warm: 28 95%
-  62% /* late-night amber */ --accent-cool: 268 80% 70% /* violet */ --signal- *: success / danger /
-  warning;
+The Desktop reference copy is stored at:
+
+```text
+C:\Users\Green Machine\Desktop\Marcelo Portfolio Career Kit - Clean Copy
 ```
-
-Surfaces are composed via the `.glass`, `.glass-strong`, and `.scanline`
-utilities defined in `globals.css`. Buttons go through `<GlowButton />` to keep
-the chrome consistent.
-
----
 
 ## Deployment
 
-The site is wired for **Vercel**:
+The site is deployed through Vercel from `main`.
 
-1. Push to GitHub (`origin/main`).
-2. Import the repository on [vercel.com/new](https://vercel.com/new).
-3. Framework preset auto-detects **Next.js**. No env vars are required for the
-   public site.
-4. Subsequent pushes to `main` deploy production · feature branches deploy
-   previews.
-
-Optional manual deploy:
-
-```bash
-npm i -g vercel
-vercel link
-vercel --prod
-```
-
----
+1. Commit and push to `origin/main`.
+2. Vercel builds and promotes the production deployment.
+3. After deploy, verify the live site for stale public wording.
 
 ## CI
 
-`.github/workflows/ci.yml` runs on every push and PR against `main`:
+`.github/workflows/ci.yml` runs:
 
-- `prettier --check`
-- `next lint`
-- `tsc --noEmit`
-- `next build`
-
-Both Node 20.x and Node 22.x are exercised so the project stays portable.
-
----
-
-## Roadmap
-
-A live, opinionated roadmap. Items move from `concept` → `building` → `shipped`
-as XIV_OS evolves.
-
-| Item                                | State   | Notes                                              |
-| ----------------------------------- | ------- | -------------------------------------------------- |
-| AI assistant terminal (LLM-backed)  | concept | extend `TerminalDock` with an `ask` command        |
-| Ambient audio system                | concept | small Web Audio mixer wired to mouse + scroll      |
-| Interactive workstation scene (3D)  | concept | dedicated R3F scene for the engineering section    |
-| MDX project CMS                     | concept | move `lib/projects.ts` into MDX with frontmatter   |
-| Dedicated `/projects/[slug]` routes | concept | deep-linkable project pages w/ shared element anim |
-| Per-project shader backdrops        | concept | each modal gets its own GLSL "weather"             |
-| Bedroom covers audio player         | concept | actual audio with waveform-synced visuals          |
-| Easter-egg key combos               | concept | `xiv-up-up-down…` etc.                             |
-
----
+- Prettier check
+- Next lint
+- TypeScript check
+- Next build
 
 ## License
 
-MIT — see [`LICENSE`](./LICENSE).
-
-> Built for depth, clarity, and the next bigger challenge.
+MIT - see [`LICENSE`](./LICENSE).

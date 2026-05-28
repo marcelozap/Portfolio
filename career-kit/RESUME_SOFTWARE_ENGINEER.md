@@ -59,7 +59,7 @@ C#, TypeScript, Python, SQL, Swift
 
 React, Next.js, SwiftUI, SpriteKit, FastAPI, Avalonia, Power Platform
 
-### Cloud, Data, and DevOps
+### Cloud, Data, and Delivery
 
 Azure, CI/CD, Snowflake, Databricks, Power BI, SQLite
 
