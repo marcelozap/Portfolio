@@ -5,7 +5,7 @@ Use these directly in LinkedIn, Indeed, and Google Jobs.
 ## Software Engineer
 
 1. `"software engineer" ("remote" OR "hybrid") ("automation" OR "internal tools" OR "systems")`
-2. `"platform engineer" ("remote" OR "hybrid") ("workflow" OR "integrations" OR "operations")`
+2. `"platform engineer" ("remote" OR "hybrid") ("workflow" OR "integrations" OR "internal tools")`
 3. `"internal tools engineer" ("remote" OR "hybrid")`
 
 ## QA Automation / SDET
