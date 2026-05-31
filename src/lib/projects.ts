@@ -95,48 +95,49 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'green-machine',
-    name: 'GREEN MACHINE',
+    name: 'Green Machine Quant OS',
     tagline:
-      'Python/FastAPI quantitative research platform with Schwab data, backtesting, paper execution, and risk controls.',
+      'Execution-focused quant trading research platform for TCA, risk gates, regime analysis, paper fills, and desk-style review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: 'Fall 2021',
+    website: '/green-machine',
     description:
-      'Green Machine Quant OS is a Python/FastAPI quantitative research and paper-execution platform that connects OAuth-secured Schwab market and account data to local research workflows. It supports quotes, historical candles, options chains, account previews, reproducible backtests, risk metrics, paper trading, and AI-assisted research review.',
+      'Green Machine Quant OS is a local-first Python/FastAPI trading research system built around execution quality instead of signal hype. It connects read-only Schwab workflows, SQLite-backed research data, transaction cost analytics, paper execution review, risk gates, a C# Windows launcher, and portfolio-safe public proof surfaces.',
     coreIdeas: [
-      'OAuth-secured broker API integration for live data access and account previews',
-      'Local-first data spine for historical candles, research outputs, and reproducible experiments',
-      'Strategy research loop spanning momentum, regime overlays, risk budgeting, and walk-forward validation',
-      'Paper execution engine with order intents, execution reports, position snapshots, and futures multipliers',
-      'Live broker execution isolated behind explicit safety gates and review boundaries',
+      'Execution-focused quant path: trading, market structure, data automation, desk usefulness, and better trading judgment',
+      'Transaction cost analysis for arrival price, fill price, slippage bps, implementation shortfall, and model-vs-realized fill parity',
+      'Local-first Engine and data spine for regime analysis, research memos, execution fills, and reproducible API checks',
+      'Paper execution and Schwab readiness kept separate from live broker order routing by design',
+      'C# Windows launcher that starts the local Engine and opens the OS, public page, API docs, and execution coach brief',
     ],
     features: [
       {
-        title: 'Schwab integration',
+        title: 'Execution analytics',
         description:
-          'Implements OAuth 2 authorization-code flow, live quotes, price history, options chains, and account/position preview routes.',
+          'Measures saved fills with TCA-style metrics: arrival price, fill price, slippage bps, implementation shortfall, model calibration, and daily execution coach briefs.',
       },
       {
-        title: 'Reproducible research',
+        title: 'Research Engine',
         description:
-          'Backtests strategies with transaction costs, drawdown analysis, documented research memos, and walk-forward validation.',
+          'Backtests strategies with transaction costs, regime overlays, risk budgeting, walk-forward validation, and research memos that document evidence and limitations.',
       },
       {
-        title: 'Paper execution',
+        title: 'Schwab and paper workflow',
         description:
-          'Uses a PaperBroker abstraction for order intents, execution reports, realized/unrealized P&L, and live quote marking.',
+          'Uses Schwab in read-only/paper-workflow mode for live data readiness and account-aware research while keeping real order placement out of the public project surface.',
       },
       {
-        title: 'Risk controls',
+        title: 'Risk and desktop shell',
         description:
-          'Keeps broker execution separated from research and paper trading behind max-loss requirements, drawdown guards, and explicit review gates.',
+          'Includes position sizing, pre-trade risk checks, max-loss boundaries, and a C# Windows launcher for a local OS feel without publishing private account data.',
       },
     ],
     metrics: [
-      { label: 'Broker API', value: 'Schwab' },
-      { label: 'Execution', value: 'Paper' },
-      { label: 'Safety', value: 'Gated' },
+      { label: 'Tests', value: '127' },
+      { label: 'Memos', value: '7+' },
+      { label: 'Orders', value: '0 live' },
     ],
     stack: [
       'Python',
@@ -144,9 +145,11 @@ export const PROJECTS: Project[] = [
       'SQLite',
       'pandas',
       'pytest',
+      'C#',
+      '.NET',
       'Schwab API',
       'OAuth 2.0',
-      'LLM review',
+      'TCA',
     ],
   },
   {

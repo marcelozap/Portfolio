@@ -45,9 +45,12 @@ C#/.NET Avalonia creative operating system for live-loop artists, combining RC-5
 
 ### Green Machine Quant OS | Fall 2021 - Present
 
-Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with local backtesting, risk analytics, paper trading, and AI-assisted research review.
+Local-first execution-focused quantitative trading research platform built with Python, FastAPI, SQLite, pytest, and a C# Windows launcher.
 
-- Designed with live broker execution isolated behind explicit safety gates while research and paper execution share common abstractions.
+- Implemented transaction-cost analytics for arrival price, fill price, slippage bps, implementation shortfall, modeled-vs-realized fill parity, and daily execution coach briefs.
+- Built Engine APIs for regime analysis, research memos, risk gates, paper execution review, and website-safe project proof.
+- Integrated Schwab API readiness in read-only/paper-workflow mode while keeping live broker order routing disabled by design.
+- Created a C# Windows launcher for starting the local Engine and opening private/public OS surfaces.
 
 ## Skills
 
