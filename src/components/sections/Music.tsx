@@ -8,7 +8,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 /** Representative catalog line for the site score; durations illustrative. */
 const CREDIT_TRACK = {
   title: 'XIV Ambiant',
-  subtitle: 'Site score · Logic Pro',
+  subtitle: 'Site score / Logic Pro',
   note: 'Used as optional ambient audio on this portfolio (Sound control, lower left).',
 };
 
@@ -41,7 +41,7 @@ export function Music() {
                 original work
               </span>
               <span className="mono-tag normal-case tracking-wider">
-                composer & producer · M. Zapata
+                composer & producer / M. Zapata
               </span>
             </div>
 
@@ -50,8 +50,8 @@ export function Music() {
                 credit
               </p>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                Ambient audio on this site — including the piece titled{' '}
-                <span className="text-ink">{CREDIT_TRACK.title}</span> — was{' '}
+                Ambient audio on this site - including the piece titled{' '}
+                <span className="text-ink">{CREDIT_TRACK.title}</span> - was{' '}
                 <span className="text-ink">composed, arranged, and recorded by Marcelo Zapata</span>
                 {CREDIT_TRACK.subtitle ? ` (${CREDIT_TRACK.subtitle}).` : '.'} {CREDIT_TRACK.note}
               </p>
@@ -62,8 +62,27 @@ export function Music() {
               Work is tracked in Logic; mixing favors restraint and clarity over spectacle.
             </p>
 
-            <div className="relative h-28 rounded-xl border border-white/[0.06] bg-bg/40 p-3">
-              <div className="grid-bg absolute inset-0 opacity-30" />
+            <div className="relative h-28 overflow-hidden rounded-xl border border-white/[0.06] bg-[linear-gradient(180deg,hsl(var(--bg-elevated)/0.72),hsl(var(--bg)/0.88))] p-3">
+              <div className="grid-bg absolute inset-0 opacity-20" />
+              <svg
+                viewBox="0 0 100 42"
+                className="absolute inset-0 size-full"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0 28 C12 16 21 30 34 18 C47 7 57 25 69 16 C82 6 90 18 100 10"
+                  fill="none"
+                  stroke="hsl(var(--accent-cool) / 0.34)"
+                  strokeWidth="0.3"
+                />
+                <path
+                  d="M0 33 C17 25 28 34 43 27 C58 20 70 27 86 18 C94 14 98 13 100 12"
+                  fill="none"
+                  stroke="hsl(var(--accent-warm) / 0.34)"
+                  strokeDasharray="1.4 1.6"
+                  strokeWidth="0.28"
+                />
+              </svg>
               <div className="relative flex h-full items-center justify-between gap-[3px]">
                 {BARS.map((b, i) => (
                   <motion.span
@@ -85,7 +104,7 @@ export function Music() {
                 ))}
               </div>
               <div className="absolute left-3 top-2 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-                waveform · illustrative
+                waveform / terrain study
               </div>
             </div>
 
@@ -100,7 +119,7 @@ export function Music() {
                 <span className="font-mono text-[11px] tabular-nums text-accent-warm">01</span>
                 <span className="flex-1 text-ink">{CREDIT_TRACK.title}</span>
                 <span className="font-mono text-[10px] text-ink-faint">amb.</span>
-                <span className="font-mono text-[11px] tabular-nums text-ink-muted">—</span>
+                <span className="font-mono text-[11px] tabular-nums text-ink-muted">-</span>
               </motion.li>
             </ul>
           </div>

@@ -161,7 +161,8 @@ function ArchitectureDiagram() {
           <div className="font-mono text-[10px] text-ink-faint">2026</div>
         </div>
 
-        <div className="relative h-72 overflow-hidden rounded-xl border border-white/[0.04] bg-bg/40">
+        <div className="relative h-72 overflow-hidden rounded-xl border border-white/[0.04] bg-[linear-gradient(180deg,hsl(var(--bg-elevated)/0.74),hsl(var(--bg)/0.92))]">
+          <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_15%,hsl(var(--accent)/0.08),transparent_68%)]" />
           <svg viewBox="0 0 100 100" className="absolute inset-0 size-full">
             <defs>
               <radialGradient id="node-glow" r="0.5" cx="0.5" cy="0.5">
@@ -169,6 +170,25 @@ function ArchitectureDiagram() {
                 <stop offset="1" stopColor="hsl(188 95% 62%)" stopOpacity="0" />
               </radialGradient>
             </defs>
+            <path
+              d="M0 72 C12 64 20 70 31 60 C42 50 51 58 62 49 C75 38 86 45 100 32"
+              fill="none"
+              stroke="hsl(var(--accent-warm) / 0.28)"
+              strokeWidth="0.36"
+              strokeDasharray="1.2 1.4"
+            />
+            <path
+              d="M0 86 C18 76 32 84 48 75 C63 67 76 70 100 58"
+              fill="none"
+              stroke="hsl(var(--accent-cool) / 0.22)"
+              strokeWidth="0.28"
+            />
+            <polyline
+              points="0,64 10,58 20,62 30,50 42,56 53,44 64,49 75,38 87,45 100,35"
+              fill="none"
+              stroke="hsl(var(--accent) / 0.36)"
+              strokeWidth="0.28"
+            />
             {edges.map(([a, b], i) => {
               const A = findNode(a);
               const B = findNode(b);

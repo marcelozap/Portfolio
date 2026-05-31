@@ -19,10 +19,10 @@ const FOCUS = [
 ];
 
 const TAGS = [
-  'C# · Azure · QA automation',
-  'TypeScript · React · Next.js',
-  'Python · data & automation workflows',
-  'SwiftUI · SpriteKit · iOS product work',
+  'C# / Azure / QA automation',
+  'TypeScript / React / Next.js',
+  'Python / data & automation workflows',
+  'SwiftUI / SpriteKit / iOS product work',
   'Audio, interaction, and creative tooling',
 ];
 

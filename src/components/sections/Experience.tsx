@@ -107,6 +107,26 @@ export function Experience() {
           </span>
 
           <GlassCard className="overflow-hidden">
+            <svg
+              aria-hidden
+              viewBox="0 0 100 44"
+              className="pointer-events-none absolute inset-x-0 top-0 h-36 w-full opacity-25"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0 30 C15 22 25 28 39 20 C52 12 65 20 79 12 C88 7 94 8 100 5"
+                fill="none"
+                stroke="hsl(var(--accent) / 0.45)"
+                strokeWidth="0.26"
+                strokeDasharray="1.4 1.6"
+              />
+              <path
+                d="M0 38 C18 33 33 39 48 31 C64 22 77 31 100 22"
+                fill="none"
+                stroke="hsl(var(--accent-warm) / 0.28)"
+                strokeWidth="0.22"
+              />
+            </svg>
             <div
               className={cn(
                 'pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r to-transparent',
