@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     siteName: 'Marcelo Zapata Portfolio',
     images: [
       {
-        url: '/og-thumbnail.png',
-        width: 1729,
-        height: 910,
+        url: '/og-thumbnail-linkedin.png',
+        width: 1200,
+        height: 627,
         alt: 'Marcelo Zapata portfolio thumbnail with technical mountain terrain and data trails',
       },
     ],
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description: 'Software engineer - systems, product, automation',
-    images: ['/og-thumbnail.png'],
+    images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
