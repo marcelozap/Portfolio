@@ -9,30 +9,30 @@
    ========================================================================= */
 
 :root {
-  /* canvas */
-  --bg: 222 22% 4%;
-  --bg-subtle: 220 18% 7%;
-  --bg-elevated: 220 16% 10%;
+  /* canvas: midnight blue with dark forest depth */
+  --bg: 208 58% 5%;
+  --bg-subtle: 206 42% 8%;
+  --bg-elevated: 205 34% 11%;
 
   /* ink */
-  --ink: 210 30% 96%;
-  --ink-muted: 220 12% 70%;
-  --ink-faint: 220 10% 48%;
+  --ink: 41 32% 87%;
+  --ink-muted: 41 21% 73%;
+  --ink-faint: 205 15% 50%;
 
-  /* accents */
-  --accent: 178 58% 58%;
-  --accent-glow: 178 58% 58%;
-  --accent-warm: 39 55% 58%;
-  --accent-cool: 205 32% 64%;
+  /* accents: alpine blue leads, teal/gold/amber support */
+  --accent: 202 45% 63%;
+  --accent-glow: 202 45% 63%;
+  --accent-warm: 41 43% 60%;
+  --accent-cool: 164 26% 66%;
 
   /* signals */
-  --signal-green: 152 78% 52%;
-  --signal-red: 358 82% 62%;
-  --signal-amber: 38 95% 60%;
+  --signal-green: 164 26% 66%;
+  --signal-red: 8 42% 57%;
+  --signal-amber: 26 56% 58%;
 
   /* structural */
-  --line: 220 18% 16%;
-  --ring: 188 95% 62%;
+  --line: 205 28% 17%;
+  --ring: 202 45% 63%;
 }
 
 * {
@@ -149,8 +149,8 @@ body {
     background-image: linear-gradient(
       135deg,
       hsl(var(--ink)) 0%,
-      hsl(var(--accent)) 60%,
-      hsl(var(--accent-cool)) 100%
+      hsl(var(--accent)) 52%,
+      hsl(var(--accent-warm)) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
