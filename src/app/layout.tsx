@@ -54,11 +54,20 @@ export const metadata: Metadata = {
       'Portfolio of software engineering work across systems, automation, analytics, product design, and creative technology.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
+    images: [
+      {
+        url: '/og-thumbnail.png',
+        width: 1729,
+        height: 910,
+        alt: 'Marcelo Zapata portfolio thumbnail with technical mountain terrain and data trails',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description: 'Software engineer - systems, product, automation',
+    images: ['/og-thumbnail.png'],
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
