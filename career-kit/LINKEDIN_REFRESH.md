@@ -32,6 +32,8 @@ Premium tennis lifestyle product pairing a fast daily rally engine with training
 
 C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
 
+Project link: https://gatekpt.ai
+
 ### Green Machine Quant OS
 
 Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.

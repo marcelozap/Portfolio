@@ -34,6 +34,8 @@ Premium tennis lifestyle product pairing a fast daily rally engine with training
 
 C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
 
+Link: `https://gatekpt.ai`
+
 ### Green Machine Quant OS
 
 Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.
@@ -42,7 +44,7 @@ Python/FastAPI quantitative research and paper-execution platform connecting OAu
 
 - Portfolio: Recruiter-facing portfolio for software engineering, product, and systems work.
 - Rally: Premium tennis lifestyle product built with SwiftUI, SpriteKit, and SwiftData.
-- GateKPT MusicOS: Creative operating system for live-loop performance workflow and project memory.
+- GateKPT MusicOS: Creative operating system for live-loop performance workflow and project memory. `https://gatekpt.ai`
 - Green Machine Quant OS: Quantitative research platform with broker API integration, backtesting, paper execution, and risk gates.
 
 ## GitHub About Section Links

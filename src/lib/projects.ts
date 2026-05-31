@@ -40,6 +40,8 @@ export interface Project {
   accent: 'cyan' | 'amber' | 'violet' | 'green';
   /** year started */
   year: string;
+  /** optional public landing page */
+  website?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -52,6 +54,7 @@ export const PROJECTS: Project[] = [
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
+    website: 'https://gatekpt.ai',
     description:
       'GateKPT MusicOS is a C#/.NET desktop creative operating system for artists who build music through live performance. It connects section-based song planning, RC-505 cue management, lyric and caption memory, stem capture, hardware routing notes, and audio-reactive visual artwork into one focused artist cockpit.',
     coreIdeas: [

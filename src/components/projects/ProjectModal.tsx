@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { ExternalLink, X } from 'lucide-react';
 import { useEffect } from 'react';
 import type { Project } from '@/lib/projects';
 import { ProjectVisual } from './ProjectVisual';
@@ -111,6 +111,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-muted md:text-base">
                   {project.description}
                 </p>
+
+                {project.website && (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted transition hover:border-accent/40 hover:text-ink"
+                  >
+                    View live site
+                    <ExternalLink className="size-3.5" />
+                  </a>
+                )}
 
                 <div className="mt-8">
                   <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
