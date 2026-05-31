@@ -50,6 +50,80 @@ const STATUS_LABEL: Record<Project['status'], string> = {
   research: 'research',
 };
 
+function GreenMachineTerrainCardArt() {
+  return (
+    <div className="relative h-32 overflow-hidden rounded-lg border border-white/[0.06] bg-[linear-gradient(180deg,hsl(150_13%_13%),hsl(154_22%_7%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(80%_54%_at_50%_12%,hsl(150_24%_78%/0.14),transparent_68%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(150_12%_84%/0.035)_1px,transparent_1px),linear-gradient(0deg,hsl(150_12%_84%/0.028)_1px,transparent_1px)] bg-[size:42px_42px]" />
+      <svg
+        viewBox="0 0 100 58"
+        className="absolute inset-0 size-full"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        <defs>
+          <linearGradient id="gm-card-mist" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="hsl(150 22% 84%)" stopOpacity="0.18" />
+            <stop offset="1" stopColor="hsl(150 24% 10%)" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="gm-card-forest" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="hsl(143 34% 38%)" stopOpacity="0.28" />
+            <stop offset="1" stopColor="hsl(150 28% 7%)" stopOpacity="0.7" />
+          </linearGradient>
+        </defs>
+        <polygon
+          points="0,58 0,19 9,15 17,23 28,13 38,26 49,18 60,23 70,12 80,21 91,16 100,23 100,58"
+          fill="url(#gm-card-mist)"
+        />
+        <polygon
+          points="0,58 0,35 8,30 16,36 27,26 38,34 48,26 59,32 70,24 81,34 91,28 100,32 100,58"
+          fill="hsl(150 22% 18% / 0.78)"
+        />
+        <polygon
+          points="0,58 0,45 9,42 18,46 29,41 40,47 51,42 62,46 73,40 84,47 93,43 100,46 100,58"
+          fill="url(#gm-card-forest)"
+        />
+        <polyline
+          points="0,35 8,30 16,36 27,26 38,34 48,26 59,32 70,24 81,34 91,28 100,32"
+          fill="none"
+          stroke="hsl(150 48% 66% / 0.72)"
+          strokeWidth="0.42"
+        />
+        <path
+          d="M4 47 C17 40 28 42 40 35 C52 28 62 31 75 22 C84 17 93 17 100 14"
+          fill="none"
+          stroke="hsl(150 42% 72% / 0.62)"
+          strokeDasharray="1.6 1.5"
+          strokeWidth="0.3"
+        />
+        <path
+          d="M0 50 C17 47 29 50 42 45 C54 41 65 39 77 40 C88 41 94 36 100 34"
+          fill="none"
+          stroke="hsl(150 20% 86% / 0.2)"
+          strokeDasharray="1 2"
+          strokeWidth="0.22"
+        />
+        {Array.from({ length: 18 }, (_, i) => {
+          const x = 4 + i * 5.4;
+          const h = 2.2 + (i % 4) * 0.68;
+          const y = 46 + (i % 3) * 1.15;
+          return (
+            <g key={i} opacity="0.68">
+              <path
+                d={`M${x} ${y - h} L${x - h * 0.45} ${y} L${x + h * 0.45} ${y} Z`}
+                fill="hsl(145 34% 35% / 0.72)"
+              />
+            </g>
+          );
+        })}
+      </svg>
+      <div className="absolute left-4 top-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
+        terrain / research memory
+      </div>
+    </div>
+  );
+}
+
 /**
  * 3D-tilting project card. Mouse moves rotate the card on its X/Y axes
  * with a spring damper. Hover unlocks the accent glow.
@@ -109,9 +183,11 @@ export function ProjectCard({ project, onOpen, index }: ProjectCardProps) {
         />
 
         <div className="relative grid gap-5 p-6 md:p-7">
+          {project.id === 'green-machine' && <GreenMachineTerrainCardArt />}
+
           <div className="flex items-center justify-between">
             <span className="mono-tag tracking-[0.22em]">
-              {DOMAIN_LABEL[project.domain]} · {STATUS_LABEL[project.status]}
+              {DOMAIN_LABEL[project.domain]} / {STATUS_LABEL[project.status]}
             </span>
             <span className="font-mono text-[10px] text-ink-faint">{project.year}</span>
           </div>
