@@ -22,6 +22,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--line)/0.28)_1px,transparent_1px),linear-gradient(0deg,hsl(var(--line)/0.22)_1px,transparent_1px)] bg-[size:72px_72px] opacity-35" />
       <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_74%_28%,hsl(var(--accent)/0.08),transparent_62%),radial-gradient(60%_50%_at_18%_82%,hsl(var(--accent-warm)/0.055),transparent_58%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-6 md:px-10 lg:grid-cols-[1.08fr_0.92fr]">
@@ -37,7 +38,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">Systems, Product, Automation</span>
+            <span className="text-ink-faint">XIV / systems / product / discipline</span>
           </motion.div>
 
           <motion.div
@@ -48,7 +49,8 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer for reliable tools, product systems, and automation.
+              Software engineer building systems where work, research, music, and product ideas
+              compound.
             </span>
           </motion.div>
 
@@ -60,7 +62,8 @@ export function Hero() {
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
               I build practical software where reliability, workflow clarity, and product judgment
-              matter: analytics tools, internal platforms, automation, and independent products.
+              matter: internal platforms, automation, analytics, creative tools, and local-first
+              research systems.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
               Open to software engineering roles with deeper product scope, platform ownership, and

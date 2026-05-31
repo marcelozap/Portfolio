@@ -124,6 +124,96 @@ function GreenMachineTerrainCardArt() {
   );
 }
 
+function GateKptCardArt() {
+  const bars = [18, 36, 24, 48, 30, 58, 42, 26, 52, 34, 46, 22, 40, 28, 54, 32];
+
+  return (
+    <div className="terrain-surface h-32 bg-[linear-gradient(180deg,hsl(210_20%_10%),hsl(220_28%_6%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_18%,hsl(38_72%_54%/0.16),transparent_62%),radial-gradient(55%_50%_at_22%_70%,hsl(184_70%_54%/0.16),transparent_58%)]" />
+      <div className="absolute inset-x-4 top-4 grid grid-cols-8 gap-1.5">
+        {['intro', 'drums', 'gtr', 'vox', 'hook', 'visual', 'cap', 'export'].map((label, i) => (
+          <span
+            key={label}
+            className="h-5 rounded-[3px] border border-white/[0.07] bg-white/[0.035] px-1.5 pt-1 font-mono text-[7px] uppercase tracking-[0.14em] text-ink-faint transition group-hover:border-accent/25 group-hover:text-ink-muted"
+            style={{ transitionDelay: `${i * 18}ms` }}
+          >
+            {label}
+          </span>
+        ))}
+      </div>
+      <div className="absolute inset-x-5 bottom-5 flex h-16 items-end justify-between">
+        {bars.map((h, i) => (
+          <span
+            key={i}
+            className="w-[3px] rounded-full bg-accent/55 transition duration-500 group-hover:bg-accent-warm/70"
+            style={{ height: `${h}%`, transitionDelay: `${i * 12}ms` }}
+          />
+        ))}
+      </div>
+      <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <path
+          d="M0 42 C12 30 20 46 32 34 C44 22 55 38 66 28 C78 18 87 30 100 21"
+          fill="none"
+          stroke="hsl(184 70% 54% / 0.52)"
+          strokeWidth="0.45"
+          strokeDasharray="2 2.2"
+        />
+      </svg>
+      <div className="absolute left-4 top-16 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
+        cue cards / project memory
+      </div>
+    </div>
+  );
+}
+
+function RallyCardArt() {
+  return (
+    <div className="terrain-surface h-32 bg-[linear-gradient(135deg,hsl(146_28%_10%),hsl(38_32%_12%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(68%_70%_at_78%_28%,hsl(38_55%_58%/0.18),transparent_62%)]" />
+      <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <path
+          d="M10 8 H88 L98 54 H2 Z"
+          fill="hsl(150 32% 11% / 0.72)"
+          stroke="hsl(42 48% 72% / 0.36)"
+          strokeWidth="0.35"
+        />
+        <path
+          d="M50 8 L50 54 M6 35 H94 M25 8 L18 54 M75 8 L82 54"
+          stroke="hsl(42 42% 82% / 0.34)"
+          strokeWidth="0.25"
+        />
+        <path
+          d="M10 44 C25 29 39 40 51 24 C64 8 78 18 92 10"
+          fill="none"
+          stroke="hsl(38 65% 62% / 0.72)"
+          strokeDasharray="1.8 1.6"
+          strokeWidth="0.42"
+        />
+      </svg>
+      <div className="absolute right-4 top-4 grid grid-cols-2 gap-1.5">
+        {['style', 'gear', 'courts', 'journal'].map((label) => (
+          <span
+            key={label}
+            className="rounded-[3px] border border-white/[0.07] bg-bg/35 px-2 py-1 font-mono text-[7px] uppercase tracking-[0.14em] text-ink-faint transition group-hover:border-accent-warm/30 group-hover:text-ink-muted"
+          >
+            {label}
+          </span>
+        ))}
+      </div>
+      <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
+        old-school tennis / product layer
+      </div>
+    </div>
+  );
+}
+
+function ProjectEnvironment({ project }: { project: Project }) {
+  if (project.id === 'gatekpt') return <GateKptCardArt />;
+  if (project.id === 'green-machine') return <GreenMachineTerrainCardArt />;
+  if (project.id === 'rally') return <RallyCardArt />;
+  return null;
+}
+
 /**
  * 3D-tilting project card. Mouse moves rotate the card on its X/Y axes
  * with a spring damper. Hover unlocks the accent glow.
@@ -183,7 +273,7 @@ export function ProjectCard({ project, onOpen, index }: ProjectCardProps) {
         />
 
         <div className="relative grid gap-5 p-6 md:p-7">
-          {project.id === 'green-machine' && <GreenMachineTerrainCardArt />}
+          <ProjectEnvironment project={project} />
 
           <div className="flex items-center justify-between">
             <span className="mono-tag tracking-[0.22em]">

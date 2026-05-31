@@ -20,10 +20,10 @@
   --ink-faint: 220 10% 48%;
 
   /* accents */
-  --accent: 184 70% 54%;
-  --accent-glow: 184 70% 54%;
-  --accent-warm: 38 72% 54%;
-  --accent-cool: 214 28% 62%;
+  --accent: 178 58% 58%;
+  --accent-glow: 178 58% 58%;
+  --accent-warm: 39 55% 58%;
+  --accent-cool: 205 32% 64%;
 
   /* signals */
   --signal-green: 152 78% 52%;
@@ -164,8 +164,8 @@ body {
   }
 
   .btn {
-    @apply relative inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-ink transition;
-    @apply hover:border-accent/40 hover:bg-white/[0.06] hover:text-ink;
+    @apply relative inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-ink transition duration-300;
+    @apply hover:-translate-y-0.5 hover:border-accent/45 hover:bg-white/[0.06] hover:text-ink hover:shadow-[0_18px_50px_-36px_hsl(var(--accent-glow)/0.75)];
   }
   .btn-primary {
     @apply btn;
@@ -176,6 +176,13 @@ body {
     );
     border-color: hsl(var(--accent) / 0.4);
     box-shadow: 0 18px 55px -34px hsl(var(--accent-glow) / 0.65);
+  }
+
+  .terrain-surface {
+    @apply relative overflow-hidden rounded-lg border border-white/[0.06] bg-white/[0.025];
+    background-image:
+      linear-gradient(180deg, hsl(var(--ink) / 0.035), transparent),
+      radial-gradient(80% 60% at 50% 0%, hsl(var(--accent) / 0.08), transparent 62%);
   }
 
   .section {
