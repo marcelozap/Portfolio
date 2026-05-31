@@ -8,17 +8,17 @@ export function AmbientBackdrop() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.2] hue-rotate-[8deg] saturate-[0.72]"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.34] hue-rotate-[8deg] saturate-[0.82]"
         style={{
           backgroundImage: "url('/brand/xiv-interconnected-terrain-wallpaper.png')",
         }}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg))_0%,hsl(var(--bg)/0.82)_18%,hsl(var(--bg)/0.66)_52%,hsl(var(--bg)/0.9)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_28%,hsl(var(--accent)/0.14),transparent_62%),radial-gradient(58%_42%_at_17%_72%,hsl(var(--accent-cool)/0.08),transparent_58%),radial-gradient(48%_36%_at_82%_82%,hsl(var(--accent-warm)/0.055),transparent_60%)]" />
-      <div className="grid-bg absolute inset-0 opacity-[0.16]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg)/0.92)_0%,hsl(var(--bg)/0.72)_18%,hsl(var(--bg)/0.5)_52%,hsl(var(--bg)/0.82)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_28%,hsl(var(--accent)/0.18),transparent_62%),radial-gradient(58%_42%_at_17%_72%,hsl(var(--accent-cool)/0.11),transparent_58%),radial-gradient(48%_36%_at_82%_82%,hsl(var(--accent-warm)/0.075),transparent_60%)]" />
+      <div className="grid-bg absolute inset-0 opacity-[0.1]" />
       <svg
         viewBox="0 0 1440 900"
-        className="absolute inset-0 size-full opacity-[0.18]"
+        className="absolute inset-0 size-full opacity-[0.26]"
         preserveAspectRatio="none"
       >
         <path
