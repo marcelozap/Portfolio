@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
+import { SoundToggle } from '@/components/interactive/SoundToggle';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AmbientBackdrop />
           <Navbar />
           <main className="relative z-10">{children}</main>
+          <SoundToggle />
           <Footer />
         </CommandPaletteProvider>
       </body>
