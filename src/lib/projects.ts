@@ -95,62 +95,50 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'green-machine',
-    name: 'Green Machine Quant OS',
-    tagline:
-      'Execution-focused quant trading research platform for TCA, risk gates, regime analysis, paper fills, and desk-style review.',
+    name: 'Green Machine',
+    tagline: 'Researching financial markets through data, context, and structured review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: 'Fall 2021',
     website: '/green-machine',
     description:
-      'Green Machine Quant OS is a local-first Python/FastAPI trading research system built around execution quality instead of signal hype. It connects read-only Schwab workflows, SQLite-backed research data, transaction cost analytics, paper execution review, risk gates, a C# Windows launcher, and portfolio-safe public proof surfaces.',
+      'Green Machine is a local-first research project using Python, FastAPI, React, and LLM-assisted workflows to organize financial research and historical market context. The goal is a private research copilot that becomes more useful over time through structured notes, datasets, tested API routes, and research outputs.',
     coreIdeas: [
-      'Execution-focused quant path: trading, market structure, data automation, desk usefulness, and better trading judgment',
-      'Transaction cost analysis for arrival price, fill price, slippage bps, implementation shortfall, and model-vs-realized fill parity',
-      'Local-first Engine and data spine for regime analysis, research memos, execution fills, and reproducible API checks',
-      'Paper execution and Schwab readiness kept separate from live broker order routing by design',
-      'C# Windows launcher that starts the local Engine and opens the OS, public page, API docs, and execution coach brief',
+      'Chart lines as terrain: market history read through elevation, risk, and long-term context',
+      'Local-first research memory for notes, datasets, API outputs, and review artifacts',
+      'Python/FastAPI workflows for organizing historical data and reproducible research',
+      'LLM-assisted review for summarizing assumptions, patterns, and research memos',
+      'Research boundary: no automated trading, signal service, or broker order routing',
     ],
     features: [
       {
-        title: 'Execution analytics',
+        title: 'Chart lines as terrain',
         description:
-          'Measures saved fills with TCA-style metrics: arrival price, fill price, slippage bps, implementation shortfall, model calibration, and daily execution coach briefs.',
+          'The visual language connects market history with navigation through terrain: ridges, elevation paths, tree lines, risk, and long-term movement.',
       },
       {
-        title: 'Research Engine',
+        title: 'Research organization',
         description:
-          'Backtests strategies with transaction costs, regime overlays, risk budgeting, walk-forward validation, and research memos that document evidence and limitations.',
+          'Structured notes, local datasets, historical context, and research outputs are kept together so prior work can compound instead of disappearing into scattered files.',
       },
       {
-        title: 'Schwab and paper workflow',
+        title: 'Technical stack',
         description:
-          'Uses Schwab in read-only/paper-workflow mode for live data readiness and account-aware research while keeping real order placement out of the public project surface.',
+          'Built around Python, FastAPI, React, local data storage, tested API routes, and LLM-assisted workflows.',
       },
       {
-        title: 'Risk and desktop shell',
+        title: 'What it is not',
         description:
-          'Includes position sizing, pre-trade risk checks, max-loss boundaries, and a C# Windows launcher for a local OS feel without publishing private account data.',
+          'Not automated trading, not financial advice, not a signal service, and not broker order routing.',
       },
     ],
     metrics: [
-      { label: 'Tests', value: '127' },
-      { label: 'Memos', value: '7+' },
-      { label: 'Orders', value: '0 live' },
+      { label: 'Mode', value: 'Private' },
+      { label: 'Focus', value: 'Research' },
+      { label: 'Boundary', value: 'No routing' },
     ],
-    stack: [
-      'Python',
-      'FastAPI',
-      'SQLite',
-      'pandas',
-      'pytest',
-      'C#',
-      '.NET',
-      'Schwab API',
-      'OAuth 2.0',
-      'TCA',
-    ],
+    stack: ['Python', 'FastAPI', 'React', 'SQLite', 'pytest', 'LLM workflows'],
   },
   {
     id: 'rally',

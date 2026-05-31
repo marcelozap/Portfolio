@@ -12,9 +12,9 @@ interface Props {
 /**
  * SVG-based mock visual rendered at the top of a project modal.
  * Each project gets a domain-specific abstraction:
- *   - audio    → waveform / spectrum
- *   - markets  → candlestick + heatmap
- *   - game     → neon-court HUD
+ *   - audio: waveform / spectrum
+ *   - markets: terrain research map
+ *   - game: neon-court HUD
  *
  * Deterministic per project id so the visuals stay stable across renders.
  */
@@ -75,10 +75,10 @@ function AudioVisual({ id }: { id: string }) {
         ))}
       </div>
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        gatekpt · session_visual
+        gatekpt / session_visual
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent">
-        ● rec / 1.0 · 120 BPM
+        rec / 1.0 / 120 BPM
       </div>
     </div>
   );
@@ -86,67 +86,114 @@ function AudioVisual({ id }: { id: string }) {
 
 function MarketsVisual({ id }: { id: string }) {
   const rng = useMemo(() => seeded(id), [id]);
+  const mistId = `${id}-mist`;
+  const forestId = `${id}-forest`;
 
-  // generate a random-ish line series + candle series
-  const candles = Array.from({ length: 24 }, (_, i) => {
-    const open = 100 + rng() * 40 + i * 1.2;
-    const close = open + (rng() - 0.5) * 18;
-    const high = Math.max(open, close) + rng() * 6;
-    const low = Math.min(open, close) - rng() * 6;
-    return { open, close, high, low };
-  });
-  const min = Math.min(...candles.map((c) => c.low));
-  const max = Math.max(...candles.map((c) => c.high));
-  const norm = (v: number) => 100 - ((v - min) / (max - min)) * 90 - 5;
-
-  const heat = Array.from({ length: 8 * 16 }, () => rng());
+  const ridge = Array.from({ length: 13 }, (_, i) => {
+    const x = 4 + i * 8;
+    const y = 48 - Math.sin(i * 0.72) * 9 - rng() * 8;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const upperRidge = Array.from({ length: 11 }, (_, i) => {
+    const x = i * 10;
+    const y = 30 - Math.sin(i * 0.86 + 0.8) * 7 - rng() * 5;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const lowerRidge = Array.from({ length: 12 }, (_, i) => {
+    const x = i * 9.2;
+    const y = 64 - Math.sin(i * 0.65 + 1.4) * 6 - rng() * 4;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const trees = Array.from({ length: 26 }, (_, i) => ({
+    x: 3 + i * 3.8,
+    y: 69 + rng() * 5,
+    h: 3 + rng() * 5,
+  }));
+  const trails = [
+    'M5 72 C18 65 28 66 40 57 C53 47 65 48 78 37 C86 30 93 28 99 24',
+    'M0 84 C15 78 24 74 38 76 C51 78 60 70 72 68 C83 66 90 60 100 57',
+    'M8 55 C18 52 29 51 39 46 C48 42 56 40 66 41 C75 42 83 37 94 33',
+  ];
 
   return (
-    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-bg-elevated/80 to-bg-subtle md:h-60">
-      <div className="grid-bg absolute inset-0 opacity-30" />
+    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-[linear-gradient(180deg,hsl(150_14%_14%),hsl(155_20%_7%))] md:h-60">
+      <div className="absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_18%,hsl(150_30%_82%/0.14),transparent_62%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(150_15%_85%/0.035)_1px,transparent_1px),linear-gradient(0deg,hsl(150_15%_85%/0.03)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <svg viewBox="0 0 100 100" className="absolute inset-0 size-full">
-        {candles.map((c, i) => {
-          const up = c.close >= c.open;
-          const x = (i / candles.length) * 96 + 2;
-          return (
-            <g key={i} stroke={up ? 'hsl(152 78% 52%)' : 'hsl(358 82% 62%)'}>
-              <line x1={x} x2={x} y1={norm(c.high)} y2={norm(c.low)} strokeWidth="0.3" />
-              <rect
-                x={x - 1.2}
-                y={Math.min(norm(c.open), norm(c.close))}
-                width="2.4"
-                height={Math.max(1, Math.abs(norm(c.open) - norm(c.close)))}
-                fill={up ? 'hsl(152 78% 52% / 0.7)' : 'hsl(358 82% 62% / 0.7)'}
-                stroke="none"
-              />
-            </g>
-          );
-        })}
-      </svg>
+      <svg viewBox="0 0 100 100" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id={mistId} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="hsl(150 20% 82%)" stopOpacity="0.18" />
+            <stop offset="1" stopColor="hsl(150 24% 12%)" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id={forestId} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="hsl(142 34% 40%)" stopOpacity="0.24" />
+            <stop offset="1" stopColor="hsl(150 28% 8%)" stopOpacity="0.62" />
+          </linearGradient>
+        </defs>
 
-      <div
-        className="absolute bottom-3 left-6 right-6 grid gap-[2px]"
-        style={{ gridTemplateColumns: 'repeat(16, minmax(0, 1fr))' }}
-      >
-        {heat.map((v, i) => (
-          <span
-            key={i}
-            className="h-2 rounded-[2px]"
-            style={{
-              backgroundColor: `hsl(${188 - v * 70} 90% ${30 + v * 30}% / ${0.2 + v * 0.7})`,
-            }}
+        <polygon points={`0,100 0,34 ${upperRidge} 100,100`} fill={`url(#${mistId})`} />
+        <polygon points={`0,100 0,54 ${ridge} 100,100`} fill="hsl(150 22% 18% / 0.72)" />
+        <polygon points={`0,100 0,70 ${lowerRidge} 100,100`} fill={`url(#${forestId})`} />
+
+        <polyline
+          points={upperRidge}
+          fill="none"
+          stroke="hsl(150 18% 84% / 0.28)"
+          strokeWidth="0.35"
+        />
+        <polyline points={ridge} fill="none" stroke="hsl(150 42% 60% / 0.72)" strokeWidth="0.5" />
+        <polyline
+          points={lowerRidge}
+          fill="none"
+          stroke="hsl(150 26% 72% / 0.2)"
+          strokeWidth="0.3"
+        />
+
+        {trails.map((d, i) => (
+          <motion.path
+            key={d}
+            d={d}
+            fill="none"
+            stroke={i === 0 ? 'hsl(150 55% 72% / 0.78)' : 'hsl(150 20% 82% / 0.28)'}
+            strokeWidth={i === 0 ? '0.46' : '0.24'}
+            strokeDasharray={i === 0 ? '2 1.6' : '1 2.2'}
+            animate={{ strokeDashoffset: [0, -7] }}
+            transition={{ duration: 8 + i * 2, repeat: Infinity, ease: 'linear' }}
           />
         ))}
-      </div>
+
+        {trees.map((t, i) => (
+          <g key={i} opacity="0.72">
+            <path
+              d={`M${t.x} ${t.y - t.h} L${t.x - t.h * 0.42} ${t.y} L${t.x + t.h * 0.42} ${t.y} Z`}
+              fill="hsl(145 34% 34% / 0.68)"
+            />
+            <line
+              x1={t.x}
+              x2={t.x}
+              y1={t.y - t.h * 0.15}
+              y2={t.y + 2}
+              stroke="hsl(150 18% 16% / 0.7)"
+              strokeWidth="0.18"
+            />
+          </g>
+        ))}
+
+        <g opacity="0.48" stroke="hsl(150 20% 84% / 0.34)" strokeWidth="0.18">
+          <line x1="13" x2="23" y1="24" y2="24" />
+          <line x1="61" x2="73" y1="18" y2="18" />
+          <line x1="71" x2="82" y1="52" y2="52" />
+        </g>
+      </svg>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
         {id === 'green-machine'
-          ? 'green_machine · research_exec_plane'
-          : `${id.replace(/-/g, '_')} · vol_surface`}
+          ? 'green_machine / terrain_research'
+          : `${id.replace(/-/g, '_')} / terrain`}
       </div>
-      <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
-        regime: risk-on
+      <div className="absolute right-6 top-5 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
+        context / risk / history
       </div>
     </div>
   );
@@ -161,7 +208,6 @@ function GameVisual({ id }: { id: string }) {
 
   return (
     <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-[radial-gradient(80%_60%_at_50%_30%,hsl(28_95%_62%/0.18),transparent_60%),linear-gradient(180deg,hsl(222_30%_8%),hsl(222_24%_4%))] md:h-60">
-      {/* court */}
       <svg viewBox="0 0 100 60" className="absolute inset-0 size-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="court" x1="0" x2="0" y1="0" y2="1">
@@ -179,7 +225,6 @@ function GameVisual({ id }: { id: string }) {
         <line x1="13" y1="32" x2="87" y2="32" stroke="hsl(28 95% 62% / 0.4)" strokeWidth="0.15" />
       </svg>
 
-      {/* ball trail */}
       {trails.map((t, i) => (
         <motion.span
           key={i}
@@ -200,10 +245,10 @@ function GameVisual({ id }: { id: string }) {
       ))}
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        rally · flow_hud
+        rally / flow_hud
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent-warm">
-        flow: 7.4 · streak: 12
+        flow: 7.4 / streak: 12
       </div>
     </div>
   );
@@ -217,7 +262,6 @@ function InfraVisual({ id }: { id: string }) {
     <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-bg-elevated/80 to-bg-subtle md:h-60">
       <div className="grid-bg absolute inset-0 opacity-30" />
 
-      {/* mesh diagram */}
       <svg viewBox="0 0 100 60" className="absolute inset-0 size-full">
         <defs>
           <radialGradient id="node-g" r="0.5" cx="0.5" cy="0.5">
@@ -226,11 +270,9 @@ function InfraVisual({ id }: { id: string }) {
           </radialGradient>
         </defs>
 
-        {/* node halos */}
         <circle cx="22" cy="30" r="9" fill="url(#node-g)" />
         <circle cx="78" cy="30" r="9" fill="url(#node-g)" />
 
-        {/* connection line w/ animated dash */}
         <motion.line
           x1="26"
           y1="30"
@@ -243,11 +285,9 @@ function InfraVisual({ id }: { id: string }) {
           transition={{ duration: 1.6, repeat: Infinity, ease: 'linear' }}
         />
 
-        {/* nodes */}
         <circle cx="22" cy="30" r="1.6" fill="hsl(152 78% 52%)" />
         <circle cx="78" cy="30" r="1.6" fill="hsl(152 78% 52%)" />
 
-        {/* handshake pulses */}
         <motion.circle
           cx="22"
           cy="30"
@@ -274,7 +314,6 @@ function InfraVisual({ id }: { id: string }) {
           }}
         />
 
-        {/* labels */}
         <text
           x="22"
           y="44"
@@ -284,7 +323,7 @@ function InfraVisual({ id }: { id: string }) {
           fill="hsl(220 12% 70%)"
           letterSpacing="0.3"
         >
-          MAC · UI
+          MAC / UI
         </text>
         <text
           x="78"
@@ -295,7 +334,7 @@ function InfraVisual({ id }: { id: string }) {
           fill="hsl(220 12% 70%)"
           letterSpacing="0.3"
         >
-          HOST · SIGNALS
+          HOST / SIGNALS
         </text>
         <text
           x="50"
@@ -310,7 +349,6 @@ function InfraVisual({ id }: { id: string }) {
         </text>
       </svg>
 
-      {/* six-factor tiles strip */}
       <div className="absolute inset-x-6 bottom-3 grid grid-cols-6 gap-1.5">
         {factors.map((v, i) => (
           <motion.div
@@ -331,7 +369,7 @@ function InfraVisual({ id }: { id: string }) {
       </div>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        exec_mesh · ws_plane
+        exec_mesh / ws_plane
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-signal-green">
         kill_switch: ARMED
