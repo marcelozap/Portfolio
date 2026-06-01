@@ -49,24 +49,24 @@ export const PROJECTS: Project[] = [
     id: 'gatekpt',
     name: 'GATEKPT MusicOS',
     tagline:
-      'Creative operating system for live-loop artists, project memory, and audio-reactive visual artwork.',
+      'Desktop creative OS for live-loop artists: performance planning, project memory, hardware notes, and visual prep.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT MusicOS is a C#/.NET desktop creative operating system for artists who build music through live performance. It connects section-based song planning, RC-505 cue management, lyric and caption memory, stem capture, hardware routing notes, and audio-reactive visual artwork into one focused artist cockpit.',
+      'GateKPT MusicOS is a C#/.NET desktop creative operating system for artists who build music through live performance. It organizes section-based song planning, RC-505 cue management, lyric/caption memory, stem capture, hardware routing, and visual prep into one artist-controlled workflow.',
     coreIdeas: [
-      'Live-loop performance workflow built around sections, layer order, and cue cards',
+      'Artist-first workflow for capturing ideas quickly without flattening the creative process',
+      'Live-loop performance planning built around sections, layer order, and cue cards',
       'Local project memory for lyrics, takes, routing notes, stems, visuals, and export tasks',
-      'Audio-reactive visual artwork driven by live Focusrite or RC-505 input',
-      'Video-first production pipeline for captions, aspect ratios, loudness, and platform exports',
-      'Hardware-aware music workflow that sits above the creative rig without replacing it',
+      'Hardware-aware music tooling that supports RC-505 and studio routing instead of replacing the rig',
+      'AI command layer direction: organize, summarize, and prep creative work without generating the artist for them',
     ],
     features: [
       {
-        title: 'Live loop workflow',
+        title: 'Live-loop planning',
         description:
           'Guides RC-505-based song building through section cards, layer order, cue notes, and performance memory.',
       },
@@ -76,12 +76,12 @@ export const PROJECTS: Project[] = [
           'Preserves lyrics, captures, takes, captions, routing notes, stems, visual presets, and export tasks in a unified local project file.',
       },
       {
-        title: 'Audio-reactive visuals',
+        title: 'Creative command layer',
         description:
-          'Uses live audio input to generate visual paintings for performance backdrops, video material, and stage visuals.',
+          'Designed for simple commands like organizing takes, finding hooks, preparing captions, and shaping versions while keeping the artist in control.',
       },
       {
-        title: 'Video-first production',
+        title: 'Release prep',
         description:
           'Supports lyric captions, lip-sync review, export planning, aspect ratios, loudness targets, and platform-ready video workflows.',
       },
@@ -145,35 +145,35 @@ export const PROJECTS: Project[] = [
     id: 'rally',
     name: 'RALLY',
     tagline:
-      'Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.',
+      'Premium tennis lifestyle product for daily play, training memory, court discovery, and player identity.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
     year: '2025',
     description:
-      'Rally is a premium tennis lifestyle product built around a fast daily rally engine. The broader experience connects training logs, match history, journaling, global court discovery, avatar identity, and real-world fashion and gear into one tennis-native product surface.',
+      'Rally is a premium tennis lifestyle product built around a fast daily rally loop and a broader player profile. It connects training logs, match history, journaling, court discovery, player identity, and gear/fashion into one tennis-native product surface.',
     coreIdeas: [
-      'Fast daily rally engine as the repeatable engagement hook',
-      'Lifestyle product surface beyond gameplay alone',
+      'Daily rally loop as the lightweight reason to open the product',
+      'Player memory across training logs, matches, journaling, and improvement notes',
+      'Court discovery and tennis routine tools beyond gameplay alone',
+      'Premium identity layer with avatar, fashion, gear, and real-world tennis taste',
       'Local-first iOS architecture with optional account sync',
-      'Training, journaling, match history, and global court discovery in one product',
-      'Fashion and gear flows tied to real-world tennis identity',
     ],
     features: [
       {
         title: 'Daily rally engine',
         description:
-          'A fast rally mechanic gives the product a short, repeatable daily-open loop without making the entire experience feel like a casual game.',
+          'A fast rally mechanic creates a short repeatable daily loop while the product stays positioned as a premium tennis companion, not a throwaway casual game.',
       },
       {
-        title: 'Training and journal layer',
+        title: 'Player memory',
         description:
-          'Training sessions, matches, and journal entries live in the same product so the app supports a player’s actual tennis routine.',
+          'Training sessions, matches, journal entries, and improvement notes live together so the product supports a real tennis routine.',
       },
       {
-        title: 'Courts, fashion, and gear',
+        title: 'Lifestyle surface',
         description:
-          'Global court discovery, avatar identity, fashion, and gear make Rally feel like a complete tennis lifestyle product surface.',
+          'Court discovery, player identity, fashion, and gear make Rally feel like a tennis-native lifestyle product instead of only a tracker.',
       },
       {
         title: 'Local-first sync model',
