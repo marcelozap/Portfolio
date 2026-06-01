@@ -96,36 +96,37 @@ export const PROJECTS: Project[] = [
   {
     id: 'green-machine',
     name: 'Green Machine',
-    tagline: 'Researching financial markets through data, context, and structured review.',
+    tagline:
+      'Python market-movement research system for backtests, historical context, and evidence-based review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: 'Fall 2021',
     website: '/green-machine',
     description:
-      'Green Machine is a local-first research project using Python, FastAPI, React, and LLM-assisted workflows to organize financial research and historical market context. The goal is a private research copilot that becomes more useful over time through structured notes, datasets, tested API routes, and research outputs.',
+      'Green Machine is a Python/FastAPI and React research system for studying market movement with historical data, reproducible backtests, movement labels, risk context, and LLM-assisted review. The goal is to turn trading ideas into measured research artifacts: what was tested, what failed, what improved, and what evidence is still missing.',
     coreIdeas: [
-      'Chart lines as terrain: market history read through elevation, risk, and long-term context',
-      'Local-first research memory for notes, datasets, API outputs, and review artifacts',
-      'Python/FastAPI workflows for organizing historical data and reproducible research',
-      'LLM-assisted review for summarizing assumptions, patterns, and research memos',
-      'Research boundary: no automated trading, signal service, or broker order routing',
+      'Market movement modeling with Python, historical data, labels, and repeatable tests',
+      'Backtests and research memos that separate evidence from intuition',
+      'Terrain-inspired interface for reading movement, regime, and context without hype',
+      'LLM-assisted review for summarizing assumptions, holes, and next research questions',
+      'Research boundary: no signal service, financial advice, or broker order routing',
     ],
     features: [
       {
-        title: 'Chart lines as terrain',
+        title: 'Movement research',
         description:
-          'The visual language connects market history with navigation through terrain: ridges, elevation paths, tree lines, risk, and long-term movement.',
+          'Studies how stocks and futures move using historical data, momentum/regime context, intraday labels, and similar-day market memory.',
       },
       {
-        title: 'Research organization',
+        title: 'Backtesting and evidence',
         description:
-          'Structured notes, local datasets, historical context, and research outputs are kept together so prior work can compound instead of disappearing into scattered files.',
+          'Converts ideas into reproducible tests, research memos, risk notes, and follow-up questions instead of treating one result as a signal.',
       },
       {
         title: 'Technical stack',
         description:
-          'Built around Python, FastAPI, React, local data storage, tested API routes, and LLM-assisted workflows.',
+          'Built around Python, FastAPI, React, SQLite, pytest, local data storage, tested API routes, and LLM-assisted workflows.',
       },
       {
         title: 'What it is not',
@@ -134,8 +135,8 @@ export const PROJECTS: Project[] = [
       },
     ],
     metrics: [
-      { label: 'Mode', value: 'Private' },
-      { label: 'Focus', value: 'Research' },
+      { label: 'Focus', value: 'Movement' },
+      { label: 'Method', value: 'Backtests' },
       { label: 'Boundary', value: 'No routing' },
     ],
     stack: ['Python', 'FastAPI', 'React', 'SQLite', 'pytest', 'LLM workflows'],

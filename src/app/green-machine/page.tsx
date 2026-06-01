@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 const terrainIdeas = [
   {
-    title: 'Chart Lines as Terrain',
-    text: 'The visual language connects market history with navigation: ridges, elevation paths, tree lines, risk, and long-term context.',
+    title: 'Movement Modeling',
+    text: 'Market movement is studied with Python, historical data, labels, and repeatable tests rather than one-off chart opinions.',
   },
   {
-    title: 'Research Organization',
-    text: 'Structured notes, local datasets, historical context, and research outputs stay together so prior work can become easier to revisit.',
+    title: 'Backtests and Evidence',
+    text: 'Ideas become research artifacts: assumptions, cost/risk notes, test results, limitations, and next questions.',
   },
   {
-    title: 'Private Research Copilot',
-    text: 'LLM-assisted workflows help summarize assumptions, review notes, and turn scattered context into durable research memory.',
+    title: 'LLM Review Layer',
+    text: 'The LLM helps summarize research, find holes, and turn scattered context into durable memory without acting as a trading signal.',
   },
 ];
 
@@ -21,16 +21,16 @@ const stack = [
   'React',
   'SQLite',
   'pytest',
-  'local data storage',
-  'tested API routes',
-  'LLM-assisted workflows',
+  'backtesting',
+  'movement labels',
+  'LLM review',
 ];
 
 const whatItIs = [
-  'research organization',
+  'market movement research',
+  'reproducible backtesting',
   'historical market context',
-  'structured datasets',
-  'private research copilot',
+  'LLM-assisted review',
 ];
 
 const whatItIsNot = [
@@ -160,9 +160,10 @@ export default function GreenMachineCaseStudyPage() {
               Researching financial markets through data, context, and structured review.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              Green Machine is a Python/FastAPI, React, and LLM-assisted research project for
-              organizing financial research, historical market context, local datasets, and durable
-              research outputs.
+              Green Machine is a Python/FastAPI and React research system for studying market
+              movement with historical data, reproducible backtests, movement labels, risk context,
+              and LLM-assisted review. The goal is to turn trading ideas into measured evidence:
+              what was tested, what failed, what improved, and what data is still missing.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -191,12 +192,12 @@ export default function GreenMachineCaseStudyPage() {
               Concept
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
-              Chart Lines as Terrain
+              Movement Research as Terrain
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-muted">
               Market history is presented as a landscape to study rather than a screen of commands
-              to act on. The design connects pattern review with navigation through terrain,
-              elevation, uncertainty, and long-term context.
+              to act on. The system is focused on modeling movement, testing assumptions, reviewing
+              regime/context, and writing public-safe research notes about what the evidence shows.
             </p>
           </div>
 
