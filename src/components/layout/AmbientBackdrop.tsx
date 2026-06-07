@@ -1,20 +1,19 @@
 'use client';
 
 /**
- * Site-wide backdrop: quiet structural grid, editorial vignettes, and a small
- * amount of texture. No mascots, floating icons, or particle effects.
+ * Site-wide Florida-night backdrop: texture, terrain, warm signal.
  */
 export function AmbientBackdrop() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.34] hue-rotate-[8deg] saturate-[0.82]"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.42] brightness-[0.78] hue-rotate-[42deg] saturate-[1.08]"
         style={{
           backgroundImage: "url('/brand/xiv-interconnected-terrain-wallpaper.png')",
         }}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg)/0.92)_0%,hsl(var(--bg)/0.72)_18%,hsl(var(--bg)/0.5)_52%,hsl(var(--bg)/0.82)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_28%,hsl(var(--accent)/0.18),transparent_62%),radial-gradient(58%_42%_at_17%_72%,hsl(var(--accent-cool)/0.11),transparent_58%),radial-gradient(48%_36%_at_82%_82%,hsl(var(--accent-warm)/0.075),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg)/0.94)_0%,hsl(var(--bg)/0.72)_20%,hsl(var(--bg)/0.42)_54%,hsl(var(--bg)/0.84)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(68%_55%_at_76%_28%,hsl(var(--accent)/0.2),transparent_62%),radial-gradient(54%_42%_at_18%_74%,hsl(var(--accent-cool)/0.15),transparent_58%),radial-gradient(48%_36%_at_82%_82%,hsl(var(--accent-warm)/0.18),transparent_60%)]" />
       <div className="grid-bg absolute inset-0 opacity-[0.1]" />
       <svg
         viewBox="0 0 1440 900"

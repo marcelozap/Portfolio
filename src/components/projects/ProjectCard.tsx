@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 const ACCENT: Record<Project['accent'], { glow: string; tint: string; ring: string }> = {
   cyan: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(188_100%_62%/0.45)]',
+    glow: 'shadow-[0_0_60px_-12px_hsl(153_80%_58%/0.42)]',
     tint: 'from-accent/20',
     ring: 'group-hover:border-accent/40',
   },
@@ -19,12 +19,12 @@ const ACCENT: Record<Project['accent'], { glow: string; tint: string; ring: stri
     ring: 'group-hover:border-accent-warm/40',
   },
   violet: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(268_80%_70%/0.45)]',
+    glow: 'shadow-[0_0_60px_-12px_hsl(296_70%_66%/0.42)]',
     tint: 'from-accent-cool/20',
     ring: 'group-hover:border-accent-cool/40',
   },
   green: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(152_78%_52%/0.45)]',
+    glow: 'shadow-[0_0_60px_-12px_hsl(148_70%_54%/0.42)]',
     tint: 'from-signal-green/20',
     ring: 'group-hover:border-signal-green/40',
   },
@@ -128,8 +128,8 @@ function GateKptCardArt() {
   const bars = [18, 36, 24, 48, 30, 58, 42, 26, 52, 34, 46, 22, 40, 28, 54, 32];
 
   return (
-    <div className="terrain-surface h-32 bg-[linear-gradient(180deg,hsl(210_20%_10%),hsl(220_28%_6%))]">
-      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_18%,hsl(38_72%_54%/0.16),transparent_62%),radial-gradient(55%_50%_at_22%_70%,hsl(184_70%_54%/0.16),transparent_58%)]" />
+    <div className="terrain-surface h-32 bg-[linear-gradient(180deg,hsl(160_22%_10%),hsl(155_35%_5%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_18%,hsl(31_86%_62%/0.2),transparent_62%),radial-gradient(55%_50%_at_22%_70%,hsl(153_80%_58%/0.16),transparent_58%)]" />
       <div className="absolute inset-x-4 top-4 grid grid-cols-8 gap-1.5">
         {['intro', 'drums', 'gtr', 'vox', 'hook', 'visual', 'cap', 'export'].map((label, i) => (
           <span
@@ -154,7 +154,7 @@ function GateKptCardArt() {
         <path
           d="M0 42 C12 30 20 46 32 34 C44 22 55 38 66 28 C78 18 87 30 100 21"
           fill="none"
-          stroke="hsl(184 70% 54% / 0.52)"
+          stroke="hsl(153 80% 58% / 0.52)"
           strokeWidth="0.45"
           strokeDasharray="2 2.2"
         />

@@ -9,30 +9,30 @@
    ========================================================================= */
 
 :root {
-  /* canvas: midnight blue with dark forest depth */
-  --bg: 208 58% 5%;
-  --bg-subtle: 206 42% 8%;
-  --bg-elevated: 205 34% 11%;
+  /* canvas: Florida night, dark water, palm shadow */
+  --bg: 166 48% 4%;
+  --bg-subtle: 158 36% 7%;
+  --bg-elevated: 158 27% 10%;
 
   /* ink */
   --ink: 41 32% 87%;
   --ink-muted: 41 21% 73%;
-  --ink-faint: 205 15% 50%;
+  --ink-faint: 43 11% 52%;
 
-  /* accents: alpine blue leads, teal/gold/amber support */
-  --accent: 202 45% 63%;
-  --accent-glow: 202 45% 63%;
-  --accent-warm: 41 43% 60%;
-  --accent-cool: 164 26% 66%;
+  /* accents: moonlit teal, streetlight amber, night orchid */
+  --accent: 153 48% 61%;
+  --accent-glow: 153 56% 58%;
+  --accent-warm: 31 76% 62%;
+  --accent-cool: 296 34% 65%;
 
   /* signals */
-  --signal-green: 164 26% 66%;
+  --signal-green: 148 47% 58%;
   --signal-red: 8 42% 57%;
-  --signal-amber: 26 56% 58%;
+  --signal-amber: 31 76% 62%;
 
   /* structural */
-  --line: 205 28% 17%;
-  --ring: 202 45% 63%;
+  --line: 155 22% 16%;
+  --ring: 153 48% 61%;
 }
 
 * {
@@ -172,10 +172,12 @@ body {
     background-image: linear-gradient(
       135deg,
       hsl(var(--accent) / 0.18),
-      hsl(var(--accent-cool) / 0.12)
+      hsl(var(--accent-warm) / 0.14)
     );
     border-color: hsl(var(--accent) / 0.4);
-    box-shadow: 0 18px 55px -34px hsl(var(--accent-glow) / 0.65);
+    box-shadow:
+      0 18px 55px -34px hsl(var(--accent-glow) / 0.55),
+      0 14px 50px -36px hsl(var(--accent-warm) / 0.7);
   }
 
   .terrain-surface {

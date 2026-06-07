@@ -48,8 +48,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
     name: 'GATEKPT MusicOS',
-    tagline:
-      'Desktop creative OS for live-loop artists: performance planning, project memory, hardware notes, and visual prep.',
+    tagline: 'Live music memory. Loops, cues, visuals, release prep.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
@@ -96,8 +95,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'green-machine',
     name: 'Green Machine',
-    tagline:
-      'Python market-movement research system for backtests, historical context, and evidence-based review.',
+    tagline: 'Trading research cockpit. Backtests, risk, review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
@@ -144,8 +142,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'rally',
     name: 'RALLY',
-    tagline:
-      'Premium tennis lifestyle product for daily play, training memory, court discovery, and player identity.',
+    tagline: 'Tennis routine. Daily play, courts, style, progress.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',

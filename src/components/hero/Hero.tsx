@@ -21,7 +21,7 @@ export function Hero() {
       className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24"
     >
       <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--line)/0.28)_1px,transparent_1px),linear-gradient(0deg,hsl(var(--line)/0.22)_1px,transparent_1px)] bg-[size:72px_72px] opacity-35" />
-      <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_74%_28%,hsl(var(--accent)/0.08),transparent_62%),radial-gradient(60%_50%_at_18%_82%,hsl(var(--accent-warm)/0.055),transparent_58%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_74%_28%,hsl(var(--accent)/0.11),transparent_62%),radial-gradient(62%_50%_at_18%_82%,hsl(var(--accent-warm)/0.13),transparent_58%),radial-gradient(48%_38%_at_42%_18%,hsl(var(--accent-cool)/0.075),transparent_62%)]" />
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
@@ -127,17 +127,17 @@ export function Hero() {
           className="hidden lg:block"
           aria-label="Engineering focus areas"
         >
-          <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(0_0%_0%/0.9)] backdrop-blur-xl">
+          <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
               <span>Signal</span>
               <span className="text-signal-green">Available</span>
             </div>
             <div className="space-y-4">
               {[
-                ['Build', 'Software, AI workflows, automation.'],
-                ['Move', 'Tennis, running, daily discipline.'],
-                ['Sound', 'Guitar, recording, live ideas.'],
-                ['Review', 'Trading tools, data, cleaner decisions.'],
+                ['Build', 'Tools.'],
+                ['Move', 'Body.'],
+                ['Sound', 'Music.'],
+                ['Review', 'Data.'],
               ].map(([label, body]) => (
                 <div key={label} className="grid grid-cols-[7rem_1fr] gap-4">
                   <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent/75">
