@@ -30,12 +30,12 @@ export function Projects() {
         eyebrow="Projects"
         title={
           <>
-            Products with
+            Projects that
             <br />
-            <span className="text-gradient">real operating logic.</span>
+            <span className="text-gradient">do something.</span>
           </>
         }
-        description="Each project is a node in the same system: creative workflow, research memory, product taste, and tools built for repeated use."
+        description="Music tools. Trading review. Tennis ideas. Software that gives the day a shape."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

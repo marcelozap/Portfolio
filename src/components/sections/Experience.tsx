@@ -38,7 +38,7 @@ const PUBLIX: Milestone = {
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across QA automation, analytics, internal tooling, and modernization work. The emphasis is practical engineering: clearer specs, safer releases, reliable workflows, and documentation that helps teams move with confidence.',
+    'Software engineer working across QA automation, analytics, internal tools, and modernization. My focus is simple: clearer specs, safer releases, and tools people can trust.',
   focus: [
     'QA automation',
     'Data and reporting workflows',
@@ -74,12 +74,12 @@ export function Experience() {
         eyebrow="Experience"
         title={
           <>
-            Software Engineer,
+            Software Engineer.
             <br />
-            <span className="text-gradient">reliable delivery.</span>
+            <span className="text-gradient">Clear delivery.</span>
           </>
         }
-        description="QA automation, analytics, workflow tooling, and modernization work with a focus on clarity, reliability, and supportable systems."
+        description="QA automation, analytics, workflow tools, and modernization."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

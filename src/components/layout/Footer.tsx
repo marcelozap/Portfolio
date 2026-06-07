@@ -38,7 +38,7 @@ export function Footer() {
         <div>
           <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-            Software engineer - systems - product
+            Build - move - sound
           </div>
         </div>
 

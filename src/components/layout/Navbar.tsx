@@ -64,7 +64,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-              systems / product
+              build / move
             </span>
           </span>
         </button>

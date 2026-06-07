@@ -24,12 +24,12 @@ export function Music() {
         eyebrow="Sound"
         title={
           <>
-            Original music,
+            Sound.
             <br />
-            <span className="text-gradient">supporting craft.</span>
+            <span className="text-gradient">Guitar, space, feel.</span>
           </>
         }
-        description="Original music and audio work by Marcelo Zapata. It complements the portfolio as supporting creative work and remains separate from the core engineering story."
+        description="Original audio work. Quiet background for the site, and a real part of the system."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -58,8 +58,7 @@ export function Music() {
             </div>
 
             <p className="max-w-xl text-base leading-relaxed text-ink-muted md:text-lg">
-              Instrumentation is primarily guitar and bass, with occasional synthesizer for texture.
-              Work is tracked in Logic; mixing favors restraint and clarity over spectacle.
+              Guitar, bass, synth texture, and Logic sessions. Restraint over spectacle.
             </p>
 
             <div className="relative h-28 overflow-hidden rounded-xl border border-white/[0.06] bg-[linear-gradient(180deg,hsl(var(--bg-elevated)/0.72),hsl(var(--bg)/0.88))] p-3">

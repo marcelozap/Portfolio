@@ -38,7 +38,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">XIV / systems / product / discipline</span>
+            <span className="text-ink-faint">build / move / sound</span>
           </motion.div>
 
           <motion.div
@@ -49,8 +49,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer building systems where work, research, music, and product ideas
-              compound.
+              Software engineer. Builder. Tennis, guitar, systems.
             </span>
           </motion.div>
 
@@ -61,13 +60,10 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build practical software where reliability, workflow clarity, and product judgment
-              matter: internal platforms, automation, analytics, creative tools, and local-first
-              research systems.
+              Tools for work, trading, music, and movement.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
-              Open to software engineering roles with deeper product scope, platform ownership, and
-              systems responsibility.
+              Open to software roles with real ownership.
             </p>
           </motion.div>
 
@@ -112,7 +108,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.52 }}
             className="grid w-full max-w-2xl grid-cols-1 gap-2 pt-1 text-sm text-ink-muted sm:grid-cols-3"
           >
-            {['Reliable tools', 'Internal platforms', 'Product systems'].map((item) => (
+            {['Build', 'Move', 'Sound'].map((item) => (
               <span
                 key={item}
                 className="inline-flex items-center gap-2 border-l border-accent/40 bg-white/[0.015] px-3 py-2"
@@ -133,15 +129,15 @@ export function Hero() {
         >
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(0_0%_0%/0.9)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              <span>Engineering Profile</span>
+              <span>Signal</span>
               <span className="text-signal-green">Available</span>
             </div>
             <div className="space-y-4">
               {[
-                ['Systems', 'APIs, data flows, tooling, and reliability work.'],
-                ['Product', 'User-centered interfaces for repeated workflows and decisions.'],
-                ['Automation', 'Repeatable workflows with clear validation and ownership.'],
-                ['Analytics', 'Dashboards, reporting, and evidence-driven review loops.'],
+                ['Build', 'Software, AI workflows, automation.'],
+                ['Move', 'Tennis, running, daily discipline.'],
+                ['Sound', 'Guitar, recording, live ideas.'],
+                ['Review', 'Trading tools, data, cleaner decisions.'],
               ].map(([label, body]) => (
                 <div key={label} className="grid grid-cols-[7rem_1fr] gap-4">
                   <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent/75">
@@ -153,9 +149,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['Tools', 'Systems'],
-                ['3', 'Products'],
-                ['Data', 'Tools'],
+                ['Build', 'Tools'],
+                ['Move', 'Body'],
+                ['Sound', 'Music'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>
@@ -173,7 +169,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.85, duration: 0.6 }}
-        className="relative z-10 mx-auto mt-10 w-full max-w-7xl px-6 pb-6 md:px-10"
+        className="relative z-10 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
         <div className="flex flex-col gap-3 border-y border-white/[0.08] bg-bg/70 px-4 py-3 md:flex-row md:items-center md:justify-between">
           <MarketTicker />

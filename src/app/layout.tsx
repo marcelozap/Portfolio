@@ -28,11 +28,10 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Software Engineer | Systems, Product, Automation',
+    default: 'Marcelo Zapata - Software Engineer',
     template: '%s - Marcelo Zapata',
   },
-  description:
-    'Marcelo Zapata is a software engineer building reliable tools, automation, analytics, and product-driven software across professional delivery and independent projects.',
+  description: 'Marcelo Zapata builds software tools for work, trading, music, and movement.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -50,8 +49,7 @@ export const metadata: Metadata = {
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer',
-    description:
-      'Portfolio of software engineering work across systems, automation, analytics, product design, and creative technology.',
+    description: 'Software, tools, music, and movement by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -66,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer - systems, product, automation',
+    description: 'Software engineer. Builder. Tennis, guitar, systems.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {

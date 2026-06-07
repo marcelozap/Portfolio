@@ -78,12 +78,12 @@ export function Engineering() {
         eyebrow="Capabilities"
         title={
           <>
-            Systems depth,
+            Simple systems.
             <br />
-            <span className="text-gradient">product range.</span>
+            <span className="text-gradient">Useful tools.</span>
           </>
         }
-        description="I&rsquo;m strongest where practical software design meets real workflows. The same toolkit has to work across internal platforms, product interfaces, and independent builds."
+        description="Build the thing. Make it clear. Make it hold up."
       />
 
       {/* profile dashboard */}

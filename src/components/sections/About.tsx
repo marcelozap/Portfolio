@@ -8,13 +8,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Practical ownership',
-    body: 'I like software that has to be clear, reliable, documented, and usable by people doing real work.',
+    title: 'Clear tools',
+    body: 'Software should help people do the work without making the work louder.',
   },
   {
     icon: Compass,
-    title: 'Product sensibility',
-    body: 'I bring the same care to user experience, interaction, and clarity whether the audience is an operator, teammate, or consumer.',
+    title: 'Human feel',
+    body: 'The best tools feel obvious after you use them once.',
   },
 ];
 
@@ -35,26 +35,22 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Software engineer with range.</span>
+            <span className="text-gradient">Builder with range.</span>
           </>
         }
-        description="Software engineer based in Miami working across systems, analytics, automation, and independent product builds. XIV is a creative alias used for music and selected releases."
+        description="Software, tennis, guitar, trading tools, and product ideas. Simple signal. No over-explaining."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I work best on software that has to be dependable in practice. That can mean internal
-              workflows, reporting, automation, validation, or tools that help teams make fewer
-              mistakes. I also enjoy helping newer teammates ramp up, documenting clearly, and
-              bringing a calm sense of structure when work gets messy.
+              I build tools for real workflows: internal systems, automation, reports, validation,
+              and anything that helps a team move cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside enterprise delivery, I build products that sharpen a different side of the
-              stack: Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative
-              operating system for live-loop artists; and Green Machine, a quantitative research
-              platform. That mix keeps my systems thinking, UX instincts, and execution speed sharp.
+              Outside work, the same pattern shows up in my own products: GateKPT for music, Green
+              Machine for trading review, and Rally for tennis.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
