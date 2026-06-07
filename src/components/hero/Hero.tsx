@@ -9,10 +9,12 @@ import {
   FolderKanban,
   Github,
   Linkedin,
+  Waves,
 } from 'lucide-react';
 import { MarketTicker } from './MarketTicker';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { scrollToSection } from '@/lib/utils';
+import { GATEKPT_URL } from '@/lib/socialLinks';
 
 export function Hero() {
   return (
@@ -77,6 +79,10 @@ export function Hero() {
               <FolderKanban className="size-4" />
               View Projects
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+            </GlowButton>
+            <GlowButton variant="outline" href={GATEKPT_URL} target="_blank" rel="noreferrer">
+              <Waves className="size-4" />
+              GateKPT
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />

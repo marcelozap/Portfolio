@@ -1,19 +1,15 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { scrollToSection } from '@/lib/utils';
+import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 const LINKS = [
   { label: 'Projects', id: 'projects' as const },
   { label: 'Experience', id: 'experience' as const },
   { label: 'Capabilities', id: 'engineering' as const },
   { label: 'Sound', id: 'music' as const },
-];
-
-const EXTERNAL_LINKS = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marcelozap' },
-  { label: 'GitHub', href: 'https://github.com/marcelozap' },
-  { label: 'Contact', href: 'mailto:marcelozapata08@gmail.com' },
 ];
 
 export function Footer() {
@@ -36,7 +32,18 @@ export function Footer() {
     <footer className="relative z-10 border-t border-white/[0.06]">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
         <div>
-          <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
+          <div className="flex items-center gap-3">
+            <span className="flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
+              <Image
+                src="/brand/gatekpt-icon.png"
+                alt=""
+                width={24}
+                height={24}
+                className="rounded-full"
+              />
+            </span>
+            <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
+          </div>
           <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
             Build - move - sound
           </div>
@@ -54,7 +61,7 @@ export function Footer() {
               </button>
             </li>
           ))}
-          {EXTERNAL_LINKS.map((link) => (
+          {SOCIAL_LINKS.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}

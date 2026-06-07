@@ -1,10 +1,12 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Command } from 'lucide-react';
+import { Command, ExternalLink } from 'lucide-react';
 import { cn, scrollToSection } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
+import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const NAV_ITEMS = [
   { id: 'projects', label: 'Projects' },
@@ -55,9 +57,16 @@ export function Navbar() {
           className="group flex items-center gap-3"
           aria-label="Marcelo Zapata home"
         >
-          <span className="relative flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] font-mono text-[11px] tracking-widest text-ink shadow-inset">
+          <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03] text-ink shadow-inset">
             <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
-            <span className="relative">MZ</span>
+            <Image
+              src="/brand/gatekpt-icon.png"
+              alt=""
+              width={24}
+              height={24}
+              className="relative rounded-full"
+              priority
+            />
           </span>
           <span className="hidden flex-col items-start sm:flex">
             <span className="font-display text-[13px] font-medium leading-tight text-ink">
@@ -85,6 +94,17 @@ export function Navbar() {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href={GATEKPT_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+            >
+              GateKPT
+              <ExternalLink className="size-3" />
+            </a>
+          </li>
         </ul>
 
         <button

@@ -15,6 +15,7 @@ import {
   Briefcase,
   Cpu,
   Disc3,
+  ExternalLink,
   FolderKanban,
   Search,
   Sparkles,
@@ -23,6 +24,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PROJECTS } from '@/lib/projects';
+import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 interface CommandItem {
   id: string;
@@ -149,7 +151,17 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       },
     ];
 
-    return [...nav, ...proj, ...actions];
+    const links: CommandItem[] = SOCIAL_LINKS.map((link) => ({
+      id: `open-${link.label.toLowerCase().replaceAll(' ', '-')}`,
+      label: `Open ${link.label}`,
+      hint: link.href.replace(/^https?:\/\//, ''),
+      icon: ExternalLink,
+      group: 'Links',
+      keywords: ['social', 'external', link.label],
+      action: () => window.open(link.href, '_blank', 'noopener,noreferrer'),
+    }));
+
+    return [...nav, ...proj, ...links, ...actions];
   }, []);
 
   const filtered = useMemo(() => {

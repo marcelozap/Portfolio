@@ -68,7 +68,11 @@ export const metadata: Metadata = {
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/brand/gatekpt-icon.png', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: ['/brand/gatekpt-icon.png'],
   },
 };
 
