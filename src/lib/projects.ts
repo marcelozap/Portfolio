@@ -48,20 +48,20 @@ export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
     name: 'GATEKPT MusicOS',
-    tagline: 'Live music memory. Loops, cues, visuals, release prep.',
+    tagline: 'Audio workflow system. Cues, captures, visuals, release prep.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT MusicOS is a C#/.NET desktop creative system for artists who build music through live performance. It keeps song sections, RC-505 cues, lyrics, captions, stems, routing notes, and visuals in one local workspace.',
+      'GateKPT MusicOS is a C#/.NET desktop workflow system for audio and performance work. It keeps sections, RC-505 cues, lyrics, captions, stems, routing notes, and visuals in one local workspace.',
     coreIdeas: [
-      'Artist-first workflow for capturing ideas quickly without flattening the creative process',
+      'Fast capture without burying the work in extra screens',
       'Live-loop performance planning built around sections, layer order, and cue cards',
       'Local project memory for lyrics, takes, routing notes, stems, visuals, and export tasks',
-      'Hardware-aware music tooling that supports RC-505 and studio routing instead of replacing the rig',
-      'AI command layer direction: organize, summarize, and prep creative work without generating the artist for them',
+      'Hardware-aware tooling for RC-505 and studio routing',
+      'AI command layer direction: organize, summarize, and prep work without taking over the work',
     ],
     features: [
       {
@@ -112,9 +112,9 @@ export const PROJECTS: Project[] = [
     ],
     features: [
       {
-        title: 'Movement research',
+        title: 'Context research',
         description:
-          'Studies how stocks and futures move using historical data, momentum/regime context, intraday labels, and similar-day market memory.',
+          'Studies stocks and futures using historical data, momentum/regime context, intraday labels, and similar-day market memory.',
       },
       {
         title: 'Backtesting and evidence',
@@ -133,7 +133,7 @@ export const PROJECTS: Project[] = [
       },
     ],
     metrics: [
-      { label: 'Focus', value: 'Movement' },
+      { label: 'Focus', value: 'Context' },
       { label: 'Method', value: 'Backtests' },
       { label: 'Boundary', value: 'No routing' },
     ],
@@ -142,36 +142,36 @@ export const PROJECTS: Project[] = [
   {
     id: 'rally',
     name: 'RALLY',
-    tagline: 'Tennis routine. Daily play, courts, style, progress.',
+    tagline: 'Practice system. Training logs, activity data, progress.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
     year: '2025',
     website: '/rally',
     description:
-      'Rally is a tennis app built around daily play, player memory, and real-world routine. It brings training logs, match history, journaling, court discovery, style, and gear into one tennis-native space.',
+      'Rally is a practice app for sports, sessions, activity data, and improvement loops. It brings training logs, match history, recovery notes, wearable data, and progress review into one place.',
     coreIdeas: [
-      'Daily rally loop as the lightweight reason to open the app',
-      'Player memory across training logs, matches, journaling, and improvement notes',
-      'Court discovery and tennis routine tools beyond gameplay alone',
-      'Premium identity layer with avatar, fashion, gear, and real-world tennis taste',
+      'Daily practice loop as the lightweight reason to open the app',
+      'Memory across training logs, matches, recovery notes, and improvement notes',
+      'Support for different sports and real-world routines',
+      'Wearable data direction for Garmin-style activity history and review',
       'Local-first iOS architecture with optional account sync',
     ],
     features: [
       {
-        title: 'Daily rally engine',
+        title: 'Daily practice engine',
         description:
-          'A fast rally mechanic creates a short repeatable daily loop while the app stays closer to a tennis companion than a throwaway casual game.',
+          'A short repeatable loop keeps practice visible without turning the app into another noisy tracker.',
       },
       {
-        title: 'Player memory',
+        title: 'Training memory',
         description:
-          'Training sessions, matches, journal entries, and improvement notes live together so Rally supports a real tennis routine.',
+          'Sessions, matches, notes, recovery, and improvement markers live together so the system can show what is actually changing.',
       },
       {
-        title: 'Lifestyle surface',
+        title: 'Activity data',
         description:
-          'Court discovery, player identity, fashion, and gear make Rally feel tennis-native instead of only a tracker.',
+          'Designed to grow toward Garmin and activity-data sync across running, swimming, biking, golf, cricket, court work, and other practice loops.',
       },
       {
         title: 'Local-first sync model',
@@ -182,9 +182,9 @@ export const PROJECTS: Project[] = [
     metrics: [
       { label: 'Core tabs', value: '5' },
       { label: 'Platform', value: 'iOS' },
-      { label: 'Primary loop', value: 'Daily' },
+      { label: 'Loop', value: 'Practice' },
     ],
-    stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'AVAudioEngine', 'Node.js'],
+    stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'Activity data', 'Garmin API', 'Node.js'],
   },
 ];
 

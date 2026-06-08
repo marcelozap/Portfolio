@@ -20,7 +20,7 @@ const FEATURED_WORK = [
     name: 'GateKPT',
     href: GATEKPT_URL,
     meta: 'C# / .NET',
-    note: 'music workspace',
+    note: 'audio workflow',
     external: true,
   },
   {

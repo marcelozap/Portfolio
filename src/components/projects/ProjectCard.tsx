@@ -37,9 +37,9 @@ interface ProjectCardProps {
 }
 
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
-  audio: 'creative tools',
+  audio: 'workflow tools',
   markets: 'research systems',
-  game: 'tennis app',
+  game: 'practice system',
   systems: 'systems',
   infra: 'infrastructure',
 };
@@ -183,15 +183,28 @@ function RallyCardArt() {
           strokeWidth="0.25"
         />
         <path
-          d="M10 44 C25 29 39 40 51 24 C64 8 78 18 92 10"
+          d="M11 46 C27 25 41 26 55 36 C70 47 82 40 91 15"
           fill="none"
           stroke="hsl(38 65% 62% / 0.72)"
           strokeDasharray="1.8 1.6"
           strokeWidth="0.42"
         />
+        <g fill="hsl(42 38% 82% / 0.82)" stroke="hsl(38 65% 62% / 0.42)" strokeWidth="0.18">
+          <circle cx="12" cy="47" r="1.15" />
+          <path d="M12 48.3 L12 52.5 M10.1 50 H13.9 M12 52.5 L10 55 M12 52.5 L14 55" />
+          <circle cx="90" cy="16" r="1.15" />
+          <path d="M90 17.3 L90 21.5 M88.1 19 H91.9 M90 21.5 L88 24 M90 21.5 L92 24" />
+        </g>
+        <circle r="1.05" fill="hsl(38 95% 68%)">
+          <animateMotion
+            dur="3.4s"
+            repeatCount="indefinite"
+            path="M12 47 C29 20 44 23 58 34 C72 45 83 36 90 16 C72 32 50 39 12 47"
+          />
+        </circle>
       </svg>
       <div className="absolute right-4 top-4 grid grid-cols-2 gap-1.5">
-        {['style', 'gear', 'courts', 'journal'].map((label) => (
+        {['sessions', 'data', 'goals', 'review'].map((label) => (
           <span
             key={label}
             className="rounded-[3px] border border-white/[0.07] bg-bg/35 px-2 py-1 font-mono text-[7px] uppercase tracking-[0.14em] text-ink-faint transition group-hover:border-accent-warm/30 group-hover:text-ink-muted"
@@ -201,7 +214,7 @@ function RallyCardArt() {
         ))}
       </div>
       <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        old-school tennis / daily play
+        practice data / progress
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ const PUBLIX: Milestone = {
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across data workflows, analytics, internal tools, and modernization. My focus is simple: make data easier to move, understand, and trust.',
+    'Software engineer working across data workflows, analytics, internal tools, and modernization. My focus is simple: make data easier to process, understand, and trust.',
   focus: [
     'LLM and data workflows',
     'Data lake and processing',

@@ -18,7 +18,7 @@ Software engineer focused on workflow tooling, QA automation, data systems, and 
 
 Hi, I'm Marcelo Zapata. I'm a software engineer working across systems, automation, analytics, workflow tooling, and independent product builds. My background spans QA automation, data/reporting workflows, internal tools, documentation, and user-facing product work.
 
-Outside enterprise delivery, I build products like Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform. I'm especially interested in roles where I can take on more ownership across systems, product, platform, automation, and internal tools.
+Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and Green Machine Quant OS. I'm especially interested in roles where I can take on more ownership across systems, product, platform, automation, and internal tools.
 
 ## Pinned Repo Descriptions
 
@@ -28,11 +28,11 @@ Personal portfolio built with Next.js and React to present experience across sys
 
 ### Rally
 
-Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
+Practice system for training logs, activity data, progress review, and real-world routine.
 
 ### GateKPT MusicOS
 
-C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
+C#/.NET audio workflow system combining RC-505 planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual work.
 
 Link: `https://gatekpt.ai`
 
@@ -43,8 +43,8 @@ Python/FastAPI quantitative research and paper-execution platform connecting OAu
 ## Short Repo One-Liners
 
 - Portfolio: Recruiter-facing portfolio for software engineering, product, and systems work.
-- Rally: Premium tennis lifestyle product built with SwiftUI, SpriteKit, and SwiftData.
-- GateKPT MusicOS: Creative operating system for live-loop performance workflow and project memory. `https://gatekpt.ai`
+- Rally: Practice system built with SwiftUI, SpriteKit, SwiftData, and activity-data workflows.
+- GateKPT MusicOS: Audio workflow system for performance planning, capture, and project memory. `https://gatekpt.ai`
 - Green Machine Quant OS: Quantitative research platform with broker API integration, backtesting, paper execution, and risk gates.
 
 ## GitHub About Section Links

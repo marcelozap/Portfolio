@@ -14,7 +14,7 @@ interface Props {
  * Each project gets a domain-specific abstraction:
  *   - audio: waveform / spectrum
  *   - markets: terrain research map
- *   - game: neon-court HUD
+ *   - game: practice HUD
  *
  * Deterministic per project id so the visuals stay stable across renders.
  */
@@ -210,14 +210,14 @@ function GameVisual({ id }: { id: string }) {
     <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-[radial-gradient(80%_60%_at_50%_30%,hsl(28_95%_62%/0.18),transparent_60%),linear-gradient(180deg,hsl(222_30%_8%),hsl(222_24%_4%))] md:h-60">
       <svg viewBox="0 0 100 60" className="absolute inset-0 size-full" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="court" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="practice-surface" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="hsl(28 95% 62%)" stopOpacity="0.06" />
             <stop offset="1" stopColor="hsl(28 95% 62%)" stopOpacity="0.18" />
           </linearGradient>
         </defs>
         <polygon
           points="20,10 80,10 95,55 5,55"
-          fill="url(#court)"
+          fill="url(#practice-surface)"
           stroke="hsl(28 95% 62% / 0.6)"
           strokeWidth="0.2"
         />
@@ -245,7 +245,7 @@ function GameVisual({ id }: { id: string }) {
       ))}
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        rally / flow_hud
+        rally / practice_hud
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent-warm">
         flow: 7.4 / streak: 12

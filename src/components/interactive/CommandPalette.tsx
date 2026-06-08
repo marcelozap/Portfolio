@@ -13,7 +13,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowRight,
   Briefcase,
-  Disc3,
   ExternalLink,
   FolderKanban,
   Search,
@@ -109,13 +108,6 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         icon: FolderKanban,
         group: 'Navigate',
         action: () => scrollTo('projects'),
-      },
-      {
-        id: 'goto-music',
-        label: 'Sound & composition',
-        icon: Disc3,
-        group: 'Navigate',
-        action: () => scrollTo('music'),
       },
     ];
 
@@ -255,7 +247,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onKey}
-                  placeholder="Search work, projects, sections…"
+                  placeholder="Search work, projects, sections..."
                   className="w-full bg-transparent text-sm text-ink placeholder:text-ink-faint focus:outline-none"
                 />
                 <kbd className="rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 font-mono text-[10px] text-ink-faint">
@@ -303,8 +295,8 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
               </div>
 
               <div className="flex items-center justify-between border-t border-white/[0.06] px-4 py-2 font-mono text-[10px] text-ink-faint">
-                <span>↑↓ navigate · ↵ select · ⌘K toggle</span>
-                <span>portfolio · palette</span>
+                <span>Up/Down navigate / Enter select / Ctrl K toggle</span>
+                <span>portfolio / palette</span>
               </div>
             </motion.div>
           </motion.div>

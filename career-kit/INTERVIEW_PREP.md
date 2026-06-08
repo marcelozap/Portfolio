@@ -74,7 +74,7 @@ Tell this when asked:
 
 Answer shape:
 
-Outside of work, I build projects like Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform. Those projects let me exercise different muscles than enterprise work, especially product thinking, interface design, state management, technical architecture, and end-to-end ownership.
+Outside of work, I build projects like Rally, GateKPT MusicOS, and Green Machine Quant OS. They are different systems, but the same pattern runs through them: data, workflow, practice, review, interface design, architecture, and end-to-end ownership.
 
 ## If They Ask About AI Helping With Coding
 
@@ -93,7 +93,7 @@ I've learned a lot there and I've had meaningful exposure to systems, automation
 - Explain one system or workflow integration problem clearly
 - Explain how you use Playwright and CI/CD for repeatable validation
 - Explain one data/reporting workflow without over-sharing employer details
-- Explain Rally as product thinking
-- Explain GateKPT MusicOS as creative tooling
+- Explain Rally as practice-data product thinking
+- Explain GateKPT MusicOS as audio workflow tooling
 - Explain Green Machine Quant OS as systems architecture and risk design
 - Practice the "why leave Publix" answer

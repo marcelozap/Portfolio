@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const terrainIdeas = [
   {
-    title: 'Movement',
+    title: 'Context',
     text: 'Historical data, labels, and repeatable tests.',
   },
   {

@@ -12,7 +12,7 @@ Software Engineer building reliable systems, automation, and product software
 
 I'm a software engineer with 4 years of experience across systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I contribute to software and internal tools that support real operational work, with an emphasis on reliability, documentation, release confidence, and practical delivery.
 
-Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build products that keep stretching my range: Rally, a premium tennis lifestyle product; GateKPT MusicOS, a creative operating system for live-loop artists; and Green Machine Quant OS, a quantitative research platform. I'm looking for a role with more scope, stronger ownership, and room to keep growing across systems, product, automation, and platform work.
+Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and Green Machine Quant OS. I'm looking for a role with more scope, stronger ownership, and room to keep growing across systems, product, automation, and platform work.
 
 ## Publix experience bullets
 
@@ -26,11 +26,11 @@ Before Publix, I taught STEM courses, and that still shapes how I communicate, d
 
 ### Rally
 
-Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
+Practice system for training logs, activity data, progress review, and real-world routine.
 
 ### GateKPT MusicOS
 
-C#/.NET creative operating system for live-loop artists, combining RC-505 performance planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual artwork.
+C#/.NET audio workflow system combining RC-505 planning, project memory, lyric/caption workflows, stem capture, and audio-reactive visual work.
 
 Project link: https://gatekpt.ai
 

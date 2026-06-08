@@ -7,7 +7,7 @@ marcelozapata08@gmail.com | [linkedin.com/in/marcelozap](https://linkedin.com/in
 
 ## Professional Summary
 
-Software engineer with 4 years of experience across systems, analytics, workflow tooling, QA automation, and independent product builds. Strongest where software supports real operational work: internal tools, data and reporting workflows, modernization, and systems that need reliability, traceability, and supportability. Brings systems thinking, product instinct, and practical delivery habits across engineering, testing, and documentation.
+Software engineer with 4 years of experience building internal tools, data workflows, QA automation, and product systems. Focused on reliable data flows, repeatable workflows, clear interfaces, and production software that is easy to validate and maintain.
 
 ## Experience
 
@@ -32,25 +32,27 @@ S.T.E.M. Course Instructor | 2019 - 2022
 
 ### Rally | 2025 - Present
 
-Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
+Practice system for training logs, activity data, progress review, and real-world routine.
 
-- Built as a local-first iOS product using SwiftUI, SpriteKit, SwiftData, and AVAudioEngine.
-- Designed around a repeatable daily rally engine supported by training, journal, court discovery, and style/gear surfaces.
+- Built as a local-first iOS product using SwiftUI, SpriteKit, SwiftData, and activity-data workflows.
+- Designed around repeatable practice loops, session memory, progress review, and future wearable-data integration.
 
-### GateKPT MusicOS | 2025 - Present
+### GateKPT | 2025 - Present
 
-C#/.NET Avalonia creative operating system for live-loop artists, combining RC-505 performance planning, local project memory, lyric/caption workflows, stem capture, hardware routing, and audio-reactive visual artwork.
+Local-first C#/.NET Avalonia desktop system for audio capture, auto-versioned WAV recording, command-driven processing, and project memory.
 
-- Designed as an artist cockpit that sits above the creative rig without replacing musicianship, hardware, or DAW workflows.
+- Built a hardware-aware audio workstation prototype for Scarlett/RC-505 workflows, recording timestamped takes and preserving originals while generating safe edited versions through natural-language commands.
+- Implemented command concepts for vocal polish, drum punch, piano brightness, acoustic warmth, drone width, reverb, echo, compression, normalization, cleanup, tone shaping, gain changes, and warmer/darker/brighter processing.
 
-### Green Machine Quant OS | Fall 2021 - Present
+### Green Machine OS - AI-Assisted Quant Research & Risk System | Fall 2021 - Present
 
-Local-first execution-focused quantitative trading research platform built with Python, FastAPI, SQLite, pytest, and a C# Windows launcher.
+Built a local-first Python/FastAPI and React system for execution-focused trading research, combining local data storage, risk controls, execution analytics, strategy review, personal projection inputs, and a private LLM coach.
 
-- Implemented transaction-cost analytics for arrival price, fill price, slippage bps, implementation shortfall, modeled-vs-realized fill parity, and daily execution coach briefs.
-- Built Engine APIs for regime analysis, research memos, risk gates, paper execution review, and website-safe project proof.
-- Integrated Schwab API readiness in read-only/paper-workflow mode while keeping live broker order routing disabled by design.
-- Created a C# Windows launcher for starting the local Engine and opening private/public OS surfaces.
+- Developed tested FastAPI endpoints and SQLite-backed local storage for portfolio summaries, personal lifeline projections, regime analysis, risk checks, execution review, research workflows, and coach memory.
+- Implemented execution analytics for slippage, fill quality, implementation shortfall, model calibration, and transaction-cost awareness across reviewed and paper execution workflows.
+- Built risk controls for position sizing, max-loss checks, pre-trade gates, cooldowns, stand-down guidance, thesis discipline, journaling, and post-trade reflection.
+- Designed local-first LLM coaching workflows for risk review, behavior analytics, and evidence-based decision support without exposing private account data or broker credentials.
+- Structured quant research workflows for backtesting, strategy memos, options/futures review, historical/API data ingestion direction, automated reports, and recruiter-safe portfolio presentation.
 
 ## Skills
 

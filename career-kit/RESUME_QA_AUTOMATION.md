@@ -7,7 +7,7 @@ marcelozapata08@gmail.com | [linkedin.com/in/marcelozap](https://linkedin.com/in
 
 ## Professional Summary
 
-Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, workflow tooling, and supportable software delivery. Strongest in modernization contexts where tests, documentation, and release discipline make production systems safer to change. Brings practical experience with Playwright, regression testing, API-driven workflows, and cross-functional delivery.
+Software engineer with 4 years of experience in QA automation, systems validation, CI/CD, data workflows, and supportable software delivery. Focused on reliable tests, clear release paths, practical documentation, and production systems that are safer to change.
 
 ## Experience
 
@@ -33,16 +33,17 @@ S.T.E.M. Course Instructor | 2019 - 2022
 
 ### Rally | 2025 - Present
 
-Premium tennis lifestyle product pairing a fast daily rally engine with training, journaling, global court discovery, and real-world fashion and gear.
+Practice system for training logs, activity data, progress review, and real-world routine.
 
-- Built as a local-first iOS product using SwiftUI, SpriteKit, SwiftData, and AVAudioEngine.
-- Designed product surfaces around daily interaction, local persistence, and mobile-first user flow.
+- Built as a local-first iOS product using SwiftUI, SpriteKit, SwiftData, and activity-data workflows.
+- Designed product surfaces around daily interaction, local persistence, session memory, and mobile-first user flow.
 
-### GateKPT MusicOS | 2025 - Present
+### GateKPT | 2025 - Present
 
-C#/.NET Avalonia creative operating system for live-loop artists, combining RC-505 performance planning, local project memory, lyric/caption workflows, stem capture, hardware routing, and audio-reactive visual artwork.
+Local-first C#/.NET Avalonia desktop system for audio capture, auto-versioned WAV recording, command-driven processing, and project memory.
 
-- Structured around local project files, section-based planning, and hardware-aware creative workflows.
+- Built a hardware-aware audio workstation prototype for Scarlett/RC-505 workflows, recording timestamped takes and preserving originals while generating safe edited versions through natural-language commands.
+- Implemented command concepts for vocal polish, drum punch, piano brightness, acoustic warmth, drone width, reverb, echo, compression, normalization, cleanup, tone shaping, gain changes, and warmer/darker/brighter processing.
 
 ### Green Machine Quant OS | Fall 2021 - Present
 

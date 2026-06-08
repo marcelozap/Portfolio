@@ -24,7 +24,7 @@ const TAGS = [
   'Python / data processing & automation',
   'LLM workflows / semantic layers',
   'SwiftUI / SpriteKit / iOS apps',
-  'Audio, interaction, and creative tooling',
+  'Workflow and interaction tooling',
 ];
 
 export function About() {
@@ -39,7 +39,7 @@ export function About() {
             <span className="text-gradient">Software engineer.</span>
           </>
         }
-        description="Software, tennis, guitar, and tools for the way I work."
+        description="Software systems for data, automation, practice, and review."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -47,11 +47,11 @@ export function About() {
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               I build tools for real workflows: internal systems, data processing, reporting,
-              semantic layers, automation, and anything that helps a team move cleaner.
+              semantic layers, automation, and anything that helps a team work cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside work, the same pattern shows up in GateKPT for music, Green Machine for
-              trading review, and Rally for tennis.
+              Outside work, the same pattern shows up in GateKPT, Green Machine, and Rally:
+              practical systems for capture, review, practice, and better decisions.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
