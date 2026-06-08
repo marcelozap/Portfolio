@@ -95,6 +95,14 @@ export function Navbar() {
           ))}
           <li>
             <a
+              href="/green-machine"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+            >
+              Green Machine
+            </a>
+          </li>
+          <li>
+            <a
               href={GATEKPT_URL}
               target="_blank"
               rel="noreferrer"

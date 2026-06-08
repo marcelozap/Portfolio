@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 const terrainIdeas = [
   {
-    title: 'Movement Modeling',
-    text: 'Market movement is studied with Python, historical data, labels, and repeatable tests rather than one-off chart opinions.',
+    title: 'Movement',
+    text: 'Historical data, labels, and repeatable tests.',
   },
   {
-    title: 'Backtests and Evidence',
-    text: 'Ideas become research artifacts: assumptions, cost/risk notes, test results, limitations, and next questions.',
+    title: 'Evidence',
+    text: 'Backtests, notes, limits, and next questions.',
   },
   {
-    title: 'LLM Review Layer',
-    text: 'The LLM helps summarize research, find holes, and turn scattered context into durable memory without acting as a trading signal.',
+    title: 'Review',
+    text: 'LLM summaries for memory and missed context.',
   },
 ];
 
@@ -21,24 +21,14 @@ const stack = [
   'React',
   'SQLite',
   'pytest',
-  'backtesting',
-  'movement labels',
-  'LLM review',
+  'backtests',
+  'labels',
+  'LLM notes',
 ];
 
-const whatItIs = [
-  'market movement research',
-  'reproducible backtesting',
-  'historical market context',
-  'LLM-assisted review',
-];
+const whatItIs = ['market research notes', 'backtests', 'historical context', 'review memory'];
 
-const whatItIsNot = [
-  'automated trading',
-  'financial advice',
-  'signal service',
-  'broker order routing',
-];
+const whatItIsNot = ['automated trading', 'financial advice', 'signal service', 'broker routing'];
 
 function TerrainMap() {
   return (
@@ -122,15 +112,14 @@ function TerrainMap() {
       </svg>
 
       <div className="absolute left-6 top-6 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
-        terrain / context / review
+        context / review
       </div>
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/[0.08] bg-bg/55 p-4 backdrop-blur">
         <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
-          Research Boundary
+          Boundary
         </div>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-muted">
-          Private research memory for market history and review. No live broker order routing, no
-          signal service, and no financial advice.
+          Private research memory. No broker routing, no signal service, no financial advice.
         </p>
       </div>
     </div>
@@ -151,32 +140,30 @@ export default function GreenMachineCaseStudyPage() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
             <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-signal-green">
-              Financial research as terrain
+              Private market research
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
               Green Machine
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
-              Researching financial markets through data, context, and structured review.
+              Market notes, backtests, and review.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              Green Machine is a Python/FastAPI and React research system for studying market
-              movement with historical data, reproducible backtests, movement labels, risk context,
-              and LLM-assisted review. The goal is to turn trading ideas into measured evidence:
-              what was tested, what failed, what improved, and what data is still missing.
+              A private workspace for market data, historical context, and trade review. It helps
+              organize what happened, what was tested, and what still needs work.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="#concept"
                 className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-bg transition hover:bg-signal-green hover:text-bg"
               >
-                View concept
+                View notes
               </Link>
               <Link
                 href="/#projects"
                 className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-signal-green/40 hover:text-ink"
               >
-                Back to projects
+                Back home
               </Link>
             </div>
           </div>
@@ -192,12 +179,11 @@ export default function GreenMachineCaseStudyPage() {
               Concept
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
-              Movement Research as Terrain
+              Study first.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-muted">
-              Market history is presented as a landscape to study rather than a screen of commands
-              to act on. The system is focused on modeling movement, testing assumptions, reviewing
-              regime/context, and writing public-safe research notes about what the evidence shows.
+              Market history is treated as something to review, not something to chase. The system
+              keeps the data, notes, and questions in one place.
             </p>
           </div>
 
@@ -217,7 +203,7 @@ export default function GreenMachineCaseStudyPage() {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-3">
         <div>
-          <h2 className="font-display text-3xl leading-tight text-ink">Technical Stack</h2>
+          <h2 className="font-display text-3xl leading-tight text-ink">Stack</h2>
           <ul className="mt-6 flex flex-wrap gap-2">
             {stack.map((item) => (
               <li key={item} className="mono-tag normal-case tracking-wider">
