@@ -2,9 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Command, ExternalLink } from 'lucide-react';
-import { cn, scrollToSection } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
 import { GATEKPT_URL } from '@/lib/socialLinks';
 
@@ -21,6 +22,16 @@ export function Navbar() {
   const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.08]);
   const [active, setActive] = useState<string | null>(null);
   const { open: openPalette } = useCommandPalette();
+
+  const goToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    window.location.href = `/#${id}`;
+  };
 
   useEffect(() => {
     const ids = NAV_ITEMS.map((n) => n.id);
@@ -50,12 +61,7 @@ export function Navbar() {
         className="absolute inset-x-0 bottom-0 h-px bg-white"
       />
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
-        <button
-          type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="group flex items-center gap-3"
-          aria-label="Marcelo Zapata home"
-        >
+        <Link href="/" className="group flex items-center gap-3" aria-label="Marcelo Zapata home">
           <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03] text-ink shadow-inset">
             <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
             <Image
@@ -75,14 +81,14 @@ export function Navbar() {
               build / move
             </span>
           </span>
-        </button>
+        </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <button
                 type="button"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => goToSection(item.id)}
                 data-active={active === item.id}
                 className={cn(
                   'nav-link rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink',
@@ -95,14 +101,6 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="/green-machine"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
-            >
-              Green Machine
-            </a>
-          </li>
-          <li>
-            <a
               href={GATEKPT_URL}
               target="_blank"
               rel="noreferrer"
@@ -111,6 +109,15 @@ export function Navbar() {
               GateKPT
               <ExternalLink className="size-3" />
             </a>
+          </li>
+          <li>
+            <Link
+              href="/green-machine"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+            >
+              Green Machine
+              <ExternalLink className="size-3" />
+            </Link>
           </li>
         </ul>
 

@@ -160,7 +160,7 @@ export default function GreenMachineCaseStudyPage() {
                 View notes
               </Link>
               <Link
-                href="/#projects"
+                href="/"
                 className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-signal-green/40 hover:text-ink"
               >
                 Back home
