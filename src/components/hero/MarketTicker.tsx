@@ -36,7 +36,7 @@ export function MarketTicker() {
   }, []);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] text-ink-faint">
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-faint">
       {signals.map((signal) => {
         const active = signal.phase === 1;
         return (
@@ -47,11 +47,8 @@ export function MarketTicker() {
                 active ? 'bg-accent shadow-[0_0_12px_hsl(var(--accent)/0.55)]' : 'bg-white/10',
               )}
             />
-            <span className="tracking-widest text-ink-muted">{signal.label}</span>
-            <span className="text-ink-faint">/</span>
-            <span className={cn('tracking-[0.14em]', active ? 'text-ink' : 'text-ink-faint')}>
-              {signal.value}
-            </span>
+            <span className="font-medium text-ink-muted">{signal.label}</span>
+            <span className={cn(active ? 'text-ink' : 'text-ink-faint')}>{signal.value}</span>
           </span>
         );
       })}

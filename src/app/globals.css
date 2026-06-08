@@ -122,7 +122,7 @@ body {
   }
 
   .mono-tag {
-    @apply inline-flex items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted;
+    @apply inline-flex items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium normal-case tracking-normal text-ink-muted;
   }
 
   .grid-bg {

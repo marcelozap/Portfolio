@@ -49,11 +49,11 @@ export function SoundToggle() {
       disabled={!ready}
       aria-pressed={enabled}
       aria-label={enabled ? 'Turn sound off' : 'Turn sound on'}
-      title="Toggle original ambient site audio"
-      className="fixed bottom-5 left-5 z-[60] inline-flex items-center gap-2 rounded-full border border-white/10 bg-bg-elevated/85 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted shadow-glow backdrop-blur-xl transition hover:border-accent/40 hover:text-ink disabled:cursor-not-allowed disabled:opacity-50"
+      title="Toggle ambient audio"
+      className="fixed bottom-5 left-5 z-[60] inline-flex items-center gap-2 rounded-full border border-white/10 bg-bg-elevated/85 px-3 py-2 text-xs font-medium text-ink-muted shadow-glow backdrop-blur-xl transition hover:border-accent/40 hover:text-ink disabled:cursor-not-allowed disabled:opacity-50"
     >
       {enabled ? <Volume2 className="size-3.5 text-accent" /> : <VolumeX className="size-3.5" />}
-      <span>{enabled ? 'Sound on' : 'Sound off'}</span>
+      <span>{enabled ? 'Audio on' : 'Audio off'}</span>
     </button>
   );
 }

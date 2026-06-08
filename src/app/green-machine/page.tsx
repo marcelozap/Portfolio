@@ -111,7 +111,7 @@ function TerrainMap() {
         })}
       </svg>
 
-      <div className="absolute left-6 top-6 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+      <div className="absolute left-6 top-6 text-xs font-medium text-ink-faint">
         context / review
       </div>
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/[0.08] bg-bg/55 p-4 backdrop-blur">
@@ -130,18 +130,13 @@ export default function GreenMachineCaseStudyPage() {
   return (
     <main className="min-h-screen bg-bg text-ink">
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Link
-          href="/"
-          className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-faint transition hover:text-ink"
-        >
+        <Link href="/" className="text-sm font-medium text-ink-faint transition hover:text-ink">
           Marcelo Zapata / Portfolio
         </Link>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
-            <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-signal-green">
-              Private market research
-            </p>
+            <p className="text-sm font-semibold text-signal-green">Private market research</p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
               Green Machine
             </h1>
@@ -175,9 +170,7 @@ export default function GreenMachineCaseStudyPage() {
       <section id="concept" className="border-y border-white/[0.06] bg-white/[0.02]">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="font-mono text-xs font-black uppercase tracking-[0.24em] text-signal-green">
-              Concept
-            </p>
+            <p className="text-sm font-semibold text-signal-green">Concept</p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
               Study first.
             </h2>

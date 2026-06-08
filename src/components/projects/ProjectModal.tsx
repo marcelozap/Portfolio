@@ -117,7 +117,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     href={project.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted transition hover:border-accent/40 hover:text-ink"
+                    className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
                   >
                     Open page
                     <ExternalLink className="size-3.5" />

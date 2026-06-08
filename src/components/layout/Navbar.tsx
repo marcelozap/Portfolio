@@ -4,16 +4,16 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Command, ExternalLink } from 'lucide-react';
+import { Command, ExternalLink, FolderKanban } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
 import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const NAV_ITEMS = [
-  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'about', label: 'About' },
 ];
+const OBSERVED_SECTION_IDS = ['projects', ...NAV_ITEMS.map((n) => n.id)];
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -33,7 +33,6 @@ export function Navbar() {
   };
 
   useEffect(() => {
-    const ids = NAV_ITEMS.map((n) => n.id);
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -43,7 +42,7 @@ export function Navbar() {
       },
       { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
-    ids.forEach((id) => {
+    OBSERVED_SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -76,13 +75,13 @@ export function Navbar() {
             <span className="font-display text-[13px] font-medium leading-tight text-ink">
               Marcelo Zapata
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
+            <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
               software / data
             </span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-2 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <button
@@ -90,7 +89,7 @@ export function Navbar() {
                 onClick={() => goToSection(item.id)}
                 data-active={active === item.id}
                 className={cn(
-                  'nav-link rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink',
+                  'nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink',
                   active === item.id && 'text-ink',
                 )}
               >
@@ -103,7 +102,7 @@ export function Navbar() {
               href={GATEKPT_URL}
               target="_blank"
               rel="noreferrer"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
               GateKPT
               <ExternalLink className="size-3" />
@@ -112,7 +111,7 @@ export function Navbar() {
           <li>
             <Link
               href="/green-machine"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
               Green Machine
               <ExternalLink className="size-3" />
@@ -121,7 +120,7 @@ export function Navbar() {
           <li>
             <Link
               href="/rally"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
               Rally
               <ExternalLink className="size-3" />
@@ -129,17 +128,31 @@ export function Navbar() {
           </li>
         </ul>
 
-        <button
-          onClick={openPalette}
-          className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-ink-muted transition hover:border-accent/40 hover:text-ink"
-          aria-label="Open command palette"
-        >
-          <Command className="size-3.5" />
-          <span className="hidden sm:inline">Command</span>
-          <kbd className="hidden rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 font-mono text-[10px] sm:inline">
-            Ctrl K
-          </kbd>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => goToSection('projects')}
+            data-active={active === 'projects'}
+            className={cn(
+              'hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex',
+              active === 'projects' && 'border-accent/35 text-ink',
+            )}
+          >
+            <FolderKanban className="size-3.5" />
+            Projects
+          </button>
+          <button
+            onClick={openPalette}
+            className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
+            aria-label="Open command palette"
+          >
+            <Command className="size-3.5" />
+            <span className="hidden sm:inline">Command</span>
+            <kbd className="hidden rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 text-[10px] sm:inline">
+              Ctrl K
+            </kbd>
+          </button>
+        </div>
       </nav>
     </motion.header>
   );

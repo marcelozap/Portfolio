@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import { Inter, JetBrains_Mono, Libre_Baskerville } from 'next/font/google';
 import './globals.css';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { SoundToggle } from '@/components/interactive/SoundToggle';
@@ -13,8 +13,9 @@ const sans = Inter({
   display: 'swap',
 });
 
-const display = Space_Grotesk({
+const display = Libre_Baskerville({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-display',
   display: 'swap',
 });

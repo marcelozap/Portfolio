@@ -7,23 +7,16 @@ export default function RallyPage() {
     <main className="min-h-screen bg-bg text-ink">
       <section className="mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-6 py-24 md:px-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <Link
-            href="/"
-            className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-faint transition hover:text-ink"
-          >
+          <Link href="/" className="text-sm font-medium text-ink-faint transition hover:text-ink">
             Marcelo Zapata / Portfolio
           </Link>
 
-          <p className="mt-16 font-mono text-xs font-black uppercase tracking-[0.24em] text-accent-warm">
-            Practice system
-          </p>
+          <p className="mt-16 text-sm font-semibold text-accent-warm">Practice system</p>
           <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">Rally</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
             Training logs, activity data, progress, and review.
           </p>
-          <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
-            Coming soon.
-          </p>
+          <p className="mt-4 text-sm font-medium text-ink-faint">Coming soon.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

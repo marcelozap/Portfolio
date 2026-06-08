@@ -55,7 +55,7 @@ export function Footer() {
             </span>
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
-          <div className="mt-1 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+          <div className="mt-1 whitespace-nowrap text-[12px] font-medium tracking-[0.04em] text-ink-muted">
             Software / data / tools
           </div>
         </div>
@@ -96,13 +96,13 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="shrink-0 font-mono text-[11px] tracking-widest text-ink-faint">{time}</div>
+        <div className="shrink-0 text-xs font-medium text-ink-faint">{time}</div>
       </div>
 
       <div className="border-t border-white/[0.04]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-[11px] text-ink-faint md:px-10">
           <span>Portfolio - Marcelo Zapata</span>
-          <span className="font-mono">(c) {new Date().getFullYear()}</span>
+          <span>(c) {new Date().getFullYear()}</span>
         </div>
       </div>
     </footer>

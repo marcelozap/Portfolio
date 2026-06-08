@@ -54,7 +54,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="flex flex-col gap-1 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted sm:flex-row sm:items-center sm:gap-3"
+            className="flex flex-col gap-1 text-sm font-medium text-ink-muted sm:flex-row sm:items-center sm:gap-3"
           >
             <span className="flex items-center gap-3">
               <span className="size-1.5 rounded-full bg-signal-green" />
@@ -85,7 +85,7 @@ export function Hero() {
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
               Data systems, LLM workflows, internal tools, and practical interfaces.
             </p>
-            <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
+            <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
               C# / Azure / Python / React / Snowflake / Databricks
             </p>
           </motion.div>
@@ -142,7 +142,7 @@ export function Hero() {
           aria-label="Selected work"
         >
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
-            <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
+            <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
               <span>Selected work</span>
               <span className="text-signal-green">3</span>
             </div>
@@ -159,7 +159,7 @@ export function Hero() {
                     <span className="block text-sm font-medium text-ink">{item.name}</span>
                     <span className="mt-1 block text-xs text-ink-muted">{item.note}</span>
                   </span>
-                  <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                  <span className="flex items-center gap-2 text-xs font-medium text-ink-faint">
                     {item.meta}
                     <ExternalLink className="size-3 opacity-60 transition group-hover:opacity-100" />
                   </span>
@@ -174,9 +174,7 @@ export function Hero() {
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>
-                  <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
-                    {label}
-                  </div>
+                  <div className="mt-1 text-xs font-medium text-ink-faint">{label}</div>
                 </div>
               ))}
             </div>
@@ -195,9 +193,9 @@ export function Hero() {
           <button
             type="button"
             onClick={() => scrollToSection('projects')}
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-ink-faint transition hover:text-ink"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-ink-faint transition hover:text-ink"
           >
-            scroll / projects
+            Scroll to work
             <ArrowDown className="size-3.5 text-accent transition group-hover:translate-y-0.5" />
           </button>
         </div>
