@@ -65,7 +65,7 @@ export function Hero() {
               Tools for work, trading, music, and movement.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
-              Open to software roles with real ownership.
+              Reliable tools. Clear systems. Work that holds up.
             </p>
           </motion.div>
 
@@ -136,7 +136,7 @@ export function Hero() {
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
               <span>Signal</span>
-              <span className="text-signal-green">Available</span>
+              <span className="text-signal-green">Build</span>
             </div>
             <div className="space-y-4">
               {[

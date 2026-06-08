@@ -8,7 +8,6 @@ import { SOCIAL_LINKS } from '@/lib/socialLinks';
 const LINKS = [
   { label: 'Projects', id: 'projects' as const },
   { label: 'Experience', id: 'experience' as const },
-  { label: 'Capabilities', id: 'engineering' as const },
   { label: 'Sound', id: 'music' as const },
 ];
 

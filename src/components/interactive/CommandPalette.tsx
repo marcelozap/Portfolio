@@ -13,7 +13,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowRight,
   Briefcase,
-  Cpu,
   Disc3,
   ExternalLink,
   FolderKanban,
@@ -103,13 +102,6 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         icon: Briefcase,
         group: 'Navigate',
         action: () => scrollTo('experience'),
-      },
-      {
-        id: 'goto-engineering',
-        label: 'Capabilities & systems',
-        icon: Cpu,
-        group: 'Navigate',
-        action: () => scrollTo('engineering'),
       },
       {
         id: 'goto-projects',

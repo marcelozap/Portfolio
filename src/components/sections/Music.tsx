@@ -5,11 +5,8 @@ import { Disc3, Guitar, Headphones } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
-/** Representative catalog line for the site score; durations illustrative. */
-const CREDIT_TRACK = {
-  title: 'XIV Ambiant',
-  subtitle: 'Site score / Logic Pro',
-  note: 'Used as optional ambient audio on this portfolio (Sound control, lower left).',
+const TRACK = {
+  title: 'XIV Ambient',
 };
 
 const BARS = Array.from(
@@ -24,12 +21,12 @@ export function Music() {
         eyebrow="Sound"
         title={
           <>
-            Sound.
+            Guitar,
             <br />
-            <span className="text-gradient">Guitar, space, feel.</span>
+            <span className="text-gradient">space, feel.</span>
           </>
         }
-        description="Original audio work. Quiet background for the site, and a real part of the system."
+        description="Small audio sketches. If something fits a project, contact me."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -38,11 +35,9 @@ export function Music() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="mono-tag">
                 <Disc3 className="size-3" />
-                original work
+                audio sketch
               </span>
-              <span className="mono-tag normal-case tracking-wider">
-                composer & producer / M. Zapata
-              </span>
+              <span className="mono-tag normal-case tracking-wider">M. Zapata</span>
             </div>
 
             <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 md:p-5">
@@ -50,15 +45,13 @@ export function Music() {
                 credit
               </p>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                Ambient audio on this site - including the piece titled{' '}
-                <span className="text-ink">{CREDIT_TRACK.title}</span> - was{' '}
-                <span className="text-ink">composed, arranged, and recorded by Marcelo Zapata</span>
-                {CREDIT_TRACK.subtitle ? ` (${CREDIT_TRACK.subtitle}).` : '.'} {CREDIT_TRACK.note}
+                Audio on this site was made by Marcelo Zapata. For use or collaboration, contact
+                me.
               </p>
             </div>
 
             <p className="max-w-xl text-base leading-relaxed text-ink-muted md:text-lg">
-              Guitar, bass, synth texture, and Logic sessions. Restraint over spectacle.
+              Guitar, bass, and light texture. Kept simple.
             </p>
 
             <div className="relative h-28 overflow-hidden rounded-xl border border-white/[0.06] bg-[linear-gradient(180deg,hsl(var(--bg-elevated)/0.72),hsl(var(--bg)/0.88))] p-3">
@@ -103,7 +96,7 @@ export function Music() {
                 ))}
               </div>
               <div className="absolute left-3 top-2 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-                waveform / terrain study
+                waveform
               </div>
             </div>
 
@@ -116,7 +109,7 @@ export function Music() {
                 className="flex items-center gap-4 px-4 py-3 text-sm transition hover:bg-white/[0.03]"
               >
                 <span className="font-mono text-[11px] tabular-nums text-accent-warm">01</span>
-                <span className="flex-1 text-ink">{CREDIT_TRACK.title}</span>
+                <span className="flex-1 text-ink">{TRACK.title}</span>
                 <span className="font-mono text-[10px] text-ink-faint">amb.</span>
                 <span className="font-mono text-[11px] tabular-nums text-ink-muted">-</span>
               </motion.li>
@@ -130,10 +123,9 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-warm/10 text-accent-warm ring-1 ring-accent-warm/30">
                 <Guitar className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Instrumentation</h3>
+              <h3 className="text-base font-medium text-ink">Instruments</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Electric and acoustic guitar, four-string bass, modest pedal work, and synthesizer
-                where a part truly needs it.
+                Guitar, bass, and keys when the part needs it.
               </p>
             </div>
           </GlassCard>
@@ -145,8 +137,7 @@ export function Music() {
               </span>
               <h3 className="text-base font-medium text-ink">Recording</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Private facility, conservative monitoring levels, and edits that preserve
-                performance rather than over-correcting it.
+                Simple home recording and rough ideas.
               </p>
             </div>
           </GlassCard>
@@ -156,10 +147,9 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-cool/10 text-accent-cool ring-1 ring-accent-cool/30">
                 <Disc3 className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Use of work</h3>
+              <h3 className="text-base font-medium text-ink">Contact</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                This portfolio does not imply licensing for third-party use. For permission to use a
-                recording, contact Marcelo directly.
+                If a sound fits something, contact me.
               </p>
             </div>
           </GlassCard>

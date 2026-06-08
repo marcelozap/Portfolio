@@ -11,7 +11,6 @@ import { GATEKPT_URL } from '@/lib/socialLinks';
 const NAV_ITEMS = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'engineering', label: 'Capabilities' },
   { id: 'music', label: 'Sound' },
   { id: 'about', label: 'About' },
 ];
