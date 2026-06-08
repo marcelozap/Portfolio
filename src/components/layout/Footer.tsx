@@ -1,5 +1,6 @@
 'use client';
 
+import { ExternalLink, Github, Instagram, Linkedin, Mail, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { scrollToSection } from '@/lib/utils';
@@ -10,6 +11,17 @@ const LINKS = [
   { label: 'Experience', id: 'experience' as const },
   { label: 'About', id: 'about' as const },
 ];
+
+const SOCIAL_ICONS = {
+  GateKPT: ExternalLink,
+  YouTube: Youtube,
+  Instagram,
+  LinkedIn: Linkedin,
+  GitHub: Github,
+  Facebook: ExternalLink,
+  Snapchat: ExternalLink,
+  Contact: Mail,
+} as const;
 
 export function Footer() {
   const [time, setTime] = useState('--:--:--');
@@ -30,7 +42,7 @@ export function Footer() {
   return (
     <footer className="relative z-10 border-t border-white/[0.06]">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
-        <div>
+        <div className="shrink-0">
           <div className="flex items-center gap-3">
             <span className="flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
               <Image
@@ -43,38 +55,48 @@ export function Footer() {
             </span>
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
-          <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+          <div className="mt-1 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Software / data / tools
           </div>
         </div>
 
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted">
-          {LINKS.map((link) => (
-            <li key={link.label}>
-              <button
-                type="button"
-                onClick={() => scrollToSection(link.id)}
-                className="transition hover:text-accent"
-              >
-                {link.label}
-              </button>
-            </li>
-          ))}
-          {SOCIAL_LINKS.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                className="transition hover:text-accent"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-ink-muted md:flex-nowrap md:justify-center">
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 md:flex-nowrap">
+            {LINKS.map((link) => (
+              <li key={link.label}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection(link.id)}
+                  className="whitespace-nowrap transition hover:text-accent"
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
+          </ul>
 
-        <div className="font-mono text-[11px] tracking-widest text-ink-faint">{time}</div>
+          <ul className="flex items-center gap-1.5">
+            {SOCIAL_LINKS.map((link) => {
+              const Icon = SOCIAL_ICONS[link.label] ?? ExternalLink;
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                    aria-label={link.label}
+                    title={link.label}
+                    className="flex size-9 items-center justify-center rounded-md border border-white/[0.08] bg-white/[0.025] text-ink-muted transition hover:border-accent/35 hover:text-accent"
+                  >
+                    <Icon className="size-4" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="shrink-0 font-mono text-[11px] tracking-widest text-ink-faint">{time}</div>
       </div>
 
       <div className="border-t border-white/[0.04]">

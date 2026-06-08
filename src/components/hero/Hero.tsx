@@ -114,18 +114,22 @@ export function Hero() {
               href="https://www.linkedin.com/in/marcelozap"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="size-11 justify-center !px-0"
             >
               <Linkedin className="size-4" />
-              LinkedIn
             </GlowButton>
             <GlowButton
               variant="ghost"
               href="https://github.com/marcelozap"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              className="size-11 justify-center !px-0"
             >
               <Github className="size-4" />
-              GitHub
             </GlowButton>
           </motion.div>
         </div>
