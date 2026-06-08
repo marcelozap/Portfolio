@@ -31,7 +31,8 @@ export const metadata: Metadata = {
     default: 'Marcelo Zapata - Software Engineer',
     template: '%s - Marcelo Zapata',
   },
-  description: 'Marcelo Zapata builds software tools for work, trading, music, and movement.',
+  description:
+    'Software engineering portfolio for data systems, internal tools, and selected projects.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer',
-    description: 'Software, tools, music, and movement by Marcelo Zapata.',
+    description: 'Software engineering, data systems, and selected projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer. Builder. Tennis, guitar, systems.',
+    description: 'Software engineer. Data systems and tools.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {

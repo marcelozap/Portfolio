@@ -36,7 +36,7 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Builder with range.</span>
+            <span className="text-gradient">Software engineer.</span>
           </>
         }
         description="Software, tennis, guitar, and tools for the way I work."

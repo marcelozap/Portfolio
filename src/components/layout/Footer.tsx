@@ -8,7 +8,7 @@ import { SOCIAL_LINKS } from '@/lib/socialLinks';
 const LINKS = [
   { label: 'Projects', id: 'projects' as const },
   { label: 'Experience', id: 'experience' as const },
-  { label: 'Sound', id: 'music' as const },
+  { label: 'About', id: 'about' as const },
 ];
 
 export function Footer() {
@@ -44,7 +44,7 @@ export function Footer() {
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
           <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-            Build - move - sound
+            Software / data / tools
           </div>
         </div>
 

@@ -12,7 +12,6 @@ import { GATEKPT_URL } from '@/lib/socialLinks';
 const NAV_ITEMS = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'music', label: 'Sound' },
   { id: 'about', label: 'About' },
 ];
 
@@ -78,7 +77,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-muted">
-              build / move
+              software / data
             </span>
           </span>
         </Link>
@@ -116,6 +115,15 @@ export function Navbar() {
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
             >
               Green Machine
+              <ExternalLink className="size-3" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/rally"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm text-ink-muted transition hover:text-ink"
+            >
+              Rally
               <ExternalLink className="size-3" />
             </Link>
           </li>

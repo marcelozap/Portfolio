@@ -10,16 +10,15 @@ interface Signal {
 }
 
 const SIGNALS: Signal[] = [
-  { label: 'Train', value: 'movement', phase: 0 },
-  { label: 'Build', value: 'systems', phase: 1 },
-  { label: 'Create', value: 'music', phase: 2 },
-  { label: 'Focus', value: 'discipline', phase: 0 },
-  { label: 'Reflect', value: 'review', phase: 1 },
+  { label: 'Data', value: 'systems', phase: 0 },
+  { label: 'LLM', value: 'workflows', phase: 1 },
+  { label: 'Internal', value: 'tools', phase: 2 },
+  { label: 'React', value: 'interfaces', phase: 0 },
+  { label: 'Python', value: 'processing', phase: 1 },
 ];
 
 /**
- * Decorative XIV signal bar for the portfolio hero.
- * Keeps the route language without turning the page into a fake dashboard.
+ * Decorative work bar for the portfolio hero.
  */
 export function MarketTicker() {
   const [signals, setSignals] = useState<Signal[]>(SIGNALS);

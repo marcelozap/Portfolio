@@ -30,12 +30,12 @@ export function Projects() {
         eyebrow="Projects"
         title={
           <>
-            Projects that
+            Selected
             <br />
-            <span className="text-gradient">do something.</span>
+            <span className="text-gradient">work.</span>
           </>
         }
-        description="Music tools. Trading review. Tennis ideas. Software that gives the day a shape."
+        description="GateKPT. Green Machine. Rally."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -102,12 +102,12 @@ export const PROJECTS: Project[] = [
     year: 'Fall 2021',
     website: '/green-machine',
     description:
-      'Green Machine is a Python/FastAPI and React research system for studying market movement with historical data, reproducible backtests, movement labels, risk context, and LLM-assisted review. The goal is to turn trading ideas into measured research artifacts: what was tested, what failed, what improved, and what evidence is still missing.',
+      'Green Machine is a private Python/FastAPI and React workspace for market data, backtests, labels, and LLM review notes.',
     coreIdeas: [
-      'Market movement modeling with Python, historical data, labels, and repeatable tests',
-      'Backtests and research memos that separate evidence from intuition',
-      'Terrain-inspired interface for reading movement, regime, and context without hype',
-      'LLM-assisted review for summarizing assumptions, holes, and next research questions',
+      'Historical market data, labels, and repeatable tests',
+      'Backtests and notes that separate evidence from intuition',
+      'Terrain-inspired interface for reading context without hype',
+      'LLM-assisted review for assumptions, holes, and next questions',
       'Research boundary: no signal service, financial advice, or broker order routing',
     ],
     features: [
@@ -147,6 +147,7 @@ export const PROJECTS: Project[] = [
     status: 'prototype',
     accent: 'amber',
     year: '2025',
+    website: '/rally',
     description:
       'Rally is a tennis app built around daily play, player memory, and real-world routine. It brings training logs, match history, journaling, court discovery, style, and gear into one tennis-native space.',
     coreIdeas: [

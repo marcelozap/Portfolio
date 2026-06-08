@@ -91,10 +91,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="mono-tag tracking-[0.22em]">
-                    {DOMAIN_LABEL[project.domain]} · {STATUS_LABEL[project.status]}
+                    {DOMAIN_LABEL[project.domain]} / {STATUS_LABEL[project.status]}
                   </span>
                   <span className="font-mono text-[10px] text-ink-faint">
-                    /portfolio/projects/{project.id} · {project.year}
+                    /portfolio/projects/{project.id} / {project.year}
                   </span>
                 </div>
 
@@ -119,7 +119,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     rel="noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted transition hover:border-accent/40 hover:text-ink"
                   >
-                    View live site
+                    Open page
                     <ExternalLink className="size-3.5" />
                   </a>
                 )}

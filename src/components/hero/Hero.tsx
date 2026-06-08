@@ -5,16 +5,37 @@ import {
   ArrowDown,
   ArrowRight,
   Briefcase,
-  CheckCircle2,
+  ExternalLink,
   FolderKanban,
   Github,
   Linkedin,
-  Waves,
 } from 'lucide-react';
 import { MarketTicker } from './MarketTicker';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { scrollToSection } from '@/lib/utils';
 import { GATEKPT_URL } from '@/lib/socialLinks';
+
+const FEATURED_WORK = [
+  {
+    name: 'GateKPT',
+    href: GATEKPT_URL,
+    meta: 'C# / .NET',
+    note: 'music workspace',
+    external: true,
+  },
+  {
+    name: 'Green Machine',
+    href: '/green-machine',
+    meta: 'Python / FastAPI',
+    note: 'market review',
+  },
+  {
+    name: 'Rally',
+    href: '/rally',
+    meta: 'SwiftUI',
+    note: 'coming soon',
+  },
+];
 
 export function Hero() {
   return (
@@ -40,7 +61,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">build / move / sound</span>
+            <span className="text-ink-faint">software / data / tools</span>
           </motion.div>
 
           <motion.div
@@ -51,7 +72,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer. Builder. Tennis, guitar, systems.
+              Software engineer.
             </span>
           </motion.div>
 
@@ -62,10 +83,10 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Tools for work, trading, music, and movement.
+              Data systems, LLM workflows, internal tools, and practical interfaces.
             </p>
             <p className="max-w-2xl font-mono text-[12px] uppercase leading-6 tracking-[0.14em] text-accent/80">
-              Reliable tools. Clear systems. Work that holds up.
+              C# / Azure / Python / React / Snowflake / Databricks
             </p>
           </motion.div>
 
@@ -81,7 +102,7 @@ export function Hero() {
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
             </GlowButton>
             <GlowButton variant="outline" href={GATEKPT_URL} target="_blank" rel="noreferrer">
-              <Waves className="size-4" />
+              <ExternalLink className="size-4" />
               GateKPT
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
@@ -107,23 +128,6 @@ export function Hero() {
               GitHub
             </GlowButton>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.52 }}
-            className="grid w-full max-w-2xl grid-cols-1 gap-2 pt-1 text-sm text-ink-muted sm:grid-cols-3"
-          >
-            {['Build', 'Move', 'Sound'].map((item) => (
-              <span
-                key={item}
-                className="inline-flex items-center gap-2 border-l border-accent/40 bg-white/[0.015] px-3 py-2"
-              >
-                <CheckCircle2 className="size-4 shrink-0 text-accent/80" />
-                {item}
-              </span>
-            ))}
-          </motion.div>
         </div>
 
         <motion.aside
@@ -131,33 +135,38 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.18 }}
           className="hidden lg:block"
-          aria-label="Engineering focus areas"
+          aria-label="Selected work"
         >
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              <span>Rhythm</span>
-              <span className="text-signal-green">Build</span>
+              <span>Selected work</span>
+              <span className="text-signal-green">3</span>
             </div>
-            <div className="space-y-4">
-              {[
-                ['Build', 'Tools.'],
-                ['Move', 'Body.'],
-                ['Sound', 'Music.'],
-                ['Review', 'Data.'],
-              ].map(([label, body]) => (
-                <div key={label} className="grid grid-cols-[7rem_1fr] gap-4">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent/75">
-                    {label}
-                  </div>
-                  <p className="text-sm leading-6 text-ink-muted">{body}</p>
-                </div>
+            <div className="space-y-2">
+              {FEATURED_WORK.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noreferrer' : undefined}
+                  className="group grid grid-cols-[1fr_auto] gap-4 border border-white/[0.06] bg-white/[0.02] px-4 py-3 transition hover:border-accent/35 hover:bg-white/[0.04]"
+                >
+                  <span>
+                    <span className="block text-sm font-medium text-ink">{item.name}</span>
+                    <span className="mt-1 block text-xs text-ink-muted">{item.note}</span>
+                  </span>
+                  <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                    {item.meta}
+                    <ExternalLink className="size-3 opacity-60 transition group-hover:opacity-100" />
+                  </span>
+                </a>
               ))}
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['Build', 'Tools'],
-                ['Move', 'Body'],
-                ['Sound', 'Music'],
+                ['Data', 'systems'],
+                ['LLM', 'workflow'],
+                ['UI', 'tools'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>
