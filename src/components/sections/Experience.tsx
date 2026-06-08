@@ -38,28 +38,30 @@ const PUBLIX: Milestone = {
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across QA automation, analytics, internal tools, and modernization. My focus is simple: clearer specs, safer releases, and tools people can trust.',
+    'Software engineer working across data workflows, analytics, internal tools, and modernization. My focus is simple: make data easier to move, understand, and trust.',
   focus: [
-    'QA automation',
-    'Data and reporting workflows',
-    'Internal tools',
-    'Documentation and release confidence',
+    'LLM and data workflows',
+    'Data lake and processing',
+    'Semantic models and reporting',
+    'Internal tools and automation',
   ],
   stack: [
     'C#',
     'Azure',
-    'Playwright',
+    'Python',
+    'LLM workflows',
     'Snowflake',
     'Databricks',
+    'Data lakes',
+    'Semantic layer',
     'Power BI',
-    'Workflow tools',
-    'REST APIs',
-    'CI/CD',
+    'ETL / ELT',
+    'APIs',
   ],
   metrics: [
-    { label: 'Focus', value: 'Reliability' },
-    { label: 'Mode', value: 'Internal tools' },
-    { label: 'Delivery', value: 'QA / data' },
+    { label: 'Focus', value: 'Data systems' },
+    { label: 'Mode', value: 'LLM / data' },
+    { label: 'Delivery', value: 'Pipelines' },
   ],
 };
 
@@ -79,7 +81,7 @@ export function Experience() {
             <span className="text-gradient">Clear delivery.</span>
           </>
         }
-        description="QA automation, analytics, workflow tools, and modernization."
+        description="LLM workflows, data engineering, semantic layers, reporting, and modernization."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

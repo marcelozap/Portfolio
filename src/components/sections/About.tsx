@@ -19,9 +19,10 @@ const FOCUS = [
 ];
 
 const TAGS = [
-  'C# / Azure / QA automation',
+  'C# / Azure / data systems',
   'TypeScript / React / Next.js',
-  'Python / data & automation workflows',
+  'Python / data processing & automation',
+  'LLM workflows / semantic layers',
   'SwiftUI / SpriteKit / iOS apps',
   'Audio, interaction, and creative tooling',
 ];
@@ -45,8 +46,8 @@ export function About() {
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I build tools for real workflows: internal systems, automation, reports, validation,
-              and anything that helps a team move cleaner.
+              I build tools for real workflows: internal systems, data processing, reporting,
+              semantic layers, automation, and anything that helps a team move cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               Outside work, the same pattern shows up in GateKPT for music, Green Machine for
