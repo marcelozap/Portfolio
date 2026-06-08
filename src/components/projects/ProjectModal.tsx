@@ -22,7 +22,7 @@ const ACCENT_TEXT: Record<Project['accent'], string> = {
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
   audio: 'creative tools',
   markets: 'research systems',
-  game: 'consumer product',
+  game: 'tennis app',
   systems: 'systems',
   infra: 'infrastructure',
 };

@@ -135,7 +135,7 @@ export function Hero() {
         >
           <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              <span>Signal</span>
+              <span>Rhythm</span>
               <span className="text-signal-green">Build</span>
             </div>
             <div className="space-y-4">

@@ -39,7 +39,7 @@ interface ProjectCardProps {
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
   audio: 'creative tools',
   markets: 'research systems',
-  game: 'consumer product',
+  game: 'tennis app',
   systems: 'systems',
   infra: 'infrastructure',
 };
@@ -201,7 +201,7 @@ function RallyCardArt() {
         ))}
       </div>
       <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        old-school tennis / product layer
+        old-school tennis / daily play
       </div>
     </div>
   );

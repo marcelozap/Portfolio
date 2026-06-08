@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
-    'product engineer',
     'platform engineer',
     'automation',
     'analytics',

@@ -22,7 +22,7 @@ const TAGS = [
   'C# / Azure / QA automation',
   'TypeScript / React / Next.js',
   'Python / data & automation workflows',
-  'SwiftUI / SpriteKit / iOS product work',
+  'SwiftUI / SpriteKit / iOS apps',
   'Audio, interaction, and creative tooling',
 ];
 
@@ -38,7 +38,7 @@ export function About() {
             <span className="text-gradient">Builder with range.</span>
           </>
         }
-        description="Software, tennis, guitar, trading tools, and product ideas. Simple signal. No over-explaining."
+        description="Software, tennis, guitar, and tools for the way I work."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -49,8 +49,8 @@ export function About() {
               and anything that helps a team move cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside work, the same pattern shows up in my own products: GateKPT for music, Green
-              Machine for trading review, and Rally for tennis.
+              Outside work, the same pattern shows up in GateKPT for music, Green Machine for
+              trading review, and Rally for tennis.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

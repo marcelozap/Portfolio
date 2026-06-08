@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     year: '2025',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT MusicOS is a C#/.NET desktop creative operating system for artists who build music through live performance. It organizes section-based song planning, RC-505 cue management, lyric/caption memory, stem capture, hardware routing, and visual prep into one artist-controlled workflow.',
+      'GateKPT MusicOS is a C#/.NET desktop creative system for artists who build music through live performance. It keeps song sections, RC-505 cues, lyrics, captions, stems, routing notes, and visuals in one local workspace.',
     coreIdeas: [
       'Artist-first workflow for capturing ideas quickly without flattening the creative process',
       'Live-loop performance planning built around sections, layer order, and cue cards',
@@ -148,9 +148,9 @@ export const PROJECTS: Project[] = [
     accent: 'amber',
     year: '2025',
     description:
-      'Rally is a premium tennis lifestyle product built around a fast daily rally loop and a broader player profile. It connects training logs, match history, journaling, court discovery, player identity, and gear/fashion into one tennis-native product surface.',
+      'Rally is a tennis app built around daily play, player memory, and real-world routine. It brings training logs, match history, journaling, court discovery, style, and gear into one tennis-native space.',
     coreIdeas: [
-      'Daily rally loop as the lightweight reason to open the product',
+      'Daily rally loop as the lightweight reason to open the app',
       'Player memory across training logs, matches, journaling, and improvement notes',
       'Court discovery and tennis routine tools beyond gameplay alone',
       'Premium identity layer with avatar, fashion, gear, and real-world tennis taste',
@@ -160,17 +160,17 @@ export const PROJECTS: Project[] = [
       {
         title: 'Daily rally engine',
         description:
-          'A fast rally mechanic creates a short repeatable daily loop while the product stays positioned as a premium tennis companion, not a throwaway casual game.',
+          'A fast rally mechanic creates a short repeatable daily loop while the app stays closer to a tennis companion than a throwaway casual game.',
       },
       {
         title: 'Player memory',
         description:
-          'Training sessions, matches, journal entries, and improvement notes live together so the product supports a real tennis routine.',
+          'Training sessions, matches, journal entries, and improvement notes live together so Rally supports a real tennis routine.',
       },
       {
         title: 'Lifestyle surface',
         description:
-          'Court discovery, player identity, fashion, and gear make Rally feel like a tennis-native lifestyle product instead of only a tracker.',
+          'Court discovery, player identity, fashion, and gear make Rally feel tennis-native instead of only a tracker.',
       },
       {
         title: 'Local-first sync model',
