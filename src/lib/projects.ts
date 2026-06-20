@@ -47,50 +47,50 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
-    name: 'GATEKPT MusicOS',
-    tagline: 'Audio workflow system. Cues, captures, visuals, release prep.',
+    name: 'musxiv Artist OS',
+    tagline: 'AI studio system. Songs, clips, content packets, release plans.',
     domain: 'audio',
     status: 'in-development',
     accent: 'cyan',
     year: '2025',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT MusicOS is a C#/.NET desktop workflow system for audio and performance work. It keeps sections, RC-505 cues, lyrics, captions, stems, routing notes, and visuals in one local workspace.',
+      'musxiv Artist OS is an AI-supported studio system for independent artists. It organizes song ideas, recording notes, beat and drop options, lyrics, clips, captions, content packets, brand angles, and release planning in one workflow.',
     coreIdeas: [
-      'Fast capture without burying the work in extra screens',
-      'Live-loop performance planning built around sections, layer order, and cue cards',
-      'Local project memory for lyrics, takes, routing notes, stems, visuals, and export tasks',
-      'Hardware-aware tooling for RC-505 and studio routing',
-      'AI command layer direction: organize, summarize, and prep work without taking over the work',
+      'Song workspaces that keep beats, hooks, lyrics, drops, clips, and next actions together',
+      'Agent-assisted options for songwriting, recording, content, branding, and release prep',
+      'Content packets that turn saved song ideas into post angles, captions, clip hooks, and edit notes',
+      'Recording and capture bridge direction for marking moments, snippets, takes, and release assets',
+      'Artist-in-control workflow: the system prepares options without posting, sending, or deciding for the artist',
     ],
     features: [
       {
-        title: 'Live-loop planning',
+        title: 'Artist workspaces',
         description:
-          'Guides RC-505-based song building through section cards, layer order, cue notes, and performance memory.',
+          'Groups beat ideas, hooks, lyrics, drops, recording notes, clip ideas, captions, and next actions by song or project.',
       },
       {
-        title: 'Project memory',
+        title: 'Agent archive',
         description:
-          'Preserves lyrics, captures, takes, captions, routing notes, stems, visual presets, and export tasks in a unified local project file.',
+          'Saves useful outputs from music, content, brand, release, and image-prep agents so the artist can return later and choose what to use.',
       },
       {
-        title: 'Creative command layer',
+        title: 'Content packet builder',
         description:
-          'Designed for simple commands like organizing takes, finding hooks, preparing captions, and shaping versions while keeping the artist in control.',
+          'Turns a song workspace into post angles, caption drafts, clip hooks, an artist-story blurb, and one next edit without posting anything automatically.',
       },
       {
-        title: 'Release prep',
+        title: 'Recording bridge direction',
         description:
-          'Supports lyric captions, lip-sync review, export planning, aspect ratios, loudness targets, and platform-ready video workflows.',
+          'Designed to connect content ideas to the recording surface: what to record, what to clip, what to snip, and where the asset belongs.',
       },
     ],
     metrics: [
-      { label: 'Runtime', value: '.NET' },
-      { label: 'Primary rig', value: 'RC-505' },
+      { label: 'Focus', value: 'Artists' },
+      { label: 'Workflow', value: 'Songs -> clips' },
       { label: 'Memory model', value: 'Local' },
     ],
-    stack: ['C#', '.NET', 'Avalonia', 'NAudio', 'MIDI', 'FFmpeg'],
+    stack: ['C#', '.NET', 'Python', 'TypeScript', 'AI workflows', 'FFmpeg'],
   },
   {
     id: 'green-machine',

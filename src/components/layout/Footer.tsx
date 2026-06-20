@@ -13,7 +13,7 @@ const LINKS = [
 ];
 
 const SOCIAL_ICONS = {
-  GateKPT: ExternalLink,
+  musxiv: ExternalLink,
   YouTube: Youtube,
   Instagram,
   LinkedIn: Linkedin,

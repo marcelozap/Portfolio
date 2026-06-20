@@ -17,10 +17,10 @@ import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const FEATURED_WORK = [
   {
-    name: 'GateKPT',
+    name: 'musxiv',
     href: GATEKPT_URL,
-    meta: 'C# / .NET',
-    note: 'audio workflow',
+    meta: 'AI / music',
+    note: 'artist OS',
     external: true,
   },
   {
@@ -103,7 +103,7 @@ export function Hero() {
             </GlowButton>
             <GlowButton variant="outline" href={GATEKPT_URL} target="_blank" rel="noreferrer">
               <ExternalLink className="size-4" />
-              GateKPT
+              musxiv
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />

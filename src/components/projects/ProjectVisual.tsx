@@ -75,7 +75,7 @@ function AudioVisual({ id }: { id: string }) {
         ))}
       </div>
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        gatekpt / session_visual
+        musxiv / artist_os
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent">
         rec / 1.0 / 120 BPM

@@ -35,7 +35,7 @@ export function Projects() {
             <span className="text-gradient">work.</span>
           </>
         }
-        description="GateKPT. Green Machine. Rally."
+        description="musxiv Artist OS. Green Machine. Rally."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

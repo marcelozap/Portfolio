@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     'automation',
     'analytics',
     'software systems',
-    'GATEKPT',
+    'musxiv',
     'Green Machine',
     'Rally',
   ],

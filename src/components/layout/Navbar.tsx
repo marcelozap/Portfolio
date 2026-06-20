@@ -104,7 +104,7 @@ export function Navbar() {
               rel="noreferrer"
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
-              GateKPT
+              musxiv
               <ExternalLink className="size-3" />
             </a>
           </li>

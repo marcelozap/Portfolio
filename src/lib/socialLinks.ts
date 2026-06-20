@@ -2,7 +2,7 @@ export const PERSONAL_SITE_URL = 'https://marcelozapata.dev';
 export const GATEKPT_URL = 'https://gatekpt.ai';
 
 export const SOCIAL_LINKS = [
-  { label: 'GateKPT', href: GATEKPT_URL },
+  { label: 'musxiv', href: GATEKPT_URL },
   { label: 'YouTube', href: 'https://www.youtube.com/@xivzapa14' },
   { label: 'Instagram', href: 'https://www.instagram.com/marcelozapa14/' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marcelozap' },

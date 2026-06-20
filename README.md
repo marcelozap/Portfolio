@@ -1,4 +1,4 @@
-# Marcelo Zapata Portfolio
+﻿# Marcelo Zapata Portfolio
 
 Personal portfolio for Marcelo Zapata, a software engineer working across reliable tools, automation, analytics, product systems, and independent builds.
 
@@ -55,7 +55,7 @@ npm run build
 The site highlights:
 
 - Rally: premium tennis lifestyle product, started in 2025
-- GateKPT MusicOS: creative operating system for live-loop artists
+- musxiv Artist OS: AI-supported studio system for independent artists
 - Green Machine Quant OS: quantitative research platform, started in Fall 2021
 - Professional experience framed around QA automation, analytics, internal tools, documentation, and reliable delivery
 
