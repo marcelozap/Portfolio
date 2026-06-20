@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     'analytics',
     'software systems',
     'musxiv',
-    'Green Machine',
+'XIV$ Financial Research OS',
     'Rally',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],

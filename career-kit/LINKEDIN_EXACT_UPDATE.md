@@ -8,7 +8,7 @@ Software Engineer | Systems, Automation, Analytics, and Product Engineering
 
 I'm a software engineer with 4 years of experience across systems, QA automation, analytics, workflow tooling, and independent product builds. At Publix, I contribute to software and internal tools that support real operational work, with an emphasis on reliability, documentation, release confidence, and practical delivery.
 
-Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and Green Machine Quant OS.
+Before Publix, I taught STEM courses, and that still shapes how I communicate, document, and mentor newer teammates. Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and XIV$ Financial Research OS.
 
 I'm looking for a role with more scope, stronger ownership, and room to keep growing across systems, product, automation, and platform work.
 
@@ -37,6 +37,6 @@ C#/.NET audio workflow system combining RC-505 planning, project memory, lyric/c
 
 Project link: https://gatekpt.ai
 
-### Green Machine Quant OS
+### XIV$ Financial Research OS
 
-Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.
+Python/FastAPI private financial research system for market context, risk analysis, datasets, notes, and LLM-assisted review.

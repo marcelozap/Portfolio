@@ -94,15 +94,15 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'green-machine',
-    name: 'Green Machine',
-    tagline: 'Trading research cockpit. Backtests, risk, review.',
+    name: 'XIV$ Financial Research OS',
+    tagline: 'Private research system. Notes, risk, review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: 'Fall 2021',
     website: '/green-machine',
     description:
-      'Green Machine is a private Python/FastAPI and React workspace for market data, backtests, labels, and LLM review notes.',
+      'XIV$ Financial Research OS is a private Python/FastAPI and React workspace for market context, research notes, risk analysis, and LLM-assisted review.',
     coreIdeas: [
       'Historical market data, labels, and repeatable tests',
       'Backtests and notes that separate evidence from intuition',

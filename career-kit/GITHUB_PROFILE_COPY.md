@@ -18,7 +18,7 @@ Software engineer focused on workflow tooling, QA automation, data systems, and 
 
 Hi, I'm Marcelo Zapata. I'm a software engineer working across systems, automation, analytics, workflow tooling, and independent product builds. My background spans QA automation, data/reporting workflows, internal tools, documentation, and user-facing product work.
 
-Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and Green Machine Quant OS. I'm especially interested in roles where I can take on more ownership across systems, product, platform, automation, and internal tools.
+Outside enterprise delivery, I build systems around product, data, practice, and review: Rally, GateKPT MusicOS, and XIV$ Financial Research OS. I'm especially interested in roles where I can take on more ownership across systems, product, platform, automation, and internal tools.
 
 ## Pinned Repo Descriptions
 
@@ -36,16 +36,16 @@ C#/.NET audio workflow system combining RC-505 planning, project memory, lyric/c
 
 Link: `https://gatekpt.ai`
 
-### Green Machine Quant OS
+### XIV$ Financial Research OS
 
-Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with backtesting, risk analytics, paper trading, and AI-assisted research review.
+Python/FastAPI private financial research system for market context, risk analysis, datasets, notes, and LLM-assisted review.
 
 ## Short Repo One-Liners
 
 - Portfolio: Recruiter-facing portfolio for software engineering, product, and systems work.
 - Rally: Practice system built with SwiftUI, SpriteKit, SwiftData, and activity-data workflows.
 - GateKPT MusicOS: Audio workflow system for performance planning, capture, and project memory. `https://gatekpt.ai`
-- Green Machine Quant OS: Quantitative research platform with broker API integration, backtesting, paper execution, and risk gates.
+- XIV$ Financial Research OS: Private financial research system with market context, risk review, datasets, notes, and LLM-assisted workflows.
 
 ## GitHub About Section Links
 
@@ -57,4 +57,4 @@ Python/FastAPI quantitative research and paper-execution platform connecting OAu
 1. Portfolio
 2. Rally
 3. GateKPT MusicOS
-4. Green Machine Quant OS
+4. XIV$ Financial Research OS

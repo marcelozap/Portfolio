@@ -10,7 +10,7 @@ from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
 
-OUT_DIR = Path(r"C:\Users\Green Machine\Desktop\Portfolio\career-kit")
+OUT_DIR = Path(__file__).resolve().parent
 DOCX_PATH = OUT_DIR / "Marcelo-Zapata-Foundation-Health-Software-Engineer-Resume.docx"
 TXT_PATH = OUT_DIR / "Marcelo-Zapata-Foundation-Health-Software-Engineer-Resume.txt"
 PDF_PATH = OUT_DIR / "Marcelo-Zapata-Foundation-Health-Software-Engineer-Resume.pdf"
@@ -73,9 +73,9 @@ content = {
             "desc": "C#/.NET Avalonia creative operating system for live-loop artists, combining performance planning, local project memory, lyric/caption workflows, hardware routing, and audio-reactive visual artwork.",
         },
         {
-            "name": "Green Machine Quant OS",
+            "name": "XIV$ Financial Research OS",
             "dates": "2021 - Present",
-            "desc": "Python/FastAPI research and paper-execution platform connecting OAuth-secured broker data with local backtesting, risk analytics, paper trading, and AI-assisted research review.",
+            "desc": "Python/FastAPI private financial research system for market context, risk analysis, datasets, notes, and LLM-assisted review.",
         },
         {
             "name": "Rally",

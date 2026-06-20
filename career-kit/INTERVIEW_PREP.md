@@ -8,7 +8,7 @@ You are a software engineer with 4 years of experience across systems, automatio
 
 ## 60-Second Intro
 
-Hi, I'm Marcelo Zapata. I'm a software engineer with 4 years of experience working across systems, QA automation, analytics, workflow tooling, and practical software delivery. A lot of my work has involved improving reliability, modernizing older workflows, building repeatable validation, and supporting software that people depend on day to day. I've also helped newer teammates with testing, documentation, CI/CD habits, and AI-assisted delivery patterns. Outside of work, I build products like Rally, GateKPT MusicOS, and Green Machine Quant OS, which has helped me keep growing on the product and engineering side too. Right now I'm looking for a remote or hybrid role with more ownership and room to grow across systems, automation, and product engineering.
+Hi, I'm Marcelo Zapata. I'm a software engineer with 4 years of experience working across systems, QA automation, analytics, workflow tooling, and practical software delivery. A lot of my work has involved improving reliability, modernizing older workflows, building repeatable validation, and supporting software that people depend on day to day. I've also helped newer teammates with testing, documentation, CI/CD habits, and AI-assisted delivery patterns. Outside of work, I build products like Rally, GateKPT MusicOS, and XIV$ Financial Research OS, which has helped me keep growing on the product and engineering side too. Right now I'm looking for a remote or hybrid role with more ownership and room to grow across systems, automation, and product engineering.
 
 ## Shorter Intro
 
@@ -74,7 +74,7 @@ Tell this when asked:
 
 Answer shape:
 
-Outside of work, I build projects like Rally, GateKPT MusicOS, and Green Machine Quant OS. They are different systems, but the same pattern runs through them: data, workflow, practice, review, interface design, architecture, and end-to-end ownership.
+Outside of work, I build projects like Rally, GateKPT MusicOS, and XIV$ Financial Research OS. They are different systems, but the same pattern runs through them: data, workflow, practice, review, interface design, architecture, and end-to-end ownership.
 
 ## If They Ask About AI Helping With Coding
 
@@ -95,5 +95,5 @@ I've learned a lot there and I've had meaningful exposure to systems, automation
 - Explain one data/reporting workflow without over-sharing employer details
 - Explain Rally as practice-data product thinking
 - Explain GateKPT MusicOS as audio workflow tooling
-- Explain Green Machine Quant OS as systems architecture and risk design
+- Explain XIV$ Financial Research OS as systems architecture and risk review
 - Practice the "why leave Publix" answer

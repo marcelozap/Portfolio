@@ -138,10 +138,10 @@ export default function GreenMachineCaseStudyPage() {
           <div>
             <p className="text-sm font-semibold text-signal-green">Private market research</p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
-              Green Machine
+              XIV$ Financial Research OS
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
-              Market notes, backtests, and review.
+              Market context, research notes, risk analysis, and review.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
               A private workspace for market data, historical context, and trade review. It helps

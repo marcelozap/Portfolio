@@ -50,8 +50,9 @@ export function About() {
               semantic layers, automation, and anything that helps a team work cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside work, the same pattern shows up in musxiv, Green Machine, and Rally: practical
-              systems for creative workflow, review, practice, and better decisions.
+Outside work, the same pattern shows up in musxiv, XIV$ Financial Research OS, and
+              Rally: practical systems for creative workflow, review, practice, and better
+              decisions.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

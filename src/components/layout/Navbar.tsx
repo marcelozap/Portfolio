@@ -113,7 +113,7 @@ export function Navbar() {
               href="/green-machine"
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
-              Green Machine
+              XIV$
               <ExternalLink className="size-3" />
             </Link>
           </li>

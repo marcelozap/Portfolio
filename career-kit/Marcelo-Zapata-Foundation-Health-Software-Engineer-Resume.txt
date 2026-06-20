@@ -32,8 +32,8 @@ SELECTED BUILDS
 GateKPT MusicOS | 2025 - Present
 - C#/.NET Avalonia creative operating system for live-loop artists, combining performance planning, local project memory, lyric/caption workflows, hardware routing, and audio-reactive visual artwork.
 
-Green Machine Quant OS | 2021 - Present
-- Python/FastAPI research and paper-execution platform connecting OAuth-secured broker data with local backtesting, risk analytics, paper trading, and AI-assisted research review.
+XIV$ Financial Research OS | 2021 - Present
+- Python/FastAPI private financial research system for market context, risk analysis, datasets, notes, and LLM-assisted review.
 
 Rally | 2025 - Present
 - Local-first iOS product using SwiftUI, SpriteKit, SwiftData, and AVAudioEngine for tennis training, journaling, court discovery, and daily engagement loops.

@@ -36,7 +36,7 @@ Local-first C#/.NET Avalonia desktop system for audio capture, auto-versioned WA
 - Built a hardware-aware audio workstation prototype for Scarlett/RC-505 workflows, recording timestamped takes and preserving originals while generating safe edited versions through natural-language commands.
 - Implemented command concepts for vocal polish, drum punch, piano brightness, acoustic warmth, drone width, reverb, echo, compression, normalization, cleanup, tone shaping, gain changes, and warmer/darker/brighter processing.
 
-Green Machine OS - AI-Assisted Quant Research & Risk System | Fall 2021 - Present
+XIV$ Financial Research OS - Private Research & Risk Review System | Fall 2021 - Present
 Built a local-first Python/FastAPI and React system for execution-focused trading research, combining local data storage, risk controls, execution analytics, strategy review, personal projection inputs, and a private LLM coach.
 
 - Developed tested FastAPI endpoints and SQLite-backed local storage for portfolio summaries, personal lifeline projections, regime analysis, risk checks, execution review, research workflows, and coach memory.

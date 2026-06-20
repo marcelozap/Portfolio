@@ -32,7 +32,7 @@ Lead with:
 - modernization and supportable delivery habits
 - data/reporting workflows
 - internal tools and API integrations
-- Rally / GateKPT MusicOS / Green Machine Quant OS as proof of product range
+- Rally / GateKPT MusicOS / XIV$ Financial Research OS as proof of product range
 
 ### If The Role Is QA / Automation
 

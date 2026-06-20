@@ -45,9 +45,9 @@ Local-first C#/.NET Avalonia desktop system for audio capture, auto-versioned WA
 - Built a hardware-aware audio workstation prototype for Scarlett/RC-505 workflows, recording timestamped takes and preserving originals while generating safe edited versions through natural-language commands.
 - Implemented command concepts for vocal polish, drum punch, piano brightness, acoustic warmth, drone width, reverb, echo, compression, normalization, cleanup, tone shaping, gain changes, and warmer/darker/brighter processing.
 
-### Green Machine Quant OS | Fall 2021 - Present
+### XIV$ Financial Research OS | Fall 2021 - Present
 
-Python/FastAPI quantitative research and paper-execution platform connecting OAuth-secured Schwab data with local backtesting, risk analytics, paper trading, and AI-assisted research review.
+Python/FastAPI private financial research system for market context, risk analysis, datasets, notes, and LLM-assisted review.
 
 - Uses shared execution and risk abstractions for reproducible backtesting, paper execution, and safer research review.
 

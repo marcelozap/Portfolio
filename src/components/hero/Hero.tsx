@@ -24,7 +24,7 @@ const FEATURED_WORK = [
     external: true,
   },
   {
-    name: 'Green Machine',
+    name: 'XIV$',
     href: '/green-machine',
     meta: 'Python / FastAPI',
     note: 'market review',

@@ -1,4 +1,4 @@
-﻿# Marcelo Zapata Portfolio
+# Marcelo Zapata Portfolio
 
 Personal portfolio for Marcelo Zapata, a software engineer working across reliable tools, automation, analytics, product systems, and independent builds.
 
@@ -56,7 +56,7 @@ The site highlights:
 
 - Rally: premium tennis lifestyle product, started in 2025
 - musxiv Artist OS: AI-supported studio system for independent artists
-- Green Machine Quant OS: quantitative research platform, started in Fall 2021
+- XIV$ Financial Research OS: private financial research and review system, started in Fall 2021
 - Professional experience framed around QA automation, analytics, internal tools, documentation, and reliable delivery
 
 Avoid adding private employer details, internal counts, regulated-work specifics, or unsupported claims to public copy.
@@ -72,11 +72,9 @@ The [`career-kit/`](./career-kit) folder contains the current safe public versio
 - Recruiter messages
 - Interview prep
 
-The Desktop reference copy is stored at:
+The Desktop reference copy is stored locally outside the public repo:
 
-```text
-C:\Users\Green Machine\Desktop\Marcelo Portfolio Career Kit - Clean Copy
-```
+`Marcelo Portfolio Career Kit - Clean Copy`
 
 ## Deployment
 
