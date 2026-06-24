@@ -220,7 +220,61 @@ function RallyCardArt() {
   );
 }
 
+function LocalWorkflowCardArt() {
+  const lanes = [
+    ['source', 'roles'],
+    ['score', 'fit'],
+    ['gate', 'review'],
+    ['packet', 'ready'],
+  ];
+
+  return (
+    <div className="terrain-surface h-32 bg-[linear-gradient(135deg,hsl(238_20%_10%),hsl(156_20%_9%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(58%_55%_at_78%_22%,hsl(296_70%_66%/0.16),transparent_62%),radial-gradient(58%_52%_at_18%_72%,hsl(153_80%_58%/0.12),transparent_58%)]" />
+      <div className="absolute inset-4 grid grid-cols-4 gap-2">
+        {lanes.map(([name, state], i) => (
+          <div
+            key={name}
+            className="relative overflow-hidden rounded-[5px] border border-white/[0.07] bg-white/[0.035] p-2"
+          >
+            <span className="block font-mono text-[7px] uppercase tracking-[0.14em] text-ink-faint">
+              {name}
+            </span>
+            <span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.12em] text-accent-cool">
+              {state}
+            </span>
+            <span
+              className="absolute inset-x-2 bottom-2 h-1 rounded-full bg-accent/35"
+              style={{ width: `${35 + i * 13}%` }}
+            />
+          </div>
+        ))}
+      </div>
+      <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <path
+          d="M9 43 C22 35 29 38 40 30 C51 22 61 28 72 20 C82 13 91 17 98 10"
+          fill="none"
+          stroke="hsl(296 70% 66% / 0.64)"
+          strokeDasharray="1.4 1.6"
+          strokeWidth="0.38"
+        />
+        <path
+          d="M8 48 C24 47 35 43 48 45 C61 47 72 38 91 37"
+          fill="none"
+          stroke="hsl(153 80% 58% / 0.34)"
+          strokeDasharray="1 2"
+          strokeWidth="0.28"
+        />
+      </svg>
+      <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
+        local state / approval gates
+      </div>
+    </div>
+  );
+}
+
 function ProjectEnvironment({ project }: { project: Project }) {
+  if (project.id === 'local-workflow-os') return <LocalWorkflowCardArt />;
   if (project.id === 'gatekpt') return <GateKptCardArt />;
   if (project.id === 'green-machine') return <GreenMachineTerrainCardArt />;
   if (project.id === 'rally') return <RallyCardArt />;

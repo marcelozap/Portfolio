@@ -5,6 +5,7 @@ import {
   ArrowDown,
   ArrowRight,
   Briefcase,
+  Download,
   ExternalLink,
   FolderKanban,
   Github,
@@ -17,11 +18,11 @@ import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const FEATURED_WORK = [
   {
-    name: 'musxiv',
-    href: GATEKPT_URL,
-    meta: 'AI / music',
-    note: 'artist OS',
-    external: true,
+    name: 'Local Workflow OS',
+    href: '#projects',
+    meta: 'C# / PowerShell',
+    note: 'approval-gated automation',
+    external: false,
   },
   {
     name: 'Green Machine',
@@ -61,7 +62,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / data / tools</span>
+            <span className="text-ink-faint">software / automation / data</span>
           </motion.div>
 
           <motion.div
@@ -72,7 +73,8 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer.
+              Software engineer building reliable workflow systems, data tools, and internal
+              automation.
             </span>
           </motion.div>
 
@@ -83,10 +85,12 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Data systems, LLM workflows, internal tools, and practical interfaces.
+              Production enterprise software experience at Publix, plus public proof building
+              local-first workflow tools, QA automation, structured data, and human-reviewed AI
+              systems.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              C# / Azure / Python / React / Snowflake / Databricks
+              Miami / South Florida / Remote | C# / Azure / Playwright / Databricks / Power BI
             </p>
           </motion.div>
 
@@ -104,6 +108,15 @@ export function Hero() {
             <GlowButton variant="outline" href={GATEKPT_URL} target="_blank" rel="noreferrer">
               <ExternalLink className="size-4" />
               musxiv
+            </GlowButton>
+            <GlowButton
+              variant="outline"
+              href="/resume/Marcelo_Zapata_Miami_Engineering_Resume_June_2026.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Download className="size-4" />
+              Resume
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />
@@ -168,9 +181,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['Data', 'systems'],
-                ['LLM', 'workflow'],
-                ['UI', 'tools'],
+                ['C#', 'systems'],
+                ['QA', 'automation'],
+                ['Data', 'workflows'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>

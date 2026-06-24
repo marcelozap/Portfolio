@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Command, ExternalLink, FolderKanban } from 'lucide-react';
+import { Command, Download, ExternalLink, FolderKanban } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
 import { GATEKPT_URL } from '@/lib/socialLinks';
@@ -125,6 +125,17 @@ export function Navbar() {
               Rally
               <ExternalLink className="size-3" />
             </Link>
+          </li>
+          <li>
+            <a
+              href="/resume/Marcelo_Zapata_Miami_Engineering_Resume_June_2026.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
+            >
+              Resume
+              <Download className="size-3" />
+            </a>
           </li>
         </ul>
 

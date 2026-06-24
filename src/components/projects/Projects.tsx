@@ -35,10 +35,10 @@ export function Projects() {
             <span className="text-gradient">work.</span>
           </>
         }
-        description="musxiv Artist OS. Green Machine. Rally."
+        description="Local Workflow OS. musxiv Artist OS. Green Machine. Rally."
       />
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {PROJECTS.map((p, i) => (
           <ProjectCard key={p.id} project={p} index={i} onOpen={() => setActive(p)} />
         ))}

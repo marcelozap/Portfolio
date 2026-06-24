@@ -46,6 +46,52 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'local-workflow-os',
+    name: 'Local Workflow OS',
+    tagline: 'Local-first workflow system for queues, role packets, and approval-gated automation.',
+    domain: 'systems',
+    status: 'in-development',
+    accent: 'violet',
+    year: '2026',
+    description:
+      'Local Workflow OS / Career Forge turns scattered job leads, role notes, resume versions, application packets, and interview prep into structured local files and reviewable next actions. It uses C#/.NET, PowerShell, Markdown, CSV, JSON, a native Windows launcher, and browser/application-page inspection concepts.',
+    coreIdeas: [
+      'Local-first state: Markdown packets, CSV trackers, JSON pipeline outputs, and native launcher entry points',
+      'Role scoring, decision gates, status summaries, resume targeting notes, and recruiter-screen prep',
+      'Browser/application-page inspection that detects fields, buttons, uploads, and risk signals without submitting data',
+      'Human-in-the-loop automation: prepare, organize, inspect, and summarize while final sensitive actions stay manual',
+      'Public-safe case study for internal tools, workflow automation, QA/SDET, platform, and data/BI automation roles',
+    ],
+    features: [
+      {
+        title: 'Decision queues',
+        description:
+          'Transforms raw job leads into prioritized queues with salary, location, build-depth, stability, and public-story gates.',
+      },
+      {
+        title: 'Role packets',
+        description:
+          'Generates application packets, resume angles, technical refresh notes, recruiter prompts, and manual review questions.',
+      },
+      {
+        title: 'Application surface inspection',
+        description:
+          'Maps application pages and form signals so a person can review what is needed before any sensitive action.',
+      },
+      {
+        title: 'Approval boundary',
+        description:
+          'Automation prepares and organizes. Submissions, uploads, legal answers, account creation, messages, and scheduling stay manual.',
+      },
+    ],
+    metrics: [
+      { label: 'State', value: 'Local' },
+      { label: 'Boundary', value: 'Manual' },
+      { label: 'Artifacts', value: 'MD/CSV/JSON' },
+    ],
+    stack: ['C#/.NET', 'PowerShell', 'Markdown', 'CSV', 'JSON', 'Windows Forms', 'Edge DevTools'],
+  },
+  {
     id: 'gatekpt',
     name: 'musxiv Artist OS',
     tagline: 'AI studio system. Songs, clips, content packets, release plans.',

@@ -33,15 +33,19 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for data systems, internal tools, and selected projects.',
+    'Software engineering portfolio for reliable workflow systems, data tools, QA automation, internal tools, and selected projects.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
     'platform engineer',
     'automation',
+    'QA automation',
+    'internal tools',
+    'data workflows',
     'analytics',
     'software systems',
+    'Local Workflow OS',
     'musxiv',
     'Green Machine',
     'Rally',
@@ -50,7 +54,8 @@ export const metadata: Metadata = {
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer',
-    description: 'Software engineering, data systems, and selected projects by Marcelo Zapata.',
+    description:
+      'Reliable workflow systems, data tools, QA automation, internal tools, and selected projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -65,7 +70,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer. Data systems and tools.',
+    description:
+      'Software engineer building reliable workflow systems, data tools, and internal automation.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {

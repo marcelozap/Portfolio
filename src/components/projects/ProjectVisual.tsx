@@ -379,14 +379,73 @@ function InfraVisual({ id }: { id: string }) {
 }
 
 function SystemsVisual() {
+  const nodes = [
+    { x: 15, y: 30, label: 'source' },
+    { x: 36, y: 18, label: 'score' },
+    { x: 58, y: 33, label: 'gate' },
+    { x: 82, y: 22, label: 'packet' },
+  ];
+
   return (
     <div
       className={cn(
         'relative h-48 w-full overflow-hidden border-b border-white/[0.06]',
-        'bg-gradient-to-b from-bg-elevated/80 to-bg-subtle',
+        'bg-[linear-gradient(135deg,hsl(238_20%_10%),hsl(156_20%_8%))] md:h-60',
       )}
     >
       <div className="grid-bg absolute inset-0 opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_72%_24%,hsl(296_70%_66%/0.16),transparent_62%),radial-gradient(52%_48%_at_18%_72%,hsl(153_80%_58%/0.12),transparent_58%)]" />
+      <svg viewBox="0 0 100 60" className="absolute inset-0 size-full" aria-hidden>
+        <motion.path
+          d="M15 30 C24 23 28 20 36 18 C47 16 50 29 58 33 C68 38 72 26 82 22"
+          fill="none"
+          stroke="hsl(296 70% 66% / 0.72)"
+          strokeWidth="0.45"
+          strokeDasharray="1.8 1.5"
+          animate={{ strokeDashoffset: [0, -7] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.path
+          d="M14 41 C29 48 44 42 56 47 C68 52 79 43 91 46"
+          fill="none"
+          stroke="hsl(153 80% 58% / 0.32)"
+          strokeWidth="0.3"
+          strokeDasharray="1 2"
+          animate={{ strokeDashoffset: [0, -5] }}
+          transition={{ duration: 7.5, repeat: Infinity, ease: 'linear' }}
+        />
+        {nodes.map((node, i) => (
+          <g key={node.label}>
+            <motion.circle
+              cx={node.x}
+              cy={node.y}
+              r="7"
+              fill="hsl(238 20% 10% / 0.86)"
+              stroke={i === 2 ? 'hsl(153 80% 58% / 0.7)' : 'hsl(296 70% 66% / 0.62)'}
+              strokeWidth="0.35"
+              animate={{ opacity: [0.72, 1, 0.72] }}
+              transition={{ duration: 2.4, delay: i * 0.22, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <text
+              x={node.x}
+              y={node.y + 1}
+              fontFamily="ui-monospace, monospace"
+              fontSize="2.6"
+              textAnchor="middle"
+              fill="hsl(220 12% 78%)"
+              letterSpacing="0.2"
+            >
+              {node.label}
+            </text>
+          </g>
+        ))}
+      </svg>
+      <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
+        local_workflow_os / approval_gates
+      </div>
+      <div className="absolute right-6 top-5 font-mono text-[10px] uppercase tracking-[0.18em] text-accent-cool">
+        submit: manual
+      </div>
     </div>
   );
 }

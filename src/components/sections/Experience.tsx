@@ -38,30 +38,31 @@ const PUBLIX: Milestone = {
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across data workflows, analytics, internal tools, and modernization. My focus is simple: make data easier to process, understand, and trust.',
+    'Software engineer supporting production enterprise software workflows in a large retail environment. The work has built discipline around reliability, maintainability, QA automation, data/reporting workflows, and careful changes to systems real business teams depend on.',
   focus: [
-    'LLM and data workflows',
-    'Data lake and processing',
-    'Semantic models and reporting',
-    'Internal tools and automation',
+    'Production software reliability',
+    'Azure data and reporting workflows',
+    'QA automation and release confidence',
+    'Internal tools and modernization',
   ],
   stack: [
     'C#',
     'Azure',
-    'Python',
-    'LLM workflows',
+    'Playwright',
+    'Selenium',
+    'Azure Pipelines',
     'Snowflake',
     'Databricks',
     'Data lakes',
-    'Semantic layer',
     'Power BI',
+    'Python',
     'ETL / ELT',
     'APIs',
   ],
   metrics: [
-    { label: 'Focus', value: 'Data systems' },
-    { label: 'Mode', value: 'LLM / data' },
-    { label: 'Delivery', value: 'Pipelines' },
+    { label: 'Focus', value: 'Reliability' },
+    { label: 'Mode', value: 'QA / data' },
+    { label: 'Delivery', value: 'Workflows' },
   ],
 };
 
@@ -81,7 +82,7 @@ export function Experience() {
             <span className="text-gradient">Clear delivery.</span>
           </>
         }
-        description="LLM workflows, data engineering, semantic layers, reporting, and modernization."
+        description="Production discipline, data/reporting workflows, QA automation, and modernization."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

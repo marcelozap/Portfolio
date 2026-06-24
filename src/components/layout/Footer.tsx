@@ -56,7 +56,7 @@ export function Footer() {
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
           <div className="mt-1 whitespace-nowrap text-[12px] font-medium tracking-[0.04em] text-ink-muted">
-            Software / data / tools
+            Software / automation / data
           </div>
         </div>
 

@@ -8,23 +8,24 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Clear tools',
-    body: 'Software should help people do the work without making the work louder.',
+    title: 'Workflow tools',
+    body: 'I like turning scattered operational work into visible queues, states, checks, and next actions.',
   },
   {
     icon: Compass,
-    title: 'Human feel',
-    body: 'The best tools feel obvious after you use them once.',
+    title: 'Human review',
+    body: 'Good automation should make judgment easier, not hide important decisions behind a button.',
   },
 ];
 
 const TAGS = [
-  'C# / Azure / data systems',
+  'C# / .NET / Azure',
+  'QA automation / Playwright / Selenium',
+  'Databricks / Power BI / reporting workflows',
   'TypeScript / React / Next.js',
-  'Python / data processing & automation',
-  'LLM workflows / semantic layers',
+  'Python / PowerShell / local automation',
+  'Human-reviewed AI workflows',
   'SwiftUI / SpriteKit / iOS apps',
-  'Workflow and interaction tooling',
 ];
 
 export function About() {
@@ -39,19 +40,27 @@ export function About() {
             <span className="text-gradient">Software engineer.</span>
           </>
         }
-        description="Software systems for data, automation, practice, and review."
+        description="Software systems for workflow automation, data, QA, internal tools, and review."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I build tools for real workflows: internal systems, data processing, reporting,
-              semantic layers, automation, and anything that helps a team work cleaner.
+              I build tools for real workflows: internal systems, QA automation, data processing,
+              reporting, local automation, and practical interfaces that help teams work cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside work, the same pattern shows up in musxiv, Green Machine, and Rally: practical
-              systems for creative workflow, review, practice, and better decisions.
+              My production work at Publix taught me reliability, careful change management, and
+              respect for software that business teams depend on. Outside work, Local Workflow OS,
+              musxiv, Green Machine, and Rally show the builder side: structured state, review
+              loops, native/local tools, and automation that stays inspectable.
+            </p>
+            <p className="text-base leading-relaxed text-ink-muted md:text-lg">
+              I am currently focused on higher-paying Miami, South Florida hybrid, and remote
+              software engineering roles across enterprise product, internal tools, platform, QA
+              automation/SDET, data/BI automation, fintech infrastructure, and stable business-model
+              companies.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
