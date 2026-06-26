@@ -1,34 +1,30 @@
 import Link from 'next/link';
 
-const terrainIdeas = [
+const researchAreas = [
   {
-    title: 'Context',
-    text: 'Historical data, labels, and repeatable tests.',
+    title: 'Market data',
+    text: 'Options market context, historical datasets, labels, and repeatable review flows.',
   },
   {
-    title: 'Evidence',
-    text: 'Backtests, notes, limits, and next questions.',
+    title: 'Backtesting',
+    text: 'Test notes, assumptions, limits, and follow-up questions for software-driven review.',
   },
   {
-    title: 'Review',
-    text: 'LLM summaries for memory and missed context.',
+    title: 'Risk analysis',
+    text: 'Risk notes, uncertainty checks, and AI-assisted summaries for missed context.',
   },
 ];
 
-const stack = [
-  'Python',
-  'FastAPI',
-  'React',
-  'SQLite',
-  'pytest',
-  'backtests',
-  'labels',
-  'LLM notes',
+const stack = ['Python', 'FastAPI', 'React', 'SQL', 'pytest', 'backtesting', 'labels', 'AI notes'];
+
+const whatItIs = [
+  'software engineering research',
+  'options market data analysis',
+  'backtesting notes',
+  'risk review',
 ];
 
-const whatItIs = ['market research notes', 'backtests', 'historical context', 'review memory'];
-
-const whatItIsNot = ['automated trading', 'financial advice', 'signal service', 'broker routing'];
+const whatItIsNot = ['recommendations', 'managed accounts', 'execution tools', 'copy systems'];
 
 function TerrainMap() {
   return (
@@ -47,7 +43,6 @@ function TerrainMap() {
             <stop offset="1" stopColor="hsl(150 28% 7%)" stopOpacity="0.74" />
           </linearGradient>
         </defs>
-
         <polygon
           points="0,72 0,24 8,20 17,27 27,18 36,30 47,22 58,26 68,16 78,24 89,18 100,26 100,72"
           fill="url(#case-mist)"
@@ -59,13 +54,6 @@ function TerrainMap() {
         <polygon
           points="0,72 0,53 8,49 16,54 26,48 35,55 45,50 55,54 65,47 76,55 86,51 95,56 100,52 100,72"
           fill="url(#case-forest)"
-        />
-
-        <polyline
-          points="0,24 8,20 17,27 27,18 36,30 47,22 58,26 68,16 78,24 89,18 100,26"
-          fill="none"
-          stroke="hsl(150 20% 84% / 0.28)"
-          strokeWidth="0.25"
         />
         <polyline
           points="0,40 7,35 15,42 25,31 35,39 44,30 54,36 64,28 75,37 84,31 93,38 100,34"
@@ -80,53 +68,24 @@ function TerrainMap() {
           strokeDasharray="1.8 1.6"
           strokeWidth="0.34"
         />
-        <path
-          d="M0 64 C17 59 30 61 43 56 C55 52 64 49 76 50 C88 51 94 45 100 43"
-          fill="none"
-          stroke="hsl(150 20% 86% / 0.24)"
-          strokeDasharray="1 2"
-          strokeWidth="0.22"
-        />
-
-        {Array.from({ length: 28 }, (_, i) => {
-          const x = 3 + i * 3.6;
-          const h = 2.4 + (i % 5) * 0.75;
-          const y = 54 + (i % 4) * 1.3;
-          return (
-            <g key={i} opacity="0.7">
-              <path
-                d={`M${x} ${y - h} L${x - h * 0.45} ${y} L${x + h * 0.45} ${y} Z`}
-                fill="hsl(145 34% 35% / 0.7)"
-              />
-              <line
-                x1={x}
-                x2={x}
-                y1={y - h * 0.12}
-                y2={y + 1.6}
-                stroke="hsl(150 18% 14% / 0.7)"
-                strokeWidth="0.16"
-              />
-            </g>
-          );
-        })}
       </svg>
 
       <div className="absolute left-6 top-6 text-xs font-medium text-ink-faint">
-        context / review
+        market data / review
       </div>
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/[0.08] bg-bg/55 p-4 backdrop-blur">
         <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
           Boundary
         </div>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-muted">
-          Private research memory. No broker routing, no signal service, no financial advice.
+          Research software project. No recommendations, no managed accounts, no order execution.
         </p>
       </div>
     </div>
   );
 }
 
-export default function GreenMachineCaseStudyPage() {
+export default function FsuOptionsResearchPage() {
   return (
     <main className="min-h-screen bg-bg text-ink">
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
@@ -136,16 +95,18 @@ export default function GreenMachineCaseStudyPage() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
-            <p className="text-sm font-semibold text-signal-green">Private market research</p>
+            <p className="text-sm font-semibold text-signal-green">
+              Florida State University software engineering research project
+            </p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
-              XIV$ Financial Research OS
+              FSU Options Research
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
-              Market context, research notes, risk analysis, and review.
+              Options market data, analysis, backtesting, and risk analysis.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              A private workspace for market data, historical context, and trade review. It helps
-              organize what happened, what was tested, and what still needs work.
+              A software engineering research project for organizing structured market data,
+              historical context, test notes, and human-reviewed risk questions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -175,13 +136,13 @@ export default function GreenMachineCaseStudyPage() {
               Study first.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-muted">
-              Market history is treated as something to review, not something to chase. The system
-              keeps the data, notes, and questions in one place.
+              Market history is treated as something to test and review. The project keeps data,
+              notes, assumptions, risks, and questions in one software workflow.
             </p>
           </div>
 
           <div className="grid gap-3">
-            {terrainIdeas.map((item) => (
+            {researchAreas.map((item) => (
               <article
                 key={item.title}
                 className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5"

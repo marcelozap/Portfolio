@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react';
 import { Command, ExternalLink, FolderKanban } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCommandPalette } from '@/components/interactive/CommandPalette';
-import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
   { id: 'about', label: 'About' },
+  { id: 'music', label: 'Music' },
 ];
 const OBSERVED_SECTION_IDS = ['projects', ...NAV_ITEMS.map((n) => n.id)];
 
@@ -63,7 +63,7 @@ export function Navbar() {
           <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03] text-ink shadow-inset">
             <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
             <Image
-              src="/brand/gatekpt-icon.png"
+              src="/favicon.svg"
               alt=""
               width={24}
               height={24}
@@ -98,22 +98,11 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <a
-              href={GATEKPT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-            >
-              musxiv
-              <ExternalLink className="size-3" />
-            </a>
-          </li>
-          <li>
             <Link
-              href="/green-machine"
+              href="/fsu-options-research"
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
-              XIV$
+              FSU Research
               <ExternalLink className="size-3" />
             </Link>
           </li>

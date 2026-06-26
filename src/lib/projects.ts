@@ -23,7 +23,7 @@ export interface Project {
   /** short one-liner */
   tagline: string;
   /** which system family this belongs to */
-  domain: 'audio' | 'markets' | 'game' | 'systems' | 'infra';
+  domain: 'markets' | 'game' | 'systems' | 'infra';
   /** development status */
   status: ProjectStatus;
   /** main pitch paragraph */
@@ -46,98 +46,51 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: 'gatekpt',
-    name: 'musxiv Artist OS',
-    tagline: 'AI studio system. Songs, clips, content packets, release plans.',
-    domain: 'audio',
-    status: 'in-development',
-    accent: 'cyan',
-    year: '2025',
-    website: 'https://gatekpt.ai',
-    description:
-      'musxiv Artist OS is an AI-supported studio system for independent artists. It organizes song ideas, recording notes, beat and drop options, lyrics, clips, captions, content packets, brand angles, and release planning in one workflow.',
-    coreIdeas: [
-      'Song workspaces that keep beats, hooks, lyrics, drops, clips, and next actions together',
-      'Agent-assisted options for songwriting, recording, content, branding, and release prep',
-      'Content packets that turn saved song ideas into post angles, captions, clip hooks, and edit notes',
-      'Recording and capture bridge direction for marking moments, snippets, takes, and release assets',
-      'Artist-in-control workflow: the system prepares options without posting, sending, or deciding for the artist',
-    ],
-    features: [
-      {
-        title: 'Artist workspaces',
-        description:
-          'Groups beat ideas, hooks, lyrics, drops, recording notes, clip ideas, captions, and next actions by song or project.',
-      },
-      {
-        title: 'Agent archive',
-        description:
-          'Saves useful outputs from music, content, brand, release, and image-prep agents so the artist can return later and choose what to use.',
-      },
-      {
-        title: 'Content packet builder',
-        description:
-          'Turns a song workspace into post angles, caption drafts, clip hooks, an artist-story blurb, and one next edit without posting anything automatically.',
-      },
-      {
-        title: 'Recording bridge direction',
-        description:
-          'Designed to connect content ideas to the recording surface: what to record, what to clip, what to snip, and where the asset belongs.',
-      },
-    ],
-    metrics: [
-      { label: 'Focus', value: 'Artists' },
-      { label: 'Workflow', value: 'Songs -> clips' },
-      { label: 'Memory model', value: 'Local' },
-    ],
-    stack: ['C#', '.NET', 'Python', 'TypeScript', 'AI workflows', 'FFmpeg'],
-  },
-  {
-    id: 'green-machine',
-    name: 'XIV$ Financial Research OS',
-    tagline: 'Private research system. Notes, risk, review.',
+    id: 'fsu-options-research',
+    name: 'FSU Options Research',
+    tagline: 'Software engineering research project for options market data and risk analysis.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
-    year: 'Fall 2021',
-    website: '/green-machine',
+    year: '2026',
+    website: '/fsu-options-research',
     description:
-      'XIV$ Financial Research OS is a private Python/FastAPI and React workspace for market context, research notes, risk analysis, and LLM-assisted review.',
+      'Florida State University software engineering research project focused on options market data, analysis, backtesting, and risk analysis.',
     coreIdeas: [
-      'Historical market data, labels, and repeatable tests',
-      'Backtests and notes that separate evidence from intuition',
-      'Terrain-inspired interface for reading context without hype',
-      'LLM-assisted review for assumptions, holes, and next questions',
-      'Research boundary: no signal service, financial advice, or broker order routing',
+      'Options market data, historical context, labels, and repeatable review flows',
+      'Backtesting notes that separate evidence, assumptions, uncertainty, and intuition',
+      'Interfaces for reading context, results, and risk without noise',
+      'AI-assisted review for assumptions, missing data, and next questions',
+      'Clear boundary: no recommendations, managed accounts, or order execution',
     ],
     features: [
       {
-        title: 'Context research',
+        title: 'Market data',
         description:
-          'Studies stocks and futures using historical data, momentum/regime context, intraday labels, and similar-day market memory.',
+          'Organizes options market context, historical data, labels, and source notes into repeatable software workflows.',
       },
       {
         title: 'Backtesting and evidence',
         description:
-          'Converts ideas into reproducible tests, research memos, risk notes, and follow-up questions instead of treating one result as a signal.',
+          'Converts research ideas into reproducible notes, test reviews, assumptions, limits, and follow-up questions.',
       },
       {
         title: 'Technical stack',
         description:
-          'Built around Python, FastAPI, React, SQLite, pytest, local data storage, tested API routes, and LLM-assisted workflows.',
+          'Built around Python, FastAPI, React, SQL-style storage, tested workflows, and AI-assisted review.',
       },
       {
-        title: 'What it is not',
+        title: 'Boundary',
         description:
-          'Not automated trading, not financial advice, not a signal service, and not broker order routing.',
+          'A software engineering research project, not a recommendation or execution tool.',
       },
     ],
     metrics: [
-      { label: 'Focus', value: 'Context' },
+      { label: 'Focus', value: 'Markets' },
       { label: 'Method', value: 'Backtests' },
-      { label: 'Boundary', value: 'No routing' },
+      { label: 'Boundary', value: 'No execution' },
     ],
-    stack: ['Python', 'FastAPI', 'React', 'SQLite', 'pytest', 'LLM workflows'],
+    stack: ['Python', 'FastAPI', 'React', 'SQL', 'Backtesting', 'Risk analysis'],
   },
   {
     id: 'rally',
@@ -185,6 +138,51 @@ export const PROJECTS: Project[] = [
       { label: 'Loop', value: 'Practice' },
     ],
     stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'Activity data', 'Garmin API', 'Node.js'],
+  },
+  {
+    id: 'ai-workflow-systems',
+    name: 'AI Workflow Systems',
+    tagline: 'Approval-gated automation for data, QA, and internal software workflows.',
+    domain: 'systems',
+    status: 'in-development',
+    accent: 'violet',
+    year: '2026',
+    description:
+      'AI Workflow Systems is a set of local-first software experiments for turning messy work into reviewable plans, structured records, validation checks, and human-approved actions.',
+    coreIdeas: [
+      'Human-in-the-loop workflows where AI drafts, checks, and organizes instead of acting silently',
+      'Structured notes, task records, and repeatable review loops for real operational work',
+      'QA and validation habits carried into AI-assisted software delivery',
+      'Local-first architecture for private context, auditability, and safe iteration',
+    ],
+    features: [
+      {
+        title: 'Workflow capture',
+        description:
+          'Converts loose notes, files, and decisions into structured records that are easier to search, review, and hand off.',
+      },
+      {
+        title: 'Approval gates',
+        description:
+          'Keeps important actions behind clear review steps so automation supports judgment instead of replacing it.',
+      },
+      {
+        title: 'Validation layer',
+        description:
+          'Pairs AI-assisted work with tests, checklists, logs, and explicit acceptance criteria.',
+      },
+      {
+        title: 'System memory',
+        description:
+          'Keeps project context, decisions, follow-ups, and reusable patterns in one practical loop.',
+      },
+    ],
+    metrics: [
+      { label: 'Focus', value: 'AI systems' },
+      { label: 'Mode', value: 'Review' },
+      { label: 'Output', value: 'Records' },
+    ],
+    stack: ['TypeScript', 'React', 'Python', 'C#', 'PowerShell', 'Playwright', 'AI workflows'],
   },
 ];
 

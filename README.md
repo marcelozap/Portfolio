@@ -1,6 +1,6 @@
 # Marcelo Zapata Portfolio
 
-Personal portfolio for Marcelo Zapata, a software engineer working across reliable tools, automation, analytics, product systems, and independent builds.
+Personal portfolio for Marcelo Zapata, a software engineer working across data automation, research systems, reliable tools, analytics, product systems, and independent builds.
 
 This repository powers the public portfolio site and the recruiter-facing materials in [`career-kit/`](./career-kit). The current site is intentionally restrained: project-forward, professional, and focused on engineering range without exposing sensitive employer details.
 
@@ -27,7 +27,7 @@ src/
     layout/              # navigation, footer, ambient backdrop
     interactive/         # command palette
     projects/            # project cards, modals, and visuals
-    sections/            # Experience, Engineering, About, Music
+    sections/            # Experience, Engineering, About
     ui/                  # shared UI primitives
   lib/
     projects.ts          # typed project catalog
@@ -54,9 +54,9 @@ npm run build
 
 The site highlights:
 
-- Rally: premium tennis lifestyle product, started in 2025
-- musxiv Artist OS: AI-supported studio system for independent artists
-- XIV$ Financial Research OS: private financial research and review system, started in Fall 2021
+- FSU Options Research: software engineering research project for options market data, backtesting, and risk analysis
+- Rally: practice and activity-data product, started in 2025
+- AI Workflow Systems: approval-gated automation for data, QA, and internal software workflows
 - Professional experience framed around QA automation, analytics, internal tools, documentation, and reliable delivery
 
 Avoid adding private employer details, internal counts, regulated-work specifics, or unsupported claims to public copy.

@@ -6,12 +6,7 @@
 export function AmbientBackdrop() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.42] brightness-[0.78] hue-rotate-[42deg] saturate-[1.08]"
-        style={{
-          backgroundImage: "url('/brand/xiv-interconnected-terrain-wallpaper.png')",
-        }}
-      />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_74%_26%,hsl(var(--accent)/0.16),transparent_64%),radial-gradient(64%_52%_at_18%_78%,hsl(var(--accent-warm)/0.14),transparent_58%),linear-gradient(140deg,hsl(var(--bg))_0%,hsl(var(--bg-subtle))_52%,hsl(var(--bg))_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg)/0.94)_0%,hsl(var(--bg)/0.72)_20%,hsl(var(--bg)/0.42)_54%,hsl(var(--bg)/0.84)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(68%_55%_at_76%_28%,hsl(var(--accent)/0.2),transparent_62%),radial-gradient(54%_42%_at_18%_74%,hsl(var(--accent-cool)/0.15),transparent_58%),radial-gradient(48%_36%_at_82%_82%,hsl(var(--accent-warm)/0.18),transparent_60%)]" />
       <div className="grid-bg absolute inset-0 opacity-[0.1]" />

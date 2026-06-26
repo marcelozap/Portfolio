@@ -37,7 +37,6 @@ interface ProjectCardProps {
 }
 
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
-  audio: 'workflow tools',
   markets: 'research systems',
   game: 'practice system',
   systems: 'systems',
@@ -50,7 +49,7 @@ const STATUS_LABEL: Record<Project['status'], string> = {
   research: 'research',
 };
 
-function GreenMachineTerrainCardArt() {
+function ResearchDataCardArt() {
   return (
     <div className="relative h-32 overflow-hidden rounded-lg border border-white/[0.06] bg-[linear-gradient(180deg,hsl(150_13%_13%),hsl(154_22%_7%))]">
       <div className="absolute inset-0 bg-[radial-gradient(80%_54%_at_50%_12%,hsl(150_24%_78%/0.14),transparent_68%)]" />
@@ -62,18 +61,18 @@ function GreenMachineTerrainCardArt() {
         aria-hidden
       >
         <defs>
-          <linearGradient id="gm-card-mist" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="research-card-mist" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="hsl(150 22% 84%)" stopOpacity="0.18" />
             <stop offset="1" stopColor="hsl(150 24% 10%)" stopOpacity="0" />
           </linearGradient>
-          <linearGradient id="gm-card-forest" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="research-card-forest" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stopColor="hsl(143 34% 38%)" stopOpacity="0.28" />
             <stop offset="1" stopColor="hsl(150 28% 7%)" stopOpacity="0.7" />
           </linearGradient>
         </defs>
         <polygon
           points="0,58 0,19 9,15 17,23 28,13 38,26 49,18 60,23 70,12 80,21 91,16 100,23 100,58"
-          fill="url(#gm-card-mist)"
+          fill="url(#research-card-mist)"
         />
         <polygon
           points="0,58 0,35 8,30 16,36 27,26 38,34 48,26 59,32 70,24 81,34 91,28 100,32 100,58"
@@ -81,7 +80,7 @@ function GreenMachineTerrainCardArt() {
         />
         <polygon
           points="0,58 0,45 9,42 18,46 29,41 40,47 51,42 62,46 73,40 84,47 93,43 100,46 100,58"
-          fill="url(#gm-card-forest)"
+          fill="url(#research-card-forest)"
         />
         <polyline
           points="0,35 8,30 16,36 27,26 38,34 48,26 59,32 70,24 81,34 91,28 100,32"
@@ -96,42 +95,20 @@ function GreenMachineTerrainCardArt() {
           strokeDasharray="1.6 1.5"
           strokeWidth="0.3"
         />
-        <path
-          d="M0 50 C17 47 29 50 42 45 C54 41 65 39 77 40 C88 41 94 36 100 34"
-          fill="none"
-          stroke="hsl(150 20% 86% / 0.2)"
-          strokeDasharray="1 2"
-          strokeWidth="0.22"
-        />
-        {Array.from({ length: 18 }, (_, i) => {
-          const x = 4 + i * 5.4;
-          const h = 2.2 + (i % 4) * 0.68;
-          const y = 46 + (i % 3) * 1.15;
-          return (
-            <g key={i} opacity="0.68">
-              <path
-                d={`M${x} ${y - h} L${x - h * 0.45} ${y} L${x + h * 0.45} ${y} Z`}
-                fill="hsl(145 34% 35% / 0.72)"
-              />
-            </g>
-          );
-        })}
       </svg>
       <div className="absolute left-4 top-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        terrain / research memory
+        datasets / research memory
       </div>
     </div>
   );
 }
 
-function GateKptCardArt() {
-  const bars = [18, 36, 24, 48, 30, 58, 42, 26, 52, 34, 46, 22, 40, 28, 54, 32];
-
+function WorkflowSystemsCardArt() {
   return (
-    <div className="terrain-surface h-32 bg-[linear-gradient(180deg,hsl(160_22%_10%),hsl(155_35%_5%))]">
-      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_18%,hsl(31_86%_62%/0.2),transparent_62%),radial-gradient(55%_50%_at_22%_70%,hsl(153_80%_58%/0.16),transparent_58%)]" />
-      <div className="absolute inset-x-4 top-4 grid grid-cols-8 gap-1.5">
-        {['intro', 'drums', 'gtr', 'vox', 'hook', 'visual', 'cap', 'export'].map((label, i) => (
+    <div className="terrain-surface h-32 bg-[linear-gradient(135deg,hsl(222_26%_9%),hsl(160_24%_8%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_76%_18%,hsl(296_70%_66%/0.18),transparent_62%),radial-gradient(55%_50%_at_22%_70%,hsl(153_80%_58%/0.14),transparent_58%)]" />
+      <div className="absolute inset-x-4 top-4 grid grid-cols-4 gap-1.5">
+        {['capture', 'check', 'review', 'ship'].map((label, i) => (
           <span
             key={label}
             className="h-5 rounded-[3px] border border-white/[0.07] bg-white/[0.035] px-1.5 pt-1 font-mono text-[7px] uppercase tracking-[0.14em] text-ink-faint transition group-hover:border-accent/25 group-hover:text-ink-muted"
@@ -141,26 +118,22 @@ function GateKptCardArt() {
           </span>
         ))}
       </div>
-      <div className="absolute inset-x-5 bottom-5 flex h-16 items-end justify-between">
-        {bars.map((h, i) => (
-          <span
-            key={i}
-            className="w-[3px] rounded-full bg-accent/55 transition duration-500 group-hover:bg-accent-warm/70"
-            style={{ height: `${h}%`, transitionDelay: `${i * 12}ms` }}
-          />
-        ))}
-      </div>
       <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
         <path
-          d="M0 42 C12 30 20 46 32 34 C44 22 55 38 66 28 C78 18 87 30 100 21"
+          d="M10 42 H24 C30 42 30 25 38 25 H50 C58 25 58 38 66 38 H88"
           fill="none"
-          stroke="hsl(153 80% 58% / 0.52)"
-          strokeWidth="0.45"
-          strokeDasharray="2 2.2"
+          stroke="hsl(296 70% 66% / 0.58)"
+          strokeWidth="0.55"
+          strokeDasharray="2 1.8"
+        />
+        <path
+          d="M14 48 H36 M46 48 H66 M75 48 H92"
+          stroke="hsl(153 80% 58% / 0.42)"
+          strokeWidth="0.42"
         />
       </svg>
       <div className="absolute left-4 top-16 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        cue cards / project memory
+        approval gates / system records
       </div>
     </div>
   );
@@ -221,8 +194,8 @@ function RallyCardArt() {
 }
 
 function ProjectEnvironment({ project }: { project: Project }) {
-  if (project.id === 'gatekpt') return <GateKptCardArt />;
-  if (project.id === 'green-machine') return <GreenMachineTerrainCardArt />;
+  if (project.id === 'fsu-options-research') return <ResearchDataCardArt />;
+  if (project.id === 'ai-workflow-systems') return <WorkflowSystemsCardArt />;
   if (project.id === 'rally') return <RallyCardArt />;
   return null;
 }

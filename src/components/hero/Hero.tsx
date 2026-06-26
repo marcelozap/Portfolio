@@ -13,27 +13,28 @@ import {
 import { MarketTicker } from './MarketTicker';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { scrollToSection } from '@/lib/utils';
-import { GATEKPT_URL } from '@/lib/socialLinks';
 
 const FEATURED_WORK = [
   {
-    name: 'musxiv',
-    href: GATEKPT_URL,
-    meta: 'AI / music',
-    note: 'artist OS',
-    external: true,
-  },
-  {
-    name: 'XIV$',
-    href: '/green-machine',
+    name: 'FSU Options Research',
+    href: '/fsu-options-research',
     meta: 'Python / FastAPI',
-    note: 'market review',
+    note: 'market data and risk analysis',
+    external: false,
   },
   {
     name: 'Rally',
     href: '/rally',
     meta: 'SwiftUI',
     note: 'coming soon',
+    external: false,
+  },
+  {
+    name: 'AI Workflow Systems',
+    href: '#projects',
+    meta: 'AI / QA',
+    note: 'approval-gated automation',
+    external: false,
   },
 ];
 
@@ -61,7 +62,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / data / tools</span>
+            <span className="text-ink-faint">software / automation / data</span>
           </motion.div>
 
           <motion.div
@@ -83,10 +84,10 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Data systems, LLM workflows, internal tools, and practical interfaces.
+              Data tools, QA automation, AI-assisted workflows, and practical interfaces.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              C# / Azure / Python / React / Snowflake / Databricks
+              C# / Azure / Python / React / Playwright / Power BI
             </p>
           </motion.div>
 
@@ -101,9 +102,9 @@ export function Hero() {
               View Projects
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
             </GlowButton>
-            <GlowButton variant="outline" href={GATEKPT_URL} target="_blank" rel="noreferrer">
+            <GlowButton variant="outline" href="/fsu-options-research">
               <ExternalLink className="size-4" />
-              musxiv
+              FSU Research
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />
@@ -169,7 +170,7 @@ export function Hero() {
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
                 ['Data', 'systems'],
-                ['LLM', 'workflow'],
+                ['QA', 'automation'],
                 ['UI', 'tools'],
               ].map(([value, label]) => (
                 <div key={label}>

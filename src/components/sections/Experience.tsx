@@ -34,13 +34,13 @@ const PUBLIX: Milestone = {
   id: 'publix',
   period: '2022 - present',
   role: 'Software Engineer',
-  org: 'Publix',
+  org: 'Enterprise retail systems',
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across data workflows, analytics, internal tools, and modernization. My focus is simple: make data easier to process, understand, and trust.',
+    'Software engineer working across data workflows, analytics, internal tools, QA automation, and modernization. My focus is making systems easier to validate, support, and trust.',
   focus: [
-    'LLM and data workflows',
+    'AI-assisted delivery workflows',
     'Data lake and processing',
     'Semantic models and reporting',
     'Internal tools and automation',
@@ -49,7 +49,7 @@ const PUBLIX: Milestone = {
     'C#',
     'Azure',
     'Python',
-    'LLM workflows',
+    'AI-assisted workflows',
     'Snowflake',
     'Databricks',
     'Data lakes',
@@ -60,7 +60,7 @@ const PUBLIX: Milestone = {
   ],
   metrics: [
     { label: 'Focus', value: 'Data systems' },
-    { label: 'Mode', value: 'LLM / data' },
+    { label: 'Mode', value: 'QA / data' },
     { label: 'Delivery', value: 'Pipelines' },
   ],
 };
@@ -81,7 +81,7 @@ export function Experience() {
             <span className="text-gradient">Clear delivery.</span>
           </>
         }
-        description="LLM workflows, data engineering, semantic layers, reporting, and modernization."
+        description="Data engineering, QA automation, semantic layers, reporting, and modernization."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">

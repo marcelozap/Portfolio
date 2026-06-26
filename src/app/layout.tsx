@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono, Libre_Baskerville } from 'next/font/google';
 import './globals.css';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
-import { SoundToggle } from '@/components/interactive/SoundToggle';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -33,24 +32,27 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for data systems, internal tools, and selected projects.',
+    'Software engineering portfolio for data automation, research systems, AI-assisted workflows, and selected projects.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
     'platform engineer',
+    'research systems',
+    'data workflows',
     'automation',
     'analytics',
     'software systems',
-    'musxiv',
-'XIV$ Financial Research OS',
+    'FSU Options Research',
     'Rally',
+    'AI Workflow Systems',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer',
-    description: 'Software engineering, data systems, and selected projects by Marcelo Zapata.',
+    description:
+      'Software engineering, data automation, research systems, and selected projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -65,15 +67,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer. Data systems and tools.',
+    description: 'Software engineer. Data automation, research systems, and AI-assisted workflows.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {
-    icon: [
-      { url: '/brand/gatekpt-icon.png', type: 'image/png' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
-    shortcut: ['/brand/gatekpt-icon.png'],
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: ['/favicon.svg'],
   },
 };
 
@@ -96,7 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AmbientBackdrop />
           <Navbar />
           <main className="relative z-10">{children}</main>
-          <SoundToggle />
           <Footer />
         </CommandPaletteProvider>
       </body>

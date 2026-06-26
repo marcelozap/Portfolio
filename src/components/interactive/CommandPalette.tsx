@@ -54,7 +54,7 @@ const scrollTo = (id: string) => {
 };
 
 const openTerminal = () => {
-  window.dispatchEvent(new CustomEvent('xiv:terminal:open'));
+  window.dispatchEvent(new CustomEvent('portfolio:terminal:open'));
 };
 
 export function CommandPaletteProvider({ children }: { children: React.ReactNode }) {
@@ -120,7 +120,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       keywords: [p.domain, p.status, ...p.stack],
       action: () => {
         scrollTo('projects');
-        window.dispatchEvent(new CustomEvent<string>('xiv:project:open', { detail: p.id }));
+        window.dispatchEvent(new CustomEvent<string>('portfolio:project:open', { detail: p.id }));
       },
     }));
 

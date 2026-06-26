@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Github, Instagram, Linkedin, Mail, Youtube } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { scrollToSection } from '@/lib/utils';
@@ -13,13 +13,8 @@ const LINKS = [
 ];
 
 const SOCIAL_ICONS = {
-  musxiv: ExternalLink,
-  YouTube: Youtube,
-  Instagram,
   LinkedIn: Linkedin,
   GitHub: Github,
-  Facebook: ExternalLink,
-  Snapchat: ExternalLink,
   Contact: Mail,
 } as const;
 
@@ -45,13 +40,7 @@ export function Footer() {
         <div className="shrink-0">
           <div className="flex items-center gap-3">
             <span className="flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
-              <Image
-                src="/brand/gatekpt-icon.png"
-                alt=""
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
+              <Image src="/favicon.svg" alt="" width={24} height={24} className="rounded-full" />
             </span>
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>

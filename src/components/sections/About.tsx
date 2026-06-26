@@ -21,10 +21,10 @@ const FOCUS = [
 const TAGS = [
   'C# / Azure / data systems',
   'TypeScript / React / Next.js',
-  'Python / data processing & automation',
-  'LLM workflows / semantic layers',
+  'Python / data automation',
+  'Research data workflows',
+  'Evidence review / validation',
   'SwiftUI / SpriteKit / iOS apps',
-  'Workflow and interaction tooling',
 ];
 
 export function About() {
@@ -39,20 +39,20 @@ export function About() {
             <span className="text-gradient">Software engineer.</span>
           </>
         }
-        description="Software systems for data, automation, practice, and review."
+        description="Software systems for data, automation, research workflows, practice, and review."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I build tools for real workflows: internal systems, data processing, reporting,
-              semantic layers, automation, and anything that helps a team work cleaner.
+              I build tools for real workflows: data automation, QA systems, internal tools,
+              reporting, AI-assisted review, and practical interfaces that help teams work cleaner.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-Outside work, the same pattern shows up in musxiv, XIV$ Financial Research OS, and
-              Rally: practical systems for creative workflow, review, practice, and better
-              decisions.
+              Outside work, the same pattern shows up in FSU Options Research, Rally, and AI
+              Workflow Systems: practical builds for research, practice, structured review, and
+              clearer decisions.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

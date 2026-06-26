@@ -20,7 +20,6 @@ const ACCENT_TEXT: Record<Project['accent'], string> = {
 };
 
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
-  audio: 'workflow tools',
   markets: 'research systems',
   game: 'practice system',
   systems: 'systems',

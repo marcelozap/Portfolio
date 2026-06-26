@@ -8,7 +8,7 @@ import { ProjectModal } from './ProjectModal';
 
 /**
  * Projects section — the centerpiece. Cards open into the immersive modal.
- * Listens for a global `xiv:project:open` event so the command palette and
+ * Listens for a global `portfolio:project:open` event so the command palette and
  * terminal can deep-link straight into a project.
  */
 export function Projects() {
@@ -20,8 +20,8 @@ export function Projects() {
       const project = getProject(id);
       if (project) setActive(project);
     };
-    window.addEventListener('xiv:project:open', handler);
-    return () => window.removeEventListener('xiv:project:open', handler);
+    window.addEventListener('portfolio:project:open', handler);
+    return () => window.removeEventListener('portfolio:project:open', handler);
   }, []);
 
   return (
@@ -35,7 +35,7 @@ export function Projects() {
             <span className="text-gradient">work.</span>
           </>
         }
-description="musxiv Artist OS. XIV$ Financial Research OS. Rally."
+        description="FSU options research. Rally. AI workflow systems."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

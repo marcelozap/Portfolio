@@ -5,9 +5,11 @@ import { Disc3, Guitar, Headphones } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
-const TRACK = {
-  title: 'XIV Ambient',
-};
+const TRACKS = [
+  { title: 'Sketch 01', type: 'demo' },
+  { title: 'Sketch 02', type: 'demo' },
+  { title: 'Sketch 03', type: 'idea' },
+];
 
 const BARS = Array.from(
   { length: 64 },
@@ -18,15 +20,15 @@ export function Music() {
   return (
     <section id="music" className="section">
       <SectionHeader
-        eyebrow="Sound"
+        eyebrow="Music"
         title={
           <>
-            Guitar,
+            Original
             <br />
-            <span className="text-gradient">space, feel.</span>
+            <span className="text-gradient">sounds.</span>
           </>
         }
-        description="Small audio sketches. If something fits a project, contact me."
+        description="A small space for songs, sketches, and recording ideas."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -35,23 +37,14 @@ export function Music() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="mono-tag">
                 <Disc3 className="size-3" />
-                audio sketch
+                selected tracks
               </span>
-              <span className="mono-tag normal-case tracking-wider">M. Zapata</span>
-            </div>
-
-            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 md:p-5">
-              <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-                credit
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                Audio on this site was made by Marcelo Zapata. For use or collaboration, contact
-                me.
-              </p>
+              <span className="mono-tag normal-case tracking-wider">Marcelo Zapata</span>
             </div>
 
             <p className="max-w-xl text-base leading-relaxed text-ink-muted md:text-lg">
-              Guitar, bass, and light texture. Kept simple.
+              Music stays here as part of the portfolio: original ideas, demos, and sketches without
+              sending visitors to a separate social profile.
             </p>
 
             <div className="relative h-28 overflow-hidden rounded-xl border border-white/[0.06] bg-[linear-gradient(180deg,hsl(var(--bg-elevated)/0.72),hsl(var(--bg)/0.88))] p-3">
@@ -101,18 +94,22 @@ export function Music() {
             </div>
 
             <ul className="divide-y divide-white/[0.04] overflow-hidden rounded-xl border border-white/[0.06]">
-              <motion.li
-                initial={{ opacity: 0, x: -8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.4 }}
-                className="flex items-center gap-4 px-4 py-3 text-sm transition hover:bg-white/[0.03]"
-              >
-                <span className="font-mono text-[11px] tabular-nums text-accent-warm">01</span>
-                <span className="flex-1 text-ink">{TRACK.title}</span>
-                <span className="font-mono text-[10px] text-ink-faint">amb.</span>
-                <span className="font-mono text-[11px] tabular-nums text-ink-muted">-</span>
-              </motion.li>
+              {TRACKS.map((track, index) => (
+                <motion.li
+                  key={track.title}
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="flex items-center gap-4 px-4 py-3 text-sm transition hover:bg-white/[0.03]"
+                >
+                  <span className="font-mono text-[11px] tabular-nums text-accent-warm">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="flex-1 text-ink">{track.title}</span>
+                  <span className="font-mono text-[10px] text-ink-faint">{track.type}</span>
+                </motion.li>
+              ))}
             </ul>
           </div>
         </GlassCard>
@@ -123,9 +120,9 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-warm/10 text-accent-warm ring-1 ring-accent-warm/30">
                 <Guitar className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Instruments</h3>
+              <h3 className="text-base font-medium text-ink">Writing</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Guitar, bass, and keys when the part needs it.
+                Guitar, keys, melody ideas, and simple song sketches.
               </p>
             </div>
           </GlassCard>
@@ -137,7 +134,7 @@ export function Music() {
               </span>
               <h3 className="text-base font-medium text-ink">Recording</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                Simple home recording and rough ideas.
+                Home-recorded demos, rough arrangements, and focused ideas.
               </p>
             </div>
           </GlassCard>
@@ -147,9 +144,9 @@ export function Music() {
               <span className="flex size-9 items-center justify-center rounded-lg bg-accent-cool/10 text-accent-cool ring-1 ring-accent-cool/30">
                 <Disc3 className="size-4" />
               </span>
-              <h3 className="text-base font-medium text-ink">Contact</h3>
+              <h3 className="text-base font-medium text-ink">Archive</h3>
               <p className="text-sm leading-relaxed text-ink-muted">
-                If a sound fits something, contact me.
+                A quiet place for work that belongs on this site, separate from outside profiles.
               </p>
             </div>
           </GlassCard>

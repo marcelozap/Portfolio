@@ -12,16 +12,14 @@ interface Props {
 /**
  * SVG-based mock visual rendered at the top of a project modal.
  * Each project gets a domain-specific abstraction:
- *   - audio: waveform / spectrum
  *   - markets: terrain research map
  *   - game: practice HUD
+ *   - systems: workflow grid
  *
  * Deterministic per project id so the visuals stay stable across renders.
  */
 export function ProjectVisual({ project }: Props) {
   switch (project.domain) {
-    case 'audio':
-      return <AudioVisual id={project.id} />;
     case 'markets':
       return <MarketsVisual id={project.id} />;
     case 'game':
@@ -46,42 +44,6 @@ function seeded(seed: string) {
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
-}
-
-function AudioVisual({ id }: { id: string }) {
-  const rng = useMemo(() => seeded(id), [id]);
-  const bars = Array.from({ length: 96 }, () => rng());
-
-  return (
-    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-bg-elevated/80 to-bg-subtle md:h-60">
-      <div className="grid-bg absolute inset-0 opacity-30" />
-      <div className="absolute inset-x-0 top-1/2 flex h-32 -translate-y-1/2 items-center justify-between px-8">
-        {bars.map((b, i) => (
-          <motion.span
-            key={i}
-            className="block w-[3px] rounded-full bg-accent"
-            initial={{ height: 4 }}
-            animate={{
-              height: [4, 8 + b * 80, 4],
-              opacity: [0.4, 1, 0.4],
-            }}
-            transition={{
-              duration: 1.4 + b * 0.8,
-              repeat: Infinity,
-              delay: i * 0.02,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
-      </div>
-      <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        musxiv / artist_os
-      </div>
-      <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent">
-        rec / 1.0 / 120 BPM
-      </div>
-    </div>
-  );
 }
 
 function MarketsVisual({ id }: { id: string }) {
@@ -188,12 +150,10 @@ function MarketsVisual({ id }: { id: string }) {
       </svg>
 
       <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-        {id === 'green-machine'
-          ? 'green_machine / terrain_research'
-          : `${id.replace(/-/g, '_')} / terrain`}
+        {`${id.replace(/-/g, '_')} / terrain`}
       </div>
       <div className="absolute right-6 top-5 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
-        context / risk / history
+        context / review / history
       </div>
     </div>
   );
