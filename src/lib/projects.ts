@@ -93,17 +93,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'fsu-options-research',
-    name: 'FSU Options Research',
-    tagline: 'Software engineering research project for options market data and risk analysis.',
+    name: 'Research Data System',
+    tagline: 'Market-data research workflow for evidence review, backtesting, and risk context.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2026',
     website: '/fsu-options-research',
     description:
-      'Florida State University software engineering research project focused on options market data, analysis, backtesting, and risk analysis.',
+      'A software engineering case study for structuring market data, historical context, backtesting notes, assumptions, and risk review into repeatable research workflows.',
     coreIdeas: [
-      'Options market data, historical context, labels, and repeatable review flows',
+      'Market data, historical context, labels, and repeatable review flows',
       'Backtesting notes that separate evidence, assumptions, uncertainty, and intuition',
       'Interfaces for reading context, results, and risk without noise',
       'AI-assisted review for assumptions, missing data, and next questions',
@@ -113,7 +113,7 @@ export const PROJECTS: Project[] = [
       {
         title: 'Market data',
         description:
-          'Organizes options market context, historical data, labels, and source notes into repeatable software workflows.',
+          'Organizes market context, historical data, labels, and source notes into repeatable software workflows.',
       },
       {
         title: 'Backtesting and evidence',

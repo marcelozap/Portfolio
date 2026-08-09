@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'automation',
     'analytics',
     'software systems',
-    'FSU Options Research',
+    'Research Data System',
     'Rally',
     'AI systems',
   ],

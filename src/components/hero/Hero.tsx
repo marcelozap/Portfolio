@@ -13,7 +13,7 @@ const FEATURED_WORK = [
     external: false,
   },
   {
-    name: 'FSU Options Research',
+    name: 'Research Data System',
     href: '/fsu-options-research',
     meta: 'case study',
     note: 'research data and risk review',

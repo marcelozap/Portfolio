@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'malosound', label: 'MaloSound' },
   { id: 'about', label: 'About' },
 ];
 const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);

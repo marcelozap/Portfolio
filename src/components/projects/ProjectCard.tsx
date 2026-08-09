@@ -284,7 +284,7 @@ export function ProjectCard({ project, onOpen, index }: ProjectCardProps) {
       transition={{ duration: 0.55, delay: index * 0.06 }}
       style={{ rotateX, rotateY, transformPerspective: 1200 }}
       className="group relative block w-full text-left"
-      aria-label={`Open ${project.name} project details`}
+      aria-label={`View details for ${project.name}`}
     >
       <GlassCard
         className={cn('relative h-full transition duration-500', a.ring, 'group-hover:' + a.glow)}

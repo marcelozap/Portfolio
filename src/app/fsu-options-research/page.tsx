@@ -18,8 +18,8 @@ const researchAreas = [
 const stack = ['Python', 'FastAPI', 'React', 'SQL', 'pytest', 'backtesting', 'labels', 'AI notes'];
 
 const whatItIs = [
-  'software engineering research',
-  'options market data analysis',
+  'research data system',
+  'market data analysis',
   'backtesting notes',
   'risk review',
 ];
@@ -96,17 +96,17 @@ export default function FsuOptionsResearchPage() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold text-signal-green">
-              Florida State University software engineering research project
+              Software engineering case study
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
-              FSU Options Research
+              Research Data System
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
-              Options market data, analysis, backtesting, and risk analysis.
+              Market data, evidence review, backtesting notes, and risk context.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              A software engineering research project for organizing structured market data,
-              historical context, test notes, and human-reviewed risk questions.
+              A software engineering case study for organizing structured data, historical context,
+              test notes, assumptions, and human-reviewed risk questions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
