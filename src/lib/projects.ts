@@ -48,20 +48,20 @@ export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
     name: 'GateKPT',
-    tagline: 'A public map for studying the modern AI stack end to end.',
+    tagline: 'A seven-layer AI stack trainer with sourced anchors and recall checks.',
     domain: 'systems',
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT is my public research hub for organizing years of notes, diagrams, projects, and instincts into a structured map of AI infrastructure, data, models, prompting, evaluation, deployment, and business context.',
+      'GateKPT turns my AI study notes into an inspectable learning artifact: seven system layers, one sourced anchor per layer, a failure mode, and a recall check before moving forward.',
     coreIdeas: [
       'A public map of how I understand AI systems across the full stack',
-      'Research notes shaped into focused lessons, weekly briefs, and system explainers',
+      'One layer at a time instead of a generic AI content wall',
       'Prompting treated as professional communication, not magic phrasing',
-      'AI deployment framed through evaluation, observability, privacy, and adoption constraints',
-      'A public accountability system for staying current with fast-moving AI technology',
+      'Evaluation and deployment treated as first-class engineering constraints',
+      'Source links kept visible so claims can be checked',
     ],
     features: [
       {

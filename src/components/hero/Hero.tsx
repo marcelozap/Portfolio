@@ -1,41 +1,38 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  ArrowDown,
-  ArrowRight,
-  Briefcase,
-  ExternalLink,
-  FolderKanban,
-  Github,
-  Linkedin,
-} from 'lucide-react';
-import { MarketTicker } from './MarketTicker';
+import { ArrowRight, Briefcase, ExternalLink, FolderKanban, Github, Linkedin } from 'lucide-react';
 import { GlowButton } from '@/components/ui/GlowButton';
-import { scrollToSection } from '@/lib/utils';
 
 const FEATURED_WORK = [
   {
     name: 'GateKPT',
     href: 'https://gatekpt.ai',
-    meta: 'AI stack map',
-    note: 'public research hub',
+    meta: 'live',
+    note: '7-layer AI stack trainer',
     external: true,
   },
   {
     name: 'AI Workflow Systems',
     href: '#projects',
-    meta: 'AI / QA',
-    note: 'approval-gated automation',
+    meta: 'artifact',
+    note: 'capture, check, review, ship',
     external: false,
   },
   {
     name: 'FSU Options Research',
     href: '/fsu-options-research',
-    meta: 'Python / FastAPI',
-    note: 'research data systems',
+    meta: 'case study',
+    note: 'research data and risk review',
     external: false,
   },
+];
+
+const PROOF_ITEMS = [
+  ['GateKPT', 'public AI stack map'],
+  ['7 layers', 'power to deployment'],
+  ['Sourced anchors', 'numbers link to evidence'],
+  ['Recall checks', 'learn by commitment'],
 ];
 
 export function Hero() {
@@ -71,7 +68,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer mapping AI systems end to end.
+              Software engineer building public artifacts for AI, data, and workflow systems.
             </span>
           </motion.div>
 
@@ -82,8 +79,8 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build data tools, QA automation, and AI-assisted workflows, then turn what I learn
-              into public systems people can study.
+              Currently building GateKPT: a seven-layer map of the modern AI stack, from power and
+              compute to evaluation and deployment.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
               C# / Azure / Python / React / Playwright / Power BI / AI evaluation
@@ -148,8 +145,8 @@ export function Hero() {
         >
           <div className="border border-line bg-bg-elevated/55 p-5 backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
-              <span>Current map</span>
-              <span className="text-signal-green">3</span>
+              <span>Artifacts</span>
+              <span className="text-accent">3</span>
             </div>
             <div className="space-y-2">
               {FEATURED_WORK.map((item) => (
@@ -193,16 +190,15 @@ export function Hero() {
         transition={{ delay: 0.85, duration: 0.6 }}
         className="relative z-10 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
-        <div className="flex flex-col gap-3 border-y border-white/[0.08] bg-bg/70 px-4 py-3 md:flex-row md:items-center md:justify-between">
-          <MarketTicker />
-          <button
-            type="button"
-            onClick={() => scrollToSection('projects')}
-            className="group inline-flex items-center gap-2 text-sm font-medium text-ink-faint transition hover:text-ink"
-          >
-            Scroll to work
-            <ArrowDown className="size-3.5 text-accent transition group-hover:translate-y-0.5" />
-          </button>
+        <div className="grid grid-cols-4 border-y border-line bg-bg/70">
+          {PROOF_ITEMS.map(([label, value]) => (
+            <div key={label} className="border-r border-line px-4 py-3 last:border-r-0">
+              <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+                {label}
+              </div>
+              <div className="mt-1 text-sm font-medium text-ink-muted">{value}</div>
+            </div>
+          ))}
         </div>
       </motion.div>
     </section>

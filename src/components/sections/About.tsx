@@ -39,7 +39,7 @@ export function About() {
             <span className="text-gradient">Software, AI, systems.</span>
           </>
         }
-        description="Building practical software while organizing a public map of how AI systems work."
+        description="Building practical software and publishing the artifacts behind the learning."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -51,9 +51,8 @@ export function About() {
               trust.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              GateKPT is the public version of that same habit: taking years of notes across
-              computers, business, data, prompting, and systems, then shaping them into a clearer
-              map of the AI stack end to end.
+              GateKPT is the public version of that habit: notes become layers, layers become
+              checks, and claims keep their source links.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

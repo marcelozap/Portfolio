@@ -35,7 +35,7 @@ export function Projects() {
             <span className="text-gradient">in public.</span>
           </>
         }
-        description="GateKPT, AI workflow systems, research data tooling, and practice software."
+        description="Live artifacts, case studies, and systems I am building in public."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
