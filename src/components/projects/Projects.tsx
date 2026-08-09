@@ -8,8 +8,8 @@ import { ProjectModal } from './ProjectModal';
 
 /**
  * Projects section — the centerpiece. Cards open into the immersive modal.
- * Listens for a global `portfolio:project:open` event so the command palette and
- * terminal can deep-link straight into a project.
+ * Listens for a global `portfolio:project:open` event so project links can
+ * open details without coupling to this component.
  */
 export function Projects() {
   const [active, setActive] = useState<Project | null>(null);

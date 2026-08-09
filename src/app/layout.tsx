@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { PersistentAudioPlayer } from '@/components/layout/PersistentAudioPlayer';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for AI systems, data automation, research workflows, MaloSound, QA, and public technical projects including Green Machine.',
+    'Software engineering portfolio for AI systems, data engineering, research workflows, original MaloSound audio, QA, and public technical projects including Green Machine.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     'MaloSound',
     'music technology',
     'data workflows',
+    'data engineering',
+    'creative sound',
+    'sound design',
     'automation',
     'analytics',
     'software systems',
@@ -73,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description:
-      'Software engineer building AI systems, data tools, MaloSound, and public research projects.',
+      'Software engineer building AI systems, data tools, original sound design, and public research projects.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {
@@ -96,13 +99,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${sans.variable} ${display.variable} ${mono.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="relative antialiased">
-        <CommandPaletteProvider>
-          <AmbientBackdrop />
-          <Navbar />
-          <main className="relative z-10">{children}</main>
-          <Footer />
-        </CommandPaletteProvider>
+      <body className="relative pb-28 antialiased">
+        <AmbientBackdrop />
+        <Navbar />
+        <main className="relative z-10">{children}</main>
+        <Footer />
+        <PersistentAudioPlayer />
       </body>
     </html>
   );

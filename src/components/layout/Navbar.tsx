@@ -4,9 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Command, ExternalLink, FolderKanban } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useCommandPalette } from '@/components/interactive/CommandPalette';
 
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
@@ -21,7 +20,6 @@ export function Navbar() {
   const bg = useTransform(scrollY, [0, 80], ['hsl(var(--bg) / 0)', 'hsl(var(--bg) / 0.72)']);
   const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.08]);
   const [active, setActive] = useState<string | null>(null);
-  const { open: openPalette } = useCommandPalette();
 
   const goToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -77,7 +75,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              software / data
+              software / sound
             </span>
           </span>
         </Link>
@@ -98,38 +96,29 @@ export function Navbar() {
               </button>
             </li>
           ))}
-          <li>
-            <button
-              type="button"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-              onClick={() => goToSection('projects')}
-            >
-              Green Machine
-              <ExternalLink className="size-3" />
-            </button>
-          </li>
         </ul>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => goToSection('projects')}
-            className="hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex"
+          <a
+            href="https://www.linkedin.com/in/marcelozap"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
           >
-            <FolderKanban className="size-3.5" />
-            Green Machine
-          </button>
-          <button
-            onClick={openPalette}
-            className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
-            aria-label="Open command palette"
+            <Linkedin className="size-4" />
+          </a>
+          <a
+            href="https://github.com/marcelozap"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
           >
-            <Command className="size-3.5" />
-            <span className="hidden sm:inline">Command</span>
-            <kbd className="hidden rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 text-[10px] sm:inline">
-              Ctrl K
-            </kbd>
-          </button>
+            <Github className="size-4" />
+          </a>
         </div>
       </nav>
     </motion.header>

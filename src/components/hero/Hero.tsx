@@ -57,7 +57,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / AI systems / data</span>
+            <span className="text-ink-faint">software / AI systems / data / sound</span>
           </motion.div>
 
           <motion.div
@@ -68,7 +68,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer building public artifacts for AI, data, and workflow systems.
+              AI systems, data engineering, and original sound design.
             </span>
           </motion.div>
 
@@ -79,8 +79,8 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Currently building Green Machine: a public systems map for AI, data, workflow tools,
-              research notes, and the artifacts behind the learning.
+              I build software systems, publish the artifacts behind the learning, and score the
+              site with original MaloSound audio.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
               C# / Azure / Python / React / Playwright / Power BI / AI evaluation
@@ -97,10 +97,6 @@ export function Hero() {
               <FolderKanban className="size-4" />
               View Work
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
-            </GlowButton>
-            <GlowButton variant="outline" href="#projects">
-              <ExternalLink className="size-4" />
-              Open Green Machine
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />
