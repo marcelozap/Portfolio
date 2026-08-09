@@ -16,24 +16,24 @@ import { scrollToSection } from '@/lib/utils';
 
 const FEATURED_WORK = [
   {
-    name: 'FSU Options Research',
-    href: '/fsu-options-research',
-    meta: 'Python / FastAPI',
-    note: 'market data and risk analysis',
-    external: false,
-  },
-  {
-    name: 'Rally',
-    href: '/rally',
-    meta: 'SwiftUI',
-    note: 'coming soon',
-    external: false,
+    name: 'GateKPT',
+    href: 'https://gatekpt.ai',
+    meta: 'AI stack map',
+    note: 'public research hub',
+    external: true,
   },
   {
     name: 'AI Workflow Systems',
     href: '#projects',
     meta: 'AI / QA',
     note: 'approval-gated automation',
+    external: false,
+  },
+  {
+    name: 'FSU Options Research',
+    href: '/fsu-options-research',
+    meta: 'Python / FastAPI',
+    note: 'research data systems',
     external: false,
   },
 ];
@@ -44,8 +44,6 @@ export function Hero() {
       id="hero"
       className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--line)/0.28)_1px,transparent_1px),linear-gradient(0deg,hsl(var(--line)/0.22)_1px,transparent_1px)] bg-[size:72px_72px] opacity-35" />
-      <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_74%_28%,hsl(var(--accent)/0.11),transparent_62%),radial-gradient(62%_50%_at_18%_82%,hsl(var(--accent-warm)/0.13),transparent_58%),radial-gradient(48%_38%_at_42%_18%,hsl(var(--accent-cool)/0.075),transparent_62%)]" />
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
@@ -62,7 +60,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / automation / data</span>
+            <span className="text-ink-faint">software / AI systems / data</span>
           </motion.div>
 
           <motion.div
@@ -73,7 +71,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer.
+              Software engineer mapping AI systems end to end.
             </span>
           </motion.div>
 
@@ -84,10 +82,11 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Data tools, QA automation, AI-assisted workflows, and practical interfaces.
+              I build data tools, QA automation, and AI-assisted workflows, then turn what I learn
+              into public systems people can study.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              C# / Azure / Python / React / Playwright / Power BI
+              C# / Azure / Python / React / Playwright / Power BI / AI evaluation
             </p>
           </motion.div>
 
@@ -99,12 +98,17 @@ export function Hero() {
           >
             <GlowButton variant="primary" href="#projects">
               <FolderKanban className="size-4" />
-              View Projects
+              View Work
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
             </GlowButton>
-            <GlowButton variant="outline" href="/fsu-options-research">
+            <GlowButton
+              variant="outline"
+              href="https://gatekpt.ai"
+              target="_blank"
+              rel="noreferrer"
+            >
               <ExternalLink className="size-4" />
-              FSU Research
+              Open GateKPT
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />
@@ -142,9 +146,9 @@ export function Hero() {
           className="hidden lg:block"
           aria-label="Selected work"
         >
-          <div className="border border-white/[0.08] bg-bg-elevated/55 p-5 shadow-[0_30px_120px_-60px_hsl(31_76%_35%/0.36)] backdrop-blur-xl">
+          <div className="border border-line bg-bg-elevated/55 p-5 backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
-              <span>Selected work</span>
+              <span>Current map</span>
               <span className="text-signal-green">3</span>
             </div>
             <div className="space-y-2">
@@ -169,9 +173,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
+                ['AI', 'stack'],
                 ['Data', 'systems'],
-                ['QA', 'automation'],
-                ['UI', 'tools'],
+                ['QA', 'review'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>

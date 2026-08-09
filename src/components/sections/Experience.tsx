@@ -23,10 +23,10 @@ interface Milestone {
 
 const ACCENT: Record<Accent, { dot: string; text: string; ring: string; tint: string }> = {
   green: {
-    dot: 'bg-signal-green shadow-[0_0_10px_hsl(152_78%_52%)]',
-    text: 'text-signal-green',
-    ring: 'ring-signal-green/30',
-    tint: 'from-signal-green/10',
+    dot: 'bg-accent shadow-[0_0_10px_hsl(var(--accent)/0.55)]',
+    text: 'text-accent',
+    ring: 'ring-accent/30',
+    tint: 'from-accent/10',
   },
 };
 
@@ -140,7 +140,7 @@ export function Experience() {
                 <div className="flex items-start gap-3">
                   <span
                     className={cn(
-                      'flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/[0.03] ring-1',
+                      'flex size-10 shrink-0 items-center justify-center rounded-[2px] bg-white/[0.03] ring-1',
                       a.ring,
                       a.text,
                     )}
@@ -165,7 +165,7 @@ export function Experience() {
                   {m.metrics.map((mt) => (
                     <div
                       key={mt.label}
-                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-right"
+                      className="rounded-[2px] border border-line bg-white/[0.02] px-3 py-1.5 text-right"
                     >
                       <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
                         {mt.label}
@@ -186,7 +186,7 @@ export function Experience() {
                 {m.focus.map((item) => (
                   <div
                     key={item}
-                    className="rounded-lg border border-white/[0.04] bg-white/[0.01] px-4 py-3"
+                    className="rounded-[2px] border border-line bg-white/[0.01] px-4 py-3"
                   >
                     <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
                       Focus
@@ -208,7 +208,7 @@ export function Experience() {
                   {m.metrics.map((mt) => (
                     <div
                       key={mt.label}
-                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-1"
+                      className="rounded-[2px] border border-line bg-white/[0.02] px-2.5 py-1"
                     >
                       <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-faint">
                         {mt.label}

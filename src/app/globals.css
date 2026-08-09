@@ -9,30 +9,30 @@
    ========================================================================= */
 
 :root {
-  /* canvas: Florida night, dark water, palm shadow */
-  --bg: 166 48% 4%;
-  --bg-subtle: 158 36% 7%;
-  --bg-elevated: 158 27% 10%;
+  /* XIV base: blue-black, never neutral gray */
+  --bg: 225 44% 4%;
+  --bg-subtle: 220 45% 6%;
+  --bg-elevated: 217 44% 8%;
 
-  /* ink */
-  --ink: 41 32% 87%;
-  --ink-muted: 41 21% 73%;
-  --ink-faint: 43 11% 52%;
+  /* XIV content ramp */
+  --ink: 210 57% 97%;
+  --ink-muted: 220 23% 64%;
+  --ink-faint: 220 17% 50%;
 
-  /* accents: moonlit teal, streetlight amber, night orchid */
-  --accent: 153 48% 61%;
-  --accent-glow: 153 56% 58%;
-  --accent-warm: 31 76% 62%;
-  --accent-cool: 296 34% 65%;
+  /* visor constant + personal-site atmosphere */
+  --accent: 183 100% 75%;
+  --accent-glow: 183 100% 75%;
+  --accent-warm: 38 100% 56%;
+  --accent-cool: 258 90% 66%;
 
   /* signals */
-  --signal-green: 148 47% 58%;
-  --signal-red: 8 42% 57%;
-  --signal-amber: 31 76% 62%;
+  --signal-green: 142 69% 58%;
+  --signal-red: 0 100% 71%;
+  --signal-amber: 38 100% 56%;
 
   /* structural */
-  --line: 155 22% 16%;
-  --ring: 153 48% 61%;
+  --line: 221 31% 19%;
+  --ring: 183 100% 75%;
 }
 
 * {
@@ -105,11 +105,9 @@ body {
 /* =========== component utilities ============== */
 @layer components {
   .glass {
-    @apply relative isolate rounded-md border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl;
-    background-image: linear-gradient(180deg, hsl(var(--ink) / 0.02) 0%, hsl(var(--ink) / 0) 100%);
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.04),
-      0 30px 80px -30px hsl(0 0% 0% / 0.6);
+    @apply relative isolate rounded-[2px] border border-line bg-white/[0.018] backdrop-blur-xl;
+    background-image: linear-gradient(180deg, hsl(var(--ink) / 0.018) 0%, hsl(var(--ink) / 0) 100%);
+    box-shadow: inset 0 1px 0 0 hsl(0 0% 100% / 0.035);
   }
 
   .glass-strong {
@@ -122,7 +120,7 @@ body {
   }
 
   .mono-tag {
-    @apply inline-flex items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium normal-case tracking-normal text-ink-muted;
+    @apply inline-flex items-center gap-1.5 rounded-[2px] border border-line bg-white/[0.025] px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-ink-faint;
   }
 
   .grid-bg {
@@ -150,7 +148,7 @@ body {
       135deg,
       hsl(var(--ink)) 0%,
       hsl(var(--accent)) 52%,
-      hsl(var(--accent-warm)) 100%
+      hsl(var(--ink-muted)) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -158,30 +156,29 @@ body {
   }
 
   .ring-glow {
-    box-shadow:
-      0 0 0 1px hsl(var(--accent) / 0.26),
-      0 18px 55px -34px hsl(var(--accent-glow) / 0.5);
+    box-shadow: 0 0 0 1px hsl(var(--accent) / 0.26);
   }
 
   .btn {
-    @apply relative inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-ink transition duration-300;
-    @apply hover:-translate-y-0.5 hover:border-accent/45 hover:bg-white/[0.06] hover:text-ink hover:shadow-[0_18px_50px_-36px_hsl(var(--accent-glow)/0.75)];
+    @apply relative inline-flex items-center gap-2 rounded-[2px] border border-line bg-white/[0.025] px-5 py-2.5 text-sm font-medium text-ink transition duration-150;
+    @apply hover:border-accent/45 hover:bg-white/[0.045] hover:text-ink;
   }
   .btn-primary {
     @apply btn;
-    background-image: linear-gradient(
-      135deg,
-      hsl(var(--accent) / 0.18),
-      hsl(var(--accent-warm) / 0.14)
-    );
-    border-color: hsl(var(--accent) / 0.4);
-    box-shadow:
-      0 18px 55px -34px hsl(var(--accent-glow) / 0.55),
-      0 14px 50px -36px hsl(var(--accent-warm) / 0.7);
+    background: hsl(var(--ink));
+    border-color: hsl(var(--ink));
+    color: hsl(var(--bg));
+    box-shadow: none;
+  }
+  .btn-primary:hover {
+    background: hsl(var(--accent));
+    border-color: hsl(var(--accent));
+    color: hsl(var(--bg));
+    box-shadow: 0 0 34px hsl(var(--accent) / 0.34);
   }
 
   .terrain-surface {
-    @apply relative overflow-hidden rounded-lg border border-white/[0.06] bg-white/[0.025];
+    @apply relative overflow-hidden rounded-[2px] border border-line bg-white/[0.025];
     background-image:
       linear-gradient(180deg, hsl(var(--ink) / 0.035), transparent),
       radial-gradient(80% 60% at 50% 0%, hsl(var(--accent) / 0.08), transparent 62%);

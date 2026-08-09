@@ -8,13 +8,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Clear tools',
-    body: 'Software should help people do the work without making the work louder.',
+    title: 'Systems map',
+    body: 'I turn scattered technical knowledge into structures people can inspect and use.',
   },
   {
     icon: Compass,
-    title: 'Human feel',
-    body: 'The best tools feel obvious after you use them once.',
+    title: 'Human workflow',
+    body: 'The best tools make complex work easier to see, validate, and repeat.',
   },
 ];
 
@@ -22,9 +22,9 @@ const TAGS = [
   'C# / Azure / data systems',
   'TypeScript / React / Next.js',
   'Python / data automation',
-  'Research data workflows',
+  'AI systems / evaluation',
+  'Prompting / research notes',
   'Evidence review / validation',
-  'SwiftUI / SpriteKit / iOS apps',
 ];
 
 export function About() {
@@ -36,10 +36,10 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Software engineer.</span>
+            <span className="text-gradient">Software, AI, systems.</span>
           </>
         }
-        description="Software systems for data, automation, research workflows, practice, and review."
+        description="Building practical software while organizing a public map of how AI systems work."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -47,12 +47,13 @@ export function About() {
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
               I build tools for real workflows: data automation, QA systems, internal tools,
-              reporting, AI-assisted review, and practical interfaces that help teams work cleaner.
+              reporting, AI-assisted review, and interfaces that make complicated work easier to
+              trust.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Outside work, the same pattern shows up in FSU Options Research, Rally, and AI
-              Workflow Systems: practical builds for research, practice, structured review, and
-              clearer decisions.
+              GateKPT is the public version of that same habit: taking years of notes across
+              computers, business, data, prompting, and systems, then shaping them into a clearer
+              map of the AI stack end to end.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
@@ -82,7 +83,7 @@ export function About() {
               >
                 <GlassCard className="h-full">
                   <div className="flex h-full flex-col gap-2 p-5">
-                    <span className="flex size-9 items-center justify-center rounded-lg bg-accent/10 text-accent ring-1 ring-accent/30">
+                    <span className="flex size-9 items-center justify-center rounded-[2px] bg-accent/10 text-accent ring-1 ring-accent/30">
                       <Icon className="size-4" />
                     </span>
                     <h3 className="text-base font-medium text-ink">{b.title}</h3>

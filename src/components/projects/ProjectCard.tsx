@@ -9,24 +9,24 @@ import { cn } from '@/lib/utils';
 
 const ACCENT: Record<Project['accent'], { glow: string; tint: string; ring: string }> = {
   cyan: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(153_80%_58%/0.42)]',
-    tint: 'from-accent/20',
+    glow: '',
+    tint: 'from-accent/10',
     ring: 'group-hover:border-accent/40',
   },
   amber: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(28_100%_62%/0.45)]',
-    tint: 'from-accent-warm/20',
-    ring: 'group-hover:border-accent-warm/40',
+    glow: '',
+    tint: 'from-accent-warm/8',
+    ring: 'group-hover:border-accent/40',
   },
   violet: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(296_70%_66%/0.42)]',
-    tint: 'from-accent-cool/20',
-    ring: 'group-hover:border-accent-cool/40',
+    glow: '',
+    tint: 'from-accent-cool/8',
+    ring: 'group-hover:border-accent/40',
   },
   green: {
-    glow: 'shadow-[0_0_60px_-12px_hsl(148_70%_54%/0.42)]',
-    tint: 'from-signal-green/20',
-    ring: 'group-hover:border-signal-green/40',
+    glow: '',
+    tint: 'from-accent/8',
+    ring: 'group-hover:border-accent/40',
   },
 };
 
@@ -139,6 +139,45 @@ function WorkflowSystemsCardArt() {
   );
 }
 
+function GateKptCardArt() {
+  const layers = ['power', 'compute', 'data', 'model', 'app', 'eval', 'deploy'];
+
+  return (
+    <div className="terrain-surface h-32 bg-[linear-gradient(135deg,hsl(205_34%_8%),hsl(162_28%_7%))]">
+      <div className="absolute inset-0 bg-[radial-gradient(75%_60%_at_72%_18%,hsl(184_90%_70%/0.18),transparent_62%),radial-gradient(60%_48%_at_18%_78%,hsl(296_70%_66%/0.14),transparent_58%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(184_70%_70%/0.045)_1px,transparent_1px),linear-gradient(0deg,hsl(184_70%_70%/0.035)_1px,transparent_1px)] bg-[size:30px_30px]" />
+      <div className="absolute left-4 right-4 top-4 grid grid-cols-7 gap-1">
+        {layers.map((layer, i) => (
+          <span
+            key={layer}
+            className="h-12 rounded-[3px] border border-cyan-200/[0.12] bg-cyan-200/[0.035] px-1 pt-2 text-center font-mono text-[6.5px] uppercase tracking-[0.08em] text-ink-faint transition group-hover:border-accent/35 group-hover:text-ink-muted"
+            style={{ transform: `translateY(${Math.abs(3 - i) * 3}px)` }}
+          >
+            {layer}
+          </span>
+        ))}
+      </div>
+      <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <path
+          d="M8 45 C22 29 31 36 43 22 C54 10 67 23 78 14 C88 6 94 10 99 7"
+          fill="none"
+          stroke="hsl(184 90% 70% / 0.58)"
+          strokeWidth="0.42"
+          strokeDasharray="1.8 1.6"
+        />
+        <path
+          d="M6 52 H22 M30 52 H46 M54 52 H70 M78 52 H94"
+          stroke="hsl(296 70% 66% / 0.36)"
+          strokeWidth="0.36"
+        />
+      </svg>
+      <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
+        ai stack / public map
+      </div>
+    </div>
+  );
+}
+
 function RallyCardArt() {
   return (
     <div className="terrain-surface h-32 bg-[linear-gradient(135deg,hsl(146_28%_10%),hsl(38_32%_12%))]">
@@ -194,6 +233,7 @@ function RallyCardArt() {
 }
 
 function ProjectEnvironment({ project }: { project: Project }) {
+  if (project.id === 'gatekpt') return <GateKptCardArt />;
   if (project.id === 'fsu-options-research') return <ResearchDataCardArt />;
   if (project.id === 'ai-workflow-systems') return <WorkflowSystemsCardArt />;
   if (project.id === 'rally') return <RallyCardArt />;

@@ -10,10 +10,10 @@ import { useCommandPalette } from '@/components/interactive/CommandPalette';
 
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
   { id: 'about', label: 'About' },
-  { id: 'music', label: 'Music' },
 ];
-const OBSERVED_SECTION_IDS = ['projects', ...NAV_ITEMS.map((n) => n.id)];
+const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -99,37 +99,27 @@ export function Navbar() {
           ))}
           <li>
             <Link
-              href="/fsu-options-research"
+              href="https://gatekpt.ai"
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
+              target="_blank"
+              rel="noreferrer"
             >
-              FSU Research
-              <ExternalLink className="size-3" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/rally"
-              className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-            >
-              Rally
+              GateKPT
               <ExternalLink className="size-3" />
             </Link>
           </li>
         </ul>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => goToSection('projects')}
-            data-active={active === 'projects'}
-            className={cn(
-              'hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex',
-              active === 'projects' && 'border-accent/35 text-ink',
-            )}
+          <Link
+            href="https://gatekpt.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex"
           >
             <FolderKanban className="size-3.5" />
-            Projects
-          </button>
+            GateKPT
+          </Link>
           <button
             onClick={openPalette}
             className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"

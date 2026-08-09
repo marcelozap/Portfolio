@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono, Libre_Baskerville } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { CommandPaletteProvider } from '@/components/interactive/CommandPalette';
 import { AmbientBackdrop } from '@/components/layout/AmbientBackdrop';
@@ -12,9 +12,9 @@ const sans = Inter({
   display: 'swap',
 });
 
-const display = Libre_Baskerville({
+const display = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['500', '600'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -28,17 +28,20 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Software Engineer',
+    default: 'Marcelo Zapata - Software Engineer, AI Systems',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for data automation, research systems, AI-assisted workflows, and selected projects.',
+    'Software engineering portfolio for AI systems, data automation, research workflows, QA, and public technical projects including GateKPT.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
     'platform engineer',
     'research systems',
+    'AI systems',
+    'AI evaluation',
+    'GateKPT',
     'data workflows',
     'automation',
     'analytics',
@@ -50,9 +53,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata - Software Engineer',
+    title: 'Marcelo Zapata - Software Engineer, AI Systems',
     description:
-      'Software engineering, data automation, research systems, and selected projects by Marcelo Zapata.',
+      'Software engineering, AI systems, data automation, research workflows, and public technical projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -67,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer. Data automation, research systems, and AI-assisted workflows.',
+    description: 'Software engineer building AI systems, data tools, and public research projects.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {
@@ -77,7 +80,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#06090d',
+  themeColor: '#05070D',
   colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,

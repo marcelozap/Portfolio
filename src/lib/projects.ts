@@ -46,6 +46,53 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'gatekpt',
+    name: 'GateKPT',
+    tagline: 'A public map for studying the modern AI stack end to end.',
+    domain: 'systems',
+    status: 'in-development',
+    accent: 'cyan',
+    year: '2026',
+    website: 'https://gatekpt.ai',
+    description:
+      'GateKPT is my public research hub for organizing years of notes, diagrams, projects, and instincts into a structured map of AI infrastructure, data, models, prompting, evaluation, deployment, and business context.',
+    coreIdeas: [
+      'A public map of how I understand AI systems across the full stack',
+      'Research notes shaped into focused lessons, weekly briefs, and system explainers',
+      'Prompting treated as professional communication, not magic phrasing',
+      'AI deployment framed through evaluation, observability, privacy, and adoption constraints',
+      'A public accountability system for staying current with fast-moving AI technology',
+    ],
+    features: [
+      {
+        title: 'AI stack map',
+        description:
+          'Breaks AI into practical layers: power and site, compute, data, models, applications, evaluation, and deployment.',
+      },
+      {
+        title: 'Learning instrument',
+        description:
+          'Uses short focused screens, recall checks, and sourced anchors instead of a wall of generic content.',
+      },
+      {
+        title: 'Research discipline',
+        description:
+          'Connects technical foundations with market context, infrastructure economics, and real deployment constraints.',
+      },
+      {
+        title: 'Public growth loop',
+        description:
+          'Turns private study into a visible system that can improve as the field changes.',
+      },
+    ],
+    metrics: [
+      { label: 'Layers', value: '7' },
+      { label: 'Mode', value: 'Public map' },
+      { label: 'Focus', value: 'AI systems' },
+    ],
+    stack: ['Next.js', 'TypeScript', 'AI systems', 'Research', 'Prompting', 'Evaluation'],
+  },
+  {
     id: 'fsu-options-research',
     name: 'FSU Options Research',
     tagline: 'Software engineering research project for options market data and risk analysis.',

@@ -14,9 +14,9 @@ interface ProjectModalProps {
 
 const ACCENT_TEXT: Record<Project['accent'], string> = {
   cyan: 'text-accent',
-  amber: 'text-accent-warm',
-  violet: 'text-accent-cool',
-  green: 'text-signal-green',
+  amber: 'text-ink',
+  violet: 'text-ink',
+  green: 'text-ink',
 };
 
 const DOMAIN_LABEL: Record<Project['domain'], string> = {
@@ -74,12 +74,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.28, ease: 'easeOut' }}
-            className="glass-strong relative z-10 flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden shadow-glow-lg"
+            className="glass-strong relative z-10 flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden"
           >
             <button
               aria-label="Close"
               onClick={onClose}
-              className="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-white/[0.08] bg-bg/60 text-ink-muted backdrop-blur-md transition hover:border-accent/40 hover:text-ink"
+              className="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-[2px] border border-line bg-bg/60 text-ink-muted backdrop-blur-md transition hover:border-accent/40 hover:text-ink"
             >
               <X className="size-4" />
             </button>
@@ -116,7 +116,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     href={project.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
+                    className="mt-6 inline-flex items-center gap-2 rounded-[2px] border border-line bg-white/[0.03] px-3 py-2 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
                   >
                     Open page
                     <ExternalLink className="size-3.5" />
@@ -147,7 +147,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {project.features.map((f) => (
                       <div
                         key={f.title}
-                        className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4"
+                        className="rounded-[2px] border border-line bg-white/[0.02] p-4"
                       >
                         <div className="text-sm font-medium text-ink">{f.title}</div>
                         <p className="mt-1 text-[13px] leading-relaxed text-ink-muted">
@@ -171,7 +171,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
+                <div className="grid grid-cols-3 gap-3 rounded-[2px] border border-line bg-white/[0.02] p-4">
                   {project.metrics.map((m) => (
                     <div key={m.label}>
                       <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">

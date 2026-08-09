@@ -30,12 +30,12 @@ export function Projects() {
         eyebrow="Projects"
         title={
           <>
-            Selected
+            Systems
             <br />
-            <span className="text-gradient">work.</span>
+            <span className="text-gradient">in public.</span>
           </>
         }
-        description="FSU options research. Rally. AI workflow systems."
+        description="GateKPT, AI workflow systems, research data tooling, and practice software."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
