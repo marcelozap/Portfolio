@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for AI systems, data automation, research workflows, QA, and public technical projects including GateKPT.',
+    'Software engineering portfolio for AI systems, data automation, research workflows, MaloSound, QA, and public technical projects including Green Machine.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -41,21 +41,23 @@ export const metadata: Metadata = {
     'research systems',
     'AI systems',
     'AI evaluation',
-    'GateKPT',
+    'Green Machine',
+    'MaloSound',
+    'music technology',
     'data workflows',
     'automation',
     'analytics',
     'software systems',
     'FSU Options Research',
     'Rally',
-    'AI Workflow Systems',
+    'AI systems',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer, AI Systems',
     description:
-      'Software engineering, AI systems, data automation, research workflows, and public technical projects by Marcelo Zapata.',
+      'Software engineering, AI systems, data automation, research workflows, MaloSound, and public technical projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -70,7 +72,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software engineer building AI systems, data tools, and public research projects.',
+    description:
+      'Software engineer building AI systems, data tools, MaloSound, and public research projects.',
     images: ['/og-thumbnail-linkedin.png'],
   },
   icons: {

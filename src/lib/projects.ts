@@ -46,19 +46,19 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: 'gatekpt',
-    name: 'GateKPT',
-    tagline: 'A seven-layer AI stack trainer with sourced anchors and recall checks.',
+    id: 'green-machine',
+    name: 'Green Machine',
+    tagline: 'A public systems map for AI, data, workflows, and research.',
     domain: 'systems',
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
     website: 'https://gatekpt.ai',
     description:
-      'GateKPT turns my AI study notes into an inspectable learning artifact: seven system layers, one sourced anchor per layer, a failure mode, and a recall check before moving forward.',
+      'Green Machine is the public systems lane: a place where AI study notes, workflow tools, research maps, sourced anchors, and validation habits turn into inspectable artifacts.',
     coreIdeas: [
-      'A public map of how I understand AI systems across the full stack',
-      'One layer at a time instead of a generic AI content wall',
+      'A public map of how I understand AI, data, and workflow systems',
+      'One layer at a time instead of a generic content wall',
       'Prompting treated as professional communication, not magic phrasing',
       'Evaluation and deployment treated as first-class engineering constraints',
       'Source links kept visible so claims can be checked',
@@ -70,25 +70,25 @@ export const PROJECTS: Project[] = [
           'Breaks AI into practical layers: power and site, compute, data, models, applications, evaluation, and deployment.',
       },
       {
-        title: 'Learning instrument',
+        title: 'Workflow instrument',
         description:
-          'Uses short focused screens, recall checks, and sourced anchors instead of a wall of generic content.',
+          'Uses focused screens, recall checks, source links, and review gates instead of broad promises.',
       },
       {
-        title: 'Research discipline',
+        title: 'Research memory',
         description:
-          'Connects technical foundations with market context, infrastructure economics, and real deployment constraints.',
+          'Connects technical foundations with market context, infrastructure economics, and deployment constraints.',
       },
       {
-        title: 'Public growth loop',
+        title: 'Public build loop',
         description:
-          'Turns private study into a visible system that can improve as the field changes.',
+          'Turns private study and local tools into visible artifacts that can improve as the field changes.',
       },
     ],
     metrics: [
-      { label: 'Layers', value: '7' },
-      { label: 'Mode', value: 'Public map' },
-      { label: 'Focus', value: 'AI systems' },
+      { label: 'Mode', value: 'Systems map' },
+      { label: 'Output', value: 'Artifacts' },
+      { label: 'Focus', value: 'AI + data' },
     ],
     stack: ['Next.js', 'TypeScript', 'AI systems', 'Research', 'Prompting', 'Evaluation'],
   },
@@ -185,51 +185,6 @@ export const PROJECTS: Project[] = [
       { label: 'Loop', value: 'Practice' },
     ],
     stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'Activity data', 'Garmin API', 'Node.js'],
-  },
-  {
-    id: 'ai-workflow-systems',
-    name: 'AI Workflow Systems',
-    tagline: 'Approval-gated automation for data, QA, and internal software workflows.',
-    domain: 'systems',
-    status: 'in-development',
-    accent: 'violet',
-    year: '2026',
-    description:
-      'AI Workflow Systems is a set of local-first software experiments for turning messy work into reviewable plans, structured records, validation checks, and human-approved actions.',
-    coreIdeas: [
-      'Human-in-the-loop workflows where AI drafts, checks, and organizes instead of acting silently',
-      'Structured notes, task records, and repeatable review loops for real operational work',
-      'QA and validation habits carried into AI-assisted software delivery',
-      'Local-first architecture for private context, auditability, and safe iteration',
-    ],
-    features: [
-      {
-        title: 'Workflow capture',
-        description:
-          'Converts loose notes, files, and decisions into structured records that are easier to search, review, and hand off.',
-      },
-      {
-        title: 'Approval gates',
-        description:
-          'Keeps important actions behind clear review steps so automation supports judgment instead of replacing it.',
-      },
-      {
-        title: 'Validation layer',
-        description:
-          'Pairs AI-assisted work with tests, checklists, logs, and explicit acceptance criteria.',
-      },
-      {
-        title: 'System memory',
-        description:
-          'Keeps project context, decisions, follow-ups, and reusable patterns in one practical loop.',
-      },
-    ],
-    metrics: [
-      { label: 'Focus', value: 'AI systems' },
-      { label: 'Mode', value: 'Review' },
-      { label: 'Output', value: 'Records' },
-    ],
-    stack: ['TypeScript', 'React', 'Python', 'C#', 'PowerShell', 'Playwright', 'AI workflows'],
   },
 ];
 

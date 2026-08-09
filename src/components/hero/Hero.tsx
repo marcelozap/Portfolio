@@ -6,18 +6,11 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'GateKPT',
+    name: 'Green Machine',
     href: 'https://gatekpt.ai',
-    meta: 'live',
-    note: '7-layer AI stack trainer',
+    meta: 'public',
+    note: 'AI, data, workflow systems',
     external: true,
-  },
-  {
-    name: 'AI Workflow Systems',
-    href: '#projects',
-    meta: 'artifact',
-    note: 'capture, check, review, ship',
-    external: false,
   },
   {
     name: 'FSU Options Research',
@@ -26,13 +19,20 @@ const FEATURED_WORK = [
     note: 'research data and risk review',
     external: false,
   },
+  {
+    name: 'Rally',
+    href: '/rally',
+    meta: 'prototype',
+    note: 'practice data and progress',
+    external: false,
+  },
 ];
 
 const PROOF_ITEMS = [
-  ['GateKPT', 'public AI stack map'],
-  ['7 layers', 'power to deployment'],
-  ['Sourced anchors', 'numbers link to evidence'],
-  ['Recall checks', 'learn by commitment'],
+  ['Green Machine', 'public systems map'],
+  ['AI stack', 'power to deployment'],
+  ['Sources', 'claims stay checkable'],
+  ['MaloSound', 'music-tech identity'],
 ];
 
 export function Hero() {
@@ -79,8 +79,8 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              Currently building GateKPT: a seven-layer map of the modern AI stack, from power and
-              compute to evaluation and deployment.
+              Currently building Green Machine: a public systems map for AI, data, workflow tools,
+              research notes, and the artifacts behind the learning.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
               C# / Azure / Python / React / Playwright / Power BI / AI evaluation
@@ -105,7 +105,7 @@ export function Hero() {
               rel="noreferrer"
             >
               <ExternalLink className="size-4" />
-              Open GateKPT
+              Open Green Machine
             </GlowButton>
             <GlowButton variant="outline" href="#experience">
               <Briefcase className="size-4" />

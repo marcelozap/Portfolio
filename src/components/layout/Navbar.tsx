@@ -11,6 +11,7 @@ import { useCommandPalette } from '@/components/interactive/CommandPalette';
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'malosound', label: 'MaloSound' },
   { id: 'about', label: 'About' },
 ];
 const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);
@@ -104,7 +105,7 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
             >
-              GateKPT
+              Green Machine
               <ExternalLink className="size-3" />
             </Link>
           </li>
@@ -118,7 +119,7 @@ export function Navbar() {
             className="hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex"
           >
             <FolderKanban className="size-3.5" />
-            GateKPT
+            Green Machine
           </Link>
           <button
             onClick={openPalette}

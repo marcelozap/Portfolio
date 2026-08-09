@@ -31,37 +31,36 @@ const ACCENT: Record<Accent, { dot: string; text: string; ring: string; tint: st
 };
 
 const PUBLIX: Milestone = {
-  id: 'publix',
+  id: 'current-work',
   period: '2022 - present',
   role: 'Software Engineer',
-  org: 'Enterprise retail systems',
+  org: 'Software development and AI workflow systems',
   accent: 'green',
   icon: Briefcase,
   summary:
-    'Software engineer working across data workflows, analytics, internal tools, QA automation, and modernization. My focus is making systems easier to validate, support, and trust.',
+    'Hands-on software development across Python, automation, data workflows, backend logic, and AI-assisted tooling. The work is described here at a public, role-level scope only.',
   focus: [
-    'AI-assisted delivery workflows',
-    'Data lake and processing',
-    'Semantic models and reporting',
-    'Internal tools and automation',
+    'Python-based workflow tools and automation',
+    'AI-assisted prototyping, debugging, and documentation',
+    'Ambiguous needs translated into technical requirements',
+    'Iteration, testing, documentation, and code quality',
   ],
   stack: [
+    'Python',
     'C#',
     'Azure',
-    'Python',
+    'Backend logic',
+    'Data handling',
+    'Automation',
     'AI-assisted workflows',
-    'Snowflake',
-    'Databricks',
-    'Data lakes',
-    'Semantic layer',
-    'Power BI',
-    'ETL / ELT',
-    'APIs',
+    'Testing',
+    'Documentation',
+    'Product requirements',
   ],
   metrics: [
-    { label: 'Focus', value: 'Data systems' },
-    { label: 'Mode', value: 'QA / data' },
-    { label: 'Delivery', value: 'Pipelines' },
+    { label: 'Focus', value: 'Workflow tools' },
+    { label: 'Mode', value: 'Build / review' },
+    { label: 'Scope', value: 'Public level' },
   ],
 };
 
@@ -76,12 +75,12 @@ export function Experience() {
         eyebrow="Experience"
         title={
           <>
-            Software Engineer.
+            Current Work.
             <br />
-            <span className="text-gradient">Clear delivery.</span>
+            <span className="text-gradient">Software and AI workflows.</span>
           </>
         }
-        description="Data engineering, QA automation, semantic layers, reporting, and modernization."
+        description="Public, role-level summary. No confidential systems, metrics, code, or internal details."
       />
 
       <ol className="relative mt-14 space-y-8 border-l border-white/[0.06] pl-8 md:pl-12">
