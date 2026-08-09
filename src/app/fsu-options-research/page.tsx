@@ -3,7 +3,7 @@ import Link from 'next/link';
 const researchAreas = [
   {
     title: 'Market data',
-    text: 'Options market context, historical datasets, labels, and repeatable review flows.',
+    text: 'Market context, historical datasets, labels, and repeatable review flows.',
   },
   {
     title: 'Backtesting',
@@ -18,7 +18,7 @@ const researchAreas = [
 const stack = ['Python', 'FastAPI', 'React', 'SQL', 'pytest', 'backtesting', 'labels', 'AI notes'];
 
 const whatItIs = [
-  'research data system',
+  'market research system',
   'market data analysis',
   'backtesting notes',
   'risk review',
@@ -99,14 +99,14 @@ export default function FsuOptionsResearchPage() {
               Software engineering case study
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
-              Research Data System
+              Green Machine
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
               Market data, evidence review, backtesting notes, and risk context.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              A software engineering case study for organizing structured data, historical context,
-              test notes, assumptions, and human-reviewed risk questions.
+              A software engineering case study for turning market history, structured data,
+              assumptions, and human-reviewed risk questions into a cleaner research workflow.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for AI systems, data engineering, research workflows, original MaloSound audio, QA, and public technical projects including Green Machine.',
+    'Software engineering portfolio for AI systems, data engineering, research workflows, original MaloSound audio, QA, and public technical projects including GateKPT and Green Machine.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     'research systems',
     'AI systems',
     'AI evaluation',
+    'GateKPT',
     'Green Machine',
     'MaloSound',
     'music technology',
@@ -51,9 +52,7 @@ export const metadata: Metadata = {
     'automation',
     'analytics',
     'software systems',
-    'Research Data System',
     'Rally',
-    'AI systems',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',

@@ -51,7 +51,7 @@ export function About() {
               trust.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Green Machine is the public version of that habit: notes become layers, layers become
+              GateKPT is the public version of that habit: notes become layers, layers become
               checks, audio becomes artifact, and claims keep their source links.
             </p>
             <div className="pt-2">

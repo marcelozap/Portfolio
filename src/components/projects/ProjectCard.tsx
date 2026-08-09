@@ -139,7 +139,7 @@ function WorkflowSystemsCardArt() {
   );
 }
 
-function GreenMachineCardArt() {
+function GateKptCardArt() {
   const layers = ['power', 'compute', 'data', 'model', 'app', 'eval', 'deploy'];
 
   return (
@@ -172,7 +172,7 @@ function GreenMachineCardArt() {
         />
       </svg>
       <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        green machine / systems map
+        gatekpt / ai stack map
       </div>
     </div>
   );
@@ -233,7 +233,7 @@ function RallyCardArt() {
 }
 
 function ProjectEnvironment({ project }: { project: Project }) {
-  if (project.id === 'green-machine') return <GreenMachineCardArt />;
+  if (project.id === 'gatekpt') return <GateKptCardArt />;
   if (project.id === 'fsu-options-research') return <ResearchDataCardArt />;
   if (project.id === 'ai-workflow-systems') return <WorkflowSystemsCardArt />;
   if (project.id === 'rally') return <RallyCardArt />;

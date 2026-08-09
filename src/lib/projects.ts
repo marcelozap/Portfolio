@@ -46,17 +46,17 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: 'green-machine',
-    name: 'Green Machine',
-    tagline: 'A public systems map for AI, data, workflows, and research.',
+    id: 'gatekpt',
+    name: 'GateKPT',
+    tagline: 'A public AI stack map for systems, data, prompting, evaluation, and deployment.',
     domain: 'systems',
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
     description:
-      'Green Machine is the public systems lane: a place where AI study notes, workflow tools, research maps, sourced anchors, and validation habits turn into inspectable artifacts.',
+      'GateKPT is my public AI learning and research hub: a place where study notes, workflow tools, system maps, sourced anchors, and validation habits turn into inspectable artifacts.',
     coreIdeas: [
-      'A public map of how I understand AI, data, and workflow systems',
+      'A public map of how I understand AI from infrastructure to deployment',
       'One layer at a time instead of a generic content wall',
       'Prompting treated as professional communication, not magic phrasing',
       'Evaluation and deployment treated as first-class engineering constraints',
@@ -93,15 +93,15 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'fsu-options-research',
-    name: 'Research Data System',
-    tagline: 'Market-data research workflow for evidence review, backtesting, and risk context.',
+    name: 'Green Machine',
+    tagline: 'A research data system for evidence review, backtesting notes, and risk context.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2026',
     website: '/fsu-options-research',
     description:
-      'A software engineering case study for structuring market data, historical context, backtesting notes, assumptions, and risk review into repeatable research workflows.',
+      'Green Machine is a software engineering case study for structuring market data, historical context, backtesting notes, assumptions, and risk review into repeatable research workflows.',
     coreIdeas: [
       'Market data, historical context, labels, and repeatable review flows',
       'Backtesting notes that separate evidence, assumptions, uncertainty, and intuition',

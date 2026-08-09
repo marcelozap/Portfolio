@@ -6,14 +6,14 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'Green Machine',
+    name: 'GateKPT',
     href: '#projects',
     meta: 'public',
-    note: 'AI, data, workflow systems',
+    note: 'AI stack and learning map',
     external: false,
   },
   {
-    name: 'Research Data System',
+    name: 'Green Machine',
     href: '/fsu-options-research',
     meta: 'case study',
     note: 'research data and risk review',
@@ -29,10 +29,10 @@ const FEATURED_WORK = [
 ];
 
 const PROOF_ITEMS = [
-  ['Green Machine', 'public systems map'],
-  ['AI stack', 'power to deployment'],
-  ['Sources', 'claims stay checkable'],
-  ['MaloSound', 'music-tech identity'],
+  ['GateKPT', 'public AI stack map'],
+  ['Green Machine', 'research system'],
+  ['MaloSound', 'original site score'],
+  ['XIV', 'international signal'],
 ];
 
 export function Hero() {
