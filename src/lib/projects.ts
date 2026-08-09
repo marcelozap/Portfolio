@@ -53,7 +53,6 @@ export const PROJECTS: Project[] = [
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
-    website: 'https://gatekpt.ai',
     description:
       'Green Machine is the public systems lane: a place where AI study notes, workflow tools, research maps, sourced anchors, and validation habits turn into inspectable artifacts.',
     coreIdeas: [

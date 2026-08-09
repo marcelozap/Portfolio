@@ -7,10 +7,10 @@ import { GlowButton } from '@/components/ui/GlowButton';
 const FEATURED_WORK = [
   {
     name: 'Green Machine',
-    href: 'https://gatekpt.ai',
+    href: '#projects',
     meta: 'public',
     note: 'AI, data, workflow systems',
-    external: true,
+    external: false,
   },
   {
     name: 'FSU Options Research',
@@ -98,12 +98,7 @@ export function Hero() {
               View Work
               <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
             </GlowButton>
-            <GlowButton
-              variant="outline"
-              href="https://gatekpt.ai"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <GlowButton variant="outline" href="#projects">
               <ExternalLink className="size-4" />
               Open Green Machine
             </GlowButton>

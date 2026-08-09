@@ -99,28 +99,26 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <Link
-              href="https://gatekpt.ai"
+            <button
+              type="button"
               className="nav-link inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-              target="_blank"
-              rel="noreferrer"
+              onClick={() => goToSection('projects')}
             >
               Green Machine
               <ExternalLink className="size-3" />
-            </Link>
+            </button>
           </li>
         </ul>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="https://gatekpt.ai"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => goToSection('projects')}
             className="hidden items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink sm:flex"
           >
             <FolderKanban className="size-3.5" />
             Green Machine
-          </Link>
+          </button>
           <button
             onClick={openPalette}
             className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
