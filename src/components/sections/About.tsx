@@ -8,13 +8,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Systems map',
-    body: 'I turn scattered technical knowledge into structures people can inspect and use.',
+    title: 'Translation layer',
+    body: 'I move between human intent, technical systems, data, and AI so the work becomes actionable.',
   },
   {
     icon: Compass,
-    title: 'Human workflow',
-    body: 'The best tools make complex work easier to see, validate, and repeat.',
+    title: 'Teaching instinct',
+    body: 'I care about making hard material easier to understand, remember, test, and use.',
   },
 ];
 
@@ -36,23 +36,24 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Software, AI, systems.</span>
+            <span className="text-gradient">Translation into systems.</span>
           </>
         }
-        description="Building practical software and publishing the artifacts behind the learning."
+        description="Software, AI research, data engineering, teaching, and original sound design."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I build tools for real workflows: data automation, QA systems, internal tools,
-              reporting, AI-assisted review, and interfaces that make complicated work easier to
-              trust.
+              My work sits between what people mean and what software can reliably do. I build tools
+              for data automation, QA systems, internal workflows, reporting, AI-assisted review,
+              and interfaces that make complicated work easier to trust.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              GateKPT is the public version of that habit: notes become layers, layers become
-              checks, audio becomes artifact, and claims keep their source links.
+              GateKPT is where I publish the learning in public, in English and Spanish. MaloSound
+              is the original sound layer of the same practice: code, voice, instruments, and
+              performance turned into a personal system.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

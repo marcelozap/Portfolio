@@ -74,7 +74,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              software / sound
+              software / AI / sound
             </span>
           </span>
         </Link>

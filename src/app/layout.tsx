@@ -28,11 +28,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Software Engineer, AI Systems',
+    default: 'Marcelo Zapata - Software, AI, Data, Sound',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio and XIV command system for AI research, data workflows, original MaloSound audio, training, and public technical projects including GateKPT and Green Machine.',
+    'Software, AI research, data systems, teaching, and original MaloSound audio by Marcelo Zapata. Translation between people, systems, language, and machines.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata - Software Engineer, AI Systems',
+    title: 'Marcelo Zapata - Software, AI, Data, Sound',
     description:
-      'Software, AI research, data systems, original MaloSound audio, training loops, and public technical projects by Marcelo Zapata.',
+      'Translation between people, systems, language, and machines. AI writing at GateKPT in English and Spanish.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -67,15 +67,14 @@ export const metadata: Metadata = {
         url: '/og-xiv-command.png',
         width: 1680,
         height: 945,
-        alt: 'Cinematic XIV command-system key visual in a rainy neon international city',
+        alt: 'Cinematic software and AI key visual in a rainy neon international city',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description:
-      'Software engineer building AI research systems, data workflows, original sound, and public technical projects.',
+    description: 'Software, AI research, data systems, teaching, and original sound design.',
     images: ['/og-xiv-command.png'],
   },
   icons: {

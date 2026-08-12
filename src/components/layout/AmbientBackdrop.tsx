@@ -1,5 +1,5 @@
 const CITY_MARKERS = [
-  { label: 'XIV', className: 'left-[5%] top-[18%] text-accent/28' },
+  { label: 'SYSTEMS', className: 'left-[5%] top-[18%] text-accent/28' },
   { label: 'SHENZHEN', className: 'left-[13%] top-[62%] text-accent/18' },
   { label: 'TOKYO', className: 'right-[8%] top-[21%] text-accent-cool/22' },
   { label: 'SEOUL', className: 'right-[18%] top-[68%] text-accent-warm/18' },

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, ExternalLink, FolderKanban, Github, Linkedin } from 'lucide-react';
+import { ExternalLink, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { GlowButton } from '@/components/ui/GlowButton';
 
@@ -10,14 +10,14 @@ const FEATURED_WORK = [
     name: 'GateKPT',
     href: '#projects',
     meta: 'public',
-    note: 'AI stack and learning map',
+    note: 'AI explained in English and Spanish',
     external: false,
   },
   {
     name: 'Green Machine',
     href: '/fsu-options-research',
     meta: 'case study',
-    note: 'research data and risk review',
+    note: 'research data system',
     external: false,
   },
   {
@@ -29,25 +29,21 @@ const FEATURED_WORK = [
   },
 ];
 
-const GATEKPT_SECTIONS = [
+const TRANSLATION_STRIP = [
   {
     label: 'Learn',
-    value: 'AI from the ground up',
     href: 'https://www.gatekpt.ai/#map',
   },
   {
     label: 'Training',
-    value: 'practice reps for AI',
-    href: 'https://www.gatekpt.ai/log',
+    href: 'https://www.gatekpt.ai/#training',
   },
   {
     label: 'Journals',
-    value: 'notes from the build',
-    href: 'https://www.gatekpt.ai/log',
+    href: 'https://www.gatekpt.ai/notes',
   },
   {
     label: 'Visit',
-    value: 'open GateKPT',
     href: 'https://www.gatekpt.ai',
   },
 ];
@@ -87,7 +83,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">XIV command system</span>
+            <span className="text-ink-faint">software / AI / data / sound</span>
           </motion.div>
 
           <motion.div
@@ -98,7 +94,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software, AI research, data systems, music, and disciplined creative work.
+              Translation between people, systems, language, and machines.
             </span>
           </motion.div>
 
@@ -109,11 +105,12 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build the systems behind my work: public AI maps, research workflows, training
-              loops, and original MaloSound audio.
+              It is all translation: between languages, between systems, between what someone means
+              and what a machine can act on.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              C# / Azure / Python / React / data workflows / AI evaluation / sound
+              Word and creation have never been closer. I write about AI at gatekpt.ai in English
+              and Spanish.
             </p>
           </motion.div>
 
@@ -123,36 +120,26 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.38 }}
             className="flex flex-wrap items-center gap-3"
           >
-            <GlowButton variant="primary" href="#projects">
-              <FolderKanban className="size-4" />
-              View Work
-              <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
-            </GlowButton>
-            <GlowButton variant="outline" href="#experience">
-              <Briefcase className="size-4" />
-              Experience
-            </GlowButton>
             <GlowButton
-              variant="ghost"
+              variant="primary"
               href="https://www.linkedin.com/in/marcelozap"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              className="size-11 justify-center !px-0"
             >
               <Linkedin className="size-4" />
+              LinkedIn
             </GlowButton>
             <GlowButton
-              variant="ghost"
+              variant="outline"
               href="https://github.com/marcelozap"
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub"
-              title="GitHub"
-              className="size-11 justify-center !px-0"
             >
               <Github className="size-4" />
+              GitHub
+            </GlowButton>
+            <GlowButton variant="ghost" href="#projects">
+              View Work
             </GlowButton>
           </motion.div>
         </div>
@@ -166,7 +153,7 @@ export function Hero() {
         >
           <div className="bg-bg-elevated/48 border border-line p-5 backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
-              <span>Command Artifacts</span>
+              <span>Selected Artifacts</span>
               <span className="text-accent">3</span>
             </div>
             <div className="space-y-2">
@@ -211,29 +198,18 @@ export function Hero() {
         transition={{ delay: 0.85, duration: 0.6 }}
         className="relative z-10 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
-        <div className="bg-bg/72 grid border-y border-line backdrop-blur-xl lg:grid-cols-[1.08fr_repeat(4,minmax(0,1fr))]">
-          <div className="border-r border-line px-4 py-4">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
-              GateKPT
-            </div>
-            <div className="mt-1 text-sm font-medium text-ink-muted">
-              my public AI learning system
-            </div>
-          </div>
-          {GATEKPT_SECTIONS.map((item) => (
+        <div className="bg-bg/72 grid border-y border-line backdrop-blur-xl lg:grid-cols-4">
+          {TRANSLATION_STRIP.map((item) => (
             <a
               key={item.label}
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className="group relative overflow-hidden border-r border-line px-4 py-4 transition last:border-r-0 hover:border-accent/35 hover:bg-accent/5"
+              className="group relative overflow-hidden border-r border-line px-5 py-5 transition last:border-r-0 hover:border-accent/35 hover:bg-accent/5"
             >
               <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-accent via-accent-cool to-transparent transition duration-300 group-hover:scale-x-100" />
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint transition group-hover:text-accent">
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint transition group-hover:text-accent">
                 {item.label}
-              </div>
-              <div className="mt-1 text-sm font-medium text-ink-muted transition group-hover:translate-x-1 group-hover:text-ink">
-                {item.value}
               </div>
             </a>
           ))}
