@@ -29,11 +29,27 @@ const FEATURED_WORK = [
   },
 ];
 
-const PROOF_ITEMS = [
-  ['GateKPT', 'public AI stack map'],
-  ['Green Machine', 'research system'],
-  ['MaloSound', 'original site score'],
-  ['XIV', 'command system'],
+const GATEKPT_SECTIONS = [
+  {
+    label: 'Learn',
+    value: 'AI from the ground up',
+    href: 'https://www.gatekpt.ai/#map',
+  },
+  {
+    label: 'Training',
+    value: 'practice reps for AI',
+    href: 'https://www.gatekpt.ai/log',
+  },
+  {
+    label: 'Journals',
+    value: 'notes from the build',
+    href: 'https://www.gatekpt.ai/log',
+  },
+  {
+    label: 'Visit',
+    value: 'open GateKPT',
+    href: 'https://www.gatekpt.ai',
+  },
 ];
 
 export function Hero() {
@@ -195,14 +211,31 @@ export function Hero() {
         transition={{ delay: 0.85, duration: 0.6 }}
         className="relative z-10 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
-        <div className="grid grid-cols-4 border-y border-line bg-bg/70">
-          {PROOF_ITEMS.map(([label, value]) => (
-            <div key={label} className="border-r border-line px-4 py-3 last:border-r-0">
-              <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
-                {label}
-              </div>
-              <div className="mt-1 text-sm font-medium text-ink-muted">{value}</div>
+        <div className="bg-bg/72 grid border-y border-line backdrop-blur-xl lg:grid-cols-[1.08fr_repeat(4,minmax(0,1fr))]">
+          <div className="border-r border-line px-4 py-4">
+            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+              GateKPT
             </div>
+            <div className="mt-1 text-sm font-medium text-ink-muted">
+              my public AI learning system
+            </div>
+          </div>
+          {GATEKPT_SECTIONS.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative overflow-hidden border-r border-line px-4 py-4 transition last:border-r-0 hover:border-accent/35 hover:bg-accent/5"
+            >
+              <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-accent via-accent-cool to-transparent transition duration-300 group-hover:scale-x-100" />
+              <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint transition group-hover:text-accent">
+                {item.label}
+              </div>
+              <div className="mt-1 text-sm font-medium text-ink-muted transition group-hover:translate-x-1 group-hover:text-ink">
+                {item.value}
+              </div>
+            </a>
           ))}
         </div>
       </motion.div>
