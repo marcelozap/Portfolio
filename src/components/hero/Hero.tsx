@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Briefcase, ExternalLink, FolderKanban, Github, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
@@ -32,7 +33,7 @@ const PROOF_ITEMS = [
   ['GateKPT', 'public AI stack map'],
   ['Green Machine', 'research system'],
   ['MaloSound', 'original site score'],
-  ['XIV', 'international signal'],
+  ['XIV', 'command system'],
 ];
 
 export function Hero() {
@@ -41,11 +42,24 @@ export function Hero() {
       id="hero"
       className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24"
     >
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/brand/xiv-command-key-visual.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_50%] opacity-70"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg))_0%,hsl(var(--bg)/0.94)_22%,hsl(var(--bg)/0.62)_52%,hsl(var(--bg)/0.2)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(var(--bg)/0.36)_0%,transparent_38%,hsl(var(--bg)/0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_58%_54%_at_28%_46%,hsl(var(--bg)/0.12),hsl(var(--bg)/0.78)_68%,hsl(var(--bg)/0.94)_100%)]" />
+      </div>
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-6 md:px-10 lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="flex max-w-3xl flex-col items-start gap-5">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-10 px-6 md:px-10 lg:grid-cols-[0.98fr_1.02fr]">
+        <div className="flex max-w-3xl flex-col items-start gap-5 pb-8">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +71,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / AI systems / data / sound</span>
+            <span className="text-ink-faint">XIV command system</span>
           </motion.div>
 
           <motion.div
@@ -68,7 +82,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              AI systems, data engineering, and original sound design.
+              Software, AI research, data systems, music, and disciplined creative work.
             </span>
           </motion.div>
 
@@ -79,11 +93,11 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build software systems, publish the artifacts behind the learning, and score the
-              site with original MaloSound audio.
+              I build the systems behind my work: public AI maps, research workflows, training
+              loops, and original MaloSound audio.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              C# / Azure / Python / React / Playwright / Power BI / AI evaluation
+              C# / Azure / Python / React / data workflows / AI evaluation / sound
             </p>
           </motion.div>
 
@@ -131,12 +145,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.18 }}
-          className="hidden lg:block"
+          className="hidden pb-8 lg:block"
           aria-label="Selected work"
         >
-          <div className="border border-line bg-bg-elevated/55 p-5 backdrop-blur-xl">
+          <div className="bg-bg-elevated/48 border border-line p-5 backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
-              <span>Artifacts</span>
+              <span>Command Artifacts</span>
               <span className="text-accent">3</span>
             </div>
             <div className="space-y-2">
@@ -161,9 +175,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['AI', 'stack'],
+                ['AI', 'research'],
                 ['Data', 'systems'],
-                ['QA', 'review'],
+                ['Sound', 'score'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering portfolio for AI systems, data engineering, research workflows, original MaloSound audio, QA, and public technical projects including GateKPT and Green Machine.',
+    'Software engineering portfolio and XIV command system for AI research, data workflows, original MaloSound audio, training, and public technical projects including GateKPT and Green Machine.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -59,15 +59,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer, AI Systems',
     description:
-      'Software engineering, AI systems, data automation, research workflows, MaloSound, and public technical projects by Marcelo Zapata.',
+      'Software, AI research, data systems, original MaloSound audio, training loops, and public technical projects by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
       {
-        url: '/og-thumbnail-linkedin.png',
-        width: 1200,
-        height: 627,
-        alt: 'Marcelo Zapata portfolio thumbnail with technical mountain terrain and data trails',
+        url: '/og-xiv-command.png',
+        width: 1680,
+        height: 945,
+        alt: 'Cinematic XIV command-system key visual in a rainy neon international city',
       },
     ],
   },
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description:
-      'Software engineer building AI systems, data tools, original sound design, and public research projects.',
-    images: ['/og-thumbnail-linkedin.png'],
+      'Software engineer building AI research systems, data workflows, original sound, and public technical projects.',
+    images: ['/og-xiv-command.png'],
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
