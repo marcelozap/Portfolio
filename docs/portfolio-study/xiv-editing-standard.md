@@ -6,7 +6,7 @@ This file defines how this chat should edit the portfolio.
 
 User-facing name in XIV world language:
 
-- `xiv$`
+- `xiv`
 
 Personal public portfolio identity:
 
@@ -24,7 +24,7 @@ Responsibilities:
 - Make direct, scoped edits when the request is clear.
 - Keep public copy safe and recruiter-ready.
 - Validate with local checks.
-- Tell xiv$ when the live site needs deployment.
+- Tell xiv when the live site needs deployment.
 
 ## Public Naming Rules
 
@@ -70,20 +70,20 @@ After editing:
 - Run `npm run typecheck`.
 - Run `npm run build` for UI or app changes.
 - If only docs changed, a build is optional.
-- For `marcelozapata.dev` requests, commit and push the scoped change unless xiv$ says not to.
+- For `marcelozapata.dev` requests, commit and push the scoped change unless xiv says not to.
 - Report whether production has been pushed and whether live verification was performed.
 
 ## Deployment Awareness
 
 `marcelozapata.dev` is production.
 
-Local edits do not appear there until pushed and deployed. In this portfolio chat, pushing to production is part of the normal task when xiv$ asks to update `marcelozapata.dev`.
+Local edits do not appear there until pushed and deployed. In this portfolio chat, pushing to production is part of the normal task when xiv asks to update `marcelozapata.dev`.
 
 When the user reports an issue from the live site:
 
 - Check whether local source already differs from the live screenshot.
 - If local source is ahead, explain that production likely needs deployment.
-- Commit and push through the normal repo flow unless xiv$ asks for local-only work.
+- Commit and push through the normal repo flow unless xiv asks for local-only work.
 
 Previous versions:
 

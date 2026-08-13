@@ -65,7 +65,7 @@ Then Vercel should build and promote the production deployment.
 
 Default chat behavior:
 
-- If xiv$ asks for a change to `marcelozapata.dev`, assume push/deploy is part of the task.
+- If xiv asks for a change to `marcelozapata.dev`, assume push/deploy is part of the task.
 - Keep the commit scoped.
 - Leave unrelated local changes unstaged.
 - Use Git history as the previous-version record.

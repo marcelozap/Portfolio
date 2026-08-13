@@ -4,7 +4,7 @@ This is the default operating rule for changes to `marcelozapata.dev`.
 
 ## Default Meaning
 
-When xiv$ asks to change, fix, update, polish, or add something on `marcelozapata.dev`, assume the complete task is:
+When xiv asks to change, fix, update, polish, or add something on `marcelozapata.dev`, assume the complete task is:
 
 1. Edit the local portfolio source.
 2. Validate the site locally.
@@ -13,7 +13,7 @@ When xiv$ asks to change, fix, update, polish, or add something on `marcelozapat
 5. Let Vercel build production.
 6. Report clearly whether production has been pushed and what still needs live verification.
 
-Do not stop at local source unless xiv$ explicitly says local-only, draft-only, no push, or no deploy.
+Do not stop at local source unless xiv explicitly says local-only, draft-only, no push, or no deploy.
 
 ## Safety Standard
 

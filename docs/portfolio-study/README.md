@@ -27,4 +27,4 @@ Study files:
 
 Working rule:
 
-This chat can make portfolio edits directly. For `marcelozapata.dev` changes, the default finish is local validation, scoped commit, push to `origin/main`, and Vercel production deploy awareness unless xiv$ explicitly asks for local-only or no deploy.
+This chat can make portfolio edits directly. For `marcelozapata.dev` changes, the default finish is local validation, scoped commit, push to `origin/main`, and Vercel production deploy awareness unless xiv explicitly asks for local-only or no deploy.

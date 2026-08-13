@@ -33,7 +33,7 @@ Edits made:
 
 Open follow-up:
 
-- Commit and push as the default when xiv$ asks to update `marcelozapata.dev`.
+- Commit and push as the default when xiv asks to update `marcelozapata.dev`.
 - Verify `marcelozapata.dev` after Vercel deploy.
 - Consider adding screenshots to this study packet after final visual QA.
 
