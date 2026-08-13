@@ -4,6 +4,8 @@ Personal portfolio for Marcelo Zapata, a software engineer working across data a
 
 This repository powers the public portfolio site and the recruiter-facing materials in [`career-kit/`](./career-kit). The current site is intentionally restrained: project-forward, professional, and focused on engineering range without exposing sensitive employer details.
 
+For ongoing portfolio research, edit notes, design rules, and current status, see [`docs/portfolio-study/`](./docs/portfolio-study/).
+
 ## Stack
 
 | Layer     | Tech                                                |

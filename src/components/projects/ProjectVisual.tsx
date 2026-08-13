@@ -167,7 +167,7 @@ function GameVisual({ id }: { id: string }) {
   }));
 
   return (
-    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-[radial-gradient(80%_60%_at_50%_30%,hsl(28_95%_62%/0.18),transparent_60%),linear-gradient(180deg,hsl(222_30%_8%),hsl(222_24%_4%))] md:h-60">
+    <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06] bg-[radial-gradient(80%_60%_at_50%_36%,hsl(28_95%_62%/0.18),transparent_60%),linear-gradient(180deg,hsl(222_30%_8%),hsl(222_24%_4%))] md:h-60">
       <svg viewBox="0 0 100 60" className="absolute inset-0 size-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="practice-surface" x1="0" x2="0" y1="0" y2="1">
@@ -176,13 +176,13 @@ function GameVisual({ id }: { id: string }) {
           </linearGradient>
         </defs>
         <polygon
-          points="20,10 80,10 95,55 5,55"
+          points="20,15 80,15 95,55 5,55"
           fill="url(#practice-surface)"
           stroke="hsl(28 95% 62% / 0.6)"
           strokeWidth="0.2"
         />
-        <line x1="50" y1="10" x2="50" y2="55" stroke="hsl(28 95% 62% / 0.4)" strokeWidth="0.15" />
-        <line x1="13" y1="32" x2="87" y2="32" stroke="hsl(28 95% 62% / 0.4)" strokeWidth="0.15" />
+        <line x1="50" y1="15" x2="50" y2="55" stroke="hsl(28 95% 62% / 0.4)" strokeWidth="0.15" />
+        <line x1="13" y1="35" x2="87" y2="35" stroke="hsl(28 95% 62% / 0.4)" strokeWidth="0.15" />
       </svg>
 
       {trails.map((t, i) => (
@@ -204,10 +204,10 @@ function GameVisual({ id }: { id: string }) {
         />
       ))}
 
-      <div className="absolute left-6 top-5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
+      <div className="absolute left-6 top-8 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
         rally / practice_hud
       </div>
-      <div className="absolute right-6 top-5 font-mono text-[10px] tabular-nums text-accent-warm">
+      <div className="absolute right-6 top-8 font-mono text-[10px] tabular-nums text-accent-warm">
         flow: 7.4 / streak: 12
       </div>
     </div>

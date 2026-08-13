@@ -47,7 +47,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
-    name: 'GateKPT',
+    name: 'GATEKPT.AI',
     tagline: 'A public AI learning system for understanding how modern AI is built and used.',
     domain: 'systems',
     status: 'in-development',
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     website: 'https://www.gatekpt.ai',
     description:
-      'GateKPT is where I organize and publish what I am learning about AI: infrastructure, data, models, prompting, evaluation, deployment, and the people and businesses around these systems.',
+      'GATEKPT.AI is where I organize and publish what I am learning about AI: infrastructure, data, models, prompting, evaluation, deployment, and the people and businesses around these systems.',
     coreIdeas: [
       'Explain AI from physical infrastructure to real-world use',
       'Break complicated subjects into clear, connected lessons',
@@ -101,34 +101,34 @@ export const PROJECTS: Project[] = [
     year: '2026',
     website: '/fsu-options-research',
     description:
-      'Green Machine is a software engineering case study for structuring market data, historical context, backtesting notes, assumptions, and risk review into repeatable research workflows.',
+      'Green Machine is a local-first research system for turning market history, structured data, assumptions, and human-reviewed risk questions into cleaner evidence workflows.',
     coreIdeas: [
-      'Market data, historical context, labels, and repeatable review flows',
-      'Backtesting notes that separate evidence, assumptions, uncertainty, and intuition',
-      'Interfaces for reading context, results, and risk without noise',
-      'AI-assisted review for assumptions, missing data, and next questions',
-      'Clear boundary: no recommendations, managed accounts, or order execution',
+      'Market data, evidence review, backtesting notes, and risk context',
+      'Market history treated as something to test, label, review, and revisit',
+      'Data, notes, assumptions, risk context, and follow-up questions in one repeatable workflow',
+      'AI-assisted review for assumptions, missing context, and better research questions',
+      'Research software project. No recommendations, no managed accounts, no order execution.',
     ],
     features: [
       {
         title: 'Market data',
         description:
-          'Organizes market context, historical data, labels, and source notes into repeatable software workflows.',
+          'Structures market context, historical datasets, labels, and source notes into repeatable review flows.',
       },
       {
-        title: 'Backtesting and evidence',
+        title: 'Backtesting',
         description:
-          'Converts research ideas into reproducible notes, test reviews, assumptions, limits, and follow-up questions.',
+          'Turns research ideas into test notes, assumptions, limits, and follow-up questions for software-driven review.',
       },
       {
-        title: 'Technical stack',
+        title: 'Risk analysis',
         description:
-          'Built around Python, FastAPI, React, SQL-style storage, tested workflows, and AI-assisted review.',
+          'Captures uncertainty, risk context, behavioral guardrails, and AI-assisted summaries for missed context.',
       },
       {
-        title: 'Boundary',
+        title: 'AI-assisted review',
         description:
-          'A software engineering research project, not a recommendation or execution tool.',
+          'Uses language models to organize assumptions, identify missing context, and generate better follow-up research questions.',
       },
     ],
     metrics: [
@@ -141,20 +141,21 @@ export const PROJECTS: Project[] = [
   {
     id: 'rally',
     name: 'RALLY',
-    tagline: 'Practice system. Training logs, activity data, progress.',
+    tagline: 'Practice memory for athletes.',
     domain: 'game',
     status: 'prototype',
     accent: 'amber',
     year: '2025',
     website: '/rally',
     description:
-      'Rally is a practice app for sports, sessions, activity data, and improvement loops. It brings training logs, match history, recovery notes, wearable data, and progress review into one place.',
+      'Rally is a local-first practice system for athletes: training logs, match history, recovery notes, activity data, and progress review in one place.',
     coreIdeas: [
-      'Daily practice loop as the lightweight reason to open the app',
-      'Memory across training logs, matches, recovery notes, and improvement notes',
-      'Support for different sports and real-world routines',
-      'Wearable data direction for Garmin-style activity history and review',
-      'Local-first iOS architecture with optional account sync',
+      'Daily practice loop as the lightweight reason to return',
+      'Practice memory across sessions, matches, recovery notes, and video feedback',
+      'Phone-camera coaching for accessible skill improvement',
+      'Explainable feedback: show the pose, timing, or rule behind each cue',
+      'Local-first data model with optional account sync',
+      'Activity-data direction for Garmin-style training history and recovery context',
     ],
     features: [
       {
@@ -165,12 +166,22 @@ export const PROJECTS: Project[] = [
       {
         title: 'Training memory',
         description:
-          'Sessions, matches, notes, recovery, and improvement markers live together so the system can show what is actually changing.',
+          'Sessions, matches, recovery notes, video feedback, and improvement markers live together so the system can show what is actually changing.',
       },
       {
-        title: 'Activity data',
+        title: 'Phone-video coaching prototype',
         description:
-          'Designed to grow toward Garmin and activity-data sync across running, swimming, biking, golf, cricket, court work, and other practice loops.',
+          'Uses normal phone-camera video to analyze practice clips, detect movement patterns, and return simple, explainable coaching cues.',
+      },
+      {
+        title: 'Pose detection and movement analysis',
+        description:
+          'The first prototype focuses on tennis serve analysis: body landmarks, motion phases, confidence scoring, and one clear cue for the next session.',
+      },
+      {
+        title: 'Activity data direction',
+        description:
+          'Designed to grow toward Garmin-style training history and recovery context across tennis first, then other sports and routines.',
       },
       {
         title: 'Local-first sync model',
@@ -179,11 +190,21 @@ export const PROJECTS: Project[] = [
       },
     ],
     metrics: [
-      { label: 'Core tabs', value: '5' },
+      { label: 'Mode', value: 'Practice' },
       { label: 'Platform', value: 'iOS' },
-      { label: 'Loop', value: 'Practice' },
+      { label: 'Prototype', value: 'Video' },
     ],
-    stack: ['SwiftUI', 'SpriteKit', 'SwiftData', 'Activity data', 'Garmin API', 'Node.js'],
+    stack: [
+      'SwiftUI',
+      'SpriteKit',
+      'SwiftData',
+      'Python',
+      'OpenCV',
+      'MediaPipe',
+      'Activity data',
+      'Garmin API direction',
+      'Node.js',
+    ],
   },
 ];
 

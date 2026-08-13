@@ -51,9 +51,9 @@ export function About() {
               and interfaces that make complicated work easier to trust.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              GateKPT is where I publish the learning in public, in English and Spanish. MaloSound
-              is the original sound layer of the same practice: code, voice, instruments, and
-              performance turned into a personal system.
+              GATEKPT.AI is where I publish the learning in public, in English and Spanish.
+              MaloSound is the original sound layer of the same practice: code, voice, instruments,
+              and performance turned into a personal system.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

@@ -150,14 +150,23 @@ function GateKptCardArt() {
         {layers.map((layer, i) => (
           <span
             key={layer}
-            className="h-12 rounded-[3px] border border-cyan-200/[0.12] bg-cyan-200/[0.035] px-1 pt-2 text-center font-mono text-[6.5px] uppercase tracking-[0.08em] text-ink-faint transition group-hover:border-accent/35 group-hover:text-ink-muted"
-            style={{ transform: `translateY(${Math.abs(3 - i) * 3}px)` }}
+            className="h-12 rounded-[3px] border border-cyan-200/[0.12] bg-cyan-200/[0.035] px-1 pt-2 text-center font-mono text-[6.5px] uppercase tracking-[0.08em] text-ink-faint transition group-hover:-translate-y-0.5 group-hover:border-accent/35 group-hover:text-ink-muted"
+            style={{
+              transform: `translateY(${Math.abs(3 - i) * 3}px)`,
+              transitionDelay: `${i * 24}ms`,
+            }}
           >
             {layer}
           </span>
         ))}
       </div>
       <svg viewBox="0 0 100 58" className="absolute inset-0 size-full" preserveAspectRatio="none">
+        <path
+          d="M8 49 H91 L98 56 H2 Z"
+          fill="hsl(184 34% 12% / 0.5)"
+          stroke="hsl(184 90% 70% / 0.2)"
+          strokeWidth="0.3"
+        />
         <path
           d="M8 45 C22 29 31 36 43 22 C54 10 67 23 78 14 C88 6 94 10 99 7"
           fill="none"
@@ -166,13 +175,33 @@ function GateKptCardArt() {
           strokeDasharray="1.8 1.6"
         />
         <path
+          d="M10 43 C24 33 35 38 46 29 C58 19 66 25 78 18 C87 13 94 14 99 11"
+          fill="none"
+          stroke="hsl(296 70% 66% / 0.45)"
+          strokeWidth="0.3"
+          strokeDasharray="1.2 1.4"
+        />
+        <path
           d="M6 52 H22 M30 52 H46 M54 52 H70 M78 52 H94"
           stroke="hsl(296 70% 66% / 0.36)"
           strokeWidth="0.36"
         />
+        <g fill="hsl(184 90% 78% / 0.78)" stroke="hsl(296 70% 66% / 0.38)" strokeWidth="0.16">
+          <circle cx="10" cy="45" r="1.05" />
+          <path d="M10 46.25 L10 50 M8.3 48.2 H11.7 M10 50 L8.3 53 M10 50 L11.7 53" />
+          <circle cx="99" cy="7" r="1.05" />
+          <path d="M99 8.25 L99 12 M97.3 10.2 H100.7 M99 12 L97.3 15 M99 12 L100.7 15" />
+        </g>
+        <circle r="1.05" fill="hsl(184 95% 70%)">
+          <animateMotion
+            dur="3.4s"
+            repeatCount="indefinite"
+            path="M8 45 C22 29 31 36 43 22 C54 10 67 23 78 14 C88 6 94 10 99 7 C82 20 54 34 8 45"
+          />
+        </circle>
       </svg>
       <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        gatekpt / learning system
+        GATEKPT.AI / learning system
       </div>
     </div>
   );

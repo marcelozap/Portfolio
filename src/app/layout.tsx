@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     'research systems',
     'AI systems',
     'AI evaluation',
-    'GateKPT',
+    'GATEKPT.AI',
     'Green Machine',
     'MaloSound',
     'music technology',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marcelo Zapata - Software, AI, Data, Sound',
     description:
-      'Translation between people, systems, language, and machines. AI writing at GateKPT in English and Spanish.',
+      'Translation between people, systems, language, and machines. AI writing at GATEKPT.AI in English and Spanish.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [

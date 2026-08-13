@@ -7,11 +7,11 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'GateKPT',
-    href: '#projects',
+    name: 'GATEKPT.AI',
+    href: 'https://www.gatekpt.ai',
     meta: 'public',
     note: 'AI explained in English and Spanish',
-    external: false,
+    external: true,
   },
   {
     name: 'Green Machine',
@@ -109,8 +109,17 @@ export function Hero() {
               and what a machine can act on.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              Word and creation have never been closer. I write about AI at gatekpt.ai in English
-              and Spanish.
+              Word and creation have never been closer. I write about AI at{' '}
+              <a
+                href="https://www.gatekpt.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="group/gatekpt inline-flex items-center gap-1 text-accent underline decoration-accent/35 underline-offset-4 transition hover:text-ink hover:decoration-accent"
+              >
+                GATEKPT.AI
+                <ExternalLink className="size-3 opacity-60 transition group-hover/gatekpt:-translate-y-0.5 group-hover/gatekpt:translate-x-0.5 group-hover/gatekpt:opacity-100" />
+              </a>{' '}
+              in English and Spanish.
             </p>
           </motion.div>
 

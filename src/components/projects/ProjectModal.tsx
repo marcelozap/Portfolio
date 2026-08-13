@@ -59,7 +59,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[90] flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-[90] flex items-start justify-center px-4 pb-4 pt-20 md:px-8 md:pb-8 md:pt-24"
         >
           <button
             aria-label="Close project"
@@ -74,7 +74,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.28, ease: 'easeOut' }}
-            className="glass-strong relative z-10 flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden"
+            className="glass-strong relative z-10 flex max-h-[calc(100dvh-6rem)] w-full max-w-5xl flex-col overflow-hidden md:max-h-[calc(100dvh-8rem)]"
           >
             <button
               aria-label="Close"
@@ -93,7 +93,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {DOMAIN_LABEL[project.domain]} / {STATUS_LABEL[project.status]}
                   </span>
                   <span className="font-mono text-[10px] text-ink-faint">
-                    {project.id === 'gatekpt' ? 'gatekpt.ai' : `/portfolio/projects/${project.id}`}{' '}
+                    {project.id === 'gatekpt' ? 'GATEKPT.AI' : `/portfolio/projects/${project.id}`}{' '}
                     / {project.year}
                   </span>
                 </div>
@@ -119,7 +119,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     rel="noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-[2px] border border-line bg-white/[0.03] px-3 py-2 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
                   >
-                    {project.id === 'gatekpt' ? 'Visit GateKPT' : 'Open page'}
+                    {project.id === 'gatekpt' ? 'Visit GATEKPT.AI' : 'Open page'}
                     <ExternalLink className="size-3.5" />
                   </a>
                 )}
