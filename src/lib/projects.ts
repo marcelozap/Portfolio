@@ -48,45 +48,45 @@ export const PROJECTS: Project[] = [
   {
     id: 'gatekpt',
     name: 'GateKPT',
-    tagline: 'A public AI stack map for systems, data, prompting, evaluation, and deployment.',
+    tagline: 'A public AI learning system for understanding how modern AI is built and used.',
     domain: 'systems',
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
+    website: 'https://www.gatekpt.ai',
     description:
-      'GateKPT is my public AI learning and research hub: a place where study notes, workflow tools, system maps, sourced anchors, and validation habits turn into inspectable artifacts.',
+      'GateKPT is where I organize and publish what I am learning about AI: infrastructure, data, models, prompting, evaluation, deployment, and the people and businesses around these systems.',
     coreIdeas: [
-      'A public map of how I understand AI from infrastructure to deployment',
-      'One layer at a time instead of a generic content wall',
-      'Prompting treated as professional communication, not magic phrasing',
-      'Evaluation and deployment treated as first-class engineering constraints',
-      'Source links kept visible so claims can be checked',
+      'Explain AI from physical infrastructure to real-world use',
+      'Break complicated subjects into clear, connected lessons',
+      'Treat prompting as communication and work design',
+      'Treat evaluation, testing, and deployment as part of engineering',
+      'Keep sources visible so ideas can be checked',
+      'Turn ongoing study into useful public notes',
     ],
     features: [
       {
-        title: 'AI stack map',
+        title: 'AI learning map',
         description:
-          'Breaks AI into practical layers: power and site, compute, data, models, applications, evaluation, and deployment.',
+          'A clear path through modern AI, from power and compute to data, models, software, evaluation, and deployment.',
       },
       {
-        title: 'Workflow instrument',
+        title: 'Training',
         description:
-          'Uses focused screens, recall checks, source links, and review gates instead of broad promises.',
+          'Short exercises and practical examples for learning technical ideas and applying them.',
       },
       {
-        title: 'Research memory',
-        description:
-          'Connects technical foundations with market context, infrastructure economics, and deployment constraints.',
+        title: 'Journals',
+        description: 'Simple notes about what I am studying, building, and trying to understand.',
       },
       {
-        title: 'Public build loop',
-        description:
-          'Turns private study and local tools into visible artifacts that can improve as the field changes.',
+        title: 'Public work',
+        description: 'A visible record of my learning, research, and progress over time.',
       },
     ],
     metrics: [
-      { label: 'Mode', value: 'Systems map' },
-      { label: 'Output', value: 'Artifacts' },
+      { label: 'Mode', value: 'Learning system' },
+      { label: 'Content', value: 'Lessons' },
       { label: 'Focus', value: 'AI + data' },
     ],
     stack: ['Next.js', 'TypeScript', 'AI systems', 'Research', 'Prompting', 'Evaluation'],

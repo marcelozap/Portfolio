@@ -172,7 +172,7 @@ function GateKptCardArt() {
         />
       </svg>
       <div className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-faint">
-        gatekpt / ai stack map
+        gatekpt / learning system
       </div>
     </div>
   );

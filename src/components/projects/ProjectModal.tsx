@@ -93,7 +93,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {DOMAIN_LABEL[project.domain]} / {STATUS_LABEL[project.status]}
                   </span>
                   <span className="font-mono text-[10px] text-ink-faint">
-                    /portfolio/projects/{project.id} / {project.year}
+                    {project.id === 'gatekpt' ? 'gatekpt.ai' : `/portfolio/projects/${project.id}`}{' '}
+                    / {project.year}
                   </span>
                 </div>
 
@@ -118,7 +119,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     rel="noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-[2px] border border-line bg-white/[0.03] px-3 py-2 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
                   >
-                    Open page
+                    {project.id === 'gatekpt' ? 'Visit GateKPT' : 'Open page'}
                     <ExternalLink className="size-3.5" />
                   </a>
                 )}
