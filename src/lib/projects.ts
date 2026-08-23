@@ -92,28 +92,28 @@ export const PROJECTS: Project[] = [
     stack: ['Next.js', 'TypeScript', 'AI systems', 'Research', 'Prompting', 'Evaluation'],
   },
   {
-    id: 'fsu-options-research',
+    id: 'green-machine',
     name: 'Green Machine',
-    tagline: 'A research data system for evidence review, backtesting notes, and risk context.',
+    tagline: 'Bilingual market education. Daily snapshots, paper practice, risk-first review.',
     domain: 'markets',
     status: 'in-development',
     accent: 'green',
     year: '2026',
-    website: '/fsu-options-research',
+    website: '/green-machine',
     description:
-      'Green Machine is a local-first research system for turning market history, structured data, assumptions, and human-reviewed risk questions into cleaner evidence workflows.',
+      'Green Machine is a bilingual market education and research-software project. The public layer teaches market weather, key levels, paper practice, and risk-first review while the engineering layer shows Python/FastAPI research workflows.',
     coreIdeas: [
-      'Market data, evidence review, backtesting notes, and risk context',
-      'Market history treated as something to test, label, review, and revisit',
-      'Data, notes, assumptions, risk context, and follow-up questions in one repeatable workflow',
-      'AI-assisted review for assumptions, missing context, and better research questions',
-      'Research software project. No recommendations, no managed accounts, no order execution.',
+      'Daily market snapshot wrapper for weather, levels, lesson, paper exercise, and no-trade conditions',
+      'Bilingual English/Spanish framing for families and beginner learners',
+      'Backtesting notes and research memos that separate evidence from intuition',
+      'AI-assisted review for assumptions, missing context, and next questions',
+      'Clear boundary: no recommendations, managed accounts, order execution, or copy-trading',
     ],
     features: [
       {
-        title: 'Market data',
+        title: 'Daily snapshot',
         description:
-          'Structures market context, historical datasets, labels, and source notes into repeatable review flows.',
+          'Turns market weather, SPY/QQQ context, volatility, key levels, and a beginner lesson into a repeatable public learning wrapper.',
       },
       {
         title: 'Backtesting',
@@ -126,15 +126,15 @@ export const PROJECTS: Project[] = [
           'Captures uncertainty, risk context, behavioral guardrails, and AI-assisted summaries for missed context.',
       },
       {
-        title: 'AI-assisted review',
+        title: 'Boundary',
         description:
-          'Uses language models to organize assumptions, identify missing context, and generate better follow-up research questions.',
+          'Not recommendations, not managed accounts, not order execution, not copy-trading, and not a signal service.',
       },
     ],
     metrics: [
-      { label: 'Focus', value: 'Markets' },
-      { label: 'Method', value: 'Backtests' },
-      { label: 'Boundary', value: 'No execution' },
+      { label: 'Focus', value: 'Education' },
+      { label: 'Method', value: 'Paper practice' },
+      { label: 'Boundary', value: 'No signals' },
     ],
     stack: ['Python', 'FastAPI', 'React', 'SQL', 'Backtesting', 'Risk analysis'],
   },

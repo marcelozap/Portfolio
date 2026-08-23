@@ -2,29 +2,50 @@ import Link from 'next/link';
 
 const researchAreas = [
   {
-    title: 'Market data',
-    text: 'Market context, historical datasets, labels, and repeatable review flows.',
+    title: 'Market Weather',
+    text: 'SPY, QQQ, volatility, rates, headlines, and a simple read of the day.',
   },
   {
-    title: 'Backtesting',
-    text: 'Test notes, assumptions, limits, and follow-up questions for software-driven review.',
+    title: 'Paper Practice',
+    text: 'One observation exercise for learning the map without account pressure.',
   },
   {
-    title: 'Risk analysis',
-    text: 'Risk notes, uncertainty checks, and AI-assisted summaries for missed context.',
+    title: 'Evidence Review',
+    text: 'Sanitized research notes, backtesting context, and risk questions.',
   },
 ];
 
 const stack = ['Python', 'FastAPI', 'React', 'SQL', 'pytest', 'backtesting', 'labels', 'AI notes'];
 
 const whatItIs = [
-  'market research system',
-  'market data analysis',
-  'backtesting notes',
-  'risk review',
+  'bilingual market education',
+  'daily snapshot wrapper',
+  'paper-practice exercises',
+  'research software case study',
 ];
 
-const whatItIsNot = ['recommendations', 'managed accounts', 'execution tools', 'copy systems'];
+const whatItIsNot = ['recommendations', 'managed accounts', 'order execution', 'copy-trading'];
+
+const packages = [
+  {
+    label: 'Free',
+    title: 'Daily Snapshot',
+    price: '$0',
+    items: ['Market weather', 'Key levels', 'Beginner lesson', 'Paper exercise'],
+  },
+  {
+    label: 'Coming soon',
+    title: 'Starter Toolkit',
+    price: 'Waitlist',
+    items: ['Practice sheets', 'Glossary', 'Risk checklist', 'Weekly recap'],
+  },
+  {
+    label: 'Coming soon',
+    title: 'Community Room',
+    price: 'Waitlist',
+    items: ['Group review', 'Q&A', 'Paper-trade discussion', 'No live signals'],
+  },
+];
 
 function TerrainMap() {
   return (
@@ -71,14 +92,15 @@ function TerrainMap() {
       </svg>
 
       <div className="absolute left-6 top-6 text-xs font-medium text-ink-faint">
-        market data / review
+        market map / paper practice
       </div>
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/[0.08] bg-bg/55 p-4 backdrop-blur">
         <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
           Boundary
         </div>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-muted">
-          Research software project. No recommendations, no managed accounts, no order execution.
+          Public education layer. No recommendations, no managed accounts, no order execution,
+          no copy-trading.
         </p>
       </div>
     </div>
@@ -96,24 +118,43 @@ export default function FsuOptionsResearchPage() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold text-signal-green">
-              Software engineering case study
+              Bilingual market education / active build
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-ink md:text-7xl">
               Green Machine
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted md:text-xl">
-              Market data, evidence review, backtesting notes, and risk context.
+              See the market through a structured lens.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
-              A software engineering case study for turning market history, structured data,
-              assumptions, and human-reviewed risk questions into a cleaner research workflow.
+              Green Machine turns market weather, key levels, paper-practice exercises, and
+              risk-first review into a simple daily learning workflow for beginners. The deeper
+              research system stays private; the public page shows the map, not the sauce.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="#concept"
                 className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-bg transition hover:bg-signal-green hover:text-bg"
               >
-                View notes
+                View the snapshot
+              </Link>
+              <Link
+                href="#packages"
+                className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-signal-green/40 hover:text-ink"
+              >
+                Packages
+              </Link>
+              <Link
+                href="#founding-list"
+                className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-signal-green/40 hover:text-ink"
+              >
+                Founding list
+              </Link>
+              <Link
+                href="https://github.com/marcelozap/Green-Machine"
+                className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-signal-green/40 hover:text-ink"
+              >
+                GitHub
               </Link>
               <Link
                 href="/"
@@ -131,13 +172,14 @@ export default function FsuOptionsResearchPage() {
       <section id="concept" className="border-y border-white/[0.06] bg-white/[0.02]">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-semibold text-signal-green">Concept</p>
+            <p className="text-sm font-semibold text-signal-green">Free Daily Snapshot</p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
-              Study first.
+              Less preaching. More map.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-muted">
-              Market history is treated as something to test and review. The project keeps data,
-              notes, assumptions, risks, and questions in one software workflow.
+              Same wrapper each time: market weather, what the levels did, one lesson, one paper
+              exercise, and the no-trade conditions. The goal is to help people see more clearly
+              before risking real money.
             </p>
           </div>
 
@@ -183,6 +225,54 @@ export default function FsuOptionsResearchPage() {
               <li key={item}>not {item}</li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section id="packages" className="border-y border-white/[0.06] bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <p className="text-sm font-semibold text-signal-green">Packages</p>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
+            Start free. Prove the rhythm first.
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-ink-muted">
+            Paid options stay staged until the snapshot and community workflow are useful. The
+            first public offer is the free daily market snapshot.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {packages.map((pkg) => (
+              <article
+                key={pkg.title}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5"
+              >
+                <p className="text-sm font-semibold text-signal-green">{pkg.label}</p>
+                <h3 className="mt-3 text-xl font-semibold text-ink">{pkg.title}</h3>
+                <p className="mt-3 font-display text-3xl text-ink">{pkg.price}</p>
+                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ink-muted">
+                  {pkg.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="founding-list" className="mx-auto max-w-7xl px-6 py-16">
+        <p className="text-sm font-semibold text-signal-green">Founding list</p>
+        <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
+          Built for the local circle first.
+        </h2>
+        <p className="mt-5 max-w-3xl text-base leading-relaxed text-ink-muted">
+          Green Machine can start through family, Miami, and bilingual community trust. The first
+          step is simple: ask for the free Daily Market Snapshot and practice the map.
+        </p>
+        <div className="mt-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5">
+          <p className="text-base leading-relaxed text-ink-muted">
+            Educational only. Paper-practice first. No recommendations. No managed accounts. No
+            order execution. No copy-trading.
+          </p>
         </div>
       </section>
     </main>
