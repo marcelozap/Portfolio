@@ -47,6 +47,7 @@ const STATUS_LABEL: Record<Project['status'], string> = {
   'in-development': 'active build',
   prototype: 'working prototype',
   research: 'research',
+  'computer-vision': 'computer vision',
 };
 
 function ResearchDataCardArt() {

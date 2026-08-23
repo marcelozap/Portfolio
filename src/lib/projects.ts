@@ -3,7 +3,7 @@
  * Strongly typed so we get autocomplete and safe refactors.
  */
 
-export type ProjectStatus = 'in-development' | 'prototype' | 'research';
+export type ProjectStatus = 'in-development' | 'prototype' | 'research' | 'computer-vision';
 
 export interface ProjectMetric {
   label: string;
@@ -143,12 +143,12 @@ export const PROJECTS: Project[] = [
     name: 'RALLY',
     tagline: 'Practice memory for athletes.',
     domain: 'game',
-    status: 'prototype',
+    status: 'computer-vision',
     accent: 'amber',
-    year: '2025',
+    year: 'active build 2026',
     website: '/rally',
     description:
-      'Rally is a local-first practice system for athletes: training logs, match history, recovery notes, activity data, and progress review in one place.',
+      "An iOS practice log with a computer-vision engine underneath. Phone video goes in; pose estimation, adaptive filtering and swing segmentation come out as measured movement — logged against every prior session.\n\nThe design rule is that it reports what changed, never what is wrong. Diagnosis is someone else's licence. When the footage can't support a number, the honest output is 'not usable'.",
     coreIdeas: [
       'Daily practice loop as the lightweight reason to return',
       'Practice memory across sessions, matches, recovery notes, and video feedback',
@@ -156,6 +156,8 @@ export const PROJECTS: Project[] = [
       'Explainable feedback: show the pose, timing, or rule behind each cue',
       'Local-first data model with optional account sync',
       'Activity-data direction for Garmin-style training history and recovery context',
+      'Tennis first. The measurements are mechanical, not sport-specific.',
+      'Engine in calibration.',
     ],
     features: [
       {
@@ -191,19 +193,19 @@ export const PROJECTS: Project[] = [
     ],
     metrics: [
       { label: 'Mode', value: 'Practice' },
-      { label: 'Platform', value: 'iOS' },
-      { label: 'Prototype', value: 'Video' },
+      { label: 'Platform', value: 'iOS + Python' },
+      { label: 'Pose', value: 'Engine' },
     ],
     stack: [
       'SwiftUI',
       'SpriteKit',
       'SwiftData',
       'Python',
-      'OpenCV',
       'MediaPipe',
-      'Activity data',
-      'Garmin API direction',
-      'Node.js',
+      'OpenCV',
+      'Computer Vision',
+      'Signal Processing',
+      'NumPy',
     ],
   },
 ];
