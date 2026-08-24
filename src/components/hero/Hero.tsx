@@ -7,33 +7,40 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'Green Machine',
-    href: '/fsu-options-research',
-    meta: 'case study',
-    note: 'research data system',
+    name: 'AI Workflow Strategy Call',
+    href: '#offers',
+    meta: '$250/hr',
+    note: 'paid call for workflow direction',
     external: false,
   },
   {
-    name: 'Rally',
-    href: '/rally',
-    meta: 'prototype',
-    note: 'practice data and progress',
+    name: 'Workflow Audit',
+    href: '#offers',
+    meta: '$750',
+    note: 'map the workflow and AI opportunity',
+    external: false,
+  },
+  {
+    name: 'AI Operating System Build',
+    href: '#offers',
+    meta: '$7,500+',
+    note: 'multi-step infrastructure for a role',
     external: false,
   },
 ];
 
 const TRANSLATION_STRIP = [
   {
-    label: 'Projects',
-    href: '#projects',
+    label: 'Offers',
+    href: '#offers',
   },
   {
     label: 'Experience',
     href: '#experience',
   },
   {
-    label: 'MaloSound',
-    href: '#malosound',
+    label: 'Systems',
+    href: '#systems',
   },
   {
     label: 'About',
@@ -41,13 +48,19 @@ const TRANSLATION_STRIP = [
   },
 ];
 
+const OFFER_STRIP = [
+  ['Call', '$250/hr'],
+  ['Audit', '$750'],
+  ['Build', '$7,500+'],
+];
+
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24"
+      className="relative isolate flex min-h-[760px] flex-col justify-start overflow-hidden pb-16 pt-28 md:min-h-[100svh] md:justify-center md:pt-24"
     >
-      <div className="absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <Image
           src="/brand/xiv-command-key-visual.png"
           alt=""
@@ -56,15 +69,15 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-[68%_50%] opacity-70"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg))_0%,hsl(var(--bg)/0.94)_22%,hsl(var(--bg)/0.62)_52%,hsl(var(--bg)/0.2)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(var(--bg)/0.36)_0%,transparent_38%,hsl(var(--bg)/0.92)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_58%_54%_at_28%_46%,hsl(var(--bg)/0.12),hsl(var(--bg)/0.78)_68%,hsl(var(--bg)/0.94)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--bg)/0.98)_0%,hsl(var(--bg)/0.92)_28%,hsl(var(--bg)/0.58)_62%,hsl(var(--bg)/0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(var(--bg)/0.18)_0%,transparent_42%,hsl(var(--bg)/0.9)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_58%_54%_at_28%_46%,hsl(var(--bg)/0),hsl(var(--bg)/0.62)_68%,hsl(var(--bg)/0.9)_100%)]" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[42%] bg-[linear-gradient(180deg,transparent,hsl(var(--bg)/0.86))]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-10 px-6 md:px-10 lg:grid-cols-[0.98fr_1.02fr]">
-        <div className="flex max-w-3xl flex-col items-start gap-5 pb-8">
+      <div className="relative z-20 mx-auto grid w-full max-w-7xl items-end gap-10 px-6 md:px-10 lg:grid-cols-[0.98fr_1.02fr]">
+        <div className="hero-copy flex max-w-3xl flex-col items-start gap-5 pb-8">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,7 +89,9 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software / AI / data / sound</span>
+            <span className="text-ink-faint">
+              AI systems / workflow automation / business tools
+            </span>
           </motion.div>
 
           <motion.div
@@ -87,7 +102,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Translation between people, systems, language, and machines.
+              Role-based AI infrastructure for real work.
             </span>
           </motion.div>
 
@@ -98,13 +113,33 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              It is all translation: between languages, between systems, between what someone means
-              and what a machine can act on.
+              I help ecommerce, marketing, teaching, management, and software teams turn messy
+              repeatable work into role-specific AI workflows.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              Word and creation have never been closer. This portfolio is the work surface:
-              software, AI, data, sound, and the systems connecting them.
+              Not blank chatbots. Tools designed around the role, the workflow, and the trust needed
+              to use them.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.3 }}
+            className="grid w-full max-w-xl grid-cols-3 border border-line bg-bg/55 backdrop-blur-xl"
+          >
+            {OFFER_STRIP.map(([label, price]) => (
+              <a
+                key={label}
+                href="#offers"
+                className="border-r border-line px-3 py-3 last:border-r-0 hover:bg-white/[0.035]"
+              >
+                <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
+                  {label}
+                </span>
+                <span className="mt-1 block font-display text-lg text-ink">{price}</span>
+              </a>
+            ))}
           </motion.div>
 
           <motion.div
@@ -120,7 +155,7 @@ export function Hero() {
               rel="noreferrer"
             >
               <Linkedin className="size-4" />
-              LinkedIn
+              Start on LinkedIn
             </GlowButton>
             <GlowButton
               variant="outline"
@@ -131,8 +166,11 @@ export function Hero() {
               <Github className="size-4" />
               GitHub
             </GlowButton>
-            <GlowButton variant="ghost" href="#projects">
-              View Work
+            <GlowButton variant="ghost" href="#systems">
+              View Systems
+            </GlowButton>
+            <GlowButton variant="ghost" href="#offers">
+              Packages
             </GlowButton>
           </motion.div>
         </div>
@@ -171,9 +209,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['AI', 'research'],
-                ['Data', 'systems'],
-                ['Sound', 'score'],
+                ['$250/hr', 'call'],
+                ['$750', 'audit'],
+                ['$7.5k+', 'build'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>
@@ -189,7 +227,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.85, duration: 0.6 }}
-        className="relative z-10 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
+        className="relative z-20 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
         <div className="bg-bg/72 grid border-y border-line backdrop-blur-xl lg:grid-cols-4">
           {TRANSLATION_STRIP.map((item) => (

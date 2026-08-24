@@ -50,11 +50,11 @@ const ROLES: Role[] = [
     accent: 'cyan',
     bullets: [
       'Lead AI-assisted quality and delivery workflows across four development teams.',
-      'Build automation and data-validation processes with Playwright, Azure DevOps, SQL, REST APIs, Kafka, and reporting.',
+      'Build automation and data-validation processes with Playwright, Azure DevOps, SQL, REST APIs, message-queue/topic workflows, and reporting.',
       'Create reusable agents, templates, workflow standards, and team enablement material.',
       'Design onboarding and project-training materials using visual design and learning principles.',
     ],
-    tags: ['AI workflows', 'Playwright', 'Azure DevOps', 'SQL', 'Kafka', 'training'],
+    tags: ['AI workflows', 'Playwright', 'Azure DevOps', 'SQL', 'message workflows', 'training'],
   },
   {
     period: 'Jul 2025 - Aug 2026',
@@ -110,12 +110,12 @@ export function Experience() {
         eyebrow="Experience"
         title={
           <>
-            Software delivery.
+            Enterprise software.
             <br />
-            <span className="text-gradient">Automation, AI workflows, teaching.</span>
+            <span className="text-gradient">AI workflow infrastructure.</span>
           </>
         }
-        description="Public, role-level summary aligned to LinkedIn. No confidential systems, private metrics, or internal details."
+        description="Public, role-level summary of software delivery, QA automation, data workflows, and AI-assisted operations."
       />
 
       <ol className="relative mt-14 space-y-6 border-l border-white/[0.06] pl-8 md:pl-12">

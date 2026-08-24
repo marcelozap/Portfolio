@@ -1,30 +1,36 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Compass, Layers } from 'lucide-react';
+import { Bot, Compass, Layers } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const FOCUS = [
   {
     icon: Layers,
-    title: 'Translation layer',
-    body: 'I move between human intent, technical systems, data, and AI so the work becomes actionable.',
+    title: 'Role-based systems',
+    body: 'Different jobs need different context, files, decisions, and review steps. The system should match the work.',
+  },
+  {
+    icon: Bot,
+    title: 'Creator systems',
+    body: 'My current work turns songs into structured data, then maps that data into catalog search, review surfaces, and movement-driven visuals.',
   },
   {
     icon: Compass,
-    title: 'Teaching instinct',
-    body: 'I care about making hard material easier to understand, remember, test, and use.',
+    title: 'Trust surface',
+    body: 'The goal is not more AI everywhere. The goal is lower resistance, clearer handoffs, and tools people can trust.',
   },
 ];
 
 const TAGS = [
-  'C# / Azure / data systems',
-  'TypeScript / React / Next.js',
-  'Python / data automation',
-  'AI systems / evaluation',
-  'Prompting / research notes',
-  'Evidence review / validation',
+  'Role-based AI systems',
+  'LLM workflows',
+  'Audio-visual ML',
+  'Creative technology',
+  'QA automation',
+  'Data validation',
+  'Workflow infrastructure',
 ];
 
 export function About() {
@@ -36,24 +42,29 @@ export function About() {
           <>
             Marcelo Zapata
             <br />
-            <span className="text-gradient">Translation into systems.</span>
+            <span className="text-gradient">AI systems designed around the work.</span>
           </>
         }
-        description="Software, AI research, data engineering, teaching, and original sound design."
+        description="Business workflow, software engineering, automation, machine learning, and trusted delivery systems."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              My work sits between what people mean and what software can reliably do. I build tools
-              for data automation, QA systems, internal workflows, reporting, AI-assisted review,
-              and interfaces that make complicated work easier to trust.
+              I build at the intersection of technology, music, and movement. My work turns messy
+              inputs into structured systems: workflows, data contracts, review surfaces, and tools
+              that people can actually use.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              GATEKPT.AI is where I publish the learning in public, in English and Spanish.
-              MaloSound is the original sound layer of the same practice: code, voice, instruments,
-              and performance turned into a personal system.
+              I come from enterprise development environments, where software has to survive real
+              teams, real constraints, and real production failure modes. That shaped how I build:
+              with structure, proof, reproducibility, and attention to how systems fail.
+            </p>
+            <p className="text-base leading-relaxed text-ink-muted md:text-lg">
+              Now I am focused on audio-visual ML systems, creative technology, and role-based AI
+              infrastructure: turning songs into structured data, mapping sound into movement, and
+              building tools that help people create with more clarity and control.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

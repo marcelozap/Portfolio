@@ -46,49 +46,97 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'ai-workflow-systems',
+    name: 'role-systems',
+    tagline: 'Public repo for role-based AI infrastructure, starting with creator systems.',
+    domain: 'infra',
+    status: 'in-development',
+    accent: 'violet',
+    year: '2026',
+    website: 'https://github.com/marcelozap/role-systems',
+    description:
+      'A public GitHub repo for role-based AI infrastructure: one shared core, different systems for different jobs. The first built package is a creator system that turns messy music folders into structured song data.',
+    coreIdeas: [
+      'One repo, not five: the shared spine lives in core/ and role packages live under roles/',
+      'Creator systems are built; QA systems are designed; marketing, teaching, and commerce are planned',
+      'Truth lives in roles.json so built, designed, and planned work cannot drift quietly',
+      'Public examples stay synthetic or derived-safe; raw audio, private paths, and embeddings stay local',
+      'The first creator package groups bounces, stems, and practice captures into stable song IDs',
+    ],
+    features: [
+      {
+        title: 'Creator system',
+        description:
+          'Scans a local catalog and groups audio/video files into stable songs with stage, ownership, and release-readiness fields.',
+      },
+      {
+        title: 'Stable song IDs',
+        description:
+          'Files are not songs. Twelve bounces of one track are one song, and that grouping is required for honest ML evaluation.',
+      },
+      {
+        title: 'Public safety',
+        description:
+          'The repo ignores raw audio, real catalog files, private paths, embeddings, and local model artifacts by default.',
+      },
+      {
+        title: 'Validation',
+        description:
+          'Tests cover two label-corruption bugs: underscore-named masters and tempo tokens that could split one song into two.',
+      },
+    ],
+    metrics: [
+      { label: 'Repo', value: 'Public' },
+      { label: 'Built', value: 'Creator' },
+      { label: 'Tests', value: '5' },
+    ],
+    stack: ['Python', 'JSON Schema', 'pytest', 'Ruff', 'GitHub Actions', 'Creator systems'],
+  },
+  {
     id: 'gatekpt',
     name: 'GATEKPT.AI',
-    tagline: 'A public AI learning system for understanding how modern AI is built and used.',
+    tagline: 'A public lab for making AI, signal, music, and motion systems visible.',
     domain: 'systems',
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
     description:
-      'GATEKPT.AI is where I organize and publish what I am learning about AI: infrastructure, data, models, prompting, evaluation, deployment, and the people and businesses around these systems.',
+      'GateKPT.ai is the public research lab for AI systems, notes, signal analysis, visual interfaces, and technical thinking. It stays separate from the business-facing trust surface on marcelozapata.dev.',
     coreIdeas: [
-      'Explain AI from physical infrastructure to real-world use',
-      'Break complicated subjects into clear, connected lessons',
-      'Treat prompting as communication and work design',
-      'Treat evaluation, testing, and deployment as part of engineering',
-      'Keep sources visible so ideas can be checked',
-      'Turn ongoing study into useful public notes',
+      'Show the transformation from input to features to mapping to output',
+      'Use public-safe derived data instead of raw private creative files',
+      'Keep the writing and demo connected to the same system thesis',
+      'Make machine learning claims visible, modest, and checkable',
+      'Keep creative technology as a technical proof lane, not the main business offer',
     ],
     features: [
       {
-        title: 'AI learning map',
+        title: 'Signal-to-interface demo',
         description:
-          'A clear path through modern AI, from power and compute to data, models, software, evaluation, and deployment.',
+          'Music analysis data drives a visual body in the browser so the pipeline can be seen instead of only described.',
       },
       {
-        title: 'Training',
+        title: 'Public notes',
         description:
-          'Short exercises and practical examples for learning technical ideas and applying them.',
+          'Short writing connects the demo to AI systems, workflow design, music technology, and measured artifacts.',
       },
       {
-        title: 'Journals',
-        description: 'Simple notes about what I am studying, building, and trying to understand.',
+        title: 'Proof surface',
+        description:
+          'The site stays small, public-safe, and direct: show the system, then let the work explain itself.',
       },
       {
-        title: 'Public work',
-        description: 'A visible record of my learning, research, and progress over time.',
+        title: 'Boundary',
+        description:
+          'Raw audio, local paths, embedding matrices, private notes, and unreleased material stay private.',
       },
     ],
     metrics: [
-      { label: 'Mode', value: 'Learning system' },
-      { label: 'Content', value: 'Lessons' },
-      { label: 'Focus', value: 'AI + data' },
+      { label: 'Mode', value: 'Lab' },
+      { label: 'Data', value: 'Derived' },
+      { label: 'Focus', value: 'Signal' },
     ],
-    stack: ['Next.js', 'TypeScript', 'AI systems', 'Research', 'Prompting', 'Evaluation'],
+    stack: ['Next.js', 'TypeScript', 'Signal analysis', 'AI systems', 'Public notes', 'Schema'],
   },
   {
     id: 'green-machine',

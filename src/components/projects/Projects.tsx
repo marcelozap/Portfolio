@@ -30,12 +30,12 @@ export function Projects() {
         eyebrow="Projects"
         title={
           <>
-            Systems
+            Proof
             <br />
-            <span className="text-gradient">in public.</span>
+            <span className="text-gradient">by workflow.</span>
           </>
         }
-        description="Live artifacts, case studies, and systems I am building in public."
+        description="Projects that show role-based AI infrastructure, business workflow design, and engineering discipline."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

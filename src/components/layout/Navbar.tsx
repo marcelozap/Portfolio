@@ -8,6 +8,8 @@ import { Github, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
+  { id: 'offers', label: 'Offers' },
+  { id: 'systems', label: 'Systems' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'about', label: 'About' },
@@ -74,7 +76,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              software / AI / sound
+              AI systems / workflows
             </span>
           </span>
         </Link>

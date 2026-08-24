@@ -7,6 +7,8 @@ import { scrollToSection } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 const LINKS = [
+  { label: 'Offers', id: 'offers' as const },
+  { label: 'Systems', id: 'systems' as const },
   { label: 'Projects', id: 'projects' as const },
   { label: 'Experience', id: 'experience' as const },
   { label: 'About', id: 'about' as const },
@@ -45,7 +47,7 @@ export function Footer() {
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
           <div className="mt-1 whitespace-nowrap text-[12px] font-medium tracking-[0.04em] text-ink-muted">
-            Software / AI systems / data
+            Role-based AI systems / workflow automation
           </div>
         </div>
 

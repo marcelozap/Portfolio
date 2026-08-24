@@ -13,6 +13,10 @@ const researchAreas = [
     title: 'Evidence Review',
     text: 'Sanitized research notes, backtesting context, and risk questions.',
   },
+  {
+    title: 'AI-assisted review',
+    text: 'Uses language models to organize assumptions, identify missing context, and generate better follow-up research questions.',
+  },
 ];
 
 const stack = ['Python', 'FastAPI', 'React', 'SQL', 'pytest', 'backtesting', 'labels', 'AI notes'];
@@ -22,9 +26,16 @@ const whatItIs = [
   'daily snapshot wrapper',
   'paper-practice exercises',
   'research software case study',
+  'AI-assisted research organizer',
 ];
 
-const whatItIsNot = ['recommendations', 'managed accounts', 'order execution', 'copy-trading'];
+const whatItIsNot = [
+  'recommendations',
+  'managed accounts',
+  'order execution',
+  'copy-trading',
+  'signal service',
+];
 
 const packages = [
   {
@@ -99,8 +110,8 @@ function TerrainMap() {
           Boundary
         </div>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-muted">
-          Public education layer. No recommendations, no managed accounts, no order execution,
-          no copy-trading.
+          Public education layer. No recommendations, no managed accounts, no order execution, no
+          copy-trading.
         </p>
       </div>
     </div>
@@ -129,7 +140,8 @@ export default function FsuOptionsResearchPage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
               Green Machine turns market weather, key levels, paper-practice exercises, and
               risk-first review into a simple daily learning workflow for beginners. The deeper
-              research system stays private; the public page shows the map, not the sauce.
+              research system turns market history, structured data, assumptions, and human-reviewed
+              risk questions into cleaner evidence workflows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -235,8 +247,8 @@ export default function FsuOptionsResearchPage() {
             Start free. Prove the rhythm first.
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-ink-muted">
-            Paid options stay staged until the snapshot and community workflow are useful. The
-            first public offer is the free daily market snapshot.
+            Paid options stay staged until the snapshot and community workflow are useful. The first
+            public offer is the free daily market snapshot.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">

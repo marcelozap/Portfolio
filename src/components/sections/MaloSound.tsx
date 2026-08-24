@@ -31,7 +31,7 @@ const SOUND_LAYERS = [
 const WAVE_BARS = Array.from({ length: 56 }, (_, i) => {
   const a = Math.abs(Math.sin(i * 0.42));
   const b = Math.abs(Math.cos(i * 0.17));
-  return 10 + (a * 0.72 + b * 0.28) * 64;
+  return Math.round(10 + (a * 0.72 + b * 0.28) * 64);
 });
 
 export function MaloSound() {
@@ -41,12 +41,12 @@ export function MaloSound() {
         eyebrow="MaloSound"
         title={
           <>
-            Music technology.
+            Creative systems.
             <br />
-            <span className="text-gradient">Personal sound system.</span>
+            <span className="text-gradient">Music as the proving ground.</span>
           </>
         }
-        description="Voice, bass, pedals, Python, DAW recording, and live performance turned into one artist-tech identity."
+        description="Original music, signal analysis, local tools, catalog organization, and motion-driven visuals."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -59,8 +59,8 @@ export function MaloSound() {
             </div>
 
             <p className="max-w-2xl text-base leading-relaxed text-ink-muted md:text-lg">
-              MaloSound is where I turn code, voice, bass, pedals, and live performance into one
-              personal sound system.
+              MaloSound is where I test the same systems thinking in a creative loop: write, record,
+              analyze, organize, visualize, publish, and improve.
             </p>
 
             <div className="border border-line bg-bg/55 p-4">
@@ -93,8 +93,8 @@ export function MaloSound() {
               </div>
 
               <p className="text-sm leading-relaxed text-ink-muted">
-                This site is scored by original MaloSound audio. Use the player at the bottom of the
-                screen to keep the track running while you browse.
+                Original audio stays creative. Derived signal, catalog structure, and visual systems
+                become the public technical layer.
               </p>
             </div>
           </div>

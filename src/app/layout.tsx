@@ -28,28 +28,33 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Software, AI, Data, Sound',
+    default: 'Marcelo Zapata - Role-Based AI Systems',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software, AI research, data systems, teaching, and original MaloSound audio by Marcelo Zapata. Translation between people, systems, language, and machines.',
+    'Role-based AI infrastructure packages for ecommerce, marketing, teaching, management, and software teams.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
-    'platform engineer',
-    'research systems',
     'AI systems',
-    'AI evaluation',
+    'role-based AI',
+    'agentic infrastructure',
+    'workflow automation',
+    'LLM workflows',
+    'QA automation',
+    'business process automation',
     'GATEKPT.AI',
     'Green Machine',
     'MaloSound',
-    'music technology',
+    'ecommerce automation',
+    'marketing automation',
+    'teaching systems',
+    'management systems',
     'data workflows',
     'data engineering',
     'creative sound',
     'sound design',
-    'automation',
     'analytics',
     'software systems',
     'Rally',
@@ -57,9 +62,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata - Software, AI, Data, Sound',
+    title: 'Marcelo Zapata - Role-Based AI Systems',
     description:
-      'Translation between people, systems, language, and machines. AI writing at GATEKPT.AI in English and Spanish.',
+      'AI infrastructure packages designed around real workflows, business tools, and trusted delivery systems.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -74,7 +79,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
-    description: 'Software, AI research, data systems, teaching, and original sound design.',
+    description:
+      'Role-based AI systems for ecommerce, marketing, teaching, management, and software workflows.',
     images: ['/og-xiv-command.png'],
   },
   icons: {
