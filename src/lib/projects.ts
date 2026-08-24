@@ -53,7 +53,6 @@ export const PROJECTS: Project[] = [
     status: 'in-development',
     accent: 'cyan',
     year: '2026',
-    website: 'https://www.gatekpt.ai',
     description:
       'GATEKPT.AI is where I organize and publish what I am learning about AI: infrastructure, data, models, prompting, evaluation, deployment, and the people and businesses around these systems.',
     coreIdeas: [

@@ -7,13 +7,6 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'GATEKPT.AI',
-    href: 'https://www.gatekpt.ai',
-    meta: 'public',
-    note: 'AI explained in English and Spanish',
-    external: true,
-  },
-  {
     name: 'Green Machine',
     href: '/fsu-options-research',
     meta: 'case study',
@@ -31,20 +24,20 @@ const FEATURED_WORK = [
 
 const TRANSLATION_STRIP = [
   {
-    label: 'Learn',
-    href: 'https://www.gatekpt.ai/#map',
+    label: 'Projects',
+    href: '#projects',
   },
   {
-    label: 'Training',
-    href: 'https://www.gatekpt.ai/#training',
+    label: 'Experience',
+    href: '#experience',
   },
   {
-    label: 'Journals',
-    href: 'https://www.gatekpt.ai/notes',
+    label: 'MaloSound',
+    href: '#malosound',
   },
   {
-    label: 'Visit',
-    href: 'https://www.gatekpt.ai',
+    label: 'About',
+    href: '#about',
   },
 ];
 
@@ -109,17 +102,8 @@ export function Hero() {
               and what a machine can act on.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              Word and creation have never been closer. I write about AI at{' '}
-              <a
-                href="https://www.gatekpt.ai"
-                target="_blank"
-                rel="noreferrer"
-                className="group/gatekpt inline-flex items-center gap-1 text-accent underline decoration-accent/35 underline-offset-4 transition hover:text-ink hover:decoration-accent"
-              >
-                GATEKPT.AI
-                <ExternalLink className="size-3 opacity-60 transition group-hover/gatekpt:-translate-y-0.5 group-hover/gatekpt:translate-x-0.5 group-hover/gatekpt:opacity-100" />
-              </a>{' '}
-              in English and Spanish.
+              Word and creation have never been closer. This portfolio is the work surface:
+              software, AI, data, sound, and the systems connecting them.
             </p>
           </motion.div>
 
@@ -212,8 +196,6 @@ export function Hero() {
             <a
               key={item.label}
               href={item.href}
-              target="_blank"
-              rel="noreferrer"
               className="group relative overflow-hidden border-r border-line px-5 py-5 transition last:border-r-0 hover:border-accent/35 hover:bg-accent/5"
             >
               <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-accent via-accent-cool to-transparent transition duration-300 group-hover:scale-x-100" />
