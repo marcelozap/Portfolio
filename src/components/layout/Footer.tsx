@@ -2,6 +2,7 @@
 
 import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { scrollToSection } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
@@ -64,6 +65,16 @@ export function Footer() {
                 </button>
               </li>
             ))}
+            <li>
+              <Link href="/systems" className="whitespace-nowrap transition hover:text-accent">
+                Work map
+              </Link>
+            </li>
+            <li>
+              <Link href="/field-notes" className="whitespace-nowrap transition hover:text-accent">
+                Field Notes
+              </Link>
+            </li>
           </ul>
 
           <ul className="flex items-center gap-1.5">

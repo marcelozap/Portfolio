@@ -4,6 +4,8 @@ Personal portfolio for Marcelo Zapata, a software engineer working across data a
 
 This repository powers the public portfolio site and the recruiter-facing materials in [`career-kit/`](./career-kit). The current site is intentionally restrained: project-forward, professional, and focused on engineering range without exposing sensitive employer details.
 
+The public structure is simple: the home page is the professional overview, `/systems` is the work map, and `/field-notes` is the writing archive. XIV is the visual identity connecting the lanes; GateKPT is legacy context, not the public umbrella.
+
 For ongoing portfolio research, edit notes, design rules, and current status, see [`docs/portfolio-study/`](./docs/portfolio-study/).
 
 ## Stack
@@ -24,6 +26,8 @@ For ongoing portfolio research, edit notes, design rules, and current status, se
 career-kit/              # resumes, LinkedIn copy, recruiter messages, interview prep
 src/
   app/                   # root layout, metadata, global styles, page composition
+    field-notes/         # public writing index and deep-linked notes
+    systems/             # public work map and deep-linked system pages
   components/
     hero/                # homepage hero and market ticker
     layout/              # navigation, footer, ambient backdrop
@@ -32,6 +36,8 @@ src/
     sections/            # Experience, Engineering, About
     ui/                  # shared UI primitives
   lib/
+    field-notes.ts       # migrated public writing records
+    public-systems.ts    # public-facing system catalog
     projects.ts          # typed project catalog
     utils.ts             # shared helpers
 ```

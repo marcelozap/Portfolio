@@ -195,6 +195,26 @@ body {
   .eyebrow {
     @apply mono-tag text-accent;
   }
+
+  .field-note-body {
+    @apply font-serif text-[1.12rem] leading-[1.9] text-ink-muted md:text-[1.25rem];
+  }
+
+  .field-note-body p {
+    @apply mx-auto max-w-3xl;
+  }
+
+  .field-note-body p + p {
+    @apply mt-7;
+  }
+
+  .field-note-body p:first-child::first-letter {
+    @apply float-left pr-2 pt-2 font-display text-7xl leading-[0.72] text-accent-warm;
+  }
+
+  .field-note-body .field-note-closing {
+    @apply mt-12 border-l-2 border-accent-warm pl-5 font-mono text-sm uppercase leading-7 tracking-[0.12em] text-ink;
+  }
 }
 
 /* keep the cursor visible (we layer a custom one on top) */

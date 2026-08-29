@@ -82,6 +82,22 @@ export function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-2 md:flex">
+          <li>
+            <Link
+              href="/systems"
+              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
+            >
+              Work map
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/field-notes"
+              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
+            >
+              Field Notes
+            </Link>
+          </li>
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <button

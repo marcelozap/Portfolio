@@ -12,9 +12,11 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowRight,
+  BookOpen,
   Briefcase,
   ExternalLink,
   FolderKanban,
+  Network,
   Search,
   Sparkles,
   TerminalSquare,
@@ -108,6 +110,26 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         icon: FolderKanban,
         group: 'Navigate',
         action: () => scrollTo('projects'),
+      },
+      {
+        id: 'open-work-map',
+        label: 'Open work map',
+        hint: 'XIV, MaloSound, Green Machine, Rally',
+        icon: Network,
+        group: 'Navigate',
+        action: () => {
+          window.location.href = '/systems';
+        },
+      },
+      {
+        id: 'open-field-notes',
+        label: 'Open Field Notes',
+        hint: 'Public writing on AI, work, and attention',
+        icon: BookOpen,
+        group: 'Navigate',
+        action: () => {
+          window.location.href = '/field-notes';
+        },
       },
     ];
 
