@@ -11,7 +11,7 @@ const OFFERS = [
     price: '$250/hr',
     timeline: '60-90 min',
     bestFor:
-      'A focused paid call for founders, operators, managers, or builders who want to talk through where AI can actually help.',
+      'A focused paid call for founders, operators, managers, independent people, or builders who want to talk through where AI can actually help.',
     deliverables: [
       'Workflow diagnosis',
       'AI fit and risk review',
@@ -25,7 +25,7 @@ const OFFERS = [
     price: '$750',
     timeline: '3 hours',
     bestFor:
-      'A bundled deep-dive for founders, managers, and teams who know AI should help but need the workflow mapped clearly.',
+      'A bundled deep-dive for leaders, teams, and independent operators who know AI should help but need the opportunity mapped clearly.',
     deliverables: [
       'Three-hour working session',
       'Workflow map',
@@ -39,7 +39,7 @@ const OFFERS = [
     price: '$2,500',
     timeline: '2 weeks',
     bestFor:
-      'Teams ready to test one role-specific AI workflow with real files, tools, and review steps.',
+      'A team or independent operator ready to test one useful AI workflow with real files, tools, and review steps.',
     deliverables: [
       'One working agentic workflow',
       'Prompt and tool structure',
@@ -53,7 +53,7 @@ const OFFERS = [
     price: '$7,500+',
     timeline: '4-6 weeks',
     bestFor:
-      'Businesses that need repeatable AI infrastructure across a role, department, or core process.',
+      'Organizations that need repeatable AI infrastructure across a role, department, or core process.',
     deliverables: [
       'Multi-step workflow system',
       'Role-specific knowledge structure',
@@ -85,7 +85,7 @@ export function Offers() {
             <span className="text-gradient">Built around the work.</span>
           </>
         }
-        description="For local businesses and teams that want useful AI without adding more work to the owner."
+        description="For organizations, independent people, and teams that want useful AI without adding more work or losing human judgment."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -148,8 +148,8 @@ export function Offers() {
                 who this is for
               </div>
               <p className="mt-4 text-2xl font-medium leading-tight text-ink md:text-3xl">
-                Ecommerce, marketing, teaching, management, and software teams that need AI to fit
-                the job instead of forcing the job into a chatbot.
+                Large companies, local businesses, growing teams, independent people, educators, and
+                creators who need AI to fit the work and life already in front of them.
               </p>
             </div>
             <a

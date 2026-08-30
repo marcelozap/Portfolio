@@ -24,8 +24,7 @@ export default function FieldNotesPage() {
             <span className="text-gradient block">testing in public.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted md:text-xl">
-            Writing about AI, work, attention, music, and the identities we build around what we
-            know how to do.
+            Writing about AI, work, attention, music, and what technology should make more room for.
           </p>
         </div>
 

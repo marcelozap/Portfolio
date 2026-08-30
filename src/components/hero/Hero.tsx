@@ -111,8 +111,8 @@ export function Hero() {
               and AI-assisted tools. My work connects product judgment with operational discipline.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              For hiring teams: a builder who can own the workflow after the demo. For businesses:
-              systems designed around the role, tools, and review needed to trust them.
+              For hiring teams: a builder who can own the workflow after the demo. For people and
+              organizations: useful AI without losing judgment, creativity, or time.
             </p>
           </motion.div>
 

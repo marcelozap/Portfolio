@@ -5,8 +5,9 @@ supporting project surfaces.
 
 ## North Star
 
-Marcelo Zapata is a software engineer who builds reliable AI-assisted systems
-around real work.
+Marcelo Zapata is a software engineer and educator who helps people and
+organizations integrate reliable AI-assisted systems into real work and daily
+life.
 
 The public impression should be:
 
@@ -14,13 +15,16 @@ The public impression should be:
 - operationally mature
 - clear about what is built and what is still being tested
 - able to connect software, data, QA, and product decisions
+- able to translate new tools for large companies, small businesses, teams,
+  independent people, educators, and creators
 - creative without making creativity the only story
 
 ## Audience Order
 
 1. Hiring managers and engineering leaders evaluating software ownership,
    systems thinking, communication, and delivery judgment.
-2. Founders, operators, and small teams looking for workflow or AI systems.
+2. Organizations of any size, independent people, educators, and creators
+   looking for practical AI integration.
 3. Technical peers looking for concrete implementation and public proof.
 
 The portfolio should answer a hiring manager's questions before it presents a
@@ -36,8 +40,8 @@ Short version:
 Expanded version:
 
 > I build and ship software across QA automation, data workflows, internal
-> platforms, and AI-assisted tools. My work connects product judgment with
-> operational discipline.
+> platforms, and AI-assisted tools. I help people understand where AI fits so
+> it creates more room for useful, creative, human work.
 
 Proof sentence:
 

@@ -32,12 +32,13 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata builds reliable software, AI-assisted workflows, QA automation, and data systems around real work.',
+    'Marcelo Zapata builds reliable software and helps people and organizations integrate AI into real work, daily life, and creative practice.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
     'portfolio',
     'AI systems',
+    'AI integration',
     'role-based AI',
     'agentic infrastructure',
     'workflow automation',
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marcelo Zapata - Software Engineer | AI Systems and Automation',
     description:
-      'Software engineering, QA automation, data workflows, and AI-assisted systems built around real work.',
+      'Software engineering, AI integration, QA automation, data workflows, and creative systems built around real work.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description:
-      'Software engineering, AI systems, automation, and data workflows built around real work.',
+      'Software engineering, AI integration, automation, and data workflows built around real life and work.',
     images: ['/og-xiv-command.png'],
   },
   icons: {
