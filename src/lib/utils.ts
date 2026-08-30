@@ -32,7 +32,10 @@ export const fmt = (n: number) => new Intl.NumberFormat('en-US').format(n);
 export function scrollToSection(id: string) {
   if (typeof window === 'undefined') return;
   const el = document.getElementById(id);
-  if (!el) return;
+  if (!el) {
+    window.location.href = `/#${id}`;
+    return;
+  }
   const top = el.getBoundingClientRect().top + window.scrollY - 72;
   window.scrollTo({ top, behavior: 'smooth' });
   history.replaceState(null, '', `#${id}`);

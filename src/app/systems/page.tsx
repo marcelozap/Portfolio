@@ -21,7 +21,7 @@ export default function SystemsPage() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <Network className="size-4 text-accent" />
-          <span className="text-accent">Work map</span>
+          <span className="text-accent">Systems</span>
           <span className="text-ink-faint">/</span>
           <span>Systems</span>
         </div>
@@ -64,8 +64,8 @@ export default function SystemsPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-5 text-sm text-ink-muted">
-          <Link href="/field-notes" className="inline-flex items-center gap-2 hover:text-accent">
-            Read the field notes <ArrowRight className="size-4" />
+          <Link href="/ai-blog" className="inline-flex items-center gap-2 hover:text-accent">
+            Read the AI Blog <ArrowRight className="size-4" />
           </Link>
           <a
             href="https://github.com/marcelozap"

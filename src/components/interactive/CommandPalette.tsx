@@ -15,15 +15,11 @@ import {
   BookOpen,
   Briefcase,
   ExternalLink,
-  FolderKanban,
-  Network,
   Search,
   Sparkles,
   TerminalSquare,
-  User,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { PROJECTS } from '@/lib/projects';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 interface CommandItem {
@@ -91,13 +87,6 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         action: () => scrollTo('hero'),
       },
       {
-        id: 'goto-about',
-        label: 'About Marcelo',
-        icon: User,
-        group: 'Navigate',
-        action: () => scrollTo('about'),
-      },
-      {
         id: 'goto-experience',
         label: 'Experience',
         icon: Briefcase,
@@ -105,46 +94,16 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         action: () => scrollTo('experience'),
       },
       {
-        id: 'goto-projects',
-        label: 'Projects',
-        icon: FolderKanban,
-        group: 'Navigate',
-        action: () => scrollTo('projects'),
-      },
-      {
-        id: 'open-work-map',
-        label: 'Open work map',
-        hint: 'XIV, MaloSound, Green Machine, Rally',
-        icon: Network,
-        group: 'Navigate',
-        action: () => {
-          window.location.href = '/systems';
-        },
-      },
-      {
-        id: 'open-field-notes',
-        label: 'Open Field Notes',
+        id: 'open-ai-blog',
+        label: 'Open AI Blog',
         hint: 'Public writing on AI, work, and attention',
         icon: BookOpen,
         group: 'Navigate',
         action: () => {
-          window.location.href = '/field-notes';
+          window.location.href = '/ai-blog';
         },
       },
     ];
-
-    const proj: CommandItem[] = PROJECTS.map((p) => ({
-      id: `project-${p.id}`,
-      label: `Open ${p.name}`,
-      hint: p.tagline,
-      icon: FolderKanban,
-      group: 'Projects',
-      keywords: [p.domain, p.status, ...p.stack],
-      action: () => {
-        scrollTo('projects');
-        window.dispatchEvent(new CustomEvent<string>('portfolio:project:open', { detail: p.id }));
-      },
-    }));
 
     const actions: CommandItem[] = [
       {
@@ -167,7 +126,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
       action: () => window.open(link.href, '_blank', 'noopener,noreferrer'),
     }));
 
-    return [...nav, ...proj, ...links, ...actions];
+    return [...nav, ...links, ...actions];
   }, []);
 
   const filtered = useMemo(() => {
@@ -269,7 +228,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onKey}
-                  placeholder="Search work, projects, sections..."
+                  placeholder="Search the site..."
                   className="w-full bg-transparent text-sm text-ink placeholder:text-ink-faint focus:outline-none"
                 />
                 <kbd className="rounded border border-white/10 bg-bg-subtle px-1.5 py-0.5 font-mono text-[10px] text-ink-faint">

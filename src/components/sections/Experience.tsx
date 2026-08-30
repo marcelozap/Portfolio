@@ -44,7 +44,7 @@ const ROLES: Role[] = [
   {
     period: 'Aug 2026 - Present',
     title: 'Sr Quality Assurance Engineer',
-    org: 'Enterprise software delivery',
+    org: 'Fortune 100 retailer technology',
     type: 'Full-time',
     icon: Briefcase,
     accent: 'cyan',
@@ -59,7 +59,7 @@ const ROLES: Role[] = [
   {
     period: 'Jul 2025 - Aug 2026',
     title: 'Software Engineer',
-    org: 'Enterprise inventory and data systems',
+    org: 'Fortune 100 retailer inventory and data systems',
     type: 'Full-time',
     icon: Briefcase,
     accent: 'green',
@@ -74,7 +74,7 @@ const ROLES: Role[] = [
   {
     period: 'Dec 2022 - Jul 2025',
     title: 'Associate Software Engineer',
-    org: 'Enterprise software and automation',
+    org: 'Fortune 100 retailer software and automation',
     type: 'Full-time',
     icon: Briefcase,
     accent: 'green',

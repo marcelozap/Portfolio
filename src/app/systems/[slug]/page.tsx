@@ -124,7 +124,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
             Back to systems
           </Link>
           <Link
-            href="/field-notes"
+            href="/ai-blog"
             className="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-accent"
           >
             Read the writing <ArrowUpRight className="size-4" />

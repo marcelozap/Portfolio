@@ -66,6 +66,7 @@ const OFFERS = [
 
 const EVIDENCE = [
   "Four years building and shipping software inside a Fortune 100 retailer's technology organization",
+  'Built AI-assisted systems for a local Miami business that increased customer flow by 200% while maintaining operations without adding work for the owners',
   'AI-assisted workflows across QA, documentation, planning, and delivery',
   'Automation with Playwright, Azure DevOps, SQL, REST APIs, message-queue/topic workflows, and reporting',
   'Public role-systems repo with a built creator-system package, tests, schemas, and CI configuration',
@@ -76,15 +77,15 @@ export function Offers() {
   return (
     <section id="offers" className="section border-y border-white/[0.06] bg-white/[0.015]">
       <SectionHeader
-        eyebrow="Offers"
+        eyebrow="Pricing"
         title={
           <>
-            Clear packages.
+            Practical AI help.
             <br />
-            <span className="text-gradient">Built around the workflow.</span>
+            <span className="text-gradient">Built around the work.</span>
           </>
         }
-        description="For businesses that want usable AI infrastructure, not a blank chatbot subscription."
+        description="For local businesses and teams that want useful AI without adding more work to the owner."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -157,7 +158,7 @@ export function Offers() {
               rel="noreferrer"
               className="inline-flex w-fit items-center gap-2 border border-line bg-white/[0.025] px-4 py-3 text-sm font-medium text-ink-muted transition hover:border-accent/40 hover:text-ink"
             >
-              Request payment + calendar link
+              Start a conversation
               <ArrowUpRight className="size-4" />
             </a>
           </div>

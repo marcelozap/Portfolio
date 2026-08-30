@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Linkedin } from 'lucide-react';
+import { Briefcase, ExternalLink, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { GlowButton } from '@/components/ui/GlowButton';
 
@@ -9,29 +9,29 @@ const FEATURED_WORK = [
   {
     name: 'AI Workflow Strategy Call',
     href: '#offers',
-    meta: '$250/hr',
-    note: 'paid call for workflow direction',
+    meta: 'conversation',
+    note: 'a focused conversation about where AI can help',
     external: false,
   },
   {
-    name: 'Workflow Audit',
-    href: '#offers',
-    meta: '$750',
-    note: 'map the workflow and AI opportunity',
+    name: 'Software Engineering',
+    href: '#experience',
+    meta: 'experience',
+    note: 'QA automation, data workflows, and AI-assisted delivery',
     external: false,
   },
   {
-    name: 'AI Operating System Build',
-    href: '#offers',
-    meta: '$7,500+',
-    note: 'multi-step infrastructure for a role',
+    name: 'My Big Bet',
+    href: '/ai-blog/my-big-bet',
+    meta: 'AI blog',
+    note: 'why I am building for the next wave of adoption',
     external: false,
   },
 ];
 
 const TRANSLATION_STRIP = [
   {
-    label: 'Offers',
+    label: 'Pricing',
     href: '#offers',
   },
   {
@@ -39,19 +39,15 @@ const TRANSLATION_STRIP = [
     href: '#experience',
   },
   {
-    label: 'Systems',
-    href: '#systems',
-  },
-  {
-    label: 'About',
-    href: '#about',
+    label: 'AI Blog',
+    href: '#ai-blog',
   },
 ];
 
 const OFFER_STRIP = [
-  ['Call', '$250/hr'],
-  ['Audit', '$750'],
-  ['Build', '$7,500+'],
+  ['Focus', 'AI systems'],
+  ['Proof', 'Public repos'],
+  ['Mode', 'Build clearly'],
 ];
 
 export function Hero() {
@@ -89,9 +85,7 @@ export function Hero() {
               Marcelo Zapata
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">
-              AI systems / workflow automation / business tools
-            </span>
+            <span className="text-ink-faint">software engineering / AI systems / automation</span>
           </motion.div>
 
           <motion.div
@@ -102,7 +96,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Role-based AI infrastructure for real work.
+              Software engineer building reliable AI systems for real work.
             </span>
           </motion.div>
 
@@ -113,12 +107,12 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I help ecommerce, marketing, teaching, management, and software teams turn messy
-              repeatable work into role-specific AI workflows.
+              I build and ship software across QA automation, data workflows, internal platforms,
+              and AI-assisted tools. My work connects product judgment with operational discipline.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              Not blank chatbots. Tools designed around the role, the workflow, and the trust needed
-              to use them.
+              For hiring teams: a builder who can own the workflow after the demo. For businesses:
+              systems designed around the role, tools, and review needed to trust them.
             </p>
           </motion.div>
 
@@ -148,14 +142,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.38 }}
             className="flex flex-wrap items-center gap-3"
           >
-            <GlowButton
-              variant="primary"
-              href="https://www.linkedin.com/in/marcelozap"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Linkedin className="size-4" />
-              Start on LinkedIn
+            <GlowButton variant="primary" href="#experience">
+              <Briefcase className="size-4" />
+              View experience
             </GlowButton>
             <GlowButton
               variant="outline"
@@ -166,11 +155,11 @@ export function Hero() {
               <Github className="size-4" />
               GitHub
             </GlowButton>
-            <GlowButton variant="ghost" href="#systems">
-              View Systems
-            </GlowButton>
             <GlowButton variant="ghost" href="#offers">
-              Packages
+              Pricing
+            </GlowButton>
+            <GlowButton variant="ghost" href="/ai-blog">
+              AI Blog
             </GlowButton>
           </motion.div>
         </div>
@@ -209,9 +198,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['$250/hr', 'call'],
-                ['$750', 'audit'],
-                ['$7.5k+', 'build'],
+                ['3', 'ways in'],
+                ['1', 'career arc'],
+                ['0', 'hype claims'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>

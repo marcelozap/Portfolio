@@ -8,11 +8,8 @@ import { Github, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
-  { id: 'offers', label: 'Offers' },
-  { id: 'systems', label: 'Systems' },
   { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'about', label: 'About' },
+  { id: 'offers', label: 'Pricing' },
 ];
 const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);
 
@@ -82,22 +79,6 @@ export function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-2 md:flex">
-          <li>
-            <Link
-              href="/systems"
-              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-            >
-              Work map
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/field-notes"
-              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-            >
-              Field Notes
-            </Link>
-          </li>
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <button
@@ -113,6 +94,14 @@ export function Navbar() {
               </button>
             </li>
           ))}
+          <li>
+            <Link
+              href="/ai-blog"
+              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
+            >
+              AI Blog
+            </Link>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">

@@ -39,7 +39,7 @@ export function PersistentAudioPlayer() {
 
   return (
     <aside
-      className="bg-bg/90 fixed bottom-3 right-3 z-50 w-[min(240px,calc(100vw-24px))] border border-line p-2.5 shadow-2xl backdrop-blur-xl sm:bottom-4 sm:right-4"
+      className="fixed bottom-3 right-3 z-50 w-[min(240px,calc(100vw-24px))] border border-line bg-bg/90 p-2.5 shadow-2xl backdrop-blur-xl sm:bottom-4 sm:right-4"
       aria-label="Mi Perrito audio player"
     >
       <div className="flex items-center gap-2.5">
@@ -47,7 +47,9 @@ export function PersistentAudioPlayer() {
           <Music2 className="size-4" />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-faint">MaloSound</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-faint">
+            MaloSound
+          </p>
           <p className="truncate text-sm font-medium text-ink">Mi Perrito</p>
         </div>
         <button

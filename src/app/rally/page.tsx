@@ -26,7 +26,7 @@ export default function RallyPage() {
               Back home
             </Link>
             <Link
-              href="/#projects"
+              href="/#experience"
               className="rounded-full border border-white/[0.1] px-5 py-3 text-sm font-semibold text-ink-muted transition hover:border-accent-warm/40 hover:text-ink"
             >
               View work

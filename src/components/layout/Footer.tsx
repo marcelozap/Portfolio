@@ -8,11 +8,9 @@ import { scrollToSection } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 const LINKS = [
-  { label: 'Offers', id: 'offers' as const },
-  { label: 'Systems', id: 'systems' as const },
-  { label: 'Projects', id: 'projects' as const },
+  { label: 'Pricing', id: 'offers' as const },
   { label: 'Experience', id: 'experience' as const },
-  { label: 'About', id: 'about' as const },
+  { label: 'AI Blog', id: 'ai-blog' as const },
 ];
 
 const SOCIAL_ICONS = {
@@ -65,16 +63,6 @@ export function Footer() {
                 </button>
               </li>
             ))}
-            <li>
-              <Link href="/systems" className="whitespace-nowrap transition hover:text-accent">
-                Work map
-              </Link>
-            </li>
-            <li>
-              <Link href="/field-notes" className="whitespace-nowrap transition hover:text-accent">
-                Field Notes
-              </Link>
-            </li>
           </ul>
 
           <ul className="flex items-center gap-1.5">

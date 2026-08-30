@@ -28,11 +28,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Role-Based AI Systems',
+    default: 'Marcelo Zapata - Software Engineer | AI Systems and Automation',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Role-based AI infrastructure packages for ecommerce, marketing, teaching, management, and software teams.',
+    'Marcelo Zapata builds reliable software, AI-assisted workflows, QA automation, and data systems around real work.',
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     'LLM workflows',
     'QA automation',
     'business process automation',
-    'GATEKPT.AI',
+    'XIV',
     'Green Machine',
     'MaloSound',
     'ecommerce automation',
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata - Role-Based AI Systems',
+    title: 'Marcelo Zapata - Software Engineer | AI Systems and Automation',
     description:
-      'AI infrastructure packages designed around real workflows, business tools, and trusted delivery systems.',
+      'Software engineering, QA automation, data workflows, and AI-assisted systems built around real work.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marcelo Zapata',
     description:
-      'Role-based AI systems for ecommerce, marketing, teaching, management, and software workflows.',
+      'Software engineering, AI systems, automation, and data workflows built around real work.',
     images: ['/og-xiv-command.png'],
   },
   icons: {
