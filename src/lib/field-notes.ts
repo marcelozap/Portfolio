@@ -11,6 +11,24 @@ export type FieldNote = {
 
 export const FIELD_NOTES: FieldNote[] = [
   {
+    slug: 'my-big-bet',
+    number: 'NOTE 006',
+    date: '2026-08-30',
+    title: 'My Big Bet',
+    summary:
+      'The next barrier to AI adoption will not be access to the tools. It will be understanding where they fit, and helping local businesses use them creatively.',
+    body: [
+      'I am betting my career on things changing sooner than later.',
+      'I am going all in on helping small businesses work with AI.',
+      'The biggest barrier to entry is not access to the tools. It is knowledge and education: understanding what these systems can do, where they fit, and how to use them without losing the human part of the work.',
+      'There are smart people in San Francisco building cutting-edge technology every day. But the work cannot stop at the frontier. Someone still has to bring those tools down to the ground and help local people use them.',
+      'People with limited technical backgrounds do not always need another feature or another platform. They need an educator, a builder, and a guide who can help them ask better questions, see new possibilities, and make the tools useful in the work already in front of them.',
+      'That is the role I intend to fill. I am pursuing the education, building with small businesses, and looking for partnerships that will help me do it well.',
+      'My bet is that the next wave of AI will belong not only to the people building the models, but also to the people who help everyone else understand what to do with them.',
+    ],
+    closing: 'THE NEXT WAVE OF AI NEEDS PEOPLE ON THE GROUND.',
+  },
+  {
     slug: 'fourteen',
     number: 'NOTE 005',
     date: '2026-08-27',

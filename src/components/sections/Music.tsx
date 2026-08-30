@@ -6,6 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const TRACKS = [
+  { title: 'Mi Perrito', type: 'original' },
   { title: 'Sketch 01', type: 'demo' },
   { title: 'Sketch 02', type: 'demo' },
   { title: 'Sketch 03', type: 'idea' },
