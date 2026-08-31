@@ -3,7 +3,7 @@
 import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const LOOP_SECONDS = 25;
+const LOOP_SECONDS = 74;
 
 export function PersistentAudioPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -40,7 +40,7 @@ export function PersistentAudioPlayer() {
   return (
     <aside
       className="fixed bottom-3 right-3 z-50 w-[min(240px,calc(100vw-24px))] border border-line bg-bg/90 p-2.5 shadow-2xl backdrop-blur-xl sm:bottom-4 sm:right-4"
-      aria-label="Mi Perrito audio player"
+      aria-label="Output 1-2 audio player"
     >
       <div className="flex items-center gap-2.5">
         <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-accent-warm/15 text-accent-warm">
@@ -50,13 +50,13 @@ export function PersistentAudioPlayer() {
           <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-faint">
             MaloSound
           </p>
-          <p className="truncate text-sm font-medium text-ink">Mi Perrito</p>
+          <p className="truncate text-sm font-medium text-ink">Output 1-2</p>
         </div>
         <button
           type="button"
           onClick={togglePlayback}
-          aria-label={isPlaying ? 'Pause Mi Perrito' : 'Play Mi Perrito'}
-          title={isPlaying ? 'Pause Mi Perrito' : 'Play Mi Perrito'}
+          aria-label={isPlaying ? 'Pause Output 1-2' : 'Play Output 1-2'}
+          title={isPlaying ? 'Pause Output 1-2' : 'Play Output 1-2'}
           className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-bg transition hover:bg-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           {isPlaying ? <Pause className="size-3.5" /> : <Play className="ml-0.5 size-3.5" />}
@@ -64,8 +64,8 @@ export function PersistentAudioPlayer() {
         <button
           type="button"
           onClick={toggleMute}
-          aria-label={isMuted ? 'Unmute Mi Perrito' : 'Mute Mi Perrito'}
-          title={isMuted ? 'Unmute Mi Perrito' : 'Mute Mi Perrito'}
+          aria-label={isMuted ? 'Unmute Output 1-2' : 'Mute Output 1-2'}
+          title={isMuted ? 'Unmute Output 1-2' : 'Mute Output 1-2'}
           className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-ink-muted transition hover:border-accent/60 hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           {isMuted ? <VolumeX className="size-3.5" /> : <Volume2 className="size-3.5" />}
@@ -74,8 +74,8 @@ export function PersistentAudioPlayer() {
       <audio
         className="sr-only"
         preload="auto"
-        aria-label="Mi Perrito"
-        src="/audio/mi-perrito.mp3"
+        aria-label="Output 1-2"
+        src="/audio/output-1-2.m4a"
         onTimeUpdate={(event) => {
           if (event.currentTarget.currentTime >= LOOP_SECONDS) event.currentTarget.currentTime = 0;
         }}
@@ -83,7 +83,7 @@ export function PersistentAudioPlayer() {
         onPause={() => setIsPlaying(false)}
         onEnded={() => setIsPlaying(false)}
       >
-        <a href="/audio/mi-perrito.mp3">Play Mi Perrito</a>
+        <a href="/audio/output-1-2.m4a">Play Output 1-2</a>
       </audio>
     </aside>
   );
