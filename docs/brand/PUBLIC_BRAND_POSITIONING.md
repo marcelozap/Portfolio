@@ -25,7 +25,9 @@ The public impression should be:
    systems thinking, communication, and delivery judgment.
 2. Organizations of any size, independent people, educators, and creators
    looking for practical AI integration.
-3. Technical peers looking for concrete implementation and public proof.
+3. Students and early-career builders looking for a clear map from learning to
+   useful work.
+4. Technical peers looking for concrete implementation and public proof.
 
 The portfolio should answer a hiring manager's questions before it presents a
 service package: What does Marcelo build? Has he shipped in real constraints?
