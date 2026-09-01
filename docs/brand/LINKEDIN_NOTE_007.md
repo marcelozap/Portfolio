@@ -60,7 +60,7 @@ You do not have to abandon yourself to prove you are employable.
 
 What are you really hoping the job will give you?
 
-P.S. If you are building something small and want a second set of eyes, send it to me. Full note in the first comment.
+Full note: https://www.marcelozapata.dev/ai-blog/the-job-was-not-the-dream
 
 ## First Comment
 
