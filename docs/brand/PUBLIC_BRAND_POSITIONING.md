@@ -15,8 +15,8 @@ The public impression should be:
 - operationally mature
 - clear about what is built and what is still being tested
 - able to connect software, data, QA, and product decisions
-- able to translate new tools for large companies, small businesses, teams,
-  independent people, educators, and creators
+- able to translate new tools for organizations of any size, teams, independent
+  people, educators, and creators
 - creative without making creativity the only story
 
 ## Audience Order
@@ -98,6 +98,11 @@ measurement system first; keep game mechanics as implementation detail.
 Professional distribution. Lead with software engineering, QA automation,
 data workflows, and AI-assisted systems. Projects support the story; they do
 not replace the employment narrative.
+
+Recommended profile headline:
+
+> AI Implementation Partner | Role-based AI systems for organizations, teams,
+> educators, and independent builders
 
 ## Claim Discipline
 

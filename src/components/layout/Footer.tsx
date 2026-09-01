@@ -8,7 +8,7 @@ import { scrollToSection } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 const LINKS = [
-  { label: 'Pricing', id: 'offers' as const },
+  { label: 'Work together', id: 'offers' as const },
   { label: 'Experience', id: 'experience' as const },
   { label: 'AI Blog', id: 'ai-blog' as const },
 ];

@@ -31,7 +31,7 @@ const FEATURED_WORK = [
 
 const TRANSLATION_STRIP = [
   {
-    label: 'Pricing',
+    label: 'Work together',
     href: '#offers',
   },
   {
@@ -156,7 +156,7 @@ export function Hero() {
               GitHub
             </GlowButton>
             <GlowButton variant="ghost" href="#offers">
-              Pricing
+              Work together
             </GlowButton>
             <GlowButton variant="ghost" href="/ai-blog">
               AI Blog

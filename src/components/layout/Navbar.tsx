@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
-  { id: 'offers', label: 'Pricing' },
+  { id: 'offers', label: 'Work together' },
 ];
 const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);
 
