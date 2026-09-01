@@ -8,11 +8,11 @@ Thesis:
 
 > The job you are waiting for is not the only way to build a life.
 
-Use Marcelo's current sunglasses portrait, the small LinkedIn mark, a black background, warm white type, and the recurring cyan accent.
+Use the supplied final card asset exactly as provided: current sunglasses portrait, black background, warm white type, cyan accent, and the `@marcelozap` handle.
 
 Card asset: `/brand/linkedin-the-job-was-not-the-dream.png`
 
-## Caption
+## LinkedIn Post
 
 The job you are waiting for is not the only way to build a life.
 
@@ -24,51 +24,43 @@ The right company. The stable paycheck. The title that would prove I had made it
 
 I was 22 when I entered a Fortune 100 technology organization and 26 when I left.
 
-After four years, my summary is simple: companies are not pure meritocracies, titles are not identity, and access changes opportunity.
+Four years taught me three things.
 
-Some people begin with family connections, sponsorship, or a direct line to someone who can open the right door. Others are expected to learn the unwritten rules alone.
+Companies are not meritocracies.
 
-That does not mean the people with access are incapable. It means the starting conditions are different.
+Titles are not identity.
+
+Access changes opportunity.
 
 The corporate world can provide stability, learning, and a good living. Some people genuinely enjoy it, and there is nothing wrong with that.
 
-But a job can also ask you to trade away your individualism, your identity, and the parts of yourself that do not fit the role.
+But a job asks you to fit. Whatever does not fit, you leave at the door.
 
-I spent years believing the paycheck would make that trade worth it. When the choice became clear, I chose myself. I would make that choice ten out of ten times.
+I spent years believing the paycheck would make that trade worth it.
 
-I am not romanticizing uncertainty. People need jobs to live. A stable paycheck can matter.
+When the choice came, I chose myself.
 
-But too many people wait for one company to validate them because they believe the job is the life.
+Ten out of ten times.
 
-They imagine the title, the office, the salary, and the belonging. They do not always imagine the slow cost of becoming legible to a system: asking permission, fitting the role, protecting the hierarchy, and leaving the parts of yourself that do not fit at the door.
+I am not romanticizing uncertainty. People need jobs to live.
 
-So if you are early in your career, ask yourself what you actually want the job to give you.
+You imagine the title, the office, the salary, and the belonging. You do not imagine the slow cost of becoming legible to a system: asking permission, fitting the role, protecting the hierarchy.
 
-Security? Recognition? Community? A chance to learn? A way to make a living?
+But you do not have to let one company become your entire identity.
 
-Those are different needs, and they do not all require the same path.
+That is one reason AI matters to me. It lowers the cost of learning, prototyping, and proving what you can do.
 
-That is one reason AI matters to me. It can lower the cost of learning, prototyping, and proving what you can do.
+It cannot guarantee success. But it can help you build evidence, test ideas, and create more than one option.
 
-It cannot erase unequal access or guarantee success. But it can help someone build evidence, test ideas, and create more than one option.
+Choose a real problem. Build something small. Document what you learn.
 
-Choose a real problem. Build something small. Document what you learn. Talk to people doing useful work outside the largest organizations.
-
-Keep the job if you need the job. Just do not confuse the job with your identity.
-
-I do not have all the answers. I am still building my own path.
-
-But I can share what I have learned about work, help you organize what you know, and help you build a first step that belongs to you.
+I am still building my own path. In my next post I will show you how to build the first small thing, step by step, with the tools I use.
 
 You do not have to abandon yourself to prove you are employable.
 
 What are you really hoping the job will give you?
 
-Full note in the first comment.
-
-If you are building something small and want a second set of eyes, send it to me.
-
-English and Spanish.
+P.S. If you are building something small and want a second set of eyes, send it to me. Full note in the first comment.
 
 ## First Comment
 
