@@ -60,7 +60,7 @@ You do not have to abandon yourself to prove you are employable.
 
 What are you really hoping the job will give you?
 
-Full note: https://www.marcelozapata.dev/ai-blog/the-job-was-not-the-dream
+Check out my AI Blog: https://www.marcelozapata.dev/ai-blog
 
 ## First Comment
 
