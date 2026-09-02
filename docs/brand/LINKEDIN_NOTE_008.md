@@ -9,7 +9,7 @@ Thesis:
 > I had a dream.
 > Not that kind of dream.
 
-Use the current sunglasses portrait, black background, warm white type, cyan accent, and the `@marcelozap` handle. Keep the card simple: the literal opening is the hook; the caption supplies the context.
+Use the current sunglasses portrait, black background, warm white type, cyan accent, and the `@marcelozap` handle. Keep the card simple: the literal opening is the hook; the caption supplies the context. Add the quiet footer `marcelozapata.dev / xiv@marcelozapata.dev` as the contact path.
 
 Card asset: `/brand/linkedin-i-had-a-dream.png`
 
