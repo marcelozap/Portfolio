@@ -28,11 +28,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata - Software Engineer | AI Systems and Automation',
+    default: 'Marcelo Zapata | Founder of XIV',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata builds reliable software and helps people and organizations integrate AI into real work, daily life, and creative practice.',
+    "XIV is Marcelo Zapata's independent company for trading, research, technology, creative projects, and public writing.",
   keywords: [
     'Marcelo Zapata',
     'software engineer',
@@ -59,13 +59,15 @@ export const metadata: Metadata = {
     'analytics',
     'software systems',
     'Rally',
+    'trading as an art form',
+    'market research',
+    'public writing',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata - Software Engineer | AI Systems and Automation',
-    description:
-      'Software engineering, AI integration, QA automation, data workflows, and creative systems built around real work.',
+    title: 'Marcelo Zapata | Founder of XIV',
+    description: 'Trading, research, technology, music, movement, and writing inside XIV.',
     type: 'website',
     siteName: 'Marcelo Zapata Portfolio',
     images: [
@@ -79,9 +81,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo Zapata',
-    description:
-      'Software engineering, AI integration, automation, and data workflows built around real life and work.',
+    title: 'Marcelo Zapata | Founder of XIV',
+    description: 'Trading, research, technology, music, movement, and writing inside XIV.',
     images: ['/og-xiv-command.png'],
   },
   icons: {

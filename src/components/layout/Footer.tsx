@@ -8,13 +8,15 @@ import { useEffect, useState } from 'react';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
 const EN_LINKS = [
-  { label: 'Work together', id: 'offers' as const },
-  { label: 'Experience', id: 'experience' as const },
+  { label: 'Projects', id: 'projects' as const },
+  { label: 'About XIV', id: 'about' as const },
+  { label: 'Contact', id: 'contact' as const },
   { label: 'AI Blog', id: 'ai-blog' as const },
 ];
 const ES_LINKS = [
-  { label: 'Trabajemos juntos', id: 'offers' as const },
-  { label: 'Experiencia', id: 'experience' as const },
+  { label: 'Proyectos', id: 'projects' as const },
+  { label: 'Acerca de XIV', id: 'about' as const },
+  { label: 'Contacto', id: 'contact' as const },
   { label: 'Blog de IA', id: 'ai-blog' as const },
 ];
 
@@ -64,8 +66,8 @@ export function Footer() {
           </div>
           <div className="mt-1 whitespace-nowrap text-[12px] font-medium tracking-[0.04em] text-ink-muted">
             {isSpanish
-              ? 'Sistemas de IA basados en roles / automatización de flujos'
-              : 'Role-based AI systems / workflow automation'}
+              ? 'Fundador de XIV / mercados / proyectos'
+              : 'Founder of XIV / markets / projects'}
           </div>
         </div>
 

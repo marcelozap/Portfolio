@@ -9,12 +9,14 @@ import { Github, Languages, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const EN_NAV_ITEMS = [
-  { id: 'experience', label: 'Experience' },
-  { id: 'offers', label: 'Work together' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
 ];
 const ES_NAV_ITEMS = [
-  { id: 'experience', label: 'Experiencia' },
-  { id: 'offers', label: 'Trabajemos juntos' },
+  { id: 'projects', label: 'Proyectos' },
+  { id: 'about', label: 'Acerca de XIV' },
+  { id: 'contact', label: 'Contacto' },
 ];
 const OBSERVED_SECTION_IDS = EN_NAV_ITEMS.map((n) => n.id);
 
@@ -97,7 +99,7 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              {isSpanish ? 'sistemas de IA / flujos de trabajo' : 'AI systems / workflows'}
+              {isSpanish ? 'fundador de XIV / proyectos' : 'Founder of XIV / projects'}
             </span>
           </span>
         </Link>

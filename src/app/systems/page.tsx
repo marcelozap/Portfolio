@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink, Network } from 'lucide-react';
 import { PUBLIC_SYSTEMS } from '@/lib/public-systems';
 
 export const metadata = {
-  title: 'Systems',
+  title: 'Projects',
   description:
     'The systems Marcelo Zapata is building across AI, music, movement, data, and sport.',
 };
@@ -21,15 +21,15 @@ export default function SystemsPage() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <Network className="size-4 text-accent" />
-          <span className="text-accent">Systems</span>
+          <span className="text-accent">Projects</span>
           <span className="text-ink-faint">/</span>
           <span>Systems</span>
         </div>
 
         <div className="mt-8 max-w-4xl">
           <h1 className="font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-            Four lanes.
-            <span className="text-gradient block">One way of working.</span>
+            Four projects.
+            <span className="text-gradient block">One independent field.</span>
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-muted md:text-xl">
             I build systems that turn messy inputs into something people can use: a decision, a
@@ -56,7 +56,7 @@ export default function SystemsPage() {
                   {project.stack.slice(0, 3).join(' · ')}
                 </span>
                 <span className="inline-flex items-center gap-2 text-accent transition group-hover:translate-x-1">
-                  Open lane <ArrowRight className="size-4" />
+                  Open project <ArrowRight className="size-4" />
                 </span>
               </div>
             </Link>

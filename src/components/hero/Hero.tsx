@@ -1,53 +1,58 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Github, Linkedin } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Github, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'AI Workflow Strategy Call',
-    href: '#offers',
-    meta: 'conversation',
-    note: 'a focused conversation about where AI can help',
+    name: 'Green Machine',
+    href: '/systems/green-machine',
+    meta: 'market / research',
+    note: 'trading as an art form, with data and risk in view',
     external: false,
   },
   {
-    name: 'Software Engineering',
-    href: '#experience',
-    meta: 'experience',
-    note: 'QA automation, data workflows, and AI-assisted delivery',
+    name: 'MaloSound',
+    href: '/systems/malosound',
+    meta: 'music / signal',
+    note: 'songs, audio analysis, and visual experiments',
     external: false,
   },
   {
-    name: 'My Big Bet',
-    href: '/ai-blog/my-big-bet',
-    meta: 'AI blog',
-    note: 'why I am building for the next wave of adoption',
+    name: 'Rally',
+    href: '/systems/rally',
+    meta: 'movement / practice',
+    note: 'computer vision for training memory and better practice',
+    external: false,
+  },
+  {
+    name: 'AI Blog',
+    href: '/ai-blog',
+    meta: 'writing',
+    note: 'notes on attention, technology, work, and becoming',
     external: false,
   },
 ];
 
-const TRANSLATION_STRIP = [
+const NAV_STRIP = [
   {
-    label: 'Work together',
-    href: '#offers',
-  },
-  {
-    label: 'Experience',
-    href: '#experience',
+    label: 'Projects',
+    href: '#projects',
   },
   {
     label: 'AI Blog',
-    href: '#ai-blog',
+    href: '/ai-blog',
   },
-];
-
-const OFFER_STRIP = [
-  ['Focus', 'AI systems'],
-  ['Proof', 'Public repos'],
-  ['Mode', 'Build clearly'],
+  {
+    label: 'About XIV',
+    href: '#about',
+  },
+  {
+    label: 'Contact',
+    href: '#contact',
+  },
 ];
 
 export function Hero() {
@@ -82,10 +87,12 @@ export function Hero() {
           >
             <span className="flex items-center gap-3">
               <span className="size-1.5 rounded-full bg-signal-green" />
-              Marcelo Zapata
+              XIV
             </span>
             <span className="hidden text-ink-faint sm:inline">/</span>
-            <span className="text-ink-faint">software engineering / AI systems / automation</span>
+            <span className="text-ink-faint">
+              independent company / trading / research / creative work
+            </span>
           </motion.div>
 
           <motion.div
@@ -96,7 +103,7 @@ export function Hero() {
           >
             <span className="block text-ink">Marcelo Zapata</span>
             <span className="mt-3 block max-w-3xl text-[clamp(1.35rem,3vw,2.45rem)] font-medium leading-[1.08] text-ink-muted">
-              Software engineer building reliable AI systems for real work.
+              Founder of XIV.
             </span>
           </motion.div>
 
@@ -107,12 +114,12 @@ export function Hero() {
             className="max-w-2xl space-y-3"
           >
             <p className="text-balance text-base leading-7 text-ink-muted md:text-lg">
-              I build and ship software across QA automation, data workflows, internal platforms,
-              and AI-assisted tools. My work connects product judgment with operational discipline.
+              An independent company for trading, research, technology, and creative projects.
             </p>
             <p className="max-w-2xl text-sm font-medium leading-6 text-accent/85">
-              For hiring teams: a builder who can own the workflow after the demo. For people and
-              organizations: useful AI without losing judgment, creativity, or time.
+              I see the market as an art form: a living, unpredictable system shaped by data,
+              attention, and every person inside it. Music is another language I use to study the
+              world.
             </p>
           </motion.div>
 
@@ -122,16 +129,20 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.3 }}
             className="grid w-full max-w-xl grid-cols-3 border border-line bg-bg/55 backdrop-blur-xl"
           >
-            {OFFER_STRIP.map(([label, price]) => (
+            {[
+              ['Market', 'art form'],
+              ['Music', 'language'],
+              ['XIV', 'one field'],
+            ].map(([label, value]) => (
               <a
                 key={label}
-                href="#offers"
+                href="#projects"
                 className="border-r border-line px-3 py-3 last:border-r-0 hover:bg-white/[0.035]"
               >
                 <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-ink-faint">
                   {label}
                 </span>
-                <span className="mt-1 block font-display text-lg text-ink">{price}</span>
+                <span className="mt-1 block font-display text-lg text-ink">{value}</span>
               </a>
             ))}
           </motion.div>
@@ -142,9 +153,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.38 }}
             className="flex flex-wrap items-center gap-3"
           >
-            <GlowButton variant="primary" href="#experience">
-              <Briefcase className="size-4" />
-              View experience
+            <GlowButton variant="primary" href="#projects">
+              <ArrowUpRight className="size-4" />
+              Explore XIV
             </GlowButton>
             <GlowButton
               variant="outline"
@@ -155,8 +166,9 @@ export function Hero() {
               <Github className="size-4" />
               GitHub
             </GlowButton>
-            <GlowButton variant="ghost" href="#offers">
-              Work together
+            <GlowButton variant="ghost" href="#contact">
+              <Mail className="size-4" />
+              Contact
             </GlowButton>
             <GlowButton variant="ghost" href="/ai-blog">
               AI Blog
@@ -173,8 +185,8 @@ export function Hero() {
         >
           <div className="bg-bg-elevated/48 border border-line p-5 backdrop-blur-xl">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
-              <span>Selected Artifacts</span>
-              <span className="text-accent">3</span>
+              <span>Inside XIV</span>
+              <span className="text-accent">4</span>
             </div>
             <div className="space-y-2">
               {FEATURED_WORK.map((item) => (
@@ -198,9 +210,9 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 border-t border-white/[0.08] pt-4 text-center">
               {[
-                ['3', 'ways in'],
-                ['1', 'career arc'],
-                ['0', 'hype claims'],
+                ['4', 'project lanes'],
+                ['1', 'company'],
+                ['1', 'point of view'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <div className="font-display text-2xl font-semibold text-ink">{value}</div>
@@ -219,7 +231,7 @@ export function Hero() {
         className="relative z-20 mx-auto mt-10 hidden w-full max-w-7xl px-6 pb-6 md:block md:px-10"
       >
         <div className="bg-bg/72 grid border-y border-line backdrop-blur-xl lg:grid-cols-4">
-          {TRANSLATION_STRIP.map((item) => (
+          {NAV_STRIP.map((item) => (
             <a
               key={item.label}
               href={item.href}

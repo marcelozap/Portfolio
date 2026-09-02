@@ -64,10 +64,10 @@ export default function FieldNotePage({ params }: { params: { slug: string } }) 
             Back to AI Blog
           </Link>
           <Link
-            href="/#offers"
+            href="/#contact"
             className="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-accent"
           >
-            View pricing <ArrowRight className="size-4" />
+            Contact XIV <ArrowRight className="size-4" />
           </Link>
         </footer>
       </div>

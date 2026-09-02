@@ -1,15 +1,17 @@
-import { Hero } from '@/components/hero/Hero';
+import { About } from '@/components/sections/About';
 import { AIBlog } from '@/components/sections/AIBlog';
-import { Experience } from '@/components/sections/Experience';
-import { Offers } from '@/components/sections/Offers';
+import { Contact } from '@/components/sections/Contact';
+import { Hero } from '@/components/hero/Hero';
+import { ProjectShowcase } from '@/components/sections/ProjectShowcase';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Experience />
-      <Offers />
+      <ProjectShowcase />
+      <About />
       <AIBlog />
+      <Contact />
     </>
   );
 }

@@ -10,15 +10,7 @@ import {
   useState,
 } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  ArrowRight,
-  BookOpen,
-  Briefcase,
-  ExternalLink,
-  Search,
-  Sparkles,
-  TerminalSquare,
-} from 'lucide-react';
+import { ArrowRight, BookOpen, ExternalLink, Search, Sparkles, TerminalSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
@@ -87,11 +79,25 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
         action: () => scrollTo('hero'),
       },
       {
-        id: 'goto-experience',
-        label: 'Experience',
-        icon: Briefcase,
+        id: 'goto-projects',
+        label: 'Projects',
+        icon: Sparkles,
         group: 'Navigate',
-        action: () => scrollTo('experience'),
+        action: () => scrollTo('projects'),
+      },
+      {
+        id: 'goto-about',
+        label: 'About XIV',
+        icon: Sparkles,
+        group: 'Navigate',
+        action: () => scrollTo('about'),
+      },
+      {
+        id: 'goto-contact',
+        label: 'Contact',
+        icon: Sparkles,
+        group: 'Navigate',
+        action: () => scrollTo('contact'),
       },
       {
         id: 'open-ai-blog',

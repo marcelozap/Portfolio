@@ -61,8 +61,8 @@ export default function FieldNotesPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4 text-sm text-ink-muted">
-          <Link href="/#offers" className="inline-flex items-center gap-2 hover:text-accent">
-            View pricing <ArrowRight className="size-4" />
+          <Link href="/#contact" className="inline-flex items-center gap-2 hover:text-accent">
+            Contact XIV <ArrowRight className="size-4" />
           </Link>
         </div>
       </div>

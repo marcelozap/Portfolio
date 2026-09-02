@@ -28,7 +28,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
           className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent hover:text-ink"
         >
           <ArrowLeft className="size-4" />
-          All systems
+          All projects
         </Link>
 
         <header className="mt-14 max-w-4xl border-b border-white/[0.1] pb-10">
@@ -121,7 +121,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
           >
             <ArrowLeft className="size-4" />
-            Back to systems
+            Back to projects
           </Link>
           <Link
             href="/ai-blog"
