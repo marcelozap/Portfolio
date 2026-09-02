@@ -3,14 +3,19 @@
 import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { scrollToSection } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/socialLinks';
 
-const LINKS = [
+const EN_LINKS = [
   { label: 'Work together', id: 'offers' as const },
   { label: 'Experience', id: 'experience' as const },
   { label: 'AI Blog', id: 'ai-blog' as const },
+];
+const ES_LINKS = [
+  { label: 'Trabajemos juntos', id: 'offers' as const },
+  { label: 'Experiencia', id: 'experience' as const },
+  { label: 'Blog de IA', id: 'ai-blog' as const },
 ];
 
 const SOCIAL_ICONS = {
@@ -21,6 +26,18 @@ const SOCIAL_ICONS = {
 
 export function Footer() {
   const [time, setTime] = useState('--:--:--');
+  const pathname = usePathname();
+  const isSpanish = pathname.startsWith('/es');
+  const links = isSpanish ? ES_LINKS : EN_LINKS;
+
+  const goToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    window.location.href = isSpanish ? `/es#${id}` : `/#${id}`;
+  };
 
   useEffect(() => {
     const tick = () =>
@@ -46,17 +63,19 @@ export function Footer() {
             <div className="font-display text-sm font-medium text-ink">Marcelo Zapata</div>
           </div>
           <div className="mt-1 whitespace-nowrap text-[12px] font-medium tracking-[0.04em] text-ink-muted">
-            Role-based AI systems / workflow automation
+            {isSpanish
+              ? 'Sistemas de IA basados en roles / automatización de flujos'
+              : 'Role-based AI systems / workflow automation'}
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-ink-muted md:flex-nowrap md:justify-center">
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 md:flex-nowrap">
-            {LINKS.map((link) => (
+            {links.map((link) => (
               <li key={link.label}>
                 <button
                   type="button"
-                  onClick={() => scrollToSection(link.id)}
+                  onClick={() => goToSection(link.id)}
                   className="whitespace-nowrap transition hover:text-accent"
                 >
                   {link.label}
@@ -91,7 +110,7 @@ export function Footer() {
 
       <div className="border-t border-white/[0.04]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-[11px] text-ink-faint md:px-10">
-          <span>Portfolio - Marcelo Zapata</span>
+          <span>{isSpanish ? 'Portafolio - Marcelo Zapata' : 'Portfolio - Marcelo Zapata'}</span>
           <span>(c) {new Date().getFullYear()}</span>
         </div>
       </div>

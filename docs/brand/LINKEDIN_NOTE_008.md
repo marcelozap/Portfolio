@@ -4,7 +4,7 @@
 
 - Main post: English text with the bilingual card attached.
 - First comment: Spanish version and the direct note link.
-- Website note: the English version at `/ai-blog/i-had-a-dream`.
+- Website note: English at `/ai-blog/i-had-a-dream`; Spanish at `/es/ai-blog/i-had-a-dream`.
 
 ## Card
 
@@ -12,15 +12,16 @@ Eyebrow: `DAY 2 / BUILDING WITH AI`
 
 Thesis:
 
-> MY JOB IS THE VISION.
-> MI TRABAJO ES LA VISIÓN.
+> I HAD A DREAM.
+> TUVE UN SUEÑO.
 >
-> AI GETS THE WORK BETWEEN DECISIONS.
-> LA IA HACE EL TRABAJO ENTRE ESAS DECISIONES.
+> NOT THAT KIND OF DREAM.
+> NO ESA CLASE DE SUEÑO.
 
 Use Marcelo's current sunglasses portrait, black background, warm white type,
 cyan accent, `@marcelozap` handle, and the quiet footer
-`marcelozapata.dev / xiv@marcelozapata.dev`.
+`marcelozapata.dev / xiv@marcelozapata.dev`. The shipped card reads:
+`I HAD A DREAM. / NOT THAT KIND OF DREAM. / TUVE UN SUEÑO. / NO ESA CLASE DE SUEÑO.`
 
 Card asset: `/brand/linkedin-i-had-a-dream.png`
 
@@ -198,4 +199,5 @@ P.D. Ven a construir conmigo: xiv@marcelozapata.dev
 
 ## Link
 
-https://www.marcelozapata.dev/ai-blog/i-had-a-dream
+English: https://www.marcelozapata.dev/ai-blog/i-had-a-dream
+Spanish: https://www.marcelozapata.dev/es/ai-blog/i-had-a-dream

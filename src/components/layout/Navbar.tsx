@@ -3,21 +3,37 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Languages, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const NAV_ITEMS = [
+const EN_NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
   { id: 'offers', label: 'Work together' },
 ];
-const OBSERVED_SECTION_IDS = NAV_ITEMS.map((n) => n.id);
+const ES_NAV_ITEMS = [
+  { id: 'experience', label: 'Experiencia' },
+  { id: 'offers', label: 'Trabajemos juntos' },
+];
+const OBSERVED_SECTION_IDS = EN_NAV_ITEMS.map((n) => n.id);
 
 export function Navbar() {
   const { scrollY } = useScroll();
   const bg = useTransform(scrollY, [0, 80], ['hsl(var(--bg) / 0)', 'hsl(var(--bg) / 0.72)']);
   const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.08]);
   const [active, setActive] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isSpanish = pathname.startsWith('/es');
+  const navItems = isSpanish ? ES_NAV_ITEMS : EN_NAV_ITEMS;
+  const languageHref =
+    pathname === '/ai-blog/i-had-a-dream'
+      ? '/es/ai-blog/i-had-a-dream'
+      : pathname === '/es/ai-blog/i-had-a-dream'
+        ? '/ai-blog/i-had-a-dream'
+        : isSpanish
+          ? '/'
+          : '/es';
 
   const goToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -26,8 +42,12 @@ export function Navbar() {
       return;
     }
 
-    window.location.href = `/#${id}`;
+    window.location.href = isSpanish ? `/es#${id}` : `/#${id}`;
   };
+
+  useEffect(() => {
+    document.documentElement.lang = isSpanish ? 'es' : 'en';
+  }, [isSpanish]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,7 +64,7 @@ export function Navbar() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [isSpanish]);
 
   return (
     <motion.header
@@ -56,7 +76,11 @@ export function Navbar() {
         className="absolute inset-x-0 bottom-0 h-px bg-white"
       />
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link href="/" className="group flex items-center gap-3" aria-label="Marcelo Zapata home">
+        <Link
+          href={isSpanish ? '/es' : '/'}
+          className="group flex items-center gap-3"
+          aria-label={isSpanish ? 'Inicio de Marcelo Zapata' : 'Marcelo Zapata home'}
+        >
           <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03] text-ink shadow-inset">
             <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
             <Image
@@ -73,13 +97,13 @@ export function Navbar() {
               Marcelo Zapata
             </span>
             <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              AI systems / workflows
+              {isSpanish ? 'sistemas de IA / flujos de trabajo' : 'AI systems / workflows'}
             </span>
           </span>
         </Link>
 
         <ul className="hidden items-center gap-2 md:flex">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <li key={item.id}>
               <button
                 type="button"
@@ -96,10 +120,10 @@ export function Navbar() {
           ))}
           <li>
             <Link
-              href="/ai-blog"
+              href={isSpanish ? '/es#ai-blog' : '/ai-blog'}
               className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
             >
-              AI Blog
+              {isSpanish ? 'Blog de IA' : 'AI Blog'}
             </Link>
           </li>
         </ul>
@@ -125,6 +149,15 @@ export function Navbar() {
           >
             <Github className="size-4" />
           </a>
+          <Link
+            href={languageHref}
+            className="inline-flex h-9 items-center gap-2 rounded-[2px] border border-line bg-white/[0.025] px-2.5 text-xs font-medium text-ink-muted transition hover:border-accent/40 hover:text-accent sm:px-3"
+            aria-label={isSpanish ? 'Switch to English' : 'Cambiar a español'}
+            title={isSpanish ? 'Switch to English' : 'Cambiar a español'}
+          >
+            <Languages className="size-4" />
+            <span>{isSpanish ? 'English' : 'Español'}</span>
+          </Link>
         </div>
       </nav>
     </motion.header>
