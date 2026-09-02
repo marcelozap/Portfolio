@@ -139,53 +139,6 @@ export const PROJECTS: Project[] = [
     stack: ['Next.js', 'TypeScript', 'Signal analysis', 'AI systems', 'Public notes', 'Schema'],
   },
   {
-    id: 'green-machine',
-    name: 'Green Machine',
-    tagline: 'Bilingual market education. Daily snapshots, paper practice, risk-first review.',
-    domain: 'markets',
-    status: 'in-development',
-    accent: 'green',
-    year: '2026',
-    website: '/green-machine',
-    description:
-      'Green Machine is a bilingual market education and research-software project. The public layer teaches market weather, key levels, paper practice, and risk-first review while the engineering layer shows Python/FastAPI research workflows.',
-    coreIdeas: [
-      'Daily market snapshot wrapper for weather, levels, lesson, paper exercise, and no-trade conditions',
-      'Bilingual English/Spanish framing for families and beginner learners',
-      'Backtesting notes and research memos that separate evidence from intuition',
-      'AI-assisted review for assumptions, missing context, and next questions',
-      'Clear boundary: no recommendations, managed accounts, order execution, or copy-trading',
-    ],
-    features: [
-      {
-        title: 'Daily snapshot',
-        description:
-          'Turns market weather, SPY/QQQ context, volatility, key levels, and a beginner lesson into a repeatable public learning wrapper.',
-      },
-      {
-        title: 'Backtesting',
-        description:
-          'Turns research ideas into test notes, assumptions, limits, and follow-up questions for software-driven review.',
-      },
-      {
-        title: 'Risk analysis',
-        description:
-          'Captures uncertainty, risk context, behavioral guardrails, and AI-assisted summaries for missed context.',
-      },
-      {
-        title: 'Boundary',
-        description:
-          'Not recommendations, not managed accounts, not order execution, not copy-trading, and not a signal service.',
-      },
-    ],
-    metrics: [
-      { label: 'Focus', value: 'Education' },
-      { label: 'Method', value: 'Paper practice' },
-      { label: 'Boundary', value: 'No signals' },
-    ],
-    stack: ['Python', 'FastAPI', 'React', 'SQL', 'Backtesting', 'Risk analysis'],
-  },
-  {
     id: 'rally',
     name: 'RALLY',
     tagline: 'Practice memory for athletes.',

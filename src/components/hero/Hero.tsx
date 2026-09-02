@@ -7,10 +7,10 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const FEATURED_WORK = [
   {
-    name: 'Green Machine',
-    href: '/systems/green-machine',
-    meta: 'market / research',
-    note: 'trading as an art form, with data and risk in view',
+    name: 'XIV',
+    href: '/systems/xiv',
+    meta: 'company / state',
+    note: 'the field where trading, research, technology, and creative work meet',
     external: false,
   },
   {

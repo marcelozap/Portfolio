@@ -1,4 +1,4 @@
-import { Activity, Compass, Music2, Sparkles } from 'lucide-react';
+import { Activity, BookOpen, Music2, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { PUBLIC_SYSTEMS } from '@/lib/public-systems';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -6,9 +6,17 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const PROJECT_ICONS = {
   xiv: Sparkles,
   malosound: Music2,
-  'green-machine': Compass,
   rally: Activity,
 } as const;
+
+const BLOG_PROJECT = {
+  slug: 'ai-blog',
+  name: 'AI Blog',
+  domain: 'writing',
+  status: 'ongoing',
+  tagline: 'Notes on attention, technology, work, and becoming.',
+  laneNote: 'The public writing that gives the rest of XIV a voice.',
+};
 
 export function ProjectShowcase() {
   return (
@@ -26,13 +34,13 @@ export function ProjectShowcase() {
       />
 
       <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2">
-        {PUBLIC_SYSTEMS.map((project) => {
+        {[...PUBLIC_SYSTEMS, BLOG_PROJECT].map((project) => {
           const Icon = PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS] ?? Sparkles;
 
           return (
             <Link
               key={project.slug}
-              href={`/systems/${project.slug}`}
+              href={project.slug === 'ai-blog' ? '/ai-blog' : `/systems/${project.slug}`}
               className="group bg-bg p-6 transition hover:bg-white/[0.035] md:p-8"
             >
               <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">

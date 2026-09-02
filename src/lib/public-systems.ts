@@ -21,15 +21,16 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
     domain: 'orchestration',
     status: 'active build',
     year: '2026',
-    tagline: 'A personal command system for AI research, creative work, movement, and execution.',
+    tagline: 'An independent field for trading, research, technology, and creative work.',
     description:
-      'XIV is the layer that connects the work. It turns messy inputs into structured sessions, connects specialist analysis, and keeps decisions, evidence, and outputs on one timeline. Its current research surface combines audio and movement for live visual systems.',
-    laneNote: 'Shared state, specialist analysis, and multimodal experiments.',
+      'XIV is the company that keeps the work connected. I look at trading as an art form, use one song a day as another language, and build the software, data, and research that let those practices develop together.',
+    laneNote: 'Trading, shared state, specialist analysis, and creative experiments.',
     coreIdeas: [
+      'A personal research practice that treats market movement as both data and art',
       'One state model connecting audio, movement, visual output, and session evidence',
       'Specialist analysis lanes that produce structured events instead of opaque answers',
       'Local-first experiments designed to run on a home PC as well as a public web surface',
-      'Open adapters for dance, tennis, golf, swimming, and running',
+      'Open room for dance, tennis, golf, swimming, and running',
       'Receipts and evaluation alongside the creative experience',
     ],
     features: [
@@ -108,51 +109,6 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
     ],
     stack: ['Python', 'CLAP', 'Audio ML', 'Strudel', 'Web Audio', 'Visuals'],
     publicUrl: 'https://malosound.ai',
-  },
-  {
-    slug: 'green-machine',
-    name: 'Green Machine',
-    domain: 'evidence',
-    status: 'active build',
-    year: '2026',
-    tagline: 'Data, research, and risk review made visible enough to question.',
-    description:
-      'Green Machine is the data and evidence lane. It turns market and operational inputs into repeatable snapshots, research notes, and reviewable outputs while keeping uncertainty and boundaries visible.',
-    laneNote: 'Data pipelines, evidence review, and risk-aware research.',
-    coreIdeas: [
-      'Repeatable data snapshots instead of unexplained conclusions',
-      'Backtesting notes that separate evidence from intuition',
-      'AI-assisted review for assumptions, missing context, and next questions',
-      'Clear boundaries around advice, execution, and unsupported confidence',
-    ],
-    features: [
-      {
-        title: 'Data spine',
-        description:
-          'Structured inputs, provenance, and reproducible outputs make research easier to inspect.',
-      },
-      {
-        title: 'Risk review',
-        description:
-          'The system keeps uncertainty, assumptions, and no-action conditions in the same frame as the result.',
-      },
-      {
-        title: 'Learning wrapper',
-        description:
-          'Complex research is organized into a format that a beginner can follow and question.',
-      },
-      {
-        title: 'Public boundary',
-        description:
-          'The public surface is education and research software, not recommendations or a signal service.',
-      },
-    ],
-    metrics: [
-      { label: 'Lane', value: 'Data' },
-      { label: 'Method', value: 'Review' },
-      { label: 'Boundary', value: 'Visible' },
-    ],
-    stack: ['Python', 'FastAPI', 'SQL', 'Backtesting', 'Risk review', 'Reports'],
   },
   {
     slug: 'rally',

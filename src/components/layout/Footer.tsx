@@ -10,14 +10,14 @@ import { SOCIAL_LINKS } from '@/lib/socialLinks';
 const EN_LINKS = [
   { label: 'Projects', id: 'projects' as const },
   { label: 'About XIV', id: 'about' as const },
-  { label: 'Contact', id: 'contact' as const },
   { label: 'AI Blog', id: 'ai-blog' as const },
+  { label: 'Contact', id: 'contact' as const },
 ];
 const ES_LINKS = [
   { label: 'Proyectos', id: 'projects' as const },
   { label: 'Acerca de XIV', id: 'about' as const },
-  { label: 'Contacto', id: 'contact' as const },
   { label: 'Blog de IA', id: 'ai-blog' as const },
+  { label: 'Contacto', id: 'contact' as const },
 ];
 
 const SOCIAL_ICONS = {

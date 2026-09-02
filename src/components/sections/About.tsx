@@ -8,18 +8,18 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const FOCUS = [
   {
     icon: Compass,
-    title: 'The market as art',
-    body: 'Green Machine is a place to study movement, uncertainty, risk, and the people who give a market its shape.',
+    title: 'Trading as art',
+    body: 'I look at trading as a living, unpredictable movement shaped by data, attention, and every person who participates.',
   },
   {
     icon: Music2,
     title: 'One song a day',
-    body: 'Music is another language: a daily practice for making, listening, measuring, and turning signal into feeling.',
+    body: 'Music is another language I use to make, listen, experiment, and stay in motion.',
   },
   {
     icon: Sparkles,
-    title: 'Technology with a point of view',
-    body: 'AI, software, and data are useful when they make room for better attention, better questions, and more human work.',
+    title: 'Back it up',
+    body: 'I back the practice with software, research, data, and technology that can survive contact with the real world.',
   },
 ];
 
@@ -43,29 +43,26 @@ export function About() {
           <>
             Founder of XIV.
             <br />
-            <span className="text-gradient">Trading, research, technology, and creative work.</span>
+            <span className="text-gradient">Trading as art. One song a day.</span>
           </>
         }
-        description="A personal company for keeping the work connected while it is still becoming."
+        description="An independent company for trading, research, technology, and creative projects."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">
         <GlassCard className="lg:col-span-7">
           <div className="space-y-5 p-7 md:p-9">
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              I see the market as an art form: a living, unpredictable system shaped by data,
-              attention, and every person inside it. Green Machine is where I study that movement
-              without pretending uncertainty is a flaw to hide.
+              I look at trading like art: a living, unpredictable movement shaped by data,
+              attention, and every person inside it.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              Music is another language. MaloSound turns one song at a time into audio analysis,
-              visual experiments, and creative work. Rally carries the same attention into movement,
-              practice, and memory.
+              I make one song a day. Music is another language I use to observe, experiment, and
+              stay in motion.
             </p>
             <p className="text-base leading-relaxed text-ink-muted md:text-lg">
-              My background in software engineering, QA automation, data workflows, and AI-assisted
-              delivery taught me to build with structure, evidence, and respect for what can fail.
-              XIV is where those disciplines meet the things I care about.
+              I back both with software engineering, research, data workflows, and AI systems. XIV
+              is where the practice becomes something I can build on.
             </p>
             <div className="pt-2">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">

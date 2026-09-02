@@ -5,20 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Github, Languages, Linkedin } from 'lucide-react';
+import { Github, Languages, Linkedin, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const EN_NAV_ITEMS = [
   { id: 'projects', label: 'Projects' },
   { id: 'about', label: 'About' },
-  { id: 'contact', label: 'Contact' },
 ];
 const ES_NAV_ITEMS = [
   { id: 'projects', label: 'Proyectos' },
   { id: 'about', label: 'Acerca de XIV' },
-  { id: 'contact', label: 'Contacto' },
 ];
-const OBSERVED_SECTION_IDS = EN_NAV_ITEMS.map((n) => n.id);
+const OBSERVED_SECTION_IDS = [...EN_NAV_ITEMS.map((n) => n.id), 'contact'];
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -128,9 +126,30 @@ export function Navbar() {
               {isSpanish ? 'Blog de IA' : 'AI Blog'}
             </Link>
           </li>
+          <li>
+            <button
+              type="button"
+              onClick={() => goToSection('contact')}
+              data-active={active === 'contact'}
+              className={cn(
+                'nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink',
+                active === 'contact' && 'text-ink',
+              )}
+            >
+              {isSpanish ? 'Contacto' : 'Contact'}
+            </button>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
+          <a
+            href="mailto:xiv@marcelozapata.dev"
+            aria-label={isSpanish ? 'Contactar XIV' : 'Contact XIV'}
+            title={isSpanish ? 'Contactar XIV' : 'Contact XIV'}
+            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
+          >
+            <Mail className="size-4" />
+          </a>
           <a
             href="https://www.linkedin.com/in/marcelozap"
             target="_blank"

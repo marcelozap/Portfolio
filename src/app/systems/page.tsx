@@ -11,7 +11,6 @@ export const metadata = {
 const LANE_NOTES: Record<string, string> = {
   xiv: 'Orchestration, shared state, and multimodal experiments.',
   malosound: 'Music, audio analysis, performance visuals, and release work.',
-  'green-machine': 'Data, evidence, research, and risk review.',
   rally: 'Movement, tennis, training, and computer vision.',
 };
 
@@ -28,7 +27,7 @@ export default function SystemsPage() {
 
         <div className="mt-8 max-w-4xl">
           <h1 className="font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-            Four projects.
+            Three projects.
             <span className="text-gradient block">One independent field.</span>
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-muted md:text-xl">

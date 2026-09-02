@@ -16,12 +16,6 @@ const PROJECTS = [
     href: '/systems/xiv',
   },
   {
-    name: 'Green Machine',
-    type: 'mercados / investigación',
-    text: 'Una forma de estudiar el mercado como arte: datos, movimiento, riesgo y atención.',
-    href: '/systems/green-machine',
-  },
-  {
     name: 'MaloSound',
     type: 'música / señal',
     text: 'Una práctica de una canción al día convertida en análisis de audio y experimentos visuales.',
@@ -32,6 +26,12 @@ const PROJECTS = [
     type: 'movimiento / práctica',
     text: 'Tecnología para observar el movimiento, recordar la práctica y aprender del cuerpo.',
     href: '/systems/rally',
+  },
+  {
+    name: 'Blog de IA',
+    type: 'escritura',
+    text: 'Notas públicas sobre atención, tecnología, trabajo y la vida que queremos construir.',
+    href: '/ai-blog',
   },
 ];
 

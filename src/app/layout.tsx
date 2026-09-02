@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     'QA automation',
     'business process automation',
     'XIV',
-    'Green Machine',
     'MaloSound',
     'ecommerce automation',
     'marketing automation',
