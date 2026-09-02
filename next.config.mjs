@@ -13,6 +13,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/green-machine',
+        destination: '/systems/xiv',
+        permanent: true,
+      },
+      {
+        source: '/fsu-options-research',
+        destination: '/systems/xiv',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
