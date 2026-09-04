@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -13,6 +14,39 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: note?.title ?? 'Field Note',
     description: note?.summary,
+    ...(note?.image && {
+      alternates: {
+        canonical: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
+      },
+      openGraph: {
+        type: 'article',
+        title: note.title,
+        description: note.summary,
+        url: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
+        siteName: 'Marcelo Zapata',
+        publishedTime: note.date,
+        authors: ['Marcelo Zapata'],
+        images: [
+          {
+            url: `https://www.marcelozapata.dev${note.image.src}`,
+            width: note.image.width,
+            height: note.image.height,
+            alt: note.image.alt,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: note.title,
+        description: note.summary,
+        images: [
+          {
+            url: `https://www.marcelozapata.dev${note.image.src}`,
+            alt: note.image.alt,
+          },
+        ],
+      },
+    }),
   };
 }
 
@@ -35,7 +69,7 @@ export default function FieldNotePage({ params }: { params: { slug: string } }) 
         </div>
 
         <header className="mt-14 border-b border-white/[0.1] pb-10">
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+          <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <BookOpen className="size-4 text-accent" />
             <time dateTime={note.date}>{note.date}</time>
             {note.source && <span className="text-ink-faint">/ {note.source}</span>}
@@ -48,12 +82,45 @@ export default function FieldNotePage({ params }: { params: { slug: string } }) 
           </p>
         </header>
 
+        {note.image && (
+          <figure className="mx-auto mt-12 max-w-2xl">
+            <a href={note.image.src} aria-label="Open the full-size AI supply chain illustration">
+              <Image
+                src={note.image.src}
+                alt={note.image.alt}
+                width={note.image.width}
+                height={note.image.height}
+                sizes="(max-width: 768px) 100vw, 672px"
+                className="h-auto w-full rounded-sm"
+              />
+            </a>
+          </figure>
+        )}
+
         <div className="field-note-body mt-12">
           {note.body.map((paragraph, index) => (
             <p key={`${note.slug}-${index}`}>{paragraph}</p>
           ))}
           {note.closing && <p className="field-note-closing">{note.closing}</p>}
         </div>
+
+        {note.references && (
+          <aside className="mt-10 text-sm leading-7 text-ink-muted" aria-label="Article sources">
+            <h2 className="font-medium text-ink">Sources</h2>
+            <ul className="mt-2 list-inside list-disc">
+              {note.references.map((reference) => (
+                <li key={reference.url}>
+                  <a
+                    href={reference.url}
+                    className="text-accent underline underline-offset-4 hover:text-ink"
+                  >
+                    {reference.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
 
         <footer className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.1] pt-6">
           <Link
