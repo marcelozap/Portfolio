@@ -74,7 +74,7 @@ const COPY = {
         text: 'Built Python, SQL, and REST API workflows for collecting, validating, and connecting operational data.',
       },
     ],
-    codeLink: 'Explore my code',
+    codeLink: 'Public GitHub projects',
     notesLabel: '05 / In my own words',
     notesTitle: 'Think for yourself.\nKeep building.',
     notesBody:
@@ -155,7 +155,7 @@ const COPY = {
         text: 'Desarrollé flujos con Python, SQL y APIs REST para recopilar, validar y conectar datos operativos.',
       },
     ],
-    codeLink: 'Ver mi código',
+    codeLink: 'Proyectos públicos en GitHub',
     notesLabel: '05 / Con mis propias palabras',
     notesTitle: 'Piensa por ti mismo.\nSigue construyendo.',
     notesBody:
@@ -290,7 +290,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <h2 id="engineering-title">{copy.engineeringTitle}</h2>
           <p className={styles.bodyCopy}>{copy.engineeringIntro}</p>
           <a
-            href="https://github.com/marcelozap"
+            href="https://github.com/marcelozap?tab=repositories"
             target="_blank"
             rel="noreferrer"
             className={styles.secondaryLink}
