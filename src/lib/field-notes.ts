@@ -20,7 +20,7 @@ export const FIELD_NOTES: FieldNote[] = [
     summary:
       'Learning to take part before I have every answer, set limits before I commit, and recognize when to change course or stop.',
     image: {
-      src: '/images/ai-blog/embracing-uncertainty-v3.png',
+      src: '/images/ai-blog/embracing-uncertainty-v5.png',
       alt: 'Marcelo Zapata’s quote card with the neon XIV dragon: “I can give something a chance and still decide it’s time to walk away.” The full quote appears in the article below.',
       width: 1122,
       height: 1402,
