@@ -3,7 +3,7 @@ import { DragonHome } from '@/components/dragon/DragonHome';
 export const metadata = {
   title: 'XIV — Yo soy el dragón',
   description:
-    'El mundo de Marcelo Zapata: una mirada independiente a los mercados, la tecnología, la música y la creatividad.',
+    'XIV: juego de práctica de opciones en desarrollo, investigación de mercados, agentes de análisis e ingeniería de IA de Marcelo Zapata.',
 };
 
 export default function SpanishHome() {

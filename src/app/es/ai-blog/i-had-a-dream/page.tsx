@@ -62,7 +62,7 @@ export default function SpanishDreamNote() {
       <div className="mx-auto max-w-4xl">
         <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.2em]">
           <Link
-            href="/es#ai-blog"
+            href="/ai-blog"
             className="inline-flex items-center gap-2 text-accent hover:text-ink"
           >
             <ArrowLeft className="size-4" />

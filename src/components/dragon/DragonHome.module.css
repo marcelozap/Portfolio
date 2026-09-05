@@ -1,3 +1,217 @@
+.productFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 22px 0 0;
+  margin: 26px 0 0;
+  border-top: 1px solid var(--dragon-line);
+  list-style: none;
+  color: #eca3df;
+  font:
+    10px/1.7 var(--font-mono),
+    monospace;
+}
+.theories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  border-top: 1px solid var(--dragon-line);
+  padding-top: 28px;
+}
+.theories article > span {
+  color: #a584b3;
+  font:
+    9px var(--font-mono),
+    monospace;
+}
+.theories h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 400;
+  margin: 20px 0 15px;
+}
+.theories .bodyCopy {
+  font-size: 14px;
+}
+.agentList {
+  border-top: 1px solid var(--dragon-line);
+}
+.agentRow {
+  display: grid;
+  grid-template-columns: 30px 1fr 1.25fr;
+  gap: 25px;
+  align-items: start;
+  border-bottom: 1px solid var(--dragon-line);
+  padding: 32px 0;
+}
+.agentRow h3 {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 12px 0 0;
+}
+.agentRole {
+  margin: 0;
+  color: #dd85cc;
+  font:
+    9px var(--font-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.agentRow > .bodyCopy {
+  font-size: 14px;
+}
+.researchNote {
+  color: #a99bb6;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 24px 0 0;
+  max-width: 720px;
+}
+.engineering,
+.access {
+  position: relative;
+  width: 88%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 88px 0;
+  scroll-margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  border-bottom: 1px solid var(--dragon-line);
+}
+.engineering .sectionHeading > .bodyCopy {
+  margin-top: 22px;
+}
+.engineering .secondaryLink {
+  margin-top: 20px;
+}
+.feats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.feats li {
+  padding: 23px 0;
+  border-bottom: 1px solid var(--dragon-line);
+}
+.feats li:first-child {
+  padding-top: 0;
+}
+.feats li:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.feats h3 {
+  margin: 0 0 11px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.feats .bodyCopy {
+  font-size: 14px;
+}
+.access {
+  padding-bottom: 110px;
+  border: 0;
+}
+.access .sectionHeading > .bodyCopy {
+  margin-top: 26px;
+  max-width: 440px;
+}
+.pricing {
+  border-left: 1px solid var(--dragon-line);
+  padding-left: 38px;
+}
+.priceStatus {
+  margin: 0 0 30px;
+  color: #ecc3e8;
+  font:
+    10px/1.7 var(--font-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.priceLabel {
+  margin: 0 0 8px;
+  color: var(--dragon-muted);
+  font-size: 12px;
+}
+.price {
+  font-size: 68px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 500;
+  color: #f3a4ed;
+}
+.price span {
+  font:
+    11px var(--font-mono),
+    monospace;
+  color: var(--dragon-muted);
+}
+.recurring {
+  margin: 14px 0 23px;
+  font-size: 20px;
+}
+.pricing .bodyCopy {
+  font-size: 13px;
+}
+.availability {
+  margin: 20px 0;
+  color: #d5c8df;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.cancellation {
+  margin: 24px 0 0;
+  color: #a99bb6;
+  font-size: 11px;
+  line-height: 1.8;
+}
+@media (max-width: 760px) {
+  .theories {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .theories article {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--dragon-line);
+  }
+  .theories article:last-child {
+    border: 0;
+    padding: 0;
+  }
+  .theories h3 {
+    margin: 12px 0;
+  }
+  .agentRow {
+    grid-template-columns: 22px 1fr;
+    gap: 15px;
+  }
+  .agentRow > .bodyCopy {
+    grid-column: 2;
+  }
+  .agentRow h3 {
+    font-size: 24px;
+  }
+  .engineering,
+  .access {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 64px 0;
+  }
+  .pricing {
+    border-left: 0;
+    border-top: 1px solid var(--dragon-line);
+    padding: 30px 0 0;
+  }
+  .productFacts {
+    font-size: 9px;
+    gap: 10px 20px;
+  }
+}
 .home {
   --dragon-bg: #07040c;
   --dragon-ink: #f7f1ff;

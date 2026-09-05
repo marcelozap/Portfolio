@@ -14,7 +14,7 @@ export function Footer() {
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
             <span className={styles.footerWordmark}>XIV</span>
-            <span>{isSpanish ? 'Visión independiente' : 'Independent vision'}</span>
+            <span>{isSpanish ? 'Trading · Investigación · IA' : 'Trading · Research · AI'}</span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>
             {SOCIAL_LINKS.map((link) => (
