@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s - Marcelo Zapata',
   },
   description:
-    "I am the dragon. Explore XIV, Marcelo Zapata's work on trading, market analysis agents, and AI engineering.",
+    "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
   keywords: [
     'Marcelo Zapata',
     'XIV',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'XIV — I am the dragon | Marcelo Zapata',
     description:
-      "I am the dragon. Explore XIV, Marcelo Zapata's work on trading, market analysis agents, and AI engineering.",
+      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
     type: 'website',
     siteName: 'XIV · Marcelo Zapata',
     images: [
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'XIV — I am the dragon | Marcelo Zapata',
     description:
-      "I am the dragon. Explore XIV, Marcelo Zapata's work on trading, market analysis agents, and AI engineering.",
+      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
     images: ['/brand/xiv-dragon-world.png'],
   },
   icons: {

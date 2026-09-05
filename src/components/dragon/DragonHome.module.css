@@ -1,4 +1,4 @@
-.productFacts {
+.practiceFacts {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 22px;
@@ -10,6 +10,12 @@
   font:
     10px/1.7 var(--font-mono),
     monospace;
+}
+.experiment {
+  margin: 24px 0 0;
+  color: var(--dragon-muted);
+  font-size: 13px;
+  line-height: 1.9;
 }
 .theories {
   display: grid;
@@ -70,7 +76,7 @@
   max-width: 720px;
 }
 .engineering,
-.access {
+.writing {
   position: relative;
   width: 88%;
   max-width: 1380px;
@@ -112,63 +118,15 @@
 .feats .bodyCopy {
   font-size: 14px;
 }
-.access {
+.writing {
   padding-bottom: 110px;
   border: 0;
 }
-.access .sectionHeading > .bodyCopy {
-  margin-top: 26px;
-  max-width: 440px;
+.writingBody {
+  padding-top: 37px;
 }
-.pricing {
-  border-left: 1px solid var(--dragon-line);
-  padding-left: 38px;
-}
-.priceStatus {
-  margin: 0 0 30px;
-  color: #ecc3e8;
-  font:
-    10px/1.7 var(--font-mono),
-    monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.priceLabel {
-  margin: 0 0 8px;
-  color: var(--dragon-muted);
-  font-size: 12px;
-}
-.price {
-  font-size: 68px;
-  line-height: 1;
-  margin: 0;
-  font-weight: 500;
-  color: #f3a4ed;
-}
-.price span {
-  font:
-    11px var(--font-mono),
-    monospace;
-  color: var(--dragon-muted);
-}
-.recurring {
-  margin: 14px 0 23px;
-  font-size: 20px;
-}
-.pricing .bodyCopy {
-  font-size: 13px;
-}
-.availability {
-  margin: 20px 0;
-  color: #d5c8df;
-  font-size: 13px;
-  line-height: 1.7;
-}
-.cancellation {
-  margin: 24px 0 0;
-  color: #a99bb6;
-  font-size: 11px;
-  line-height: 1.8;
+.writingBody .primaryLink {
+  margin-top: 28px;
 }
 @media (max-width: 760px) {
   .theories {
@@ -197,17 +155,15 @@
     font-size: 24px;
   }
   .engineering,
-  .access {
+  .writing {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 64px 0;
   }
-  .pricing {
-    border-left: 0;
-    border-top: 1px solid var(--dragon-line);
-    padding: 30px 0 0;
+  .writingBody {
+    padding: 0;
   }
-  .productFacts {
+  .practiceFacts {
     font-size: 9px;
     gap: 10px 20px;
   }

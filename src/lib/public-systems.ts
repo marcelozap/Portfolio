@@ -21,22 +21,22 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
     domain: 'trading',
     status: 'in development',
     year: '2026',
-    tagline: 'An options-practice game. An independent research process.',
+    tagline: 'A personal trading and research workbench.',
     description:
-      'XIV is my options-practice product in development: fictional price action, simulated funds, manually advanced sessions, and a journal for reviewing decisions. A separate analysis desk supports my market research.',
-    laneNote: 'Practice decisions. Test a theory. Review the reasoning.',
+      'XIV is where I study markets, test theories, and build tools for my own research. My work includes analysis agents and an options-practice experiment with fictional prices, simulated funds, and a journal for reviewing decisions.',
+    laneNote: 'Study the market. Test an idea. Review the reasoning.',
     coreIdeas: [
       'Fictional prices and simulated funds, with no live orders in the practice game',
       'Manual advancement so practice fits around time away from the screen',
-      'Fourteen levels in each planned calendar-month collection',
       'Journaling and review focused on decisions and lessons',
+      'Market theories explored through evidence and repeatable analysis',
       'Separate research agents for thesis drafts, quantitative context, and post-trade review',
     ],
     features: [
       {
-        title: 'The practice game',
+        title: 'The practice experiment',
         description:
-          'Local implementation covers options scenarios, orders, simulated accounting, journals, and reviews. The member product remains in development.',
+          'I am developing a personal options-practice game with fictional scenarios, simulated accounting, journals, and reviews. Sessions advance manually so I can examine each decision.',
       },
       {
         title: 'The research',
@@ -49,15 +49,15 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
           'Research Analyst, Quant Agent, and Journal Coach provide drafts and context for human review. This research workflow is separate from the game simulation.',
       },
       {
-        title: 'Planned access',
+        title: 'The engineering',
         description:
-          'USD 114 initially includes USD 100 access plus the first USD 14 monthly period. Continued gameplay requires USD 14/month thereafter. Checkout remains test-only; this website does not accept payment.',
+          'Data workflows, automated tests, and AI tools help me make research repeatable and keep the reasoning open to review.',
       },
     ],
     metrics: [
-      { label: 'Mode', value: 'Simulation' },
-      { label: 'Product', value: 'In development' },
-      { label: 'Billing', value: 'Test only' },
+      { label: 'Focus', value: 'Personal research' },
+      { label: 'Practice', value: 'Simulation' },
+      { label: 'Workflow', value: 'Human review' },
     ],
     stack: ['JavaScript', 'Node.js', 'SQLite', 'Python', 'Automated tests'],
   },

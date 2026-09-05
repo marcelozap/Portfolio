@@ -15,10 +15,10 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/systems', destination: '/#product', permanent: false },
-      { source: '/systems/malosound', destination: '/#product', permanent: false },
-      { source: '/systems/rally', destination: '/#product', permanent: false },
-      { source: '/rally', destination: '/#product', permanent: false },
+      { source: '/systems', destination: '/#practice', permanent: false },
+      { source: '/systems/malosound', destination: '/#practice', permanent: false },
+      { source: '/systems/rally', destination: '/#practice', permanent: false },
+      { source: '/rally', destination: '/#practice', permanent: false },
       {
         source: '/green-machine',
         destination: '/systems/xiv',

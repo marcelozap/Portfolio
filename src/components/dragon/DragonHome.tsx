@@ -9,17 +9,19 @@ const COPY = {
     first: 'I am the',
     dragon: 'dragon.',
     intro:
-      'I’m Marcelo. I’m building XIV: an options-practice game, market theories, and agents for analysis. The engineering serves the product.',
-    enter: 'Explore XIV',
-    read: 'Access & pricing',
-    scroll: 'The product',
+      'I’m Marcelo. I trade, study markets, and build the tools behind my decisions. XIV is my independent research practice: theories, analysis agents, and experiments in code.',
+    enter: 'Explore my research',
+    read: 'Meet the agents',
+    scroll: 'My practice',
     signature: 'Trading / Analysis / AI',
-    productLabel: '01 / The product',
-    productTitle: 'Practice the decision.',
-    productLead: 'A game for learning how you think about markets.',
-    productBody:
-      'Work through fictional price action with simulated funds. Advance at your own pace, record your reasoning, and review the decisions you made. XIV is in development.',
-    productFacts: ['Options practice', 'Journal & review', '14 levels / month'],
+    practiceLabel: '01 / My practice',
+    practiceTitle: 'My capital. My decisions.',
+    practiceLead: 'Trading is the center of my work.',
+    practiceBody:
+      'I develop my own view of markets, review my decisions, and build tools that help me think more clearly. XIV brings that work together.',
+    experiment:
+      'The options-practice game is one of my personal experiments in development: fictional prices, simulated funds, and a journal for examining decisions.',
+    practiceFacts: ['Independent trading', 'Market research', 'Personal tools'],
     theoryLabel: '02 / The theories',
     theoryTitle: 'Questions worth testing.',
     theoryIntro:
@@ -73,20 +75,11 @@ const COPY = {
       },
     ],
     codeLink: 'Explore my code',
-    accessLabel: '05 / Product access',
-    accessTitle: 'Built to keep practicing.',
-    priceStatus: 'Planned pricing · In development',
-    firstPayment: 'Initial payment',
-    recurring: 'Then $14/month',
-    priceDetail:
-      '$100 initial access + the first $14 monthly period. Continued gameplay requires the monthly membership.',
-    inclusions:
-      'The planned membership includes monthly collections of 14 levels, a trading journal, review tools, and a private inbox with human replies.',
-    availability: 'Membership is not open for purchase yet.',
-    cancellation:
-      'After a paid period ends, expired members retain access to read and export their records; continued play requires an active membership.',
-    contact: 'Ask about XIV',
-    emailSubject: 'XIV product access',
+    notesLabel: '05 / In my own words',
+    notesTitle: 'Think for yourself.\nKeep building.',
+    notesBody:
+      'I write about AI, technology, and the ideas that shape how I work. This is a record of what I’m learning, questioning, and building on my own terms.',
+    notesLink: 'Read my writing',
   },
   es: {
     eyebrow: 'XIV / Trading. Investigación. Criterio propio.',
@@ -94,17 +87,19 @@ const COPY = {
     first: 'Yo soy el',
     dragon: 'dragón.',
     intro:
-      'Soy Marcelo. Estoy construyendo XIV: un juego para practicar opciones, teorías de mercado y agentes de análisis. La ingeniería está al servicio del producto.',
-    enter: 'Explorar XIV',
-    read: 'Acceso y precio',
-    scroll: 'El producto',
+      'Soy Marcelo. Hago trading, estudio los mercados y construyo las herramientas detrás de mis decisiones. XIV es mi práctica de investigación independiente: teorías, agentes de análisis y experimentos con código.',
+    enter: 'Ver mi investigación',
+    read: 'Conocer los agentes',
+    scroll: 'Mi práctica',
     signature: 'Trading / Análisis / IA',
-    productLabel: '01 / El producto',
-    productTitle: 'Practicar la decisión.',
-    productLead: 'Un juego para conocer cómo piensas sobre los mercados.',
-    productBody:
-      'Explora precios ficticios con fondos simulados. Avanza a tu ritmo, registra tu razonamiento y revisa tus decisiones. XIV está en desarrollo.',
-    productFacts: ['Práctica de opciones', 'Diario y revisión', '14 niveles / mes'],
+    practiceLabel: '01 / Mi práctica',
+    practiceTitle: 'Mi capital. Mis decisiones.',
+    practiceLead: 'El trading es el centro de mi trabajo.',
+    practiceBody:
+      'Desarrollo mi propia visión de los mercados, reviso mis decisiones y construyo herramientas que me ayudan a pensar con más claridad. XIV reúne ese trabajo.',
+    experiment:
+      'El juego para practicar opciones es uno de mis experimentos personales en desarrollo: precios ficticios, fondos simulados y un diario para examinar decisiones.',
+    practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Herramientas propias'],
     theoryLabel: '02 / Las teorías',
     theoryTitle: 'Preguntas para investigar.',
     theoryIntro:
@@ -161,20 +156,11 @@ const COPY = {
       },
     ],
     codeLink: 'Ver mi código',
-    accessLabel: '05 / Acceso al producto',
-    accessTitle: 'Seguir practicando.',
-    priceStatus: 'Precio previsto · En desarrollo',
-    firstPayment: 'Pago inicial',
-    recurring: 'Después, $14/mes',
-    priceDetail:
-      '$100 de acceso inicial + el primer período mensual de $14. Seguir jugando requiere la membresía mensual.',
-    inclusions:
-      'La membresía prevista incluye colecciones mensuales de 14 niveles, diario de trading, herramientas de revisión y un buzón privado con respuestas humanas.',
-    availability: 'La membresía todavía no está disponible para comprar.',
-    cancellation:
-      'Al terminar el período pagado, se conserva el acceso para leer y exportar los registros; seguir jugando requiere una membresía activa.',
-    contact: 'Consultar sobre XIV',
-    emailSubject: 'Acceso al producto XIV',
+    notesLabel: '05 / Con mis propias palabras',
+    notesTitle: 'Piensa por ti mismo.\nSigue construyendo.',
+    notesBody:
+      'Escribo sobre IA, tecnología y las ideas que influyen en mi forma de trabajar. Es un registro de lo que aprendo, cuestiono y construyo a mi manera.',
+    notesLink: 'Leer mis textos',
   },
 };
 
@@ -210,18 +196,18 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
           <div className={styles.actions}>
-            <a href="#product" className={styles.primaryLink}>
+            <a href="#theories" className={styles.primaryLink}>
               {copy.enter}
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <a href="#access" className={styles.secondaryLink}>
+            <a href="#agents" className={styles.secondaryLink}>
               {copy.read}
               <ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className={styles.heroBottom}>
-          <a href="#product">
+          <a href="#practice">
             <ArrowDown size={15} aria-hidden="true" />
             {copy.scroll}
           </a>
@@ -229,20 +215,22 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
       </section>
 
-      <section id="product" className={styles.vision} aria-labelledby="product-title">
+      <section id="practice" className={styles.vision} aria-labelledby="practice-title">
+        <span id="product" className={styles.anchorAlias} aria-hidden="true" />
         <span id="vision" className={styles.anchorAlias} aria-hidden="true" />
         <span id="about" className={styles.anchorAlias} aria-hidden="true" />
         <span id="work" className={styles.anchorAlias} aria-hidden="true" />
         <span id="projects" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.productLabel}</p>
-          <h2 id="product-title">{copy.productTitle}</h2>
+          <p className={styles.eyebrow}>{copy.practiceLabel}</p>
+          <h2 id="practice-title">{copy.practiceTitle}</h2>
         </div>
         <div className={styles.visionBody}>
-          <p className={styles.lead}>{copy.productLead}</p>
-          <p className={styles.bodyCopy}>{copy.productBody}</p>
-          <ul className={styles.productFacts}>
-            {copy.productFacts.map((fact) => (
+          <p className={styles.lead}>{copy.practiceLead}</p>
+          <p className={styles.bodyCopy}>{copy.practiceBody}</p>
+          <p className={styles.experiment}>{copy.experiment}</p>
+          <ul className={styles.practiceFacts}>
+            {copy.practiceFacts.map((fact) => (
               <li key={fact}>{fact}</li>
             ))}
           </ul>
@@ -321,30 +309,25 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </ul>
       </section>
 
-      <section id="access" className={styles.access} aria-labelledby="access-title">
+      <section id="notes" className={styles.writing} aria-labelledby="notes-title">
+        <span id="access" className={styles.anchorAlias} aria-hidden="true" />
+        <span id="journal" className={styles.anchorAlias} aria-hidden="true" />
+        <span id="ai-blog" className={styles.anchorAlias} aria-hidden="true" />
         <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.accessLabel}</p>
-          <h2 id="access-title">{copy.accessTitle}</h2>
-          <p className={styles.bodyCopy}>{copy.inclusions}</p>
+          <p className={styles.eyebrow}>{copy.notesLabel}</p>
+          <h2 id="notes-title">
+            {copy.notesTitle.split('\n').map((line) => (
+              <span key={line}>{line} </span>
+            ))}
+          </h2>
         </div>
-        <div className={styles.pricing}>
-          <p className={styles.priceStatus}>{copy.priceStatus}</p>
-          <p className={styles.priceLabel}>{copy.firstPayment}</p>
-          <p className={styles.price}>
-            $114 <span>USD</span>
-          </p>
-          <p className={styles.recurring}>{copy.recurring}</p>
-          <p className={styles.bodyCopy}>{copy.priceDetail}</p>
-          <p className={styles.availability}>{copy.availability}</p>
-          <a
-            href={`mailto:xiv@marcelozapata.dev?subject=${encodeURIComponent(copy.emailSubject)}`}
-            className={styles.primaryLink}
-          >
-            {copy.contact}
+        <div className={styles.writingBody}>
+          <p className={styles.bodyCopy}>{copy.notesBody}</p>
+          <a href="/ai-blog" className={styles.primaryLink}>
+            {copy.notesLink}
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
-          <p className={styles.cancellation}>{copy.cancellation}</p>
         </div>
       </section>
     </div>

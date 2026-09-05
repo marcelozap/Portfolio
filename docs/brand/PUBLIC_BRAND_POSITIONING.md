@@ -2,31 +2,35 @@
 
 This is the current public direction for XIV on `marcelozapata.dev`, updated
 September 5, 2026. Marcelo's latest direction is to preserve the approved dragon
-design and explain XIV through trading, the product and game, the theories behind
-the work, analysis agents, AI, and his strongest engineering accomplishments.
+design and make XIV his independent space for trading, research, analysis agents,
+AI, and engineering. The site shares his work and point of view. It has no
+commercial offer.
 
 ## Identity
 
 > Everyone is a bear or a bull. I am the dragon.
 
 The dragon represents Marcelo himself. Keep this statement personal and direct.
-Use `Marcelo Zapata` for his public name and `XIV` for the product identity.
+Use `Marcelo Zapata` for his public name and `XIV` for his independent work.
 
-The site should make the product and its engineering understandable without a
-large career timeline or a grid of unrelated projects. Keep any background
-concise and connect engineering accomplishments to concrete work and evidence.
+The site should make his research and engineering understandable without a large
+career timeline or a grid of unrelated projects. Keep any background concise and
+connect engineering accomplishments to concrete work and evidence.
 
 ## Content Priorities
 
-- Explain what XIV is, who it is for, and what is available today.
+- Introduce XIV as Marcelo's personal trading and research workbench.
 - Describe trading research and analysis agents using verified implementation
   details and inspectable examples.
-- Explain the product's theories and the developing game direction in plain
-  language. Distinguish proposals and experiments from available features.
+- Explain research questions and theories in plain language. Present the
+  options-practice game as a personal experiment in development, separate from
+  the analysis-agent workflow.
 - Present Marcelo's strongest engineering and AI accomplishments only where the
   underlying work supports the claim.
-- Explain payments only to the extent a verified offer, price, or working payment
-  flow exists. A requested topic is not evidence that a paid product is available.
+- Keep navigation and calls to action about exploring the work, reading, or
+  connecting personally. Remove prices, memberships, paid access, payment
+  explanations, purchasing prompts, and service offers. Older product plans do
+  not override this direction.
 
 Remove MaloSound and music playback from this website's public presentation.
 Do not restore a persistent music player, music controls, or the page spacing
@@ -47,7 +51,7 @@ XIV's primary identity.
 ## Routes and Publication
 
 `marcelozapata.dev` remains the public home for Marcelo and XIV. Preserve source
-history and historical article URLs. Change product routing only when it follows
+history and historical article URLs. Change project routing only when it follows
 the actual content decision; hiding an unrelated promotion does not require
 deleting its source or redirecting an unrelated route.
 
@@ -59,9 +63,10 @@ Website edits do not imply that connected profiles or accounts have changed.
 ## Claim Discipline
 
 Describe built, tested, and deployed features using evidence from the actual
-product. Label work in development clearly. Do not invent game mechanics,
-theories, a playable release, customer counts, payment availability, prices,
-live market data, returns, trading track records, or services.
+work. Label experiments in development clearly. Do not invent game mechanics,
+theories, a playable release, live market data, returns, trading track records,
+or earnings claims. Do not turn personal research into investment advice or an
+offer to manage other people's money.
 
 The dragon identity expresses Marcelo's point of view. It is not evidence of
-trading performance. Keep product explanations and engineering claims precise.
+trading performance. Keep research explanations and engineering claims precise.
