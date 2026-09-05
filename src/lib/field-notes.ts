@@ -20,8 +20,8 @@ export const FIELD_NOTES: FieldNote[] = [
     summary:
       'Learning to take part before I have every answer, set limits before I commit, and recognize when to change course or stop.',
     image: {
-      src: '/images/ai-blog/embracing-uncertainty-v7.png',
-      alt: 'Marcelo Zapata’s quote card with the neon XIV dragon: “I can give something a chance and still decide it’s time to walk away.” The full quote appears in the article below.',
+      src: '/images/ai-blog/embracing-uncertainty-v8.png',
+      alt: 'Marcelo Zapata’s Day 5 quote card with the neon XIV dragon: “I can give something a chance and still walk away.”',
       width: 1122,
       height: 1402,
     },
@@ -37,7 +37,7 @@ export const FIELD_NOTES: FieldNote[] = [
       'Some consequences take much longer to see. My effort can influence what follows, but luck, timing, and other people matter too.',
       'A bad outcome doesn’t automatically mean I made a bad decision—or that I didn’t try hard enough.',
       'Some choices can’t be undone. I can still be honest about what happened and make my next decision with what I know then.',
-      'I can give something a chance and still decide it’s time to walk away.',
+      'I can give something a chance and still walk away.',
     ],
   },
   {
