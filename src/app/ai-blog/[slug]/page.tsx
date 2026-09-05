@@ -84,7 +84,7 @@ export default function FieldNotePage({ params }: { params: { slug: string } }) 
 
         {note.image && (
           <figure className="mx-auto mt-12 max-w-2xl">
-            <a href={note.image.src} aria-label="Open the full-size AI supply chain illustration">
+            <a href={note.image.src} aria-label={`Open the full-size image for ${note.title}`}>
               <Image
                 src={note.image.src}
                 alt={note.image.alt}

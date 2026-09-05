@@ -13,6 +13,33 @@ export type FieldNote = {
 
 export const FIELD_NOTES: FieldNote[] = [
   {
+    slug: 'embracing-uncertainty',
+    number: 'NOTE 011',
+    date: '2026-09-05',
+    title: 'Embracing Uncertainty',
+    summary:
+      'Learning to take part before I have every answer, understand what I’m risking, and leave myself room to change.',
+    image: {
+      src: '/images/ai-blog/embracing-uncertainty.png',
+      alt: 'Marcelo Zapata’s quote card with the neon XIV dragon: “I can make a decision, then work to make it one I’m glad I made.” The full quote appears in the article below.',
+      width: 1122,
+      height: 1402,
+    },
+    body: [
+      'I’m learning to take part without needing to know exactly how things will turn out.',
+      'Uncertainty can feel like bad news, even when something is simply unknown. I’m practicing giving myself a moment before deciding what it means.',
+      'Before I act, I want to picture the worst case. Can I afford what I could lose? Could I accept that outcome? If I can’t, I need to rethink what I’m putting at risk.',
+      'Once I understand that, I can give something a chance. Keep my options open. Stay willing to change direction as I learn.',
+      'I’ve felt the value of that openness in my work lately. My projects had been in a rut, especially the visualizations.',
+      'Then I tried Astra. In the last 24 hours, I got more done than I had in the previous week. The visuals and modeling work have been phenomenal.',
+      'It reminded me that being frustrated with how something has been going doesn’t tell me how the next attempt will turn out.',
+      'I’m practicing accepting what’s happening, even when I wanted something else—and noticing when something works better than I expected.',
+      'Sometimes I won’t know whether a decision was a good one until much later.',
+      'But choosing is only the start. What I do afterward matters: the work I put in, what I learn, and how I adjust.',
+      'I can make a decision, then work to make it one I’m glad I made.',
+    ],
+  },
+  {
     slug: 'the-chat-box-is-only-the-top-floor',
     number: 'NOTE 010',
     date: '2026-09-04',
