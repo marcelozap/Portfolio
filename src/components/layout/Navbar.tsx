@@ -1,31 +1,25 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { Github, Languages, Linkedin, Mail } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useEffect, useRef, useState } from 'react';
+import styles from './DragonShell.module.css';
 
-const EN_NAV_ITEMS = [
-  { id: 'projects', label: 'Projects' },
-  { id: 'about', label: 'About' },
+const SECTIONS = [
+  { id: 'vision', en: 'Vision', es: 'Visión' },
+  { id: 'work', en: 'Work', es: 'Proyectos' },
+  { id: 'journal', en: 'Journal', es: 'Diario' },
+  { id: 'contact', en: 'Contact', es: 'Contacto' },
 ];
-const ES_NAV_ITEMS = [
-  { id: 'projects', label: 'Proyectos' },
-  { id: 'about', label: 'Acerca de XIV' },
-];
-const OBSERVED_SECTION_IDS = [...EN_NAV_ITEMS.map((n) => n.id), 'contact'];
 
 export function Navbar() {
-  const { scrollY } = useScroll();
-  const bg = useTransform(scrollY, [0, 80], ['hsl(var(--bg) / 0)', 'hsl(var(--bg) / 0.72)']);
-  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.08]);
-  const [active, setActive] = useState<string | null>(null);
   const pathname = usePathname();
   const isSpanish = pathname.startsWith('/es');
-  const navItems = isSpanish ? ES_NAV_ITEMS : EN_NAV_ITEMS;
+  const homeHref = isSpanish ? '/es' : '/';
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const navigationLinks = useRef<HTMLUListElement>(null);
   const languageHref =
     pathname === '/ai-blog/i-had-a-dream'
       ? '/es/ai-blog/i-had-a-dream'
@@ -35,151 +29,87 @@ export function Navbar() {
           ? '/'
           : '/es';
 
-  const goToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-
-    window.location.href = isSpanish ? `/es#${id}` : `/#${id}`;
-  };
-
   useEffect(() => {
     document.documentElement.lang = isSpanish ? 'es' : 'en';
-  }, [isSpanish]);
+    setMenuOpen(false);
+  }, [pathname, isSpanish]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] },
-    );
-    OBSERVED_SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, [isSpanish]);
+    if (!menuOpen) return;
+    navigationLinks.current?.querySelector<HTMLAnchorElement>('a')?.focus();
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
 
   return (
-    <motion.header
-      style={{ backgroundColor: bg }}
-      className="fixed inset-x-0 top-0 z-40 backdrop-blur-xl"
-    >
-      <motion.div
-        style={{ opacity: borderOpacity }}
-        className="absolute inset-x-0 bottom-0 h-px bg-white"
-      />
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
+    <header className={styles.header}>
+      <nav className={styles.navigation} aria-label={isSpanish ? 'Principal' : 'Main'}>
         <Link
-          href={isSpanish ? '/es' : '/'}
-          className="group flex items-center gap-3"
-          aria-label={isSpanish ? 'Inicio de Marcelo Zapata' : 'Marcelo Zapata home'}
+          href={homeHref}
+          className={styles.brand}
+          aria-label={isSpanish ? 'XIV — inicio' : 'XIV — home'}
+          onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/brand/xiv-logo-emblem.png"
-            alt="XIV"
-            width={1254}
-            height={1254}
+            src="/brand/xiv-dragon-emblem.png"
+            alt=""
+            width={48}
+            height={48}
             sizes="48px"
             quality={90}
-            className="size-12 shrink-0 object-contain"
+            className={styles.emblem}
             priority
           />
-          <span className="hidden flex-col items-start sm:flex">
-            <span className="font-display text-[13px] font-medium leading-tight text-ink">
-              Marcelo Zapata
-            </span>
-            <span className="text-[11px] font-medium tracking-[0.04em] text-ink-muted">
-              {isSpanish ? 'fundador de XIV / proyectos' : 'Founder of XIV / projects'}
-            </span>
+          <span className={styles.brandCopy}>
+            <span className={styles.wordmark}>XIV</span>
+            <span className={styles.founder}>Marcelo Zapata</span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-2 md:flex">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <button
-                type="button"
-                onClick={() => goToSection(item.id)}
-                data-active={active === item.id}
-                className={cn(
-                  'nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink',
-                  active === item.id && 'text-ink',
-                )}
-              >
-                {item.label}
-              </button>
+        <ul
+          ref={navigationLinks}
+          id="primary-navigation"
+          className={styles.navigationLinks}
+          data-open={menuOpen}
+        >
+          {SECTIONS.map((section) => (
+            <li key={section.id}>
+              <Link href={`${homeHref}#${section.id}`} onClick={() => setMenuOpen(false)}>
+                {isSpanish ? section.es : section.en}
+              </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href={isSpanish ? '/es#ai-blog' : '/ai-blog'}
-              className="nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink"
-            >
-              {isSpanish ? 'Blog de IA' : 'AI Blog'}
-            </Link>
-          </li>
-          <li>
-            <button
-              type="button"
-              onClick={() => goToSection('contact')}
-              data-active={active === 'contact'}
-              className={cn(
-                'nav-link rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition hover:text-ink',
-                active === 'contact' && 'text-ink',
-              )}
-            >
-              {isSpanish ? 'Contacto' : 'Contact'}
-            </button>
-          </li>
         </ul>
 
-        <div className="flex items-center gap-2">
-          <a
-            href="mailto:xiv@marcelozapata.dev"
-            aria-label={isSpanish ? 'Contactar XIV' : 'Contact XIV'}
-            title={isSpanish ? 'Contactar XIV' : 'Contact XIV'}
-            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
-          >
-            <Mail className="size-4" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/marcelozap"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
-          >
-            <Linkedin className="size-4" />
-          </a>
-          <a
-            href="https://github.com/marcelozap"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            title="GitHub"
-            className="flex size-9 items-center justify-center rounded-[2px] border border-line bg-white/[0.025] text-ink-muted transition hover:border-accent/40 hover:text-accent"
-          >
-            <Github className="size-4" />
-          </a>
+        <div className={styles.utilities}>
           <Link
             href={languageHref}
-            className="inline-flex h-9 items-center gap-2 rounded-[2px] border border-line bg-white/[0.025] px-2.5 text-xs font-medium text-ink-muted transition hover:border-accent/40 hover:text-accent sm:px-3"
+            className={styles.language}
             aria-label={isSpanish ? 'Switch to English' : 'Cambiar a español'}
-            title={isSpanish ? 'Switch to English' : 'Cambiar a español'}
+            hrefLang={isSpanish ? 'en' : 'es'}
+            onClick={() => setMenuOpen(false)}
           >
-            <Languages className="size-4" />
-            <span>{isSpanish ? 'English' : 'Español'}</span>
+            {isSpanish ? 'EN' : 'ES'}
           </Link>
+          <button
+            ref={menuButton}
+            type="button"
+            className={styles.menuButton}
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? (isSpanish ? 'Cerrar' : 'Close') : isSpanish ? 'Menú' : 'Menu'}
+            <span aria-hidden="true">{menuOpen ? '−' : '+'}</span>
+          </button>
         </div>
       </nav>
-    </motion.header>
+    </header>
   );
 }

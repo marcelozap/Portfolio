@@ -1,117 +1,118 @@
 # Public Brand Positioning
 
-This is the source of truth for public-facing copy across the portfolio and
-supporting project surfaces.
+This is the source of truth for the current public direction of XIV on
+`marcelozapata.dev` and its supporting project surfaces. Updated September 5,
+2026, following Marcelo's direction for the dragon identity and the game's
+new vision.
 
 ## North Star
 
-Marcelo Zapata is a software engineer and educator who helps people and
-organizations integrate reliable AI-assisted systems into real work and daily
-life.
+> Everyone is a bear or a bull. I am the dragon.
 
-The public impression should be:
+The dragon represents Marcelo himself. XIV is the world he is building around
+that identity, connecting markets, research, music, movement, code, and writing.
+The site should make that personal point of view immediately clear and then
+give visitors concrete work to explore.
 
-- technically capable
-- operationally mature
-- clear about what is built and what is still being tested
-- able to connect software, data, QA, and product decisions
-- able to translate new tools for organizations of any size, teams, independent
-  people, educators, and creators
-- creative without making creativity the only story
-
-## Audience Order
-
-1. Hiring managers and engineering leaders evaluating software ownership,
-   systems thinking, communication, and delivery judgment.
-2. Organizations of any size, independent people, educators, and creators
-   looking for practical AI integration.
-3. Students and early-career builders looking for a clear map from learning to
-   useful work.
-4. Technical peers looking for concrete implementation and public proof.
-
-The portfolio should answer a hiring manager's questions before it presents a
-service package: What does Marcelo build? Has he shipped in real constraints?
-Can he explain tradeoffs? What can I inspect?
+The new direction takes precedence over earlier recruiter-first positioning
+and the previous bull identity. Marcelo's engineering experience remains part
+of the work and stays accessible through the existing routes.
 
 ## Message Stack
 
-Short version:
+Main statement:
 
-> Software engineer building reliable AI systems for real work.
+> I am the dragon.
 
-Expanded version:
+Context:
 
-> I build and ship software across QA automation, data workflows, internal
-> platforms, and AI-assisted tools. I help people understand where AI fits so
-> it creates more room for useful, creative, human work.
+> Everyone is a bear or a bull. I am the dragon.
 
-Proof sentence:
+Description:
 
-> I turn messy inputs into structured workflows, reviewable outputs, and tools
-> people can actually use.
+> XIV is my world of markets, research, music, movement, code, and writing.
 
-## Proof Hierarchy
+Use first person where Marcelo is speaking. Keep the meaning of the dragon
+personal; do not turn it into an invented character biography or a market
+prediction. References to the game's new direction should be clearly about
+work in development.
 
-Lead with proof in this order:
+## Visitor Experience
 
-1. Enterprise software delivery, QA automation, data workflows, and team
-   communication.
-2. `role-systems` as the clearest public engineering artifact: schemas, tests,
-   role boundaries, and CI.
-3. XIV, MaloSound, Rally, and Green Machine as focused systems showing range.
-4. Public field notes as evidence of reasoning, not as a substitute for code
-   or delivery experience.
+Lead with the dragon identity and a distinctive visual world. Follow it with
+clear paths into the work: XIV, MaloSound, Rally, research, writing, and code.
+Visitors should be able to understand what each path contains before opening
+it. Preserve access to Marcelo's background and existing projects.
+
+Use the real work to give the visual identity substance:
+
+- Markets and research: observation, interpretation, data, and study.
+- Music: original sound and the creative and technical work in MaloSound.
+- Movement: physical practice and the measurement work in Rally.
+- Code: software, experiments, shared state, and inspectable artifacts.
+- Writing: public thinking, field notes, and a record of how the work develops.
+
+## Visual Direction
+
+The dragon replaces the bull as the primary identity. The supplied artwork
+shows a serpentine Eastern dragon in violet, magenta, and cyan against black.
+Use the supplied 400 × 400 dragon emblem for compact brand surfaces and the
+1200 × 600 dragon world artwork for wider editorial surfaces. The artwork has
+no lettering; keep XIV lettering in the site's typography where needed.
+
+Keep the XIV palette aligned with the supplied kit. Blue and gold as a paired
+identity belong to MaloSound in that kit. Do not recolor the dragon to bronze
+or gold or reuse the bull as XIV's primary identity.
+
+Support the artwork with strong typography, generous space, and clear paths
+through the page. Keep artwork clear of text, navigation, and crop boundaries.
+Preserve responsive layouts, accessible contrast, and reduced-motion behavior.
 
 ## Surface Rules
 
 ### `marcelozapata.dev`
 
-The canonical professional home. Lead with Marcelo, software engineering,
-reliable AI-assisted systems, experience, proof, and a clear conversation path.
-XIV is the organizing visual identity, not the first explanation a visitor has
-to decode.
+The current public home for XIV and Marcelo Zapata. Lead with the dragon and
+the connected creative and research practice. The site can express the new
+game direction without presenting an unbuilt game as playable. Preserve the
+existing project, writing, and background routes.
 
 ### `role-systems`
 
-The strongest public engineering proof. Keep the README practical: what the
-repo does, how it is tested, what is built, and what is deliberately not
-claimed.
+Engineering evidence within the broader work. Keep its explanation grounded
+in schemas, tests, role boundaries, implementation, and CI. Its maturity and
+capabilities should be described independently of the brand's visual language.
 
 ### `malosound`
 
-Creative technology proof. It shows audio analysis, local-first tooling,
-structured memory, and visual systems. It is a project lane inside the wider
-work, not a competing personal brand.
-
-### `gateKPT`
-
-Legacy journal and research context. Preserve the writing and explain the
-canonical portfolio link. Do not make GateKPT the public umbrella again.
+The music lane: original sound, audio analysis, creative experiments, and the
+practical work of making and releasing music.
 
 ### `Rally`
 
-Movement and computer-vision product proof. Describe it as a practice and
-measurement system first; keep game mechanics as implementation detail.
+The movement lane: practice memory, computer vision, and measurements grounded
+in actual project artifacts.
 
-### LinkedIn
+### `gatekpt.ai`
 
-Professional distribution. Lead with software engineering, QA automation,
-data workflows, and AI-assisted systems. Projects support the story; they do
-not replace the employment narrative.
+The public site is under construction at Marcelo's request. Keep the legacy
+source and writing preserved. Do not restore it as XIV's public home or send
+visitors there as an active experience.
 
-Recommended profile headline:
+### Professional profiles
 
-> AI Implementation Partner | Role-based AI systems for organizations, teams,
-> educators, and independent builders
+The dragon identity can carry across visual assets. Employment history and
+professional claims must remain factual. Updating this website does not imply
+that a connected profile or account has also been changed.
 
 ## Claim Discipline
 
 Use `built`, `implemented`, `prototyped`, `measured`, and `currently testing`
-only where the repository supports the word.
+only where an artifact supports the word. Clearly distinguish the direction
+being explored from features available now.
 
-Avoid leading with `AI-native`, `autonomous`, `trained model`, `production
-machine learning`, or `orchestrator` unless the specific artifact and boundary
-are visible.
+Do not invent game mechanics, a playable release, lore, player counts, release
+dates, trained-model capabilities, or financial promises. Markets are part of
+Marcelo's practice; the dragon identity is not evidence of trading performance.
 
-Creative visual language can make the work memorable. It should never make the
-system sound less reliable, less understandable, or more capable than it is.
+The artwork can be ambitious. The explanation of what exists must stay precise.

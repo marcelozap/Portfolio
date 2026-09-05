@@ -18,47 +18,46 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
   {
     slug: 'xiv',
     name: 'XIV',
-    domain: 'orchestration',
+    domain: 'dragon',
     status: 'active build',
     year: '2026',
-    tagline: 'An independent field for trading, research, technology, and creative work.',
+    tagline: 'I am the dragon.',
     description:
-      'XIV is the company that keeps the work connected. I look at trading as an art form, use one song a day as another language, and build the software, data, and research that let those practices develop together.',
-    laneNote: 'Trading, shared state, specialist analysis, and creative experiments.',
+      'Everyone is a bear or a bull. I am the dragon. XIV is the world I am building around that identity: markets and research, music and movement, code and writing.',
+    laneNote: 'Markets, research, music, movement, code, and writing.',
     coreIdeas: [
-      'A personal research practice that treats market movement as both data and art',
-      'One state model connecting audio, movement, visual output, and session evidence',
-      'Specialist analysis lanes that produce structured events instead of opaque answers',
-      'Local-first experiments designed to run on a home PC as well as a public web surface',
-      'Open room for dance, tennis, golf, swimming, and running',
-      'Receipts and evaluation alongside the creative experience',
+      'The dragon is my identity inside XIV',
+      'Markets and research as a practice of observation, interpretation, and discipline',
+      'Original music and movement as ways to make the work felt',
+      'Code and shared session state connecting sound, motion, and visual experiments',
+      'Public writing and inspectable artifacts that show what is actually built',
     ],
     features: [
       {
-        title: 'Shared timeline',
+        title: 'Markets and research',
         description:
-          'Audio and movement meet on one timestamped timeline so synchronization can be measured rather than implied.',
+          'Market movement is material for study: data, interpretation, and the practice of forming a view.',
       },
       {
-        title: 'Role-based analysis',
+        title: 'Music and movement',
         description:
-          'MaloSound understands the music, the movement lane reads the body, and XIV explains the result.',
+          'MaloSound carries the music. Rally studies movement. Both give XIV a connection to sound, rhythm, and physical practice.',
       },
       {
-        title: 'Visual skins',
+        title: 'Code and experiments',
         description:
-          'A rhythm tunnel and character surface can change without rewriting the underlying session state.',
+          'Software experiments connect audio, motion, visual output, and session evidence.',
       },
       {
-        title: 'Honest model boundary',
+        title: 'Writing and evidence',
         description:
-          'The project distinguishes working baselines, pretrained components, and genuinely trained models.',
+          'Public notes and project artifacts make the thinking visible and keep the vision connected to what has been built.',
       },
     ],
     metrics: [
-      { label: 'Core', value: 'State' },
-      { label: 'Inputs', value: 'Audio + motion' },
-      { label: 'Mode', value: 'Local-first' },
+      { label: 'Identity', value: 'Dragon' },
+      { label: 'Practice', value: 'Art + research' },
+      { label: 'Status', value: 'In development' },
     ],
     stack: ['TypeScript', 'Python', 'Pose', 'Audio ML', 'JSON', 'WebGL'],
   },

@@ -9,19 +9,19 @@
    ========================================================================= */
 
 :root {
-  /* XIV base: blue-black, never neutral gray */
-  --bg: 225 44% 4%;
-  --bg-subtle: 220 45% 6%;
-  --bg-elevated: 217 44% 8%;
+  /* XIV dragon: near-black, violet, magenta, and cyan */
+  --bg: 263 50% 3%;
+  --bg-subtle: 267 38% 5%;
+  --bg-elevated: 266 30% 8%;
 
   /* XIV content ramp */
-  --ink: 210 57% 97%;
-  --ink-muted: 220 23% 64%;
-  --ink-faint: 220 17% 50%;
+  --ink: 274 100% 97%;
+  --ink-muted: 268 17% 67%;
+  --ink-faint: 270 13% 54%;
 
-  /* visor constant + personal-site atmosphere */
-  --accent: 183 100% 75%;
-  --accent-glow: 183 100% 75%;
+  /* Magenta and cyan for XIV; warm gold remains a MaloSound accent. */
+  --accent: 309 80% 74%;
+  --accent-glow: 309 80% 74%;
   --accent-warm: 38 100% 56%;
   --accent-cool: 258 90% 66%;
 
@@ -31,8 +31,8 @@
   --signal-amber: 38 100% 56%;
 
   /* structural */
-  --line: 221 31% 19%;
-  --ring: 183 100% 75%;
+  --line: 273 25% 20%;
+  --ring: 309 80% 74%;
 }
 
 * {

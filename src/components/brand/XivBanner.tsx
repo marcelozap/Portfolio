@@ -13,14 +13,14 @@ export function XivBanner({
 }) {
   return (
     <Image
-      src="/brand/xiv-banner-city.png"
+      src="/brand/xiv-dragon-world.png"
       alt={
         locale === 'es'
-          ? 'XIV: toro dorado con detalles en azul eléctrico.'
-          : 'XIV: a gold bull with electric-blue accents.'
+          ? 'El dragón violeta y cian de XIV sobre un fondo negro.'
+          : 'XIV’s violet and cyan dragon against a black background.'
       }
-      width={1713}
-      height={918}
+      width={1200}
+      height={600}
       quality={90}
       priority={priority}
       sizes={sizes}
