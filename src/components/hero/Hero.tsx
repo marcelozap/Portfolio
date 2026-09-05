@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink, Github, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { GlowButton } from '@/components/ui/GlowButton';
+import { XivBanner } from '@/components/brand/XivBanner';
 
 const FEATURED_WORK = [
   {
@@ -180,10 +181,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.18 }}
-          className="hidden pb-8 lg:block"
+          className="w-full pb-8"
           aria-label="Selected work"
         >
-          <div className="bg-bg-elevated/48 border border-line p-5 backdrop-blur-xl">
+          <XivBanner
+            priority
+            sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1024px) calc(100vw - 80px), 600px"
+            className="mb-5"
+          />
+          <div className="bg-bg-elevated/48 hidden border border-line p-5 backdrop-blur-xl lg:block">
             <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4 text-sm font-medium text-ink-faint">
               <span>Inside XIV</span>
               <span className="text-accent">4</span>

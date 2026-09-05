@@ -81,17 +81,16 @@ export function Navbar() {
           className="group flex items-center gap-3"
           aria-label={isSpanish ? 'Inicio de Marcelo Zapata' : 'Marcelo Zapata home'}
         >
-          <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.03] text-ink shadow-inset">
-            <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent/20 to-transparent opacity-60" />
-            <Image
-              src="/favicon.svg"
-              alt=""
-              width={24}
-              height={24}
-              className="relative rounded-full"
-              priority
-            />
-          </span>
+          <Image
+            src="/brand/xiv-logo-emblem.png"
+            alt="XIV"
+            width={1254}
+            height={1254}
+            sizes="48px"
+            quality={90}
+            className="size-12 shrink-0 object-contain"
+            priority
+          />
           <span className="hidden flex-col items-start sm:flex">
             <span className="font-display text-[13px] font-medium leading-tight text-ink">
               Marcelo Zapata

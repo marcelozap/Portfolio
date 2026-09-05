@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PUBLIC_SYSTEMS, getPublicSystem } from '@/lib/public-systems';
+import { XivBanner } from '@/components/brand/XivBanner';
 
 export function generateStaticParams() {
   return PUBLIC_SYSTEMS.map((system) => ({ slug: system.slug }));
@@ -46,6 +47,8 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
             {project.tagline}
           </p>
         </header>
+
+        {project.slug === 'xiv' && <XivBanner priority className="mt-10 max-w-4xl" />}
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1.25fr_0.75fr]">
           <div>

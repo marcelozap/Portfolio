@@ -1,6 +1,7 @@
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { GlowButton } from '@/components/ui/GlowButton';
+import { XivBanner } from '@/components/brand/XivBanner';
 
 export const metadata = {
   title: 'Marcelo Zapata | Fundador de XIV',
@@ -59,6 +60,8 @@ export default function SpanishHome() {
             Veo el mercado como una forma de arte: un sistema vivo e impredecible formado por datos,
             atención y cada persona que participa. La música es otro de mis lenguajes.
           </p>
+
+          <XivBanner locale="es" priority className="mt-8 max-w-3xl" />
 
           <div className="mt-9 flex flex-wrap gap-3">
             <GlowButton variant="primary" href="#projects">
