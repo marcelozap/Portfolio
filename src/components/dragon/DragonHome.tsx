@@ -1,6 +1,23 @@
 import Image from 'next/image';
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { PlayTeaser } from '@/components/play/PlayTeaser';
 import styles from './DragonHome.module.css';
+
+/**
+ * Output of the XIV Ops paper demo (2026-09-04): synthetic data, paper mode,
+ * deterministic templates, no model. Shown so the agent roles are visible as
+ * work product rather than described. Wording follows the desk's own
+ * templates; numbers are the demo's.
+ */
+const DESK_SAMPLE = {
+  stamp: 'XIV Ops · paper demo · 2026-09-04 · synthetic data · deterministic template, no model',
+  thesis:
+    'SPY long_put: mean reversion from RSI extreme. Macro: stretched breadth into event risk (demo, synthetic). Entry zone 480; the thesis is wrong beyond 492; expected hold 2-6 weeks. Drafted for the PM’s review — no order exists until the PM executes through the production gate.',
+  quant:
+    'INSUFFICIENT HISTORY: no comparable setups in desk_trade_outcomes. This report attaches honestly empty evidence — the PM decides with eyes open, not on invented numbers. Expectancy is framed MONTHLY on purpose: this desk targets ~14 trades a year; judging it by daily P&L is the documented failure mode.',
+  journal:
+    'Plan vs actual: entry zone 480, paper fill 4.95; exit 7.40 (demo target reached), realized +1.6R against a planned max loss of the premium. Rule violations: none recorded. Pattern: no prior outcomes on file. Drafted for the PM’s signature.',
+};
 
 const COPY = {
   en: {
@@ -20,7 +37,7 @@ const COPY = {
     practiceBody:
       'I develop my own view of markets, review my decisions, and build tools that help me think more clearly. XIV brings that work together.',
     experiment:
-      'The options-practice game is one of my personal experiments in development: fictional prices, simulated funds, and a journal for examining decisions.',
+      'The options-practice game is one of my personal experiments. It is free and it runs in your browser: fictional prices, simulated funds, and a journal for examining decisions.',
     practiceFacts: ['Independent trading', 'Market research', 'Personal tools'],
     theoryLabel: '02 / The theories',
     theoryTitle: 'Questions worth testing.',
@@ -37,7 +54,8 @@ const COPY = {
     agentsLabel: '03 / Agents for analysis',
     agentsTitle: 'Different roles.\nReviewable reasoning.',
     agentsIntro:
-      'A separate research desk in development supports my analysis. These agents produce drafts and context; I review the work and make the decisions.',
+      'A separate research desk supports my analysis. These agents produce drafts and context; I review the work and make the decisions. Below each role: what it actually wrote in the desk’s first paper run.',
+    sampleLabel: 'Output',
     agents: [
       {
         name: 'Research Analyst',
@@ -56,7 +74,7 @@ const COPY = {
       },
     ],
     agentNote:
-      'The practice game uses its own simulation engine. Agent-generated research is a separate workflow.',
+      'The practice game uses its own simulation engine. Agent-generated research is a separate workflow. The desk’s risk checks, state machine, and execution gate are deterministic code; the two writing roles draft through a model only when one is configured, and say so on every output.',
     engineeringLabel: '04 / Engineering & AI',
     engineeringTitle: 'The work behind it.',
     engineeringIntro: 'A short version of what I’ve built.',
@@ -98,7 +116,7 @@ const COPY = {
     practiceBody:
       'Desarrollo mi propia visión de los mercados, reviso mis decisiones y construyo herramientas que me ayudan a pensar con más claridad. XIV reúne ese trabajo.',
     experiment:
-      'El juego para practicar opciones es uno de mis experimentos personales en desarrollo: precios ficticios, fondos simulados y un diario para examinar decisiones.',
+      'El juego para practicar opciones es uno de mis experimentos personales. Es gratis y corre en tu navegador: precios ficticios, fondos simulados y un diario para examinar decisiones.',
     practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Herramientas propias'],
     theoryLabel: '02 / Las teorías',
     theoryTitle: 'Preguntas para investigar.',
@@ -118,7 +136,8 @@ const COPY = {
     agentsLabel: '03 / Agentes de análisis',
     agentsTitle: 'Distintos roles.\nRazonamiento revisable.',
     agentsIntro:
-      'Un entorno de investigación independiente, en desarrollo, apoya mi análisis. Los agentes preparan borradores y contexto; yo reviso el trabajo y tomo las decisiones.',
+      'Un entorno de investigación independiente apoya mi análisis. Los agentes preparan borradores y contexto; yo reviso el trabajo y tomo las decisiones. Debajo de cada rol: lo que escribió de verdad en la primera corrida en papel del desk.',
+    sampleLabel: 'Salida',
     agents: [
       {
         name: 'Research Analyst',
@@ -137,7 +156,7 @@ const COPY = {
       },
     ],
     agentNote:
-      'El juego de práctica usa su propio motor de simulación. La investigación con agentes es un flujo independiente.',
+      'El juego de práctica usa su propio motor de simulación. La investigación con agentes es un flujo independiente. Los controles de riesgo, la máquina de estados y la puerta de ejecución del desk son código determinista; los dos roles que escriben usan un modelo solo cuando hay uno configurado, y lo dicen en cada salida.',
     engineeringLabel: '04 / Ingeniería e IA',
     engineeringTitle: 'El trabajo detrás.',
     engineeringIntro: 'Una versión breve de lo que he construido.',
@@ -163,6 +182,8 @@ const COPY = {
     notesLink: 'Leer mis textos',
   },
 };
+
+const DESK_SAMPLES = [DESK_SAMPLE.thesis, DESK_SAMPLE.quant, DESK_SAMPLE.journal];
 
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const copy = COPY[locale];
@@ -235,6 +256,9 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             ))}
           </ul>
         </div>
+        <div className={styles.visionWide}>
+          <PlayTeaser locale={locale} />
+        </div>
       </section>
 
       <section id="theories" className={styles.work} aria-labelledby="theories-title">
@@ -276,10 +300,17 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
                 <p className={styles.agentRole}>{agent.role}</p>
                 <h3>{agent.name}</h3>
               </div>
-              <p className={styles.bodyCopy}>{agent.text}</p>
+              <div>
+                <p className={styles.bodyCopy}>{agent.text}</p>
+                <blockquote className={styles.sample}>
+                  <span>{copy.sampleLabel}</span>
+                  {DESK_SAMPLES[i]}
+                </blockquote>
+              </div>
             </article>
           ))}
         </div>
+        <p className={styles.sampleStamp}>{DESK_SAMPLE.stamp}</p>
         <p className={styles.researchNote}>{copy.agentNote}</p>
       </section>
 

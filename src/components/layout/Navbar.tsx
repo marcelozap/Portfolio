@@ -21,13 +21,17 @@ export function Navbar() {
   const menuButton = useRef<HTMLButtonElement>(null);
   const navigationLinks = useRef<HTMLUListElement>(null);
   const languageHref =
-    pathname === '/ai-blog/i-had-a-dream'
-      ? '/es/ai-blog/i-had-a-dream'
-      : pathname === '/es/ai-blog/i-had-a-dream'
-        ? '/ai-blog/i-had-a-dream'
-        : isSpanish
-          ? '/'
-          : '/es';
+    pathname === '/play'
+      ? '/es/play'
+      : pathname === '/es/play'
+        ? '/play'
+        : pathname === '/ai-blog/i-had-a-dream'
+          ? '/es/ai-blog/i-had-a-dream'
+          : pathname === '/es/ai-blog/i-had-a-dream'
+            ? '/ai-blog/i-had-a-dream'
+            : isSpanish
+              ? '/'
+              : '/es';
 
   useEffect(() => {
     document.documentElement.lang = isSpanish ? 'es' : 'en';
@@ -85,6 +89,11 @@ export function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link href={isSpanish ? '/es/play' : '/play'} onClick={() => setMenuOpen(false)}>
+              {isSpanish ? 'Jugar' : 'Play'}
+            </Link>
+          </li>
         </ul>
 
         <div className={styles.utilities}>

@@ -752,3 +752,34 @@
     font-size: 17px;
   }
 }
+.visionWide {
+  grid-column: 1 / -1;
+}
+.sample {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-left: 2px solid #dd85cc;
+  background: rgba(24, 14, 34, 0.45);
+  color: #d8cde3;
+  font:
+    12px/1.75 var(--font-mono),
+    monospace;
+}
+.sample span {
+  color: #8a799c;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sampleStamp {
+  margin: 22px 0 0;
+  color: #8a799c;
+  font:
+    9px/1.7 var(--font-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

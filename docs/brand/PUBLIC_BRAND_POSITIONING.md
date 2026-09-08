@@ -22,9 +22,14 @@ connect engineering accomplishments to concrete work and evidence.
 - Introduce XIV as Marcelo's personal trading and research workbench.
 - Describe trading research and analysis agents using verified implementation
   details and inspectable examples.
-- Explain research questions and theories in plain language. Present the
-  options-practice game as a personal experiment in development, separate from
-  the analysis-agent workflow.
+- Explain research questions and theories in plain language. The
+  options-practice game is playable at `/play` (and `/es/play`): fictional
+  instruments, a seeded simulation engine, simulated funds, five fail-closed
+  gates, sealed before/after receipts, and a journal kept in the visitor's
+  browser only. It is free and separate from the analysis-agent workflow.
+- Show work product where a role is described. The agents section carries the
+  actual template output of the XIV Ops paper demo (2026-09-04, synthetic data),
+  labeled as such. Never replace it with invented output or a live-market claim.
 - Present Marcelo's strongest engineering and AI accomplishments only where the
   underlying work supports the claim.
 - Keep navigation and calls to action about exploring the work, reading, or
