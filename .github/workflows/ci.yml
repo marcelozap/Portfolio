@@ -44,6 +44,9 @@ jobs:
       - name: Private desk access and database tests
         run: npm run test:desk
 
+      - name: Dragon Tape trading rules
+        run: npm run test:game
+
       - name: Build
         run: npm run build
         env:

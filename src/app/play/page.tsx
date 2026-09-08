@@ -3,7 +3,7 @@ import { DragonTape } from '@/components/play/DragonTape';
 export const metadata = {
   title: 'Dragon Tape — practice game',
   description:
-    'A live practice game: fictional prices, virtual funds, big buttons and hotkeys. Reach +14% to unlock betting down. Runs entirely in your browser.',
+    'Practice long or short with fictional prices and virtual funds. Start at 1 contract; unlock larger sizes as your best equity grows. Runs entirely in your browser.',
 };
 
 export default function PlayPage() {

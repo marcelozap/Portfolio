@@ -7,13 +7,15 @@ import styles from './DragonHome.module.css';
 /**
  * Output of the XIV Ops paper demo (2026-09-04): synthetic data, paper mode,
  * deterministic templates, no model. Trimmed to one line per role so the
- * screens read at a glance; numbers are the demo's.
+ * screens read at a glance; numbers are the demo's. Big Money is a format
+ * example, not the result of a connected worker or a complete filing scan.
  */
 const DESK_SAMPLE = {
-  stamp: 'XIV Ops · paper demo · synthetic data · nothing trades without me',
+  stamp: 'Example outputs · synthetic trade numbers · they draft; I decide',
   thesis: 'SPY long_put · entry zone 480 · wrong beyond 492 · drafted for review',
   quant: 'No comparable setups on file — the evidence stays honestly empty',
   journal: 'Fill 4.95 → exit 7.40 · +1.6R · rule violations: none',
+  bigMoney: 'Who disclosed what · trade / report date · filing date · size · source',
 };
 
 const COPY = {
@@ -40,17 +42,39 @@ const COPY = {
       { name: 'Risk', text: 'How much can I lose — and does the idea survive new data?' },
     ],
     agentsLabel: '03 / Agents for analysis',
-    agentsTitle: 'Three agents.\nI make the calls.',
+    agentsTitle: 'Four research roles.\nI make the calls.',
     agentsIntro: 'They draft. I review and decide.',
     sampleLabel: 'Output',
+    deskAction: 'Open my private desk',
     agents: [
-      { name: 'Research Analyst', role: 'The thesis', text: 'Drafts the idea being tested.' },
+      {
+        id: 'research',
+        name: 'Research Analyst',
+        role: 'The thesis',
+        text: 'Drafts the idea being tested.',
+        status: 'Public-source research requests',
+      },
       {
         name: 'Quant Agent',
+        id: 'quant',
         role: 'The evidence',
         text: 'Keeps the numbers separate from the story.',
+        status: 'Public math · trade history awaits connection',
       },
-      { name: 'Journal Coach', role: 'The review', text: 'Reviews the decision after the trade.' },
+      {
+        id: 'journal',
+        name: 'Journal Coach',
+        role: 'The review',
+        text: 'Reviews the decision after the trade.',
+        status: 'Selected journal evidence awaits connection',
+      },
+      {
+        id: 'big-money',
+        name: 'Big Money Agent',
+        role: 'The disclosures',
+        text: 'Research requests for politician disclosures and fund holdings.',
+        status: 'Public filings · delayed · partial coverage',
+      },
     ],
     engineeringLabel: '04 / Engineering & AI',
     engineeringTitle: 'The work behind it.',
@@ -92,13 +116,39 @@ const COPY = {
       { name: 'Riesgo', text: '¿Cuánto puedo perder — y la idea resiste datos nuevos?' },
     ],
     agentsLabel: '03 / Agentes de análisis',
-    agentsTitle: 'Tres agentes.\nYo tomo las decisiones.',
+    agentsTitle: 'Cuatro roles.\nYo tomo las decisiones.',
     agentsIntro: 'Ellos redactan. Yo reviso y decido.',
     sampleLabel: 'Salida',
+    deskAction: 'Abrir mi escritorio privado',
     agents: [
-      { name: 'Research Analyst', role: 'La tesis', text: 'Redacta la idea a prueba.' },
-      { name: 'Quant Agent', role: 'La evidencia', text: 'Separa los números del relato.' },
-      { name: 'Journal Coach', role: 'La revisión', text: 'Revisa la decisión después de operar.' },
+      {
+        id: 'research',
+        name: 'Research Analyst',
+        role: 'La tesis',
+        text: 'Redacta la idea a prueba.',
+        status: 'Solicitudes con fuentes públicas',
+      },
+      {
+        id: 'quant',
+        name: 'Quant Agent',
+        role: 'La evidencia',
+        text: 'Separa los números del relato.',
+        status: 'Cálculos públicos · historial pendiente de conexión',
+      },
+      {
+        id: 'journal',
+        name: 'Journal Coach',
+        role: 'La revisión',
+        text: 'Revisa la decisión después de operar.',
+        status: 'Diario seleccionado pendiente de conexión',
+      },
+      {
+        id: 'big-money',
+        name: 'Big Money Agent',
+        role: 'Las declaraciones',
+        text: 'Consultas sobre declaraciones de políticos y posiciones de fondos.',
+        status: 'Informes públicos · con retraso · cobertura parcial',
+      },
     ],
     engineeringLabel: '04 / Ingeniería e IA',
     engineeringTitle: 'El trabajo detrás.',
@@ -124,7 +174,12 @@ const COPY = {
   },
 };
 
-const DESK_SAMPLES = [DESK_SAMPLE.thesis, DESK_SAMPLE.quant, DESK_SAMPLE.journal];
+const DESK_SAMPLES = [
+  DESK_SAMPLE.thesis,
+  DESK_SAMPLE.quant,
+  DESK_SAMPLE.journal,
+  DESK_SAMPLE.bigMoney,
+];
 
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const copy = COPY[locale];
@@ -239,6 +294,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <div>
                 <p className={styles.agentRole}>{agent.role}</p>
                 <h3>{agent.name}</h3>
+                <p className={styles.agentStatus}>{agent.status}</p>
               </div>
               <div>
                 <p className={styles.bodyCopy}>{agent.text}</p>
@@ -246,6 +302,9 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
                   <span>{copy.sampleLabel}</span>
                   {DESK_SAMPLES[i]}
                 </blockquote>
+                <Link className={styles.agentLink} href={`/desk?role=${agent.id}`}>
+                  {copy.deskAction} <ArrowUpRight size={14} aria-hidden="true" />
+                </Link>
               </div>
             </article>
           ))}

@@ -184,6 +184,7 @@ export function ResearchConnections({ draft, onDraft, onAuthLost, onBusy }: Prop
   return (
     <details
       className="research-connections"
+      open
       onToggle={(event) => {
         if (event.currentTarget.open && bridges === null && !loading) void load();
       }}
@@ -199,7 +200,10 @@ export function ResearchConnections({ draft, onDraft, onAuthLost, onBusy }: Prop
           </button>
         </div>
         {bridges !== null && !bridges.length && (
-          <p className="research-empty">No approved sessions.</p>
+          <p className="research-empty">
+            No approved sessions. Approve your existing session below so it can answer your
+            requests.
+          </p>
         )}
         {bridges?.map((bridge) => (
           <article className="research-bridge" key={bridge.id}>

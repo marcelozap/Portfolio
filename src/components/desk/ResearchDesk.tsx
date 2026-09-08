@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ResearchConnections } from './ResearchConnections';
 import type { PairingDraft } from './bridge-ui';
 import type { ResearchTask, ResearchTaskSummary } from '../../lib/desk/research';
+import { prepareRoleQuestion, RESEARCH_ROLES } from '../../lib/desk/role-prompts';
 import {
   acknowledgeResearch,
   prepareResearch,
@@ -53,6 +54,7 @@ export function ResearchDesk({
   const listVersion = useRef(0);
   const detailVersion = useRef(0);
   const mutationBusy = useRef(false);
+  const starterApplied = useRef(false);
   const now = clock.server + elapsed;
 
   const updateClock = useCallback((response: Envelope) => {
@@ -116,6 +118,29 @@ export function ResearchDesk({
     }, 1000);
     return () => window.clearInterval(timer);
   }, [clock]);
+
+  useEffect(() => {
+    if (starterApplied.current) return;
+    starterApplied.current = true;
+    const roleId = new URLSearchParams(window.location.search).get('role');
+    if (!roleId) return;
+    try {
+      const question = prepareRoleQuestion(draft, roleId);
+      onDraft({ question, pending: null });
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Choose a research role.');
+    }
+  }, [draft, onDraft]);
+
+  function chooseRole(id: string) {
+    if (busy || draft.pending) return;
+    try {
+      onDraft({ question: prepareRoleQuestion(draft, id), pending: null });
+      setMessage('Draft ready. Review it, then queue research.');
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Choose a research role.');
+    }
+  }
 
   async function openTask(id: string) {
     const current = ++detailVersion.current;
@@ -257,11 +282,29 @@ export function ResearchDesk({
       <main className="research-main">
         <div className="research-heading">
           <div>
-            <p className="desk-eyebrow">RESEARCH ANALYST</p>
+            <p className="desk-eyebrow">YOUR RESEARCH TEAM</p>
             <h1>Ask. Review. Prepare.</h1>
           </div>
           <span className="research-connection">Drafts for your review</span>
         </div>
+        <section className="research-roles" aria-label="Research roles">
+          {RESEARCH_ROLES.map((role) => (
+            <article key={role.id}>
+              <h2>{role.name}</h2>
+              <p>{role.note}</p>
+              <button
+                type="button"
+                disabled={!role.available || busy || !!draft.pending}
+                onClick={() => chooseRole(role.id)}
+              >
+                {role.action}
+              </button>
+            </article>
+          ))}
+        </section>
+        <p className="research-role-note">
+          Choose a starter, review it, then queue it. An approved session handles public research.
+        </p>
         <form className="research-compose" onSubmit={submit}>
           <label htmlFor="research-question">What should we research?</label>
           <textarea
@@ -273,6 +316,15 @@ export function ResearchDesk({
             required
             disabled={busy || !!draft.pending}
           />
+          {draft.question && !draft.pending && (
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => onDraft({ question: '', pending: null })}
+            >
+              Clear draft
+            </button>
+          )}
           <div className="research-compose-bottom">
             <p>
               {draft.pending

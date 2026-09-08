@@ -2,20 +2,30 @@
 
 import Link from 'next/link';
 import { useEffect, useReducer, useRef } from 'react';
+import {
+  INITIAL_CASH as CASH0,
+  CONTRACT_MULTIPLIER as MULT,
+  ORDER_QUANTITIES as QTYS,
+  SIZE_TIERS,
+  accountEquity,
+  canSelectQuantity,
+  executeOrder,
+  maxPositionSize,
+  nextSizeTier,
+  quantityForHotkey,
+  readProgress,
+  writeProgress,
+  type TapeAccount,
+} from '@/lib/play/dragon-tape-rules';
 import styles from './DragonTape.module.css';
 
 const TICK_MS = 250;
 const SPOT0 = 500;
 const C0 = 5.0;
-const MULT = 100;
-const CASH0 = 10000;
-const TARGET = 11400;
-const HALF_SPREAD = 0.01;
 const KEEP = 360;
 const LEV = 12;
 const DECAY = 0.00006;
 const FAST_SWELL = 1.35;
-const QTYS = [1, 5, 10] as const;
 
 const COPY = {
   en: {
@@ -31,8 +41,10 @@ const COPY = {
     foot1: 'The contract swings about 12× harder than the tape.',
     foot2: 'It slowly loses value while you sit and wait.',
     equity: 'Equity',
-    lockedMsg: (left: string) => `Reach $11,400 (+14%) to unlock betting down — ${left} to go`,
-    unlockedMsg: 'Unlocked — selling while flat bets the tape down',
+    nextSize: (q: number, target: string) => `${q}× at ${target} best equity`,
+    maxSize: 'All sizes open · 14× max',
+    sizeLimit: (q: number) => `${q}× max open`,
+    closingSize: (q: number) => `${q}× · close only`,
     position: 'Position',
     long: 'LONG',
     short: 'SHORT',
@@ -45,6 +57,8 @@ const COPY = {
     orders: 'Orders',
     buy: 'BUY',
     sell: 'SELL',
+    shortAction: 'SHORT',
+    coverAction: 'COVER',
     keyB: 'KEY B',
     keyS: 'KEY S',
     flatten: 'Flatten',
@@ -53,17 +67,17 @@ const COPY = {
     reset: 'Reset',
     fills: 'Fills',
     keys: 'buy · sell · flatten · size · pause · reset',
-    keysNote: 'Selling while flat bets the tape down — once unlocked.',
-    lockedToast: 'Locked — reach $11,400 first',
+    keysNote: 'Buy goes long. Sell goes short. Opposite orders close; they never reverse.',
+    sizeToast: (q: number) => `${q}× max open. Close or unlock more size.`,
     cashToast: (q: number) => `Not enough cash for ${q}×`,
-    capToast: 'Down-bet capped at 1× equity',
-    unlockToast: '$11,400 reached — you can bet the tape down now',
-    priorUnlock: 'Down-bets already unlocked from a past run',
-    unlockedFill: 'UNLOCKED',
+    capToast: 'Short exposure capped at 1× equity',
+    unlockToast: (q: number) => `${q}× sizing unlocked`,
+    priorUnlock: (q: number) => `${q}× sizing saved · both directions open`,
+    unlockedFill: 'SIZE UP',
     buyFill: 'BUY',
     coverFill: 'COVER',
     sellFill: 'SELL',
-    downFill: 'SELL DOWN',
+    downFill: 'SHORT',
     journalLink: 'Prefer the slower journal game?',
     journalCta: 'Play it here',
     disclaimer: 'Prices are generated, not market data. Nothing here is advice.',
@@ -81,9 +95,10 @@ const COPY = {
     foot1: 'El contrato se mueve unas 12× más fuerte que la cinta.',
     foot2: 'Pierde valor lentamente mientras esperas.',
     equity: 'Capital',
-    lockedMsg: (left: string) =>
-      `Llega a $11,400 (+14%) para desbloquear apostar a la baja — faltan ${left}`,
-    unlockedMsg: 'Desbloqueado — vender sin posición apuesta a la baja',
+    nextSize: (q: number, target: string) => `${q}× con ${target} de capital máximo`,
+    maxSize: 'Todos los tamaños · máximo 14×',
+    sizeLimit: (q: number) => `Máximo abierto: ${q}×`,
+    closingSize: (q: number) => `${q}× · solo cierre`,
     position: 'Posición',
     long: 'LARGO',
     short: 'CORTO',
@@ -96,6 +111,8 @@ const COPY = {
     orders: 'Órdenes',
     buy: 'COMPRAR',
     sell: 'VENDER',
+    shortAction: 'CORTO',
+    coverAction: 'CUBRIR',
     keyB: 'TECLA B',
     keyS: 'TECLA S',
     flatten: 'Cerrar',
@@ -104,13 +121,13 @@ const COPY = {
     reset: 'Reiniciar',
     fills: 'Ejecuciones',
     keys: 'comprar · vender · cerrar · tamaño · pausa · reiniciar',
-    keysNote: 'Vender sin posición apuesta a la baja — cuando esté desbloqueado.',
-    lockedToast: 'Bloqueado — llega a $11,400 primero',
+    keysNote: 'Compra al alza. Vende a la baja. La orden opuesta cierra; no invierte la posición.',
+    sizeToast: (q: number) => `Máximo abierto: ${q}×. Cierra o desbloquea más tamaño.`,
     cashToast: (q: number) => `No hay efectivo para ${q}×`,
-    capToast: 'Apuesta a la baja limitada a 1× el capital',
-    unlockToast: '$11,400 alcanzado — ya puedes apostar a la baja',
-    priorUnlock: 'Apuestas a la baja ya desbloqueadas de una corrida anterior',
-    unlockedFill: 'DESBLOQUEADO',
+    capToast: 'Exposición corta limitada a 1× el capital',
+    unlockToast: (q: number) => `Tamaño de ${q}× desbloqueado`,
+    priorUnlock: (q: number) => `${q}× guardado · ambas direcciones abiertas`,
+    unlockedFill: 'MÁS TAMAÑO',
     buyFill: 'COMPRA',
     coverFill: 'CIERRE',
     sellFill: 'VENTA',
@@ -123,9 +140,8 @@ const COPY = {
 
 type Fill = { at: string; side: string; cls: 'b' | 's' | 'g'; qty: number; px: number };
 
-type Game = {
+type Game = TapeAccount & {
   spot: number;
-  c: number;
   prices: number[];
   elapsed: number;
   paused: boolean;
@@ -133,38 +149,25 @@ type Game = {
   driftLeft: number;
   stressed: boolean;
   swell: number;
-  cash: number;
-  posQty: number;
-  avg: number;
-  realized: number;
   qty: number;
-  unlocked: boolean;
-  best: number;
   fills: Fill[];
   toast: string;
   toastGold: boolean;
   ready: boolean;
 };
 
-function loadSaved(): { unlocked: boolean; best: number } {
+function loadSaved(): { best: number } {
   try {
-    const raw = window.localStorage.getItem('xiv-dragon-tape-v1');
-    if (raw) {
-      const parsed = JSON.parse(raw) as { unlocked?: boolean; best?: number };
-      return { unlocked: !!parsed.unlocked, best: parsed.best ?? CASH0 };
-    }
+    return readProgress(window.localStorage.getItem('xiv-dragon-tape-v1'));
   } catch {
     /* fresh run */
   }
-  return { unlocked: false, best: CASH0 };
+  return { best: CASH0 };
 }
 
 function persist(game: Game) {
   try {
-    window.localStorage.setItem(
-      'xiv-dragon-tape-v1',
-      JSON.stringify({ unlocked: game.unlocked, best: game.best }),
-    );
+    window.localStorage.setItem('xiv-dragon-tape-v1', writeProgress(game.best));
   } catch {
     /* storage unavailable */
   }
@@ -186,7 +189,6 @@ function freshGame(): Game {
     avg: 0,
     realized: 0,
     qty: 1,
-    unlocked: false,
     best: CASH0,
     fills: [],
     toast: '',
@@ -236,64 +238,43 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [, force] = useReducer((x: number) => x + 1, 0);
 
-  const equity = (g: Game) => g.cash + g.posQty * g.c * MULT;
-
   const record = (g: Game, side: string, cls: Fill['cls'], qty: number, px: number) => {
     g.fills.unshift({ at: clock(g), side, cls, qty, px });
     if (g.fills.length > 60) g.fills.pop();
   };
 
-  const buy = (g: Game) => {
-    const fill = g.c + HALF_SPREAD;
-    const q = g.qty;
-    if (g.posQty < 0) {
-      const cover = Math.min(q, -g.posQty);
-      g.realized += (g.avg - fill) * cover * MULT;
-      g.cash -= fill * cover * MULT;
-      g.posQty += cover;
-      if (g.posQty === 0) g.avg = 0;
-      record(g, t.coverFill, 'b', cover, fill);
-      return;
-    }
-    const cost = fill * q * MULT;
-    if (cost > g.cash) {
-      g.toast = t.cashToast(q);
+  const trade = (g: Game, side: 'buy' | 'sell') => {
+    const result = executeOrder(g, side, g.qty);
+    if (result.error) {
+      g.toast =
+        result.error === 'cash'
+          ? t.cashToast(g.qty)
+          : result.error === 'cap'
+            ? t.capToast
+            : t.sizeToast(maxPositionSize(g.best));
       g.toastGold = false;
       return;
     }
-    g.avg = g.posQty === 0 ? fill : (g.avg * g.posQty + fill * q) / (g.posQty + q);
-    g.cash -= cost;
-    g.posQty += q;
-    record(g, t.buyFill, 'b', q, fill);
+    Object.assign(g, result.account);
+    const fill = result.fill;
+    const labels = { buy: t.buyFill, cover: t.coverFill, sell: t.sellFill, short: t.downFill };
+    record(g, labels[fill.kind], side === 'buy' ? 'b' : 's', fill.qty, fill.px);
+    g.toast = '';
+    g.toastGold = false;
+    afterTick(g);
   };
 
-  const sell = (g: Game) => {
-    const fill = g.c - HALF_SPREAD;
-    const q = g.qty;
-    if (g.posQty > 0) {
-      const close = Math.min(q, g.posQty);
-      g.realized += (fill - g.avg) * close * MULT;
-      g.cash += fill * close * MULT;
-      g.posQty -= close;
-      if (g.posQty === 0) g.avg = 0;
-      record(g, t.sellFill, 's', close, fill);
-      return;
+  const buy = (g: Game) => trade(g, 'buy');
+  const sell = (g: Game) => trade(g, 'sell');
+
+  const selectQuantity = (g: Game, quantity: number) => {
+    if (canSelectQuantity(g, quantity)) {
+      g.qty = quantity;
+      g.toast = '';
+    } else {
+      g.toast = t.sizeToast(maxPositionSize(g.best));
     }
-    if (!g.unlocked) {
-      g.toast = t.lockedToast;
-      g.toastGold = false;
-      return;
-    }
-    const newQty = -g.posQty + q;
-    if (newQty * g.c * MULT > equity(g)) {
-      g.toast = t.capToast;
-      g.toastGold = false;
-      return;
-    }
-    g.avg = g.posQty === 0 ? fill : (g.avg * -g.posQty + fill * q) / newQty;
-    g.cash += fill * q * MULT;
-    g.posQty -= q;
-    record(g, t.downFill, 's', q, fill);
+    g.toastGold = false;
   };
 
   const flatten = (g: Game) => {
@@ -311,16 +292,16 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   };
 
   const afterTick = (g: Game) => {
-    const eq = equity(g);
+    const eq = accountEquity(g);
+    const previousSize = maxPositionSize(g.best);
     if (eq > g.best) {
       g.best = eq;
       persist(g);
     }
-    if (!g.unlocked && eq >= TARGET) {
-      g.unlocked = true;
-      persist(g);
-      record(g, t.unlockedFill, 'g', 14, g.c);
-      g.toast = t.unlockToast;
+    const newSize = maxPositionSize(g.best);
+    if (newSize > previousSize) {
+      record(g, t.unlockedFill, 'g', newSize, g.c);
+      g.toast = t.unlockToast(newSize);
       g.toastGold = true;
     }
   };
@@ -388,11 +369,11 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const restart = () => {
     const saved = loadSaved();
     const g = freshGame();
-    g.unlocked = saved.unlocked;
     g.best = saved.best;
     for (let i = 0; i < KEEP / 2; i++) step(g);
     g.elapsed = 0;
-    g.toast = g.unlocked ? t.priorUnlock : '';
+    const savedSize = maxPositionSize(g.best);
+    g.toast = savedSize > 1 ? t.priorUnlock(savedSize) : '';
     g.toastGold = false;
     g.ready = true;
     gameRef.current = g;
@@ -422,6 +403,12 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     }, TICK_MS);
     const onKey = (e: KeyboardEvent) => {
       if (e.repeat || e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
+      )
+        return;
       const g = gameRef.current;
       const k = e.key.toLowerCase();
       if (k === 'b') buy(g);
@@ -431,10 +418,14 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       else if (k === 'r') {
         restart();
         return;
-      } else if (k === '1') g.qty = QTYS[0];
-      else if (k === '2') g.qty = QTYS[1];
-      else if (k === '3') g.qty = QTYS[2];
-      else return;
+      } else if (['1', '2', '3', '4'].includes(k)) {
+        const quantity = quantityForHotkey(g, k);
+        if (quantity === null) {
+          g.toast = t.sizeToast(maxPositionSize(g.best));
+          g.toastGold = false;
+        } else selectQuantity(g, quantity);
+      } else return;
+      e.preventDefault();
       draw(g);
       force();
     };
@@ -456,7 +447,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   }, [locale]);
 
   const g = gameRef.current;
-  const eq = equity(g);
+  const eq = accountEquity(g);
   const chg = g.c - C0;
   const upl =
     g.posQty > 0
@@ -464,7 +455,15 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       : g.posQty < 0
         ? (g.avg - g.c) * -g.posQty * MULT
         : 0;
-  const pct = Math.min(100, Math.max(0, ((eq - CASH0) / (TARGET - CASH0)) * 100));
+  const sizeMax = maxPositionSize(g.best);
+  const nextTier = nextSizeTier(g.best);
+  const previousTarget = SIZE_TIERS.find((tier) => tier.max === sizeMax)?.equity ?? CASH0;
+  const pct = nextTier
+    ? Math.min(
+        100,
+        Math.max(0, ((g.best - previousTarget) / (nextTier.equity - previousTarget)) * 100),
+      )
+    : 100;
   const act = (fn: (game: Game) => void) => () => {
     fn(gameRef.current);
     draw(gameRef.current);
@@ -535,27 +534,37 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </div>
           </div>
           <div className={styles.qtyrow} role="group" aria-label={t.contracts}>
-            {QTYS.map((q) => (
-              <button
-                key={q}
-                type="button"
-                className={`${styles.qty} ${g.qty === q ? styles.qtySel : ''}`}
-                aria-pressed={g.qty === q}
-                onClick={act((game) => {
-                  game.qty = q;
-                })}
-              >
-                {q}×
-              </button>
-            ))}
+            {QTYS.map((q) => {
+              const allowed = canSelectQuantity(g, q);
+              const tier = SIZE_TIERS.find((candidate) => candidate.max === q)!;
+              const label = !allowed
+                ? t.nextSize(q, fmt$(tier.equity))
+                : q > sizeMax
+                  ? t.closingSize(q)
+                  : `${q}× · ${t.sizeLimit(sizeMax)}`;
+              return (
+                <button
+                  key={q}
+                  type="button"
+                  className={`${styles.qty} ${g.qty === q ? styles.qtySel : ''}`}
+                  aria-pressed={g.qty === q}
+                  aria-label={label}
+                  title={label}
+                  disabled={!allowed}
+                  onClick={act((game) => selectQuantity(game, q))}
+                >
+                  {q}×{!allowed && <small>+{Math.round((tier.equity / CASH0 - 1) * 100)}%</small>}
+                </button>
+              );
+            })}
           </div>
           <div className={styles.btnrow}>
             <button type="button" className={`${styles.act} ${styles.buy}`} onClick={act(buy)}>
-              {t.buy}
+              {g.posQty < 0 ? t.coverAction : t.buy}
               <small>{t.keyB}</small>
             </button>
             <button type="button" className={`${styles.act} ${styles.sellB}`} onClick={act(sell)}>
-              {t.sell}
+              {g.posQty > 0 ? t.sell : t.shortAction}
               <small>{t.keyS}</small>
             </button>
           </div>
@@ -599,10 +608,11 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <span className={g.realized >= 0 ? styles.pos : styles.neg}>{fmt$(g.realized)}</span>
             </div>
             <div className={styles.track}>
-              <div className={styles.fillbar} style={{ width: `${g.unlocked ? 100 : pct}%` }} />
+              <div className={styles.fillbar} style={{ width: `${pct}%` }} />
             </div>
-            <p className={`${styles.unlockmsg} ${g.unlocked ? styles.unlockedOn : ''}`}>
-              {g.unlocked ? t.unlockedMsg : t.lockedMsg(fmt$(Math.max(0, TARGET - eq)))}
+            <p className={`${styles.unlockmsg} ${!nextTier ? styles.unlockedOn : ''}`}>
+              {t.sizeLimit(sizeMax)}.{' '}
+              {nextTier ? t.nextSize(nextTier.max, fmt$(nextTier.equity)) : t.maxSize}
             </p>
           </section>
           <section>
@@ -634,7 +644,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             {t.foot1} {t.foot2}
           </p>
           <p>
-            <b>B</b> / <b>S</b> / <b>F</b> / <b>1 2 3</b> / <b>P</b> / <b>R</b> — {t.keys}
+            <b>B</b> / <b>S</b> / <b>F</b> / <b>1 2 3 4</b> / <b>P</b> / <b>R</b> — {t.keys}
           </p>
           <p>{t.keysNote}</p>
           <p className={styles.journalLine}>

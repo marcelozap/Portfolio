@@ -65,6 +65,21 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.agentStatus {
+  margin: 12px 0 0;
+  color: #aba0ba;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.agentLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 10px;
+  color: #86def1;
+  font-size: 12px;
+}
 .agentRow > .bodyCopy {
   font-size: 14px;
 }
@@ -148,7 +163,7 @@
     grid-template-columns: 22px 1fr;
     gap: 15px;
   }
-  .agentRow > .bodyCopy {
+  .agentRow > div:last-child {
     grid-column: 2;
   }
   .agentRow h3 {

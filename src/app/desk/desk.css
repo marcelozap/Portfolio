@@ -340,6 +340,51 @@ body.xiv-desk-active > :not(main):not(script):not(nextjs-portal) {
   padding: 19px 20px 16px;
   background: #0e1621;
 }
+.research-roles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.research-roles article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #324155;
+  border-radius: 10px;
+  background: #0e1621;
+}
+.research-roles h2 {
+  margin: 0;
+  color: #edf1f8;
+  font-size: 14px;
+}
+.research-roles p {
+  flex: 1;
+  margin: 8px 0 12px;
+  color: #a4b4c8;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.research-roles button {
+  min-height: 44px;
+  font-size: 11px;
+}
+.research-role-note {
+  margin: 12px 0 18px;
+  color: #a4b4c8;
+  font-size: 12px;
+}
+@media (max-width: 900px) {
+  .research-roles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 390px) {
+  .research-roles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .research-compose label {
   display: block;
   color: #d9e2f0;

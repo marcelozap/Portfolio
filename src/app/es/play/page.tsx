@@ -3,7 +3,7 @@ import { DragonTape } from '@/components/play/DragonTape';
 export const metadata = {
   title: 'Dragon Tape — juego de práctica',
   description:
-    'Un juego de práctica en vivo: precios ficticios, fondos virtuales, botones grandes y atajos de teclado. Llega a +14% para desbloquear apostar a la baja. Corre por completo en tu navegador.',
+    'Practica al alza o a la baja con precios ficticios y fondos virtuales. Empieza con 1 contrato; desbloquea más tamaño al aumentar tu capital máximo. Todo en tu navegador.',
 };
 
 export default function SpanishPlayPage() {

@@ -11,7 +11,7 @@ const COPY = {
   en: {
     label: 'Practice game · free · in your browser',
     title: 'Buy. Sell. Ride the tape.',
-    body: 'A live fictional tape, big buttons, hotkeys. Reach +14% and betting down unlocks.',
+    body: 'Fictional prices. Go long or short. Start small; unlock more size.',
     cta: 'Play',
     resume: 'Continue',
     receipts: 'receipts',
@@ -22,7 +22,7 @@ const COPY = {
   es: {
     label: 'Juego de práctica · gratis · en tu navegador',
     title: 'Compra. Vende. Sigue la cinta.',
-    body: 'Una cinta ficticia en vivo, botones grandes y atajos de teclado. Llega a +14% y se desbloquea apostar a la baja.',
+    body: 'Precios ficticios. Al alza o a la baja. Empieza pequeño; desbloquea más tamaño.',
     cta: 'Jugar',
     resume: 'Continuar',
     receipts: 'recibos',
