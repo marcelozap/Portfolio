@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { NextRequest } from 'next/server';
+import { createServerClient } from '@supabase/ssr';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { handleDesk, type DeskConfig, type DeskDependencies } from '../src/lib/desk/server';
 import { DeskError, day, emptyState, exact, validateState } from '../src/lib/desk/contracts';
@@ -44,6 +45,18 @@ function fixture(user: string | null = owner, member = true) {
     auth: {
       getUser: async () => ({ data: { user: user ? { id: user } : null }, error: null }),
       signInWithPassword: async () => ({ error: null }),
+      resetPasswordForEmail: async (email: string, options: { redirectTo: string }) => {
+        calls.push(['reset-start', email, options]);
+        return { error: null as null | { status: number } };
+      },
+      exchangeCodeForSession: async (code: string, options?: { flowId: string }) => {
+        calls.push(['reset-exchange', code, options]);
+        return { error: null as null | { status: number } };
+      },
+      updateUser: async (attributes: { password: string }) => {
+        calls.push(['reset-password', attributes]);
+        return { error: null as null | { status: number } };
+      },
       signOut: async () => {
         logout++;
         return { error: null };
@@ -298,4 +311,225 @@ test('historical data routes never fall back to the local trade store', async ()
     assert.equal(result.response.status, 501);
     assert.equal(f.calls.length, 1);
   }
+});
+
+test('password reset requests use a fixed redirect and reveal no private records', async () => {
+  const f = fixture(null);
+  const result = await run('reset-start', { email: 'synthetic@example.invalid' }, f);
+  assert.equal(result.response.status, 200);
+  assert.equal(result.data.ok, true);
+  assert.match(result.data.message, /If this email/);
+  assert.deepEqual(f.calls, [
+    [
+      'reset-start',
+      'synthetic@example.invalid',
+      {
+        redirectTo: 'https://desk.example/desk/recover',
+      },
+    ],
+  ]);
+  assert.match(result.response.headers.get('cache-control')!, /no-store/);
+  for (const body of [
+    { email: 'synthetic@example.invalid', redirectTo: 'https://foreign.invalid' },
+    { email: 'invalid' },
+  ]) {
+    const blocked = fixture(null);
+    assert.equal((await run('reset-start', body, blocked)).response.status, 400);
+    assert.equal(blocked.calls.length, 0);
+  }
+});
+
+test('all recovery actions reject cross-site requests before invoking auth', async () => {
+  for (const [action, body] of [
+    ['reset-start', { email: 'synthetic@example.invalid' }],
+    ['reset-exchange', { code: 'synthetic-code' }],
+    ['reset-password', { password: 'a-synthetic-new-password' }],
+  ] as const) {
+    const attempts: Record<string, string>[] = [
+      { Origin: 'https://foreign.invalid' },
+      { 'X-XIV-Desk': '' },
+    ];
+    for (const headers of attempts) {
+      const f = fixture();
+      assert.equal((await run(action, body, f, headers)).response.status, 403);
+      assert.equal(f.calls.length, 0);
+    }
+  }
+});
+
+test('recovery respects mail rate limits and reports provider failures honestly', async () => {
+  for (const [providerStatus, expectedStatus] of [
+    [429, 429],
+    [500, 503],
+  ]) {
+    const f = fixture(null);
+    f.client.auth.resetPasswordForEmail = async () => ({ error: { status: providerStatus } });
+    const result = await run('reset-start', { email: 'synthetic@example.invalid' }, f);
+    assert.equal(result.response.status, expectedStatus);
+    assert.equal(result.data.ok, undefined);
+  }
+});
+
+test('recovery exchanges a code through the provider then verifies owner and membership', async () => {
+  const accepted = await run('reset-exchange', {
+    code: 'synthetic-code',
+    flowId: 'synthetic-flow-id',
+  });
+  assert.equal(accepted.response.status, 200);
+  assert.deepEqual(accepted.fixture.calls[0], [
+    'reset-exchange',
+    'synthetic-code',
+    { flowId: 'synthetic-flow-id' },
+  ]);
+  for (const f of [fixture(other), fixture(owner, false), fixture(null)]) {
+    const result = await run('reset-exchange', { code: 'synthetic-code' }, f);
+    assert.ok([401, 403].includes(result.response.status));
+    assert.equal(f.logout, 1);
+    assert.ok(!f.calls.some((call) => JSON.stringify(call).includes('xiv_desk_days')));
+  }
+  const expired = fixture();
+  expired.client.auth.exchangeCodeForSession = async () => ({ error: { status: 400 } });
+  assert.equal(
+    (await run('reset-exchange', { code: 'expired-code' }, expired)).response.status,
+    401,
+  );
+  assert.equal(expired.calls.length, 0);
+});
+
+test('recovery rejects malformed codes and arbitrary exchange fields', async () => {
+  for (const body of [
+    { code: '' },
+    { code: 'has whitespace' },
+    { code: 'x', flowId: 'bad' },
+    { code: 'x', owner_id: owner },
+    { code: 'x', redirectTo: 'https://foreign.invalid' },
+  ]) {
+    const f = fixture();
+    assert.equal((await run('reset-exchange', body, f)).response.status, 400);
+    assert.equal(f.calls.length, 0);
+  }
+});
+
+test('only the verified enabled owner can submit a new password', async () => {
+  for (const f of [fixture(null), fixture(other), fixture(owner, false)]) {
+    const result = await run('reset-password', { password: 'synthetic-new-password' }, f);
+    assert.ok([401, 403].includes(result.response.status));
+    assert.ok(!f.calls.some((call) => JSON.stringify(call).includes('reset-password')));
+  }
+  for (const body of [
+    { password: 'too-short' },
+    { password: 'x'.repeat(1025) },
+    { password: 'synthetic-new-password', email: 'different@example.invalid' },
+  ]) {
+    const f = fixture();
+    assert.equal((await run('reset-password', body, f)).response.status, 400);
+    assert.ok(!f.calls.some((call) => JSON.stringify(call).includes('reset-password')));
+  }
+});
+
+test('successful password reset clears browser cookies even if global sign-out fails', async () => {
+  const f = fixture();
+  f.client.auth.signOut = async () => {
+    throw new Error('Synthetic sign-out outage');
+  };
+  const result = await run('reset-password', { password: 'synthetic-new-password' }, f, {
+    Cookie: 'xiv-private-desk.0=synthetic;xiv-private-desk.1=synthetic',
+  });
+  assert.equal(result.response.status, 200);
+  assert.equal(result.data.ok, true);
+  assert.deepEqual(f.calls[1], ['reset-password', { password: 'synthetic-new-password' }]);
+  assert.ok(!JSON.stringify(result.data).includes('synthetic-new-password'));
+  const cookies = result.response.headers.get('set-cookie')!;
+  for (const pattern of [/Max-Age=0/, /HttpOnly/, /Secure/, /SameSite=strict/])
+    assert.match(cookies, pattern);
+});
+
+test('password rejection preserves the session and never reports successful reset', async () => {
+  const f = fixture();
+  f.client.auth.updateUser = async () => ({ error: { status: 422 } });
+  const result = await run('reset-password', { password: 'synthetic-new-password' }, f);
+  assert.equal(result.response.status, 400);
+  assert.equal(f.logout, 0);
+  assert.equal(result.data.ok, undefined);
+});
+
+test('logout and password reset clear newly queued cookie chunks and PKCE state', async () => {
+  for (const [action, body] of [
+    ['logout', {}],
+    ['reset-password', { password: 'synthetic-new-password' }],
+  ] as const) {
+    const f = fixture();
+    const base = f.deps.context;
+    f.deps.context = (request, settings) => ({
+      ...base(request, settings),
+      cookies: [
+        { name: 'xiv-private-desk.2', value: 'new-synthetic-chunk', options: {} },
+        { name: 'xiv-private-desk-code-verifier', value: 'synthetic-verifier', options: {} },
+      ],
+    });
+    const result = await run(action, body, f, { Cookie: 'xiv-private-desk.0=old-synthetic' });
+    assert.equal(result.response.status, 200);
+    for (const name of [
+      'xiv-private-desk.0',
+      'xiv-private-desk.2',
+      'xiv-private-desk-code-verifier',
+    ]) {
+      const cookie = result.response.cookies.get(name);
+      assert.equal(cookie?.value, '');
+      assert.equal(cookie?.maxAge, 0);
+    }
+  }
+});
+
+test('real SSR SDK persists a browser-bound PKCE verifier during reset request without network', async () => {
+  let providerCalls = 0;
+  const pending: Array<{ name: string; value: string; options: Record<string, unknown> }> = [];
+  const client = createServerClient(config.url, config.key, {
+    cookieOptions: {
+      name: 'xiv-private-desk',
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+      path: '/',
+    },
+    cookies: {
+      getAll: () => [],
+      setAll: (values) => {
+        pending.push(...values);
+      },
+    },
+    global: {
+      fetch: async (input, init) => {
+        const url = new URL(String(input));
+        assert.equal(url.origin, 'https://fixture.invalid');
+        assert.equal(url.pathname, '/auth/v1/recover');
+        assert.equal(url.searchParams.get('redirect_to'), 'https://desk.example/desk/recover');
+        assert.equal(init?.method, 'POST');
+        const payload = JSON.parse(String(init?.body));
+        assert.equal(payload.email, 'synthetic@example.invalid');
+        assert.equal(payload.code_challenge_method, 's256');
+        assert.match(payload.code_challenge, /^[A-Za-z0-9_-]{43}$/);
+        providerCalls++;
+        return new Response('{}', { status: 200, headers: { 'Content-Type': 'application/json' } });
+      },
+    },
+  });
+  const response = await handleDesk(
+    req('reset-start', { email: 'synthetic@example.invalid' }),
+    ['reset-start'],
+    {
+      config: () => config,
+      context: () => ({ client, cookies: pending }),
+    },
+  );
+  assert.equal(response.status, 200);
+  assert.equal(providerCalls, 1);
+  const cookies = response.cookies.getAll();
+  assert.ok(cookies.some((cookie) => cookie.name.startsWith('xiv-private-desk-code-verifier')));
+  for (const cookie of cookies) {
+    assert.equal(cookie.httpOnly, true);
+    assert.equal(cookie.secure, true);
+    assert.equal(cookie.sameSite, 'strict');
+  }
+  assert.ok(!JSON.stringify(await response.json()).includes('code_verifier'));
 });

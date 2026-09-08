@@ -150,6 +150,21 @@ async function ownerOf(client: SupabaseClient, owner: string) {
     throw new DeskError(403, 'This account does not have access to the private desk.');
   return data.user.id;
 }
+function clearSessionCookies(request: NextRequest, context: Context) {
+  // A refreshed session can use a different number of cookie chunks. Clear
+  // both the incoming names and any newly queued names, including PKCE state.
+  const names = new Set([
+    ...request.cookies.getAll().map((cookie) => cookie.name),
+    ...context.cookies.map((cookie) => cookie.name),
+  ]);
+  for (const name of names)
+    if (
+      /^xiv-private-desk(?:-code-verifier|-flows-code-verifier|-flow-[A-Za-z0-9_-]{8,64}-code-verifier)?(?:\.\d+)?$/.test(
+        name,
+      )
+    )
+      context.cookies.push({ name, value: '', options: { maxAge: 0 } });
+}
 async function loadDay(client: SupabaseClient, owner: string, date: string) {
   const result = await client
     .from('xiv_desk_days')
@@ -197,6 +212,55 @@ export async function handleDesk(
     context = deps.context(request, config);
     const client = context.client,
       action = path.join('/');
+    // PKCE binds the recovery link to this browser. Only the fixed recovery
+    // page can be a return address; the request cannot supply a redirect.
+    if (request.method === 'POST' && action === 'reset-start') {
+      const body = exact(await bodyOf(request), ['email']);
+      const email = text(body.email, 320).trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+        throw new DeskError(400, 'Enter your email address.');
+      const reset = await client.auth.resetPasswordForEmail(email, {
+        redirectTo: config.origin + '/desk/recover',
+      });
+      if (reset.error) {
+        if (reset.error.status === 429)
+          throw new DeskError(429, 'Please wait before requesting another reset email.');
+        throw new DeskError(503, 'The reset email could not be requested. Please try again later.');
+      }
+      return respond({
+        ok: true,
+        message:
+          'If this email belongs to an account, a reset link has been requested. Open it in this same browser.',
+      });
+    }
+    if (request.method === 'POST' && action === 'reset-exchange') {
+      const raw = await bodyOf(request);
+      const body = exact(raw, raw?.flowId === undefined ? ['code'] : ['code', 'flowId']);
+      const code = text(body.code, 2048);
+      const flowId = body.flowId === undefined ? undefined : text(body.flowId, 64);
+      if (
+        !code ||
+        /\s/.test(code) ||
+        (flowId !== undefined && !/^[A-Za-z0-9_-]{8,64}$/.test(flowId))
+      )
+        throw new DeskError(400, 'This reset link is not valid. Request a new one.');
+      const exchanged = await client.auth.exchangeCodeForSession(
+        code,
+        flowId ? { flowId } : undefined,
+      );
+      if (exchanged.error)
+        throw new DeskError(
+          401,
+          'This reset link expired or belongs to another browser. Request a new one here.',
+        );
+      try {
+        await ownerOf(client, config.owner);
+      } catch (error) {
+        await client.auth.signOut({ scope: 'local' });
+        throw error;
+      }
+      return respond({ ok: true });
+    }
     if (request.method === 'POST' && action === 'login') {
       const body = exact(await bodyOf(request), ['email', 'password']);
       const email = text(body.email, 320).trim(),
@@ -220,13 +284,31 @@ export async function handleDesk(
         /* Clear local cookies below even during an upstream outage. */
       }
       // Clear this browser's session even when the upstream sign-out service is unavailable.
-      for (const cookie of request.cookies.getAll())
-        if (/^xiv-private-desk(?:\.\d+)?$/.test(cookie.name)) {
-          context.cookies.push({ name: cookie.name, value: '', options: { maxAge: 0 } });
-        }
+      clearSessionCookies(request, context);
       return respond({ ok: true });
     }
     const owner = await ownerOf(client, config.owner);
+    if (request.method === 'POST' && action === 'reset-password') {
+      const body = exact(await bodyOf(request), ['password']);
+      const password = text(body.password, 1024);
+      if (Array.from(password).length < 12)
+        throw new DeskError(400, 'Use at least 12 characters for your new password.');
+      const updated = await client.auth.updateUser({ password });
+      if (updated.error) {
+        if (updated.error.status === 422 || updated.error.status === 400)
+          throw new DeskError(400, 'Choose a different password with at least 12 characters.');
+        throw new DeskError(503, 'Your password could not be updated. Please try again.');
+      }
+      // The user submits this change. Keep the response truthful if provider
+      // sign-out fails after the password was successfully updated.
+      try {
+        await client.auth.signOut({ scope: 'global' });
+      } catch {
+        /* Clear this browser below; other sessions may last until expiry. */
+      }
+      clearSessionCookies(request, context);
+      return respond({ ok: true });
+    }
     if (request.method === 'GET') {
       if (action === 'bootstrap') {
         const now = new Date();

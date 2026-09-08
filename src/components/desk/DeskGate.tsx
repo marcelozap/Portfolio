@@ -325,6 +325,25 @@ export function DeskGate() {
                 <button className="desk-primary" type="submit" disabled={busy}>
                   {busy ? 'Signing in…' : 'Open my desk'}
                 </button>
+                <p className="desk-footnote">
+                  <Link
+                    href="/desk/recover"
+                    aria-disabled={busy}
+                    onClick={(event) => {
+                      if (
+                        busy ||
+                        (recoveries.length > 0 &&
+                          !window.confirm(
+                            `Leave the desk and discard ${recoveries.length} held text recoveries? Cancel to download them first.`,
+                          ))
+                      ) {
+                        event.preventDefault();
+                      }
+                    }}
+                  >
+                    Forgot password?
+                  </Link>
+                </p>
               </form>
             )}
             {phase === 'forbidden' && (
