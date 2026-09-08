@@ -4,7 +4,7 @@ XIV is where Marcelo directs his agents. End-of-day journaling belongs on MaloSo
 
 ## Delivery stage
 
-This is the offline database foundation for one research-request/result workflow. It does not add a website screen, apply a live migration, connect a worker, start a model or create a scheduler. The existing Codex/Claude development loops do not consume this queue yet. Live authentication and one real request-to-result exchange still need verification.
+The database foundation, private API and agent screen are implemented locally. They have not been deployed or migrated to the live database. No worker, model or scheduler is connected by this change. The existing Codex/Claude development loops do not consume this queue yet. Live authentication and one real request-to-result exchange still need verification.
 
 The migration is `supabase/migrations/202609080002_xiv_research_tasks.sql`. It requires the existing private-desk migration and its explicitly admitted owner membership. Do not run the first migration again or import local trading history.
 
@@ -54,4 +54,22 @@ Expected database errors are `42501` for unauthorized/missing-owner access, `220
 
 `npm run test:research-queue` exercises the actual SQL in isolated PGlite with synthetic identities. The same suite is included in `npm run test:desk`. The 19 queue tests cover ownership, membership revocation, direct-write denial, exact/idempotent creation, exclusive claims, expiry fencing, atomic history, sourced results, retry/cancel behavior and persistence after database reopening. PGlite uses one database session: lock inspection and sequential conflicting claims do not prove live multi-connection contention behavior. Audit immutability applies to authenticated/anonymous client privileges; database administrators retain their normal authority.
 
-Before enabling this in production, review and apply only the second migration, add the authenticated queue API and concise task/status/result UI, then connect one existing authorized session through a deliberate private bridge. Do not extract browser credentials, create a public control endpoint, silently start paid API calls or display fabricated running status. Pending password recovery does not prevent these offline implementation steps.
+The API tests use an injected synthetic SDK and the screen was exercised in an isolated synthetic browser fixture. These checks do not prove a live owner session or actual research-agent execution. Before enabling this in production, review and apply only the second migration, publish the tested private integration, then connect one existing authorized session through a deliberate private bridge. Do not extract browser credentials, create a public control endpoint, silently start paid API calls or display fabricated running status. Pending password recovery does not prevent these offline implementation steps.
+
+## Website interface
+
+`/desk` now opens the research screen after the existing owner gate. `/desk/notes` preserves the earlier notes interface and its saved data. The research screen offers a question, saved requests, actual recorded state, sources and limitations. Its connection indicator explicitly says **No agent connected**. A running database row is shown as a recorded claim, with expiry derived from the server clock, not proof of an online worker. Refresh is manual.
+
+All routes below share the existing owner/member verification, same-origin request marker, HttpOnly session handling and private no-store responses:
+
+| Route                            | Input                                         | Response                                                       |
+| -------------------------------- | --------------------------------------------- | -------------------------------------------------------------- |
+| `GET /api/desk/research`         | Optional single `offset`, integer 0–1,000,000 | Up to 20 summaries, `next_offset`, `server_time`, `connection` |
+| `GET /api/desk/research/:id`     | Canonical UUID; no query fields               | Full `task`, `server_time`, `connection`                       |
+| `POST /api/desk/research/create` | Exact `{id, question}`                        | Saved or recovered task; scope fixed by server                 |
+| `POST /api/desk/research/cancel` | Exact `{id, version, reason}`                 | Version-checked cancelled task                                 |
+| `POST /api/desk/research/retry`  | Exact `{id, version}`                         | Version-checked queued task                                    |
+
+Worker claim, renew, complete and block actions have no browser API route. Responses omit database owner and claim IDs, validate stored shape and never expose provider diagnostics. Ordering is creation time then UUID, newest first. Offset pages are a bounded view, not a frozen snapshot: new requests can shift later pages; refresh starts again, and the screen deduplicates loaded identities.
+
+If a create response is uncertain, the screen locks the original question and retries the same UUID. It clears input only after the matching saved identity returns. Auth loss closes the private screen while retaining the draft and its pending identity in the same tab; text export includes that identity so it can be checked before another submission. Unsent and recovery text remain local until successfully queued. Leaving the tab can lose them: navigation guards and exports help preserve them, but this is not browser-restart recovery. Completed results are rendered as plain text with HTTPS source links; no generated HTML executes.

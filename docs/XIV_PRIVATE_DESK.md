@@ -1,10 +1,10 @@
 # XIV private desk
 
-The website entry is `/desk`. It is Marcelo's private workspace, with draggable thoughts, voice capture when the browser supports it, day layouts, saved notes, and confirmed preparation drafts. The public blog and games remain public.
+The website entry is `/desk`. Marcelo's September 8 direction makes this a private agent desk: research requests, real status and sourced results. Most analysis journaling belongs on MaloSound.ai. The new research API and screen are local and awaiting deployment and a real worker connection; see [XIV_RESEARCH_QUEUE.md](XIV_RESEARCH_QUEUE.md). Existing saved notes, day layouts and preparation drafts are preserved at `/desk/notes` in this implementation. The public blog and games remain public.
 
 ## Connection and setup
 
-The private desk was deployed on September 8, 2026, with a free Supabase project, a manually admitted owner account and the existing Vercel hosting project. Production commit 2243569 passed CI and public/anonymous access checks. Actual owner sign-in, cloud saving and cross-device recovery still require an end-to-end check; local tests alone do not prove them. Missing configuration returns an unavailable screen.
+The original private desk was deployed on September 8, 2026, with a free Supabase project, a manually admitted owner account and the existing Vercel hosting project. Latest production commit 78dc9eb includes password recovery and the redirected asset-path repair; CI and public/anonymous checks passed. The research integration described above has not been published yet. Actual owner sign-in, cloud saving and cross-device recovery still require an end-to-end check; local tests alone do not prove them. Missing configuration returns an unavailable screen. The following setup steps document initial provisioning: do not recreate the already configured project, migration0001, user or membership.
 
 Supabase supplies account login and PostgreSQL storage. Signing into its dashboard is separate from the email/password account used inside the desk.
 

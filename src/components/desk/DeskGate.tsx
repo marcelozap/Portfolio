@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import Link from 'next/link';
 import { appendRecovery, discardRecovery, type Recovery } from './recovery';
+import { ResearchDesk } from './ResearchDesk';
+import { emptyResearchDraft, researchRecovery } from './research-client';
 
 type Phase = 'checking' | 'signed-out' | 'ready' | 'forbidden' | 'unavailable';
 
@@ -21,7 +23,7 @@ async function deskRequest(path: string, body?: object) {
   });
 }
 
-export function DeskGate() {
+export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'notes' }) {
   const [phase, setPhase] = useState<Phase>('checking');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,6 +31,9 @@ export function DeskGate() {
   const [message, setMessage] = useState('');
   const [recoveries, setRecoveries] = useState<Recovery[]>([]);
   const [logoutUncertain, setLogoutUncertain] = useState(false);
+  const [researchDraft, setResearchDraft] = useState(emptyResearchDraft);
+  const heldResearch = useRef(researchDraft);
+  heldResearch.current = researchDraft;
   const iframe = useRef<HTMLIFrameElement>(null);
   const version = useRef(0);
 
@@ -104,6 +109,21 @@ export function DeskGate() {
     }
   }, []);
 
+  const researchAuthLost = useCallback(
+    (status: number) => {
+      version.current++;
+      setRecoveries((held) => appendRecovery(held, researchRecovery(heldResearch.current)));
+      setPassword('');
+      setBusy(false);
+      applyStatus(status === 403 ? 403 : 401);
+    },
+    [applyStatus],
+  );
+
+  const researchLogout = useCallback(() => {
+    void logout(researchRecovery(heldResearch.current));
+  }, [logout]);
+
   useEffect(() => {
     const requestVersion = version;
     document.body.classList.add('xiv-desk-active');
@@ -140,14 +160,14 @@ export function DeskGate() {
   }, [applyStatus, logout]);
 
   useEffect(() => {
-    if (!recoveries.length) return;
+    if (!recoveries.length && !researchDraft.question && !researchDraft.pending) return;
     const warn = (event: BeforeUnloadEvent) => {
       event.preventDefault();
       event.returnValue = '';
     };
     window.addEventListener('beforeunload', warn);
     return () => window.removeEventListener('beforeunload', warn);
-  }, [recoveries.length]);
+  }, [recoveries.length, researchDraft.question, researchDraft.pending]);
 
   async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -236,15 +256,30 @@ export function DeskGate() {
   if (phase === 'ready')
     return (
       <section className="desk-root desk-open" aria-label="Private XIV trading desk">
-        <iframe
-          ref={iframe}
-          src="/desk-assets/index.html"
-          title="XIV private spatial desk"
-          className="desk-frame"
-          allow="microphone"
-          referrerPolicy="same-origin"
-          sandbox="allow-scripts allow-same-origin allow-downloads allow-modals"
-        />
+        {workspace === 'agents' ? (
+          <ResearchDesk
+            draft={researchDraft}
+            heldRecoveries={recoveries.length}
+            onDraft={setResearchDraft}
+            onAuthLost={researchAuthLost}
+            onLogout={researchLogout}
+          />
+        ) : (
+          <>
+            <iframe
+              ref={iframe}
+              src="/desk-assets/index.html"
+              title="XIV private spatial desk"
+              className="desk-frame"
+              allow="microphone"
+              referrerPolicy="same-origin"
+              sandbox="allow-scripts allow-same-origin allow-downloads allow-modals"
+            />
+            <Link href="/desk" target="_blank" className="desk-agents-link">
+              Agents ↗
+            </Link>
+          </>
+        )}
         {recoveries.length > 0 && (
           <div className="desk-recovered-bar">
             <details style={{ maxWidth: 'min(360px, 85vw)', padding: '6px', fontSize: '12px' }}>
@@ -276,13 +311,30 @@ export function DeskGate() {
         XIV <span>Back to the website</span>
       </Link>
       <div className="desk-login-card">
-        <p className="desk-eyebrow">YOUR PRIVATE WORKSPACE</p>
+        <p className="desk-eyebrow">
+          {workspace === 'agents' ? 'YOUR PRIVATE AGENT DESK' : 'YOUR SAVED NOTES'}
+        </p>
         <h1>
-          A little space
-          <br />
-          to think<span>.</span>
+          {workspace === 'agents' ? (
+            <>
+              Ask. Review.
+              <br />
+              Prepare
+            </>
+          ) : (
+            <>
+              A little space
+              <br />
+              to think
+            </>
+          )}
+          <span>.</span>
         </h1>
-        <p className="desk-intro">Capture a thought. Move it around. Shape a preparation draft.</p>
+        <p className="desk-intro">
+          {workspace === 'agents'
+            ? 'Your questions. Your research. One private desk.'
+            : 'Your saved thoughts and preparation drafts.'}
+        </p>
         {phase === 'checking' ? (
           <p className="desk-message" role="status">
             Checking your private connection…

@@ -4,7 +4,7 @@ import './desk.css';
 
 export const metadata: Metadata = {
   title: 'Private desk | XIV',
-  description: 'Private workspace for your trading thoughts and preparation drafts.',
+  description: 'Private research requests, agent status and sourced results.',
   robots: { index: false, follow: false },
 };
 

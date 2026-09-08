@@ -14,6 +14,19 @@ import {
   uuidPattern,
   validateState,
 } from './contracts';
+import {
+  RESEARCH_MAX_OFFSET,
+  RESEARCH_PAGE_SIZE,
+  isResearchId,
+  researchCancelInput,
+  researchCreateInput,
+  researchOffset,
+  researchRetryInput,
+  researchStorageError,
+  researchSummaryColumns,
+  shapeResearchSummary,
+  shapeResearchTask,
+} from './research';
 
 export type DeskConfig = {
   url: string;
@@ -288,6 +301,81 @@ export async function handleDesk(
       return respond({ ok: true });
     }
     const owner = await ownerOf(client, config.owner);
+    if (path[0] === 'research') {
+      const listing = request.method === 'GET' && path.length === 1;
+      const detail = request.method === 'GET' && path.length === 2 && isResearchId(path[1]);
+      const mutation =
+        request.method === 'POST' &&
+        path.length === 2 &&
+        ['create', 'cancel', 'retry'].includes(path[1]);
+      // Browser routes cannot claim work, impersonate a worker, or submit results.
+      if (!listing && !detail && !mutation)
+        throw new DeskError(404, 'This research action is not available.');
+      const offset = researchOffset(request.nextUrl.searchParams, listing);
+      const envelope = () => ({
+        server_time: new Date().toISOString(),
+        connection: { state: 'disconnected' as const },
+      });
+      if (listing) {
+        const result = await client
+          .from('xiv_research_tasks')
+          .select(researchSummaryColumns)
+          .eq('owner_id', owner)
+          .order('created_at', { ascending: false })
+          .order('id', { ascending: false })
+          .range(offset, offset + RESEARCH_PAGE_SIZE);
+        if (result.error) throw researchStorageError(result.error);
+        if (!Array.isArray(result.data) || result.data.length > RESEARCH_PAGE_SIZE + 1)
+          throw researchStorageError({});
+        const tasks = result.data.map((row) => shapeResearchSummary(row, owner));
+        return respond({
+          tasks: tasks.slice(0, RESEARCH_PAGE_SIZE),
+          next_offset:
+            tasks.length > RESEARCH_PAGE_SIZE && offset + RESEARCH_PAGE_SIZE <= RESEARCH_MAX_OFFSET
+              ? offset + RESEARCH_PAGE_SIZE
+              : null,
+          ...envelope(),
+        });
+      }
+      if (detail) {
+        const result = await client
+          .from('xiv_research_tasks')
+          .select(researchSummaryColumns + ',result')
+          .eq('owner_id', owner)
+          .eq('id', path[1])
+          .maybeSingle();
+        if (result.error) throw researchStorageError(result.error);
+        if (result.data === null) throw new DeskError(404, 'Research task not found.');
+        return respond({ task: shapeResearchTask(result.data, owner, path[1]), ...envelope() });
+      }
+      const body = await bodyOf(request);
+      const operation = path[1];
+      let id: string, version: number, payload: Record<string, unknown>;
+      if (operation === 'create') {
+        const input = researchCreateInput(body);
+        id = input.id;
+        version = 0;
+        payload = { question: input.question, scope: 'public_primary_sources' };
+      } else if (operation === 'cancel') {
+        const input = researchCancelInput(body);
+        id = input.id;
+        version = input.version;
+        payload = { reason: input.reason };
+      } else {
+        const input = researchRetryInput(body);
+        id = input.id;
+        version = input.version;
+        payload = {};
+      }
+      const result = await client.rpc('xiv_research_apply', {
+        p_task_id: id,
+        p_expected_version: version,
+        p_action: operation,
+        p_payload: payload,
+      });
+      if (result.error) throw researchStorageError(result.error);
+      return respond({ task: shapeResearchTask(result.data, owner, id), ...envelope() });
+    }
     if (request.method === 'POST' && action === 'reset-password') {
       const body = exact(await bodyOf(request), ['password']);
       const password = text(body.password, 1024);
