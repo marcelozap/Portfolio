@@ -5,180 +5,120 @@ import styles from './DragonHome.module.css';
 
 /**
  * Output of the XIV Ops paper demo (2026-09-04): synthetic data, paper mode,
- * deterministic templates, no model. Shown so the agent roles are visible as
- * work product rather than described. Wording follows the desk's own
- * templates; numbers are the demo's.
+ * deterministic templates, no model. Trimmed to one line per role so the
+ * screens read at a glance; numbers are the demo's.
  */
 const DESK_SAMPLE = {
-  stamp: 'XIV Ops · paper demo · 2026-09-04 · synthetic data · deterministic template, no model',
-  thesis:
-    'SPY long_put: mean reversion from RSI extreme. Macro: stretched breadth into event risk (demo, synthetic). Entry zone 480; the thesis is wrong beyond 492; expected hold 2-6 weeks. Drafted for the PM’s review — no order exists until the PM executes through the production gate.',
-  quant:
-    'INSUFFICIENT HISTORY: no comparable setups in desk_trade_outcomes. This report attaches honestly empty evidence — the PM decides with eyes open, not on invented numbers. Expectancy is framed MONTHLY on purpose: this desk targets ~14 trades a year; judging it by daily P&L is the documented failure mode.',
-  journal:
-    'Plan vs actual: entry zone 480, paper fill 4.95; exit 7.40 (demo target reached), realized +1.6R against a planned max loss of the premium. Rule violations: none recorded. Pattern: no prior outcomes on file. Drafted for the PM’s signature.',
+  stamp: 'XIV Ops · paper demo · synthetic data · nothing trades without me',
+  thesis: 'SPY long_put · entry zone 480 · wrong beyond 492 · drafted for review',
+  quant: 'No comparable setups on file — the evidence stays honestly empty',
+  journal: 'Fill 4.95 → exit 7.40 · +1.6R · rule violations: none',
 };
 
 const COPY = {
   en: {
-    eyebrow: 'XIV / Trading. Research. Independent thinking.',
+    eyebrow: 'XIV / Trading · Research · Code',
     premise: 'Everyone is a bull or a bear.',
     first: 'I am the',
     dragon: 'dragon.',
-    intro:
-      'I’m Marcelo. I trade, study markets, and build the tools behind my decisions. XIV is my independent research practice: theories, analysis agents, and experiments in code.',
-    enter: 'Explore my research',
+    intro: 'I’m Marcelo. I trade my own money and build the tools behind my decisions.',
+    enter: 'Play the practice game',
     read: 'Meet the agents',
     scroll: 'My practice',
     signature: 'Trading / Analysis / AI',
     practiceLabel: '01 / My practice',
     practiceTitle: 'My capital. My decisions.',
     practiceLead: 'Trading is the center of my work.',
-    practiceBody:
-      'I develop my own view of markets, review my decisions, and build tools that help me think more clearly. XIV brings that work together.',
-    experiment:
-      'The options-practice game is one of my personal experiments. It is free and it runs in your browser: fictional prices, simulated funds, and a journal for examining decisions.',
+    practiceBody: 'My own view. My own review. My own tools.',
     practiceFacts: ['Independent trading', 'Market research', 'Personal tools'],
     theoryLabel: '02 / The theories',
     theoryTitle: 'Questions worth testing.',
-    theoryIntro:
-      'My research explores momentum, changing market conditions, and risk. These are ongoing research questions.',
     theories: [
-      { name: 'Momentum', text: 'When does a move persist, and when does it lose strength?' },
-      { name: 'Market regimes', text: 'How should a thesis change when market conditions change?' },
-      {
-        name: 'Risk & validation',
-        text: 'How much risk does a theory require, and does it survive testing on later data?',
-      },
+      { name: 'Momentum', text: 'When does a move keep going — and when does it fade?' },
+      { name: 'Changing markets', text: 'When the market changes, when should I change my mind?' },
+      { name: 'Risk', text: 'How much can I lose — and does the idea survive new data?' },
     ],
     agentsLabel: '03 / Agents for analysis',
-    agentsTitle: 'Different roles.\nReviewable reasoning.',
-    agentsIntro:
-      'A separate research desk supports my analysis. These agents produce drafts and context; I review the work and make the decisions. Below each role: what it actually wrote in the desk’s first paper run.',
+    agentsTitle: 'Three agents.\nI make the calls.',
+    agentsIntro: 'They draft. I review and decide.',
     sampleLabel: 'Output',
     agents: [
-      {
-        name: 'Research Analyst',
-        role: 'The thesis',
-        text: 'Drafts a research narrative from market context and the question being studied.',
-      },
+      { name: 'Research Analyst', role: 'The thesis', text: 'Drafts the idea being tested.' },
       {
         name: 'Quant Agent',
         role: 'The evidence',
-        text: 'Calculates historical and statistical context, keeping the numbers separate from model-written interpretation.',
+        text: 'Keeps the numbers separate from the story.',
       },
-      {
-        name: 'Journal Coach',
-        role: 'The review',
-        text: 'Turns post-trade notes into a draft review of the reasoning and lessons.',
-      },
+      { name: 'Journal Coach', role: 'The review', text: 'Reviews the decision after the trade.' },
     ],
-    agentNote:
-      'The practice game uses its own simulation engine. Agent-generated research is a separate workflow. The desk’s risk checks, state machine, and execution gate are deterministic code; the two writing roles draft through a model only when one is configured, and say so on every output.',
     engineeringLabel: '04 / Engineering & AI',
     engineeringTitle: 'The work behind it.',
-    engineeringIntro: 'A short version of what I’ve built.',
     feats: [
-      {
-        name: 'Test automation',
-        text: 'Built Playwright and Azure DevOps workflows that turn manual checks into repeatable UI tests.',
-      },
-      {
-        name: 'AI workflow tools',
-        text: 'Created AI plugins for planning, work items, test cases, documentation, and summaries.',
-      },
-      {
-        name: 'Data & integration',
-        text: 'Built Python, SQL, and REST API workflows for collecting, validating, and connecting operational data.',
-      },
+      { name: 'Test automation', text: 'Repeatable UI tests with Playwright and Azure DevOps.' },
+      { name: 'AI workflow tools', text: 'AI plugins for planning, test cases, and docs.' },
+      { name: 'Data & integration', text: 'Python, SQL, and REST workflows for operational data.' },
     ],
     codeLink: 'Public GitHub projects',
     notesLabel: '05 / In my own words',
     notesTitle: 'Think for yourself.\nKeep building.',
-    notesBody:
-      'I write about AI, technology, and the ideas that shape how I work. This is a record of what I’m learning, questioning, and building on my own terms.',
+    notesBody: 'What I’m learning, questioning, and building — on my own terms.',
     notesLink: 'Read my writing',
   },
   es: {
-    eyebrow: 'XIV / Trading. Investigación. Criterio propio.',
+    eyebrow: 'XIV / Trading · Investigación · Código',
     premise: 'Todos son toros u osos.',
     first: 'Yo soy el',
     dragon: 'dragón.',
     intro:
-      'Soy Marcelo. Hago trading, estudio los mercados y construyo las herramientas detrás de mis decisiones. XIV es mi práctica de investigación independiente: teorías, agentes de análisis y experimentos con código.',
-    enter: 'Ver mi investigación',
+      'Soy Marcelo. Opero con mi propio dinero y construyo las herramientas detrás de mis decisiones.',
+    enter: 'Jugar al juego de práctica',
     read: 'Conocer los agentes',
     scroll: 'Mi práctica',
     signature: 'Trading / Análisis / IA',
     practiceLabel: '01 / Mi práctica',
     practiceTitle: 'Mi capital. Mis decisiones.',
     practiceLead: 'El trading es el centro de mi trabajo.',
-    practiceBody:
-      'Desarrollo mi propia visión de los mercados, reviso mis decisiones y construyo herramientas que me ayudan a pensar con más claridad. XIV reúne ese trabajo.',
-    experiment:
-      'El juego para practicar opciones es uno de mis experimentos personales. Es gratis y corre en tu navegador: precios ficticios, fondos simulados y un diario para examinar decisiones.',
+    practiceBody: 'Mi propia visión. Mi propia revisión. Mis propias herramientas.',
     practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Herramientas propias'],
     theoryLabel: '02 / Las teorías',
     theoryTitle: 'Preguntas para investigar.',
-    theoryIntro:
-      'Mi investigación explora el momentum, los cambios de mercado y el riesgo. Son preguntas de investigación abiertas.',
     theories: [
       { name: 'Momentum', text: '¿Cuándo continúa un movimiento y cuándo pierde fuerza?' },
       {
-        name: 'Regímenes de mercado',
-        text: '¿Cómo debe cambiar una tesis cuando cambian las condiciones del mercado?',
+        name: 'Mercados que cambian',
+        text: 'Cuando el mercado cambia, ¿cuándo debo cambiar de opinión?',
       },
-      {
-        name: 'Riesgo y validación',
-        text: '¿Cuánto riesgo exige una teoría y resiste las pruebas con datos posteriores?',
-      },
+      { name: 'Riesgo', text: '¿Cuánto puedo perder — y la idea resiste datos nuevos?' },
     ],
     agentsLabel: '03 / Agentes de análisis',
-    agentsTitle: 'Distintos roles.\nRazonamiento revisable.',
-    agentsIntro:
-      'Un entorno de investigación independiente apoya mi análisis. Los agentes preparan borradores y contexto; yo reviso el trabajo y tomo las decisiones. Debajo de cada rol: lo que escribió de verdad en la primera corrida en papel del desk.',
+    agentsTitle: 'Tres agentes.\nYo tomo las decisiones.',
+    agentsIntro: 'Ellos redactan. Yo reviso y decido.',
     sampleLabel: 'Salida',
     agents: [
-      {
-        name: 'Research Analyst',
-        role: 'La tesis',
-        text: 'Prepara un borrador de investigación a partir del contexto de mercado y la pregunta estudiada.',
-      },
-      {
-        name: 'Quant Agent',
-        role: 'La evidencia',
-        text: 'Calcula contexto histórico y estadístico, separando los números de la interpretación escrita por un modelo.',
-      },
-      {
-        name: 'Journal Coach',
-        role: 'La revisión',
-        text: 'Convierte las notas posteriores a una operación en un borrador de revisión del razonamiento y las lecciones.',
-      },
+      { name: 'Research Analyst', role: 'La tesis', text: 'Redacta la idea a prueba.' },
+      { name: 'Quant Agent', role: 'La evidencia', text: 'Separa los números del relato.' },
+      { name: 'Journal Coach', role: 'La revisión', text: 'Revisa la decisión después de operar.' },
     ],
-    agentNote:
-      'El juego de práctica usa su propio motor de simulación. La investigación con agentes es un flujo independiente. Los controles de riesgo, la máquina de estados y la puerta de ejecución del desk son código determinista; los dos roles que escriben usan un modelo solo cuando hay uno configurado, y lo dicen en cada salida.',
     engineeringLabel: '04 / Ingeniería e IA',
     engineeringTitle: 'El trabajo detrás.',
-    engineeringIntro: 'Una versión breve de lo que he construido.',
     feats: [
       {
         name: 'Automatización de pruebas',
-        text: 'Desarrollé flujos con Playwright y Azure DevOps para convertir revisiones manuales en pruebas de interfaz repetibles.',
+        text: 'Pruebas de interfaz repetibles con Playwright y Azure DevOps.',
       },
       {
         name: 'Herramientas con IA',
-        text: 'Creé plugins de IA para planificación, tareas, casos de prueba, documentación y resúmenes.',
+        text: 'Plugins de IA para planificación, casos de prueba y documentación.',
       },
       {
         name: 'Datos e integración',
-        text: 'Desarrollé flujos con Python, SQL y APIs REST para recopilar, validar y conectar datos operativos.',
+        text: 'Flujos con Python, SQL y APIs REST para datos operativos.',
       },
     ],
     codeLink: 'Proyectos públicos en GitHub',
     notesLabel: '05 / Con mis propias palabras',
     notesTitle: 'Piensa por ti mismo.\nSigue construyendo.',
-    notesBody:
-      'Escribo sobre IA, tecnología y las ideas que influyen en mi forma de trabajar. Es un registro de lo que aprendo, cuestiono y construyo a mi manera.',
+    notesBody: 'Lo que aprendo, cuestiono y construyo — a mi manera.',
     notesLink: 'Leer mis textos',
   },
 };
@@ -187,6 +127,7 @@ const DESK_SAMPLES = [DESK_SAMPLE.thesis, DESK_SAMPLE.quant, DESK_SAMPLE.journal
 
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const copy = COPY[locale];
+  const playHref = locale === 'es' ? '/es/play' : '/play';
   return (
     <div className={styles.home}>
       <section className={styles.hero} aria-labelledby="dragon-title">
@@ -217,7 +158,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
           <div className={styles.actions}>
-            <a href="#theories" className={styles.primaryLink}>
+            <a href={playHref} className={styles.primaryLink}>
               {copy.enter}
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
@@ -249,7 +190,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.visionBody}>
           <p className={styles.lead}>{copy.practiceLead}</p>
           <p className={styles.bodyCopy}>{copy.practiceBody}</p>
-          <p className={styles.experiment}>{copy.experiment}</p>
           <ul className={styles.practiceFacts}>
             {copy.practiceFacts.map((fact) => (
               <li key={fact}>{fact}</li>
@@ -267,7 +207,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <p className={styles.eyebrow}>{copy.theoryLabel}</p>
             <h2 id="theories-title">{copy.theoryTitle}</h2>
           </div>
-          <p className={styles.bodyCopy}>{copy.theoryIntro}</p>
         </div>
         <div className={styles.theories}>
           {copy.theories.map((theory, i) => (
@@ -311,7 +250,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           ))}
         </div>
         <p className={styles.sampleStamp}>{DESK_SAMPLE.stamp}</p>
-        <p className={styles.researchNote}>{copy.agentNote}</p>
       </section>
 
       <section id="engineering" className={styles.engineering} aria-labelledby="engineering-title">
@@ -319,7 +257,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{copy.engineeringLabel}</p>
           <h2 id="engineering-title">{copy.engineeringTitle}</h2>
-          <p className={styles.bodyCopy}>{copy.engineeringIntro}</p>
           <a
             href="https://github.com/marcelozap?tab=repositories"
             target="_blank"
