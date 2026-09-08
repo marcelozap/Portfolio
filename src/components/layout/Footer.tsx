@@ -17,6 +17,11 @@ export function Footer() {
             <span>{isSpanish ? 'Trading · Investigación · IA' : 'Trading · Research · AI'}</span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>
+            <li>
+              <Link href="/desk" prefetch={false}>
+                {isSpanish ? 'Mi escritorio' : 'Private desk'}
+              </Link>
+            </li>
             {SOCIAL_LINKS.map((link) => (
               <li key={link.label}>
                 <a

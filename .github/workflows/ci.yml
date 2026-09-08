@@ -41,6 +41,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Private desk access and database tests
+        run: npm run test:desk
+
       - name: Build
         run: npm run build
         env:

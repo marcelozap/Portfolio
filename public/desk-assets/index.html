@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>XIV · Private desk</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="wordmark" href="#" aria-label="Reset desk view">XIV<span>PRIVATE DESK</span></a>
+      <div class="day">
+        <span id="day-date">Your day</span
+        ><button id="choose-day" title="Change workspace day">↗</button
+        ><input id="day-picker" type="date" aria-label="Workspace day" hidden />
+      </div>
+      <div class="header-actions">
+        <span id="save-status" role="status">Connecting…</span><button id="saved">Saved</button
+        ><button id="refresh" title="Refresh the saved version of this day">Refresh</button
+        ><button id="recovery" title="Download a private text recovery of your thoughts">
+          Recovery</button
+        ><button id="logout">Log out</button>
+      </div>
+    </header>
+    <main id="stage" aria-label="Spatial trading workspace">
+      <div class="title">
+        <span class="eyebrow">A LITTLE SPACE TO THINK</span>
+        <h1 id="day-title">Your trading day<span>.</span></h1>
+        <p>Get your thoughts out. Find your focus.</p>
+      </div>
+      <div id="scene">
+        <div class="floor"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div id="nodes"></div>
+      </div>
+      <div class="stage-controls">
+        <button id="reset-view">Reset view</button
+        ><button id="flat-view" aria-pressed="false">Focus view</button
+        ><span>Drag to move · scroll a card for depth</span>
+      </div>
+      <div id="drop-cover">
+        Drop a note into your space<span>.txt · .md · .json · up to 20 KB</span>
+      </div>
+    </main>
+    <aside id="inspector" aria-label="Selected thought" hidden>
+      <div class="panel-top">
+        <span class="eyebrow" id="panel-label">YOUR THOUGHT</span
+        ><button id="close-panel" aria-label="Close panel">×</button>
+      </div>
+      <div id="panel-content"></div>
+    </aside>
+    <section class="capture-dock" aria-label="Capture a thought">
+      <button id="talk" class="talk" title="Voice input">
+        <span class="mic">◉</span><span id="talk-label">Talk</span>
+      </button>
+      <div class="capture-input">
+        <textarea
+          id="capture"
+          rows="1"
+          maxlength="20000"
+          aria-label="Your thought"
+          placeholder="Say what's on your mind. Or drop a note."
+        ></textarea
+        ><span id="capture-hint">Thoughts stay drafts. You decide what runs.</span>
+      </div>
+      <button id="attach" aria-label="Attach a note" title="Attach a text note">＋</button
+      ><input id="note-file" type="file" accept=".txt,.md,.json" multiple hidden /><button
+        id="add"
+        class="add"
+        aria-label="Add thought"
+      >
+        ↗
+      </button>
+    </section>
+    <footer>
+      <span><i></i> Private online workspace</span
+      ><span>No live prices · no orders · no AI connected</span
+      ><span id="thought-count">0 thoughts</span>
+    </footer>
+    <dialog id="voice-dialog">
+      <span class="eyebrow">VOICE INPUT</span>
+      <h2>Say it naturally.</h2>
+      <p id="voice-info"></p>
+      <div class="dialog-actions">
+        <button id="voice-cancel">Not now</button
+        ><button id="voice-start" class="primary">Start voice input</button>
+      </div>
+    </dialog>
+    <div id="toast" role="status" hidden></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

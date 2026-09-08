@@ -9,16 +9,20 @@ export function generateStaticParams() {
   return PUBLIC_SYSTEMS.map((system) => ({ slug: system.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = getPublicSystem(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const project = getPublicSystem((await params).slug);
   return {
     title: project?.name ?? 'System',
     description: project?.tagline,
   };
 }
 
-export default function SystemPage({ params }: { params: { slug: string } }) {
-  const project = getPublicSystem(params.slug);
+export default async function SystemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const project = getPublicSystem((await params).slug);
   if (!project) notFound();
 
   return (

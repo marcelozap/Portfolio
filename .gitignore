@@ -10,6 +10,7 @@ build
 
 # local toolchain (not committed)
 .tools
+.local-desk/
 
 # env files
 .env
