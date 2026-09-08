@@ -25,10 +25,6 @@
     monospace;
   letter-spacing: 0.06em;
 }
-.chartCaption span {
-  color: #f3a4ed;
-  margin-right: 8px;
-}
 .copy {
   display: flex;
   flex-direction: column;
@@ -59,27 +55,18 @@
   color: #7f7290 !important;
   font-size: 12px !important;
 }
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin: 4px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid rgba(204, 170, 228, 0.18);
+.history {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  color: #86def1;
+  font-size: 12px;
+  line-height: 1.6;
 }
-.stats dt {
-  color: #7f7290;
-  font:
-    9px var(--font-mono),
-    monospace;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.stats dd {
-  margin: 6px 0 0;
-  font:
-    500 18px var(--font-mono),
-    monospace;
+.history svg {
+  flex-shrink: 0;
 }
 .cta {
   display: inline-flex;

@@ -31,16 +31,16 @@ const COPY = {
   en: {
     title: 'Dragon Tape',
     simulation: 'Simulation · virtual funds',
-    details: 'Position & fills',
+    details: 'Review this session',
     chartLabel: 'Simulated contract price chart',
-    contract: 'The contract',
-    tape: 'tape',
-    calm: 'CALM TAPE',
-    fast: 'FAST TAPE',
+    contract: 'Contract price',
+    tape: 'underlying',
+    calm: 'STEADY',
+    fast: 'FAST',
     paused: 'PAUSED',
-    foot1: 'The contract swings about 12× harder than the tape.',
-    foot2: 'It slowly loses value while you sit and wait.',
-    equity: 'Equity',
+    foot1: 'Fictional prices. Contract moves are amplified about 12×.',
+    foot2: 'Time decay reduces its value while the clock runs.',
+    equity: 'Practice equity',
     nextSize: (q: number, target: string) => `${q}× at ${target} best equity`,
     maxSize: 'All sizes open · 14× max',
     sizeLimit: (q: number) => `${q}× max open`,
@@ -50,9 +50,9 @@ const COPY = {
     short: 'SHORT',
     flat: 'FLAT',
     contracts: 'Contracts',
-    avg: 'Avg fill',
+    avg: 'Average entry',
     openPl: 'Open P&L',
-    closedPl: 'Closed P&L',
+    closedPl: 'Realized P&L',
     cash: 'Cash',
     orders: 'Orders',
     buy: 'BUY',
@@ -61,13 +61,13 @@ const COPY = {
     coverAction: 'COVER',
     keyB: 'KEY B',
     keyS: 'KEY S',
-    flatten: 'Flatten',
+    flatten: 'Close all',
     pause: 'Pause',
     resume: 'Resume',
-    reset: 'Reset',
-    fills: 'Fills',
-    keys: 'buy · sell · flatten · size · pause · reset',
-    keysNote: 'Buy goes long. Sell goes short. Opposite orders close; they never reverse.',
+    reset: 'New run',
+    fills: 'Practice fills',
+    keys: 'buy / cover · sell / short · close · size · pause · new run',
+    keysNote: 'Both directions are open. Opposite orders close contracts; they never reverse.',
     sizeToast: (q: number) => `${q}× max open. Close or unlock more size.`,
     cashToast: (q: number) => `Not enough cash for ${q}×`,
     capToast: 'Short exposure capped at 1× equity',
@@ -78,23 +78,26 @@ const COPY = {
     coverFill: 'COVER',
     sellFill: 'SELL',
     downFill: 'SHORT',
-    journalLink: 'Prefer the slower journal game?',
-    journalCta: 'Play it here',
-    disclaimer: 'Prices are generated, not market data. Nothing here is advice.',
+    journalLink: 'Practice the plan, too.',
+    journalCta: 'Open the journal game',
+    routine: 'One song. One session. Plan. Practice. Review.',
+    saved: 'A fresh tape each run. Only your best equity is saved in this browser.',
+    history: 'My real trades & journal on MaloSound.ai',
+    disclaimer: 'Simulation. Fictional prices and virtual funds.',
   },
   es: {
     title: 'Dragon Tape',
     simulation: 'Simulación · fondos virtuales',
-    details: 'Posición y ejecuciones',
+    details: 'Revisar esta sesión',
     chartLabel: 'Gráfico del precio simulado del contrato',
-    contract: 'El contrato',
-    tape: 'cinta',
-    calm: 'CINTA CALMA',
-    fast: 'CINTA RÁPIDA',
+    contract: 'Precio del contrato',
+    tape: 'subyacente',
+    calm: 'TRANQUILO',
+    fast: 'RÁPIDO',
     paused: 'EN PAUSA',
-    foot1: 'El contrato se mueve unas 12× más fuerte que la cinta.',
-    foot2: 'Pierde valor lentamente mientras esperas.',
-    equity: 'Capital',
+    foot1: 'Precios ficticios. El contrato amplifica el movimiento unas 12×.',
+    foot2: 'El paso del tiempo reduce su valor mientras corre el reloj.',
+    equity: 'Capital virtual',
     nextSize: (q: number, target: string) => `${q}× con ${target} de capital máximo`,
     maxSize: 'Todos los tamaños · máximo 14×',
     sizeLimit: (q: number) => `Máximo abierto: ${q}×`,
@@ -104,9 +107,9 @@ const COPY = {
     short: 'CORTO',
     flat: 'SIN POSICIÓN',
     contracts: 'Contratos',
-    avg: 'Precio medio',
+    avg: 'Entrada media',
     openPl: 'P&L abierto',
-    closedPl: 'P&L cerrado',
+    closedPl: 'P&L realizado',
     cash: 'Efectivo',
     orders: 'Órdenes',
     buy: 'COMPRAR',
@@ -115,13 +118,14 @@ const COPY = {
     coverAction: 'CUBRIR',
     keyB: 'TECLA B',
     keyS: 'TECLA S',
-    flatten: 'Cerrar',
+    flatten: 'Cerrar todo',
     pause: 'Pausa',
     resume: 'Seguir',
-    reset: 'Reiniciar',
-    fills: 'Ejecuciones',
-    keys: 'comprar · vender · cerrar · tamaño · pausa · reiniciar',
-    keysNote: 'Compra al alza. Vende a la baja. La orden opuesta cierra; no invierte la posición.',
+    reset: 'Otra partida',
+    fills: 'Ejecuciones simuladas',
+    keys: 'comprar / cubrir · vender / corto · cerrar · tamaño · pausa · otra partida',
+    keysNote:
+      'Ambas direcciones están abiertas. Las órdenes opuestas cierran contratos; no invierten la posición.',
     sizeToast: (q: number) => `Máximo abierto: ${q}×. Cierra o desbloquea más tamaño.`,
     cashToast: (q: number) => `No hay efectivo para ${q}×`,
     capToast: 'Exposición corta limitada a 1× el capital',
@@ -131,10 +135,13 @@ const COPY = {
     buyFill: 'COMPRA',
     coverFill: 'CIERRE',
     sellFill: 'VENTA',
-    downFill: 'VENTA BAJA',
-    journalLink: '¿Prefieres el juego de diario, más pausado?',
-    journalCta: 'Juégalo aquí',
-    disclaimer: 'Los precios son generados, no datos de mercado. Nada de esto es un consejo.',
+    downFill: 'CORTO',
+    journalLink: 'Practica el plan también.',
+    journalCta: 'Abrir el juego de diario',
+    routine: 'Una canción. Una sesión. Planifica. Practica. Revisa.',
+    saved: 'Cada partida es nueva. Solo tu capital máximo se guarda en este navegador.',
+    history: 'Mis operaciones reales y mi diario en MaloSound.ai',
+    disclaimer: 'Simulación. Precios ficticios y fondos virtuales.',
   },
 };
 
@@ -647,6 +654,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <b>B</b> / <b>S</b> / <b>F</b> / <b>1 2 3 4</b> / <b>P</b> / <b>R</b> — {t.keys}
           </p>
           <p>{t.keysNote}</p>
+          <p>{t.saved}</p>
           <p className={styles.journalLine}>
             {t.journalLink}{' '}
             <Link href={locale === 'es' ? '/es/play/journal' : '/play/journal'}>
@@ -655,7 +663,18 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </p>
         </div>
       </details>
-      <p className={styles.disclaimer}>{t.disclaimer}</p>
+      <footer className={styles.practiceFooter}>
+        <p>{t.routine}</p>
+        <p className={styles.disclaimer}>{t.disclaimer}</p>
+        <a
+          href="https://malosound.ai/"
+          className={styles.historyLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.history} <span aria-hidden="true">↗</span>
+        </a>
+      </footer>
     </div>
   );
 }

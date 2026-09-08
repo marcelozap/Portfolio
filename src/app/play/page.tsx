@@ -1,9 +1,9 @@
 import { DragonTape } from '@/components/play/DragonTape';
 
 export const metadata = {
-  title: 'Dragon Tape — practice game',
+  title: 'Dragon Tape — one song, one session',
   description:
-    'Practice long or short with fictional prices and virtual funds. Start at 1 contract; unlock larger sizes as your best equity grows. Runs entirely in your browser.',
+    'One thesis. A risk plan. Practice long or short with fictional prices and virtual funds. Review the session. Marcelo’s real trades and journal are on MaloSound.ai.',
 };
 
 export default function PlayPage() {

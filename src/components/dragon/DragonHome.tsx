@@ -31,9 +31,8 @@ const COPY = {
     signature: 'Trading / Analysis / AI',
     practiceLabel: '01 / My practice',
     practiceTitle: 'My capital. My decisions.',
-    practiceLead: 'Trading is the center of my work.',
-    practiceBody: 'My own view. My own review. My own tools.',
-    practiceFacts: ['Independent trading', 'Market research', 'Personal tools'],
+    practiceLead: 'My review. My tools.',
+    practiceFacts: ['Independent trading', 'Market research', 'Personal systems'],
     theoryLabel: '02 / The theories',
     theoryTitle: 'Questions worth testing.',
     theories: [
@@ -44,7 +43,7 @@ const COPY = {
     agentsLabel: '03 / Agents for analysis',
     agentsTitle: 'Four research roles.\nI make the calls.',
     agentsIntro: 'They draft. I review and decide.',
-    sampleLabel: 'Output',
+    sampleLabel: 'Example',
     deskAction: 'Open my private desk',
     agents: [
       {
@@ -102,9 +101,8 @@ const COPY = {
     signature: 'Trading / Análisis / IA',
     practiceLabel: '01 / Mi práctica',
     practiceTitle: 'Mi capital. Mis decisiones.',
-    practiceLead: 'El trading es el centro de mi trabajo.',
-    practiceBody: 'Mi propia visión. Mi propia revisión. Mis propias herramientas.',
-    practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Herramientas propias'],
+    practiceLead: 'Mi revisión. Mis herramientas.',
+    practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Sistemas propios'],
     theoryLabel: '02 / Las teorías',
     theoryTitle: 'Preguntas para investigar.',
     theories: [
@@ -118,7 +116,7 @@ const COPY = {
     agentsLabel: '03 / Agentes de análisis',
     agentsTitle: 'Cuatro roles.\nYo tomo las decisiones.',
     agentsIntro: 'Ellos redactan. Yo reviso y decido.',
-    sampleLabel: 'Salida',
+    sampleLabel: 'Ejemplo',
     deskAction: 'Abrir mi escritorio privado',
     agents: [
       {
@@ -245,7 +243,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
         <div className={styles.visionBody}>
           <p className={styles.lead}>{copy.practiceLead}</p>
-          <p className={styles.bodyCopy}>{copy.practiceBody}</p>
           <ul className={styles.practiceFacts}>
             {copy.practiceFacts.map((fact) => (
               <li key={fact}>{fact}</li>

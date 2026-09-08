@@ -102,3 +102,28 @@ short/cover P&L, both spreads, threshold boundaries, legacy-save migration, relo
 progress, cash/exposure checks, aggregate size limits, hotkeys, partial closes and
 refusing accidental reversals. This is a code check, not a physical-device run or
 a trading result. The compact layout and chart model are preserved.
+
+## One song, one session copy
+
+Marcelo's next September 8 request rewrites the practice section and tape in
+English and Spanish and links his stated real trade history at
+[MaloSound.ai](https://malosound.ai/). The landing section now reads “My capital.
+My decisions. My review. My tools.” The game stays visibly simulated, with
+literal Buy/Sell/Short/Cover controls and a compact Dragon Tape heading.
+
+“One song. One session” describes a practice routine: thesis, risk plan, practice,
+review. It does not claim the tape enforces a daily plan or provides one new
+playable level per calendar day. Each tape run still uses generated random
+prices. The sample preview chart has its own date seed; its caption now says
+fictional practice chart and labels the currency.
+
+Removed the teaser's journal-game receipts, expectancy and Continue state. Those
+were read from a different game's storage while linking to Dragon Tape. No saved
+journal records were changed or removed. The real-history link is separate from
+the simulation, on the practice teaser and below the game's controls. It does
+not import data, verify returns or claim the game results are Marcelo's history.
+The quote labels beside agent samples now say Example/Ejemplo.
+
+Game help states that only best equity is saved in this browser. Progress still
+unlocks size; shorting is available from the start. This update changes copy and
+links, not the price generator, fill math, position limits or authentication.
