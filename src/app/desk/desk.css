@@ -608,6 +608,120 @@ body.xiv-desk-active > :not(main):not(script):not(nextjs-portal) {
   text-align: center;
   margin: 24px 0 0;
 }
+.research-connections {
+  border: 1px solid #263347;
+  border-radius: 10px;
+  background: #0c131d;
+  margin: 0 0 22px;
+  font-size: 12px;
+  color: #b9c9de;
+}
+.research-connections > summary {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.research-connections > summary span {
+  margin-left: 12px;
+  color: #8296b2;
+  font-size: 11px;
+}
+.research-connections-body {
+  padding: 6px 20px 4px;
+}
+.research-bridge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: flex-start;
+  border-top: 1px solid #263347;
+  padding: 14px 0;
+}
+.research-bridge > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.research-bridge strong {
+  font-size: 12px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.research-bridge p {
+  color: #99b8dc;
+  margin: 6px 0;
+  font-size: 11px;
+}
+.research-bridge small,
+.research-bridge > details {
+  flex-basis: 100%;
+  font-size: 10px;
+  color: #8497b0;
+}
+.research-connections code {
+  font-size: 10px;
+  display: block;
+  overflow-wrap: anywhere;
+  padding-top: 8px;
+}
+.research-bridge-revoke {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.research-pair-drop {
+  border: 1px dashed #3c587d;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  outline-offset: 4px;
+}
+.research-pair-drop p {
+  margin: 0 0 12px;
+}
+.research-pair-drop small {
+  display: block;
+  color: #8296b2;
+  margin-top: 12px;
+  font-size: 10px;
+}
+.research-pair-review {
+  border: 1px solid #59614f;
+  background: #141c25;
+  border-radius: 8px;
+  padding: 18px;
+}
+.research-pair-review h3 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e3d4b1;
+}
+.research-pair-review dl {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 12px;
+  margin: 0;
+}
+.research-pair-review dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.research-pair-review code {
+  padding: 0;
+}
+.research-pair-review p {
+  color: #a1b3ca;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.research-pair-review details {
+  color: #899bb2;
+  font-size: 10px;
+}
+.research-pair-review details code {
+  padding-top: 8px;
+}
 @media (max-width: 650px) {
   .research-header {
     padding: 16px 20px;

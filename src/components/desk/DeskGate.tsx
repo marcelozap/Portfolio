@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { appendRecovery, discardRecovery, type Recovery } from './recovery';
 import { ResearchDesk } from './ResearchDesk';
 import { emptyResearchDraft, researchRecovery } from './research-client';
+import { emptyPairingDraft } from './bridge-ui';
 
 type Phase = 'checking' | 'signed-out' | 'ready' | 'forbidden' | 'unavailable';
 
@@ -32,6 +33,7 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
   const [recoveries, setRecoveries] = useState<Recovery[]>([]);
   const [logoutUncertain, setLogoutUncertain] = useState(false);
   const [researchDraft, setResearchDraft] = useState(emptyResearchDraft);
+  const [pairingDraft, setPairingDraft] = useState(emptyPairingDraft);
   const heldResearch = useRef(researchDraft);
   heldResearch.current = researchDraft;
   const iframe = useRef<HTMLIFrameElement>(null);
@@ -160,14 +162,20 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
   }, [applyStatus, logout]);
 
   useEffect(() => {
-    if (!recoveries.length && !researchDraft.question && !researchDraft.pending) return;
+    if (
+      !recoveries.length &&
+      !researchDraft.question &&
+      !researchDraft.pending &&
+      !pairingDraft.descriptor
+    )
+      return;
     const warn = (event: BeforeUnloadEvent) => {
       event.preventDefault();
       event.returnValue = '';
     };
     window.addEventListener('beforeunload', warn);
     return () => window.removeEventListener('beforeunload', warn);
-  }, [recoveries.length, researchDraft.question, researchDraft.pending]);
+  }, [recoveries.length, researchDraft.question, researchDraft.pending, pairingDraft.descriptor]);
 
   async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -259,6 +267,8 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
         {workspace === 'agents' ? (
           <ResearchDesk
             draft={researchDraft}
+            pairingDraft={pairingDraft}
+            onPairingDraft={setPairingDraft}
             heldRecoveries={recoveries.length}
             onDraft={setResearchDraft}
             onAuthLost={researchAuthLost}
@@ -299,9 +309,9 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
         aria-label="Back to the public XIV website"
         onClick={(event) => {
           if (
-            recoveries.length &&
+            (recoveries.length || pairingDraft.descriptor) &&
             !window.confirm(
-              `Leave the desk and discard ${recoveries.length} held text recoveries? Cancel to download them first.`,
+              'Leave this tab and discard held recovery text or pairing details? Cancel to keep them.',
             )
           ) {
             event.preventDefault();
@@ -344,6 +354,11 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
             <p className="desk-message" role="status">
               {message}
             </p>
+            {pairingDraft.descriptor && (
+              <p className="desk-footnote">
+                Your pairing details remain in this tab. Sign in to check the same approval.
+              </p>
+            )}
             {recoveries.length > 0 && (
               <div className="desk-recovery">
                 <p>{recoveries.length} text recoveries</p>
@@ -384,9 +399,9 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
                     onClick={(event) => {
                       if (
                         busy ||
-                        (recoveries.length > 0 &&
+                        ((recoveries.length > 0 || !!pairingDraft.descriptor) &&
                           !window.confirm(
-                            `Leave the desk and discard ${recoveries.length} held text recoveries? Cancel to download them first.`,
+                            'Leave this tab and discard held recovery text or pairing details? Cancel to keep them.',
                           ))
                       ) {
                         event.preventDefault();

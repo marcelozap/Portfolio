@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState, type FormEvent, type MouseEvent } from 'react';
 import Link from 'next/link';
+import { ResearchConnections } from './ResearchConnections';
+import type { PairingDraft } from './bridge-ui';
 import type { ResearchTask, ResearchTaskSummary } from '../../lib/desk/research';
 import {
   acknowledgeResearch,
@@ -18,13 +20,24 @@ type TaskResponse = Envelope & { task: ResearchTask };
 type ListResponse = Envelope & { tasks: ResearchTaskSummary[]; next_offset: number | null };
 type Props = {
   draft: ResearchDraft;
+  pairingDraft: PairingDraft;
+  onPairingDraft: (draft: PairingDraft) => void;
   heldRecoveries: number;
   onDraft: (draft: ResearchDraft) => void;
   onAuthLost: (status: number) => void;
   onLogout: () => void;
 };
 
-export function ResearchDesk({ draft, heldRecoveries, onDraft, onAuthLost, onLogout }: Props) {
+export function ResearchDesk({
+  draft,
+  pairingDraft,
+  onPairingDraft,
+  heldRecoveries,
+  onDraft,
+  onAuthLost,
+  onLogout,
+}: Props) {
+  const [connectionBusy, setConnectionBusy] = useState(false);
   const [tasks, setTasks] = useState<ResearchTaskSummary[]>([]);
   const [selected, setSelected] = useState<ResearchTask | null>(null);
   const [nextOffset, setNextOffset] = useState<number | null>(null);
@@ -202,8 +215,12 @@ export function ResearchDesk({ draft, heldRecoveries, onDraft, onAuthLost, onLog
       (selected.status === 'running' && taskState(selected, now) === 'Claim expired'));
 
   function navigateAway(event: MouseEvent<HTMLAnchorElement>) {
+    if (connectionBusy) {
+      event.preventDefault();
+      return;
+    }
     if (
-      (draft.question || draft.pending || heldRecoveries > 0) &&
+      (draft.question || draft.pending || pairingDraft.descriptor || heldRecoveries > 0) &&
       !window.confirm(
         'This tab holds unsaved requests or recovery text. Leave and discard those local copies? Cancel to save or download them first.',
       )
@@ -230,7 +247,7 @@ export function ResearchDesk({ draft, heldRecoveries, onDraft, onAuthLost, onLog
           <Link href="/desk/notes" onClick={navigateAway}>
             Saved notes
           </Link>
-          <button type="button" onClick={onLogout} disabled={busy}>
+          <button type="button" onClick={onLogout} disabled={busy || connectionBusy}>
             Sign out
           </button>
         </nav>
@@ -276,6 +293,12 @@ export function ResearchDesk({ draft, heldRecoveries, onDraft, onAuthLost, onLog
         <p role="status" className="research-message">
           {message}
         </p>
+        <ResearchConnections
+          draft={pairingDraft}
+          onDraft={onPairingDraft}
+          onAuthLost={onAuthLost}
+          onBusy={setConnectionBusy}
+        />
 
         <div className="research-workspace">
           <section className="research-requests" aria-labelledby="research-requests-title">

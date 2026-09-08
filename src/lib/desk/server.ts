@@ -27,6 +27,13 @@ import {
   shapeResearchSummary,
   shapeResearchTask,
 } from './research';
+import {
+  bridgeMetadataMatchesDescriptor,
+  bridgeRevokeInput,
+  parseBridgeDescriptor,
+  shapeBridgeList,
+  shapeBridgeMetadata,
+} from './bridge-contracts';
 
 export type DeskConfig = {
   url: string;
@@ -301,6 +308,77 @@ export async function handleDesk(
       return respond({ ok: true });
     }
     const owner = await ownerOf(client, config.owner);
+    if (path[0] === 'research' && path[1] === 'bridges') {
+      const listing = request.method === 'GET' && path.length === 2;
+      const mutation =
+        request.method === 'POST' && path.length === 3 && ['register', 'revoke'].includes(path[2]);
+      if (!listing && !mutation)
+        throw new DeskError(404, 'This bridge approval action is not available.');
+      researchOffset(request.nextUrl.searchParams, false);
+      const failure = (code?: string) => {
+        if (code === '42501')
+          return new DeskError(403, 'This account cannot manage that bridge approval.');
+        if (code === '22023')
+          return new DeskError(400, 'The bridge approval request is invalid or expired.');
+        if (code === '40001')
+          return new DeskError(
+            409,
+            'This bridge approval changed. Refresh the list before continuing.',
+          );
+        return new DeskError(
+          503,
+          listing
+            ? 'Bridge approvals could not be read. Refresh the list before continuing.'
+            : 'The bridge change could not be confirmed. Refresh the bridge list before retrying.',
+        );
+      };
+      if (listing) {
+        let result;
+        try {
+          result = await client.rpc('xiv_research_bridge_list', {});
+        } catch {
+          throw failure();
+        }
+        if (!result || typeof result !== 'object') throw failure();
+        if (result.error) throw failure(result.error.code);
+        return respond({
+          bridges: shapeBridgeList(result.data),
+          server_time: new Date().toISOString(),
+        });
+      }
+      const body = await bodyOf(request);
+      const registering = path[2] === 'register';
+      const descriptor = registering ? parseBridgeDescriptor(body) : null;
+      const id = descriptor?.id ?? bridgeRevokeInput(body).id;
+      let result;
+      try {
+        result = descriptor
+          ? await client.rpc('xiv_research_bridge_register', {
+              p_bridge_id: descriptor.id,
+              p_session: descriptor.session,
+              p_token_sha256: descriptor.token_sha256,
+              p_expires_at: descriptor.expires_at,
+            })
+          : await client.rpc('xiv_research_bridge_revoke', { p_bridge_id: id });
+      } catch {
+        throw failure();
+      }
+      if (!result || typeof result !== 'object') throw failure();
+      if (result.error) throw failure(result.error.code);
+      try {
+        const bridge = shapeBridgeMetadata(result.data);
+        if (
+          bridge.id !== id ||
+          (descriptor && !bridgeMetadataMatchesDescriptor(bridge, descriptor)) ||
+          (!descriptor && bridge.revoked_at === null)
+        )
+          throw failure();
+        return respond({ bridge, server_time: new Date().toISOString() });
+      } catch {
+        // The provider may have committed even when its response cannot be trusted.
+        throw failure();
+      }
+    }
     if (path[0] === 'research') {
       const listing = request.method === 'GET' && path.length === 1;
       const detail = request.method === 'GET' && path.length === 2 && isResearchId(path[1]);
