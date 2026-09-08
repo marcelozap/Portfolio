@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PlayTeaser } from '@/components/play/PlayTeaser';
 import styles from './DragonHome.module.css';
@@ -292,10 +293,10 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
         <div className={styles.writingBody}>
           <p className={styles.bodyCopy}>{copy.notesBody}</p>
-          <a href="/ai-blog" className={styles.primaryLink}>
+          <Link href="/ai-blog" className={styles.primaryLink}>
             {copy.notesLink}
             <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </section>
     </div>
