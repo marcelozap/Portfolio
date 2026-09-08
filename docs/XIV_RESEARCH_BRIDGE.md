@@ -10,6 +10,13 @@ On September 8, migrations0002 then0003 were applied once to the existing produc
 
 ## Owner controls
 
+Task API responses contain task data and `server_time`; they no longer include
+the earlier hardcoded global `connection.state = disconnected`. The research
+screen uses actual per-session metadata below and per-task status instead of an
+unconditional connection banner. Approval and recorded use remain separate from
+continuous worker availability. This correction does not initialize or register
+an identity, and does not establish a live owner exchange.
+
 Open **Connections** inside the private research desk. Drop a descriptor JSON file or paste it into the focusable pairing area. The browser accepts only the four descriptor fields below, at most 4 KB. It does not accept a raw credential bundle, generate a token, copy a browser credential, or save pasted contents in browser storage. Review the session, identity and expiry, then choose **Allow research**. Merely loading a descriptor grants nothing.
 
 The existing owner/member authentication and request-origin checks protect `GET /api/desk/research/bridges`, `POST /api/desk/research/bridges/register` and `POST /api/desk/research/bridges/revoke`. These routes call only the three owner RPCs. Responses contain six allowlisted metadata fields and a server timestamp; no digest, token or owner identity. Browser worker actions remain unavailable. Registration confirmation must match the descriptor's identity, session and exact expiry, including database microseconds.

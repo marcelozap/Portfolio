@@ -15,7 +15,7 @@ import {
   type ResearchDraft,
 } from './research-client';
 
-type Envelope = { server_time: string; connection: { state: 'disconnected' } };
+type Envelope = { server_time: string };
 type TaskResponse = Envelope & { task: ResearchTask };
 type ListResponse = Envelope & { tasks: ResearchTaskSummary[]; next_offset: number | null };
 type Props = {
@@ -57,8 +57,7 @@ export function ResearchDesk({
 
   const updateClock = useCallback((response: Envelope) => {
     const server = Date.parse(response.server_time);
-    if (!Number.isFinite(server) || response.connection?.state !== 'disconnected')
-      throw new Error('The connection status could not be verified.');
+    if (!Number.isFinite(server)) throw new Error('The server time could not be verified.');
     setClock({ server, local: performance.now() });
     setElapsed(0);
   }, []);
@@ -160,7 +159,7 @@ export function ResearchDesk({
       if (detailVersion.current === current) setSelected(data.task);
       setMessage(
         data.task.status === 'queued'
-          ? 'Saved. Waiting for an agent connection.'
+          ? 'Saved. Waiting for an agent to claim this request.'
           : `Request recovered. ${taskState(data.task, Date.parse(data.server_time))}.`,
       );
       void load();
@@ -196,7 +195,9 @@ export function ResearchDesk({
       setAction(null);
       setReason('');
       setMessage(
-        kind === 'retry' ? 'Queued again. Waiting for an agent connection.' : 'Cancelled.',
+        kind === 'retry'
+          ? 'Queued again. Waiting for an agent to claim this request.'
+          : 'Cancelled.',
       );
       void load();
     } catch (error) {
@@ -259,10 +260,7 @@ export function ResearchDesk({
             <p className="desk-eyebrow">RESEARCH ANALYST</p>
             <h1>Ask. Review. Prepare.</h1>
           </div>
-          <span className="research-connection">
-            <span aria-hidden="true" />
-            No agent connected
-          </span>
+          <span className="research-connection">Drafts for your review</span>
         </div>
         <form className="research-compose" onSubmit={submit}>
           <label htmlFor="research-question">What should we research?</label>
@@ -279,7 +277,7 @@ export function ResearchDesk({
             <p>
               {draft.pending
                 ? 'Submission unconfirmed. Check again with the same request ID.'
-                : 'Public sources. Saved requests wait until an agent is connected.'}
+                : 'Public sources. Saved requests wait for an agent to claim them.'}
             </p>
             <button
               className="research-primary"
@@ -490,9 +488,7 @@ export function ResearchDesk({
             )}
           </section>
         </div>
-        <footer className="research-footer">
-          Private research · Agent connection in progress · No orders
-        </footer>
+        <footer className="research-footer">Private research · You decide · No orders</footer>
       </main>
     </div>
   );

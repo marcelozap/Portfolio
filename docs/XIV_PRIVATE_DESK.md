@@ -43,6 +43,15 @@ To revoke access immediately, set the member's `enabled` value to false and revo
 
 ## Verification
 
+The September 8 status correction removes the task API's hardcoded global
+`disconnected` field and the screen's unconditional **No agent connected** label.
+Connection evidence is shown under **Connections** as approval, revocation, expiry
+and last recorded credential use; task records separately show claims and saved
+results. Neither is an assertion that a model is continuously online. Refresh an
+already open desk after this release so its client uses the updated envelope.
+The current owner remains signed out; real pairing, a research exchange and laptop
+reload still require verification.
+
 Use Node 22, matching the tested runtime and the Supabase SDK's Node 22 minimum. Run `npm run test:desk`, `npm run format:check`, `npm run lint`, `npm run typecheck`, and `npm run build`.
 
 API tests inject a synthetic SDK directly into the test function; no request header, environment variable, or production login bypass exists. One isolated test also uses the actual SSR SDK with a fake HTTP response to verify that reset requests persist the PKCE verifier in protected cookies. Database tests execute the actual migration in local PGlite, including row policies, grants, revision conflicts, rollback, and disk reopening. These tests establish local behavior; they do not establish recovery email delivery or an actual signed-in save on the deployed site.

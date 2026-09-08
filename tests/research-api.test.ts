@@ -207,12 +207,9 @@ function researchQueries(f: ReturnType<typeof fixture>) {
 function envelope(data: Record<string, unknown>, kind: 'tasks' | 'task') {
   assert.deepEqual(
     Object.keys(data).sort(),
-    (kind === 'tasks'
-      ? ['tasks', 'next_offset', 'server_time', 'connection']
-      : ['task', 'server_time', 'connection']
-    ).sort(),
+    (kind === 'tasks' ? ['tasks', 'next_offset', 'server_time'] : ['task', 'server_time']).sort(),
   );
-  assert.deepEqual(data.connection, { state: 'disconnected' });
+  assert.equal(Object.hasOwn(data, 'connection'), false);
   assert.equal(typeof data.server_time, 'string');
   const time = Date.parse(data.server_time as string);
   assert.ok(Number.isFinite(time));
@@ -384,7 +381,7 @@ test('detail requires a canonical UUID, no query parameters and an existing owne
   assert.equal((await run('research/' + taskId, undefined, missing)).response.status, 404);
 });
 
-test('valid status snapshots preserve provenance without claiming a connected worker', async () => {
+test('valid status snapshots preserve task status and attempt provenance', async () => {
   for (const row of [
     task(),
     task({ ...claimed, status: 'running', lease_expires_at: '2026-09-08T12:15:00Z' }),
@@ -401,6 +398,71 @@ test('valid status snapshots preserve provenance without claiming a connected wo
     assert.equal(detail.data.task.worker_session, row.worker_session);
     envelope(detail.data, 'task');
   }
+});
+
+test('running and completed tasks retain their evidence without a fabricated global connection state', async () => {
+  const bridgeId = 'dddddddd-6666-4666-8666-666666666666';
+  const rows = [
+    task({
+      ...claimed,
+      bridge_id: bridgeId,
+      status: 'running',
+      lease_expires_at: '2026-09-08T12:15:00Z',
+    }),
+    completed({ id: 'cccccccc-5555-4555-8555-555555555555', bridge_id: bridgeId }),
+  ];
+  const f = fixture();
+  f.database.rows = rows;
+  const page = await run('research', undefined, f);
+  assert.equal(page.response.status, 200);
+  envelope(page.data, 'tasks');
+  assert.equal(page.data.next_offset, null);
+  assert.deepEqual(
+    page.data.tasks.map((row: { status: string }) => row.status),
+    ['running', 'completed'],
+  );
+  assert.deepEqual(researchQueries(f)[0].filters, [['owner_id', owner]]);
+  privateResponse(page.response);
+
+  for (const [index, row] of rows.entries()) {
+    const summary = page.data.tasks[index];
+    assert.deepEqual(Object.keys(summary).sort(), summaryKeys);
+    assert.equal(summary.id, row.id);
+    assert.equal(summary.question, question);
+    assert.equal(summary.scope, 'public_primary_sources');
+    assert.equal(summary.role, 'research_analyst');
+    assert.equal(summary.version, row.version);
+    assert.equal(summary.worker_session, claimed.worker_session);
+    assert.equal(summary.claimed_at, row.claimed_at);
+    assert.equal(summary.lease_expires_at, row.lease_expires_at);
+    assert.equal(summary.completed_at, row.completed_at);
+
+    f.database.detail = row;
+    f.database.rpcData = row;
+    const detail = await run('research/' + row.id, undefined, f);
+    // Retrying create for the same exact input returns the existing attempt,
+    // including a running lease or the completed result, rather than resetting it.
+    const retry = await run('research/create', { id: row.id, question }, f);
+    for (const response of [detail, retry]) {
+      assert.equal(response.response.status, 200);
+      envelope(response.data, 'task');
+      assert.deepEqual(response.data.task, { ...summary, result: row.result });
+      for (const forbidden of [owner, claimId, bridgeId, 'SYNTHETIC-PRIVATE-ROW-FIELD'])
+        assert.ok(!JSON.stringify(response.data).includes(forbidden));
+      privateResponse(response.response);
+    }
+    assert.deepEqual(researchQueries(f)[index + 1].filters, [
+      ['owner_id', owner],
+      ['id', row.id],
+    ]);
+  }
+  assert.deepEqual(
+    f.rpcs.map((rpc) => rpc.name),
+    ['xiv_research_apply', 'xiv_research_apply'],
+  );
+  assert.ok(
+    f.queries.every((query) => ['xiv_desk_members', 'xiv_research_tasks'].includes(query.table)),
+  );
 });
 
 test('create sends only the fixed RPC contract and preserves exact Unicode question text', async () => {

@@ -390,10 +390,9 @@ export async function handleDesk(
       if (!listing && !detail && !mutation)
         throw new DeskError(404, 'This research action is not available.');
       const offset = researchOffset(request.nextUrl.searchParams, listing);
-      const envelope = () => ({
-        server_time: new Date().toISOString(),
-        connection: { state: 'disconnected' as const },
-      });
+      // Session approval and last use come from the separate bridge metadata.
+      // Task records cannot establish whether a worker is currently online.
+      const envelope = () => ({ server_time: new Date().toISOString() });
       if (listing) {
         const result = await client
           .from('xiv_research_tasks')

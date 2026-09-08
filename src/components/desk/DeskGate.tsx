@@ -446,8 +446,7 @@ export function DeskGate({ workspace = 'agents' }: { workspace?: 'agents' | 'not
           </>
         )}
         <p className="desk-footnote">
-          Owner access only. No live prices, orders or AI connection. Historical Gold review is not
-          available online.
+          Owner access only. Research drafts for your review. No live prices or orders.
         </p>
       </div>
     </section>
