@@ -4,9 +4,9 @@ XIV is where Marcelo directs his agents. End-of-day journaling belongs on MaloSo
 
 ## Delivery stage
 
-The database foundation, private API and agent screen are implemented locally. They have not been deployed or migrated to the live database. No worker, model or scheduler is connected by this change. The existing Codex/Claude development loops do not consume this queue yet. Live authentication and one real request-to-result exchange still need verification.
+The database foundation, private API and agent screen are implemented. Migrations0002 and0003 were applied once, in order, to the existing production database on September 8; catalog checks confirmed permissions, empty research tables and unchanged existing membership/note data. The matching website release is prepared for the existing Vercel project; verify its deployment separately. No worker, model or scheduler is connected by these additions. The existing Codex/Claude development loops do not consume this queue yet. Owner sign-in and one real request-to-result exchange still need verification.
 
-The migration is `supabase/migrations/202609080002_xiv_research_tasks.sql`. It requires the existing private-desk migration and its explicitly admitted owner membership. Do not run the first migration again or import local trading history.
+The migration is `supabase/migrations/202609080002_xiv_research_tasks.sql`; the capability additions are in0003. Both are already applied to the configured production project and are deliberately non-idempotent. Inspect the actual catalog before retrying an uncertain application. Do not rerun0001, recreate membership or import local trading history.
 
 ## Request and state
 
