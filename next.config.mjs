@@ -15,6 +15,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/ai-blog/embracing-uncertainty',
+        destination: '/ai-blog/all-in-every-time',
+        permanent: true,
+      },
+      {
+        source: '/field-notes/embracing-uncertainty',
+        destination: '/ai-blog/all-in-every-time',
+        permanent: true,
+      },
       { source: '/systems', destination: '/#practice', permanent: false },
       { source: '/systems/malosound', destination: '/#practice', permanent: false },
       { source: '/systems/rally', destination: '/#practice', permanent: false },
