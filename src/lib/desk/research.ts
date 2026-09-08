@@ -109,7 +109,7 @@ function timestamp(value: unknown, source = false): string {
 const optionalTimestamp = (value: unknown) => (value === null ? null : timestamp(value));
 const optionalReason = (value: unknown) => (value === null ? null : boundedText(value, 4000));
 
-function shapeResult(value: unknown): ResearchResult {
+export function shapeResearchResult(value: unknown): ResearchResult {
   const raw = exact(value, ['text', 'sources', 'limitations']);
   if (!Array.isArray(raw.sources) || raw.sources.length < 1 || raw.sources.length > 30)
     throw unavailable();
@@ -201,7 +201,7 @@ export function shapeResearchTask(value: unknown, owner: string, id: string): Re
     const row = object(value);
     if (shaped.id !== id || (shaped.status === 'completed') !== (row.result !== null))
       throw unavailable();
-    return { ...shaped, result: row.result === null ? null : shapeResult(row.result) };
+    return { ...shaped, result: row.result === null ? null : shapeResearchResult(row.result) };
   } catch {
     throw unavailable();
   }
