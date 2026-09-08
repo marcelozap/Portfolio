@@ -1,11 +1,11 @@
-import { PracticeGame } from '@/components/play/PracticeGame';
+import { DragonTape } from '@/components/play/DragonTape';
 
 export const metadata = {
-  title: 'Juego de práctica',
+  title: 'Dragon Tape — juego de práctica',
   description:
-    'Un ciclo gratuito para practicar decisiones con opciones: precios ficticios, fondos simulados, recibos sellados y un diario. Corre por completo en tu navegador.',
+    'Un juego de práctica en vivo: precios ficticios, fondos virtuales, botones grandes y atajos de teclado. Llega a +14% para desbloquear apostar a la baja. Corre por completo en tu navegador.',
 };
 
 export default function SpanishPlayPage() {
-  return <PracticeGame locale="es" />;
+  return <DragonTape locale="es" />;
 }

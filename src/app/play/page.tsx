@@ -1,11 +1,11 @@
-import { PracticeGame } from '@/components/play/PracticeGame';
+import { DragonTape } from '@/components/play/DragonTape';
 
 export const metadata = {
-  title: 'Practice game',
+  title: 'Dragon Tape — practice game',
   description:
-    'A free options practice loop: fictional prices, simulated funds, sealed receipts, and a journal. Runs entirely in your browser.',
+    'A live practice game: fictional prices, virtual funds, big buttons and hotkeys. Reach +14% to unlock betting down. Runs entirely in your browser.',
 };
 
 export default function PlayPage() {
-  return <PracticeGame />;
+  return <DragonTape />;
 }

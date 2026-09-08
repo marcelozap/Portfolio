@@ -10,8 +10,8 @@ import styles from './PlayTeaser.module.css';
 const COPY = {
   en: {
     label: 'Practice game · free · in your browser',
-    title: 'Write the assumption. Seal it. Then advance the bar.',
-    body: 'Fictional prices, simulated funds, five fail-closed gates, and a receipt for every decision — including the ones where you stand down.',
+    title: 'Buy. Sell. Ride the tape.',
+    body: 'A live fictional tape, big buttons, hotkeys. Reach +14% and betting down unlocks.',
     cta: 'Play',
     resume: 'Continue',
     receipts: 'receipts',
@@ -21,8 +21,8 @@ const COPY = {
   },
   es: {
     label: 'Juego de práctica · gratis · en tu navegador',
-    title: 'Escribe la suposición. Séllala. Luego avanza la barra.',
-    body: 'Precios ficticios, fondos simulados, cinco puertas que cierran por defecto y un recibo por cada decisión, incluidas las veces que decides no operar.',
+    title: 'Compra. Vende. Sigue la cinta.',
+    body: 'Una cinta ficticia en vivo, botones grandes y atajos de teclado. Llega a +14% y se desbloquea apostar a la baja.',
     cta: 'Jugar',
     resume: 'Continuar',
     receipts: 'recibos',
