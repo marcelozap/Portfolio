@@ -14,8 +14,9 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,css,md,json}\"",
     "typecheck": "tsc --noEmit",
     "prepare": "husky || true",
-    "test:desk": "node --import tsx --test tests/desk-api.test.ts tests/desk-database.test.mjs tests/desk-recovery.test.ts tests/research-queue-database.test.mjs tests/research-api.test.ts tests/research-client.test.ts",
-    "test:research-queue": "node --test tests/research-queue-database.test.mjs"
+    "test:desk": "node --import tsx --test tests/desk-api.test.ts tests/desk-database.test.mjs tests/desk-recovery.test.ts tests/research-queue-database.test.mjs tests/research-api.test.ts tests/research-client.test.ts tests/research-bridge-database.test.mjs tests/research-bridge-client.test.ts",
+    "test:research-queue": "node --test tests/research-queue-database.test.mjs",
+    "test:research-bridge": "node --import tsx --test tests/research-bridge-database.test.mjs tests/research-bridge-client.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.6",
