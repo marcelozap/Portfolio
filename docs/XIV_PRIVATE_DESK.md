@@ -34,7 +34,7 @@ To revoke access immediately, set the member's `enabled` value to false and revo
 
 ## Verification
 
-Run `npm run test:desk`, `npm run format:check`, `npm run lint`, `npm run typecheck`, and `npm run build`.
+Use Node 22, matching the tested runtime and the Supabase SDK's Node 22 minimum. Run `npm run test:desk`, `npm run format:check`, `npm run lint`, `npm run typecheck`, and `npm run build`.
 
 API tests inject a synthetic SDK directly into the test function; no request header, environment variable, or production login bypass exists. Database tests execute the actual migration in local PGlite, including row policies, grants, revision conflicts, rollback, and disk reopening. Those tests establish local behavior; they do not establish that a live Supabase or Vercel deployment is connected.
 
