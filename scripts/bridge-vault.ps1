@@ -90,7 +90,7 @@ public static class XivVaultHandle {
         if ($acl.GetOwner([Security.Principal.SecurityIdentifier]).Value -cne $sid.Value) { throw 'vault' }
         # Only explicitly injected synthetic fixtures may use the shared Temp
         # parent. Their new vault tree still receives/validates the full private ACL.
-        # Production LocalAppData never takes this exception.
+        # The production user-profile .local base never takes this exception.
         if ($syntheticTemp) { return }
         $writeMask = [Security.AccessControl.FileSystemRights]'Write, Delete, DeleteSubdirectoriesAndFiles, ChangePermissions, TakeOwnership'
         foreach ($rule in $acl.GetAccessRules($true, $true, [Security.Principal.SecurityIdentifier])) {
@@ -143,7 +143,7 @@ public static class XivVaultHandle {
         if ([IO.Path]::GetDirectoryName($root) -ine $base -or [IO.Path]::GetFileName($root) -cnotmatch '\Axiv-bridge-vault-test-[A-Za-z0-9_-]{8,100}\z') { throw 'vault' }
         Private-Directory $root $create
     } else {
-        $base = [IO.Path]::GetFullPath([Environment]::GetFolderPath('LocalApplicationData')).TrimEnd('\')
+        $base = [IO.Path]::GetFullPath([IO.Path]::Combine([Environment]::GetFolderPath('UserProfile'), '.local')).TrimEnd('\')
         Assert-Base $base
         $container = [IO.Path]::Combine($base, 'XIV')
         Private-Directory $container $create
