@@ -19,8 +19,10 @@ const QTYS = [1, 5, 10] as const;
 
 const COPY = {
   en: {
-    label: 'Practice game · fictional prices · virtual funds',
     title: 'Dragon Tape',
+    simulation: 'Simulation · virtual funds',
+    details: 'Position & fills',
+    chartLabel: 'Simulated contract price chart',
     contract: 'The contract',
     tape: 'tape',
     calm: 'CALM TAPE',
@@ -41,15 +43,14 @@ const COPY = {
     closedPl: 'Closed P&L',
     cash: 'Cash',
     orders: 'Orders',
-    orderNote: '· 1 contract ≈ $500',
     buy: 'BUY',
     sell: 'SELL',
     keyB: 'KEY B',
     keyS: 'KEY S',
-    flatten: 'Flatten (F)',
-    pause: 'Pause (P)',
-    resume: 'Resume (P)',
-    reset: 'Reset (R)',
+    flatten: 'Flatten',
+    pause: 'Pause',
+    resume: 'Resume',
+    reset: 'Reset',
     fills: 'Fills',
     keys: 'buy · sell · flatten · size · pause · reset',
     keysNote: 'Selling while flat bets the tape down — once unlocked.',
@@ -68,8 +69,10 @@ const COPY = {
     disclaimer: 'Prices are generated, not market data. Nothing here is advice.',
   },
   es: {
-    label: 'Juego de práctica · precios ficticios · fondos virtuales',
     title: 'Dragon Tape',
+    simulation: 'Simulación · fondos virtuales',
+    details: 'Posición y ejecuciones',
+    chartLabel: 'Gráfico del precio simulado del contrato',
     contract: 'El contrato',
     tape: 'cinta',
     calm: 'CINTA CALMA',
@@ -91,15 +94,14 @@ const COPY = {
     closedPl: 'P&L cerrado',
     cash: 'Efectivo',
     orders: 'Órdenes',
-    orderNote: '· 1 contrato ≈ $500',
     buy: 'COMPRAR',
     sell: 'VENDER',
     keyB: 'TECLA B',
     keyS: 'TECLA S',
-    flatten: 'Cerrar (F)',
-    pause: 'Pausa (P)',
-    resume: 'Seguir (P)',
-    reset: 'Reiniciar (R)',
+    flatten: 'Cerrar',
+    pause: 'Pausa',
+    resume: 'Seguir',
+    reset: 'Reiniciar',
     fills: 'Ejecuciones',
     keys: 'comprar · vender · cerrar · tamaño · pausa · reiniciar',
     keysNote: 'Vender sin posición apuesta a la baja — cuando esté desbloqueado.',
@@ -328,8 +330,10 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     if (!cv) return;
     const cx = cv.getContext('2d');
     if (!cx) return;
-    const W = cv.width;
-    const H = cv.height;
+    const W = cv.clientWidth;
+    const H = cv.clientHeight;
+    if (!W || !H) return;
+    cx.setTransform(cv.width / W, 0, 0, cv.height / H, 0, 0);
     const p = g.prices;
     cx.clearRect(0, 0, W, H);
     if (p.length < 2) return;
@@ -338,11 +342,11 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     const pad = (hi - lo) * 0.12 + 0.02;
     lo -= pad;
     hi += pad;
-    const X = (i: number) => (i / (KEEP - 1)) * (W - 70);
+    const X = (i: number) => (i / (KEEP - 1)) * (W - 52);
     const Y = (v: number) => H - 8 - ((v - lo) / (hi - lo)) * (H - 16);
     cx.strokeStyle = 'rgba(233, 221, 236, 0.16)';
     cx.fillStyle = 'rgba(233, 221, 236, 0.55)';
-    cx.font = '20px monospace';
+    cx.font = '11px monospace';
     cx.lineWidth = 1;
     for (let k = 0; k < 4; k++) {
       const v = lo + ((hi - lo) * (k + 0.5)) / 4;
@@ -350,22 +354,22 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       cx.globalAlpha = 0.5;
       cx.beginPath();
       cx.moveTo(0, y);
-      cx.lineTo(W - 70, y);
+      cx.lineTo(W - 52, y);
       cx.stroke();
       cx.globalAlpha = 1;
-      cx.fillText(v.toFixed(2), W - 62, y + 7);
+      cx.fillText(v.toFixed(2), W - 46, y + 4);
     }
     if (g.posQty !== 0) {
       cx.strokeStyle = g.posQty > 0 ? 'hsl(142 69% 58%)' : 'hsl(0 100% 71%)';
       cx.setLineDash([6, 6]);
       cx.beginPath();
       cx.moveTo(0, Y(g.avg));
-      cx.lineTo(W - 70, Y(g.avg));
+      cx.lineTo(W - 52, Y(g.avg));
       cx.stroke();
       cx.setLineDash([]);
     }
     cx.strokeStyle = 'hsl(38 100% 56%)';
-    cx.lineWidth = 2.5;
+    cx.lineWidth = 1.75;
     cx.beginPath();
     const off = KEEP - p.length;
     for (let i = 0; i < p.length; i++) {
@@ -377,7 +381,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     cx.stroke();
     cx.fillStyle = 'hsl(38 100% 56%)';
     cx.beginPath();
-    cx.arc(X(KEEP - 1), Y(p[p.length - 1]), 5, 0, 7);
+    cx.arc(X(KEEP - 1), Y(p[p.length - 1]), 3, 0, 7);
     cx.fill();
   };
 
@@ -398,6 +402,15 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
 
   useEffect(() => {
     restart();
+    const canvas = canvasRef.current;
+    const resize = new ResizeObserver(() => {
+      if (!canvas) return;
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.round(canvas.clientWidth * ratio);
+      canvas.height = Math.round(canvas.clientHeight * ratio);
+      draw(gameRef.current);
+    });
+    if (canvas) resize.observe(canvas);
     const timer = window.setInterval(() => {
       const g = gameRef.current;
       if (!g.paused) {
@@ -435,6 +448,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     document.addEventListener('visibilitychange', onVis);
     return () => {
       window.clearInterval(timer);
+      resize.disconnect();
       window.removeEventListener('keydown', onKey);
       document.removeEventListener('visibilitychange', onVis);
     };
@@ -460,57 +474,118 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   return (
     <div className={styles.page}>
       <header className={styles.head}>
-        <p className={styles.label}>{t.label}</p>
-        <h1>{t.title}</h1>
+        <div>
+          <h1>{t.title}</h1>
+          <p className={styles.label}>{t.simulation}</p>
+        </div>
+        <div className={styles.account}>
+          <p className={styles.lbl}>{t.equity}</p>
+          <p className={styles.equity}>{fmt$(eq)}</p>
+          <p className={styles.cash}>
+            {t.cash} {fmt$(g.cash)}
+          </p>
+        </div>
       </header>
 
       <div className={styles.grid}>
-        <section className={styles.panel}>
+        <section className={`${styles.panel} ${styles.chartPanel}`} aria-label={t.chartLabel}>
           <div className={styles.pricebar}>
             <span className={styles.sym}>{t.contract}</span>
             <span className={styles.px}>{g.ready ? g.c.toFixed(2) : '—'}</span>
             <span className={chg >= 0 ? styles.pos : styles.neg}>
               {g.ready ? `${chg >= 0 ? '+' : ''}${chg.toFixed(2)}` : ''}
             </span>
-            <span className={styles.tape}>
-              {t.tape} {g.ready ? g.spot.toFixed(2) : '—'}
-            </span>
             <span className={`${styles.regime} ${g.stressed ? styles.hot : ''}`}>
               {g.stressed ? t.fast : t.calm}
             </span>
           </div>
-          <canvas ref={canvasRef} className={styles.chart} width={1320} height={600} />
+          <canvas
+            ref={canvasRef}
+            className={styles.chart}
+            width={1320}
+            height={600}
+            role="img"
+            aria-label={t.chartLabel}
+          />
           <div className={styles.chartfoot}>
-            <span>{t.foot1}</span>
-            <span>{t.foot2}</span>
+            <span>
+              {t.tape} {g.ready ? g.spot.toFixed(2) : '—'}
+            </span>
             <span>{g.ready ? clock(g) : '00:00'}</span>
             {g.paused && <span className={styles.pausedTag}>{t.paused}</span>}
           </div>
         </section>
 
-        <div className={styles.col}>
-          <section className={styles.panel}>
-            <p className={styles.lbl}>{t.equity}</p>
-            <p className={styles.equity}>{fmt$(eq)}</p>
-            <div className={styles.track}>
-              <div className={styles.fillbar} style={{ width: `${g.unlocked ? 100 : pct}%` }} />
-            </div>
-            <p className={`${styles.unlockmsg} ${g.unlocked ? styles.unlockedOn : ''}`}>
-              {g.unlocked ? t.unlockedMsg : t.lockedMsg(fmt$(Math.max(0, TARGET - eq)))}
-            </p>
-          </section>
-
-          <section className={styles.panel}>
-            <p className={styles.lbl}>
-              {t.position}
+        <section className={styles.panel} aria-label={t.orders}>
+          <div className={styles.positionStrip}>
+            <div>
+              <p className={styles.lbl}>{t.position}</p>
               <span
                 className={`${styles.side} ${
                   g.posQty > 0 ? styles.sideLong : g.posQty < 0 ? styles.sideShort : styles.sideFlat
                 }`}
               >
                 {g.posQty > 0 ? t.long : g.posQty < 0 ? t.short : t.flat}
+                {g.posQty !== 0 && ` · ${Math.abs(g.posQty)}×`}
               </span>
-            </p>
+            </div>
+            <div className={styles.openPl}>
+              <p className={styles.lbl}>{t.openPl}</p>
+              <span className={upl >= 0 ? styles.pos : styles.neg}>{fmt$(upl)}</span>
+            </div>
+          </div>
+          <div className={styles.qtyrow} role="group" aria-label={t.contracts}>
+            {QTYS.map((q) => (
+              <button
+                key={q}
+                type="button"
+                className={`${styles.qty} ${g.qty === q ? styles.qtySel : ''}`}
+                aria-pressed={g.qty === q}
+                onClick={act((game) => {
+                  game.qty = q;
+                })}
+              >
+                {q}×
+              </button>
+            ))}
+          </div>
+          <div className={styles.btnrow}>
+            <button type="button" className={`${styles.act} ${styles.buy}`} onClick={act(buy)}>
+              {t.buy}
+              <small>{t.keyB}</small>
+            </button>
+            <button type="button" className={`${styles.act} ${styles.sellB}`} onClick={act(sell)}>
+              {t.sell}
+              <small>{t.keyS}</small>
+            </button>
+          </div>
+          <div className={styles.ghostrow}>
+            <button type="button" className={styles.ghost} onClick={act(flatten)}>
+              {t.flatten}
+            </button>
+            <button
+              type="button"
+              className={styles.ghost}
+              onClick={act((game) => {
+                game.paused = !game.paused;
+              })}
+            >
+              {g.paused ? t.resume : t.pause}
+            </button>
+            <button type="button" className={styles.ghost} onClick={() => restart()}>
+              {t.reset}
+            </button>
+          </div>
+          <p role="status" className={`${styles.toast} ${g.toastGold ? styles.toastGold : ''}`}>
+            {g.toast}
+          </p>
+        </section>
+      </div>
+
+      <details className={`${styles.panel} ${styles.details}`}>
+        <summary>{t.details}</summary>
+        <div className={styles.detailsGrid}>
+          <section>
             <div className={styles.rowline}>
               <span>{t.contracts}</span>
               <span>{Math.abs(g.posQty)}</span>
@@ -520,68 +595,17 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <span>{g.posQty !== 0 ? g.avg.toFixed(2) : '—'}</span>
             </div>
             <div className={styles.rowline}>
-              <span>{t.openPl}</span>
-              <span className={upl >= 0 ? styles.pos : styles.neg}>{fmt$(upl)}</span>
-            </div>
-            <div className={styles.rowline}>
               <span>{t.closedPl}</span>
               <span className={g.realized >= 0 ? styles.pos : styles.neg}>{fmt$(g.realized)}</span>
             </div>
-            <div className={styles.rowline}>
-              <span>{t.cash}</span>
-              <span>{fmt$(g.cash)}</span>
+            <div className={styles.track}>
+              <div className={styles.fillbar} style={{ width: `${g.unlocked ? 100 : pct}%` }} />
             </div>
-          </section>
-
-          <section className={styles.panel}>
-            <p className={styles.lbl}>
-              {t.orders} <span className={styles.orderNote}>{t.orderNote}</span>
+            <p className={`${styles.unlockmsg} ${g.unlocked ? styles.unlockedOn : ''}`}>
+              {g.unlocked ? t.unlockedMsg : t.lockedMsg(fmt$(Math.max(0, TARGET - eq)))}
             </p>
-            <div className={styles.qtyrow}>
-              {QTYS.map((q) => (
-                <button
-                  key={q}
-                  type="button"
-                  className={`${styles.qty} ${g.qty === q ? styles.qtySel : ''}`}
-                  onClick={act((game) => {
-                    game.qty = q;
-                  })}
-                >
-                  {q}×
-                </button>
-              ))}
-            </div>
-            <div className={styles.btnrow}>
-              <button type="button" className={`${styles.act} ${styles.buy}`} onClick={act(buy)}>
-                {t.buy}
-                <small>{t.keyB}</small>
-              </button>
-              <button type="button" className={`${styles.act} ${styles.sellB}`} onClick={act(sell)}>
-                {t.sell}
-                <small>{t.keyS}</small>
-              </button>
-            </div>
-            <div className={styles.ghostrow}>
-              <button type="button" className={styles.ghost} onClick={act(flatten)}>
-                {t.flatten}
-              </button>
-              <button
-                type="button"
-                className={styles.ghost}
-                onClick={act((game) => {
-                  game.paused = !game.paused;
-                })}
-              >
-                {g.paused ? t.resume : t.pause}
-              </button>
-              <button type="button" className={styles.ghost} onClick={() => restart()}>
-                {t.reset}
-              </button>
-            </div>
-            <p className={`${styles.toast} ${g.toastGold ? styles.toastGold : ''}`}>{g.toast}</p>
           </section>
-
-          <section className={styles.panel}>
+          <section>
             <p className={styles.lbl}>{t.fills}</p>
             <ul className={styles.journal}>
               {g.fills.map((fill, i) => (
@@ -604,22 +628,23 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               ))}
             </ul>
           </section>
-
-          <section className={`${styles.panel} ${styles.keysPanel}`}>
-            <p>
-              <b>B</b> / <b>S</b> / <b>F</b> / <b>1 2 3</b> / <b>P</b> / <b>R</b> — {t.keys}
-            </p>
-            <p>{t.keysNote}</p>
-            <p className={styles.journalLine}>
-              {t.journalLink}{' '}
-              <Link href={locale === 'es' ? '/es/play/journal' : '/play/journal'}>
-                {t.journalCta}
-              </Link>
-            </p>
-          </section>
         </div>
-      </div>
-
+        <div className={styles.keysPanel}>
+          <p>
+            {t.foot1} {t.foot2}
+          </p>
+          <p>
+            <b>B</b> / <b>S</b> / <b>F</b> / <b>1 2 3</b> / <b>P</b> / <b>R</b> — {t.keys}
+          </p>
+          <p>{t.keysNote}</p>
+          <p className={styles.journalLine}>
+            {t.journalLink}{' '}
+            <Link href={locale === 'es' ? '/es/play/journal' : '/play/journal'}>
+              {t.journalCta}
+            </Link>
+          </p>
+        </div>
+      </details>
       <p className={styles.disclaimer}>{t.disclaimer}</p>
     </div>
   );
