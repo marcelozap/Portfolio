@@ -44,11 +44,53 @@
 }
 .agentRow {
   display: grid;
-  grid-template-columns: 30px 1fr 1.25fr;
-  gap: 25px;
+  grid-template-columns: 52px minmax(180px, 0.9fr) minmax(220px, 1.25fr) minmax(170px, 0.9fr);
+  gap: 22px;
   align-items: start;
   border-bottom: 1px solid var(--dragon-line);
   padding: 32px 0;
+}
+.agentMark {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: #0b0712;
+  box-shadow: 0 0 22px color-mix(in srgb, currentColor 26%, transparent);
+}
+.agentDragon {
+  width: 58px;
+  height: 58px;
+  max-width: none;
+  object-fit: cover;
+  mix-blend-mode: screen;
+}
+.agentMarkgold {
+  color: #f2c45d;
+}
+.agentMarkgold .agentDragon {
+  filter: sepia(1) saturate(5) hue-rotate(350deg) brightness(1.1);
+}
+.agentMarkgreen {
+  color: #78e2a5;
+}
+.agentMarkgreen .agentDragon {
+  filter: hue-rotate(95deg) saturate(1.8) brightness(1.08);
+}
+.agentMarkblue {
+  color: #69c9ff;
+}
+.agentMarkblue .agentDragon {
+  filter: hue-rotate(170deg) saturate(1.5) brightness(1.08);
+}
+.agentMarkviolet {
+  color: #d795ff;
+}
+.agentMarkviolet .agentDragon {
+  filter: hue-rotate(285deg) saturate(1.35) brightness(1.08);
 }
 .agentRow h3 {
   font-size: 27px;
@@ -64,6 +106,16 @@
     monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+.agentRole span {
+  display: block;
+  margin-top: 7px;
+  color: #f4eaff;
+  font:
+    700 14px/1.1 var(--font-sans),
+    sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 .agentStatus {
   margin: 12px 0 0;
@@ -160,14 +212,32 @@
     margin: 12px 0;
   }
   .agentRow {
-    grid-template-columns: 22px 1fr;
-    gap: 15px;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 25px 0;
   }
-  .agentRow > div:last-child {
+  .agentMark {
+    width: 44px;
+    height: 44px;
+  }
+  .agentDragon {
+    width: 49px;
+    height: 49px;
+  }
+  .agentRole {
+    align-self: center;
+  }
+  .agentRow h3,
+  .agentRow > p:last-child {
     grid-column: 2;
   }
   .agentRow h3 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-top: 8px;
+  }
+  .agentStatus {
+    grid-column: 2;
+    margin-top: 0;
   }
   .engineering,
   .writing {

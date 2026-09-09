@@ -9,12 +9,6 @@ type Theory = {
   question: string;
 };
 
-type Agent = {
-  name: string;
-  line: string;
-  status: string;
-};
-
 type Engineering = {
   title: string;
   blurb: string;
@@ -63,21 +57,29 @@ const COPY = {
     agents: [
       {
         name: 'Research Analyst',
+        callsign: 'Atlas',
+        color: 'gold',
         line: 'Builds trade ideas from catalysts and structure.',
-        status: 'Draft thesis first, then review before action.',
+        status: 'Thesis first. Review before action.',
       },
       {
         name: 'Quant Agent',
+        callsign: 'Milo',
+        color: 'green',
         line: 'Checks probabilities, pricing, and position risk math.',
-        status: 'Stops bad inputs before the plan goes live.',
+        status: 'Numbers first. Bad inputs stop here.',
       },
       {
         name: 'Journal Coach',
+        callsign: 'Echo',
+        color: 'blue',
         line: 'Reviews fills and execution mistakes after each session.',
-        status: 'Turns every session into the next lesson.',
+        status: 'Every session leaves a lesson.',
       },
       {
         name: 'Big Money Agent',
+        callsign: 'Ledger',
+        color: 'violet',
         line: 'Reads public politician disclosures and fund filings.',
         status: 'Delayed records. No live-flow claims.',
       },
@@ -157,21 +159,29 @@ const COPY = {
     agents: [
       {
         name: 'Research Analyst',
+        callsign: 'Atlas',
+        color: 'gold',
         line: 'Construye ideas desde catalizadores y estructura.',
-        status: 'Primero redacta la tesis, luego la revisa.',
+        status: 'Tesis primero. Revisión antes de actuar.',
       },
       {
         name: 'Quant Agent',
+        callsign: 'Milo',
+        color: 'green',
         line: 'Valida probabilidad, precio y riesgo de la posición.',
-        status: 'Evita que datos sucios entren al plan.',
+        status: 'Números primero. Datos sucios se detienen aquí.',
       },
       {
         name: 'Journal Coach',
+        callsign: 'Echo',
+        color: 'blue',
         line: 'Revisa entradas/salidas y disciplina después de cada sesión.',
-        status: 'Convierte cada sesión en una mejora clara.',
+        status: 'Cada sesión deja una lección.',
       },
       {
         name: 'Big Money Agent',
+        callsign: 'Ledger',
+        color: 'violet',
         line: 'Lee divulgaciones públicas y reportes de fondos.',
         status: 'Datos retrasados. Sin afirmar flujos en vivo.',
       },
@@ -300,9 +310,23 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <h2 id="agents-title">{copy.agentsTitle}</h2>
         </div>
         <div className={styles.agentList}>
-          {copy.agents.map((agent: Agent) => (
+          {copy.agents.map((agent) => (
             <article key={agent.name} className={styles.agentRow}>
-              <p className={styles.agentRole}>{agent.name}</p>
+              <span
+                className={`${styles.agentMark} ${styles[`agentMark${agent.color}`]}`}
+                aria-hidden="true"
+              >
+                <Image
+                  src="/brand/xiv-dragon-emblem.png"
+                  alt=""
+                  width={52}
+                  height={52}
+                  className={styles.agentDragon}
+                />
+              </span>
+              <p className={styles.agentRole}>
+                {agent.name} <span>{agent.callsign}</span>
+              </p>
               <h3>{agent.line}</h3>
               <p className={styles.agentStatus}>{agent.status}</p>
             </article>
