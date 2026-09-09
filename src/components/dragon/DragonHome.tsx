@@ -59,7 +59,7 @@ const COPY = {
     ],
 
     agentsLabel: '03 / Meet the agents',
-    agentsTitle: 'Three specialists. One edge.',
+    agentsTitle: 'Four specialists. One review.',
     agents: [
       {
         name: 'Research Analyst',
@@ -75,6 +75,11 @@ const COPY = {
         name: 'Journal Coach',
         line: 'Reviews fills and execution mistakes after each session.',
         status: 'Turns every session into the next lesson.',
+      },
+      {
+        name: 'Big Money Agent',
+        line: 'Reads public politician disclosures and fund filings.',
+        status: 'Delayed records. No live-flow claims.',
       },
     ],
     agentsCta: 'Open private desk',
@@ -148,7 +153,7 @@ const COPY = {
     ],
 
     agentsLabel: '03 / Conoce a los agentes',
-    agentsTitle: 'Tres especialistas. Un enfoque.',
+    agentsTitle: 'Cuatro especialistas. Una revisión.',
     agents: [
       {
         name: 'Research Analyst',
@@ -164,6 +169,11 @@ const COPY = {
         name: 'Journal Coach',
         line: 'Revisa entradas/salidas y disciplina después de cada sesión.',
         status: 'Convierte cada sesión en una mejora clara.',
+      },
+      {
+        name: 'Big Money Agent',
+        line: 'Lee divulgaciones públicas y reportes de fondos.',
+        status: 'Datos retrasados. Sin afirmar flujos en vivo.',
       },
     ],
     agentsCta: 'Abrir escritorio privado',
