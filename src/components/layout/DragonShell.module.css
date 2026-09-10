@@ -274,3 +274,40 @@
     transition: none;
   }
 }
+/* Main-site identity; game navigation keeps the original arcade palette. */
+.header[data-theme='red'] {
+  background: rgb(5 5 5 / 94%);
+  color: #fafafa;
+  border-color: #292929;
+}
+.header[data-theme='red'] .founder {
+  color: #b4b4ba;
+}
+.header[data-theme='red'] .navigationLinks a {
+  color: #ddd;
+}
+.header[data-theme='red'] .navigationLinks a:hover,
+.header[data-theme='red'] .language {
+  color: #ff5360;
+}
+.header[data-theme='red'] .navigationLinks[data-open='true'] {
+  background: #080808;
+}
+.header[data-theme='red'] a:focus-visible,
+.header[data-theme='red'] button:focus-visible {
+  outline-color: white;
+}
+.footer {
+  background: #050505;
+  color: #eee;
+}
+.footerIdentity,
+.socialLinks a span {
+  color: #ff5360;
+}
+.footerWordmark {
+  color: white;
+}
+.footerBottom {
+  color: #aaa;
+}

@@ -29,11 +29,11 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
     <article className="section pt-32 md:pt-40">
       <div className="mx-auto max-w-5xl">
         <Link
-          href="/systems"
+          href="/"
           className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent hover:text-ink"
         >
           <ArrowLeft className="size-4" />
-          All projects
+          Home
         </Link>
 
         <header className="mt-14 max-w-4xl border-b border-white/[0.1] pb-10">
@@ -59,7 +59,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
             <p className="text-lg leading-8 text-ink-muted">{project.description}</p>
             <div className="mt-12">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-                What it holds
+                Approach
               </div>
               <ul className="mt-5 space-y-4">
                 {project.coreIdeas.map((idea) => (
@@ -74,7 +74,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
 
           <aside className="border-l border-white/[0.1] pl-6 lg:pl-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-              Built with
+              Research tools
             </div>
             <ul className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
@@ -102,7 +102,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
               >
-                Visit public surface <ArrowUpRight className="size-4" />
+                Read my market perspective <ArrowUpRight className="size-4" />
               </a>
             )}
           </aside>

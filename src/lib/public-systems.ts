@@ -18,48 +18,40 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
   {
     slug: 'xiv',
     name: 'XIV',
-    domain: 'trading',
-    status: 'in development',
+    domain: 'Options trading',
+    status: 'Trading & research',
     year: '2026',
-    tagline: 'A personal trading and research workbench.',
+    tagline: 'Market structure. Execution. Risk.',
     description:
-      'XIV is where I study markets, test theories, and build tools for my own research. My work includes analysis agents and an options-practice experiment with fictional prices, simulated funds, and a journal for reviewing decisions.',
-    laneNote: 'Study the market. Test an idea. Review the reasoning.',
+      'XIV is my options trading and market research initiative, focused on market structure, execution, and risk management. Originally developed as my software engineering thesis at Florida State University, it applies software and AI to research and performance analysis.',
+    laneNote: 'I make every trading decision.',
     coreIdeas: [
-      'Fictional prices and simulated funds, with no live orders in the practice game',
-      'Manual advancement so practice fits around time away from the screen',
-      'Journaling and review focused on decisions and lessons',
-      'Market theories explored through evidence and repeatable analysis',
-      'Separate research agents for thesis drafts, quantitative context, and post-trade review',
+      'Study price action across multiple timeframes.',
+      'Define entry, exit, and position-risk criteria.',
+      'Review trading costs, drawdowns, and decision quality.',
     ],
     features: [
       {
-        title: 'The practice experiment',
+        title: 'Market perspective',
         description:
-          'I am developing a personal options-practice game with fictional scenarios, simulated accounting, journals, and reviews. Sessions advance manually so I can examine each decision.',
+          'MaloSound.ai is my market journal, connecting trading, reflection, and music.',
       },
       {
-        title: 'The research',
-        description:
-          'Momentum, changing market regimes, and risk budgeting are questions for testing, not claims of a proven edge.',
+        title: 'Research tools',
+        description: 'Software and AI support data validation, research, and performance review.',
       },
       {
-        title: 'The analysis agents',
-        description:
-          'Research Analyst, Quant Agent, and Journal Coach provide drafts and context for human review. This research workflow is separate from the game simulation.',
-      },
-      {
-        title: 'The engineering',
-        description:
-          'Data workflows, automated tests, and AI tools help me make research repeatable and keep the reasoning open to review.',
+        title: 'Dragon Tape',
+        description: 'A separate, free practice game with simulated prices and virtual funds.',
       },
     ],
     metrics: [
-      { label: 'Focus', value: 'Personal research' },
-      { label: 'Practice', value: 'Simulation' },
-      { label: 'Workflow', value: 'Human review' },
+      { label: 'Focus', value: 'Options' },
+      { label: 'Process', value: 'Research' },
+      { label: 'Discipline', value: 'Risk' },
     ],
-    stack: ['JavaScript', 'Node.js', 'SQLite', 'Python', 'Automated tests'],
+    stack: ['Python', 'SQL', 'Data validation', 'AI-assisted research'],
+    publicUrl: 'https://malosound.ai/',
   },
 ];
 

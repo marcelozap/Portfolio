@@ -13,14 +13,14 @@ export function XivBanner({
 }) {
   return (
     <Image
-      src="/brand/xiv-dragon-world.png"
+      src="/brand/xiv-red-skyline.png"
       alt={
         locale === 'es'
-          ? 'El dragón violeta y cian de XIV sobre un fondo negro.'
-          : 'XIV’s violet and cyan dragon against a black background.'
+          ? 'XIV en rojo, negro y blanco, con el dragón como la I.'
+          : 'XIV in red, black and white, with the dragon as the I.'
       }
-      width={1200}
-      height={600}
+      width={1774}
+      height={887}
       quality={90}
       priority={priority}
       sizes={sizes}

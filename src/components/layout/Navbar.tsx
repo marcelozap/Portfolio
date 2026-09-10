@@ -7,10 +7,9 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
 const SECTIONS = [
-  { id: 'theories', en: 'Research', es: 'Investigación' },
-  { id: 'agents', en: 'Agents', es: 'Agentes' },
-  { id: 'engineering', en: 'Engineering', es: 'Ingeniería' },
-  { id: 'notes', en: 'Writing', es: 'Textos' },
+  { id: 'notes', en: 'Perspective', es: 'Perspectiva' },
+  { id: 'practice', en: 'Dragon Tape', es: 'Dragon Tape' },
+  { id: 'agents', en: 'Dragons', es: 'Dragones' },
 ];
 
 export function Navbar() {
@@ -52,7 +51,7 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-theme={pathname.includes('/play') ? 'game' : 'red'}>
       <nav className={styles.navigation} aria-label={isSpanish ? 'Principal' : 'Main'}>
         <Link
           href={homeHref}
@@ -61,7 +60,11 @@ export function Navbar() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/brand/xiv-dragon-emblem.png"
+            src={
+              pathname.includes('/play')
+                ? '/brand/xiv-dragon-emblem.png'
+                : '/brand/xiv-red-emblem.png'
+            }
             alt=""
             width={48}
             height={48}

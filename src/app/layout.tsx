@@ -27,11 +27,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'XIV — I am the dragon | Marcelo Zapata',
+    default: 'XIV — Options Trading & Research | Marcelo Zapata',
     template: '%s - Marcelo Zapata',
   },
   description:
-    "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
+    'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
@@ -39,37 +39,37 @@ export const metadata: Metadata = {
     'trading',
     'market research',
     'market analysis',
-    'analysis agents',
-    'AI engineering',
-    'software engineering',
+    'options trading',
+    'risk management',
+    'market structure',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'XIV — I am the dragon | Marcelo Zapata',
+    title: 'XIV — Options Trading & Research | Marcelo Zapata',
     description:
-      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
+      'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
     type: 'website',
     siteName: 'XIV · Marcelo Zapata',
     images: [
       {
-        url: '/brand/xiv-dragon-world.png',
-        width: 1200,
-        height: 600,
-        alt: 'XIV’s violet and cyan dragon against a black background.',
+        url: '/brand/xiv-red-skyline.png',
+        width: 1774,
+        height: 887,
+        alt: 'XIV in red, black and white, with the dragon forming the I.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XIV — I am the dragon | Marcelo Zapata',
+    title: 'XIV — Options Trading & Research | Marcelo Zapata',
     description:
-      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
-    images: ['/brand/xiv-dragon-world.png'],
+      'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
+    images: ['/brand/xiv-red-skyline.png'],
   },
   icons: {
-    icon: [{ url: '/brand/xiv-dragon-emblem.png', type: 'image/png' }],
-    shortcut: ['/brand/xiv-dragon-emblem.png'],
+    icon: [{ url: '/brand/xiv-red-emblem.png', type: 'image/png' }],
+    shortcut: ['/brand/xiv-red-emblem.png'],
   },
 };
 

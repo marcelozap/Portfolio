@@ -1,9 +1,9 @@
 import { DragonHome } from '@/components/dragon/DragonHome';
 
 export const metadata = {
-  title: 'XIV — Yo soy el dragón',
+  title: 'XIV — Opciones e investigación',
   description:
-    'XIV: trading independiente, investigación de mercados, agentes de análisis y herramientas personales de Marcelo Zapata.',
+    'XIV: trading de opciones e investigación de mercados de Marcelo Zapata, con foco en ejecución y gestión del riesgo.',
 };
 
 export default function SpanishHome() {
