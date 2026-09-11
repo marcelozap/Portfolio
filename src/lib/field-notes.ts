@@ -20,8 +20,8 @@ export const FIELD_NOTES: FieldNote[] = [
     summary:
       'Watching The Big Short led me to examine the financial ties behind the AI boom, how losses could spread, and what the government might choose to save.',
     image: {
-      src: '/images/ai-blog/are-tech-companies-the-new-banks-bright.png',
-      alt: 'Marcelo Zapata’s bright editorial card comparing the 2008 bank collapse with the 2026 AI boom. A sunlit bank building connects to silver server racks under the question: Are tech companies the new banks? His sunglasses portrait and a red-and-black XIV dragon appear above.',
+      src: '/images/ai-blog/are-tech-companies-the-new-banks-no-portrait.png',
+      alt: 'Marcelo Zapata’s bright editorial card comparing the 2008 bank collapse with the 2026 AI boom. A sunlit bank building connects to silver server racks under the question: Are tech companies the new banks? His name and a red-and-black XIV dragon appear above.',
       width: 1122,
       height: 1402,
     },
