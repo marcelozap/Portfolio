@@ -13,7 +13,7 @@ const COPY = {
     dragon: 'dragon.',
     intro:
       'I’m Marcelo. My work centers on market structure, execution, risk management, and performance review.',
-    research: 'XIV · Research & analytics',
+    research: 'XIV on LinkedIn',
     enter: 'Explore MaloSound',
     read: 'Read my writing',
     scroll: 'More below',
@@ -32,13 +32,12 @@ const COPY = {
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
 
     agentsLabel: '03 / The dragons',
-    agentsTitle: 'Future ideas.',
-    agentsLead: 'Four roles in design. They draft. I decide.',
+    agentsTitle: 'The dragons.',
+    agentsLead: '',
     agents: [
-      { name: 'Research Analyst', callsign: 'Atlas', color: 'gold' },
-      { name: 'Quant Agent', callsign: 'Milo', color: 'green' },
-      { name: 'Journal Coach', callsign: 'Echo', color: 'blue' },
-      { name: 'Big Money Agent', callsign: 'Ledger', color: 'violet' },
+      { name: 'Milo', callsign: 'Milo', color: 'violet' },
+      { name: 'Mika', callsign: 'Mika', color: 'gold' },
+      { name: 'Money', callsign: 'Money', color: 'green' },
     ],
   },
   es: {
@@ -48,7 +47,7 @@ const COPY = {
     dragon: 'dragón.',
     intro:
       'Soy Marcelo. Mi trabajo se centra en estructura de mercado, ejecución, gestión del riesgo y revisión de resultados.',
-    research: 'XIV · Investigación y análisis',
+    research: 'XIV en LinkedIn',
     enter: 'Explorar MaloSound',
     read: 'Leer mis escritos',
     scroll: 'Más abajo',
@@ -67,13 +66,12 @@ const COPY = {
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
 
     agentsLabel: '03 / Los dragones',
-    agentsTitle: 'Ideas para el futuro.',
-    agentsLead: 'Cuatro roles en diseño. Ellos redactan. Yo decido.',
+    agentsTitle: 'Los dragones.',
+    agentsLead: '',
     agents: [
-      { name: 'Analista de investigación', callsign: 'Atlas', color: 'gold' },
-      { name: 'Agente quant', callsign: 'Milo', color: 'green' },
-      { name: 'Coach del diario', callsign: 'Echo', color: 'blue' },
-      { name: 'Agente Big Money', callsign: 'Ledger', color: 'violet' },
+      { name: 'Milo', callsign: 'Milo', color: 'violet' },
+      { name: 'Mika', callsign: 'Mika', color: 'gold' },
+      { name: 'Money', callsign: 'Money', color: 'green' },
     ],
   },
 };
@@ -121,10 +119,15 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <span className={styles.dragonWord}>{copy.dragon}</span>
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
-          <Link href="/systems/xiv" className={styles.researchLink}>
+          <a
+            href="https://www.linkedin.com/company/xiv-trading-technology/"
+            className={styles.researchLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {copy.research}
             <ArrowUpRight size={14} aria-hidden="true" />
-          </Link>
+          </a>
           <div className={styles.actions}>
             <a
               href="https://malosound.ai/"
@@ -212,7 +215,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{copy.agentsLabel}</p>
           <h2 id="agents-title">{copy.agentsTitle}</h2>
-          <p className={styles.bodyCopy}>{copy.agentsLead}</p>
         </div>
         <div className={styles.agentList}>
           {copy.agents.map((agent) => (
@@ -229,10 +231,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
                   className={styles.agentDragon}
                 />
               </span>
-              <p className={styles.agentRole}>
-                {agent.callsign}
-                <span>{agent.name}</span>
-              </p>
+              <p className={styles.agentRole}>{agent.callsign}</p>
             </article>
           ))}
         </div>
