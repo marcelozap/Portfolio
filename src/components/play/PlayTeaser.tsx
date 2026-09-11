@@ -15,7 +15,7 @@ const COPY = {
     cta: 'Play Dragon Scales',
     fresh: 'Virtual funds. Long or short from the start. Progress unlocks more size.',
     chart: 'Fictional practice chart · prices in USD',
-    history: 'My real trades & journal on MaloSound.ai',
+    history: 'MaloSound.ai · Price, played back',
   },
   es: {
     label: 'Juego de práctica · gratis · en tu navegador',
@@ -24,7 +24,7 @@ const COPY = {
     cta: 'Jugar Dragon Scales',
     fresh: 'Fondos virtuales. Al alza o a la baja desde el inicio. El progreso abre más tamaño.',
     chart: 'Gráfico ficticio de práctica · precios en USD',
-    history: 'Mis operaciones reales y mi diario en MaloSound.ai',
+    history: 'MaloSound.ai · El precio, reproducido',
   },
 };
 

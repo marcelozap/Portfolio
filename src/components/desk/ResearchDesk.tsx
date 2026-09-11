@@ -268,7 +268,7 @@ export function ResearchDesk({
         <span className="research-private">PRIVATE AGENT DESK</span>
         <nav aria-label="Desk navigation">
           <a href="https://malosound.ai/" target="_blank" rel="noopener noreferrer">
-            Journal ↗
+            MaloSound ↗
           </a>
           <Link href="/desk/notes" onClick={navigateAway}>
             Saved notes

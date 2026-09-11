@@ -32,9 +32,8 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
     ],
     features: [
       {
-        title: 'Market perspective',
-        description:
-          'MaloSound.ai is my market journal, connecting trading, reflection, and music.',
+        title: 'MaloSound',
+        description: 'Price, played back. Market movement, translated into sound and motion.',
       },
       {
         title: 'Research tools',

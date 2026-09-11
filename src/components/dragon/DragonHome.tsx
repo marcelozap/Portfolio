@@ -14,7 +14,7 @@ const COPY = {
     intro:
       'I’m Marcelo. My work centers on market structure, execution, risk management, and performance review.',
     research: 'XIV · Research & analytics',
-    enter: 'My market perspective',
+    enter: 'Explore MaloSound',
     read: 'Read my writing',
     scroll: 'More below',
     signature: 'Market structure / Execution / Risk',
@@ -24,7 +24,7 @@ const COPY = {
     notesBody: 'Personal essays on what I’m learning and living.',
     notesLatest: 'Latest',
     notesLink: 'Read my writing',
-    market: 'My market perspective',
+    market: 'Market movement, translated into sound and motion.',
 
     practiceLabel: '02 / Practice',
     practiceTitle: 'Dragon Scales.',
@@ -49,7 +49,7 @@ const COPY = {
     intro:
       'Soy Marcelo. Mi trabajo se centra en estructura de mercado, ejecución, gestión del riesgo y revisión de resultados.',
     research: 'XIV · Investigación y análisis',
-    enter: 'Mi perspectiva del mercado',
+    enter: 'Explorar MaloSound',
     read: 'Leer mis escritos',
     scroll: 'Más abajo',
     signature: 'Estructura / Ejecución / Riesgo',
@@ -59,7 +59,7 @@ const COPY = {
     notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
     notesLatest: 'Recientes',
     notesLink: 'Leer mis textos',
-    market: 'Mi perspectiva del mercado',
+    market: 'El movimiento del mercado, traducido a sonido y movimiento.',
 
     practiceLabel: '02 / Práctica',
     practiceTitle: 'Dragon Scales.',

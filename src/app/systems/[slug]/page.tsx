@@ -102,7 +102,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
               >
-                Read my market perspective <ArrowUpRight className="size-4" />
+                Explore MaloSound <ArrowUpRight className="size-4" />
               </a>
             )}
           </aside>

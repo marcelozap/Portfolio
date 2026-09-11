@@ -83,7 +83,7 @@ const COPY = {
     journalCta: 'Open the journal game',
     routine: 'One song. One session. Plan. Practice. Review.',
     saved: 'A fresh tape each run. Only your best equity is saved in this browser.',
-    history: 'My real trades & journal on MaloSound.ai',
+    history: 'MaloSound.ai · Price, played back',
     disclaimer: 'Simulation. Fictional prices and virtual funds.',
   },
   es: {
@@ -141,7 +141,7 @@ const COPY = {
     journalCta: 'Abrir el juego de diario',
     routine: 'Una canción. Una sesión. Planifica. Practica. Revisa.',
     saved: 'Cada partida es nueva. Solo tu capital máximo se guarda en este navegador.',
-    history: 'Mis operaciones reales y mi diario en MaloSound.ai',
+    history: 'MaloSound.ai · El precio, reproducido',
     disclaimer: 'Simulación. Precios ficticios y fondos virtuales.',
   },
 };
