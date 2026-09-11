@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PlayTeaser } from '@/components/play/PlayTeaser';
+import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
 
 const COPY = {
@@ -101,6 +102,17 @@ const COPY = {
   },
 };
 
+const LATEST_NOTES = FIELD_NOTES.slice(0, 3);
+
+function noteDate(iso: string, locale: 'en' | 'es') {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const copy = COPY[locale];
 
@@ -168,6 +180,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <span key={line}>{line} </span>
             ))}
           </h2>
+          <p className={styles.bodyCopy}>{copy.notesBody}</p>
         </div>
         <div className={styles.writingBody}>
           <a
@@ -180,10 +193,23 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <span>{locale === 'es' ? 'Diario de mercado' : 'Market journal'}</span>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
-          <p className={styles.bodyCopy}>{copy.notesBody}</p>
-          <Link href="/ai-blog" className={styles.primaryLink}>
-            {copy.notesLink}
-            <ArrowUpRight size={18} aria-hidden="true" />
+          <p className={styles.noteListLabel}>{locale === 'es' ? 'Recientes' : 'Latest writing'}</p>
+          <ul className={styles.noteList}>
+            {LATEST_NOTES.map((note) => (
+              <li key={note.slug}>
+                <Link href={`/ai-blog/${note.slug}`} className={styles.noteItem}>
+                  <time className={styles.noteMeta} dateTime={note.date}>
+                    {noteDate(note.date, locale)}
+                  </time>
+                  <span className={styles.noteTitle}>{note.title}</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/ai-blog" className={styles.researchLink}>
+            {locale === 'es' ? 'Todos mis escritos' : 'All writing'}
+            <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </section>

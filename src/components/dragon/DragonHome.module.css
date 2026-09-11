@@ -195,6 +195,47 @@
   border-bottom: 1px solid var(--dragon-line);
   color: var(--dragon-ink);
 }
+.noteListLabel {
+  margin: 28px 0 8px;
+  color: var(--dragon-gold);
+  font:
+    12px/1.6 var(--font-mono),
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.noteList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.noteItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--dragon-line);
+}
+.noteMeta {
+  color: var(--dragon-muted);
+  font:
+    12px/1.6 var(--font-mono),
+    monospace;
+}
+.noteTitle {
+  grid-column: 1;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.noteItem > svg {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  color: var(--dragon-gold);
+}
+.noteItem:hover .noteTitle {
+  color: var(--dragon-gold);
+}
 .marketLink > span:first-child {
   font-size: 25px;
 }
