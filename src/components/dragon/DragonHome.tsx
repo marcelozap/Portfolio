@@ -174,9 +174,9 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             {LATEST_NOTES.map((note) => (
               <li key={note.slug}>
                 <Link href={`/ai-blog/${note.slug}`} className={styles.noteItem}>
-                  <span className={styles.noteMeta}>
+                  <time className={styles.noteMeta} dateTime={note.date}>
                     {note.number} · {noteDate(note.date, locale)}
-                  </span>
+                  </time>
                   <span className={styles.noteTitle}>{note.title}</span>
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>

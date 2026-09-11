@@ -52,7 +52,7 @@ export function PlayTeaser({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             bars={scenario.history}
             historyLength={scenario.history.length}
             levels={[]}
-            height={260}
+            height={200}
           />
         ) : (
           <div className={styles.chartGhost} aria-hidden="true" />

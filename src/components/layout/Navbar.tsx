@@ -6,6 +6,12 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
+const SECTIONS = [
+  { id: 'notes', en: 'Perspective', es: 'Perspectiva' },
+  { id: 'practice', en: 'Dragon Scales', es: 'Dragon Scales' },
+  { id: 'agents', en: 'Dragons', es: 'Dragones' },
+];
+
 export function Navbar() {
   const pathname = usePathname();
   const isSpanish = pathname.startsWith('/es');
@@ -45,7 +51,7 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className={styles.header} data-theme="red">
+    <header className={styles.header} data-theme={pathname.includes('/play') ? 'game' : 'red'}>
       <nav className={styles.navigation} aria-label={isSpanish ? 'Principal' : 'Main'}>
         <Link
           href={homeHref}
@@ -54,7 +60,11 @@ export function Navbar() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/brand/xiv-red-emblem.png"
+            src={
+              pathname.includes('/play')
+                ? '/brand/xiv-dragon-emblem.png'
+                : '/brand/xiv-red-emblem.png'
+            }
             alt=""
             width={48}
             height={48}
@@ -75,11 +85,13 @@ export function Navbar() {
           className={styles.navigationLinks}
           data-open={menuOpen}
         >
-          <li>
-            <Link href="/ai-blog" onClick={() => setMenuOpen(false)}>
-              {isSpanish ? 'Escritos' : 'Writing'}
-            </Link>
-          </li>
+          {SECTIONS.map((section) => (
+            <li key={section.id}>
+              <Link href={`${homeHref}#${section.id}`} onClick={() => setMenuOpen(false)}>
+                {isSpanish ? section.es : section.en}
+              </Link>
+            </li>
+          ))}
           <li>
             <Link href={isSpanish ? '/es/play' : '/play'} onClick={() => setMenuOpen(false)}>
               {isSpanish ? 'Jugar' : 'Play'}

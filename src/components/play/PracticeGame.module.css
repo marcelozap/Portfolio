@@ -222,29 +222,30 @@
 .chart {
   width: 100%;
   height: auto;
+  aspect-ratio: 760 / 260;
   display: block;
-  border: 1px solid var(--price-chart-border, rgba(227, 189, 117, 0.16));
-  background: var(--price-chart-surface, rgba(10, 9, 9, 0.3));
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(24, 14, 34, 0.6), rgba(7, 4, 12, 0.2));
 }
 .chartBand {
-  fill: var(--price-chart-band, rgba(227, 189, 117, 0.08));
+  fill: rgba(238, 98, 216, 0.08);
   stroke: none;
 }
 .chartLine {
   fill: none;
-  stroke: var(--price-chart-line, #e3bd75);
+  stroke: var(--pink-soft);
   stroke-width: 1.6;
   stroke-linejoin: round;
 }
 .chartDot {
-  fill: var(--price-chart-ink, #f6f4f2);
+  fill: var(--ink);
 }
 .chartNow {
   stroke: rgba(247, 241, 255, 0.35);
   stroke-dasharray: 3 4;
 }
 .chartAxis {
-  fill: var(--price-chart-muted, #a9a09a);
+  fill: var(--faint);
   font:
     9px var(--font-mono),
     monospace;
