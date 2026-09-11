@@ -874,13 +874,14 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-/* XIV red identity. Dragon Tape retains its own purple/blue module styles. */
+/* XIV red identity. Dragon Scales retains its own purple/blue module styles. */
 .home {
   --dragon-bg: #050505;
   --dragon-ink: #fafafa;
   --dragon-muted: #b7b7bd;
   --dragon-line: rgb(255 255 255 / 15%);
   --dragon-pink: #ff3445;
+  background: transparent;
 }
 .hero {
   min-height: auto;
@@ -888,13 +889,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 0;
+  border-bottom: 0;
+  background: radial-gradient(ellipse 80% 32% at 50% 70%, rgb(126 8 25 / 14%), transparent);
 }
 .heroCopy {
   width: 100%;
   max-width: 1000px;
   text-align: center;
   order: 0;
+  z-index: 1;
 }
 .heroCopy .eyebrow,
 .actions {
@@ -945,17 +949,29 @@
   position: relative;
   inset: auto;
   z-index: 0;
-  width: min(100%, 1380px);
+  width: 100vw;
+  max-width: none;
   aspect-ratio: 2 / 1;
   order: 1;
+  margin: -36px 0 -7vw;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(180deg, transparent, #000 27%, #000 65%, transparent 98%);
+  mask-image:
+    linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(180deg, transparent, #000 27%, #000 65%, transparent 98%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 .artImage {
   object-fit: contain;
   opacity: 1;
+  mix-blend-mode: screen;
 }
 .art::after {
-  background: linear-gradient(0deg, #050505, transparent 16%);
-  pointer-events: none;
+  content: none;
 }
 .heroBottom {
   position: static;
@@ -1046,7 +1062,7 @@
 @media (max-width: 760px) {
   .hero {
     padding: 116px 20px 36px;
-    gap: 24px;
+    gap: 0;
   }
   .heroCopy {
     width: 100%;
@@ -1062,7 +1078,7 @@
     margin-top: 18px;
   }
   .art {
-    width: calc(100% + 24px);
+    width: calc(100% + 40px);
     aspect-ratio: 2 / 1;
     min-height: 0;
   }
@@ -1093,7 +1109,7 @@
 @media (max-width: 760px) {
   .art {
     height: auto;
-    margin: 0;
+    margin: 6px 0 4px;
     flex-shrink: 0;
   }
   .heroBottom > span {

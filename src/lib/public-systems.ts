@@ -41,7 +41,7 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
         description: 'Software and AI support data validation, research, and performance review.',
       },
       {
-        title: 'Dragon Tape',
+        title: 'Dragon Scales',
         description: 'A separate, free practice game with simulated prices and virtual funds.',
       },
     ],

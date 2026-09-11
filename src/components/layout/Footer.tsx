@@ -6,10 +6,11 @@ import { SOCIAL_LINKS } from '@/lib/socialLinks';
 import styles from './DragonShell.module.css';
 
 export function Footer() {
-  const isSpanish = usePathname().startsWith('/es');
+  const pathname = usePathname();
+  const isSpanish = pathname.startsWith('/es');
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-theme={pathname.includes('/play') ? 'game' : 'red'}>
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>

@@ -276,7 +276,7 @@
 }
 /* Main-site identity; game navigation keeps the original arcade palette. */
 .header[data-theme='red'] {
-  background: rgb(5 5 5 / 94%);
+  background: rgb(5 5 5 / 78%);
   color: #fafafa;
   border-color: #292929;
 }
@@ -310,4 +310,15 @@
 }
 .footerBottom {
   color: #aaa;
+}
+
+/* One continuous crimson-to-black field behind the main site. */
+.backdrop[data-theme='red'] {
+  background:
+    radial-gradient(ellipse 85% 70% at -12% 32%, rgb(119 12 29 / 43%), transparent 70%),
+    radial-gradient(ellipse 80% 80% at 112% 78%, rgb(131 10 27 / 34%), transparent 70%),
+    linear-gradient(135deg, #080506, #050505 48%, #0c0507);
+}
+.footer[data-theme='red'] {
+  background: transparent;
 }

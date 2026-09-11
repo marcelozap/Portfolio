@@ -18,7 +18,7 @@ const COPY = {
     signature: 'Market structure / Execution / Risk',
 
     practiceLabel: '02 / Practice',
-    practiceTitle: 'Dragon Tape.',
+    practiceTitle: 'Dragon Scales.',
     practiceLead: 'Buy. Sell. Ride the tape.',
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
 
@@ -65,7 +65,7 @@ const COPY = {
     signature: 'Estructura / Ejecución / Riesgo',
 
     practiceLabel: '02 / Práctica',
-    practiceTitle: 'Dragon Tape.',
+    practiceTitle: 'Dragon Scales.',
     practiceLead: 'Compra. Vende. Sigue el movimiento.',
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
 
