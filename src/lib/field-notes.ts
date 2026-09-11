@@ -13,6 +13,65 @@ export type FieldNote = {
 
 export const FIELD_NOTES: FieldNote[] = [
   {
+    slug: 'are-tech-companies-the-new-banks',
+    number: 'NOTE 012',
+    date: '2026-09-11',
+    title: 'Are Tech Companies the New Banks?',
+    summary:
+      'Watching The Big Short led me to a question about the AI boom: how can financial trouble spread between companies, and what might the government choose to save?',
+    image: {
+      src: '/images/ai-blog/are-tech-companies-the-new-banks.png',
+      alt: 'Marcelo Zapata’s editorial card comparing the 2008 bank collapse with the 2026 AI boom. Leaning bank buildings sit beside connected server racks under the question: Are tech companies the new banks? A red-and-black XIV dragon appears in the corner.',
+      width: 1122,
+      height: 1402,
+    },
+    references: [
+      {
+        label: 'Federal Reserve: interconnectedness and the financial crisis',
+        url: 'https://www.federalreserve.gov/newsevents/speech/yellen20130104a.htm',
+      },
+      {
+        label: 'CoreWeave filing: Nvidia as supplier, shareholder and capacity buyer',
+        url: 'https://www.sec.gov/Archives/edgar/data/1769628/000176962825000047/crwv-20250909.htm',
+      },
+      {
+        label: 'CoreWeave filing: Nvidia’s $2 billion investment',
+        url: 'https://www.sec.gov/Archives/edgar/data/1769628/000176962826000044/crwv-20260123.htm',
+      },
+      {
+        label: 'CoreWeave: $2.6 billion debt facility supporting its OpenAI agreement',
+        url: 'https://investors.coreweave.com/news/news-details/2025/CoreWeave-Closes-2-6-Billion-Secured-Debt-Financing-Facility-Strengthening-Market-Position-as-AI-Cloud-Leader/default.aspx',
+      },
+      {
+        label: 'NGA: AI for intelligence, surveillance and reconnaissance',
+        url: 'https://www.nga.mil/news/NGA_announces_%24708M_data_labeling_RFP.html',
+      },
+      {
+        label: 'NGA congressional testimony: AI and military targeting',
+        url: 'https://www.nga.mil/news/Testimony_of_VADM_Frank_D_Whitworth_before_the_Hou.html',
+      },
+    ],
+    body: [
+      '2008 on the screen. 2026 on my mind.',
+      'I watched The Big Short and kept thinking about dominoes.',
+      'The banks were separate businesses. Their risks were connected. Borrowing and dependence on one another helped losses spread.',
+      'That is what I am watching in parts of the AI buildout.',
+      'Nvidia supplies chips to CoreWeave, owns shares in it, and has agreed to buy unused computing capacity, subject to the contract’s conditions. In January, Nvidia invested another $2 billion.',
+      'CoreWeave also secured a $2.6 billion debt facility to help deliver infrastructure under its OpenAI agreement.',
+      'Chip suppliers, investors, cloud customers and lenders. Different roles tied to the same buildout.',
+      'Imagine a major customer cannot pay. Its cloud provider loses expected revenue but still owes its lenders. Equipment orders slow. The pressure reaches suppliers.',
+      'One company’s problem can become someone else’s.',
+      'What looks like several independent bets can become a shared bet that demand grows fast enough to pay everyone.',
+      'The technology can work. The financing can still fall apart.',
+      'But I don’t think this is simply 2008 happening again. These companies have different debts, cash reserves and room for error. A financial connection is a reason to examine the risk, not proof that everyone falls together.',
+      'And I wouldn’t assume the government would let critical AI infrastructure disappear.',
+      'AI already supports military surveillance, intelligence analysis, and targeting. Its value to Washington goes beyond what customers will pay for a subscription.',
+      'My suspicion is that the government would intervene if that capability were threatened. A bailout is one possibility. That is my interpretation, not an announced guarantee.',
+      'Protecting the infrastructure could also mean letting individual companies fail and moving their assets into other hands.',
+      'The government may want the technology to survive. That doesn’t mean every investor gets saved.',
+    ],
+  },
+  {
     slug: 'all-in-every-time',
     number: 'NOTE 011',
     date: '2026-09-05',
