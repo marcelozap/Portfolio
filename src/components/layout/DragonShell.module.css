@@ -46,8 +46,8 @@
 }
 
 .founder {
-  color: #aaa29d;
-  font-size: 10px;
+  color: #a79cb8;
+  font-size: 11px;
   line-height: 1.5;
   letter-spacing: 0.06em;
 }
@@ -60,14 +60,33 @@
 }
 
 .navigationLinks a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   color: #d8cfe5;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   transition: color 160ms ease;
+}
+
+.navigationLinks a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.navigationLinks a:hover::after,
+.navigationLinks a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .navigationLinks a:hover,
@@ -75,7 +94,7 @@
 .menuButton:hover,
 .socialLinks a:hover,
 .footerIdentity:hover {
-  color: #e3bd75;
+  color: #72eaff;
 }
 
 .utilities {
@@ -92,9 +111,10 @@
   min-height: 44px;
   border-left: 1px solid rgb(247 241 255 / 18%);
   padding-left: 18px;
-  color: #e3bd75;
-  font-size: 11px;
+  color: #ee62d8;
+  font-size: 12px;
   letter-spacing: 0.1em;
+  transition: color 160ms ease;
 }
 
 .menuButton {
@@ -114,7 +134,7 @@
 .header a:focus-visible,
 .header button:focus-visible,
 .footer a:focus-visible {
-  outline: 1px solid #e3bd75;
+  outline: 1px solid #72eaff;
   outline-offset: 6px;
 }
 
@@ -144,7 +164,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: #e3bd75;
+  color: #ee62d8;
   font-size: 11px;
   letter-spacing: 0.06em;
 }
@@ -175,7 +195,7 @@
 }
 
 .socialLinks a span {
-  color: #e3bd75;
+  color: #ee62d8;
 }
 
 .footerBottom {
@@ -184,8 +204,8 @@
   gap: 20px;
   border-top: 1px solid rgb(247 241 255 / 12%);
   padding-top: 22px;
-  color: #aaa29d;
-  font-size: 10px;
+  color: #a79cb8;
+  font-size: 11px;
   letter-spacing: 0.06em;
 }
 
@@ -223,6 +243,10 @@
     min-height: 52px;
     border-bottom: 1px solid rgb(247 241 255 / 10%);
     font-size: 16px;
+  }
+
+  .navigationLinks a::after {
+    display: none;
   }
 
   .menuButton {
@@ -270,15 +294,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .navigationLinks a {
+  .navigationLinks a,
+  .navigationLinks a::after,
+  .language {
     transition: none;
   }
 }
-/* Shared identity across the main site and game. */
+/* Main-site identity; game navigation keeps the original arcade palette. */
 .header[data-theme='red'] {
   background: rgb(5 5 5 / 78%);
   color: #fafafa;
-  border-color: rgb(227 189 117 / 12%);
+  border-color: #292929;
 }
 .header[data-theme='red'] .founder {
   color: #b4b4ba;
@@ -288,7 +314,7 @@
 }
 .header[data-theme='red'] .navigationLinks a:hover,
 .header[data-theme='red'] .language {
-  color: #e3bd75;
+  color: #ff5360;
 }
 .header[data-theme='red'] .navigationLinks[data-open='true'] {
   background: #080808;
@@ -303,7 +329,7 @@
 }
 .footerIdentity,
 .socialLinks a span {
-  color: #e3bd75;
+  color: #ff5360;
 }
 .footerWordmark {
   color: white;
@@ -312,27 +338,13 @@
   color: #aaa;
 }
 
-/* The night sky continues through the skyline and down the page. */
+/* One continuous crimson-to-black field behind the main site. */
 .backdrop[data-theme='red'] {
-  position: absolute;
   background:
-    linear-gradient(160deg, rgb(24 30 43 / 24%), transparent 1000px),
-    linear-gradient(180deg, #080b11, #08090c 700px, #080708 1450px);
-}
-.stars {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  mask-image: linear-gradient(
-    180deg,
-    #000,
-    rgb(0 0 0 / 75%) 900px,
-    rgb(0 0 0 / 30%) 1600px,
-    transparent
-  );
+    radial-gradient(ellipse 85% 70% at -12% 32%, rgb(119 12 29 / 43%), transparent 70%),
+    radial-gradient(ellipse 80% 80% at 112% 78%, rgb(131 10 27 / 34%), transparent 70%),
+    linear-gradient(135deg, #080506, #050505 48%, #0c0507);
 }
 .footer[data-theme='red'] {
   background: transparent;
-  border-color: rgb(227 189 117 / 12%);
 }

@@ -13,45 +13,33 @@ const COPY = {
     dragon: 'dragon.',
     intro:
       'I’m Marcelo. My work centers on market structure, execution, risk management, and performance review.',
-    enter: 'Market journal',
+    research: 'XIV · Research & analytics',
+    enter: 'My market perspective',
     read: 'Read my writing',
     scroll: 'More below',
     signature: 'Market structure / Execution / Risk',
+
+    notesLabel: '01 / Perspective',
+    notesTitle: 'Research. Reflection.',
+    notesBody: 'Personal essays on what I’m learning and living.',
+    notesLatest: 'Latest',
+    notesLink: 'Read my writing',
+    market: 'My market perspective',
 
     practiceLabel: '02 / Practice',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Buy. Sell. Ride the tape.',
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
 
-    agentsLabel: '03 / XIV',
-    agentsTitle: 'The dragons.',
+    agentsLabel: '03 / The dragons',
+    agentsTitle: 'Future ideas.',
+    agentsLead: 'Four roles in design. They draft. I decide.',
     agents: [
-      {
-        name: 'Research Analyst',
-        callsign: 'Atlas',
-        color: 'gold',
-      },
-      {
-        name: 'Quant Agent',
-        callsign: 'Milo',
-        color: 'green',
-      },
-      {
-        name: 'Journal Coach',
-        callsign: 'Echo',
-        color: 'blue',
-      },
-      {
-        name: 'Big Money Agent',
-        callsign: 'Ledger',
-        color: 'violet',
-      },
+      { name: 'Research Analyst', callsign: 'Atlas', color: 'gold' },
+      { name: 'Quant Agent', callsign: 'Milo', color: 'green' },
+      { name: 'Journal Coach', callsign: 'Echo', color: 'blue' },
+      { name: 'Big Money Agent', callsign: 'Ledger', color: 'violet' },
     ],
-
-    notesLabel: '01 / Writing',
-    notesTitle: 'Research. Reflection.',
-    notesBody: 'Personal essays on what I’m learning and living.',
-    notesLink: 'Read my writing',
   },
   es: {
     eyebrow: 'Trader de opciones | XIV',
@@ -60,45 +48,33 @@ const COPY = {
     dragon: 'dragón.',
     intro:
       'Soy Marcelo. Mi trabajo se centra en estructura de mercado, ejecución, gestión del riesgo y revisión de resultados.',
-    enter: 'Diario de mercado',
+    research: 'XIV · Investigación y análisis',
+    enter: 'Mi perspectiva del mercado',
     read: 'Leer mis escritos',
     scroll: 'Más abajo',
     signature: 'Estructura / Ejecución / Riesgo',
+
+    notesLabel: '01 / Perspectiva',
+    notesTitle: 'Investigar. Reflexionar.',
+    notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
+    notesLatest: 'Recientes',
+    notesLink: 'Leer mis textos',
+    market: 'Mi perspectiva del mercado',
 
     practiceLabel: '02 / Práctica',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Compra. Vende. Sigue el movimiento.',
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
 
-    agentsLabel: '03 / XIV',
-    agentsTitle: 'Los dragones.',
+    agentsLabel: '03 / Los dragones',
+    agentsTitle: 'Ideas para el futuro.',
+    agentsLead: 'Cuatro roles en diseño. Ellos redactan. Yo decido.',
     agents: [
-      {
-        name: 'Research Analyst',
-        callsign: 'Atlas',
-        color: 'gold',
-      },
-      {
-        name: 'Quant Agent',
-        callsign: 'Milo',
-        color: 'green',
-      },
-      {
-        name: 'Journal Coach',
-        callsign: 'Echo',
-        color: 'blue',
-      },
-      {
-        name: 'Big Money Agent',
-        callsign: 'Ledger',
-        color: 'violet',
-      },
+      { name: 'Analista de investigación', callsign: 'Atlas', color: 'gold' },
+      { name: 'Agente quant', callsign: 'Milo', color: 'green' },
+      { name: 'Coach del diario', callsign: 'Echo', color: 'blue' },
+      { name: 'Agente Big Money', callsign: 'Ledger', color: 'violet' },
     ],
-
-    notesLabel: '01 / Escritos',
-    notesTitle: 'Investigar. Reflexionar.',
-    notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
-    notesLink: 'Leer mis textos',
   },
 };
 
@@ -146,7 +122,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
           <Link href="/systems/xiv" className={styles.researchLink}>
-            {locale === 'es' ? 'XIV · Investigación y análisis' : 'XIV · Research & analytics'}
+            {copy.research}
             <ArrowUpRight size={14} aria-hidden="true" />
           </Link>
           <div className={styles.actions}>
@@ -190,25 +166,25 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             rel="noopener noreferrer"
           >
             <span>MaloSound.ai</span>
-            <span>{locale === 'es' ? 'Diario de mercado' : 'Market journal'}</span>
+            <span>{copy.market}</span>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
-          <p className={styles.noteListLabel}>{locale === 'es' ? 'Recientes' : 'Latest writing'}</p>
+          <p className={styles.noteListLabel}>{copy.notesLatest}</p>
           <ul className={styles.noteList}>
             {LATEST_NOTES.map((note) => (
               <li key={note.slug}>
                 <Link href={`/ai-blog/${note.slug}`} className={styles.noteItem}>
-                  <time className={styles.noteMeta} dateTime={note.date}>
-                    {noteDate(note.date, locale)}
-                  </time>
+                  <span className={styles.noteMeta}>
+                    {note.number} · {noteDate(note.date, locale)}
+                  </span>
                   <span className={styles.noteTitle}>{note.title}</span>
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>
               </li>
             ))}
           </ul>
-          <Link href="/ai-blog" className={styles.researchLink}>
-            {locale === 'es' ? 'Todos mis escritos' : 'All writing'}
+          <Link href="/ai-blog" className={styles.secondaryLink}>
+            {copy.notesLink}
             <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
@@ -236,23 +212,27 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{copy.agentsLabel}</p>
           <h2 id="agents-title">{copy.agentsTitle}</h2>
+          <p className={styles.bodyCopy}>{copy.agentsLead}</p>
         </div>
         <div className={styles.agentList}>
           {copy.agents.map((agent) => (
-            <article key={agent.name} className={styles.agentRow}>
+            <article key={agent.callsign} className={styles.agentRow}>
               <span
                 className={`${styles.agentMark} ${styles[`agentMark${agent.color}`]}`}
                 aria-hidden="true"
               >
                 <Image
-                  src="/brand/xiv-red-emblem.png"
+                  src="/brand/xiv-dragon-emblem.png"
                   alt=""
-                  width={96}
-                  height={96}
+                  width={52}
+                  height={52}
                   className={styles.agentDragon}
                 />
               </span>
-              <p className={styles.agentRole}>{agent.callsign}</p>
+              <p className={styles.agentRole}>
+                {agent.callsign}
+                <span>{agent.name}</span>
+              </p>
             </article>
           ))}
         </div>
