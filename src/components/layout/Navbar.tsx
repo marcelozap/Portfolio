@@ -6,11 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
-const SECTIONS = [
-  { id: 'notes', en: 'Perspective', es: 'Perspectiva' },
-  { id: 'practice', en: 'Dragon Scales', es: 'Dragon Scales' },
-  { id: 'agents', en: 'Dragons', es: 'Dragones' },
-];
+const SECTIONS = [{ id: 'notes', en: 'Writing', es: 'Escritos' }];
 
 export function Navbar() {
   const pathname = usePathname();

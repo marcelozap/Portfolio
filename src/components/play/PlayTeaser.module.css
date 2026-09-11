@@ -1,12 +1,16 @@
 .teaser {
+  --pink-soft: #e5cfaa;
+  --ink: #faf4e8;
+  --faint: #a69d8c;
+  --line: rgb(212 180 119 / 18%);
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 36px;
   margin-top: 40px;
   padding: 26px;
-  border: 1px solid rgba(204, 170, 228, 0.18);
+  border: 1px solid rgba(212, 180, 119, 0.2);
   border-radius: 8px;
-  background: rgba(24, 14, 34, 0.45);
+  background: linear-gradient(125deg, #14120f, #090909 70%);
 }
 .chartWrap {
   min-width: 0;
@@ -16,11 +20,11 @@
 }
 .chartGhost {
   aspect-ratio: 760 / 200;
-  border: 1px solid rgba(204, 170, 228, 0.18);
+  border: 1px solid rgba(212, 180, 119, 0.2);
 }
 .chartCaption {
   margin: 0;
-  color: #8a7d9b;
+  color: #aaa297;
   font:
     11px var(--font-mono),
     monospace;
@@ -40,12 +44,12 @@
 }
 .copy > p {
   margin: 0;
-  color: #aba0ba;
+  color: #beb7ad;
   font-size: 14px;
   line-height: 1.8;
 }
 .label {
-  color: #dd85cc !important;
+  color: #d9bc83 !important;
   font:
     10px var(--font-mono),
     monospace !important;
@@ -53,7 +57,7 @@
   text-transform: uppercase;
 }
 .fresh {
-  color: #8a7d9b !important;
+  color: #aaa297 !important;
   font-size: 13px !important;
 }
 .history {
@@ -62,7 +66,7 @@
   align-self: flex-start;
   gap: 8px;
   min-height: 44px;
-  color: #86def1;
+  color: #e0c799;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -78,8 +82,8 @@
   margin-top: 6px;
   padding: 12px 19px;
   border-radius: 4px;
-  background: #f0e6f8;
-  color: #160b1e;
+  background: #e5cfaa;
+  color: #12100c;
   font-size: 13px;
   font-weight: 600;
   transition:
@@ -87,7 +91,7 @@
     transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .cta:hover {
-  background: #f3a4ed;
+  background: #f5e4c7;
   transform: translateY(-1px);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -97,9 +101,20 @@
 }
 @media (max-width: 760px) {
   .teaser {
+    --pink-soft: #e5cfaa;
+    --ink: #faf4e8;
+    --faint: #a69d8c;
+    --line: rgb(212 180 119 / 18%);
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 18px;
     margin-top: 28px;
   }
+}
+
+.chartWrap > svg {
+  background: linear-gradient(180deg, #17140e, #090909);
+}
+.chartWrap > svg > polygon {
+  fill: rgb(212 180 119 / 10%);
 }

@@ -19,19 +19,19 @@ const COPY = {
     scroll: 'More below',
     signature: 'Market structure / Execution / Risk',
 
-    notesLabel: '01 / Perspective',
-    notesTitle: 'Research. Reflection.',
+    notesLabel: '01 / Writing',
+    notesTitle: 'Notes & essays.',
     notesBody: 'Personal essays on what I’m learning and living.',
     notesLatest: 'Latest',
     notesLink: 'Read my writing',
-    market: 'Market movement, translated into sound and motion.',
+    market: 'Market price movement, translated into music, color, and motion.',
 
     practiceLabel: '02 / Practice',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Buy. Sell. Ride the tape.',
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
 
-    agentsLabel: '03 / The dragons',
+    agentsLabel: '03 / XIV',
     agentsTitle: 'The dragons.',
     agentsLead: '',
     agents: [
@@ -53,19 +53,19 @@ const COPY = {
     scroll: 'Más abajo',
     signature: 'Estructura / Ejecución / Riesgo',
 
-    notesLabel: '01 / Perspectiva',
-    notesTitle: 'Investigar. Reflexionar.',
+    notesLabel: '01 / Escritos',
+    notesTitle: 'Notas y ensayos.',
     notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
     notesLatest: 'Recientes',
     notesLink: 'Leer mis textos',
-    market: 'El movimiento del mercado, traducido a sonido y movimiento.',
+    market: 'El movimiento del precio del mercado, traducido en música, color y movimiento.',
 
     practiceLabel: '02 / Práctica',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Compra. Vende. Sigue el movimiento.',
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
 
-    agentsLabel: '03 / Los dragones',
+    agentsLabel: '03 / XIV',
     agentsTitle: 'Los dragones.',
     agentsLead: '',
     agents: [
@@ -93,6 +93,22 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   return (
     <div className={styles.home}>
       <section className={styles.hero} aria-labelledby="dragon-title">
+        <svg
+          className={styles.stars}
+          viewBox="0 0 1440 1000"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          {Array.from({ length: 75 }, (_, i) => (
+            <circle
+              key={i}
+              cx={(i * 317 + 83) % 1440}
+              cy={(i * 173 + 29) % 1000}
+              r={i % 7 === 0 ? 1.2 : 0.65}
+              opacity={0.18 + (i % 4) * 0.1}
+            />
+          ))}
+        </svg>
         <div className={styles.art}>
           <Image
             src="/brand/xiv-red-skyline.png"
