@@ -46,7 +46,7 @@
 }
 
 .founder {
-  color: #a79cb8;
+  color: #aaa29d;
   font-size: 10px;
   line-height: 1.5;
   letter-spacing: 0.06em;
@@ -75,7 +75,7 @@
 .menuButton:hover,
 .socialLinks a:hover,
 .footerIdentity:hover {
-  color: #72eaff;
+  color: #e3bd75;
 }
 
 .utilities {
@@ -92,7 +92,7 @@
   min-height: 44px;
   border-left: 1px solid rgb(247 241 255 / 18%);
   padding-left: 18px;
-  color: #ee62d8;
+  color: #e3bd75;
   font-size: 11px;
   letter-spacing: 0.1em;
 }
@@ -114,7 +114,7 @@
 .header a:focus-visible,
 .header button:focus-visible,
 .footer a:focus-visible {
-  outline: 1px solid #72eaff;
+  outline: 1px solid #e3bd75;
   outline-offset: 6px;
 }
 
@@ -144,7 +144,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: #ee62d8;
+  color: #e3bd75;
   font-size: 11px;
   letter-spacing: 0.06em;
 }
@@ -175,7 +175,7 @@
 }
 
 .socialLinks a span {
-  color: #ee62d8;
+  color: #e3bd75;
 }
 
 .footerBottom {
@@ -184,7 +184,7 @@
   gap: 20px;
   border-top: 1px solid rgb(247 241 255 / 12%);
   padding-top: 22px;
-  color: #a79cb8;
+  color: #aaa29d;
   font-size: 10px;
   letter-spacing: 0.06em;
 }
@@ -274,11 +274,11 @@
     transition: none;
   }
 }
-/* Main-site identity; game navigation keeps the original arcade palette. */
+/* Shared identity across the main site and game. */
 .header[data-theme='red'] {
   background: rgb(5 5 5 / 78%);
   color: #fafafa;
-  border-color: #292929;
+  border-color: rgb(227 189 117 / 12%);
 }
 .header[data-theme='red'] .founder {
   color: #b4b4ba;
@@ -288,7 +288,7 @@
 }
 .header[data-theme='red'] .navigationLinks a:hover,
 .header[data-theme='red'] .language {
-  color: #ff5360;
+  color: #e3bd75;
 }
 .header[data-theme='red'] .navigationLinks[data-open='true'] {
   background: #080808;
@@ -303,7 +303,7 @@
 }
 .footerIdentity,
 .socialLinks a span {
-  color: #ff5360;
+  color: #e3bd75;
 }
 .footerWordmark {
   color: white;
@@ -312,13 +312,27 @@
   color: #aaa;
 }
 
-/* One continuous crimson-to-black field behind the main site. */
+/* The night sky continues through the skyline and down the page. */
 .backdrop[data-theme='red'] {
+  position: absolute;
   background:
-    radial-gradient(ellipse 85% 70% at -12% 32%, rgb(119 12 29 / 43%), transparent 70%),
-    radial-gradient(ellipse 80% 80% at 112% 78%, rgb(131 10 27 / 34%), transparent 70%),
-    linear-gradient(135deg, #080506, #050505 48%, #0c0507);
+    linear-gradient(160deg, rgb(24 30 43 / 24%), transparent 1000px),
+    linear-gradient(180deg, #080b11, #08090c 700px, #080708 1450px);
+}
+.stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(
+    180deg,
+    #000,
+    rgb(0 0 0 / 75%) 900px,
+    rgb(0 0 0 / 30%) 1600px,
+    transparent
+  );
 }
 .footer[data-theme='red'] {
   background: transparent;
+  border-color: rgb(227 189 117 / 12%);
 }

@@ -12,7 +12,7 @@ const COPY = {
     dragon: 'dragon.',
     intro:
       'I’m Marcelo. My work centers on market structure, execution, risk management, and performance review.',
-    enter: 'My market perspective',
+    enter: 'Market journal',
     read: 'Read my writing',
     scroll: 'More below',
     signature: 'Market structure / Execution / Risk',
@@ -22,8 +22,8 @@ const COPY = {
     practiceLead: 'Buy. Sell. Ride the tape.',
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
 
-    agentsLabel: '03 / The dragons',
-    agentsTitle: 'Future ideas.',
+    agentsLabel: '03 / XIV',
+    agentsTitle: 'The dragons.',
     agents: [
       {
         name: 'Research Analyst',
@@ -47,7 +47,7 @@ const COPY = {
       },
     ],
 
-    notesLabel: '01 / Perspective',
+    notesLabel: '01 / Writing',
     notesTitle: 'Research. Reflection.',
     notesBody: 'Personal essays on what I’m learning and living.',
     notesLink: 'Read my writing',
@@ -59,7 +59,7 @@ const COPY = {
     dragon: 'dragón.',
     intro:
       'Soy Marcelo. Mi trabajo se centra en estructura de mercado, ejecución, gestión del riesgo y revisión de resultados.',
-    enter: 'Mi perspectiva del mercado',
+    enter: 'Diario de mercado',
     read: 'Leer mis escritos',
     scroll: 'Más abajo',
     signature: 'Estructura / Ejecución / Riesgo',
@@ -69,8 +69,8 @@ const COPY = {
     practiceLead: 'Compra. Vende. Sigue el movimiento.',
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
 
-    agentsLabel: '03 / Los dragones',
-    agentsTitle: 'Ideas para el futuro.',
+    agentsLabel: '03 / XIV',
+    agentsTitle: 'Los dragones.',
     agents: [
       {
         name: 'Research Analyst',
@@ -94,7 +94,7 @@ const COPY = {
       },
     ],
 
-    notesLabel: '01 / Perspectiva',
+    notesLabel: '01 / Escritos',
     notesTitle: 'Investigar. Reflexionar.',
     notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
     notesLink: 'Leer mis textos',
@@ -177,7 +177,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             rel="noopener noreferrer"
           >
             <span>MaloSound.ai</span>
-            <span>{locale === 'es' ? 'Mi perspectiva del mercado' : 'My market perspective'}</span>
+            <span>{locale === 'es' ? 'Diario de mercado' : 'Market journal'}</span>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
           <p className={styles.bodyCopy}>{copy.notesBody}</p>
@@ -219,10 +219,10 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
                 aria-hidden="true"
               >
                 <Image
-                  src="/brand/xiv-dragon-emblem.png"
+                  src="/brand/xiv-red-emblem.png"
                   alt=""
-                  width={52}
-                  height={52}
+                  width={96}
+                  height={96}
                   className={styles.agentDragon}
                 />
               </span>
