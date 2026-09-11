@@ -10,7 +10,8 @@ export const metadata = {
 
 const LANE_NOTES: Record<string, string> = {
   xiv: 'Orchestration, shared state, and multimodal experiments.',
-  malosound: 'Music, audio analysis, performance visuals, and release work.',
+  malosound:
+    'An audiovisual project translating market price movement into music, color, and motion.',
   rally: 'Movement, tennis, training, and computer vision.',
 };
 
