@@ -243,6 +243,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const t = COPY[locale];
   const gameRef = useRef<Game>(freshGame());
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const headAngleRef = useRef(0);
   const [, force] = useReducer((x: number) => x + 1, 0);
 
   const record = (g: Game, side: string, cls: Fill['cls'], qty: number, px: number) => {
@@ -313,6 +314,167 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     }
   };
 
+  // The live end of the price line is the dragon's head: it points where the
+  // last few ticks are going, and glows hotter the harder the move.
+  const drawDragonHead = (
+    cx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    angle: number,
+    scale: number,
+    heat: number,
+    phase: number,
+  ) => {
+    cx.save();
+    cx.translate(x, y);
+    cx.rotate(angle);
+    cx.scale(scale, scale);
+    // Sit the head back so the snout lands on the live price rather than
+    // hanging over the axis labels.
+    cx.translate(-6, 0);
+
+    // Embers stream back off the jaw, further and brighter on a fast tick.
+    for (let i = 0; i < 3; i++) {
+      const drift = (phase * 0.9 + i * 0.37) % 1;
+      const ex = -6 - drift * (7 + heat * 13);
+      const ey = (i - 1) * 1.7 + Math.sin((phase + i) * 2.1) * 1.5;
+      const fade = (1 - drift) * (0.25 + heat * 0.6);
+      cx.fillStyle = `hsla(45 100% 66% / ${fade.toFixed(3)})`;
+      cx.beginPath();
+      cx.arc(ex, ey, 0.9 + heat * 0.9 - drift * 0.5, 0, 7);
+      cx.fill();
+    }
+
+    // Kept deliberately dim: a strong glow washes the silhouette out at this size.
+    const glow = cx.createRadialGradient(0, -1, 0, 0, -1, 13);
+    glow.addColorStop(0, `hsla(48 100% 70% / ${(0.16 + heat * 0.22).toFixed(3)})`);
+    glow.addColorStop(0.5, `hsla(38 100% 56% / ${(0.06 + heat * 0.12).toFixed(3)})`);
+    glow.addColorStop(1, 'hsla(38 100% 56% / 0)');
+    cx.fillStyle = glow;
+    cx.beginPath();
+    cx.arc(0, -1, 13, 0, 7);
+    cx.fill();
+
+    const ink = 'hsl(266 48% 6%)';
+    const outline = (w: number) => {
+      cx.strokeStyle = ink;
+      cx.lineJoin = 'round';
+      cx.lineWidth = w;
+      cx.stroke();
+    };
+
+    // One thick swept-back horn, rooted in the cranium.
+    cx.fillStyle = 'hsl(45 90% 76%)';
+    cx.beginPath();
+    cx.moveTo(-1.6, -5.2);
+    cx.lineTo(-10.4, -7.4);
+    cx.lineTo(-9.2, -5.1);
+    cx.lineTo(-4.0, -3.6);
+    cx.closePath();
+    cx.fill();
+    outline(0.9);
+
+    // Back fin and jaw barbel.
+    cx.fillStyle = 'hsl(38 88% 60%)';
+    cx.beginPath();
+    cx.moveTo(-4.6, -3.0);
+    cx.lineTo(-9.4, -2.4);
+    cx.lineTo(-4.4, -0.8);
+    cx.closePath();
+    cx.fill();
+    outline(0.8);
+    cx.fillStyle = 'hsl(33 92% 46%)';
+    cx.beginPath();
+    cx.moveTo(-3.8, 1.8);
+    cx.lineTo(-7.8, 3.6);
+    cx.lineTo(-2.8, 3.1);
+    cx.closePath();
+    cx.fill();
+    outline(0.7);
+
+    // Open mouth: a solid dark wedge, drawn first so the jaws frame it and
+    // the gap survives even where the glow is brightest.
+    cx.fillStyle = ink;
+    cx.beginPath();
+    cx.moveTo(6.8, 0.3);
+    cx.lineTo(0.6, -0.3);
+    cx.lineTo(-4.2, -0.4);
+    cx.lineTo(-4.2, 0.4);
+    cx.lineTo(0.6, 1.6);
+    cx.lineTo(5.6, 2.0);
+    cx.closePath();
+    cx.fill();
+
+    // Lower jaw, dropped open.
+    cx.fillStyle = 'hsl(34 94% 48%)';
+    cx.beginPath();
+    cx.moveTo(-4.2, 0.1);
+    cx.lineTo(0.6, 1.6);
+    cx.lineTo(5.6, 2.0);
+    cx.lineTo(5.2, 3.0);
+    cx.lineTo(0.8, 3.4);
+    cx.lineTo(-3.6, 2.6);
+    cx.closePath();
+    cx.fill();
+    outline(0.95);
+
+    // Skull: short snout, heavy cranium, brow ridge over the eye.
+    const hide = cx.createLinearGradient(-5, 0, 7, 0);
+    hide.addColorStop(0, 'hsl(34 96% 50%)');
+    hide.addColorStop(0.55, 'hsl(42 100% 64%)');
+    hide.addColorStop(1, 'hsl(50 100% 80%)');
+    cx.fillStyle = hide;
+    cx.beginPath();
+    cx.moveTo(7.2, -0.9);
+    cx.lineTo(6.8, 0.3);
+    cx.lineTo(0.6, -0.3);
+    cx.lineTo(-4.2, -0.5);
+    cx.lineTo(-5.2, -2.2);
+    cx.lineTo(-4.4, -4.4);
+    cx.lineTo(-1.2, -5.4);
+    cx.lineTo(0.6, -4.2);
+    cx.lineTo(3.6, -3.4);
+    cx.lineTo(6.6, -2.4);
+    cx.closePath();
+    cx.fill();
+    outline(1);
+
+    // Teeth, top and bottom, biting into the dark gap.
+    cx.fillStyle = 'hsl(50 100% 90%)';
+    cx.beginPath();
+    cx.moveTo(6.0, 0.2);
+    cx.lineTo(5.4, 1.6);
+    cx.lineTo(4.9, 0.1);
+    cx.closePath();
+    cx.moveTo(3.6, -0.1);
+    cx.lineTo(3.1, 1.2);
+    cx.lineTo(2.6, -0.2);
+    cx.closePath();
+    cx.moveTo(4.8, 1.9);
+    cx.lineTo(4.4, 0.7);
+    cx.lineTo(3.9, 1.8);
+    cx.closePath();
+    cx.fill();
+
+    // Eye.
+    cx.fillStyle = ink;
+    cx.beginPath();
+    cx.ellipse(-1.8, -2.9, 1.85, 1.25, -0.18, 0, 7);
+    cx.fill();
+    cx.fillStyle = 'hsl(0 0% 100%)';
+    cx.beginPath();
+    cx.ellipse(-1.4, -3.0, 0.85, 0.5, -0.18, 0, 7);
+    cx.fill();
+
+    // Nostril.
+    cx.fillStyle = ink;
+    cx.beginPath();
+    cx.arc(5.6, -2.2, 0.6, 0, 7);
+    cx.fill();
+
+    cx.restore();
+  };
+
   const draw = (g: Game) => {
     const cv = canvasRef.current;
     if (!cv) return;
@@ -367,10 +529,25 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       else cx.moveTo(x, y);
     }
     cx.stroke();
-    cx.fillStyle = 'hsl(38 100% 56%)';
-    cx.beginPath();
-    cx.arc(X(KEEP - 1), Y(p[p.length - 1]), 3, 0, 7);
-    cx.fill();
+
+    const tipX = X(KEEP - 1);
+    const tipY = Y(p[p.length - 1]);
+    // Aim from a few ticks back so the head leans into the trend instead of
+    // snapping to every single print.
+    const back = Math.max(0, p.length - 4);
+    const rise = tipY - Y(p[back]);
+    const run = tipX - X(off + back);
+    const LIMIT = 1.05; // ~60deg, so a violent tick never flips the head over
+    const target =
+      run === 0 && rise === 0 ? 0 : Math.max(-LIMIT, Math.min(LIMIT, Math.atan2(rise, run)));
+    const eased = headAngleRef.current + (target - headAngleRef.current) * 0.35;
+    headAngleRef.current = Number.isFinite(eased) ? eased : 0;
+
+    const span = hi - lo;
+    const jump = Math.abs(p[p.length - 1] - p[Math.max(0, p.length - 2)]);
+    const heat = span > 0 ? Math.min(1, jump / (span * 0.06)) : 0;
+    const scale = Math.max(2.1, Math.min(3.2, W / 300));
+    drawDragonHead(cx, tipX, tipY, headAngleRef.current, scale, heat, g.elapsed * 0.35);
   };
 
   const restart = () => {
