@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { PlayTeaser } from '@/components/play/PlayTeaser';
+
 import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
 
@@ -11,8 +11,7 @@ const COPY = {
     premise: 'Everyone is a bull or a bear.',
     first: 'I am the',
     dragon: 'dragon.',
-    intro:
-      'I’m Marcelo. My work centers on market structure, execution, risk management, and performance review.',
+    intro: 'I trade options through XIV.',
     research: 'XIV on LinkedIn',
     enter: 'Explore MaloSound',
     read: 'Read my writing',
@@ -45,8 +44,7 @@ const COPY = {
     premise: 'Todos son toros o osos.',
     first: 'Soy el',
     dragon: 'dragón.',
-    intro:
-      'Soy Marcelo. Mi trabajo se centra en estructura de mercado, ejecución, gestión del riesgo y revisión de resultados.',
+    intro: 'Opero opciones a través de XIV.',
     research: 'XIV en LinkedIn',
     enter: 'Explorar MaloSound',
     read: 'Leer mis escritos',
@@ -111,7 +109,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </svg>
         <div className={styles.art}>
           <Image
-            src="/brand/xiv-red-skyline.png"
+            src="/brand/xiv-guardian-skyline.png"
             alt={
               locale === 'es'
                 ? 'Dragón de XIV sobre una ciudad nocturna.'
@@ -144,25 +142,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             {copy.research}
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-          <div className={styles.actions}>
-            <a
-              href="https://malosound.ai/"
-              className={styles.primaryLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {copy.enter}
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
-            <Link href="/ai-blog" className={styles.secondaryLink}>
-              {copy.read}
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-        <div className={styles.heroBottom}>
-          <span>{copy.scroll}</span>
-          <span>{copy.signature}</span>
         </div>
       </section>
 
@@ -178,16 +157,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <p className={styles.bodyCopy}>{copy.notesBody}</p>
         </div>
         <div className={styles.writingBody}>
-          <a
-            href="https://malosound.ai/"
-            className={styles.marketLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>MaloSound.ai</span>
-            <span>{copy.market}</span>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
           <p className={styles.noteListLabel}>{copy.notesLatest}</p>
           <ul className={styles.noteList}>
             {LATEST_NOTES.map((note) => (
@@ -209,34 +178,87 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
       </section>
 
-      <section id="practice" className={styles.vision} aria-labelledby="practice-title">
+      <section id="practice" className={styles.writing} aria-labelledby="projects-title">
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.practiceLabel}</p>
-          <h2 id="practice-title">{copy.practiceTitle}</h2>
+          <p className={styles.eyebrow}>{locale === 'es' ? '02 / Proyectos' : '02 / Projects'}</p>
+          <h2 id="projects-title">
+            {locale === 'es' ? 'Otras formas de explorar.' : 'Other ways to explore.'}
+          </h2>
         </div>
-        <div className={styles.visionBody}>
-          <p className={styles.lead}>{copy.practiceLead}</p>
-          <ul className={styles.practiceFacts}>
-            {copy.practiceFacts.map((fact) => (
-              <li key={fact}>{fact}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.visionWide}>
-          <PlayTeaser locale={locale} />
+        <div className={styles.projectList}>
+          <a
+            href="https://malosound.ai/"
+            className={styles.project}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <h3>MaloSound</h3>
+              <p>{copy.market}</p>
+              <span>{locale === 'es' ? 'Explorar MaloSound' : 'Explore MaloSound'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <Link href={locale === 'es' ? '/es/play' : '/play'} className={styles.project}>
+            <div>
+              <h3>Dragon Scales</h3>
+              <p>
+                {locale === 'es'
+                  ? 'Un juego de trading gratuito con precios simulados y fondos virtuales.'
+                  : 'A free trading game with simulated prices and virtual funds.'}
+              </p>
+              <span>{locale === 'es' ? 'Jugar' : 'Play'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
         </div>
       </section>
-
-      <section id="agents" className={styles.writing} aria-labelledby="agents-title">
+      <section id="about" className={styles.writing} aria-labelledby="about-title">
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.agentsLabel}</p>
-          <h2 id="agents-title">{copy.agentsTitle}</h2>
+          <p className={styles.eyebrow}>{locale === 'es' ? '03 / Sobre mí' : '03 / About'}</p>
+          <h2 id="about-title">Marcelo Zapata.</h2>
+        </div>
+        <div className={styles.aboutCopy}>
+          <p>
+            {locale === 'es'
+              ? 'El trading forma parte de mi vida desde hace diez años, junto a una carrera en ingeniería de software y sistemas empresariales.'
+              : 'Trading has been part of my life for ten years, alongside a career in software engineering and enterprise systems.'}
+          </p>
+          <p>
+            {locale === 'es'
+              ? 'XIV comenzó como mi proyecto de tesis de ingeniería de software en Florida State University. Hoy reúne mi trabajo en trading de opciones e investigación de mercados.'
+              : 'XIV began as my software engineering thesis at Florida State University. Today it brings together my options trading and market research.'}
+          </p>
+          <Link href="/systems/xiv" className={styles.researchLink}>
+            {locale === 'es' ? 'Los orígenes de XIV' : 'The origins of XIV'}{' '}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/dragons" className={styles.archiveLink}>
+            {locale === 'es' ? 'Los dragones de XIV' : 'The XIV dragons'}{' '}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export function DragonCollection() {
+  return (
+    <div className={styles.home}>
+      <section className={styles.collection} aria-labelledby="collection-title">
+        <Link href="/" className={styles.researchLink}>
+          Back to XIV
+        </Link>
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>XIV / Visual identity</p>
+          <h1 id="collection-title">The dragons.</h1>
         </div>
         <div className={styles.agentList}>
-          {copy.agents.map((agent) => (
+          {COPY.en.agents.map((agent) => (
             <article key={agent.callsign} className={styles.agentRow}>
               <span
-                className={`${styles.agentMark} ${styles[`agentMark${agent.color}`]}`}
+                className={styles.agentMark + ' ' + styles['agentMark' + agent.color]}
                 aria-hidden="true"
               >
                 <Image
