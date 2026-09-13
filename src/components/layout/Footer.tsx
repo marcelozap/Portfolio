@@ -1,4 +1,5 @@
 'use client';
+import { XivWordmark } from '@/components/brand/XivWordmark';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,7 +15,7 @@ export function Footer() {
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
-            <span className={styles.footerWordmark}>XIV</span>
+            <XivWordmark width={105} />
             <span>{isSpanish ? 'Opciones · Investigación' : 'Options Trading · Research'}</span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>

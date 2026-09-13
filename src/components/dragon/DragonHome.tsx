@@ -1,3 +1,4 @@
+import { XivWordmark } from '@/components/brand/XivWordmark';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
@@ -90,6 +91,13 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
 
   return (
     <div className={styles.home}>
+      <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute' }}>
+        <defs>
+          <filter id="xiv-remove-black" colorInterpolationFilters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 1 1 0 0" />
+          </filter>
+        </defs>
+      </svg>
       <section className={styles.hero} aria-labelledby="dragon-title">
         <div className={styles.art}>
           <Image
@@ -103,29 +111,26 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           />
         </div>
         <div className={styles.heroCopy}>
-          <Image
-            src="/brand/xiv-segmented-mark.png"
-            alt="XIV"
-            width={170}
-            height={170}
-            priority
-            className={styles.heroMark}
-          />
-          <p className={styles.eyebrow}>{copy.eyebrow}</p>
+          <div className={styles.heroIdentity}>
+            <div className={styles.emblemCrop}>
+              <Image
+                src="/brand/xiv-segmented-mark.png"
+                alt="Red XIV emblem"
+                width={260}
+                height={260}
+                priority
+              />
+            </div>
+            <XivWordmark width={110} />
+          </div>
+          <p className={styles.eyebrow}>
+            {locale === 'es' ? 'Trader de opciones' : 'Options Trader'}
+          </p>
           <h1 id="dragon-title" className={styles.title}>
             <span>{copy.first} </span>
             <span className={styles.dragonWord}>{copy.dragon}</span>
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
-          <a
-            href="https://www.linkedin.com/company/xiv-trading-technology/"
-            className={styles.researchLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {copy.research}
-            <ArrowUpRight size={14} aria-hidden="true" />
-          </a>
         </div>
       </section>
 

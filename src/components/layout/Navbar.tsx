@@ -1,4 +1,5 @@
 'use client';
+import { XivWordmark } from '@/components/brand/XivWordmark';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -70,7 +71,7 @@ export function Navbar() {
             priority
           />
           <span className={styles.brandCopy}>
-            <span className={styles.wordmark}>XIV</span>
+            <XivWordmark width={58} />
             <span className={styles.founder}>Marcelo Zapata</span>
           </span>
         </Link>
