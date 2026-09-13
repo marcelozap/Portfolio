@@ -11,7 +11,7 @@ const COPY = {
     premise: 'Everyone is a bull or a bear.',
     first: 'I am the',
     dragon: 'dragon.',
-    intro: 'I trade options through XIV.',
+    intro: 'Options trading and market research.',
     research: 'XIV on LinkedIn',
     enter: 'Explore MaloSound',
     read: 'Read my writing',
@@ -19,7 +19,7 @@ const COPY = {
     signature: 'Market structure / Execution / Risk',
 
     notesLabel: '01 / Writing',
-    notesTitle: 'Notes & essays.',
+    notesTitle: 'Selected writing.',
     notesBody: 'Personal essays on what I’m learning and living.',
     notesLatest: 'Latest',
     notesLink: 'Read my writing',
@@ -44,7 +44,7 @@ const COPY = {
     premise: 'Todos son toros o osos.',
     first: 'Soy el',
     dragon: 'dragón.',
-    intro: 'Opero opciones a través de XIV.',
+    intro: 'Trading de opciones e investigación de mercados.',
     research: 'XIV en LinkedIn',
     enter: 'Explorar MaloSound',
     read: 'Leer mis escritos',
@@ -52,7 +52,7 @@ const COPY = {
     signature: 'Estructura / Ejecución / Riesgo',
 
     notesLabel: '01 / Escritos',
-    notesTitle: 'Notas y ensayos.',
+    notesTitle: 'Escritos seleccionados.',
     notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
     notesLatest: 'Recientes',
     notesLink: 'Leer mis textos',
@@ -91,30 +91,10 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   return (
     <div className={styles.home}>
       <section className={styles.hero} aria-labelledby="dragon-title">
-        <svg
-          className={styles.stars}
-          viewBox="0 0 1440 1000"
-          preserveAspectRatio="xMidYMid slice"
-          aria-hidden="true"
-        >
-          {Array.from({ length: 75 }, (_, i) => (
-            <circle
-              key={i}
-              cx={(i * 317 + 83) % 1440}
-              cy={(i * 173 + 29) % 1000}
-              r={i % 7 === 0 ? 1.2 : 0.65}
-              opacity={0.18 + (i % 4) * 0.1}
-            />
-          ))}
-        </svg>
         <div className={styles.art}>
           <Image
-            src="/brand/xiv-guardian-skyline.png"
-            alt={
-              locale === 'es'
-                ? 'Dragón de XIV sobre una ciudad nocturna.'
-                : 'Red and white XIV skyline, with a dragon forming the I.'
-            }
+            src="/brand/xiv-gold-horizon.png"
+            alt=""
             fill
             priority
             sizes="100vw"
@@ -123,11 +103,15 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           />
         </div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>
-            <span className={styles.spark} />
-            {copy.eyebrow}
-          </p>
-          <p className={styles.premise}>{copy.premise}</p>
+          <Image
+            src="/brand/xiv-segmented-mark.png"
+            alt="XIV"
+            width={170}
+            height={170}
+            priority
+            className={styles.heroMark}
+          />
+          <p className={styles.eyebrow}>{copy.eyebrow}</p>
           <h1 id="dragon-title" className={styles.title}>
             <span>{copy.first} </span>
             <span className={styles.dragonWord}>{copy.dragon}</span>
@@ -145,7 +129,11 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
       </section>
 
-      <section id="notes" className={styles.writing} aria-labelledby="notes-title">
+      <section
+        id="notes"
+        className={`${styles.writing} ${styles.selectedWriting}`}
+        aria-labelledby="notes-title"
+      >
         <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{copy.notesLabel}</p>
@@ -157,7 +145,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <p className={styles.bodyCopy}>{copy.notesBody}</p>
         </div>
         <div className={styles.writingBody}>
-          <p className={styles.noteListLabel}>{copy.notesLatest}</p>
           <ul className={styles.noteList}>
             {LATEST_NOTES.map((note) => (
               <li key={note.slug}>
@@ -166,6 +153,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
                     {note.number} · {noteDate(note.date, locale)}
                   </time>
                   <span className={styles.noteTitle}>{note.title}</span>
+                  <span className={styles.noteSummary}>{note.summary}</span>
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>
               </li>

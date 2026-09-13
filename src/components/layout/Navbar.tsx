@@ -6,7 +6,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
-const SECTIONS = [{ id: 'notes', en: 'Writing', es: 'Escritos' }];
+const SECTIONS = [
+  { id: 'notes', en: 'Writing', es: 'Escritos' },
+  { id: 'practice', en: 'Projects', es: 'Proyectos' },
+  { id: 'about', en: 'About', es: 'Sobre mí' },
+];
 
 export function Navbar() {
   const pathname = usePathname();
@@ -59,7 +63,7 @@ export function Navbar() {
             src={
               pathname.includes('/play')
                 ? '/brand/xiv-dragon-emblem.png'
-                : '/brand/xiv-red-emblem.png'
+                : '/brand/xiv-segmented-mark.png'
             }
             alt=""
             width={48}
@@ -88,11 +92,6 @@ export function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link href={isSpanish ? '/es/play' : '/play'} onClick={() => setMenuOpen(false)}>
-              {isSpanish ? 'Jugar' : 'Play'}
-            </Link>
-          </li>
         </ul>
 
         <div className={styles.utilities}>
