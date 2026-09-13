@@ -93,7 +93,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       <section className={styles.hero} aria-labelledby="dragon-title">
         <div className={styles.art}>
           <Image
-            src="/brand/xiv-gold-horizon.png"
+            src="/brand/xiv-mirrored-dragons.png"
             alt=""
             fill
             priority

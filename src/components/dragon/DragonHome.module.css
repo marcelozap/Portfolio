@@ -194,7 +194,7 @@
   animation: fade 1.4s var(--ease-out) both;
 }
 .artImage {
-  object-fit: cover;
+  object-fit: contain;
   opacity: 1;
   mix-blend-mode: screen;
 }
@@ -538,6 +538,9 @@
     height: 320px;
     margin: 0;
     flex-shrink: 0;
+  }
+  .artImage {
+    object-position: center 60%;
   }
   .heroBottom {
     font-size: 10px;

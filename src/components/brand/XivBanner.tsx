@@ -13,11 +13,11 @@ export function XivBanner({
 }) {
   return (
     <Image
-      src="/brand/xiv-gold-horizon.png"
+      src="/brand/xiv-mirrored-dragons.png"
       alt={
         locale === 'es'
-          ? 'Montañas oscuras y un horizonte dorado.'
-          : 'Charcoal mountains and a fine gold horizon.'
+          ? 'Dos dragones oscuros frente a frente sobre un horizonte dorado.'
+          : 'Two charcoal dragons facing inward above a gold horizon.'
       }
       width={2172}
       height={724}
