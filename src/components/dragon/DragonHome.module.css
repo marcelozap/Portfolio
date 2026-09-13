@@ -37,7 +37,7 @@
   background: #101010;
 }
 .heroCopy {
-  background: #101010;
+  mix-blend-mode: screen;
   position: relative;
   z-index: 1;
   order: 0;
@@ -73,6 +73,7 @@
   height: 170px;
   margin: 0 auto;
   mix-blend-mode: screen;
+  mask-image: radial-gradient(ellipse, #000 45%, transparent 74%);
 }
 .spark {
   width: 6px;

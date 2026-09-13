@@ -335,7 +335,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       cx.restore();
     }
     // This small point always marks the exact quoted price.
-    cx.fillStyle = 'hsl(38 100% 56%)';
+    cx.fillStyle = 'hsl(40 46% 66%)';
     cx.beginPath();
     cx.arc(x, y, 1.8, 0, Math.PI * 2);
     cx.fill();
@@ -361,8 +361,8 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
     const inset = Math.max(18, markerSize * 0.95);
     const X = (i: number) => (i / (KEEP - 1)) * (W - 52);
     const Y = (v: number) => H - inset - ((v - lo) / (hi - lo)) * (H - inset * 2);
-    cx.strokeStyle = 'rgba(233, 221, 236, 0.16)';
-    cx.fillStyle = 'rgba(233, 221, 236, 0.55)';
+    cx.strokeStyle = 'rgba(230, 222, 205, 0.16)';
+    cx.fillStyle = 'rgba(230, 222, 205, 0.55)';
     cx.font = '11px monospace';
     cx.lineWidth = 1;
     for (let k = 0; k < 4; k++) {
@@ -385,7 +385,7 @@ export function DragonTape({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       cx.stroke();
       cx.setLineDash([]);
     }
-    cx.strokeStyle = 'hsl(38 100% 56%)';
+    cx.strokeStyle = 'hsl(40 46% 66%)';
     cx.lineWidth = 1.75;
     cx.beginPath();
     const off = KEEP - p.length;

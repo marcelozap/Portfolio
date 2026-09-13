@@ -9,10 +9,10 @@
    ========================================================================= */
 
 :root {
-  /* XIV dragon: near-black, violet, magenta, and cyan */
-  --bg: 263 50% 3%;
-  --bg-subtle: 267 38% 5%;
-  --bg-elevated: 266 30% 8%;
+  /* Shared charcoal foundation across page boundaries. */
+  --bg: 0 0% 6.3%;
+  --bg-subtle: 0 0% 6.3%;
+  --bg-elevated: 40 3% 9%;
 
   /* XIV content ramp */
   --ink: 274 100% 97%;

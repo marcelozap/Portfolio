@@ -13,18 +13,22 @@ export function XivBanner({
 }) {
   return (
     <Image
-      src="/brand/xiv-red-skyline.png"
+      src="/brand/xiv-gold-horizon.png"
       alt={
         locale === 'es'
-          ? 'XIV en rojo, negro y blanco, con el dragón como la I.'
-          : 'XIV in red, black and white, with the dragon as the I.'
+          ? 'Montañas oscuras y un horizonte dorado.'
+          : 'Charcoal mountains and a fine gold horizon.'
       }
-      width={1774}
-      height={887}
+      width={2172}
+      height={724}
       quality={90}
       priority={priority}
       sizes={sizes}
       className={`block h-auto w-full ${className}`}
+      style={{
+        mixBlendMode: 'screen',
+        maskImage: 'radial-gradient(ellipse, black 35%, transparent 74%)',
+      }}
     />
   );
 }

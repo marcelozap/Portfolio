@@ -354,3 +354,36 @@
 .footer[data-theme='red'] .socialLinks a span {
   color: #c7af85;
 }
+
+/* Game surfaces share the portfolio's neutral foundation. */
+.backdrop[data-theme='game'] {
+  background: #101010;
+}
+.header[data-theme='game'] {
+  background: rgb(16 16 16 / 94%);
+  border-color: #30302b;
+  color: #eee9dd;
+}
+.header[data-theme='game'] .emblem {
+  mix-blend-mode: screen;
+}
+.header[data-theme='game'] .founder {
+  color: #aaa397;
+}
+.header[data-theme='game'] .navigationLinks a {
+  color: #eee9dd;
+}
+.header[data-theme='game'] .navigationLinks[data-open='true'] {
+  background: #101010;
+}
+.header[data-theme='game'] .language,
+.header[data-theme='game'] a:hover {
+  color: #d3b77c;
+}
+.footer[data-theme='game'] {
+  background: #101010;
+}
+.footer[data-theme='game'] .footerIdentity,
+.footer[data-theme='game'] .socialLinks a span {
+  color: #c7af85;
+}

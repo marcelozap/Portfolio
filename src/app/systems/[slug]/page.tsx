@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PUBLIC_SYSTEMS, getPublicSystem } from '@/lib/public-systems';
 import { XivBanner } from '@/components/brand/XivBanner';
+import styles from './SystemPage.module.css';
 
 export function generateStaticParams() {
   return PUBLIC_SYSTEMS.map((system) => ({ slug: system.slug }));
@@ -26,7 +27,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
   if (!project) notFound();
 
   return (
-    <article className="section pt-32 md:pt-40">
+    <article className={`${styles.project} section pt-32 md:pt-40`}>
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"

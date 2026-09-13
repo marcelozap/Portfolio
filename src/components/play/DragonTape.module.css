@@ -1,4 +1,9 @@
 .page {
+  --ink: 43 30% 90%;
+  --accent: 40 46% 66%;
+  --accent-warm: 40 46% 66%;
+  --signal-green: 145 40% 64%;
+  --signal-red: 3 65% 68%;
   width: calc(100% - 32px);
   max-width: 1440px;
   margin: 0 auto;
@@ -23,7 +28,7 @@
 }
 .label {
   margin: 4px 0 0;
-  color: #b6a6c8;
+  color: #bbb5aa;
   font-size: 11px;
 }
 .account {
@@ -35,7 +40,7 @@
 }
 .cash {
   margin: 3px 0 0;
-  color: #b6a6c8;
+  color: #bbb5aa;
   font-size: 11px;
   font-variant-numeric: tabular-nums;
 }
@@ -47,8 +52,8 @@
 }
 .panel {
   min-width: 0;
-  background: rgba(24, 14, 34, 0.55);
-  border: 1px solid rgba(233, 221, 236, 0.14);
+  background: rgba(24, 24, 23, 0.55);
+  border: 1px solid rgba(230, 222, 205, 0.14);
   border-radius: 6px;
   padding: 12px;
 }
@@ -63,7 +68,7 @@
   margin-bottom: 8px;
 }
 .sym {
-  color: #8a799c;
+  color: #aaa397;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -78,8 +83,8 @@
   margin-left: auto;
   font-size: 11px;
   white-space: nowrap;
-  color: #8a799c;
-  border: 1px solid rgba(233, 221, 236, 0.18);
+  color: #aaa397;
+  border: 1px solid rgba(230, 222, 205, 0.18);
   border-radius: 3px;
   padding: 2px 5px;
 }
@@ -91,15 +96,15 @@
   width: 100%;
   height: clamp(240px, 48svh, 520px);
   display: block;
-  background: rgba(10, 4, 16, 0.6);
-  border: 1px solid rgba(233, 221, 236, 0.1);
+  background: rgba(13, 13, 12, 0.6);
+  border: 1px solid rgba(230, 222, 205, 0.1);
   border-radius: 4px;
 }
 .chartfoot {
   display: flex;
   gap: 16px;
   margin-top: 8px;
-  color: #b6a6c8;
+  color: #bbb5aa;
   font-size: 11px;
   font-variant-numeric: tabular-nums;
 }
@@ -108,7 +113,7 @@
 }
 .lbl {
   margin: 0 0 6px;
-  color: #b6a6c8;
+  color: #bbb5aa;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -122,8 +127,8 @@
 }
 .track {
   height: 8px;
-  background: rgba(10, 4, 16, 0.6);
-  border: 1px solid rgba(233, 221, 236, 0.12);
+  background: rgba(13, 13, 12, 0.6);
+  border: 1px solid rgba(230, 222, 205, 0.12);
   border-radius: 4px;
   overflow: hidden;
   margin: 10px 0 6px;
@@ -136,7 +141,7 @@
 .unlockmsg {
   margin: 0;
   font-size: 12px;
-  color: #8a799c;
+  color: #aaa397;
 }
 .unlockedOn {
   color: hsl(var(--accent-warm));
@@ -159,8 +164,8 @@
   color: hsl(var(--signal-red));
 }
 .sideFlat {
-  background: rgba(233, 221, 236, 0.08);
-  color: #8a799c;
+  background: rgba(230, 222, 205, 0.08);
+  color: #aaa397;
 }
 .rowline {
   display: flex;
@@ -184,7 +189,7 @@
   text-align: right;
 }
 .rowline span:first-child {
-  color: #8a799c;
+  color: #aaa397;
 }
 .qtyrow {
   display: flex;
@@ -193,9 +198,9 @@
 }
 .qty {
   flex: 1;
-  background: rgba(10, 4, 16, 0.5);
-  border: 1px solid rgba(233, 221, 236, 0.14);
-  color: #8a799c;
+  background: rgba(13, 13, 12, 0.5);
+  border: 1px solid rgba(230, 222, 205, 0.14);
+  color: #aaa397;
   font-family: inherit;
   font-size: 13px;
   padding: 8px 0;
@@ -215,7 +220,7 @@
   margin-top: 2px;
 }
 .qty:disabled {
-  color: #8a799c;
+  color: #aaa397;
   border-style: dashed;
   cursor: not-allowed;
 }
@@ -270,8 +275,8 @@
 .ghost {
   flex: 1;
   background: transparent;
-  border: 1px solid rgba(233, 221, 236, 0.14);
-  color: #8a799c;
+  border: 1px solid rgba(230, 222, 205, 0.14);
+  color: #aaa397;
   font-family: inherit;
   font-size: 12px;
   padding: 8px 0;
@@ -286,12 +291,12 @@
 .toast {
   min-height: 32px;
   font-size: 12px;
-  color: #8a799c;
+  color: #aaa397;
   margin: 8px 0 0;
 }
 .page button:focus-visible,
 .details summary:focus-visible {
-  outline: 2px solid #72eaff;
+  outline: 2px solid #d3b77c;
   outline-offset: 3px;
 }
 .details {
@@ -302,7 +307,7 @@
   cursor: pointer;
   padding: 10px 0;
   font-size: 12px;
-  color: #b6a6c8;
+  color: #bbb5aa;
 }
 .detailsGrid {
   display: grid;
@@ -325,11 +330,11 @@
   display: flex;
   gap: 10px;
   padding: 3px 0;
-  border-bottom: 1px solid rgba(233, 221, 236, 0.08);
+  border-bottom: 1px solid rgba(230, 222, 205, 0.08);
   font-variant-numeric: tabular-nums;
 }
 .fillTime {
-  color: #8a799c;
+  color: #aaa397;
 }
 .fillBuy {
   color: hsl(var(--signal-green));
@@ -341,7 +346,7 @@
   color: hsl(var(--accent-warm));
 }
 .keysPanel {
-  color: #8a799c;
+  color: #aaa397;
   font-size: 11px;
   line-height: 1.9;
 }
@@ -350,8 +355,8 @@
 }
 .keysPanel b {
   color: hsl(var(--ink));
-  background: rgba(10, 4, 16, 0.5);
-  border: 1px solid rgba(233, 221, 236, 0.14);
+  background: rgba(13, 13, 12, 0.5);
+  border: 1px solid rgba(230, 222, 205, 0.14);
   border-radius: 3px;
   padding: 0 5px;
   font-weight: 500;
@@ -361,7 +366,7 @@
 }
 .practiceFooter {
   margin: 18px 0 0;
-  color: #8a799c;
+  color: #aaa397;
   font-size: 11px;
   letter-spacing: 0.04em;
   line-height: 1.7;
@@ -370,14 +375,14 @@
   margin: 0;
 }
 .disclaimer {
-  color: #8a799c;
+  color: #aaa397;
 }
 .historyLink {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  color: #86def1;
+  color: #d3b77c;
 }
 .pos {
   color: hsl(var(--signal-green));

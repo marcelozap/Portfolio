@@ -1,0 +1,14 @@
+.project {
+  --ink: 43 30% 90%;
+  --ink-muted: 40 9% 70%;
+  --ink-faint: 40 8% 62%;
+  --accent: 40 46% 66%;
+  --accent-warm: 40 46% 66%;
+  --line: 40 12% 24%;
+  background: #101010;
+}
+.project h1,
+.project h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}

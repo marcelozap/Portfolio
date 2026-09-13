@@ -60,11 +60,7 @@ export function Navbar() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src={
-              pathname.includes('/play')
-                ? '/brand/xiv-dragon-emblem.png'
-                : '/brand/xiv-segmented-mark.png'
-            }
+            src="/brand/xiv-segmented-mark.png"
             alt=""
             width={48}
             height={48}
