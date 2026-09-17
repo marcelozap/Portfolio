@@ -12,6 +12,7 @@ const COPY = {
     premise: 'Everyone is a bull or a bear.',
     first: 'I am the',
     dragon: 'dragon.',
+    philosophy: 'Neither bull nor bear. I follow the evidence and manage the risk.',
     intro: 'Options trading and market research.',
     research: 'XIV on LinkedIn',
     enter: 'Explore MaloSound',
@@ -45,6 +46,7 @@ const COPY = {
     premise: 'Todos son toros o osos.',
     first: 'Soy el',
     dragon: 'dragón.',
+    philosophy: 'Ni alcista ni bajista. Sigo la evidencia y gestiono el riesgo.',
     intro: 'Trading de opciones e investigación de mercados.',
     research: 'XIV en LinkedIn',
     enter: 'Explorar MaloSound',
@@ -130,6 +132,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <span>{copy.first} </span>
             <span className={styles.dragonWord}>{copy.dragon}</span>
           </h1>
+          <p className={styles.philosophy}>{copy.philosophy}</p>
           <p className={styles.intro}>{copy.intro}</p>
         </div>
       </section>
