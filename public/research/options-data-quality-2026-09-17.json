@@ -1,0 +1,70 @@
+{
+  "publication_date": "2026-09-17",
+  "source": "Green Machine Research Memo 006",
+  "data_type": "Synthetic deterministic fixtures; not market observations or performance results",
+  "configuration": {
+    "min_sessions": 20,
+    "min_chain_rows_per_session": 50,
+    "max_feature_null_rate": 0.05,
+    "max_crossed_market_rate": 0.0,
+    "max_wide_spread_rate": 0.15,
+    "wide_spread_pct": 0.2
+  },
+  "limitations": [
+    "Date coverage is a union of input dates, not matched timestamp coverage.",
+    "Weekday fixtures do not implement an exchange calendar.",
+    "Row counts do not establish complete strike or expiration coverage.",
+    "This screen does not establish quote freshness, executable fills, point-in-time inputs, or a trading edge."
+  ],
+  "results": {
+    "complete_synthetic_fixture": {
+      "verdict": "PASS",
+      "session_count": 25,
+      "chain_rows": 1250,
+      "feature_rows": 125,
+      "chain_rows_per_session_min": 50,
+      "feature_null_rate": 0.0,
+      "crossed_market_rate": 0.0,
+      "wide_spread_rate": 0.0,
+      "missing_chain_columns": [],
+      "missing_feature_columns": [],
+      "blockers": [],
+      "warnings": [],
+      "next_action": "Dataset is ready for a controlled label/return study, still not live trading."
+    },
+    "wide_spread_synthetic_fixture": {
+      "verdict": "WARN",
+      "session_count": 25,
+      "chain_rows": 1250,
+      "feature_rows": 125,
+      "chain_rows_per_session_min": 50,
+      "feature_null_rate": 0.0,
+      "crossed_market_rate": 0.0,
+      "wide_spread_rate": 0.2,
+      "missing_chain_columns": [],
+      "missing_feature_columns": [],
+      "blockers": [],
+      "warnings": [
+        "wide-spread rate 20.00%; above warning threshold 15.00%"
+      ],
+      "next_action": "Run only exploratory diagnostics; calibrate slippage before performance claims."
+    },
+    "short_history_synthetic_fixture": {
+      "verdict": "FAIL",
+      "session_count": 3,
+      "chain_rows": 150,
+      "feature_rows": 15,
+      "chain_rows_per_session_min": 50,
+      "feature_null_rate": 0.0,
+      "crossed_market_rate": 0.0,
+      "wide_spread_rate": 0.0,
+      "missing_chain_columns": [],
+      "missing_feature_columns": [],
+      "blockers": [
+        "only 3 sessions; need at least 20"
+      ],
+      "warnings": [],
+      "next_action": "Repair data quality before making any P&L or edge claim."
+    }
+  }
+}

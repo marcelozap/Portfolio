@@ -18,6 +18,23 @@ export async function generateMetadata({
   return {
     title: note?.title ?? 'Field Note',
     description: note?.summary,
+    ...(note && {
+      alternates: { canonical: `https://www.marcelozapata.dev/ai-blog/${note.slug}` },
+      openGraph: {
+        type: 'article' as const,
+        title: note.title,
+        description: note.summary,
+        url: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
+        siteName: 'Marcelo Zapata',
+        publishedTime: note.date,
+        authors: ['Marcelo Zapata'],
+      },
+      twitter: {
+        card: 'summary' as const,
+        title: note.title,
+        description: note.summary,
+      },
+    }),
     ...(note?.image && {
       alternates: {
         canonical: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
