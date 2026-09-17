@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     images: ['/brand/xiv-red-skyline.png'],
   },
   icons: {
-    icon: [{ url: '/brand/xiv-red-emblem.png', type: 'image/png' }],
-    shortcut: ['/brand/xiv-red-emblem.png'],
+    icon: [{ url: '/brand/xiv-tab-icon.svg', type: 'image/svg+xml', sizes: 'any' }],
+    shortcut: ['/brand/xiv-tab-icon.svg'],
   },
 };
 
