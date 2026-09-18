@@ -23,7 +23,6 @@ const mono = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
     siteName: 'XIV · Marcelo Zapata',
     images: [
       {
-        url: '/og-image.png',
+        url: '/brand/og-image.png',
         width: 1200,
         height: 630,
         alt: 'XIV logo',
@@ -64,16 +63,16 @@ export const metadata: Metadata = {
     title: 'XIV — Options Trading & Research | Marcelo Zapata',
     description:
       'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
-    images: ['/og-image.png'],
+    images: ['/brand/og-image.png'],
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/brand/favicon.ico', sizes: 'any' },
+      { url: '/brand/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/favicon-16.png', sizes: '16x16', type: 'image/png' },
     ],
-    shortcut: ['/favicon.ico'],
-    apple: '/apple-touch-icon.png',
+    shortcut: ['/brand/favicon.ico'],
+    apple: '/brand/apple-touch-icon.png',
   },
 };
 
