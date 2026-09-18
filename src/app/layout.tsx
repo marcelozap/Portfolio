@@ -35,7 +35,6 @@ export const metadata: Metadata = {
   keywords: [
     'Marcelo Zapata',
     'XIV',
-    'dragon',
     'trading',
     'market research',
     'market analysis',
@@ -53,10 +52,10 @@ export const metadata: Metadata = {
     siteName: 'XIV · Marcelo Zapata',
     images: [
       {
-        url: '/brand/xiv-red-skyline.png',
-        width: 1774,
-        height: 887,
-        alt: 'XIV in red, black and white, with the dragon forming the I.',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'XIV logo',
       },
     ],
   },
@@ -65,11 +64,16 @@ export const metadata: Metadata = {
     title: 'XIV — Options Trading & Research | Marcelo Zapata',
     description:
       'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
-    images: ['/brand/xiv-red-skyline.png'],
+    images: ['/og-image.png'],
   },
   icons: {
-    icon: [{ url: '/brand/xiv-tab-icon.svg', type: 'image/svg+xml', sizes: 'any' }],
-    shortcut: ['/brand/xiv-tab-icon.svg'],
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
+    apple: '/apple-touch-icon.png',
   },
 };
 
