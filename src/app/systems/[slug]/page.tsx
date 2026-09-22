@@ -96,17 +96,6 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
                 </div>
               ))}
             </div>
-
-            {project.publicUrl && (
-              <a
-                href={project.publicUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
-              >
-                Explore MaloSound <ArrowUpRight className="size-4" />
-              </a>
-            )}
           </aside>
         </div>
 
