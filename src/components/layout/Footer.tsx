@@ -1,5 +1,5 @@
 'use client';
-import { XivWordmark } from '@/components/brand/XivWordmark';
+import { XivCapitalLockup } from '@/components/brand/XivCapitalLockup';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,7 +15,7 @@ export function Footer() {
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
-            <XivWordmark width={105} />
+            <XivCapitalLockup width={128} />
             <span>{isSpanish ? 'Opciones · Investigación' : 'Options Trading · Research'}</span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>

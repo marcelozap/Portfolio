@@ -32,10 +32,6 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
     ],
     features: [
       {
-        title: 'MaloSound',
-        description: 'Price, played back. Market movement, translated into sound and motion.',
-      },
-      {
         title: 'Research tools',
         description: 'Software and AI support data validation, research, and performance review.',
       },
@@ -50,7 +46,6 @@ export const PUBLIC_SYSTEMS: PublicSystem[] = [
       { label: 'Discipline', value: 'Risk' },
     ],
     stack: ['Python', 'SQL', 'Data validation', 'AI-assisted research'],
-    publicUrl: 'https://malosound.ai/',
   },
 ];
 
