@@ -1,7 +1,6 @@
 'use client';
-import { XivWordmark } from '@/components/brand/XivWordmark';
+import { XivCapitalLockup } from '@/components/brand/XivCapitalLockup';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -57,23 +56,13 @@ export function Navbar() {
         <Link
           href={homeHref}
           className={styles.brand}
-          aria-label={isSpanish ? 'XIV — inicio' : 'XIV — home'}
+          aria-label={isSpanish ? 'XIV CAPITAL — inicio' : 'XIV CAPITAL — home'}
           onClick={() => setMenuOpen(false)}
         >
-          <Image
-            src="/brand/xiv-segmented-mark.png"
-            alt=""
-            width={48}
-            height={48}
-            sizes="48px"
-            quality={90}
-            className={styles.emblem}
-            priority
-          />
-          <span className={styles.brandCopy}>
-            <XivWordmark width={58} />
-            <span className={styles.founder}>Marcelo Zapata</span>
+          <span className={styles.lockup}>
+            <XivCapitalLockup width={78} />
           </span>
+          <span className={styles.founder}>Marcelo Zapata</span>
         </Link>
 
         <ul

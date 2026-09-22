@@ -15,7 +15,7 @@ const COPY = {
     cta: 'Play Dragon Scales',
     fresh: 'Virtual funds. Long or short from the start. Progress unlocks more size.',
     chart: 'Fictional practice chart · prices in USD',
-    history: 'MaloSound.ai · Price, played back',
+    history: 'Review the session',
   },
   es: {
     label: 'Juego de práctica · gratis · en tu navegador',
@@ -24,7 +24,7 @@ const COPY = {
     cta: 'Jugar Dragon Scales',
     fresh: 'Fondos virtuales. Al alza o a la baja desde el inicio. El progreso abre más tamaño.',
     chart: 'Gráfico ficticio de práctica · precios en USD',
-    history: 'MaloSound.ai · El precio, reproducido',
+    history: 'Revisa la sesión',
   },
 };
 
@@ -68,14 +68,6 @@ export function PlayTeaser({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           {t.cta}
           <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
-        <a
-          href="https://malosound.ai/"
-          className={styles.history}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t.history} <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
       </div>
     </div>
   );
