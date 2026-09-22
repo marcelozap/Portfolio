@@ -47,8 +47,16 @@
   text-align: center;
 }
 .heroIdentity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   color: #eee9dd;
   margin: 0 auto 30px;
+}
+.heroIdentity svg {
+  display: block;
+  margin-inline: auto;
 }
 .emblemCrop {
   mix-blend-mode: screen;
@@ -313,7 +321,6 @@
   min-width: 0;
 }
 
-/* ---------- perspective: MaloSound link + latest notes ---------- */
 .marketLink {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -400,7 +407,6 @@
   margin-top: 26px;
 }
 
-/* ---------- the dragons ---------- */
 .agentList {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -445,7 +451,6 @@
   object-fit: cover;
   mix-blend-mode: screen;
 }
-/* The emblem is purple; sepia first so every tint starts from one hue. */
 .agentMarkgold {
   color: #f2c45d;
 }
@@ -496,7 +501,6 @@
   outline-offset: 5px;
 }
 
-/* ---------- motion ---------- */
 @keyframes rise {
   from {
     opacity: 0;
@@ -530,7 +534,6 @@
   }
 }
 
-/* ---------- phones ---------- */
 @media (max-width: 760px) {
   .hero {
     min-height: 750px;
