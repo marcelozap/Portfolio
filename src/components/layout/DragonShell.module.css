@@ -23,7 +23,13 @@
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 13px;
+  gap: 18px;
+  color: #eee9dd;
+}
+
+.lockup {
+  display: block;
+  color: #eee9dd;
 }
 
 .emblem {
@@ -46,17 +52,22 @@
 }
 
 .founder {
-  color: #a79cb8;
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 0.06em;
+  color: #eee9dd;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 .navigationLinks {
-  display: flex;
-  align-items: center;
-  gap: clamp(24px, 3vw, 46px);
-  margin-left: auto;
+  position: absolute;
+  inset: 100% 0 auto;
+  z-index: 30;
+  display: none;
+  margin: 0;
+  padding: 14px clamp(24px, 4.5vw, 72px) 24px;
+  border-bottom: 1px solid rgb(238 233 221 / 12%);
+  background: rgb(10 10 10 / 97%);
 }
 
 .navigationLinks a {
@@ -109,20 +120,21 @@
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  border-left: 1px solid rgb(247 241 255 / 18%);
+  border-left: 1px solid rgb(238 233 221 / 18%);
   padding-left: 18px;
-  color: #ee62d8;
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  color: #c7af85;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   transition: color 160ms ease;
 }
 
 .menuButton {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  font-size: 12px;
+  color: #eee9dd;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -217,40 +229,26 @@
   background: radial-gradient(ellipse at 85% 0%, rgb(238 98 216 / 4%), transparent 55%), #07040c;
 }
 
+.navigationLinks[data-open='true'] {
+  display: grid;
+  gap: 0;
+}
+
+.navigationLinks a {
+  width: 100%;
+  min-height: 52px;
+  border-bottom: 1px solid rgb(238 233 221 / 10%);
+  font-size: 16px;
+}
+
+.navigationLinks a::after {
+  display: none;
+}
+
 @media (max-width: 899px) {
   .navigation {
     height: 76px;
     gap: 20px;
-  }
-
-  .navigationLinks {
-    position: absolute;
-    inset: 100% 0 auto;
-    display: none;
-    margin: 0;
-    padding: 14px clamp(24px, 4.5vw, 72px) 24px;
-    border-bottom: 1px solid rgb(247 241 255 / 18%);
-    background: #07040c;
-  }
-
-  .navigationLinks[data-open='true'] {
-    display: grid;
-    gap: 0;
-  }
-
-  .navigationLinks a {
-    width: 100%;
-    min-height: 52px;
-    border-bottom: 1px solid rgb(247 241 255 / 10%);
-    font-size: 16px;
-  }
-
-  .navigationLinks a::after {
-    display: none;
-  }
-
-  .menuButton {
-    display: inline-flex;
   }
 
   .language {
@@ -300,14 +298,13 @@
     transition: none;
   }
 }
-/* Main-site identity; game navigation keeps the original arcade palette. */
 .header[data-theme='red'] {
   background: rgb(16 16 16 / 92%);
   color: #eee9dd;
   border-color: #292929;
 }
 .header[data-theme='red'] .founder {
-  color: #b4b4ba;
+  color: #eee9dd;
 }
 .header[data-theme='red'] .navigationLinks a {
   color: #eee9dd;
@@ -315,7 +312,9 @@
   font-size: 16px;
 }
 .header[data-theme='red'] .navigationLinks a:hover,
-.header[data-theme='red'] .language {
+.header[data-theme='red'] .language,
+.header[data-theme='red'] .menuButton:hover,
+.header[data-theme='red'] .brand:hover {
   color: #c7af85;
 }
 .header[data-theme='red'] .navigationLinks[data-open='true'] {
@@ -339,8 +338,6 @@
 .footerBottom {
   color: #aaa;
 }
-
-/* One continuous crimson-to-black field behind the main site. */
 .backdrop[data-theme='red'] {
   background: #101010;
 }
@@ -354,8 +351,6 @@
 .footer[data-theme='red'] .socialLinks a span {
   color: #c7af85;
 }
-
-/* Game surfaces share the portfolio's neutral foundation. */
 .backdrop[data-theme='game'] {
   background: #101010;
 }
