@@ -1,4 +1,4 @@
-import { XivWordmark } from '@/components/brand/XivWordmark';
+import { XivCapitalLockup } from '@/components/brand/XivCapitalLockup';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
@@ -15,23 +15,18 @@ const COPY = {
     philosophy: 'Neither bull nor bear. I follow the evidence and manage the risk.',
     intro: 'Options trading and market research.',
     research: 'XIV on LinkedIn',
-    enter: 'Explore MaloSound',
     read: 'Read my writing',
     scroll: 'More below',
     signature: 'Market structure / Execution / Risk',
-
     notesLabel: '01 / Writing',
     notesTitle: 'Selected writing.',
     notesBody: 'Personal essays on what I’m learning and living.',
     notesLatest: 'Latest',
     notesLink: 'Read my writing',
-    market: 'Market price movement, translated into music, color, and motion.',
-
     practiceLabel: '02 / Practice',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Buy. Sell. Ride the tape.',
     practiceFacts: ['Free to play', 'Simulated prices', 'Virtual funds'],
-
     agentsLabel: '03 / XIV',
     agentsTitle: 'The dragons.',
     agentsLead: '',
@@ -49,23 +44,18 @@ const COPY = {
     philosophy: 'Ni alcista ni bajista. Sigo la evidencia y gestiono el riesgo.',
     intro: 'Trading de opciones e investigación de mercados.',
     research: 'XIV en LinkedIn',
-    enter: 'Explorar MaloSound',
     read: 'Leer mis escritos',
     scroll: 'Más abajo',
     signature: 'Estructura / Ejecución / Riesgo',
-
     notesLabel: '01 / Escritos',
     notesTitle: 'Escritos seleccionados.',
     notesBody: 'Ensayos personales sobre lo que aprendo y vivo.',
     notesLatest: 'Recientes',
     notesLink: 'Leer mis textos',
-    market: 'El movimiento del precio del mercado, traducido en música, color y movimiento.',
-
     practiceLabel: '02 / Práctica',
     practiceTitle: 'Dragon Scales.',
     practiceLead: 'Compra. Vende. Sigue el movimiento.',
     practiceFacts: ['Gratis', 'Precios simulados', 'Fondos virtuales'],
-
     agentsLabel: '03 / XIV',
     agentsTitle: 'Los dragones.',
     agentsLead: '',
@@ -114,16 +104,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
         <div className={styles.heroCopy}>
           <div className={styles.heroIdentity}>
-            <div className={styles.emblemCrop}>
-              <Image
-                src="/brand/xiv-segmented-mark.png"
-                alt="Red XIV emblem"
-                width={260}
-                height={260}
-                priority
-              />
-            </div>
-            <XivWordmark width={110} />
+            <XivCapitalLockup width={220} title="XIV CAPITAL" />
           </div>
           <p className={styles.eyebrow}>
             {locale === 'es' ? 'Trader de opciones' : 'Options Trader'}
@@ -182,19 +163,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h2>
         </div>
         <div className={styles.projectList}>
-          <a
-            href="https://malosound.ai/"
-            className={styles.project}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-              <h3>MaloSound</h3>
-              <p>{copy.market}</p>
-              <span>{locale === 'es' ? 'Explorar MaloSound' : 'Explore MaloSound'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
           <Link href={locale === 'es' ? '/es/play' : '/play'} className={styles.project}>
             <div>
               <h3>Dragon Scales</h3>
