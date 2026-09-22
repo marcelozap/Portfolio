@@ -35,6 +35,7 @@ export function Footer() {
         </div>
         <div className={styles.footerBottom}>
           <span>Marcelo Zapata</span>
+          <a href="https://www.marcelozapata.com/">{isSpanish ? 'Música — marcelozapata.com' : 'Music — marcelozapata.com'}</a>
           <span>© {new Date().getFullYear()} XIV</span>
         </div>
       </div>
