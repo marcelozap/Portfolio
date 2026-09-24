@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { PlayTeaser } from '@/components/play/PlayTeaser';
 import styles from './DragonHome.module.css';
 
 /**
@@ -127,7 +126,6 @@ const DESK_SAMPLES = [DESK_SAMPLE.thesis, DESK_SAMPLE.quant, DESK_SAMPLE.journal
 
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
   const copy = COPY[locale];
-  const playHref = locale === 'es' ? '/es/play' : '/play';
   return (
     <div className={styles.home}>
       <section className={styles.hero} aria-labelledby="dragon-title">
@@ -158,10 +156,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.intro}>{copy.intro}</p>
           <div className={styles.actions}>
-            <a href={playHref} className={styles.primaryLink}>
-              {copy.enter}
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
             <a href="#agents" className={styles.secondaryLink}>
               {copy.read}
               <ArrowRight size={16} aria-hidden="true" />
@@ -195,9 +189,6 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <li key={fact}>{fact}</li>
             ))}
           </ul>
-        </div>
-        <div className={styles.visionWide}>
-          <PlayTeaser locale={locale} />
         </div>
       </section>
 

@@ -89,11 +89,6 @@ export function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link href={isSpanish ? '/es/play' : '/play'} onClick={() => setMenuOpen(false)}>
-              {isSpanish ? 'Jugar' : 'Play'}
-            </Link>
-          </li>
         </ul>
 
         <div className={styles.utilities}>
