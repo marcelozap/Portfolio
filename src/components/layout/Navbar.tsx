@@ -8,7 +8,7 @@ import styles from './DragonShell.module.css';
 
 const SECTIONS = [
   { id: 'notes', en: 'Writing', es: 'Escritos' },
-  { id: 'practice', en: 'Projects', es: 'Proyectos' },
+  { id: 'work', en: 'Work', es: 'Trabajo' },
   { id: 'about', en: 'About', es: 'Sobre mí' },
 ];
 
@@ -56,11 +56,11 @@ export function Navbar() {
         <Link
           href={homeHref}
           className={styles.brand}
-          aria-label={isSpanish ? 'XIV CAPITAL — inicio' : 'XIV CAPITAL — home'}
+          aria-label={isSpanish ? 'XIV — inicio' : 'XIV — home'}
           onClick={() => setMenuOpen(false)}
         >
           <span className={styles.lockup}>
-            <XivCapitalLockup width={78} />
+            <XivCapitalLockup width={78} showCapital={false} title="XIV" />
           </span>
           <span className={styles.founder}>Marcelo Zapata</span>
         </Link>

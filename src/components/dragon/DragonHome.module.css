@@ -33,12 +33,11 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  min-height: 880px;
-  padding: 108px 6% 350px;
+  min-height: min(780px, calc(100svh - 88px));
+  padding: 128px 6% 140px;
   background: transparent;
 }
 .heroCopy {
-  mix-blend-mode: screen;
   position: relative;
   z-index: 1;
   order: 0;
@@ -536,8 +535,8 @@
 
 @media (max-width: 760px) {
   .hero {
-    min-height: 750px;
-    padding: 108px 20px 260px;
+    min-height: 650px;
+    padding: 92px 20px 100px;
   }
   .eyebrow {
     font-size: 10px;

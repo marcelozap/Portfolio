@@ -26,44 +26,33 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'XIV — Options Trading & Research | Marcelo Zapata',
+    default: 'Marcelo Zapata — Software, AI, Data, Sound',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
+    'Marcelo Zapata builds reliable software and AI workflows, writes about the work, and makes songs in English and Spanish.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
-    'trading',
-    'market research',
-    'market analysis',
-    'options trading',
-    'risk management',
-    'market structure',
+    'software engineering',
+    'QA automation',
+    'AI workflows',
+    'data systems',
+    'songwriter',
+    'MaloSound',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'XIV — Options Trading & Research | Marcelo Zapata',
-    description:
-      'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
+    title: 'Marcelo Zapata — Software, AI, Data, Sound',
+    description: 'Software, AI, data, and sound by Marcelo Zapata.',
     type: 'website',
-    siteName: 'XIV · Marcelo Zapata',
-    images: [
-      {
-        url: '/brand/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'XIV logo',
-      },
-    ],
+    siteName: 'Marcelo Zapata',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XIV — Options Trading & Research | Marcelo Zapata',
-    description:
-      'XIV is Marcelo Zapata’s options trading and market research initiative, focused on market structure, execution, and risk management.',
-    images: ['/brand/og-image.png'],
+    title: 'Marcelo Zapata — Software, AI, Data, Sound',
+    description: 'Software, AI, data, and sound by Marcelo Zapata.',
   },
   icons: {
     icon: [

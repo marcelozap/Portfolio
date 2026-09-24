@@ -15,8 +15,10 @@ export function Footer() {
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
-            <XivCapitalLockup width={128} />
-            <span>{isSpanish ? 'Opciones · Investigación' : 'Options Trading · Research'}</span>
+            <XivCapitalLockup width={128} showCapital={false} title="XIV" />
+            <span>
+              {isSpanish ? 'Software · IA · Datos · Sonido' : 'Software · AI · Data · Sound'}
+            </span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>
             {SOCIAL_LINKS.map((link) => (
@@ -35,7 +37,9 @@ export function Footer() {
         </div>
         <div className={styles.footerBottom}>
           <span>Marcelo Zapata</span>
-          <a href="https://www.marcelozapata.com/">{isSpanish ? 'Música — marcelozapata.com' : 'Music — marcelozapata.com'}</a>
+          <a href="https://www.marcelozapata.com/">
+            {isSpanish ? 'Música — marcelozapata.com' : 'Music — marcelozapata.com'}
+          </a>
           <span>© {new Date().getFullYear()} XIV</span>
         </div>
       </div>
