@@ -1,16 +1,15 @@
 'use client';
+import { XivCapitalLockup } from '@/components/brand/XivCapitalLockup';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
 const SECTIONS = [
-  { id: 'theories', en: 'Research', es: 'Investigación' },
-  { id: 'agents', en: 'Agents', es: 'Agentes' },
-  { id: 'engineering', en: 'Engineering', es: 'Ingeniería' },
-  { id: 'notes', en: 'Writing', es: 'Textos' },
+  { id: 'notes', en: 'Writing', es: 'Escritos' },
+  { id: 'work', en: 'Work', es: 'Trabajo' },
+  { id: 'about', en: 'About', es: 'Sobre mí' },
 ];
 
 export function Navbar() {
@@ -52,7 +51,7 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-theme={pathname.includes('/play') ? 'game' : 'red'}>
       <nav className={styles.navigation} aria-label={isSpanish ? 'Principal' : 'Main'}>
         <Link
           href={homeHref}
@@ -60,20 +59,10 @@ export function Navbar() {
           aria-label={isSpanish ? 'XIV — inicio' : 'XIV — home'}
           onClick={() => setMenuOpen(false)}
         >
-          <Image
-            src="/brand/xiv-dragon-emblem.png"
-            alt=""
-            width={48}
-            height={48}
-            sizes="48px"
-            quality={90}
-            className={styles.emblem}
-            priority
-          />
-          <span className={styles.brandCopy}>
-            <span className={styles.wordmark}>XIV</span>
-            <span className={styles.founder}>Marcelo Zapata</span>
+          <span className={styles.lockup}>
+            <XivCapitalLockup width={78} showCapital={false} title="XIV" />
           </span>
+          <span className={styles.founder}>Marcelo Zapata</span>
         </Link>
 
         <ul

@@ -23,53 +23,45 @@ const mono = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'XIV — I am the dragon | Marcelo Zapata',
+    default: 'Marcelo Zapata — Software, AI, Data, Sound',
     template: '%s - Marcelo Zapata',
   },
   description:
-    "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
+    'Marcelo Zapata builds reliable software and AI workflows, writes about the work, and makes songs in English and Spanish.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
-    'dragon',
-    'trading',
-    'market research',
-    'market analysis',
-    'analysis agents',
-    'AI engineering',
     'software engineering',
+    'QA automation',
+    'AI workflows',
+    'data systems',
+    'songwriter',
+    'MaloSound',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'XIV — I am the dragon | Marcelo Zapata',
-    description:
-      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
+    title: 'Marcelo Zapata — Software, AI, Data, Sound',
+    description: 'Software, AI, data, and sound by Marcelo Zapata.',
     type: 'website',
-    siteName: 'XIV · Marcelo Zapata',
-    images: [
-      {
-        url: '/brand/xiv-dragon-world.png',
-        width: 1200,
-        height: 600,
-        alt: 'XIV’s violet and cyan dragon against a black background.',
-      },
-    ],
+    siteName: 'Marcelo Zapata',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XIV — I am the dragon | Marcelo Zapata',
-    description:
-      "I am the dragon. XIV is Marcelo Zapata's independent work in trading, market research, analysis agents, and personal tools.",
-    images: ['/brand/xiv-dragon-world.png'],
+    title: 'Marcelo Zapata — Software, AI, Data, Sound',
+    description: 'Software, AI, data, and sound by Marcelo Zapata.',
   },
   icons: {
-    icon: [{ url: '/brand/xiv-dragon-emblem.png', type: 'image/png' }],
-    shortcut: ['/brand/xiv-dragon-emblem.png'],
+    icon: [
+      { url: '/brand/favicon.ico', sizes: 'any' },
+      { url: '/brand/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: ['/brand/favicon.ico'],
+    apple: '/brand/apple-touch-icon.png',
   },
 };
 

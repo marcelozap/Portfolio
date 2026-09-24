@@ -1,9 +1,8 @@
 import { DragonHome } from '@/components/dragon/DragonHome';
 
 export const metadata = {
-  title: 'XIV — Yo soy el dragón',
-  description:
-    'XIV: trading independiente, investigación de mercados, agentes de análisis y herramientas personales de Marcelo Zapata.',
+  title: 'Marcelo Zapata — Software, IA, datos y sonido',
+  description: 'Software, IA, datos y sonido de Marcelo Zapata.',
 };
 
 export default function SpanishHome() {

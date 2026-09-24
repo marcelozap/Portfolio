@@ -3,8 +3,9 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 import { FIELD_NOTES } from '@/lib/field-notes';
 
 export const metadata = {
-  title: 'AI Blog',
-  description: "Marcelo Zapata's public writing on AI, work, attention, music, and becoming.",
+  title: 'Personal Writing',
+  description:
+    'Personal writing by Marcelo Zapata. Thoughts, observations, and things I’m working through.',
 };
 
 export default function FieldNotesPage() {
@@ -13,18 +14,20 @@ export default function FieldNotesPage() {
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <BookOpen className="size-4 text-accent" />
-          <span className="text-accent">Public writing</span>
+          <span className="text-accent">Personal writing</span>
           <span className="text-ink-faint">/</span>
-          <span>AI Blog</span>
+          <span>Marcelo Zapata</span>
         </div>
 
         <div className="mt-8 max-w-3xl">
           <h1 className="font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-            Ideas I am still
-            <span className="text-gradient block">testing in public.</span>
+            Personal{' '}
+            <span className="bg-gradient-to-r from-[#ff3445] via-[#ff8390] to-[#fff0f2] bg-clip-text text-transparent">
+              writing.
+            </span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted md:text-xl">
-            Writing about AI, work, attention, music, and what technology should make more room for.
+            Thoughts, observations, and things I’m working through.
           </p>
         </div>
 

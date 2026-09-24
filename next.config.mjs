@@ -25,10 +25,14 @@ const nextConfig = {
         destination: '/ai-blog/all-in-every-time',
         permanent: true,
       },
-      { source: '/systems', destination: '/#practice', permanent: false },
-      { source: '/systems/malosound', destination: '/#practice', permanent: false },
-      { source: '/systems/rally', destination: '/#practice', permanent: false },
-      { source: '/rally', destination: '/#practice', permanent: false },
+      { source: '/systems', destination: '/#work', permanent: false },
+      { source: '/systems/malosound', destination: '/#work', permanent: false },
+      { source: '/systems/rally', destination: '/#work', permanent: false },
+      { source: '/rally', destination: '/#work', permanent: false },
+      { source: '/play', destination: '/#work', permanent: false },
+      { source: '/play/:path*', destination: '/#work', permanent: false },
+      { source: '/es/play', destination: '/es#work', permanent: false },
+      { source: '/es/play/:path*', destination: '/es#work', permanent: false },
       {
         source: '/green-machine',
         destination: '/systems/xiv',
@@ -49,6 +53,26 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        ],
+      },
+      {
+        source: '/desk/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+          { key: 'Cache-Control', value: 'private, no-store, max-age=0' },
+          { key: 'Referrer-Policy', value: 'no-referrer' },
+        ],
+      },
+      {
+        source: '/desk-assets/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+          { key: 'Referrer-Policy', value: 'no-referrer' },
+          {
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'self'",
+          },
         ],
       },
     ];

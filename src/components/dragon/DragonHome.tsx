@@ -1,292 +1,283 @@
+import { XivCapitalLockup } from '@/components/brand/XivCapitalLockup';
 import Image from 'next/image';
-import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+
+import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
 
-/**
- * Output of the XIV Ops paper demo (2026-09-04): synthetic data, paper mode,
- * deterministic templates, no model. Trimmed to one line per role so the
- * screens read at a glance; numbers are the demo's.
- */
-const DESK_SAMPLE = {
-  stamp: 'XIV Ops · paper demo · synthetic data · nothing trades without me',
-  thesis: 'SPY long_put · entry zone 480 · wrong beyond 492 · drafted for review',
-  quant: 'No comparable setups on file — the evidence stays honestly empty',
-  journal: 'Fill 4.95 → exit 7.40 · +1.6R · rule violations: none',
-};
+const FEATURED_NOTE_SLUGS = [
+  'i-had-a-dream',
+  'the-chat-box-is-only-the-top-floor',
+  'all-in-every-time',
+] as const;
 
-const COPY = {
-  en: {
-    eyebrow: 'XIV / Trading · Research · Code',
-    premise: 'Everyone is a bull or a bear.',
-    first: 'I am the',
-    dragon: 'dragon.',
-    intro: 'I’m Marcelo. I trade my own money and build the tools behind my decisions.',
-    enter: 'Play the practice game',
-    read: 'Meet the agents',
-    scroll: 'My practice',
-    signature: 'Trading / Analysis / AI',
-    practiceLabel: '01 / My practice',
-    practiceTitle: 'My capital. My decisions.',
-    practiceLead: 'Trading is the center of my work.',
-    practiceBody: 'My own view. My own review. My own tools.',
-    practiceFacts: ['Independent trading', 'Market research', 'Personal tools'],
-    theoryLabel: '02 / The theories',
-    theoryTitle: 'Questions worth testing.',
-    theories: [
-      { name: 'Momentum', text: 'When does a move keep going — and when does it fade?' },
-      { name: 'Changing markets', text: 'When the market changes, when should I change my mind?' },
-      { name: 'Risk', text: 'How much can I lose — and does the idea survive new data?' },
-    ],
-    agentsLabel: '03 / Agents for analysis',
-    agentsTitle: 'Three agents.\nI make the calls.',
-    agentsIntro: 'They draft. I review and decide.',
-    sampleLabel: 'Output',
-    agents: [
-      { name: 'Research Analyst', role: 'The thesis', text: 'Drafts the idea being tested.' },
-      {
-        name: 'Quant Agent',
-        role: 'The evidence',
-        text: 'Keeps the numbers separate from the story.',
-      },
-      { name: 'Journal Coach', role: 'The review', text: 'Reviews the decision after the trade.' },
-    ],
-    engineeringLabel: '04 / Engineering & AI',
-    engineeringTitle: 'The work behind it.',
-    feats: [
-      { name: 'Test automation', text: 'Repeatable UI tests with Playwright and Azure DevOps.' },
-      { name: 'AI workflow tools', text: 'AI plugins for planning, test cases, and docs.' },
-      { name: 'Data & integration', text: 'Python, SQL, and REST workflows for operational data.' },
-    ],
-    codeLink: 'Public GitHub projects',
-    notesLabel: '05 / In my own words',
-    notesTitle: 'Think for yourself.\nKeep building.',
-    notesBody: 'What I’m learning, questioning, and building — on my own terms.',
-    notesLink: 'Read my writing',
-  },
-  es: {
-    eyebrow: 'XIV / Trading · Investigación · Código',
-    premise: 'Todos son toros u osos.',
-    first: 'Yo soy el',
-    dragon: 'dragón.',
-    intro:
-      'Soy Marcelo. Opero con mi propio dinero y construyo las herramientas detrás de mis decisiones.',
-    enter: 'Jugar al juego de práctica',
-    read: 'Conocer los agentes',
-    scroll: 'Mi práctica',
-    signature: 'Trading / Análisis / IA',
-    practiceLabel: '01 / Mi práctica',
-    practiceTitle: 'Mi capital. Mis decisiones.',
-    practiceLead: 'El trading es el centro de mi trabajo.',
-    practiceBody: 'Mi propia visión. Mi propia revisión. Mis propias herramientas.',
-    practiceFacts: ['Trading independiente', 'Investigación de mercados', 'Herramientas propias'],
-    theoryLabel: '02 / Las teorías',
-    theoryTitle: 'Preguntas para investigar.',
-    theories: [
-      { name: 'Momentum', text: '¿Cuándo continúa un movimiento y cuándo pierde fuerza?' },
-      {
-        name: 'Mercados que cambian',
-        text: 'Cuando el mercado cambia, ¿cuándo debo cambiar de opinión?',
-      },
-      { name: 'Riesgo', text: '¿Cuánto puedo perder — y la idea resiste datos nuevos?' },
-    ],
-    agentsLabel: '03 / Agentes de análisis',
-    agentsTitle: 'Tres agentes.\nYo tomo las decisiones.',
-    agentsIntro: 'Ellos redactan. Yo reviso y decido.',
-    sampleLabel: 'Salida',
-    agents: [
-      { name: 'Research Analyst', role: 'La tesis', text: 'Redacta la idea a prueba.' },
-      { name: 'Quant Agent', role: 'La evidencia', text: 'Separa los números del relato.' },
-      { name: 'Journal Coach', role: 'La revisión', text: 'Revisa la decisión después de operar.' },
-    ],
-    engineeringLabel: '04 / Ingeniería e IA',
-    engineeringTitle: 'El trabajo detrás.',
-    feats: [
-      {
-        name: 'Automatización de pruebas',
-        text: 'Pruebas de interfaz repetibles con Playwright y Azure DevOps.',
-      },
-      {
-        name: 'Herramientas con IA',
-        text: 'Plugins de IA para planificación, casos de prueba y documentación.',
-      },
-      {
-        name: 'Datos e integración',
-        text: 'Flujos con Python, SQL y APIs REST para datos operativos.',
-      },
-    ],
-    codeLink: 'Proyectos públicos en GitHub',
-    notesLabel: '05 / Con mis propias palabras',
-    notesTitle: 'Piensa por ti mismo.\nSigue construyendo.',
-    notesBody: 'Lo que aprendo, cuestiono y construyo — a mi manera.',
-    notesLink: 'Leer mis textos',
-  },
-};
+const FEATURED_NOTES = FEATURED_NOTE_SLUGS.map((slug) =>
+  FIELD_NOTES.find((note) => note.slug === slug),
+).filter((note): note is (typeof FIELD_NOTES)[number] => Boolean(note));
 
-const DESK_SAMPLES = [DESK_SAMPLE.thesis, DESK_SAMPLE.quant, DESK_SAMPLE.journal];
+const COLLECTION_AGENTS = [
+  { name: 'Milo', callsign: 'Milo', color: 'violet' },
+  { name: 'Mika', callsign: 'Mika', color: 'gold' },
+  { name: 'Money', callsign: 'Money', color: 'green' },
+] as const;
+
+function noteDate(iso: string, locale: 'en' | 'es') {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
 
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
-  const copy = COPY[locale];
+  const isSpanish = locale === 'es';
+
   return (
     <div className={styles.home}>
       <section className={styles.hero} aria-labelledby="dragon-title">
-        <div className={styles.art}>
-          <Image
-            src="/brand/xiv-dragon-world.png"
-            alt={
-              locale === 'es'
-                ? 'Dragón de XIV en violeta, magenta y cian sobre una ciudad nocturna.'
-                : 'XIV’s violet, magenta, and cyan dragon above a city at night.'
-            }
-            fill
-            priority
-            sizes="(max-width: 760px) 800px, 1800px"
-            quality={95}
-            className={styles.artImage}
-          />
-        </div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>
-            <span className={styles.spark} />
-            {copy.eyebrow}
-          </p>
-          <p className={styles.premise}>{copy.premise}</p>
+          <div className={styles.heroIdentity}>
+            <XivCapitalLockup width={124} showCapital={false} title="XIV" />
+          </div>
+          <p className={styles.eyebrow}>Software · AI · Data · Sound</p>
           <h1 id="dragon-title" className={styles.title}>
-            <span>{copy.first} </span>
-            <span className={styles.dragonWord}>{copy.dragon}</span>
+            Marcelo Zapata.
           </h1>
-          <p className={styles.intro}>{copy.intro}</p>
+          <p className={styles.philosophy}>
+            {isSpanish
+              ? 'Construyo sistemas fiables para el trabajo real y escribo canciones en inglés y español.'
+              : 'I build reliable systems for real work and write songs in English and Spanish.'}
+          </p>
+          <p className={styles.intro}>
+            {isSpanish
+              ? 'Ingeniero de software, constructor de herramientas de IA y compositor.'
+              : 'Software engineer, AI builder, and songwriter.'}
+          </p>
           <div className={styles.actions}>
-            <a href="#agents" className={styles.secondaryLink}>
-              {copy.read}
-              <ArrowRight size={16} aria-hidden="true" />
+            <a
+              href="https://github.com/marcelozap"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.primaryLink}
+            >
+              GitHub <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a
+              href="https://marcelozapata.com"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.secondaryLink}
+            >
+              {isSpanish ? 'Escuchar música' : 'Listen to my music'}{' '}
+              <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
-        <div className={styles.heroBottom}>
-          <a href="#practice">
-            <ArrowDown size={15} aria-hidden="true" />
-            {copy.scroll}
-          </a>
-          <span>{copy.signature}</span>
-        </div>
       </section>
 
-      <section id="practice" className={styles.vision} aria-labelledby="practice-title">
-        <span id="product" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="vision" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="about" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="work" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="projects" className={styles.anchorAlias} aria-hidden="true" />
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.practiceLabel}</p>
-          <h2 id="practice-title">{copy.practiceTitle}</h2>
-        </div>
-        <div className={styles.visionBody}>
-          <p className={styles.lead}>{copy.practiceLead}</p>
-          <p className={styles.bodyCopy}>{copy.practiceBody}</p>
-          <ul className={styles.practiceFacts}>
-            {copy.practiceFacts.map((fact) => (
-              <li key={fact}>{fact}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section id="theories" className={styles.work} aria-labelledby="theories-title">
-        <div className={styles.sectionTop}>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>{copy.theoryLabel}</p>
-            <h2 id="theories-title">{copy.theoryTitle}</h2>
-          </div>
-        </div>
-        <div className={styles.theories}>
-          {copy.theories.map((theory, i) => (
-            <article key={theory.name}>
-              <span>0{i + 1}</span>
-              <h3>{theory.name}</h3>
-              <p className={styles.bodyCopy}>{theory.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="agents" className={styles.journal} aria-labelledby="agents-title">
-        <div className={styles.sectionTop}>
-          <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>{copy.agentsLabel}</p>
-            <h2 id="agents-title">
-              {copy.agentsTitle.split('\n').map((line) => (
-                <span key={line}>{line} </span>
-              ))}
-            </h2>
-          </div>
-          <p className={styles.bodyCopy}>{copy.agentsIntro}</p>
-        </div>
-        <div className={styles.agentList}>
-          {copy.agents.map((agent, i) => (
-            <article className={styles.agentRow} key={agent.name}>
-              <span className={styles.projectNumber}>0{i + 1}</span>
-              <div>
-                <p className={styles.agentRole}>{agent.role}</p>
-                <h3>{agent.name}</h3>
-              </div>
-              <div>
-                <p className={styles.bodyCopy}>{agent.text}</p>
-                <blockquote className={styles.sample}>
-                  <span>{copy.sampleLabel}</span>
-                  {DESK_SAMPLES[i]}
-                </blockquote>
-              </div>
-            </article>
-          ))}
-        </div>
-        <p className={styles.sampleStamp}>{DESK_SAMPLE.stamp}</p>
-      </section>
-
-      <section id="engineering" className={styles.engineering} aria-labelledby="engineering-title">
-        <span id="experience" className={styles.anchorAlias} aria-hidden="true" />
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.engineeringLabel}</p>
-          <h2 id="engineering-title">{copy.engineeringTitle}</h2>
-          <a
-            href="https://github.com/marcelozap?tab=repositories"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.secondaryLink}
-          >
-            {copy.codeLink}
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-        </div>
-        <ul className={styles.feats}>
-          {copy.feats.map((feat) => (
-            <li key={feat.name}>
-              <h3>{feat.name}</h3>
-              <p className={styles.bodyCopy}>{feat.text}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="notes" className={styles.writing} aria-labelledby="notes-title">
-        <span id="access" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="journal" className={styles.anchorAlias} aria-hidden="true" />
-        <span id="ai-blog" className={styles.anchorAlias} aria-hidden="true" />
+      <section
+        id="notes"
+        className={`${styles.writing} ${styles.selectedWriting}`}
+        aria-labelledby="notes-title"
+      >
         <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{copy.notesLabel}</p>
-          <h2 id="notes-title">
-            {copy.notesTitle.split('\n').map((line) => (
-              <span key={line}>{line} </span>
-            ))}
-          </h2>
+          <p className={styles.eyebrow}>{isSpanish ? '01 / Escritos' : '01 / Writing'}</p>
+          <h2 id="notes-title">{isSpanish ? 'Lo que estoy aprendiendo.' : 'What I’m learning.'}</h2>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Notas sobre construir con software, IA y atención humana.'
+              : 'Notes on building with software, AI, and human attention.'}
+          </p>
         </div>
         <div className={styles.writingBody}>
-          <p className={styles.bodyCopy}>{copy.notesBody}</p>
-          <a href="/ai-blog" className={styles.primaryLink}>
-            {copy.notesLink}
-            <ArrowUpRight size={18} aria-hidden="true" />
+          <ul className={styles.noteList}>
+            {FEATURED_NOTES.map((note) => (
+              <li key={note.slug}>
+                <Link href={`/ai-blog/${note.slug}`} className={styles.noteItem}>
+                  <time className={styles.noteMeta} dateTime={note.date}>
+                    {note.number} · {noteDate(note.date, locale)}
+                  </time>
+                  <span className={styles.noteTitle}>{note.title}</span>
+                  <span className={styles.noteSummary}>{note.summary}</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/ai-blog" className={styles.secondaryLink}>
+            {isSpanish ? 'Leer todos los escritos' : 'Read all writing'}
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section id="work" className={styles.writing} aria-labelledby="work-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '02 / Trabajo' : '02 / Work'}</p>
+          <h2 id="work-title">
+            {isSpanish ? 'Sistemas que se pueden usar.' : 'Systems people can use.'}
+          </h2>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Software práctico, automatización de calidad y flujos de trabajo con IA.'
+              : 'Practical software, quality automation, and AI-enabled workflows.'}
+          </p>
+        </div>
+        <div className={styles.projectList}>
+          <a
+            href="https://github.com/marcelozap"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>{isSpanish ? 'Automatización de calidad' : 'Quality automation'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Playwright, pruebas de API y sistemas repetibles para que los equipos puedan entregar con confianza.'
+                  : 'Playwright, API checks, and repeatable test systems that help teams ship with confidence.'}
+              </p>
+              <span>GitHub ↗</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
           </a>
+          <a
+            href="https://github.com/marcelozap"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>{isSpanish ? 'Datos e integraciones' : 'Data and integrations'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Python, SQL, REST y flujos que hacen que los sistemas sean más claros y fáciles de confiar.'
+                  : 'Python, SQL, REST, and practical workflows that make systems easier to understand and trust.'}
+              </p>
+              <span>GitHub ↗</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Sistemas de trabajo con IA' : 'AI work systems'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Documentos, ciclos de agentes y revisiones que mantienen el juicio en manos de la persona.'
+                  : 'Documents, agent loops, and reviewable workflows that keep judgment with the human.'}
+              </p>
+              <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section id="sound" className={styles.writing} aria-labelledby="sound-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '03 / Sonido' : '03 / Sound'}</p>
+          <h2 id="sound-title">
+            {isSpanish
+              ? 'Canciones y el espacio para hacerlas.'
+              : 'Songs and the space around them.'}
+          </h2>
+        </div>
+        <div className={styles.projectList}>
+          <a
+            href="https://marcelozapata.com"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>Marcelo Zapata</h3>
+              <p>
+                {isSpanish
+                  ? 'Canciones en inglés y español. Guitarra y voz primero; el resto sirve a la canción.'
+                  : 'Songs in English and Spanish. Guitar and voice first; everything else serves the song.'}
+              </p>
+              <span>marcelozapata.com ↗</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <a
+            href="https://malosound.ai"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>MaloSound.ai</h3>
+              <p>
+                {isSpanish
+                  ? 'Un espacio de trabajo para encontrar la historia, grabar la toma y construir el sonido.'
+                  : 'A music workbench for finding the story, recording the take, and building the sound.'}
+              </p>
+              <span>malosound.ai ↗</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+
+      <section id="about" className={styles.writing} aria-labelledby="about-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '04 / Sobre mí' : '04 / About'}</p>
+          <h2 id="about-title">Marcelo Zapata.</h2>
+        </div>
+        <div className={styles.aboutCopy}>
+          <p>
+            {isSpanish
+              ? 'Soy ingeniero de software y compositor. Me interesa el punto donde las herramientas precisas, la evidencia y la expresión humana se encuentran.'
+              : 'I’m a software engineer and songwriter. I’m interested in the point where precise tools, evidence, and human expression meet.'}
+          </p>
+          <p>
+            {isSpanish
+              ? 'Este sitio reúne mi trabajo de ingeniería y mis notas. La música vive en marcelozapata.com; MaloSound.ai es el espacio de trabajo para construirla.'
+              : 'This site gathers my engineering work and notes. The music lives at marcelozapata.com; MaloSound.ai is the workbench for building it.'}
+          </p>
+          <Link href="/systems/xiv" className={styles.archiveLink}>
+            {isSpanish ? 'Archivo de investigación anterior' : 'Older research archive'}{' '}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export function DragonCollection() {
+  return (
+    <div className={styles.home}>
+      <section className={styles.collection} aria-labelledby="collection-title">
+        <Link href="/" className={styles.researchLink}>
+          Back to XIV
+        </Link>
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>XIV / Visual identity</p>
+          <h1 id="collection-title">The dragons.</h1>
+        </div>
+        <div className={styles.agentList}>
+          {COLLECTION_AGENTS.map((agent) => (
+            <article key={agent.callsign} className={styles.agentRow}>
+              <span
+                className={styles.agentMark + ' ' + styles['agentMark' + agent.color]}
+                aria-hidden="true"
+              >
+                <Image
+                  src="/brand/xiv-dragon-emblem.png"
+                  alt=""
+                  width={52}
+                  height={52}
+                  className={styles.agentDragon}
+                />
+              </span>
+              <p className={styles.agentRole}>{agent.callsign}</p>
+            </article>
+          ))}
         </div>
       </section>
     </div>

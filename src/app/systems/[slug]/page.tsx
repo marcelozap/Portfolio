@@ -4,32 +4,38 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PUBLIC_SYSTEMS, getPublicSystem } from '@/lib/public-systems';
 import { XivBanner } from '@/components/brand/XivBanner';
+import styles from './SystemPage.module.css';
+import { XivWordmark } from '@/components/brand/XivWordmark';
 
 export function generateStaticParams() {
   return PUBLIC_SYSTEMS.map((system) => ({ slug: system.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = getPublicSystem(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const project = getPublicSystem((await params).slug);
   return {
     title: project?.name ?? 'System',
     description: project?.tagline,
   };
 }
 
-export default function SystemPage({ params }: { params: { slug: string } }) {
-  const project = getPublicSystem(params.slug);
+export default async function SystemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const project = getPublicSystem((await params).slug);
   if (!project) notFound();
 
   return (
-    <article className="section pt-32 md:pt-40">
+    <article className={`${styles.project} section pt-32 md:pt-40`}>
       <div className="mx-auto max-w-5xl">
         <Link
-          href="/systems"
+          href="/"
           className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent hover:text-ink"
         >
           <ArrowLeft className="size-4" />
-          All projects
+          Home
         </Link>
 
         <header className="mt-14 max-w-4xl border-b border-white/[0.1] pb-10">
@@ -41,7 +47,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
             <span>{project.year}</span>
           </div>
           <h1 className="mt-7 font-display text-6xl leading-[0.95] text-ink md:text-8xl">
-            {project.name}
+            {project.slug === 'xiv' ? <XivWordmark width={150} /> : project.name}
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-8 text-ink-muted md:text-2xl">
             {project.tagline}
@@ -55,7 +61,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
             <p className="text-lg leading-8 text-ink-muted">{project.description}</p>
             <div className="mt-12">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-                What it holds
+                Approach
               </div>
               <ul className="mt-5 space-y-4">
                 {project.coreIdeas.map((idea) => (
@@ -70,7 +76,7 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
 
           <aside className="border-l border-white/[0.1] pl-6 lg:pl-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-              Built with
+              Research tools
             </div>
             <ul className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
@@ -90,17 +96,6 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
                 </div>
               ))}
             </div>
-
-            {project.publicUrl && (
-              <a
-                href={project.publicUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
-              >
-                Visit public surface <ArrowUpRight className="size-4" />
-              </a>
-            )}
           </aside>
         </div>
 

@@ -1,5 +1,9 @@
 import { permanentRedirect } from 'next/navigation';
 
-export default function LegacyFieldNotePage({ params }: { params: { slug: string } }) {
-  permanentRedirect(`/ai-blog/${params.slug}`);
+export default async function LegacyFieldNotePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  permanentRedirect(`/ai-blog/${(await params).slug}`);
 }

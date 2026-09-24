@@ -13,18 +13,22 @@ export function XivBanner({
 }) {
   return (
     <Image
-      src="/brand/xiv-dragon-world.png"
+      src="/brand/xiv-mirrored-dragons.png"
       alt={
         locale === 'es'
-          ? 'El dragón violeta y cian de XIV sobre un fondo negro.'
-          : 'XIV’s violet and cyan dragon against a black background.'
+          ? 'Dos dragones oscuros frente a frente sobre un horizonte dorado.'
+          : 'Two charcoal dragons facing inward above a gold horizon.'
       }
-      width={1200}
-      height={600}
+      width={2172}
+      height={724}
       quality={90}
       priority={priority}
       sizes={sizes}
       className={`block h-auto w-full ${className}`}
+      style={{
+        mixBlendMode: 'screen',
+        maskImage: 'radial-gradient(ellipse, black 35%, transparent 74%)',
+      }}
     />
   );
 }

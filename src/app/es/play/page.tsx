@@ -1,9 +1,9 @@
 import { DragonTape } from '@/components/play/DragonTape';
 
 export const metadata = {
-  title: 'Dragon Tape — juego de práctica',
+  title: 'Dragon Scales — una canción, una sesión',
   description:
-    'Un juego de práctica en vivo: precios ficticios, fondos virtuales, botones grandes y atajos de teclado. Llega a +14% para desbloquear apostar a la baja. Corre por completo en tu navegador.',
+    'Una tesis. Un plan de riesgo. Practica al alza o a la baja con precios ficticios y fondos virtuales. Revisa la sesión.',
 };
 
 export default function SpanishPlayPage() {

@@ -48,6 +48,7 @@ export function PriceChart({
     <svg
       className={styles.chart}
       viewBox={`0 0 ${width} ${height}`}
+      style={{ aspectRatio: `${width} / ${height}` }}
       role="img"
       aria-label="Fictional price path"
       preserveAspectRatio="none"

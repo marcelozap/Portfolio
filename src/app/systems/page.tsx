@@ -5,12 +5,11 @@ import { PUBLIC_SYSTEMS } from '@/lib/public-systems';
 export const metadata = {
   title: 'Projects',
   description:
-    'The systems Marcelo Zapata is building across AI, music, movement, data, and sport.',
+    'The systems Marcelo Zapata is building across options trading, research, and practice tools.',
 };
 
 const LANE_NOTES: Record<string, string> = {
-  xiv: 'Orchestration, shared state, and multimodal experiments.',
-  malosound: 'Music, audio analysis, performance visuals, and release work.',
+  xiv: 'Options trading, market research, and risk.',
   rally: 'Movement, tennis, training, and computer vision.',
 };
 

@@ -9,11 +9,32 @@ export function generateStaticParams() {
   return FIELD_NOTES.map((note) => ({ slug: note.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const note = getFieldNote(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const note = getFieldNote((await params).slug);
   return {
     title: note?.title ?? 'Field Note',
     description: note?.summary,
+    ...(note && {
+      alternates: { canonical: `https://www.marcelozapata.dev/ai-blog/${note.slug}` },
+      openGraph: {
+        type: 'article' as const,
+        title: note.title,
+        description: note.summary,
+        url: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
+        siteName: 'Marcelo Zapata',
+        publishedTime: note.date,
+        authors: ['Marcelo Zapata'],
+      },
+      twitter: {
+        card: 'summary' as const,
+        title: note.title,
+        description: note.summary,
+      },
+    }),
     ...(note?.image && {
       alternates: {
         canonical: `https://www.marcelozapata.dev/ai-blog/${note.slug}`,
@@ -50,8 +71,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function FieldNotePage({ params }: { params: { slug: string } }) {
-  const note = getFieldNote(params.slug);
+export default async function FieldNotePage({ params }: { params: Promise<{ slug: string }> }) {
+  const note = getFieldNote((await params).slug);
   if (!note) notFound();
 
   return (
