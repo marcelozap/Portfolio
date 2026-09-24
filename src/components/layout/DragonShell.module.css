@@ -382,3 +382,23 @@
 .footer[data-theme='game'] .socialLinks a span {
   color: #c7af85;
 }
+@media (min-width: 960px) {
+  .navigationLinks,
+  .navigationLinks[data-open='true'] {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    list-style: none;
+  }
+  .menuButton {
+    display: none;
+  }
+}
+.footerBottom {
+  flex-wrap: wrap;
+}

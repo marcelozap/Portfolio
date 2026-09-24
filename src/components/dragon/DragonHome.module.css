@@ -1,5 +1,4 @@
-/* XIV homepage. Red, black and white identity; Dragon Scales keeps its own
-   purple/blue module styles inside the practice section. */
+/* Shared archive styles; the personal homepage is scoped with studioHome. */
 .home {
   --dragon-bg: #050505;
   --dragon-ink: #eee9dd;
@@ -724,6 +723,323 @@
 }
 .selectedWriting .noteItem > svg {
   grid-row: 1;
+}
+.studioHome {
+  --dragon-ink: #282921;
+  --dragon-muted: #626358;
+  --dragon-faint: #6e6a5f;
+  --dragon-line: rgb(55 52 38 / 20%);
+  --dragon-red-soft: #79603c;
+  --dragon-red-tint: #836539;
+  background: #f0ecdf;
+}
+.studioHome .hero {
+  min-height: 790px;
+  padding: 158px 7% 100px;
+  align-items: flex-start;
+  color: #f4efdf;
+  background: #0c0d0b;
+}
+.horizon {
+  object-fit: cover;
+  object-position: 65% center;
+  opacity: 0.8;
+}
+.studioHome .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0c0d0bf2, #0c0d0b90 45%, transparent 80%);
+  z-index: 0;
+}
+.studioHome .heroCopy {
+  text-align: left;
+  max-width: 640px;
+}
+.studioHome .heroCopy .eyebrow {
+  justify-content: flex-start;
+  margin: 0 0 28px;
+  font:
+    11px/1.6 var(--font-mono),
+    monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dfc89d;
+}
+.studioHome .title {
+  font-size: clamp(72px, 8.8vw, 128px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+.studioHome .title em {
+  font-weight: 400;
+  color: #e3c699;
+}
+.studioHome .philosophy {
+  max-width: 410px;
+  margin: 32px 0 0;
+  color: #ddd9cc;
+  text-wrap: pretty;
+}
+.studioHome .actions {
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.heroFoot {
+  position: absolute;
+  bottom: 28px;
+  left: 7%;
+  right: 7%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #d8c29945;
+  font:
+    11px/1.6 var(--font-mono),
+    monospace;
+  letter-spacing: 0.08em;
+  color: #d8c9ae;
+}
+.studioHome .writing {
+  width: 86%;
+  padding-block: 84px;
+  border-color: #4b45322a;
+}
+.studioHome .eyebrow {
+  color: #79603c;
+}
+.studioHome .sectionHeading h2 {
+  max-width: 650px;
+  font-size: clamp(34px, 4.3vw, 58px);
+}
+.studioHome .noteList {
+  gap: 28px;
+}
+.studioHome .noteItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 0 24px;
+  position: relative;
+}
+.noteArt {
+  display: block;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #d9decf;
+  color: #4d6655;
+  margin-bottom: 24px;
+}
+.noteArt[data-art='1'] {
+  background: #e4d9c2;
+  color: #8a653c;
+}
+.noteArt[data-art='2'] {
+  background: #d9e1e2;
+  color: #547578;
+}
+.noteArt svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1;
+  transition: transform 350ms ease;
+}
+.studioHome .noteItem:hover .noteArt svg {
+  transform: scale(1.06);
+}
+.studioHome .noteTitle {
+  font-size: 27px;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+.studioHome .noteSummary {
+  color: #626358;
+  margin-top: 10px;
+}
+.studioHome .noteItem > svg {
+  position: absolute;
+  right: 0;
+  top: 206px;
+}
+.studioHome .writingBody .secondaryLink {
+  color: #34372f;
+  border-color: #9a9789;
+}
+.studioHome .project {
+  padding: 26px;
+  border: 1px solid #72664d35;
+  background: #f8f5eb;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+.studioHome .project:hover {
+  background: #fffdf5;
+  transform: translateY(-2px);
+}
+.studioHome .projectList {
+  gap: 12px;
+}
+.studioHome .project h3 {
+  color: #282921;
+}
+.studioHome .project p {
+  color: #626358;
+}
+.studioHome .project span,
+.studioHome .project > svg {
+  color: #79603c;
+}
+.studioHome .soundSection {
+  width: 100%;
+  max-width: none;
+  padding-inline: 7%;
+  background: #263e36;
+  color: #f0ecdf;
+}
+.soundSection .eyebrow {
+  color: #b7c9af;
+}
+.soundSection .project {
+  background: #ffffff08;
+  border-color: #ced7bf30;
+}
+.soundSection .project:hover {
+  background: #ffffff10;
+}
+.soundSection .project h3 {
+  color: #f0ecdf;
+}
+.soundSection .project p {
+  color: #c6cec0;
+}
+.soundSection .project span,
+.soundSection .project > svg {
+  color: #dfc89d;
+}
+.soundWave {
+  height: 105px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 390px;
+  margin-top: 36px;
+}
+.soundWave span {
+  flex: 1;
+  background: #bbcead;
+  border-radius: 3px;
+  opacity: 0.65;
+}
+.studioHome .aboutCopy p {
+  color: #55594f;
+}
+.studioHome .archiveLink {
+  color: #686c60;
+}
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 12px;
+  color: #323e32;
+  border-bottom: 1px solid #858c78;
+}
+.experienceList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.experienceList li {
+  position: relative;
+  padding: 0 0 32px 28px;
+  border-left: 1px solid #9da08b;
+}
+.experienceList li::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: #58705c;
+  border-radius: 50%;
+}
+.experienceList li:last-child {
+  padding-bottom: 0;
+}
+.experienceList h3 {
+  font:
+    23px/1.3 Georgia,
+    serif;
+  margin: 8px 0 12px;
+}
+.experienceList p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #626358;
+  margin: 0;
+}
+.experienceList time {
+  font:
+    11px/1.5 var(--font-mono),
+    monospace;
+  color: #686c60;
+}
+.studioHome a:focus-visible {
+  outline: 2px solid #a8864d;
+  outline-offset: 5px;
+}
+@media (max-width: 760px) {
+  .studioHome .hero {
+    min-height: 760px;
+    padding: 128px 24px 110px;
+  }
+  .studioHome .title {
+    font-size: clamp(70px, 17vw, 110px);
+  }
+  .studioHome .heroCopy .eyebrow {
+    font-size: 10px;
+  }
+  .horizon {
+    object-position: 60% center;
+    opacity: 0.55;
+  }
+  .studioHome .hero::after {
+    background: linear-gradient(90deg, #0c0d0bba, #0c0d0b30);
+  }
+  .heroFoot {
+    left: 24px;
+    right: 24px;
+    font-size: 9px;
+  }
+  .studioHome .writing {
+    width: calc(100% - 48px);
+    padding-block: 52px;
+  }
+  .studioHome .soundSection {
+    width: 100%;
+    padding-inline: 24px;
+  }
+  .studioHome .noteList {
+    gap: 30px;
+  }
+  .studioHome .project {
+    padding: 22px;
+  }
+  .experienceList {
+    margin-top: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .noteArt svg,
+  .studioHome .project {
+    transition: none;
+  }
 }
 @media (max-width: 760px) {
   .selectedWriting .noteList {

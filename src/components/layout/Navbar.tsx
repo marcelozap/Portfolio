@@ -9,6 +9,8 @@ import styles from './DragonShell.module.css';
 const SECTIONS = [
   { id: 'notes', en: 'Writing', es: 'Escritos' },
   { id: 'work', en: 'Work', es: 'Trabajo' },
+  { id: 'experience', en: 'Experience', es: 'Experiencia' },
+  { id: 'sound', en: 'Sound', es: 'Sonido' },
   { id: 'about', en: 'About', es: 'Sobre mí' },
 ];
 
