@@ -17,13 +17,13 @@ export type PublicSystem = {
 export const PUBLIC_SYSTEMS: PublicSystem[] = [
   {
     slug: 'xiv',
-    name: 'XIV',
+    name: 'XIV Capital',
     domain: 'Options trading',
     status: 'Trading & research',
     year: '2026',
     tagline: 'Market structure. Execution. Risk.',
     description:
-      'XIV is my options trading and market research initiative, focused on market structure, execution, and risk management. Originally developed as my software engineering thesis at Florida State University, it applies software and AI to research and performance analysis.',
+      'XIV Capital is my personal options trading and market research initiative, focused on market structure, execution, and risk management. Originally developed as my software engineering thesis at Florida State University, it applies software and AI to research and performance analysis. I trade my own capital; I do not manage client money.',
     laneNote: 'I make every trading decision.',
     coreIdeas: [
       'Study price action across multiple timeframes.',

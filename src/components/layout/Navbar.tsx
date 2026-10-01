@@ -57,11 +57,11 @@ export function Navbar() {
         <Link
           href={homeHref}
           className={styles.brand}
-          aria-label={isSpanish ? 'XIV — inicio' : 'XIV — home'}
+          aria-label={isSpanish ? 'XIV Capital — inicio' : 'XIV Capital — home'}
           onClick={() => setMenuOpen(false)}
         >
           <span className={styles.lockup}>
-            <XivCapitalLockup width={78} showCapital={false} title="XIV" />
+            <XivCapitalLockup width={78} title="XIV Capital" />
           </span>
           <span className={styles.founder}>Marcelo Zapata</span>
         </Link>

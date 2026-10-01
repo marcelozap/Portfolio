@@ -47,14 +47,14 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Options · Research · Risk</p>
           <h1 id="dragon-title" className={styles.title}>
-            Marcelo
+            XIV
             <br />
-            <em>Zapata.</em>
+            <em>Capital.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Estudio opciones, estructura de mercado y gestión del riesgo. Construyo herramientas para investigar ideas y revisar decisiones.'
-              : 'I study options, market structure, and risk. I build tools to research ideas and review decisions.'}
+              ? 'Mi trabajo en opciones, investigación de mercados y gestión del riesgo. Opero con mi propio capital y construyo herramientas para apoyar mis decisiones.'
+              : 'My work in options trading, market research, and risk management. I trade my own capital and build tools to support my decisions.'}
           </p>
           <div className={styles.actions}>
             <a href="#work" className={styles.primaryLink}>
@@ -67,13 +67,17 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               rel="noreferrer"
               className={styles.secondaryLink}
             >
-              {isSpanish ? 'Conocer XIV' : 'Explore XIV'}{' '}
+              {isSpanish ? 'Conocer XIV Capital' : 'About XIV Capital'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className={styles.heroFoot}>
-          <span>{isSpanish ? 'Investigación independiente' : 'Independent research'}</span>
+          <span>
+            {isSpanish
+              ? 'Marcelo Zapata / Investigación independiente'
+              : 'Marcelo Zapata / Independent research'}
+          </span>
           <a href="#work">{isSpanish ? 'Ideas en práctica ↓' : 'Ideas into practice ↓'}</a>
         </div>
       </section>
@@ -162,8 +166,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               <h3>{isSpanish ? 'Investigación de opciones' : 'Options research'}</h3>
               <p>
                 {isSpanish
-                  ? 'XIV reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
-                  : 'XIV brings together my options research and the tools I build to support it.'}
+                  ? 'XIV Capital reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
+                  : 'XIV Capital brings together my options research and the tools I build to support it.'}
               </p>
               <span>{isSpanish ? 'Ver investigación ↗' : 'View research ↗'}</span>
             </div>
@@ -268,7 +272,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </a>
           </p>
           <Link href="/systems/xiv" className={styles.archiveLink}>
-            {isSpanish ? 'Investigación XIV' : 'XIV research'}{' '}
+            {isSpanish ? 'Investigación XIV Capital' : 'XIV Capital research'}{' '}
             <ArrowUpRight size={14} aria-hidden="true" />
           </Link>
         </div>

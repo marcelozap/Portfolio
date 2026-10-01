@@ -15,7 +15,7 @@ export function Footer() {
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
-            <XivCapitalLockup width={128} showCapital={false} title="XIV" />
+            <XivCapitalLockup width={128} title="XIV Capital" />
             <span>
               {isSpanish ? 'Opciones · Investigación · Riesgo' : 'Options · Research · Risk'}
             </span>
@@ -40,7 +40,7 @@ export function Footer() {
           <a href="https://www.marcelozapata.com/">
             {isSpanish ? 'Música — marcelozapata.com' : 'Music — marcelozapata.com'}
           </a>
-          <span>© {new Date().getFullYear()} XIV</span>
+          <span>© {new Date().getFullYear()} XIV Capital</span>
         </div>
       </div>
     </footer>
