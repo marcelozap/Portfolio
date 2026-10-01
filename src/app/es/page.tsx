@@ -1,8 +1,8 @@
 import { DragonHome } from '@/components/dragon/DragonHome';
 
 export const metadata = {
-  title: 'Marcelo Zapata — Software, IA, datos y sonido',
-  description: 'Software, IA, datos y sonido de Marcelo Zapata.',
+  title: 'Marcelo Zapata — Opciones e investigación de mercados',
+  description: 'Opciones e investigación de mercados de Marcelo Zapata.',
 };
 
 export default function SpanishHome() {

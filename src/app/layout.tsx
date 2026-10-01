@@ -26,11 +26,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata — Software, AI, Data, Sound',
+    default: 'Marcelo Zapata — Options Trading & Market Research',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata builds reliable software and AI workflows, writes about the work, and makes songs in English and Spanish.',
+    'Independent options research, market analysis, and trading tools by Marcelo Zapata.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
@@ -38,21 +38,21 @@ export const metadata: Metadata = {
     'QA automation',
     'AI workflows',
     'data systems',
-    'songwriter',
-    'MaloSound',
+    'options research',
+    'risk management',
   ],
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata — Software, AI, Data, Sound',
-    description: 'Software, AI, data, and sound by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Options Trading & Market Research',
+    description: 'Options research, market structure, and risk management by Marcelo Zapata.',
     type: 'website',
     siteName: 'Marcelo Zapata',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo Zapata — Software, AI, Data, Sound',
-    description: 'Software, AI, data, and sound by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Options Trading & Market Research',
+    description: 'Options research, market structure, and risk management by Marcelo Zapata.',
   },
   icons: {
     icon: [

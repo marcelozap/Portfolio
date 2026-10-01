@@ -6,8 +6,8 @@ import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
 
 const FEATURED_NOTE_SLUGS = [
-  'i-had-a-dream',
-  'the-chat-box-is-only-the-top-floor',
+  'before-i-trust-a-backtest-i-check-the-data',
+  'are-tech-companies-the-new-banks',
   'all-in-every-time',
 ] as const;
 
@@ -45,7 +45,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           className={styles.horizon}
         />
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Software · AI · Data · Sound</p>
+          <p className={styles.eyebrow}>Options · Research · Risk</p>
           <h1 id="dragon-title" className={styles.title}>
             Marcelo
             <br />
@@ -53,27 +53,27 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Construyo herramientas, escribo y hago música. Este es el espacio donde comparto lo que voy aprendiendo.'
-              : 'I build tools, write, and make music. This is where I share what I’m learning along the way.'}
+              ? 'Estudio opciones, estructura de mercado y gestión del riesgo. Construyo herramientas para investigar ideas y revisar decisiones.'
+              : 'I study options, market structure, and risk. I build tools to research ideas and review decisions.'}
           </p>
           <div className={styles.actions}>
             <a href="#work" className={styles.primaryLink}>
-              {isSpanish ? 'Explorar mi trabajo' : 'Explore my work'}{' '}
+              {isSpanish ? 'Explorar mi investigación' : 'Explore my research'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
             <a
-              href="https://marcelozapata.com"
+              href="/systems/xiv"
               target="_blank"
               rel="noreferrer"
               className={styles.secondaryLink}
             >
-              {isSpanish ? 'Escuchar música' : 'Listen to my music'}{' '}
+              {isSpanish ? 'Conocer XIV' : 'Explore XIV'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className={styles.heroFoot}>
-          <span>{isSpanish ? 'Un cuaderno abierto' : 'An open notebook'}</span>
+          <span>{isSpanish ? 'Investigación independiente' : 'Independent research'}</span>
           <a href="#work">{isSpanish ? 'Ideas en práctica ↓' : 'Ideas into practice ↓'}</a>
         </div>
       </section>
@@ -85,12 +85,14 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       >
         <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '01 / Escritos' : '01 / Writing'}</p>
-          <h2 id="notes-title">{isSpanish ? 'Lo que estoy aprendiendo.' : 'What I’m learning.'}</h2>
+          <p className={styles.eyebrow}>{isSpanish ? '01 / Investigación' : '01 / Research'}</p>
+          <h2 id="notes-title">
+            {isSpanish ? 'Notas sobre los mercados.' : 'Notes on the markets.'}
+          </h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Notas sobre construir con software, IA y atención humana.'
-              : 'Notes on building with software, AI, and human attention.'}
+              ? 'Opciones, empresas y las preguntas detrás de cada tesis.'
+              : 'Options, businesses, and the questions behind each thesis.'}
           </p>
         </div>
         <div className={styles.writingBody}>
@@ -144,58 +146,53 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
 
       <section id="work" className={styles.writing} aria-labelledby="work-title">
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '02 / Trabajo' : '02 / Work'}</p>
+          <p className={styles.eyebrow}>{isSpanish ? '02 / Herramientas' : '02 / Tools'}</p>
           <h2 id="work-title">
-            {isSpanish ? 'Sistemas que se pueden usar.' : 'Systems people can use.'}
+            {isSpanish ? 'Del análisis a la revisión.' : 'From research to review.'}
           </h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Software práctico, automatización de calidad y flujos de trabajo con IA.'
-              : 'Practical software, quality automation, and AI-enabled workflows.'}
+              ? 'Herramientas de software para investigar, comprobar los datos y documentar decisiones.'
+              : 'Software for research, data checks, and documenting decisions.'}
           </p>
         </div>
         <div className={styles.projectList}>
-          <a
-            href="https://github.com/marcelozap"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.project}
-          >
+          <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
             <div>
-              <h3>{isSpanish ? 'Automatización de calidad' : 'Quality automation'}</h3>
+              <h3>{isSpanish ? 'Investigación de opciones' : 'Options research'}</h3>
               <p>
                 {isSpanish
-                  ? 'Playwright, pruebas de API y sistemas repetibles para que los equipos puedan entregar con confianza.'
-                  : 'Playwright, API checks, and repeatable test systems that help teams ship with confidence.'}
+                  ? 'XIV reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
+                  : 'XIV brings together my options research and the tools I build to support it.'}
               </p>
-              <span>GitHub ↗</span>
+              <span>{isSpanish ? 'Ver investigación ↗' : 'View research ↗'}</span>
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
           <a
-            href="https://github.com/marcelozap"
+            href="/ai-blog/before-i-trust-a-backtest-i-check-the-data"
             target="_blank"
             rel="noreferrer"
             className={styles.project}
           >
             <div>
-              <h3>{isSpanish ? 'Datos e integraciones' : 'Data and integrations'}</h3>
+              <h3>{isSpanish ? 'Calidad de los datos' : 'Data quality'}</h3>
               <p>
                 {isSpanish
-                  ? 'Python, SQL, REST y flujos que hacen que los sistemas sean más claros y fáciles de confiar.'
-                  : 'Python, SQL, REST, and practical workflows that make systems easier to understand and trust.'}
+                  ? 'Antes de confiar en un backtest, reviso la cobertura, los datos faltantes y la calidad de las cotizaciones.'
+                  : 'Before trusting a backtest, I examine coverage, missing data, and quote quality.'}
               </p>
-              <span>GitHub ↗</span>
+              <span>{isSpanish ? 'Ver investigación ↗' : 'View research ↗'}</span>
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
           <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
             <div>
-              <h3>{isSpanish ? 'Sistemas de trabajo con IA' : 'AI work systems'}</h3>
+              <h3>{isSpanish ? 'Investigación con IA' : 'AI-assisted research'}</h3>
               <p>
                 {isSpanish
-                  ? 'Documentos, ciclos de agentes y revisiones que mantienen el juicio en manos de la persona.'
-                  : 'Documents, agent loops, and reviewable workflows that keep judgment with the human.'}
+                  ? 'Flujos de investigación que organizan la evidencia y dejan las decisiones en mis manos.'
+                  : 'Research workflows that organize evidence and keep decisions with me.'}
               </p>
               <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
             </div>
@@ -248,82 +245,21 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </ol>
       </section>
 
-      <section
-        id="sound"
-        className={`${styles.writing} ${styles.soundSection}`}
-        aria-labelledby="sound-title"
-      >
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '04 / Sonido' : '04 / Sound'}</p>
-          <h2 id="sound-title">
-            {isSpanish
-              ? 'Canciones y el espacio para hacerlas.'
-              : 'Songs and the space around them.'}
-          </h2>
-          <div className={styles.soundWave} aria-hidden="true">
-            {Array.from({ length: 35 }, (_, index) => (
-              <span
-                key={index}
-                style={{
-                  height: `${18 + Math.round(Math.abs(Math.sin(index * 0.67)) * Math.sin(((index + 1) / 36) * Math.PI) * 82)}%`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className={styles.projectList}>
-          <a
-            href="https://marcelozapata.com"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.project}
-          >
-            <div>
-              <h3>Marcelo Zapata</h3>
-              <p>
-                {isSpanish
-                  ? 'Canciones en inglés y español. Guitarra y voz primero; el resto sirve a la canción.'
-                  : 'Songs in English and Spanish. Guitar and voice first; everything else serves the song.'}
-              </p>
-              <span>marcelozapata.com ↗</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <a
-            href="https://malosound.ai"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.project}
-          >
-            <div>
-              <h3>MaloSound.ai</h3>
-              <p>
-                {isSpanish
-                  ? 'Un espacio de trabajo para encontrar la historia, grabar la toma y construir el sonido.'
-                  : 'A music workbench for finding the story, recording the take, and building the sound.'}
-              </p>
-              <span>malosound.ai ↗</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-
       <section id="about" className={styles.writing} aria-labelledby="about-title">
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '05 / Sobre mí' : '05 / About'}</p>
+          <p className={styles.eyebrow}>{isSpanish ? '04 / Sobre mí' : '04 / About'}</p>
           <h2 id="about-title">Marcelo Zapata.</h2>
         </div>
         <div className={styles.aboutCopy}>
           <p>
             {isSpanish
-              ? 'Soy ingeniero de software y trabajo de forma independiente. Me interesan los sistemas fiables, las ideas claras y el proceso de crear: desde herramientas hasta escritos y sonido.'
-              : 'I’m a software engineer building independently. I’m interested in reliable systems, clear thinking, and the process of making things—from tools to writing and sound.'}
+              ? 'Soy trader de opciones con experiencia en ingeniería de software. Me centro en la estructura del mercado, la ejecución y la gestión del riesgo.'
+              : 'I’m an options trader with a background in software engineering. My focus is market structure, execution, and risk management.'}
           </p>
           <p>
             {isSpanish
-              ? 'Este sitio reúne mi trabajo de ingeniería y mis notas. La música vive en marcelozapata.com; MaloSound.ai es el espacio de trabajo para construirla.'
-              : 'This site gathers my engineering work and notes. The music lives at marcelozapata.com; MaloSound.ai is the workbench for building it.'}
+              ? 'Este sitio documenta mi investigación y mis herramientas. Comparto mi proceso personal; no gestiono dinero de terceros ni ofrezco asesoramiento de inversión.'
+              : 'This site documents my research and tools. I share my personal process; I do not manage other people’s money or provide investment advice.'}
           </p>
           <p>
             <a href="mailto:xiv@marcelozapata.dev" className={styles.contactLink}>
@@ -332,7 +268,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </a>
           </p>
           <Link href="/systems/xiv" className={styles.archiveLink}>
-            {isSpanish ? 'Archivo de investigación anterior' : 'Older research archive'}{' '}
+            {isSpanish ? 'Investigación XIV' : 'XIV research'}{' '}
             <ArrowUpRight size={14} aria-hidden="true" />
           </Link>
         </div>
