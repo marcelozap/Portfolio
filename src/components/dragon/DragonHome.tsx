@@ -51,9 +51,9 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               : 'Software Engineering · QA · XIV Capital'}
           </p>
           <h1 id="dragon-title" className={styles.title}>
-            Marcelo
+            XIV
             <br />
-            <em>Zapata.</em>
+            <em>Capital.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
