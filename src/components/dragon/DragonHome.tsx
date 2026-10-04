@@ -1,99 +1,283 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+
+import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
-import minimal from './MinimalHome.module.css';
+
+const FEATURED_NOTE_SLUGS = [
+  'before-i-trust-a-backtest-i-check-the-data',
+  'my-big-bet',
+  'coding-beats',
+] as const;
+
+const FEATURED_NOTES = FEATURED_NOTE_SLUGS.map((slug) =>
+  FIELD_NOTES.find((note) => note.slug === slug),
+).filter((note): note is (typeof FIELD_NOTES)[number] => Boolean(note));
+
 const COLLECTION_AGENTS = [
   { name: 'Milo', callsign: 'Milo', color: 'violet' },
   { name: 'Mika', callsign: 'Mika', color: 'gold' },
   { name: 'Money', callsign: 'Money', color: 'green' },
 ] as const;
+
+function noteDate(iso: string, locale: 'en' | 'es') {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
-  const es = locale === 'es';
+  const isSpanish = locale === 'es';
+
   return (
-    <div className={minimal.page}>
-      <section className={minimal.intro}>
-        <p className={minimal.label}>Marcelo Zapata / XIV</p>
-        <h1>{es ? 'Ingeniería de software.' : 'Software engineering.'}</h1>
-        <p className={minimal.focus}>
-          {es
-            ? 'Automatización de pruebas. Ingeniería de datos.'
-            : 'Test automation. Data engineering.'}
-        </p>
-        <p className={minimal.summary}>
-          {es
-            ? 'Construyo software, automatizo pruebas y trabajo con datos.'
-            : 'I build software, automate tests, and work with data.'}
-        </p>
-        <a className={minimal.contact} href="mailto:xiv@marcelozapata.dev">
-          {es ? 'Contactar' : 'Get in touch'} ↗
-        </a>
-      </section>
-      <section id="experience" className={minimal.section}>
-        <h2>{es ? 'Experiencia' : 'Experience'}</h2>
-        <div>
-          <p className={minimal.company}>
-            Publix Super Markets <span>2022–2026</span>
+    <div className={`${styles.home} ${styles.studioHome}`}>
+      <section className={styles.hero} aria-labelledby="dragon-title">
+        <Image
+          src="/brand/xiv-gold-horizon.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.horizon}
+        />
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>
+            {isSpanish
+              ? 'Ingeniería de software · QA · XIV Capital'
+              : 'Software Engineering · QA · XIV Capital'}
           </p>
-          <ul className={minimal.roles}>
-            <li>
-              <span>Sr Quality Assurance Engineer</span>
-              <time>Jul–Aug 2026</time>
-            </li>
-            <li>
-              <span>Software Engineer</span>
-              <time>May 2025–Jul 2026</time>
-            </li>
-            <li>
-              <span>Associate Software Engineer</span>
-              <time>Dec 2022–May 2025</time>
-            </li>
-          </ul>
-          <p className={minimal.summary}>
-            {es
-              ? 'Sistemas empresariales, automatización de calidad y tecnología de almacenes.'
-              : 'Enterprise software, quality automation, and warehouse systems.'}
+          <h1 id="dragon-title" className={styles.title}>
+            Marcelo
+            <br />
+            <em>Zapata.</em>
+          </h1>
+          <p className={styles.philosophy}>
+            {isSpanish
+              ? 'Soy Marcelo Zapata, ingeniero de software con experiencia en sistemas empresariales, integraciones y automatización de calidad. Construyo herramientas para comprobar datos y apoyar decisiones, incluida mi investigación personal de opciones.'
+              : 'I’m Marcelo Zapata, a software engineer with experience in enterprise systems, integrations, and QA automation. I build tools to check data and support decisions, including my personal options research.'}
           </p>
-          <p className={minimal.stack}>Python · SQL · Playwright · Azure DevOps</p>
+          <div className={styles.actions}>
+            <a href="#experience" className={styles.primaryLink}>
+              {isSpanish ? 'Ver mi experiencia' : 'View my experience'}{' '}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a href="mailto:xiv@marcelozapata.dev" className={styles.secondaryLink}>
+              {isSpanish ? 'Contactarme' : 'Contact me'}{' '}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+        <div className={styles.heroFoot}>
+          <span>
+            {isSpanish
+              ? 'Marcelo Zapata / Ingeniería de software'
+              : 'Marcelo Zapata / Software engineering'}
+          </span>
+          <a href="#work">{isSpanish ? 'Ideas en práctica ↓' : 'Ideas into practice ↓'}</a>
         </div>
       </section>
-      <section id="work" className={minimal.section}>
-        <h2>{es ? 'Proyectos' : 'Projects'}</h2>
-        <div className={minimal.projects}>
-          <Link href="/ai-blog/before-i-trust-a-backtest-i-check-the-data">
-            <span>Green Machine ↗</span>
-            <p>{es ? 'Validación de datos en Python.' : 'Data validation in Python.'}</p>
-          </Link>
-          <Link href="/play">
-            <span>Dragon Scales ↗</span>
+
+      <section id="experience" className={styles.writing} aria-labelledby="experience-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '01 / Experiencia' : '01 / Experience'}</p>
+          <h2 id="experience-title">
+            {isSpanish ? 'Software en el mundo real.' : 'Software in the real world.'}
+          </h2>
+          <p className={styles.bodyCopy}>Publix Super Markets · 2022–2026</p>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Sistemas empresariales, integraciones y automatización de calidad.'
+              : 'Enterprise systems, integrations, and quality automation.'}
+          </p>
+        </div>
+        <ol className={styles.experienceList}>
+          <li>
+            <time>{isSpanish ? 'Jul–Ago 2026' : 'Jul–Aug 2026'}</time>
+            <h3>Sr Quality Assurance Engineer</h3>
             <p>
-              {es
-                ? 'Simulación de trading con fondos virtuales.'
-                : 'Trading simulation with virtual funds.'}
+              {isSpanish
+                ? 'Flujos de calidad con IA para cuatro equipos de desarrollo. Validación con Playwright, Azure DevOps, SQL, APIs REST y Kafka.'
+                : 'AI-assisted quality workflows across four development teams. Validation with Playwright, Azure DevOps, SQL, REST APIs, and Kafka.'}
             </p>
-          </Link>
-          <a href="https://malosound.ai/">
-            <span>MaloSound ↗</span>
-            <p>{es ? 'Exploración de sonido mediante código.' : 'Exploring sound through code.'}</p>
+          </li>
+          <li>
+            <time>May 2025–Jul 2026</time>
+            <h3>Software Engineer</h3>
+            <p>
+              {isSpanish
+                ? 'Desarrollo y modernización de APIs e integraciones para inventario, pedidos, facturas, proveedores y almacenes.'
+                : 'Built and modernized inventory APIs and integration services across ordering, invoicing, supplier, and warehouse systems.'}
+            </p>
+          </li>
+          <li>
+            <time>{isSpanish ? 'Dic 2022–May 2025' : 'Dec 2022–May 2025'}</time>
+            <h3>Associate Software Engineer</h3>
+            <p>
+              {isSpanish
+                ? 'Modernización de sistemas de almacén que dan soporte a equipos de automatización, incluidas grúas y cintas transportadoras.'
+                : 'Helped modernize warehouse technology supporting automation equipment, including crane and conveyor-control systems.'}
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="work" className={styles.writing} aria-labelledby="work-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '02 / Proyectos' : '02 / Projects'}</p>
+          <h2 id="work-title">{isSpanish ? 'Herramientas que construyo.' : 'Tools I build.'}</h2>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Herramientas de software para investigar, comprobar los datos y documentar decisiones.'
+              : 'Software for research, data checks, and documenting decisions.'}
+          </p>
+        </div>
+        <div className={styles.projectList}>
+          <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Software de investigación' : 'Research software'}</h3>
+              <p>
+                {isSpanish
+                  ? 'XIV Capital reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
+                  : 'XIV Capital brings together my options research and the tools I build to support it.'}
+              </p>
+              <span>{isSpanish ? 'Ver el proyecto ↗' : 'View project ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
           </a>
+          <a
+            href="/ai-blog/before-i-trust-a-backtest-i-check-the-data"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>{isSpanish ? 'Validación de datos' : 'Data validation'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Comprobaciones en Python de campos faltantes, cobertura y calidad de cotizaciones, con ejemplos sintéticos y límites documentados.'
+                  : 'Python checks for missing fields, coverage, and quote quality, with synthetic fixtures and documented limitations.'}
+              </p>
+              <span>{isSpanish ? 'Ver método y resultados ↗' : 'Read method and results ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Flujos de trabajo con IA' : 'AI-assisted workflows'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Un enfoque de tareas acotadas con IA, criterios de aceptación, pruebas y revisión humana.'
+                  : 'An approach to bounded AI tasks, acceptance criteria, tests, and human review.'}
+              </p>
+              <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
         </div>
       </section>
-      <section id="notes" className={minimal.section}>
-        <h2>{es ? 'Escritos' : 'Writing'}</h2>
-        <Link href="/ai-blog">
-          {es ? 'Notas sobre software y datos' : 'Notes on software and data'} ↗
-        </Link>
+
+      <section
+        id="notes"
+        className={`${styles.writing} ${styles.selectedWriting}`}
+        aria-labelledby="notes-title"
+      >
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '03 / Escritos' : '03 / Writing'}</p>
+          <h2 id="notes-title">
+            {isSpanish ? 'Notas sobre software y mercados.' : 'Notes on software and markets.'}
+          </h2>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Calidad de datos, herramientas de investigación y lo que aprendo al construir.'
+              : 'Data quality, research tools, and what I learn while building.'}
+          </p>
+        </div>
+        <div className={styles.writingBody}>
+          <ul className={styles.noteList}>
+            {FEATURED_NOTES.map((note, index) => (
+              <li key={note.slug}>
+                <Link href={`/ai-blog/${note.slug}`} className={styles.noteItem}>
+                  <span className={styles.noteArt} data-art={index} aria-hidden="true">
+                    <svg viewBox="0 0 400 180" fill="none">
+                      {index === 0 ? (
+                        <>
+                          {[30, 52, 74, 96, 118].map((radius) => (
+                            <circle key={radius} cx="200" cy="130" r={radius} />
+                          ))}
+                          <path d="M0 130H400M200 0V180" />
+                        </>
+                      ) : index === 1 ? (
+                        <>
+                          {[0, 1, 2, 3, 4].map((layer) => (
+                            <path
+                              key={layer}
+                              d={`M100 ${70 + layer * 20} L200 ${20 + layer * 20} L300 ${70 + layer * 20} L200 ${120 + layer * 20} Z`}
+                            />
+                          ))}
+                        </>
+                      ) : (
+                        <>
+                          <path d="M0 145L110 95L180 120L270 35L400 85" />
+                          <circle cx="270" cy="35" r="12" />
+                          <path d="M0 165L110 115L180 140L270 55L400 105" />
+                        </>
+                      )}
+                    </svg>
+                  </span>
+                  <time className={styles.noteMeta} dateTime={note.date}>
+                    {note.number} · {noteDate(note.date, locale)}
+                  </time>
+                  <span className={styles.noteTitle}>{note.title}</span>
+                  <span className={styles.noteSummary}>{note.summary}</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/ai-blog" className={styles.secondaryLink}>
+            {isSpanish ? 'Leer todos los escritos' : 'Read all writing'}
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
       </section>
-      <section id="about" className={minimal.section}>
-        <h2>{es ? 'Contacto' : 'Contact'}</h2>
-        <div id="contact" className={minimal.links}>
-          <a href="mailto:xiv@marcelozapata.dev">Email ↗</a>
-          <a href="https://www.linkedin.com/in/marcelozap">LinkedIn ↗</a>
-          <a href="https://github.com/marcelozap">GitHub ↗</a>
+
+      <section id="about" className={styles.writing} aria-labelledby="about-title">
+        <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '04 / Sobre mí' : '04 / About'}</p>
+          <h2 id="about-title">Marcelo Zapata.</h2>
+        </div>
+        <div className={styles.aboutCopy}>
+          <p>
+            {isSpanish
+              ? 'Soy ingeniero de software con experiencia en sistemas empresariales, APIs y automatización de calidad. Busco oportunidades en ingeniería de software y QA donde pueda contribuir y seguir aprendiendo con un equipo.'
+              : 'I’m a software engineer with experience in enterprise systems, APIs, and QA automation. I’m interested in software engineering and QA opportunities where I can contribute and keep learning with a team.'}
+          </p>
+          <p>
+            {isSpanish
+              ? 'Este sitio documenta mi investigación y mis herramientas. Comparto mi proceso personal; no gestiono dinero de terceros ni ofrezco asesoramiento de inversión.'
+              : 'This site documents my research and tools. I share my personal process; I do not manage other people’s money or provide investment advice.'}
+          </p>
+          <p>
+            <a href="mailto:xiv@marcelozapata.dev" className={styles.contactLink}>
+              {isSpanish ? 'Hablemos' : 'Get in touch'}{' '}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </p>
+          <Link href="/systems/xiv" className={styles.archiveLink}>
+            {isSpanish ? 'Investigación XIV Capital' : 'XIV Capital research'}{' '}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </Link>
         </div>
       </section>
     </div>
   );
 }
+
 export function DragonCollection() {
   return (
     <div className={styles.home}>
