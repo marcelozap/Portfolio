@@ -26,11 +26,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'XIV Capital — Options Trading & Market Research',
+    default: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'XIV Capital: personal options trading, market research, and trading tools by Marcelo Zapata.',
+    'Software engineering, enterprise integrations, QA automation, and personal research tools by Marcelo Zapata.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'XIV Capital — Options Trading & Market Research',
-    description: 'Options research, market structure, and risk management by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
+    description: 'Software engineering, QA automation, and research tools by Marcelo Zapata.',
     type: 'website',
     siteName: 'XIV Capital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XIV Capital — Options Trading & Market Research',
-    description: 'Options research, market structure, and risk management by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
+    description: 'Software engineering, QA automation, and research tools by Marcelo Zapata.',
   },
   icons: {
     icon: [

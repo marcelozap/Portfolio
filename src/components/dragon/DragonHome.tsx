@@ -7,8 +7,8 @@ import styles from './DragonHome.module.css';
 
 const FEATURED_NOTE_SLUGS = [
   'before-i-trust-a-backtest-i-check-the-data',
-  'are-tech-companies-the-new-banks',
-  'all-in-every-time',
+  'my-big-bet',
+  'coding-beats',
 ] as const;
 
 const FEATURED_NOTES = FEATURED_NOTE_SLUGS.map((slug) =>
@@ -45,7 +45,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           className={styles.horizon}
         />
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Options · Research · Risk</p>
+          <p className={styles.eyebrow}>Software · Quality · Research</p>
           <h1 id="dragon-title" className={styles.title}>
             XIV
             <br />
@@ -53,12 +53,12 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Mi trabajo en opciones, investigación de mercados y gestión del riesgo. Opero con mi propio capital y construyo herramientas para apoyar mis decisiones.'
-              : 'My work in options trading, market research, and risk management. I trade my own capital and build tools to support my decisions.'}
+              ? 'Soy Marcelo Zapata, ingeniero de software con experiencia en sistemas empresariales, integraciones y automatización de calidad. Construyo herramientas para comprobar datos y apoyar decisiones, incluida mi investigación personal de opciones.'
+              : 'I’m Marcelo Zapata, a software engineer with experience in enterprise systems, integrations, and QA automation. I build tools to check data and support decisions, including my personal options research.'}
           </p>
           <div className={styles.actions}>
-            <a href="#work" className={styles.primaryLink}>
-              {isSpanish ? 'Explorar mi investigación' : 'Explore my research'}{' '}
+            <a href="#experience" className={styles.primaryLink}>
+              {isSpanish ? 'Ver mi experiencia' : 'View my experience'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
             <a
@@ -75,8 +75,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.heroFoot}>
           <span>
             {isSpanish
-              ? 'Marcelo Zapata / Investigación independiente'
-              : 'Marcelo Zapata / Independent research'}
+              ? 'Marcelo Zapata / Ingeniería de software'
+              : 'Marcelo Zapata / Software engineering'}
           </span>
           <a href="#work">{isSpanish ? 'Ideas en práctica ↓' : 'Ideas into practice ↓'}</a>
         </div>
@@ -91,12 +91,12 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{isSpanish ? '01 / Investigación' : '01 / Research'}</p>
           <h2 id="notes-title">
-            {isSpanish ? 'Notas sobre los mercados.' : 'Notes on the markets.'}
+            {isSpanish ? 'Notas sobre software y mercados.' : 'Notes on software and markets.'}
           </h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Opciones, empresas y las preguntas detrás de cada tesis.'
-              : 'Options, businesses, and the questions behind each thesis.'}
+              ? 'Calidad de datos, herramientas de investigación y lo que aprendo al construir.'
+              : 'Data quality, research tools, and what I learn while building.'}
           </p>
         </div>
         <div className={styles.writingBody}>
@@ -257,8 +257,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.aboutCopy}>
           <p>
             {isSpanish
-              ? 'Soy trader de opciones con experiencia en ingeniería de software. Me centro en la estructura del mercado, la ejecución y la gestión del riesgo.'
-              : 'I’m an options trader with a background in software engineering. My focus is market structure, execution, and risk management.'}
+              ? 'Soy ingeniero de software con experiencia en sistemas empresariales, APIs y automatización de calidad. Busco oportunidades en ingeniería de software y QA donde pueda contribuir y seguir aprendiendo con un equipo.'
+              : 'I’m a software engineer with experience in enterprise systems, APIs, and QA automation. I’m interested in software engineering and QA opportunities where I can contribute and keep learning with a team.'}
           </p>
           <p>
             {isSpanish
