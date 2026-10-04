@@ -1,0 +1,141 @@
+.page {
+  background: #0c0c0b;
+  color: #ded9ce;
+  min-height: 100vh;
+  padding: 160px 32px 80px;
+}
+.intro,
+.section {
+  max-width: 880px;
+  margin-inline: auto;
+}
+.intro {
+  padding-bottom: 100px;
+}
+.label {
+  color: #bca477;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  margin-bottom: 42px;
+}
+.intro h1 {
+  color: #d2ba8b;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(38px, 5.7vw, 70px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+}
+.focus {
+  font-size: clamp(17px, 2.5vw, 24px);
+  line-height: 1.6;
+  color: #d2c7ae;
+}
+.summary {
+  margin-top: 24px;
+  color: #a8a69e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.contact {
+  display: inline-block;
+  color: #cbb184;
+  font-size: 14px;
+  margin-top: 32px;
+  border-bottom: 1px solid #726448;
+  padding-bottom: 8px;
+}
+.section {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding-block: 38px;
+  border-top: 1px solid #bca47725;
+  scroll-margin-top: 100px;
+}
+.section h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #bca477;
+  letter-spacing: 0.06em;
+}
+.company {
+  font-size: 16px;
+  margin: 0 0 24px;
+}
+.company span {
+  color: #8f8d85;
+  font-size: 12px;
+  margin-left: 15px;
+}
+.roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.roles li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 9px;
+  font-size: 14px;
+}
+.roles time {
+  color: #918f87;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.stack {
+  color: #bca477;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.projects {
+  display: grid;
+  gap: 26px;
+}
+.section a {
+  color: #d2c7ae;
+  font-size: 14px;
+}
+.projects p {
+  color: #939188;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 7px 0 0;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.page a:hover {
+  color: #ead3a5;
+}
+.page a:focus-visible {
+  outline: 1px solid #cbb184;
+  outline-offset: 6px;
+}
+@media (max-width: 640px) {
+  .page {
+    padding: 132px 24px 48px;
+  }
+  .intro {
+    padding-bottom: 64px;
+  }
+  .label {
+    margin-bottom: 28px;
+  }
+  .section {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-block: 30px;
+  }
+  .roles li {
+    flex-direction: column;
+    gap: 5px;
+    padding-block: 12px;
+  }
+}
