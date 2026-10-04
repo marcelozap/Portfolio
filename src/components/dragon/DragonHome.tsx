@@ -45,11 +45,15 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           className={styles.horizon}
         />
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Software · Quality · Research</p>
+          <p className={styles.eyebrow}>
+            {isSpanish
+              ? 'Ingeniería de software · QA · XIV Capital'
+              : 'Software Engineering · QA · XIV Capital'}
+          </p>
           <h1 id="dragon-title" className={styles.title}>
-            XIV
+            Marcelo
             <br />
-            <em>Capital.</em>
+            <em>Zapata.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
@@ -61,13 +65,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               {isSpanish ? 'Ver mi experiencia' : 'View my experience'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-            <a
-              href="/systems/xiv"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.secondaryLink}
-            >
-              {isSpanish ? 'Conocer XIV Capital' : 'About XIV Capital'}{' '}
+            <a href="mailto:xiv@marcelozapata.dev" className={styles.secondaryLink}>
+              {isSpanish ? 'Contactarme' : 'Contact me'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
@@ -82,14 +81,112 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
       </section>
 
+      <section id="experience" className={styles.writing} aria-labelledby="experience-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '01 / Experiencia' : '01 / Experience'}</p>
+          <h2 id="experience-title">
+            {isSpanish ? 'Software en el mundo real.' : 'Software in the real world.'}
+          </h2>
+          <p className={styles.bodyCopy}>Publix Super Markets · 2022–2026</p>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Sistemas empresariales, integraciones y automatización de calidad.'
+              : 'Enterprise systems, integrations, and quality automation.'}
+          </p>
+        </div>
+        <ol className={styles.experienceList}>
+          <li>
+            <time>{isSpanish ? 'Jul–Ago 2026' : 'Jul–Aug 2026'}</time>
+            <h3>Sr Quality Assurance Engineer</h3>
+            <p>
+              {isSpanish
+                ? 'Flujos de calidad con IA para cuatro equipos de desarrollo. Validación con Playwright, Azure DevOps, SQL, APIs REST y Kafka.'
+                : 'AI-assisted quality workflows across four development teams. Validation with Playwright, Azure DevOps, SQL, REST APIs, and Kafka.'}
+            </p>
+          </li>
+          <li>
+            <time>May 2025–Jul 2026</time>
+            <h3>Software Engineer</h3>
+            <p>
+              {isSpanish
+                ? 'Desarrollo y modernización de APIs e integraciones para inventario, pedidos, facturas, proveedores y almacenes.'
+                : 'Built and modernized inventory APIs and integration services across ordering, invoicing, supplier, and warehouse systems.'}
+            </p>
+          </li>
+          <li>
+            <time>{isSpanish ? 'Dic 2022–May 2025' : 'Dec 2022–May 2025'}</time>
+            <h3>Associate Software Engineer</h3>
+            <p>
+              {isSpanish
+                ? 'Modernización de sistemas de almacén que dan soporte a equipos de automatización, incluidas grúas y cintas transportadoras.'
+                : 'Helped modernize warehouse technology supporting automation equipment, including crane and conveyor-control systems.'}
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="work" className={styles.writing} aria-labelledby="work-title">
+        <div className={styles.sectionHeading}>
+          <p className={styles.eyebrow}>{isSpanish ? '02 / Proyectos' : '02 / Projects'}</p>
+          <h2 id="work-title">{isSpanish ? 'Herramientas que construyo.' : 'Tools I build.'}</h2>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Herramientas de software para investigar, comprobar los datos y documentar decisiones.'
+              : 'Software for research, data checks, and documenting decisions.'}
+          </p>
+        </div>
+        <div className={styles.projectList}>
+          <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Software de investigación' : 'Research software'}</h3>
+              <p>
+                {isSpanish
+                  ? 'XIV Capital reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
+                  : 'XIV Capital brings together my options research and the tools I build to support it.'}
+              </p>
+              <span>{isSpanish ? 'Ver el proyecto ↗' : 'View project ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <a
+            href="/ai-blog/before-i-trust-a-backtest-i-check-the-data"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.project}
+          >
+            <div>
+              <h3>{isSpanish ? 'Validación de datos' : 'Data validation'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Comprobaciones en Python de campos faltantes, cobertura y calidad de cotizaciones, con ejemplos sintéticos y límites documentados.'
+                  : 'Python checks for missing fields, coverage, and quote quality, with synthetic fixtures and documented limitations.'}
+              </p>
+              <span>{isSpanish ? 'Ver método y resultados ↗' : 'Read method and results ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
+          <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Flujos de trabajo con IA' : 'AI-assisted workflows'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Un enfoque de tareas acotadas con IA, criterios de aceptación, pruebas y revisión humana.'
+                  : 'An approach to bounded AI tasks, acceptance criteria, tests, and human review.'}
+              </p>
+              <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       <section
         id="notes"
         className={`${styles.writing} ${styles.selectedWriting}`}
         aria-labelledby="notes-title"
       >
-        <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '01 / Investigación' : '01 / Research'}</p>
+          <p className={styles.eyebrow}>{isSpanish ? '03 / Escritos' : '03 / Writing'}</p>
           <h2 id="notes-title">
             {isSpanish ? 'Notas sobre software y mercados.' : 'Notes on software and markets.'}
           </h2>
@@ -148,108 +245,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
       </section>
 
-      <section id="work" className={styles.writing} aria-labelledby="work-title">
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '02 / Herramientas' : '02 / Tools'}</p>
-          <h2 id="work-title">
-            {isSpanish ? 'Del análisis a la revisión.' : 'From research to review.'}
-          </h2>
-          <p className={styles.bodyCopy}>
-            {isSpanish
-              ? 'Herramientas de software para investigar, comprobar los datos y documentar decisiones.'
-              : 'Software for research, data checks, and documenting decisions.'}
-          </p>
-        </div>
-        <div className={styles.projectList}>
-          <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
-            <div>
-              <h3>{isSpanish ? 'Investigación de opciones' : 'Options research'}</h3>
-              <p>
-                {isSpanish
-                  ? 'XIV Capital reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
-                  : 'XIV Capital brings together my options research and the tools I build to support it.'}
-              </p>
-              <span>{isSpanish ? 'Ver investigación ↗' : 'View research ↗'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <a
-            href="/ai-blog/before-i-trust-a-backtest-i-check-the-data"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.project}
-          >
-            <div>
-              <h3>{isSpanish ? 'Calidad de los datos' : 'Data quality'}</h3>
-              <p>
-                {isSpanish
-                  ? 'Antes de confiar en un backtest, reviso la cobertura, los datos faltantes y la calidad de las cotizaciones.'
-                  : 'Before trusting a backtest, I examine coverage, missing data, and quote quality.'}
-              </p>
-              <span>{isSpanish ? 'Ver investigación ↗' : 'View research ↗'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
-            <div>
-              <h3>{isSpanish ? 'Investigación con IA' : 'AI-assisted research'}</h3>
-              <p>
-                {isSpanish
-                  ? 'Flujos de investigación que organizan la evidencia y dejan las decisiones en mis manos.'
-                  : 'Research workflows that organize evidence and keep decisions with me.'}
-              </p>
-              <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
-      <section id="experience" className={styles.writing} aria-labelledby="experience-title">
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>{isSpanish ? '03 / Experiencia' : '03 / Experience'}</p>
-          <h2 id="experience-title">
-            {isSpanish ? 'Software en el mundo real.' : 'Software in the real world.'}
-          </h2>
-          <p className={styles.bodyCopy}>Publix Super Markets · 2022–2026</p>
-          <p className={styles.bodyCopy}>
-            {isSpanish
-              ? 'Sistemas empresariales, integraciones y automatización de calidad.'
-              : 'Enterprise systems, integrations, and quality automation.'}
-          </p>
-        </div>
-        <ol className={styles.experienceList}>
-          <li>
-            <time>{isSpanish ? 'Jul–Ago 2026' : 'Jul–Aug 2026'}</time>
-            <h3>Sr Quality Assurance Engineer</h3>
-            <p>
-              {isSpanish
-                ? 'Flujos de calidad con IA para cuatro equipos de desarrollo. Validación con Playwright, Azure DevOps, SQL, APIs REST y Kafka.'
-                : 'AI-assisted quality workflows across four development teams. Validation with Playwright, Azure DevOps, SQL, REST APIs, and Kafka.'}
-            </p>
-          </li>
-          <li>
-            <time>May 2025–Jul 2026</time>
-            <h3>Software Engineer</h3>
-            <p>
-              {isSpanish
-                ? 'Desarrollo y modernización de APIs e integraciones para inventario, pedidos, facturas, proveedores y almacenes.'
-                : 'Built and modernized inventory APIs and integration services across ordering, invoicing, supplier, and warehouse systems.'}
-            </p>
-          </li>
-          <li>
-            <time>{isSpanish ? 'Dic 2022–May 2025' : 'Dec 2022–May 2025'}</time>
-            <h3>Associate Software Engineer</h3>
-            <p>
-              {isSpanish
-                ? 'Modernización de sistemas de almacén que dan soporte a equipos de automatización, incluidas grúas y cintas transportadoras.'
-                : 'Helped modernize warehouse technology supporting automation equipment, including crane and conveyor-control systems.'}
-            </p>
-          </li>
-        </ol>
-      </section>
-
       <section id="about" className={styles.writing} aria-labelledby="about-title">
+        <span id="contact" className={styles.anchorAlias} aria-hidden="true" />
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{isSpanish ? '04 / Sobre mí' : '04 / About'}</p>
           <h2 id="about-title">Marcelo Zapata.</h2>

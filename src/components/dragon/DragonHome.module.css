@@ -1000,7 +1000,7 @@
     padding: 128px 24px 110px;
   }
   .studioHome .title {
-    font-size: clamp(70px, 17vw, 110px);
+    font-size: clamp(52px, 14vw, 100px);
   }
   .studioHome .heroCopy .eyebrow {
     font-size: 10px;

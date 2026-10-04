@@ -5,7 +5,7 @@ import { FIELD_NOTES } from '@/lib/field-notes';
 export const metadata = {
   title: 'Personal Writing',
   description:
-    'Personal writing by Marcelo Zapata. Thoughts, observations, and things I’m working through.',
+    'Personal writing by Marcelo Zapata. Notes on software, data quality, AI workflows, and personal research.',
 };
 
 export default function FieldNotesPage() {
@@ -27,7 +27,7 @@ export default function FieldNotesPage() {
             </span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted md:text-xl">
-            Thoughts, observations, and things I’m working through.
+            Notes on software, data quality, AI workflows, and personal research.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default function FieldNotesPage() {
 
         <div className="mt-10 flex flex-wrap gap-4 text-sm text-ink-muted">
           <Link href="/#contact" className="inline-flex items-center gap-2 hover:text-accent">
-            Contact XIV <ArrowRight className="size-4" />
+            Contact Marcelo <ArrowRight className="size-4" />
           </Link>
         </div>
       </div>

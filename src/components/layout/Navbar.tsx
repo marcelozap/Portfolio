@@ -7,10 +7,10 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './DragonShell.module.css';
 
 const SECTIONS = [
-  { id: 'notes', en: 'Research', es: 'Investigación' },
-  { id: 'work', en: 'Tools', es: 'Herramientas' },
   { id: 'experience', en: 'Experience', es: 'Experiencia' },
-  { id: 'about', en: 'About', es: 'Sobre mí' },
+  { id: 'work', en: 'Projects', es: 'Proyectos' },
+  { id: 'notes', en: 'Writing', es: 'Escritos' },
+  { id: 'about', en: 'Contact', es: 'Contacto' },
 ];
 
 export function Navbar() {

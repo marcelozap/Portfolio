@@ -49,13 +49,7 @@ export const FIELD_NOTES: FieldNote[] = [
     date: '2026-09-11',
     title: 'The AI Boom Is Tying Balance Sheets Together',
     summary:
-      'Watching The Big Short led me to examine the financial ties behind the AI boom, how losses could spread, and what the government might choose to save.',
-    image: {
-      src: '/images/ai-blog/are-tech-companies-the-new-banks-no-portrait.png',
-      alt: 'Marcelo Zapata’s bright editorial card comparing the 2008 bank collapse with the 2026 AI boom. A sunlit bank building connects to silver server racks under the question: Are tech companies the new banks? His name and a red-and-black XIV dragon appear above.',
-      width: 1122,
-      height: 1402,
-    },
+      'Watching The Big Short led me to examine financial connections in the AI buildout and distinguish a risk scenario from a prediction.',
     references: [
       {
         label: 'Federal Reserve: interconnectedness and the financial crisis',
@@ -77,30 +71,21 @@ export const FIELD_NOTES: FieldNote[] = [
         label: 'CoreWeave: $2.6 billion debt facility supporting its OpenAI agreement',
         url: 'https://investors.coreweave.com/news/news-details/2025/CoreWeave-Closes-2-6-Billion-Secured-Debt-Financing-Facility-Strengthening-Market-Position-as-AI-Cloud-Leader/default.aspx',
       },
-      {
-        label: 'NGA: AI for intelligence, surveillance and reconnaissance',
-        url: 'https://www.nga.mil/news/NGA_announces_%24708M_data_labeling_RFP.html',
-      },
-      {
-        label: 'NGA congressional testimony: AI and military targeting',
-        url: 'https://www.nga.mil/news/Testimony_of_VADM_Frank_D_Whitworth_before_the_Hou.html',
-      },
     ],
     body: [
       '2008 on the screen. 2026 on my mind.',
       'I watched The Big Short and saw dominoes.',
       'The banks were separate companies. Their risks were connected. Borrowing, guarantees and exposure to the same assets helped losses travel from one balance sheet to another.',
       'I see a similar pattern forming in parts of the AI buildout.',
-      'Nvidia sells chips to CoreWeave. Nvidia owns shares in CoreWeave. Nvidia has agreed to buy unused CoreWeave computing capacity, subject to the contract’s conditions. In January, Nvidia put in another $2 billion.',
+      'Nvidia sells chips to CoreWeave. Nvidia owns shares in CoreWeave. Nvidia has agreed to buy unused CoreWeave computing capacity, subject to the contract’s conditions. In January 2026, Nvidia put in another $2 billion.',
       'CoreWeave, in turn, secured a $2.6 billion debt facility to build infrastructure under its OpenAI agreement.',
       'Nvidia is a supplier, investor and capacity buyer. Outside lenders finance CoreWeave’s buildout. Different roles, connected bets.',
-      'Now run the scenario forward. A major customer misses a payment. Its cloud provider loses expected revenue but still owes its lenders. Equipment orders slow. The pressure reaches suppliers.',
+      'Consider a hypothetical stress scenario: a major customer misses a payment. Its cloud provider loses expected revenue but still owes its lenders. Equipment orders slow. The pressure reaches suppliers.',
       'Several businesses can become dependent on the same demand arriving on schedule.',
       'The technology can work and the financing can still break. I want to understand both.',
       'Here is where I part ways with treating this as a repeat of 2008. These companies carry different debt loads, different cash reserves and different margins for error. A financial connection is a reason to examine the risk. It is not proof that everyone falls together.',
       'Government intervention belongs in the comparison, too. In 2008, Washington stepped in to stabilize the financial system.',
-      'AI already supports military surveillance, intelligence analysis, and targeting. Its value to Washington goes well beyond what customers will pay for a subscription.',
-      'My read: if that capability were threatened, the government would step in. A bailout is one form that could take. That is my judgment, not a promised rescue, and I would not build a position on the assumption.',
+      'Whether a future government would intervene is uncertain. I would not assume a rescue when evaluating an investment risk.',
       'Protecting the infrastructure does not require protecting every company. Individual firms could fail while their data centers and other assets pass to new owners.',
       'The technology can survive. Investors can still lose.',
     ],
