@@ -27,8 +27,7 @@ const nextConfig = {
       },
       { source: '/systems', destination: '/#work', permanent: false },
       { source: '/systems/malosound', destination: '/#work', permanent: false },
-      { source: '/systems/rally', destination: '/#work', permanent: false },
-      { source: '/rally', destination: '/#work', permanent: false },
+      { source: '/rally', destination: '/systems/rally', permanent: false },
       {
         source: '/green-machine',
         destination: '/systems/xiv',

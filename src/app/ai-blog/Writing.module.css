@@ -1,0 +1,47 @@
+.page {
+  --ink: 35 22% 16%;
+  --ink-muted: 35 12% 34%;
+  --ink-faint: 35 10% 42%;
+  --accent: 35 38% 34%;
+  --line: 35 18% 78%;
+  background: #f5f1e7;
+  color: #30271f;
+  min-height: 80vh;
+  padding-bottom: 100px;
+}
+
+.page h1,
+.page h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.page header,
+.page article,
+.page footer,
+.page > div > div:last-of-type {
+  border-color: #d9d1c2;
+}
+
+.page :global(.field-note-body) {
+  color: #4c4339;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.page :global(.field-note-closing) {
+  color: #78603d;
+  border-color: #78603d;
+}
+
+.page :global(.field-note-body) p:first-child::first-letter {
+  float: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.page a:focus-visible {
+  outline-color: #78603d;
+}

@@ -21,17 +21,7 @@ export function Navbar() {
   const menuButton = useRef<HTMLButtonElement>(null);
   const navigationLinks = useRef<HTMLUListElement>(null);
   const languageHref =
-    pathname === '/play'
-      ? '/es/play'
-      : pathname === '/es/play'
-        ? '/play'
-        : pathname === '/ai-blog/i-had-a-dream'
-          ? '/es/ai-blog/i-had-a-dream'
-          : pathname === '/es/ai-blog/i-had-a-dream'
-            ? '/ai-blog/i-had-a-dream'
-            : isSpanish
-              ? '/'
-              : '/es';
+    pathname === '/play' ? '/es/play' : pathname === '/es/play' ? '/play' : isSpanish ? '/' : '/es';
 
   useEffect(() => {
     document.documentElement.lang = isSpanish ? 'es' : 'en';

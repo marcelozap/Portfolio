@@ -7,7 +7,7 @@ import styles from './DragonHome.module.css';
 
 const FEATURED_NOTE_SLUGS = [
   'before-i-trust-a-backtest-i-check-the-data',
-  'my-big-bet',
+  'ai-is-an-addictive-product-on-a-subscription',
   'coding-beats',
 ] as const;
 
@@ -47,16 +47,16 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>
             {isSpanish
-              ? 'Ingeniería de software · Automatización · Validación de datos'
-              : 'Software Engineering · Automation · Data Validation'}
+              ? 'Ingeniería de software · IA · Automatización'
+              : 'Software Engineering · AI · Automation'}
           </p>
           <h1 id="dragon-title" className={styles.title}>
             Marcelo Zapata<em>.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Soy Marcelo Zapata. Automatizo procesos, informes y pruebas de software, y compruebo que los datos lleguen correctamente de un sistema a otro. Mi experiencia abarca operaciones de almacén y distribución, integraciones y QA manual y automatizado.'
-              : 'I’m Marcelo Zapata. I automate workflows, reports, and software testing, and verify that data moves correctly between systems. My experience spans warehouse and distribution operations, integrations, and manual and automated QA.'}
+              ? 'Soy ingeniero de software, graduado de Florida State University, con más de cuatro años trabajando con IA. Construyo aplicaciones, integraciones y automatización: desde sistemas empresariales de almacén hasta Rally, mi próxima aplicación de tenis.'
+              : 'I’m a software engineer and Florida State University graduate with 4+ years working with AI. I build applications, integrations, and automation—from enterprise warehouse systems to Rally, my upcoming tennis app.'}
           </p>
           <div className={styles.actions}>
             <a href="#experience" className={styles.primaryLink}>
@@ -138,11 +138,23 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <h2 id="work-title">{isSpanish ? 'Herramientas que construyo.' : 'Tools I build.'}</h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Automatización de procesos, validación de datos y herramientas de investigación.'
-              : 'Workflow automation, data validation, and research tools.'}
+              ? 'Aplicaciones, procesos con IA, automatización y herramientas de investigación.'
+              : 'Applications, AI workflows, automation, and research tools.'}
           </p>
         </div>
         <div className={styles.projectList}>
+          <Link href="/systems/rally" className={styles.project}>
+            <div>
+              <h3>Rally</h3>
+              <p>
+                {isSpanish
+                  ? 'Mi próxima aplicación de tenis. En desarrollo: registros de práctica y un prototipo de análisis de movimiento a partir de vídeo.'
+                  : 'My upcoming tennis app. In development: practice logs and a prototype for video-based movement analysis.'}
+              </p>
+              <span>{isSpanish ? 'En desarrollo ↗' : 'In development ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
           <Link href="/systems/automation" className={styles.project}>
             <div>
               <h3>{isSpanish ? 'Automatización y validación' : 'Automation and validation'}</h3>
@@ -184,7 +196,10 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </a>
-          <Link href="/ai-blog/i-had-a-dream" className={styles.project}>
+          <Link
+            href="/ai-blog/ai-is-an-addictive-product-on-a-subscription"
+            className={styles.project}
+          >
             <div>
               <h3>{isSpanish ? 'Flujos de trabajo con IA' : 'AI-assisted workflows'}</h3>
               <p>
@@ -273,8 +288,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.aboutCopy}>
           <p>
             {isSpanish
-              ? 'Soy ingeniero de software especializado en automatización de procesos e informes, validación de datos y pruebas. Busco oportunidades en automatización, QA e infraestructura de pruebas donde pueda aportar mi experiencia en operaciones de almacén y distribución.'
-              : 'I’m a software engineer focused on workflow and report automation, data validation, and testing. I’m interested in automation, QA, and test infrastructure roles where I can apply my experience in warehouse and distribution operations.'}
+              ? 'Soy graduado de Florida State University con formación en informática y negocios. Mi trabajo abarca aplicaciones, APIs, datos, IA y automatización. Busco oportunidades de ingeniería de software para construir sistemas útiles y responsabilizarme de su fiabilidad.'
+              : 'I graduated from Florida State University with a background in computer science and business. My work spans application development, APIs, data workflows, AI, and automation. I’m interested in software engineering roles where I can build useful systems and take responsibility for their reliability.'}
           </p>
           <p>
             {isSpanish

@@ -1,33 +1,31 @@
+import styles from '@/app/ai-blog/Writing.module.css';
 import Link from 'next/link';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { FIELD_NOTES } from '@/lib/field-notes';
 
 export const metadata = {
-  title: 'Personal Writing',
+  title: 'Engineering Notes',
   description:
-    'Personal writing by Marcelo Zapata. Notes on software, data quality, AI workflows, and personal research.',
+    'Engineering notes by Marcelo Zapata. Implementation notes on software, data validation, AI workflows, and creative computing.',
 };
 
 export default function FieldNotesPage() {
   return (
-    <div className="section pt-32 md:pt-40">
+    <div className={`${styles.page} section pt-32 md:pt-40`}>
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <BookOpen className="size-4 text-accent" />
-          <span className="text-accent">Personal writing</span>
+          <span className="text-accent">Engineering notes</span>
           <span className="text-ink-faint">/</span>
           <span>Marcelo Zapata</span>
         </div>
 
         <div className="mt-8 max-w-3xl">
           <h1 className="font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-            Personal{' '}
-            <span className="bg-gradient-to-r from-[#ff3445] via-[#ff8390] to-[#fff0f2] bg-clip-text text-transparent">
-              writing.
-            </span>
+            Engineering <span className="text-ink">notes.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-muted md:text-xl">
-            Notes on software, data quality, AI workflows, and personal research.
+            Implementation notes on software, data validation, AI workflows, and creative computing.
           </p>
         </div>
 

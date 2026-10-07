@@ -26,11 +26,11 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
+    default: 'Marcelo Zapata — Software Engineer | AI & Automation',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Marcelo Zapata: software engineer focused on workflow and report automation, data validation, and manual and automated testing. Power Platform, SQL, and Azure.',
+    'Marcelo Zapata: software engineer and Florida State University graduate. Applications, AI, enterprise integrations, automation, and Rally, an upcoming tennis app.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
+    title: 'Marcelo Zapata — Software Engineer | AI & Automation',
     description:
       'Workflow and report automation, data validation, and software testing. Explore Marcelo Zapata’s engineering experience and projects.',
     type: 'website',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
+    title: 'Marcelo Zapata — Software Engineer | AI & Automation',
     description:
       'Workflow and report automation, data validation, and software testing. Explore Marcelo Zapata’s engineering experience and projects.',
   },

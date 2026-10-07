@@ -16,6 +16,39 @@ export type PublicSystem = {
 
 export const PUBLIC_SYSTEMS: PublicSystem[] = [
   {
+    slug: 'rally',
+    name: 'Rally',
+    domain: 'Sports software',
+    status: 'In development',
+    year: '2026',
+    tagline: 'A tennis app I’m building.',
+    description:
+      'Rally is my upcoming tennis app, bringing together practice logging and experiments in video-based movement analysis. It is an independent software project in development, not a released product.',
+    laneNote:
+      'Upcoming app. The analysis engine is a prototype and its movement thresholds still need calibration.',
+    coreIdeas: [
+      'Make practice sessions easier to record and review.',
+      'Explore how video can support movement analysis.',
+      'Keep experimental outputs separate from validated coaching claims.',
+    ],
+    features: [
+      {
+        title: 'Practice logging',
+        description: 'A planned workflow for reviewing tennis practice and activity.',
+      },
+      {
+        title: 'Video analysis prototype',
+        description:
+          'A Python pipeline for pose tracking, swing events, and structured analysis output. Real-world calibration and validation remain in progress.',
+      },
+    ],
+    metrics: [
+      { label: 'Product', value: 'Tennis' },
+      { label: 'Status', value: 'Building' },
+    ],
+    stack: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
+  },
+  {
     slug: 'automation',
     name: 'Automation & validation',
     domain: 'Software engineering',

@@ -1,3 +1,4 @@
+import styles from '@/app/ai-blog/Writing.module.css';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,7 +77,7 @@ export default async function FieldNotePage({ params }: { params: Promise<{ slug
   if (!note) notFound();
 
   return (
-    <article className="section pt-32 md:pt-40">
+    <article className={`${styles.page} section pt-32 md:pt-40`}>
       <div className="mx-auto max-w-4xl">
         <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.2em]">
           <Link
@@ -84,7 +85,7 @@ export default async function FieldNotePage({ params }: { params: Promise<{ slug
             className="inline-flex items-center gap-2 text-accent hover:text-ink"
           >
             <ArrowLeft className="size-4" />
-            All AI Blog posts
+            All engineering notes
           </Link>
           <span className="text-ink-faint">{note.number}</span>
         </div>
@@ -149,13 +150,13 @@ export default async function FieldNotePage({ params }: { params: Promise<{ slug
             className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink"
           >
             <ArrowLeft className="size-4" />
-            Back to AI Blog
+            Back to engineering notes
           </Link>
           <Link
             href="/#contact"
             className="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-accent"
           >
-            Contact XIV <ArrowRight className="size-4" />
+            Contact Marcelo <ArrowRight className="size-4" />
           </Link>
         </footer>
       </div>
