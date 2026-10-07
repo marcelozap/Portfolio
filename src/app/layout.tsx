@@ -26,16 +26,23 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://marcelozapata.dev'),
   title: {
-    default: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
+    default: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
     template: '%s - Marcelo Zapata',
   },
   description:
-    'Software engineering, enterprise integrations, QA automation, and personal research tools by Marcelo Zapata.',
+    'Marcelo Zapata: software engineer focused on workflow and report automation, data validation, and manual and automated testing. Power Platform, SQL, and Azure.',
   keywords: [
     'Marcelo Zapata',
     'XIV',
     'software engineering',
     'QA automation',
+    'workflow automation',
+    'report automation',
+    'data validation',
+    'Power Automate',
+    'Power Apps',
+    'Azure Databricks',
+    'Azure Pipelines',
     'AI workflows',
     'data systems',
     'options research',
@@ -44,15 +51,17 @@ export const metadata: Metadata = {
   authors: [{ name: 'Marcelo Zapata', url: 'https://github.com/marcelozap' }],
   creator: 'Marcelo Zapata',
   openGraph: {
-    title: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
-    description: 'Software engineering, QA automation, and research tools by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
+    description:
+      'Workflow and report automation, data validation, and software testing. Explore Marcelo Zapata’s engineering experience and projects.',
     type: 'website',
-    siteName: 'XIV Capital',
+    siteName: 'Marcelo Zapata',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo Zapata — Software Engineering & QA | XIV Capital',
-    description: 'Software engineering, QA automation, and research tools by Marcelo Zapata.',
+    title: 'Marcelo Zapata — Software Engineer | Automation & Quality Engineering',
+    description:
+      'Workflow and report automation, data validation, and software testing. Explore Marcelo Zapata’s engineering experience and projects.',
   },
   icons: {
     icon: [

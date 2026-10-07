@@ -17,7 +17,7 @@ export function Footer() {
           <Link href={isSpanish ? '/es' : '/'} className={styles.footerIdentity}>
             <XivCapitalLockup width={128} title="XIV Capital" />
             <span>
-              {isSpanish ? 'Opciones · Investigación · Riesgo' : 'Options · Research · Risk'}
+              {isSpanish ? 'Automatización · Datos · Calidad' : 'Automation · Data · Quality'}
             </span>
           </Link>
           <ul className={styles.socialLinks} aria-label={isSpanish ? 'Conectar' : 'Connect'}>

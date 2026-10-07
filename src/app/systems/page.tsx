@@ -5,10 +5,11 @@ import { PUBLIC_SYSTEMS } from '@/lib/public-systems';
 export const metadata = {
   title: 'Projects',
   description:
-    'The systems Marcelo Zapata is building across options trading, research, and practice tools.',
+    'Marcelo Zapata’s work in workflow and report automation, data validation, software testing, and independent research tools.',
 };
 
 const LANE_NOTES: Record<string, string> = {
+  automation: 'Workflow and report automation, data validation, and manual and automated testing.',
   xiv: 'Options trading, market research, and risk.',
   rally: 'Movement, tennis, training, and computer vision.',
 };
@@ -26,12 +27,13 @@ export default function SystemsPage() {
 
         <div className="mt-8 max-w-4xl">
           <h1 className="font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-            Three projects.
-            <span className="text-gradient block">One independent field.</span>
+            Automation and research.
+            <span className="text-gradient block">Built on reliable data.</span>
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-muted md:text-xl">
-            I build systems that turn messy inputs into something people can use: a decision, a
-            creative output, a training signal, or a repeatable workflow.
+            My professional experience centers on automating operational workflows and reports,
+            validating data, and testing software. My independent projects apply the same habits to
+            research and repeatable tools.
           </p>
         </div>
 

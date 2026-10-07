@@ -16,6 +16,65 @@ export type PublicSystem = {
 
 export const PUBLIC_SYSTEMS: PublicSystem[] = [
   {
+    slug: 'automation',
+    name: 'Automation & validation',
+    domain: 'Software engineering',
+    status: 'Professional experience',
+    year: '2022–2026',
+    tagline: 'Automate the work. Check the data. Test the result.',
+    description:
+      'At Publix Super Markets, I worked on warehouse and distribution processes, enterprise integrations, reporting workflows, and software quality. My experience includes workflow and report automation, backend data validation, manual and automated testing, and field testing for conveyor and crane systems.',
+    laneNote: 'Professional experience across operational software and data workflows.',
+    coreIdeas: [
+      'Understand the operational process and define the expected result.',
+      'Automate recurring workflows and reports with checks that can be repeated.',
+      'Trace data from source records through integrations and downstream reports.',
+      'Write test cases, coordinate execution, investigate failures, and document findings.',
+    ],
+    features: [
+      {
+        title: 'Workflow and report automation',
+        description:
+          'Power Apps and Power Automate for operational workflows, and automation around recurring reports. Power BI experience includes checking source data and reconciling reporting outputs.',
+      },
+      {
+        title: 'Backend data validation',
+        description:
+          'SQL, Azure Databricks, and Azure Data Lake work to investigate missing or duplicate records, review error tables, reconcile mismatches, and check that data reaches downstream systems correctly.',
+      },
+      {
+        title: 'Test automation and CI/CD',
+        description:
+          'Repeatable validation using Playwright, Selenium, Azure Pipelines, and YAML scheduling, supported by manual testing, written test cases, and failure analysis.',
+      },
+      {
+        title: 'Warehouse field testing',
+        description:
+          'Test execution for conveyor and automated crane systems, including frozen-food facilities, during modernization from on-premises applications to browser-based tools.',
+      },
+    ],
+    metrics: [
+      { label: 'Workflows', value: 'Automate' },
+      { label: 'Data', value: 'Validate' },
+      { label: 'Software', value: 'Test' },
+    ],
+    stack: [
+      'Power Automate',
+      'Power Apps',
+      'Power BI',
+      'SQL',
+      'Azure Databricks',
+      'Azure Data Lake',
+      'Azure Pipelines',
+      'Playwright',
+      'Selenium',
+      'Python',
+      'C#/.NET',
+      'JavaScript/TypeScript',
+      'PowerShell',
+    ],
+  },
+  {
     slug: 'xiv',
     name: 'XIV Capital',
     domain: 'Options trading',

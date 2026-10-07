@@ -47,18 +47,16 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>
             {isSpanish
-              ? 'Ingeniería de software · QA · XIV Capital'
-              : 'Software Engineering · QA · XIV Capital'}
+              ? 'Ingeniería de software · Automatización · Validación de datos'
+              : 'Software Engineering · Automation · Data Validation'}
           </p>
           <h1 id="dragon-title" className={styles.title}>
-            XIV
-            <br />
-            <em>Capital.</em>
+            Marcelo Zapata<em>.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Soy Marcelo Zapata, ingeniero de software con experiencia en sistemas empresariales, integraciones y automatización de calidad. Construyo herramientas para comprobar datos y apoyar decisiones, incluida mi investigación personal de opciones.'
-              : 'I’m Marcelo Zapata, a software engineer with experience in enterprise systems, integrations, and QA automation. I build tools to check data and support decisions, including my personal options research.'}
+              ? 'Soy Marcelo Zapata. Automatizo procesos, informes y pruebas de software, y compruebo que los datos lleguen correctamente de un sistema a otro. Mi experiencia abarca operaciones de almacén y distribución, integraciones y QA manual y automatizado.'
+              : 'I’m Marcelo Zapata. I automate workflows, reports, and software testing, and verify that data moves correctly between systems. My experience spans warehouse and distribution operations, integrations, and manual and automated QA.'}
           </p>
           <div className={styles.actions}>
             <a href="#experience" className={styles.primaryLink}>
@@ -90,9 +88,18 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <p className={styles.bodyCopy}>Publix Super Markets · 2022–2026</p>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Sistemas empresariales, integraciones y automatización de calidad.'
-              : 'Enterprise systems, integrations, and quality automation.'}
+              ? 'Automatización de procesos e informes, validación de datos y pruebas en operaciones reales.'
+              : 'Workflow and report automation, data validation, and testing in real operations.'}
           </p>
+          <p className={styles.bodyCopy}>
+            {isSpanish
+              ? 'Power Apps y Power Automate para procesos operativos. SQL, Azure Databricks y Azure Data Lake para comprobar datos. Power BI para informes. Azure Pipelines, Playwright y Selenium para pruebas repetibles.'
+              : 'Power Apps and Power Automate for operational workflows. SQL, Azure Databricks, and Azure Data Lake for data checks. Power BI for reporting. Azure Pipelines, Playwright, and Selenium for repeatable testing.'}
+          </p>
+          <Link href="/systems/automation" className={styles.archiveLink}>
+            {isSpanish ? 'Ver automatización y validación' : 'Explore automation and validation'}{' '}
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </Link>
         </div>
         <ol className={styles.experienceList}>
           <li>
@@ -100,8 +107,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <h3>Sr Quality Assurance Engineer</h3>
             <p>
               {isSpanish
-                ? 'Flujos de calidad con IA para cuatro equipos de desarrollo. Validación con Playwright, Azure DevOps, SQL, APIs REST y Kafka.'
-                : 'AI-assisted quality workflows across four development teams. Validation with Playwright, Azure DevOps, SQL, REST APIs, and Kafka.'}
+                ? 'Pruebas manuales y automatizadas, coordinación de casos de prueba y validación de datos y APIs. Flujos de calidad con Playwright, Azure Pipelines, SQL y asistencia de IA.'
+                : 'Manual and automated testing, test-case coordination, and data and API validation. Quality workflows using Playwright, Azure Pipelines, SQL, and AI assistance.'}
             </p>
           </li>
           <li>
@@ -109,8 +116,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <h3>Software Engineer</h3>
             <p>
               {isSpanish
-                ? 'Desarrollo y modernización de APIs e integraciones para inventario, pedidos, facturas, proveedores y almacenes.'
-                : 'Built and modernized inventory APIs and integration services across ordering, invoicing, supplier, and warehouse systems.'}
+                ? 'Desarrollo y modernización de APIs e integraciones para inventario, pedidos, facturas y almacenes. Investigación de errores y comprobación de que los datos del backend llegaran correctamente a los sistemas y reportes posteriores.'
+                : 'Built and modernized inventory APIs and integration services for ordering, invoicing, and warehouse systems. Investigated failures and checked that backend data reached downstream systems and reports correctly.'}
             </p>
           </li>
           <li>
@@ -118,8 +125,8 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             <h3>Associate Software Engineer</h3>
             <p>
               {isSpanish
-                ? 'Modernización de sistemas de almacén que dan soporte a equipos de automatización, incluidas grúas y cintas transportadoras.'
-                : 'Helped modernize warehouse technology supporting automation equipment, including crane and conveyor-control systems.'}
+                ? 'Casos de prueba y pruebas de campo para sistemas de grúas y cintas transportadoras, incluidas instalaciones de alimentos congelados. Apoyo a la modernización de aplicaciones locales hacia herramientas en el navegador.'
+                : 'Wrote test cases and performed field testing for crane and conveyor systems, including frozen-food facilities. Supported modernization from on-premises applications to browser-based tools.'}
             </p>
           </li>
         </ol>
@@ -131,11 +138,23 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
           <h2 id="work-title">{isSpanish ? 'Herramientas que construyo.' : 'Tools I build.'}</h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Herramientas de software para investigar, comprobar los datos y documentar decisiones.'
-              : 'Software for research, data checks, and documenting decisions.'}
+              ? 'Automatización de procesos, validación de datos y herramientas de investigación.'
+              : 'Workflow automation, data validation, and research tools.'}
           </p>
         </div>
         <div className={styles.projectList}>
+          <Link href="/systems/automation" className={styles.project}>
+            <div>
+              <h3>{isSpanish ? 'Automatización y validación' : 'Automation and validation'}</h3>
+              <p>
+                {isSpanish
+                  ? 'Procesos de almacén y distribución, informes automatizados, comprobaciones de datos y pruebas de software. Mi experiencia y las herramientas que uso.'
+                  : 'Warehouse and distribution workflows, automated reports, data checks, and software testing. My experience and the tools I use.'}
+              </p>
+              <span>{isSpanish ? 'Ver experiencia ↗' : 'View experience ↗'}</span>
+            </div>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
           <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
             <div>
               <h3>{isSpanish ? 'Software de investigación' : 'Research software'}</h3>
@@ -254,8 +273,13 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.aboutCopy}>
           <p>
             {isSpanish
-              ? 'Soy ingeniero de software con experiencia en sistemas empresariales, APIs y automatización de calidad. Busco oportunidades en ingeniería de software y QA donde pueda contribuir y seguir aprendiendo con un equipo.'
-              : 'I’m a software engineer with experience in enterprise systems, APIs, and QA automation. I’m interested in software engineering and QA opportunities where I can contribute and keep learning with a team.'}
+              ? 'Soy ingeniero de software especializado en automatización de procesos e informes, validación de datos y pruebas. Busco oportunidades en automatización, QA e infraestructura de pruebas donde pueda aportar mi experiencia en operaciones de almacén y distribución.'
+              : 'I’m a software engineer focused on workflow and report automation, data validation, and testing. I’m interested in automation, QA, and test infrastructure roles where I can apply my experience in warehouse and distribution operations.'}
+          </p>
+          <p>
+            {isSpanish
+              ? 'Trabajo con Python, SQL, C#/.NET, JavaScript/TypeScript y PowerShell. También puedo configurar agentes de IA. Elijo scripts, herramientas de automatización o agentes según lo que requiera el proceso, su coste y su mantenimiento.'
+              : 'I work with Python, SQL, C#/.NET, JavaScript/TypeScript, and PowerShell. I can also configure AI agents. I choose scripts, workflow tools, or agents according to the process, cost, and maintenance needs.'}
           </p>
           <p>
             {isSpanish

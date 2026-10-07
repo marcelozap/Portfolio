@@ -76,7 +76,7 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
 
           <aside className="border-l border-white/[0.1] pl-6 lg:pl-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint">
-              Research tools
+              Tools and technologies
             </div>
             <ul className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
