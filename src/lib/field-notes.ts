@@ -13,6 +13,24 @@ export type FieldNote = {
 
 export const FIELD_NOTES: FieldNote[] = [
   {
+    slug: 'from-chatting-with-ai-to-working-with-it',
+    number: 'NOTE 014',
+    date: '2026-10-21',
+    title: 'From Chatting with AI to Working with It',
+    summary:
+      'A few months ago, I was wiring automation together myself and using AI mostly as a chatbot. Now those two parts of my workflow are starting to meet.',
+    source: 'Personal journal',
+    body: [
+      'A few months ago, I was building automation for my projects and using AI mostly through conversation. I would ask a question, work through an idea, and then go back to the application to make the changes myself. The conversation helped, but I was still connecting the steps.',
+      'Lately, I’ve been noticing a shift in how I work. Conversation and automation are starting to come together. Being able to have an AI tool read what is on screen and make changes brings it much closer to the task I’m trying to finish.',
+      'That feels different from getting an answer in a chat window. There is less distance between explaining what I want and seeing something change. I can spend more attention on the result, then look at what happened and decide what needs another pass.',
+      'I like the direction I’m seeing around ChatGPT, Claude, and xAI’s Grok. They each approach the experience differently, but what interests me is the effort to make AI easier to use. I’m paying attention to how assistants fit into ordinary work, and how much setup it takes to get something useful done.',
+      'As a software engineer, I know how much effort can go into connecting tools and making an automated process work. Seeing more of that interaction happen through a conversation makes me curious about what I’ll be able to build next. The process itself is changing while I’m using it.',
+      'I still need to explain the task clearly and check the changes. Being able to act on a screen makes that review more concrete: did the tool change the right thing, and does the result do what I intended?',
+      'What excites me is watching something that used to feel like a separate conversation become part of the work. I want to keep building with these tools and writing about what I notice along the way. I’m excited to see where this goes.',
+    ],
+  },
+  {
     slug: 'before-i-trust-a-backtest-i-check-the-data',
     number: 'NOTE 013',
     date: '2026-09-17',

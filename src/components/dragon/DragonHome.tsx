@@ -6,9 +6,9 @@ import { FIELD_NOTES } from '@/lib/field-notes';
 import styles from './DragonHome.module.css';
 
 const FEATURED_NOTE_SLUGS = [
+  'from-chatting-with-ai-to-working-with-it',
   'before-i-trust-a-backtest-i-check-the-data',
   'ai-is-an-addictive-product-on-a-subscription',
-  'coding-beats',
 ] as const;
 
 const FEATURED_NOTES = FEATURED_NOTE_SLUGS.map((slug) =>
@@ -47,16 +47,16 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>
             {isSpanish
-              ? 'Ingeniería de software · IA · Automatización'
-              : 'Software Engineering · AI · Automation'}
+              ? 'Ingeniero de software sénior | IA y automatización | Ingeniería de datos'
+              : 'Senior Software Engineer | AI & Automation | Data Engineering'}
           </p>
           <h1 id="dragon-title" className={styles.title}>
             Marcelo Zapata<em>.</em>
           </h1>
           <p className={styles.philosophy}>
             {isSpanish
-              ? 'Soy ingeniero de software, graduado de Florida State University, con más de cuatro años trabajando con IA. Construyo aplicaciones, integraciones y automatización: desde sistemas empresariales de almacén hasta Rally, mi próxima aplicación de tenis.'
-              : 'I’m a software engineer and Florida State University graduate with 4+ years working with AI. I build applications, integrations, and automation—from enterprise warehouse systems to Rally, my upcoming tennis app.'}
+              ? 'Soy ingeniero de software sénior y graduado de Florida State University, con casi cuatro años de experiencia en ingeniería de software en Publix. Desarrollé integraciones empresariales, apoyé flujos de datos e informes y lideré iniciativas de automatización entre equipos de desarrollo. Mis proyectos personales incluyen aplicaciones para iOS y herramientas de IA.'
+              : 'I’m a senior software engineer and Florida State University graduate with nearly four years of software engineering experience at Publix. I built enterprise integrations, supported data and reporting workflows, and led automation initiatives across development teams. My personal projects include custom iOS apps and AI tools.'}
           </p>
           <div className={styles.actions}>
             <a href="#experience" className={styles.primaryLink}>
@@ -103,16 +103,16 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
         </div>
         <ol className={styles.experienceList}>
           <li>
-            <time>{isSpanish ? 'Jul–Ago 2026' : 'Jul–Aug 2026'}</time>
-            <h3>Sr Quality Assurance Engineer</h3>
+            <time>{isSpanish ? 'May 2025–Ago 2026' : 'May 2025–Aug 2026'}</time>
+            <h3>Senior Software Engineer</h3>
             <p>
               {isSpanish
-                ? 'Pruebas manuales y automatizadas, coordinación de casos de prueba y validación de datos y APIs. Flujos de calidad con Playwright, Azure Pipelines, SQL y asistencia de IA.'
-                : 'Manual and automated testing, test-case coordination, and data and API validation. Quality workflows using Playwright, Azure Pipelines, SQL, and AI assistance.'}
+                ? 'Lideré flujos de calidad y entrega asistidos por IA en cuatro equipos de desarrollo. Desarrollé procesos de validación y automatización con Playwright, Azure DevOps CI/CD, SQL, APIs REST, Kafka e informes estructurados, además de materiales de formación y prácticas reutilizables de IA.'
+                : 'Led AI-assisted quality and delivery workflows across four development teams. Built validation and automation processes using Playwright, Azure DevOps CI/CD, SQL, REST APIs, Kafka, and structured reporting, alongside reusable AI workflows and onboarding materials.'}
             </p>
           </li>
           <li>
-            <time>May 2025–Jul 2026</time>
+            <time>May 2024–May 2025</time>
             <h3>Software Engineer</h3>
             <p>
               {isSpanish
@@ -121,7 +121,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </p>
           </li>
           <li>
-            <time>{isSpanish ? 'Dic 2022–May 2025' : 'Dec 2022–May 2025'}</time>
+            <time>{isSpanish ? 'Dic 2022–May 2024' : 'Dec 2022–May 2024'}</time>
             <h3>Associate Software Engineer</h3>
             <p>
               {isSpanish
