@@ -1,0 +1,48 @@
+# Marcelo Zapata
+
+**Software Engineer | Automation, Data Workflows & Business Intelligence**  
+marcelozapata08@gmail.com · linkedin.com/in/marcelozap · marcelozapata.com
+
+## Professional Summary
+
+Software engineer with nearly four years of enterprise experience at Publix, progressing from Associate Software Engineer to Senior Software Engineer. Builds and improves quality automation, enterprise APIs, data workflows, AI-assisted delivery systems, and structured reporting across complex technology environments.
+
+## Technical Skills
+
+Python · SQL · C# · TypeScript · REST APIs · Kafka · Azure Databricks · Data lake tooling · Playwright · Azure DevOps CI/CD · OpenShift · Structured reporting · AI-assisted workflow design
+
+## Experience
+
+### Publix Super Markets
+
+**Senior Software Engineer** | May 2026 – Oct 2026
+
+- Led AI-assisted quality and delivery workflows across four development teams inside a Fortune 100 technology organization.
+- Built validation and automation processes across Playwright, Azure DevOps CI/CD, SQL, REST APIs, Kafka, and structured reporting to improve release confidence, traceability, and cross-team visibility.
+- Standardized reusable AI workflow infrastructure for analysts, engineers, managers, and directors, including agents, prompt templates, documentation patterns, review checklists, and delivery routines.
+- Designed onboarding and enablement materials that turned complex enterprise systems, QA standards, and AI-assisted workflows into repeatable practices for technical and nontechnical audiences.
+
+**Software Engineer** | May 2024 – May 2025
+
+- Built and modernized enterprise inventory-management APIs and integration services across ordering, item and inventory, invoice, supplier, and warehouse data domains.
+- Supported data lake and enterprise reporting workflows using Python, SQL, Azure Databricks, and data lake tooling, with emphasis on traceability, data quality, and operational reliability.
+- Built Azure DevOps AI workflow tools for resource planning, work-item generation, test-case creation, requirement summaries, standardized documentation, and completion tracking.
+- Supported production troubleshooting, OpenShift deployment workflows, REST integrations, and cross-system debugging across enterprise systems.
+
+**Associate Software Engineer** | Dec 2022 – May 2024
+
+- Helped modernize warehouse technology systems supporting large-scale automation equipment, including crane and conveyor-control environments.
+- Supported projects that moved legacy warehouse workflows toward URL-based control systems for crane and conveyor operations.
+- Led engineering for reporting software used in pharmacy operations, supporting pharmaceutical traceability, operational visibility, and compliance-focused workflows.
+- Drove a Playwright automation initiative from concept through adoption after identifying a major manual-testing gap; automated parallel UI coverage across four server-backed test applications, with suites running in approximately five minutes through Azure DevOps.
+- Helped technical and nontechnical teammates adopt AI-assisted tools, workflow packages, documentation patterns, and automation practices.
+
+## Selected Project
+
+### XIV$ Financial Research OS
+
+Built a local-first Python, FastAPI, and React system for financial research, risk review, execution analytics, structured notes, and automated reporting workflows.
+
+## Education
+
+Florida State University — Bachelor of Science in Computer Science & Business, 2019–2022
