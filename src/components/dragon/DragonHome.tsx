@@ -135,79 +135,49 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
       <section id="work" className={styles.writing} aria-labelledby="work-title">
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>{isSpanish ? '02 / Proyectos' : '02 / Projects'}</p>
-          <h2 id="work-title">{isSpanish ? 'Herramientas que construyo.' : 'Tools I build.'}</h2>
+          <h2 id="work-title">
+            {isSpanish ? 'Proyectos que puedes explorar.' : 'Projects you can explore.'}
+          </h2>
           <p className={styles.bodyCopy}>
             {isSpanish
-              ? 'Aplicaciones, procesos con IA, automatización y herramientas de investigación.'
-              : 'Applications, AI workflows, automation, and research tools.'}
+              ? 'Una vista previa de Vela Tennis, un juego de opciones y notas sobre cómo construyo con IA.'
+              : 'A Vela Tennis preview, a playable options game, and notes on building with AI.'}
           </p>
         </div>
         <div className={styles.projectList}>
-          <Link href="/systems/rally" className={styles.project}>
+          <Link href="/vela-tennis" className={styles.project}>
             <div>
-              <h3>Rally</h3>
+              <h3>Vela Tennis</h3>
               <p>
                 {isSpanish
-                  ? 'Mi próxima aplicación de tenis. En desarrollo: registros de práctica y un prototipo de análisis de movimiento a partir de vídeo.'
-                  : 'My upcoming tennis app. In development: practice logs and a prototype for video-based movement analysis.'}
+                  ? 'Una aplicación de tenis para iOS. Actualmente está bajo revisión en la App Store; la página incluye un video de gameplay.'
+                  : 'A custom iOS tennis app currently under App Store review, with a gameplay preview you can watch.'}
               </p>
-              <span>{isSpanish ? 'En desarrollo ↗' : 'In development ↗'}</span>
+              <span>{isSpanish ? 'Ver gameplay ↗' : 'Watch gameplay ↗'}</span>
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </Link>
-          <Link href="/systems/automation" className={styles.project}>
+          <Link href="/dragons" className={styles.project}>
             <div>
-              <h3>{isSpanish ? 'Automatización y validación' : 'Automation and validation'}</h3>
+              <h3>{isSpanish ? 'Dragon Scales' : 'Dragon Scales'}</h3>
               <p>
                 {isSpanish
-                  ? 'Procesos de almacén y distribución, informes automatizados, comprobaciones de datos y pruebas de software. Mi experiencia y las herramientas que uso.'
-                  : 'Warehouse and distribution workflows, automated reports, data checks, and software testing. My experience and the tools I use.'}
+                  ? 'Un juego de mercado de opciones con precios simulados, riesgo y fondos virtuales.'
+                  : 'A playable options-market game with simulated prices, risk, and virtual funds.'}
               </p>
-              <span>{isSpanish ? 'Ver experiencia ↗' : 'View experience ↗'}</span>
+              <span>{isSpanish ? 'Jugar ↗' : 'Play the game ↗'}</span>
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </Link>
-          <a href="/systems/xiv" target="_blank" rel="noreferrer" className={styles.project}>
+          <Link href="/ai-blog" className={styles.project}>
             <div>
-              <h3>{isSpanish ? 'Software de investigación' : 'Research software'}</h3>
+              <h3>{isSpanish ? 'AI Blog' : 'AI Blog'}</h3>
               <p>
                 {isSpanish
-                  ? 'XIV Capital reúne mi investigación de opciones y las herramientas que construyo para apoyarla.'
-                  : 'XIV Capital brings together my options research and the tools I build to support it.'}
+                  ? 'Notas sobre ingeniería de software, automatización, datos y el cambio hacia trabajar con agentes de IA.'
+                  : 'Notes on software engineering, automation, data, and the shift toward working with AI agents.'}
               </p>
-              <span>{isSpanish ? 'Ver el proyecto ↗' : 'View project ↗'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <a
-            href="/ai-blog/before-i-trust-a-backtest-i-check-the-data"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.project}
-          >
-            <div>
-              <h3>{isSpanish ? 'Validación de datos' : 'Data validation'}</h3>
-              <p>
-                {isSpanish
-                  ? 'Comprobaciones en Python de campos faltantes, cobertura y calidad de cotizaciones, con ejemplos sintéticos y límites documentados.'
-                  : 'Python checks for missing fields, coverage, and quote quality, with synthetic fixtures and documented limitations.'}
-              </p>
-              <span>{isSpanish ? 'Ver método y resultados ↗' : 'Read method and results ↗'}</span>
-            </div>
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </a>
-          <Link
-            href="/ai-blog/ai-is-an-addictive-product-on-a-subscription"
-            className={styles.project}
-          >
-            <div>
-              <h3>{isSpanish ? 'Flujos de trabajo con IA' : 'AI-assisted workflows'}</h3>
-              <p>
-                {isSpanish
-                  ? 'Un enfoque de tareas acotadas con IA, criterios de aceptación, pruebas y revisión humana.'
-                  : 'An approach to bounded AI tasks, acceptance criteria, tests, and human review.'}
-              </p>
-              <span>{isSpanish ? 'Leer la nota ↗' : 'Read the note ↗'}</span>
+              <span>{isSpanish ? 'Leer las notas ↗' : 'Read the notes ↗'}</span>
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </Link>
