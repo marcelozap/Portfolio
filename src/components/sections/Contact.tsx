@@ -22,11 +22,11 @@ export function Contact() {
           always grounded in the thing being studied.
         </p>
         <a
-          href="mailto:xiv@marcelozapata.dev"
+          href="mailto:mzapata.music@icloud.com"
           className="inline-flex items-center gap-3 text-sm font-medium text-accent transition hover:text-ink"
         >
           <Mail className="size-4" />
-          xiv@marcelozapata.dev
+          mzapata.music@icloud.com
         </a>
       </div>
     </section>

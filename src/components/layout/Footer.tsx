@@ -28,7 +28,7 @@ export function Footer() {
                   target={link.href.startsWith('http') ? '_blank' : undefined}
                   rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
                 >
-                  {link.label === 'Contact' ? 'xiv@marcelozapata.dev' : link.label}
+                  {link.label === 'Contact' ? 'mzapata.music@icloud.com' : link.label}
                   {link.href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
                 </a>
               </li>

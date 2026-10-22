@@ -742,7 +742,7 @@
 }
 .horizon {
   object-fit: cover;
-  object-position: 65% center;
+  object-position: center center;
   opacity: 0.8;
 }
 .studioHome .hero::after {
@@ -1006,7 +1006,7 @@
     font-size: 10px;
   }
   .horizon {
-    object-position: 60% center;
+    object-position: center center;
     opacity: 0.55;
   }
   .studioHome .hero::after {

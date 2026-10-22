@@ -63,7 +63,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               {isSpanish ? 'Ver mi experiencia' : 'View my experience'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-            <a href="mailto:xiv@marcelozapata.dev" className={styles.secondaryLink}>
+            <a href="mailto:mzapata.music@icloud.com" className={styles.secondaryLink}>
               {isSpanish ? 'Contactarme' : 'Contact me'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
@@ -157,7 +157,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
             </div>
             <ArrowUpRight size={20} aria-hidden="true" />
           </Link>
-          <Link href="/dragons" className={styles.project}>
+          <Link href="/play" className={styles.project}>
             <div>
               <h3>{isSpanish ? 'Dragon Scales' : 'Dragon Scales'}</h3>
               <p>
@@ -272,7 +272,7 @@ export function DragonHome({ locale = 'en' }: { locale?: 'en' | 'es' }) {
               : 'This site documents my research and tools. I share my personal process; I do not manage other people’s money or provide investment advice.'}
           </p>
           <p>
-            <a href="mailto:xiv@marcelozapata.dev" className={styles.contactLink}>
+            <a href="mailto:mzapata.music@icloud.com" className={styles.contactLink}>
               {isSpanish ? 'Hablemos' : 'Get in touch'}{' '}
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
