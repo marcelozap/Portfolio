@@ -736,7 +736,7 @@
 .studioHome .hero {
   min-height: 790px;
   padding: 158px 7% 100px;
-  align-items: flex-start;
+  align-items: center;
   color: #f4efdf;
   background: #0c0d0b;
 }
@@ -749,15 +749,15 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #0c0d0bf2, #0c0d0b90 45%, transparent 80%);
+  background: linear-gradient(180deg, #0c0d0b80, #0c0d0b2b 42%, #0c0d0bb8 100%);
   z-index: 0;
 }
 .studioHome .heroCopy {
-  text-align: left;
-  max-width: 640px;
+  text-align: center;
+  max-width: 860px;
 }
 .studioHome .heroCopy .eyebrow {
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 0 28px;
   font:
     11px/1.6 var(--font-mono),
@@ -776,13 +776,13 @@
   color: #e3c699;
 }
 .studioHome .philosophy {
-  max-width: 410px;
-  margin: 32px 0 0;
+  max-width: 680px;
+  margin: 32px auto 0;
   color: #ddd9cc;
   text-wrap: pretty;
 }
 .studioHome .actions {
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 30px;
 }
 .heroFoot {
@@ -792,7 +792,7 @@
   right: 7%;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   padding-top: 20px;
   border-top: 1px solid #d8c29945;
